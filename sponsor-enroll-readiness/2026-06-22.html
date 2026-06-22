@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sponsor Enrollment Readiness — June 22, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --navy:#183872; --lime:#cced60; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'DM Sans',sans-serif; color:var(--navy); background:#f4f6fb; padding:24px; line-height:1.5; }
+  .wrap { max-width:760px; margin:0 auto; }
+  header { background:var(--navy); border-radius:14px; padding:28px 30px; color:#fff; }
+  header .kick { font-family:'Inter',sans-serif; font-weight:700; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--lime); }
+  header h1 { font-family:'Inter',sans-serif; font-weight:800; font-size:26px; margin-top:6px; }
+  header p { font-size:14px; opacity:.85; margin-top:8px; }
+  .summary { display:flex; gap:12px; margin:18px 0 26px; flex-wrap:wrap; }
+  .stat { flex:1; min-width:140px; background:#fff; border-radius:12px; padding:16px 18px; border:1px solid #e3e8f2; }
+  .stat .n { font-family:'Inter',sans-serif; font-weight:800; font-size:30px; }
+  .stat .l { font-size:12px; text-transform:uppercase; letter-spacing:.06em; opacity:.7; margin-top:2px; }
+  .stat.ready .n { color:#1a9e57; }
+  .stat.obs .n { color:#d08700; }
+  .stat.email .n { color:#c0392b; }
+  section { margin-bottom:26px; }
+  .sec-head { font-family:'Inter',sans-serif; font-weight:700; font-size:15px; text-transform:uppercase; letter-spacing:.06em; padding:10px 14px; border-radius:10px 10px 0 0; color:#fff; }
+  .sec-head.ready { background:#1a9e57; }
+  .sec-head.obs { background:#d08700; }
+  .sec-head.email { background:#c0392b; }
+  table { width:100%; border-collapse:collapse; background:#fff; border:1px solid #e3e8f2; border-top:none; border-radius:0 0 10px 10px; overflow:hidden; }
+  th { text-align:left; font-family:'Inter',sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:#7a8499; padding:10px 14px; border-bottom:1px solid #eef1f7; }
+  td { padding:11px 14px; font-size:14px; border-bottom:1px solid #f1f3f9; vertical-align:top; }
+  tr:last-child td { border-bottom:none; }
+  td.biz { font-weight:600; }
+  .pill { display:inline-block; font-size:11px; font-weight:600; padding:3px 9px; border-radius:20px; background:#eef1f7; color:var(--navy); white-space:nowrap; }
+  .empty-note { background:#fff; border:1px dashed #c9d2e4; border-radius:10px; padding:16px 18px; font-size:14px; color:#5a647a; font-style:italic; }
+  .note { background:#fffaf0; border-left:4px solid #d08700; border-radius:6px; padding:14px 16px; font-size:13.5px; margin-bottom:22px; }
+  footer { background:var(--navy); border-radius:12px; padding:18px 22px; color:#fff; font-size:13.5px; }
+  footer b { color:var(--lime); }
+  .stamp { text-align:center; font-size:12px; color:#8a93a8; margin-top:18px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kick">CHS Happenings · Sponsor Pipeline</div>
+    <h1>Sponsor Enrollment Readiness</h1>
+    <p>Read-only weekly sweep · Monday, June 22, 2026 · Detection only — nobody enrolled</p>
+  </header>
+
+  <div class="summary">
+    <div class="stat ready"><div class="n">0</div><div class="l">Ready to Enroll</div></div>
+    <div class="stat obs"><div class="n">7</div><div class="l">Needs Observation</div></div>
+    <div class="stat email"><div class="n">9</div><div class="l">Needs Email</div></div>
+  </div>
+
+  <div class="note">
+    <b>Heads up:</b> Every eligible prospect this week is missing its <b>Specific Observation</b> (required for cold &amp; warm-outbound) — so nothing clears the readiness gate. Seven have a working email and just need an observation written; nine are missing a contact email entirely. The three you'd flagged as "ready" (Abode 7, Intercoastal/Penny, Front &amp; Center) all still have a blank observation field in Airtable, so they sit in Needs Observation until that line is written.
+  </div>
+
+  <section>
+    <div class="sec-head ready">✅ Ready to Enroll</div>
+    <div class="empty-note">No prospects are fully ready this week. Write observations on the seven below to move them here.</div>
+  </section>
+
+  <section>
+    <div class="sec-head obs">✍️ Needs Observation — route to cold-prospect-research</div>
+    <table>
+      <tr><th>Business</th><th>Would map to</th><th>Email</th><th>Source / Type</th></tr>
+      <tr><td class="biz">MUSC Health</td><td><span class="pill">Cold · Pro Services</span></td><td>mediarelations@musc.edu</td><td>Cold / Medical</td></tr>
+      <tr><td class="biz">Front &amp; Center</td><td><span class="pill">Warm Outbound</span></td><td>marybeth@frontandcenterllc.com</td><td>Networking / Marketing</td></tr>
+      <tr><td class="biz">Abode 7 Kitchen &amp; Bath</td><td><span class="pill">Warm Outbound</span></td><td>krista@abode7.design</td><td>Networking / Kitchen Design</td></tr>
+      <tr><td class="biz">Perlee Digital</td><td><span class="pill">Warm Outbound</span></td><td>sophia@perleedigital.com</td><td>Networking / Web Services</td></tr>
+      <tr><td class="biz">Art Serenade</td><td><span class="pill">Warm Outbound</span></td><td>sophia@perleedigital.com</td><td>Relationship / Non-Profit</td></tr>
+      <tr><td class="biz">Operation Hope</td><td><span class="pill">Warm Outbound</span></td><td>gerard.pepin@operationhope.org</td><td>Networking / Non-Profit</td></tr>
+      <tr><td class="biz">Intercoastal Mortgage</td><td><span class="pill">Warm Outbound</span></td><td>PLacuesta@icmtg.com</td><td>Relationship / Mortgage</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <div class="sec-head email">📭 Needs Email — find a contact first</div>
+    <table>
+      <tr><th>Business</th><th>Would map to</th><th>Source / Type</th></tr>
+      <tr><td class="biz">Fleet Feet</td><td><span class="pill">Warm Outbound</span></td><td>Relationship / Sports Retailer</td></tr>
+      <tr><td class="biz">City Lights Eastside</td><td><span class="pill">Warm Outbound</span></td><td>Relationship / Cafe</td></tr>
+      <tr><td class="biz">Lowcountry Male</td><td><span class="pill">Cold · Pro Services</span></td><td>Cold / Medical</td></tr>
+      <tr><td class="biz">Leveling The Fields</td><td><span class="pill">Warm Outbound</span></td><td>Networking / Non-Profit</td></tr>
+      <tr><td class="biz">Holey City Bagels</td><td><span class="pill">Warm Outbound</span></td><td>Relationship / Bagel Shop</td></tr>
+      <tr><td class="biz">Historic Charleston Foundation</td><td><span class="pill">Cold · Standard</span></td><td>Cold / Non-Profit</td></tr>
+      <tr><td class="biz">Village Booksellers</td><td><span class="pill">Warm Outbound</span></td><td>Relationship / Bookseller</td></tr>
+      <tr><td class="biz">Fifth Third Bank</td><td><span class="pill">Warm Outbound</span></td><td>Relationship / Banking</td></tr>
+      <tr><td class="biz">6:33 Physical Therapy</td><td><span class="pill">Warm Outbound</span></td><td>Relationship / Physical Therapist</td></tr>
+    </table>
+  </section>
+
+  <footer>
+    To actually enroll anyone, run the <b>enroll-sponsors</b> skill interactively and approve each prospect — this sweep never enrolls, never writes to Airtable, never fires Kit.
+  </footer>
+  <div class="stamp">Generated automatically · CHS Happenings sponsor pipeline · 2026-06-22</div>
+</div>
+</body>
+</html>
