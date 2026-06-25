@@ -4,110 +4,213 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sponsor Enrollment Readiness — June 25, 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{ --navy:#183872; --lime:#cced60; --ink:#1a1a1a; --muted:#5c6b82; --line:#e3e8f0; --bg:#f5f7fa; }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  body{ font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--ink); line-height:1.5; padding:24px; }
-  .wrap{ max-width:760px; margin:0 auto; }
-  .head{ background:var(--navy); border-radius:14px 14px 0 0; padding:28px 30px; }
-  .head .kicker{ font-family:'Inter',sans-serif; font-weight:700; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--lime); }
-  .head h1{ font-family:'Inter',sans-serif; font-weight:800; font-size:26px; color:#fff; margin-top:6px; }
-  .head .sub{ color:#c5d2e6; font-size:14px; margin-top:8px; }
-  .bar{ background:var(--lime); height:6px; }
-  .summary{ background:#fff; padding:22px 30px; border-bottom:1px solid var(--line); display:flex; gap:14px; flex-wrap:wrap; }
-  .stat{ flex:1; min-width:150px; background:var(--bg); border-radius:10px; padding:14px 16px; }
-  .stat .n{ font-family:'Inter',sans-serif; font-weight:800; font-size:30px; color:var(--navy); }
-  .stat .l{ font-size:12px; color:var(--muted); font-weight:600; text-transform:uppercase; letter-spacing:.06em; margin-top:2px; }
-  .body{ background:#fff; padding:8px 30px 30px; border-radius:0 0 14px 14px; }
-  .bucket{ margin-top:26px; }
-  .bucket h2{ font-family:'Inter',sans-serif; font-weight:700; font-size:16px; color:var(--navy); display:flex; align-items:center; gap:10px; padding-bottom:10px; border-bottom:2px solid var(--line); }
-  .badge{ font-size:11px; font-weight:700; padding:3px 9px; border-radius:20px; }
-  .b-ready{ background:var(--lime); color:var(--navy); }
-  .b-obs{ background:#ffe9c2; color:#8a5a00; }
-  .b-email{ background:#ffd6d6; color:#9a1b1b; }
-  .row{ padding:14px 0; border-bottom:1px solid var(--line); }
-  .row:last-child{ border-bottom:none; }
-  .row .top{ display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:6px; }
-  .row .biz{ font-family:'Inter',sans-serif; font-weight:700; font-size:15px; color:var(--ink); }
-  .row .seq{ font-size:12px; font-weight:600; color:var(--navy); background:#eef2f9; padding:3px 10px; border-radius:6px; }
-  .row .meta{ font-size:13px; color:var(--muted); margin-top:4px; }
-  .row .obs{ font-size:13px; color:#3a4658; background:var(--bg); border-left:3px solid var(--lime); padding:8px 12px; border-radius:0 6px 6px 0; margin-top:8px; white-space:pre-wrap; }
-  .empty{ font-size:14px; color:var(--muted); padding:10px 0; }
-  .foot{ max-width:760px; margin:18px auto 0; font-size:13px; color:var(--muted); text-align:center; line-height:1.6; }
-  .foot strong{ color:var(--navy); }
+  :root {
+    --navy: #183872;
+    --lime: #cced60;
+    --ink: #1a2230;
+    --muted: #5c6573;
+    --line: #e4e8ef;
+    --bg: #f4f6fa;
+    --ready: #2e7d32;
+    --obs: #c97a14;
+    --email: #b23b3b;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+    padding: 24px 16px 60px;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  header {
+    background: var(--navy);
+    border-radius: 16px 16px 0 0;
+    padding: 32px 30px 26px;
+    color: #fff;
+  }
+  .kicker {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--lime); margin-bottom: 10px;
+  }
+  header h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 27px; font-weight: 800; line-height: 1.15;
+  }
+  header .date { margin-top: 8px; font-size: 14px; color: #b9c6df; }
+  .summary {
+    background: #fff;
+    padding: 22px 30px;
+    border-bottom: 1px solid var(--line);
+    display: flex; gap: 14px; flex-wrap: wrap;
+  }
+  .stat {
+    flex: 1; min-width: 140px;
+    border: 1px solid var(--line); border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .stat .num { font-family: 'Inter', sans-serif; font-size: 30px; font-weight: 800; line-height: 1; }
+  .stat .lbl { font-size: 12px; color: var(--muted); margin-top: 6px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
+  .stat.ready .num { color: var(--ready); }
+  .stat.obs .num { color: var(--obs); }
+  .stat.email .num { color: var(--email); }
+  .body { background: #fff; padding: 6px 30px 34px; border-radius: 0 0 16px 16px; }
+  .section { margin-top: 30px; }
+  .sec-head {
+    display: flex; align-items: center; gap: 10px;
+    padding-bottom: 10px; border-bottom: 2px solid var(--lime);
+    margin-bottom: 4px;
+  }
+  .sec-head h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 17px; font-weight: 800; color: var(--navy);
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .pill {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px; font-weight: 700; color: #fff;
+    border-radius: 999px; padding: 3px 11px;
+  }
+  .pill.ready { background: var(--ready); }
+  .pill.obs { background: var(--obs); }
+  .pill.email { background: var(--email); }
+  .sec-note { font-size: 13px; color: var(--muted); margin: 8px 0 6px; }
+  .card {
+    border: 1px solid var(--line); border-radius: 12px;
+    padding: 15px 18px; margin-top: 12px;
+  }
+  .card .top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .card .biz { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 16px; color: var(--navy); }
+  .card .seq {
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700;
+    color: var(--navy); background: var(--lime);
+    border-radius: 6px; padding: 3px 9px; white-space: nowrap;
+  }
+  .card .meta { font-size: 13px; color: var(--muted); margin-top: 6px; }
+  .card .meta b { color: var(--ink); font-weight: 600; }
+  .card .obs-text {
+    font-size: 13px; color: var(--ink); margin-top: 9px;
+    border-left: 3px solid var(--lime); padding-left: 11px; font-style: italic;
+  }
+  .empty { font-size: 14px; color: var(--muted); padding: 14px 0 4px; }
+  footer {
+    margin-top: 26px; padding: 18px 22px;
+    background: var(--navy); border-radius: 12px;
+    color: #dbe4f5; font-size: 13px;
+  }
+  footer b { color: var(--lime); }
+  .ts { text-align: center; font-size: 11px; color: var(--muted); margin-top: 22px; }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="head">
-    <div class="kicker">CHS Happenings · Sponsorship Pipeline</div>
+  <header>
+    <div class="kicker">CHS Happenings · Sponsor Pipeline</div>
     <h1>Sponsor Enrollment Readiness</h1>
-    <div class="sub">Read-only weekly sweep · Thursday, June 25, 2026</div>
-  </div>
-  <div class="bar"></div>
+    <div class="date">Weekly sweep · June 25, 2026 · Detection only — nobody enrolled</div>
+  </header>
 
   <div class="summary">
-    <div class="stat"><div class="n">2</div><div class="l">Ready to enroll</div></div>
-    <div class="stat"><div class="n">13</div><div class="l">Need observation</div></div>
-    <div class="stat"><div class="n">0</div><div class="l">Need email</div></div>
+    <div class="stat ready"><div class="num">2</div><div class="lbl">Ready to enroll</div></div>
+    <div class="stat obs"><div class="num">13</div><div class="lbl">Needs observation</div></div>
+    <div class="stat email"><div class="num">0</div><div class="lbl">Needs email</div></div>
   </div>
 
   <div class="body">
 
-    <div class="bucket">
-      <h2><span class="badge b-ready">READY TO ENROLL</span> 2 prospects</h2>
+    <div class="section">
+      <div class="sec-head"><span class="pill ready">READY</span><h2>Ready to Enroll</h2></div>
+      <p class="sec-note">Email + a written observation on file. Clear the gate to enroll.</p>
 
-      <div class="row">
-        <div class="top">
-          <span class="biz">Historic Charleston Foundation</span>
-          <span class="seq">Cold · Standard</span>
-        </div>
-        <div class="meta">Blair · bphillips@historiccharleston.org · Source: Cold · Non-Profit · Stage: Target</div>
-        <div class="obs">Been following your June updates on the Peninsula Plan and responsible tourism. You're early on conversations the rest of the city is about to be forced into.
-
-Getting that foresight in front of more residents feels worthwhile, and I think the audience I've built could help carry it further.</div>
+      <div class="card">
+        <div class="top"><span class="biz">Historic Charleston Foundation</span><span class="seq">Cold Standard</span></div>
+        <div class="meta"><b>Stage:</b> Target &nbsp;·&nbsp; <b>Source:</b> Cold &nbsp;·&nbsp; <b>Type:</b> Non-Profit &nbsp;·&nbsp; <b>Contact:</b> Blair Phillips · bphillips@historiccharleston.org</div>
+        <div class="obs-text">Been following your June updates on the Peninsula Plan and responsible tourism. You're early on conversations the rest of the city is about to be forced into. Getting that foresight in front of more residents feels worthwhile…</div>
       </div>
 
-      <div class="row">
-        <div class="top">
-          <span class="biz">Fifth Third Bank</span>
-          <span class="seq">Warm Outbound</span>
-        </div>
-        <div class="meta">Jason · jason.hessberg@53.com · Source: Relationship · Banking · Stage: Cultivating</div>
-        <div class="obs">Saw this week's news on the Midlands push. Upstate, Lowcountry, and now Columbia all moving at once. Fifth Third is suddenly everywhere in South Carolina.
-
-On the Lowcountry side, I reach a big slice of the exact residents you're opening these branches for, and I think there's a smart fit worth a conversation.</div>
+      <div class="card">
+        <div class="top"><span class="biz">Fifth Third Bank</span><span class="seq">Warm Outbound</span></div>
+        <div class="meta"><b>Stage:</b> Cultivating &nbsp;·&nbsp; <b>Source:</b> Relationship &nbsp;·&nbsp; <b>Type:</b> Banking &nbsp;·&nbsp; <b>Contact:</b> Jason Hessberg · jason.hessberg@53.com</div>
+        <div class="obs-text">Saw this week's news on the Midlands push. Upstate, Lowcountry, and now Columbia all moving at once. Fifth Third is suddenly everywhere in South Carolina…</div>
       </div>
     </div>
 
-    <div class="bucket">
-      <h2><span class="badge b-obs">NEEDS OBSERVATION</span> 13 prospects → route to cold-prospect-research</h2>
+    <div class="section">
+      <div class="sec-head"><span class="pill obs">OBSERVATION</span><h2>Needs Observation</h2></div>
+      <p class="sec-note">Email's there, but no Specific Observation on file — cold &amp; warm-outbound both require one. Route to <b>cold-prospect-research</b> to draft the hook, then they're ready.</p>
 
-      <div class="row"><div class="top"><span class="biz">Fleet Feet</span><span class="seq">Warm Outbound</span></div><div class="meta">Jennifer · jennifer@fleetfeetmountpleasant.com · Source: Relationship · Sports Retailer · Stage: Target</div></div>
-      <div class="row"><div class="top"><span class="biz">City Lights Eastside</span><span class="seq">Warm Outbound</span></div><div class="meta">Candace · citylightseastside@gmail.com · Source: Relationship · Cafe · Stage: Cultivating</div></div>
-      <div class="row"><div class="top"><span class="biz">MUSC Health</span><span class="seq">Cold · Professional Services</span></div><div class="meta">Ashley · mediarelations@musc.edu · Source: Cold · Medical · Stage: Cultivating</div></div>
-      <div class="row"><div class="top"><span class="biz">Front &amp; Center</span><span class="seq">Warm Outbound</span></div><div class="meta">Mary · marybeth@frontandcenterllc.com · Source: Networking · Marketing · Stage: Target</div></div>
-      <div class="row"><div class="top"><span class="biz">Leveling The Fields</span><span class="seq">Warm Outbound</span></div><div class="meta">Melyssa · melyssa@levelingthefields.org · Source: Networking · Non-Profit · Stage: Cultivating</div></div>
-      <div class="row"><div class="top"><span class="biz">Abode 7 Kitchen &amp; Bath</span><span class="seq">Warm Outbound</span></div><div class="meta">Krista · krista@abode7.design · Source: Networking · Kitchen Design · Stage: Cultivating</div></div>
-      <div class="row"><div class="top"><span class="biz">Holey City Bagels</span><span class="seq">Warm Outbound</span></div><div class="meta">Bridget · holeycitybagels@gmail.com · Source: Relationship · Bagel Shop · Stage: Target</div></div>
-      <div class="row"><div class="top"><span class="biz">Perlee Digital</span><span class="seq">Warm Outbound</span></div><div class="meta">Sophia · sophia@perleedigital.com · Source: Networking · Web Services · Stage: Target</div></div>
-      <div class="row"><div class="top"><span class="biz">Village Booksellers</span><span class="seq">Warm Outbound</span></div><div class="meta">Karen-Anne · karenannemac1974@gmail.com · Source: Relationship · Bookseller · Stage: Target</div></div>
-      <div class="row"><div class="top"><span class="biz">Art Serenade</span><span class="seq">Warm Outbound</span></div><div class="meta">Sophia · sophia@perleedigital.com · Source: Relationship · Non-Profit · Stage: Target</div></div>
-      <div class="row"><div class="top"><span class="biz">6:33 Physical Therapy</span><span class="seq">Warm Outbound</span></div><div class="meta">Alison · alisonberglund@633physicaltherapy.com · Source: Relationship · Physical Therapist · Stage: Target</div></div>
-      <div class="row"><div class="top"><span class="biz">Operation Hope</span><span class="seq">Warm Outbound</span></div><div class="meta">Jerry · gerard.pepin@operationhope.org · Source: Networking · Non-Profit · Stage: Target</div></div>
-      <div class="row"><div class="top"><span class="biz">Intercoastal Mortgage</span><span class="seq">Warm Outbound</span></div><div class="meta">Penny · PLacuesta@icmtg.com · Source: Relationship · Mortgage · Stage: Target</div></div>
+      <div class="card">
+        <div class="top"><span class="biz">MUSC Health</span><span class="seq">Cold Professional Services</span></div>
+        <div class="meta"><b>Stage:</b> Cultivating &nbsp;·&nbsp; <b>Source:</b> Cold &nbsp;·&nbsp; <b>Type:</b> Medical &nbsp;·&nbsp; <b>Contact:</b> Ashley Tice · mediarelations@musc.edu</div>
+      </div>
+      <div class="card">
+        <div class="top"><span class="biz">Fleet Feet</span><span class="seq">Warm Outbound</span></div>
+        <div class="meta"><b>Stage:</b> Target &nbsp;·&nbsp; <b>Source:</b> Relationship &nbsp;·&nbsp; <b>Type:</b> Sports Retailer &nbsp;·&nbsp; <b>Contact:</b> Jennifer Roberts · jennifer@fleetfeetmountpleasant.com</div>
+      </div>
+      <div class="card">
+        <div class="top"><span class="biz">City Lights Eastside</span><span class="seq">Warm Outbound</span></div>
+        <div class="meta"><b>Stage:</b> Cultivating &nbsp;·&nbsp; <b>Source:</b> Relationship &nbsp;·&nbsp; <b>Type:</b> Cafe &nbsp;·&nbsp; <b>Contact:</b> Candace Patterson · citylightseastside@gmail.com</div>
+      </div>
+      <div class="card">
+        <div class="top"><span class="biz">Front &amp; Center</span><span class="seq">Warm Outbound</span></div>
+        <div class="meta"><b>Stage:</b> Target &nbsp;·&nbsp; <b>Source:</b> Networking &nbsp;·&nbsp; <b>Type:</b> Marketing &nbsp;·&nbsp; <b>Contact:</b> Mary Beth Henderson · marybeth@frontandcenterllc.com</div>
+      </div>
+      <div class="card">
+        <div class="top"><span class="biz">Abode 7 Kitchen &amp; Bath</span><span class="seq">Warm Outbound</span></div>
+        <div class="meta"><b>Stage:</b> Cultivating &nbsp;·&nbsp; <b>Source:</b> Networking &nbsp;·&nbsp; <b>Type:</b> Kitchen Design &nbsp;·&nbsp; <b>Contact:</b> Krista Scheider · krista@abode7.design</div>
+      </div>
+      <div class="card">
+        <div class="top"><span class="biz">Perlee Digital</span><span class="seq">Warm Outbound</span></div>
+        <div class="meta"><b>Stage:</b> Target &nbsp;·&nbsp; <b>Source:</b> Networking &nbsp;·&nbsp; <b>Type:</b> Web Services &nbsp;·&nbsp; <b>Contact:</b> Sophia Perlee · sophia@perleedigital.com</div>
+      </div>
+      <div class="card">
+        <div class="top"><span class="biz">Holey City Bagels</span><span class="seq">Warm Outbound</span></div>
+        <div class="meta"><b>Stage:</b> Target &nbsp;·&nbsp; <b>Source:</b> Relationship &nbsp;·&nbsp; <b>Type:</b> Bagel Shop &nbsp;·&nbsp; <b>Contact:</b> Bridget Odachowski · holeycitybagels@gmail.com</div>
+      </div>
+      <div class="card">
+        <div class="top"><span class="biz">Village Booksellers</span><span class="seq">Warm Outbound</span></div>
+        <div class="meta"><b>Stage:</b> Target &nbsp;·&nbsp; <b>Source:</b> Relationship &nbsp;·&nbsp; <b>Type:</b> Bookseller &nbsp;·&nbsp; <b>Contact:</b> Karen-Anne MacArthur · karenannemac1974@gmail.com</div>
+      </div>
+      <div class="card">
+        <div class="top"><span class="biz">6:33 Physical Therapy</span><span class="seq">Warm Outbound</span></div>
+        <div class="meta"><b>Stage:</b> Target &nbsp;·&nbsp; <b>Source:</b> Relationship &nbsp;·&nbsp; <b>Type:</b> Physical Therapist &nbsp;·&nbsp; <b>Contact:</b> Alison Berglund · alisonberglund@633physicaltherapy.com</div>
+      </div>
+      <div class="card">
+        <div class="top"><span class="biz">Intercoastal Mortgage</span><span class="seq">Warm Outbound</span></div>
+        <div class="meta"><b>Stage:</b> Target &nbsp;·&nbsp; <b>Source:</b> Relationship &nbsp;·&nbsp; <b>Type:</b> Mortgage &nbsp;·&nbsp; <b>Contact:</b> Penny LaCuesta · PLacuesta@icmtg.com</div>
+      </div>
+      <div class="card">
+        <div class="top"><span class="biz">Art Serenade</span><span class="seq">Warm Outbound</span></div>
+        <div class="meta"><b>Stage:</b> Target &nbsp;·&nbsp; <b>Source:</b> Relationship &nbsp;·&nbsp; <b>Type:</b> Non-Profit &nbsp;·&nbsp; <b>Contact:</b> Sophia Perlee · sophia@perleedigital.com</div>
+      </div>
+      <div class="card">
+        <div class="top"><span class="biz">Leveling The Fields</span><span class="seq">Warm Outbound</span></div>
+        <div class="meta"><b>Stage:</b> Cultivating &nbsp;·&nbsp; <b>Source:</b> Networking &nbsp;·&nbsp; <b>Type:</b> Non-Profit &nbsp;·&nbsp; <b>Contact:</b> Melyssa Jaskiewicz · melyssa@levelingthefields.org</div>
+      </div>
+      <div class="card">
+        <div class="top"><span class="biz">Operation Hope</span><span class="seq">Warm Outbound</span></div>
+        <div class="meta"><b>Stage:</b> Target &nbsp;·&nbsp; <b>Source:</b> Networking &nbsp;·&nbsp; <b>Type:</b> Non-Profit &nbsp;·&nbsp; <b>Contact:</b> Jerry Pepin · gerard.pepin@operationhope.org</div>
+      </div>
     </div>
 
-    <div class="bucket">
-      <h2><span class="badge b-email">NEEDS EMAIL</span> 0 prospects</h2>
-      <div class="empty">Every candidate this week has a contact email on file. Nothing blocked here.</div>
+    <div class="section">
+      <div class="sec-head"><span class="pill email">EMAIL</span><h2>Needs Email</h2></div>
+      <p class="empty">None this week — every candidate has a contact email on file. 🎯</p>
     </div>
 
+    <footer>
+      <b>To actually enroll the Ready ones,</b> run the <b>enroll-sponsors</b> skill interactively and approve each prospect. This sweep is detection-only — nobody was enrolled, no outreach fired, nothing written to Airtable.
+    </footer>
+
+    <div class="ts">Generated June 25, 2026 · Sponsors base · 43 records scanned, 15 active candidates</div>
   </div>
-</div>
-<div class="foot">
-  <strong>Detection only — nobody was enrolled.</strong> To enroll the Ready ones, run the <strong>enroll-sponsors</strong> skill interactively and approve them prospect-by-prospect.
 </div>
 </body>
 </html>
