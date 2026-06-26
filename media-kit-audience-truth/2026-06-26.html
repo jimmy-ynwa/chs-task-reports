@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Media Kit · Audience Truth — CHS Happenings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#183872;--lime:#CCED60;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'DM Sans',system-ui,sans-serif;background:#eef1f5;color:var(--navy);
+    line-height:1.5;padding:28px 16px;}
+  .wrap{max-width:920px;margin:0 auto;}
+  h1,h2,h3,.hk-n,.metric{font-family:'Inter',system-ui,sans-serif;}
+  .top{background:var(--navy);color:#fff;border-radius:18px;padding:34px 34px 30px;}
+  .kicker{display:inline-block;background:var(--lime);color:var(--navy);font-weight:700;
+    font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:999px;}
+  .top h1{font-size:30px;font-weight:800;margin:16px 0 8px;line-height:1.15;}
+  .top p.sub{color:#cdd8e6;font-size:15px;max-width:620px;}
+  .stamp{color:#9fb1c7;font-size:13px;margin-top:14px;}
+  .funnel{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;}
+  .fb{flex:1;min-width:150px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+    border-radius:12px;padding:14px 16px;}
+  .fb .n{font-family:'Inter';font-size:26px;font-weight:800;}
+  .fb .n.lime{color:var(--lime);}
+  .fb .l{font-size:12.5px;color:#bccadb;margin-top:2px;}
+  .summary{background:#fff;border-radius:16px;padding:22px 26px;margin-top:18px;border:1px solid #e2e8f0;}
+  .summary p{font-size:15.5px;}
+  .summary .big{font-weight:700;}
+  .hkrow{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px;}
+  .hk{flex:1;min-width:150px;background:#fff;border:1px solid #e2e8f0;border-radius:14px;
+    padding:18px 16px;text-align:center;}
+  .hk-n{font-size:34px;font-weight:800;color:var(--navy);}
+  .hk-l{font-size:13px;font-weight:600;color:#5b6b80;margin-top:2px;text-transform:uppercase;letter-spacing:.05em;}
+  .hk-d{display:block;font-size:12px;margin-top:8px;font-weight:700;}
+  .callout{margin-top:18px;background:#fff;border:1px solid #e2e8f0;border-left:6px solid var(--lime);
+    border-radius:14px;padding:18px 22px;}
+  .callout.ok{border-left-color:#7fb069;}
+  .co-h{font-family:'Inter';font-weight:800;font-size:16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .co-h span{font-family:'DM Sans';font-weight:500;font-size:12.5px;color:#6b7a8d;
+    background:#f1f4f8;padding:3px 9px;border-radius:999px;}
+  .callout ul{margin:12px 0 0;padding-left:18px;}
+  .callout li{font-size:14.5px;margin:6px 0;}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;}
+  @media(max-width:680px){.grid{grid-template-columns:1fr;}}
+  .panel{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:18px 20px;}
+  .phead{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid #eef1f5;
+    padding-bottom:10px;margin-bottom:6px;}
+  .phead h3{font-size:17px;font-weight:700;}
+  .pn{font-size:12px;color:#7a8a9d;font-weight:500;}
+  .cols{display:grid;grid-template-columns:96px 1fr 52px 56px 92px;gap:6px;font-size:10.5px;
+    text-transform:uppercase;letter-spacing:.04em;color:#9aa7b6;margin:8px 0 4px;}
+  .cols span:nth-child(3),.cols span:nth-child(4){text-align:right;}
+  .row{display:grid;grid-template-columns:96px 1fr 52px 56px 92px;gap:6px;align-items:center;
+    padding:7px 0;border-bottom:1px solid #f3f5f8;}
+  .row:last-child{border-bottom:none;}
+  .rowflag{background:#fbfde9;border-radius:8px;}
+  .rlabel{font-size:13.5px;font-weight:500;}
+  .rbarwrap{background:#eef1f5;border-radius:6px;height:10px;overflow:hidden;}
+  .rbar{height:100%;background:var(--navy);border-radius:6px;}
+  .rowflag .rbar{background:var(--lime);}
+  .rpct{font-family:'Inter';font-weight:700;font-size:14px;text-align:right;}
+  .rcount{font-size:12.5px;color:#7a8a9d;text-align:right;}
+  .rdelta{text-align:right;}
+  .delta{font-size:11.5px;font-weight:700;display:inline-flex;flex-direction:column;line-height:1.15;}
+  .delta .vs{font-weight:400;color:#9aa7b6;font-size:10px;}
+  .delta.up{color:#2f7d32;} .delta.down{color:#b4451f;} .delta.flat{color:#7a8a9d;}
+  .up{color:#2f7d32;} .down{color:#b4451f;}
+  .delta.flagged{background:var(--navy);color:#fff;padding:3px 7px;border-radius:6px;}
+  .delta.flagged .vs{color:#b9c6d8;}
+  .foot{text-align:center;color:#8593a4;font-size:12px;margin:26px 0 8px;}
+  .method{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:18px 22px;margin-top:18px;
+    font-size:13px;color:#52617a;}
+  .method b{color:var(--navy);}
+</style></head>
+<body><div class="wrap">
+
+  <div class="top">
+    <span class="kicker">Audience Truth · Media Kit</span>
+    <h1>Your real audience vs your published kit</h1>
+    <p class="sub">Demographics recomputed from <b>currently active subscribers only</b> — deduped to one
+      person each, using each person's most recent answer. The old kit counted everyone who ever answered,
+      including subscribers who have since churned.</p>
+    <div class="stamp">Generated 2026-06-26 · CHS Happenings · read-only report</div>
+    <div class="funnel">
+      <div class="fb"><div class="n">5,545</div><div class="l">All-time survey responders</div></div>
+      <div class="fb"><div class="n">−2,068</div><div class="l">Churned / inactive (37%)</div></div>
+      <div class="fb"><div class="n lime">3,382</div><div class="l">Active &amp; counted today</div></div>
+    </div>
+  </div>
+
+  <div class="summary">
+    <p>The corrected picture is built on <span class="big">3,382 active survey respondents</span>
+    (out of 5,545 all-time — 95 could no longer be found). Here is where your true numbers land
+    against what the kit currently advertises:</p>
+    <div class="hkrow"><div class="hk"><div class="hk-n">66%</div><div class="hk-l">Female</div><span class="hk-d up">+1 vs kit (65%)</span></div><div class="hk"><div class="hk-n">86%</div><div class="hk-l">Age 35+</div><span class="hk-d up">+1 vs kit (85%)</span></div><div class="hk"><div class="hk-n">82%</div><div class="hk-l">HHI $75K+</div><span class="hk-d up">+3 vs kit (79%)</span></div><div class="hk"><div class="hk-n">72%</div><div class="hk-l">Homeowners</div><span class="hk-d up">+1 vs kit (71%)</span></div><div class="hk"><div class="hk-n">88%</div><div class="hk-l">College Edu.</div><span class="hk-d up">+3 vs kit (85%)</span></div></div>
+  </div>
+
+  
+      <div class="callout">
+        <div class="co-h">Panels worth updating <span>4 crossed the 3-point line</span></div>
+        <ul><li><b>Age · 55+</b> — now <b>55.3%</b>, kit says 51.8% (<span class="up">+3.5 pt</span>)</li><li><b>Annual Household Income · Under $75K</b> — now <b>18.1%</b>, kit says 21.3% (<span class="down">-3.2 pt</span>)</li><li><b>Annual Household Income · Over $250K</b> — now <b>21.4%</b>, kit says 17.4% (<span class="up">+4.0 pt</span>)</li><li><b>Education Level · Graduate</b> — now <b>46.4%</b>, kit says 42.2% (<span class="up">+4.2 pt</span>)</li></ul>
+      </div>
+
+  <div class="grid">
+    
+      <section class="panel">
+        <header class="phead">
+          <h3>Gender</h3>
+          <span class="pn">N = 3,333</span>
+        </header>
+        <div class="cols">
+          <span>Segment</span><span></span><span>Now</span><span>Count</span><span>vs Kit</span>
+        </div>
+        
+        <div class="row">
+          <div class="rlabel">Female</div>
+          <div class="rbarwrap"><div class="rbar" style="width:66.3%"></div></div>
+          <div class="rpct">66.3%</div>
+          <div class="rcount">2,210</div>
+          <div class="rdelta"><span class="delta up">+1.0 pt<span class="vs">vs 65.3</span></span></div>
+        </div>
+        <div class="row">
+          <div class="rlabel">Male</div>
+          <div class="rbarwrap"><div class="rbar" style="width:31.5%"></div></div>
+          <div class="rpct">31.5%</div>
+          <div class="rcount">1,051</div>
+          <div class="rdelta"><span class="delta down">-2.2 pt<span class="vs">vs 33.7</span></span></div>
+        </div>
+        <div class="row">
+          <div class="rlabel">Other</div>
+          <div class="rbarwrap"><div class="rbar" style="width:2.2%"></div></div>
+          <div class="rpct">2.2%</div>
+          <div class="rcount">72</div>
+          <div class="rdelta"><span class="delta up">+1.2 pt<span class="vs">vs 1.0</span></span></div>
+        </div>
+      </section>
+      <section class="panel">
+        <header class="phead">
+          <h3>Age</h3>
+          <span class="pn">N = 3,227</span>
+        </header>
+        <div class="cols">
+          <span>Segment</span><span></span><span>Now</span><span>Count</span><span>vs Kit</span>
+        </div>
+        
+        <div class="row rowflag">
+          <div class="rlabel">55+</div>
+          <div class="rbarwrap"><div class="rbar" style="width:55.3%"></div></div>
+          <div class="rpct">55.3%</div>
+          <div class="rcount">1,783</div>
+          <div class="rdelta"><span class="delta up flagged">+3.5 pt<span class="vs">vs 51.8</span></span></div>
+        </div>
+        <div class="row">
+          <div class="rlabel">35-54</div>
+          <div class="rbarwrap"><div class="rbar" style="width:30.4%"></div></div>
+          <div class="rpct">30.4%</div>
+          <div class="rcount">980</div>
+          <div class="rdelta"><span class="delta down">-2.5 pt<span class="vs">vs 32.9</span></span></div>
+        </div>
+        <div class="row">
+          <div class="rlabel">18-34</div>
+          <div class="rbarwrap"><div class="rbar" style="width:14.4%"></div></div>
+          <div class="rpct">14.4%</div>
+          <div class="rcount">464</div>
+          <div class="rdelta"><span class="delta down">-0.8 pt<span class="vs">vs 15.2</span></span></div>
+        </div>
+      </section>
+      <section class="panel">
+        <header class="phead">
+          <h3>Annual Household Income</h3>
+          <span class="pn">N = 2,743</span>
+        </header>
+        <div class="cols">
+          <span>Segment</span><span></span><span>Now</span><span>Count</span><span>vs Kit</span>
+        </div>
+        
+        <div class="row">
+          <div class="rlabel">$75K-$150K</div>
+          <div class="rbarwrap"><div class="rbar" style="width:37.2%"></div></div>
+          <div class="rpct">37.2%</div>
+          <div class="rcount">1,020</div>
+          <div class="rdelta"><span class="delta down">-0.6 pt<span class="vs">vs 37.8</span></span></div>
+        </div>
+        <div class="row">
+          <div class="rlabel">$150K-$250K</div>
+          <div class="rbarwrap"><div class="rbar" style="width:23.3%"></div></div>
+          <div class="rpct">23.3%</div>
+          <div class="rcount">640</div>
+          <div class="rdelta"><span class="delta down">-0.1 pt<span class="vs">vs 23.4</span></span></div>
+        </div>
+        <div class="row rowflag">
+          <div class="rlabel">Under $75K</div>
+          <div class="rbarwrap"><div class="rbar" style="width:18.1%"></div></div>
+          <div class="rpct">18.1%</div>
+          <div class="rcount">496</div>
+          <div class="rdelta"><span class="delta down flagged">-3.2 pt<span class="vs">vs 21.3</span></span></div>
+        </div>
+        <div class="row rowflag">
+          <div class="rlabel">Over $250K</div>
+          <div class="rbarwrap"><div class="rbar" style="width:21.4%"></div></div>
+          <div class="rpct">21.4%</div>
+          <div class="rcount">587</div>
+          <div class="rdelta"><span class="delta up flagged">+4.0 pt<span class="vs">vs 17.4</span></span></div>
+        </div>
+      </section>
+      <section class="panel">
+        <header class="phead">
+          <h3>Own vs. Rent</h3>
+          <span class="pn">N = 3,082</span>
+        </header>
+        <div class="cols">
+          <span>Segment</span><span></span><span>Now</span><span>Count</span><span>vs Kit</span>
+        </div>
+        
+        <div class="row">
+          <div class="rlabel">Own</div>
+          <div class="rbarwrap"><div class="rbar" style="width:71.5%"></div></div>
+          <div class="rpct">71.5%</div>
+          <div class="rcount">2,204</div>
+          <div class="rdelta"><span class="delta up">+0.5 pt<span class="vs">vs 71.0</span></span></div>
+        </div>
+        <div class="row">
+          <div class="rlabel">Rent</div>
+          <div class="rbarwrap"><div class="rbar" style="width:28.5%"></div></div>
+          <div class="rpct">28.5%</div>
+          <div class="rcount">878</div>
+          <div class="rdelta"><span class="delta down">-0.5 pt<span class="vs">vs 29.0</span></span></div>
+        </div>
+      </section>
+      <section class="panel">
+        <header class="phead">
+          <h3>Education Level</h3>
+          <span class="pn">N = 2,953</span>
+        </header>
+        <div class="cols">
+          <span>Segment</span><span></span><span>Now</span><span>Count</span><span>vs Kit</span>
+        </div>
+        
+        <div class="row">
+          <div class="rlabel">Undergraduate</div>
+          <div class="rbarwrap"><div class="rbar" style="width:41.1%"></div></div>
+          <div class="rpct">41.1%</div>
+          <div class="rcount">1,214</div>
+          <div class="rdelta"><span class="delta down">-1.4 pt<span class="vs">vs 42.5</span></span></div>
+        </div>
+        <div class="row rowflag">
+          <div class="rlabel">Graduate</div>
+          <div class="rbarwrap"><div class="rbar" style="width:46.4%"></div></div>
+          <div class="rpct">46.4%</div>
+          <div class="rcount">1,371</div>
+          <div class="rdelta"><span class="delta up flagged">+4.2 pt<span class="vs">vs 42.2</span></span></div>
+        </div>
+        <div class="row">
+          <div class="rlabel">High School</div>
+          <div class="rbarwrap"><div class="rbar" style="width:12.5%"></div></div>
+          <div class="rpct">12.5%</div>
+          <div class="rcount">368</div>
+          <div class="rdelta"><span class="delta down">-2.7 pt<span class="vs">vs 15.2</span></span></div>
+        </div>
+      </section>
+      <section class="panel">
+        <header class="phead">
+          <h3>Business Owners</h3>
+          <span class="pn">N = 1,488</span>
+        </header>
+        <div class="cols">
+          <span>Segment</span><span></span><span>Now</span><span>Count</span><span>vs Kit</span>
+        </div>
+        
+        <div class="row">
+          <div class="rlabel">No</div>
+          <div class="rbarwrap"><div class="rbar" style="width:79.0%"></div></div>
+          <div class="rpct">79.0%</div>
+          <div class="rcount">1,175</div>
+          <div class="rdelta"><span class="delta down">-1.1 pt<span class="vs">vs 80.1</span></span></div>
+        </div>
+        <div class="row">
+          <div class="rlabel">Yes</div>
+          <div class="rbarwrap"><div class="rbar" style="width:21.0%"></div></div>
+          <div class="rpct">21.0%</div>
+          <div class="rcount">313</div>
+          <div class="rdelta"><span class="delta up">+1.1 pt<span class="vs">vs 19.9</span></span></div>
+        </div>
+      </section>
+  </div>
+
+  <div class="method">
+    <b>Method.</b> Population = every subscriber who ever completed a "CHS Happenings Survey"
+    (all 9 versions). Each unique person was resolved against Beehiiv and <b>kept only if currently
+    active and not unsubscribed</b>. Demographics read from each person's Beehiiv custom fields (their
+    latest, deduped answers). <b>Each panel's denominator is per-field</b> — only people with a value
+    for that field — so every panel sums to 100% independently, exactly like the published kit. A bucket
+    is flagged "worth updating" when it moved 3+ points. This report
+    never edits the kit, surveys, or any subscriber record.
+  </div>
+
+  <div class="foot">CHS Happenings · Farrell Digital Ventures LLC · audience-truth recompute</div>
+</div></body></html>
