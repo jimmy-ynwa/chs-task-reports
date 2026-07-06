@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sponsor Enrollment Readiness — July 6, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{ --navy:#183872; --lime:#cced60; --ink:#1b2436; --muted:#6b7688; --line:#e6e9f0; --bg:#f4f6fb; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;padding:24px;}
+  .wrap{max-width:940px;margin:0 auto;}
+  header{background:var(--navy);border-radius:16px 16px 0 0;padding:28px 32px;}
+  header h1{font-family:'Inter',sans-serif;color:#fff;font-weight:800;font-size:24px;letter-spacing:-.3px;}
+  header .sub{color:var(--lime);font-weight:600;font-size:14px;margin-top:4px;}
+  header .date{color:#b9c6e2;font-size:13px;margin-top:8px;}
+  .counts{display:flex;gap:12px;background:#fff;padding:20px 32px;border-bottom:1px solid var(--line);flex-wrap:wrap;}
+  .chip{flex:1;min-width:150px;border:1px solid var(--line);border-radius:12px;padding:14px 16px;}
+  .chip .n{font-family:'Inter',sans-serif;font-weight:800;font-size:30px;color:var(--navy);line-height:1;}
+  .chip .l{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-top:6px;font-weight:600;}
+  .chip.ready .n{color:#2f9e44;}
+  .chip.obs .n{color:#e8590c;}
+  main{background:#fff;border-radius:0 0 16px 16px;padding:8px 32px 32px;}
+  section{margin-top:28px;}
+  .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+  .sec-head h2{font-family:'Inter',sans-serif;font-size:16px;font-weight:700;color:var(--navy);}
+  .pill{font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;color:#fff;}
+  .pill.ready{background:#2f9e44;}
+  .pill.obs{background:#e8590c;}
+  .pill.email{background:#868e96;}
+  .sec-note{font-size:13px;color:var(--muted);margin-bottom:14px;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;}
+  th{text-align:left;font-family:'Inter',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);padding:8px 10px;border-bottom:2px solid var(--line);}
+  td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top;}
+  td.biz{font-weight:600;color:var(--ink);}
+  .seq{display:inline-block;background:#eef1f9;color:var(--navy);font-weight:600;font-size:12px;padding:2px 8px;border-radius:6px;}
+  .seq.cold{background:#e7f5ff;color:#1971c2;}
+  .empty{padding:16px;background:#f8f9fb;border:1px dashed var(--line);border-radius:10px;color:var(--muted);font-size:13.5px;}
+  .foot{margin-top:26px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);}
+  .foot strong{color:var(--navy);}
+  a{color:var(--navy);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Sponsor Enrollment Readiness</h1>
+    <div class="sub">CHS Happenings · nurture queue sweep</div>
+    <div class="date">Monday, July 6, 2026 · read-only detection</div>
+  </header>
+
+  <div class="counts">
+    <div class="chip ready"><div class="n">0</div><div class="l">Ready to enroll</div></div>
+    <div class="chip obs"><div class="n">11</div><div class="l">Needs observation</div></div>
+    <div class="chip"><div class="n">0</div><div class="l">Needs email</div></div>
+  </div>
+
+  <main>
+    <section>
+      <div class="sec-head"><span class="pill ready">READY</span><h2>Ready to Enroll</h2></div>
+      <div class="sec-note">Passes every guardrail — email present and observation written. Approve in the enroll-sponsors skill to fire.</div>
+      <div class="empty">Nobody's ready this week. Every eligible prospect is missing a Specific Observation — write those first and they graduate up.</div>
+    </section>
+
+    <section>
+      <div class="sec-head"><span class="pill obs">NEEDS OBSERVATION</span><h2>Needs Observation</h2></div>
+      <div class="sec-note">Eligible and email-ready, but the sequence would fire on a blank merge field. Route each to <strong>cold-prospect-research</strong>, then write/approve the observation before enrolling.</div>
+      <table>
+        <thead><tr><th>Business</th><th>Contact</th><th>Email</th><th>Source</th><th>Type</th><th>Stage</th><th>Would map to</th></tr></thead>
+        <tbody>
+          <tr><td class="biz">Fleet Feet</td><td>Jennifer</td><td>jennifer@fleetfeetmountpleasant.com</td><td>Relationship</td><td>Sports Retailer</td><td>Target</td><td><span class="seq">Warm Outbound</span></td></tr>
+          <tr><td class="biz">Front &amp; Center</td><td>Mary</td><td>marybeth@frontandcenterllc.com</td><td>Networking</td><td>Marketing</td><td>Target</td><td><span class="seq">Warm Outbound</span></td></tr>
+          <tr><td class="biz">Abode 7 Kitchen &amp; Bath</td><td>Krista</td><td>krista@abode7.design</td><td>Networking</td><td>Kitchen Design</td><td>Cultivating</td><td><span class="seq">Warm Outbound</span></td></tr>
+          <tr><td class="biz">Holey City Bagels</td><td>Bridget</td><td>holeycitybagels@gmail.com</td><td>Relationship</td><td>Bagel Shop</td><td>Target</td><td><span class="seq">Warm Outbound</span></td></tr>
+          <tr><td class="biz">Perlee Digital</td><td>Sophia</td><td>sophia@perleedigital.com</td><td>Networking</td><td>Web Services</td><td>Target</td><td><span class="seq">Warm Outbound</span></td></tr>
+          <tr><td class="biz">Village Booksellers</td><td>Karen-Anne</td><td>karenannemac1974@gmail.com</td><td>Relationship</td><td>Bookseller</td><td>Target</td><td><span class="seq">Warm Outbound</span></td></tr>
+          <tr><td class="biz">Art Serenade</td><td>Sophia</td><td>sophia@perleedigital.com</td><td>Relationship</td><td>Non-Profit</td><td>Target</td><td><span class="seq">Warm Outbound</span></td></tr>
+          <tr><td class="biz">6:33 Physical Therapy</td><td>Alison</td><td>alisonberglund@633physicaltherapy.com</td><td>Relationship</td><td>Physical Therapist</td><td>Target</td><td><span class="seq">Warm Outbound</span></td></tr>
+          <tr><td class="biz">Operation Hope</td><td>Jerry</td><td>gerard.pepin@operationhope.org</td><td>Networking</td><td>Non-Profit</td><td>Target</td><td><span class="seq">Warm Outbound</span></td></tr>
+          <tr><td class="biz">Intercoastal Mortgage</td><td>Penny</td><td>PLacuesta@icmtg.com</td><td>Relationship</td><td>Mortgage</td><td>Target</td><td><span class="seq">Warm Outbound</span></td></tr>
+          <tr><td class="biz">MUSC Health</td><td>Ashley</td><td>mediarelations@musc.edu</td><td>Cold</td><td>Medical</td><td>Cultivating</td><td><span class="seq cold">Cold Professional Services</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <div class="sec-head"><span class="pill email">NEEDS EMAIL</span><h2>Needs Email</h2></div>
+      <div class="sec-note">Eligible by stage but no contact email on file — can't enroll until one lands.</div>
+      <div class="empty">None. Every eligible prospect already has a contact email.</div>
+    </section>
+
+    <div class="foot">
+      <strong>To enroll the Ready ones, run the enroll-sponsors skill interactively and approve each prospect.</strong> This sweep is detection only — nothing was enrolled and nothing was written to Airtable.
+    </div>
+  </main>
+</div>
+</body>
+</html>
