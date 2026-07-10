@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CHS Happenings — Click Analysis, July 9, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#183872;--lime:#CCED60;--ink:#1a2233;--muted:#5c6675;--line:#e4e8ef;--bg:#f5f7fb;--card:#ffffff;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;line-height:1.5}
+  .wrap{max-width:960px;margin:0 auto;padding:24px 20px 64px}
+  h1,h2,h3,.kpi-num{font-family:'Inter',system-ui,sans-serif}
+  .hero{background:var(--navy);border-radius:16px;padding:34px 32px;color:#fff;position:relative;overflow:hidden}
+  .hero .tag{display:inline-block;background:var(--lime);color:var(--navy);font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:6px}
+  .hero h1{margin:16px 0 6px;font-size:30px;line-height:1.15;font-weight:800}
+  .hero .meta{color:#c8d4ea;font-size:15px;font-weight:500}
+  .hero .barbar{height:6px;background:var(--lime);width:120px;margin-top:20px;border-radius:3px}
+  h2.sec{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);margin:38px 0 14px;font-weight:700}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
+  .kpi .lbl{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .kpi .kpi-num{font-size:30px;font-weight:800;color:var(--navy);margin-top:6px;line-height:1}
+  .kpi .sub{font-size:13px;color:var(--muted);margin-top:6px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 4px}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th{text-align:left;font-family:'Inter';font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;padding:12px 12px;border-bottom:2px solid var(--line)}
+  td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:middle}
+  tr:last-child td{border-bottom:none}
+  td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:700;color:var(--navy);white-space:nowrap}
+  .rank{color:var(--muted);font-weight:700;width:26px}
+  .bar-wrap{background:#eef1f7;border-radius:4px;height:10px;width:120px;overflow:hidden;display:inline-block;vertical-align:middle}
+  .bar{height:10px;background:var(--navy);border-radius:4px}
+  .bar.lime{background:var(--lime)}
+  .chip{display:inline-block;font-size:11px;font-weight:700;padding:3px 8px;border-radius:5px;letter-spacing:.02em;white-space:nowrap}
+  .c-lead{background:var(--navy);color:#fff}
+  .c-icymi{background:#dbe6ff;color:var(--navy)}
+  .c-event{background:#eef7cc;color:#57680f}
+  .c-prop{background:#eef1f7;color:#43506a}
+  .c-tfg{background:#fbe9cf;color:#8a5a15}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+  .panel h3{margin:0 0 12px;font-size:15px;color:var(--navy)}
+  .rowline{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--line);font-size:14px}
+  .rowline:last-child{border-bottom:none}
+  .rowline .v{font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums}
+  .sectbar{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid var(--line)}
+  .sectbar:last-child{border-bottom:none}
+  .sectbar .name{width:150px;font-size:14px;font-weight:700}
+  .sectbar .track{flex:1;background:#eef1f7;border-radius:5px;height:16px;overflow:hidden}
+  .sectbar .fill{height:16px;background:var(--navy);border-radius:5px}
+  .sectbar .val{width:120px;text-align:right;font-size:13px;color:var(--muted);font-weight:600;font-variant-numeric:tabular-nums}
+  .callout{background:#fffdf2;border:1px solid #ece4c0;border-left:4px solid var(--lime);border-radius:10px;padding:18px 20px;font-size:14px}
+  .callout h3{margin:0 0 8px;color:var(--navy);font-size:15px}
+  ul.take{list-style:none;padding:0;margin:0}
+  ul.take li{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--navy);border-radius:10px;padding:14px 16px;margin-bottom:10px;font-size:14.5px}
+  ul.take li b{color:var(--navy)}
+  .foot{color:var(--muted);font-size:12px;margin-top:30px;text-align:center}
+  @media(max-width:720px){.kpis{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.hero h1{font-size:24px}.bar-wrap{width:70px}.sectbar .name{width:100px}.sectbar .val{width:90px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <span class="tag">CHS Happenings · Weekly Click Analysis</span>
+    <h1>She bet on a bookstore at King Street's busiest corner</h1>
+    <div class="meta">Sent Thursday, July 9, 2026 · 7 AM ET &nbsp;|&nbsp; 11,603 delivered</div>
+    <div class="barbar"></div>
+  </div>
+
+  <h2 class="sec">The Numbers</h2>
+  <div class="kpis">
+    <div class="kpi"><div class="lbl">Open Rate</div><div class="kpi-num">68.8%</div><div class="sub">7,977 unique opens</div></div>
+    <div class="kpi"><div class="lbl">Verified CTR</div><div class="kpi-num">8.67%</div><div class="sub">above the 8.3% baseline</div></div>
+    <div class="kpi"><div class="lbl">Total Clicks</div><div class="kpi-num">1,537</div><div class="sub">736 unique clickers (email)</div></div>
+    <div class="kpi"><div class="lbl">Unsub Rate</div><div class="kpi-num">0.17%</div><div class="sub">20 unsubs · 0.16% bounce</div></div>
+  </div>
+
+  <h2 class="sec">Every Link, Ranked</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th class="rank">#</th><th>Link</th><th>Section</th><th style="text-align:right">Clicks</th><th>Share of #1</th></tr></thead>
+      <tbody id="linkrows"></tbody>
+    </table>
+  </div>
+  <p style="font-size:12.5px;color:var(--muted);margin:10px 2px 0">Clicks = email total + web total. The Ladybird Books feature is the lead (it matches the subject line); the issue's own "she-bet-on-a-bookstore" self-link and history-source links (P&amp;C Morris Island, NPS 54th Mass.) count as CHS Property. Poll responses, likes, comments, shares and preference links are aggregated into Engagement &amp; system below.</p>
+
+  <h2 class="sec">Clicks by Section</h2>
+  <div class="panel">
+    <div class="sectbar"><div class="name">ICYMI</div><div class="track"><div class="fill" style="width:100%"></div></div><div class="val">558 · 36.3%</div></div>
+    <div class="sectbar"><div class="name">CHS Property</div><div class="track"><div class="fill" style="width:56.3%"></div></div><div class="val">314 · 20.4%</div></div>
+    <div class="sectbar"><div class="name">Engagement &amp; system</div><div class="track"><div class="fill" style="width:43.4%;background:#9fb0cf"></div></div><div class="val">242 · 15.7%</div></div>
+    <div class="sectbar"><div class="name">Events</div><div class="track"><div class="fill" style="width:42.1%"></div></div><div class="val">235 · 15.3%</div></div>
+    <div class="sectbar"><div class="name">Lead Story</div><div class="track"><div class="fill" style="width:32.6%"></div></div><div class="val">182 · 11.8%</div></div>
+    <div class="sectbar"><div class="name">TFG / Biz</div><div class="track"><div class="fill" style="width:1.1%"></div></div><div class="val">6 · 0.4%</div></div>
+    <p style="font-size:12.5px;color:var(--muted);margin:14px 2px 0">Unusual shape this week: ICYMI out-drew the lead 3-to-1, and the Costco ICYMI (189) individually out-clicked the Ladybird lead (182).</p>
+  </div>
+
+  <h2 class="sec">Email vs Web: Each Story Page</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th>Story page (/p/)</th><th>Section</th><th style="text-align:right">Email clicks</th><th style="text-align:right">Web views</th><th style="text-align:right">Web users</th><th>Email ÷ web views</th></tr></thead>
+      <tbody id="garows"></tbody>
+    </table>
+  </div>
+  <p style="font-size:12.5px;color:var(--muted);margin:10px 2px 0">GA4 window is short (Jul 9 to Jul 10, roughly one day since send), so web totals are fresh and small. Views count everyone who hit the page, not just this issue's readers.</p>
+
+  <h2 class="sec">Where All Web Traffic Came From</h2>
+  <div class="grid2">
+    <div class="panel">
+      <h3>Top sources by sessions</h3>
+      <div class="rowline"><span>Direct / none</span><span class="v">546</span></div>
+      <div class="rowline"><span>Nextdoor referral</span><span class="v">145</span></div>
+      <div class="rowline"><span>Meta ads (all variants)</span><span class="v">59</span></div>
+      <div class="rowline"><span>Google organic</span><span class="v">36</span></div>
+      <div class="rowline"><span>Newsletter tagged (email)</span><span class="v">37</span></div>
+      <div class="rowline"><span>Gmail / Outlook referral</span><span class="v">4</span></div>
+      <div class="rowline"><span>Facebook / Instagram</span><span class="v">4</span></div>
+    </div>
+    <div class="panel">
+      <h3>Email engagement, three ways</h3>
+      <div class="rowline"><span>Beehiiv unique email clickers</span><span class="v">736</span></div>
+      <div class="rowline"><span>GA sessions tagged "newsletter"</span><span class="v">~37</span></div>
+      <div class="rowline"><span>GA "direct" sessions</span><span class="v">546</span></div>
+      <p style="font-size:13px;color:var(--muted);margin:14px 0 0">736 people clicked from this email, but GA labels only ~37 sessions as newsletter. The rest scatter into "direct."</p>
+    </div>
+  </div>
+
+  <h2 class="sec">Read This Before Trusting the Numbers</h2>
+  <div class="callout">
+    <h3>Why email is under-credited in GA</h3>
+    GA's "direct" bucket is a junk drawer: typed URLs, bookmarks, privacy browsers, ad tags that fell off, and email clicks whose referrer got stripped in transit. We can't say what slice of those 546 direct sessions is email, and we won't guess. But the fingerprint is clear: the lead pulled <b>153 web users</b> in GA against roughly <b>149 unique email clickers</b> in Beehiiv, while GA tagged only ~37 sessions as newsletter. Those readers came from the email; GA just lost the label. Bottom line: trust Beehiiv for email engagement, trust GA for non-email demand (Nextdoor, search, ads), and remember external links (venues, bookstore site) never touch this property at all.
+  </div>
+
+  <h2 class="sec">Takeaways</h2>
+  <ul class="take">
+    <li><b>The lead got out-clicked.</b> The Ladybird bookstore feature drew 182 clicks but the Costco ICYMI beat it at 189, with the Upper King rooftop right behind at 149. A warehouse-club rumor edged a crafted King Street lead. Per the 13% playbook, Costco was the hotter hook.</li>
+    <li><b>ICYMI carried the issue.</b> Five ICYMI stories pulled 558 clicks, 3x the lead. Retail and real estate (Costco, Hyatt rooftop, West Ashley Italian) is what this list opens its wallet-eyes for.</li>
+    <li><b>Fewer opens, more clicking.</b> Open rate slipped to 68.8% from 71.3%, but verified CTR climbed to 8.67%, above baseline and up from last week's 7.98%. The people who opened were hungrier.</li>
+    <li><b>Events ran broad and shallow.</b> Sixteen venue and market links split 235 clicks with Jeremiah Farm on top at 41. Steady coverage, no single magnet.</li>
+    <li><b>Owned funnels are quietly strong.</b> The Insider's Guide (61) and Dinner Club (55) each out-clicked every event link. Those are the assets that feed TFG and the community plays, and they are pulling.</li>
+    <li><b>Web tracks email closely.</b> Ladybird drew 153 GA users against ~149 Beehiiv clickers, yet GA credited ~37 to newsletter. Do not let the dashboard undersell the email.</li>
+  </ul>
+
+  <div class="foot">CHS Happenings · Click Analysis for the July 9, 2026 issue · Generated July 10, 2026 · Beehiiv + GA4</div>
+</div>
+
+<script>
+var links = [
+  ["Costco's third Charleston store is real","ICYMI","c-icymi",189],
+  ["Ladybird Grew Up Fast (bookstore lead)","Lead Story","c-lead",182],
+  ["Upper King's old Hyatt reopens flashier","ICYMI","c-icymi",149],
+  ["West Ashley's Italian drought ends","ICYMI","c-icymi",122],
+  ["YouTube video","CHS Property","c-prop",82],
+  ["Insider's Guide (guide.chshappenings)","CHS Property","c-prop",61],
+  ["Dinner Club (dnnr.io)","CHS Property","c-prop",55],
+  ["Watch your dinner get rolled","ICYMI","c-icymi",54],
+  ["She bet on a bookstore (issue self-link)","CHS Property","c-prop",48],
+  ["A Miami chef bets on Charleston (oxtail)","ICYMI","c-icymi",44],
+  ["Jeremiah Farm event","Event","c-event",41],
+  ["Awendaw Green Barn Jams","Event","c-event",30],
+  ["P&C: Morris Island feud (history source)","CHS Property","c-prop",22],
+  ["Sunday Brunch Farmers Market","Event","c-event",18],
+  ["Ladybird Books site","Event / Ext","c-event",18],
+  ["North Charleston Farmers Market","Event","c-event",16],
+  ["Yoga in Waterfront Park","Event","c-event",13],
+  ["Momo Charleston","Event","c-event",13],
+  ["Footlight Players","Event","c-event",12],
+  ["Two Blokes Brewing","Event","c-event",12],
+  ["Gibbes Museum programs","Event","c-event",12],
+  ["Pour House karaoke","Event","c-event",11],
+  ["Live Music This Weekend page","CHS Property","c-prop",11],
+  ["Shop 2nd Sunday","Event","c-event",10],
+  ["NPS: 54th Massachusetts (history source)","CHS Property","c-prop",10],
+  ["Clyde the Cougar (Instagram)","Event / Ext","c-event",9],
+  ["Charleston Farmers Market","Event","c-event",7],
+  ["Indigo Reef Brewing events","Event","c-event",7],
+  ["Media kit","CHS Property","c-prop",7],
+  ["Submit an event (Tally form)","CHS Property","c-prop",7],
+  ["Where Are We nav","CHS Property","c-prop",6],
+  ["CCPRC calendar","Event","c-event",6],
+  ["The Farrell Group site","TFG / Biz","c-tfg",6]
+];
+var top = links[0][3];
+var html = "";
+links.forEach(function(r,i){
+  var pct = Math.round(r[3]/top*100);
+  var barclass = r[2]==="c-lead" ? "bar" : (r[2]==="c-event" ? "bar lime" : "bar");
+  html += '<tr><td class="rank">'+(i+1)+'</td><td>'+r[0]+'</td>'
+    + '<td><span class="chip '+r[2]+'">'+r[1]+'</span></td>'
+    + '<td class="num">'+r[3]+'</td>'
+    + '<td><span class="bar-wrap"><span class="'+barclass+'" style="width:'+pct+'%"></span></span></td></tr>';
+});
+document.getElementById("linkrows").innerHTML = html;
+
+var ga = [
+  ["/p/ladybird-grew-up-fast","Lead","c-lead",171,262,153],
+  ["/p/costcos-third-charleston-store...","ICYMI","c-icymi",186,316,211],
+  ["/p/upper-kings-old-hyatt-place...","ICYMI","c-icymi",143,206,121],
+  ["/p/west-ashleys-five-year-italian-drought...","ICYMI","c-icymi",121,181,116],
+  ["/p/watch-your-dinner-get-rolled...","ICYMI","c-icymi",54,89,54],
+  ["/p/a-miami-chef-bets-on-charleston...","ICYMI","c-icymi",44,53,34],
+  ["/p/she-bet-on-a-bookstore... (self-link)","CHS Prop","c-prop",48,107,66],
+  ["/p/live-music-this-weekend","CHS Prop","c-prop",11,10,7]
+];
+var gh = "";
+ga.forEach(function(r){
+  var ratio = r[4]>0 ? r[3]/r[4] : 0;
+  var w = Math.min(100, Math.round(ratio*100));
+  gh += '<tr><td style="font-size:13px">'+r[0]+'</td>'
+    + '<td><span class="chip '+r[2]+'">'+r[1]+'</span></td>'
+    + '<td class="num">'+r[3]+'</td><td class="num">'+r[4]+'</td><td class="num">'+r[5]+'</td>'
+    + '<td><span class="bar-wrap"><span class="bar" style="width:'+w+'%"></span></span> <span style="font-size:12px;color:var(--muted)">'+Math.round(ratio*100)+'%</span></td></tr>';
+});
+document.getElementById("garows").innerHTML = gh;
+</script>
+</body>
+</html>
