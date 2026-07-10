@@ -10,30 +10,37 @@
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:'DM Sans',sans-serif; background:#f4f6fa; color:#183872; line-height:1.55; padding:24px; }
-  .wrap { max-width:760px; margin:0 auto; }
-  .card { background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 4px 24px rgba(24,56,114,.08); }
+  .wrap { max-width:820px; margin:0 auto; }
+  .card { background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 4px 24px rgba(24,56,114,.08); margin-bottom:20px; }
   header { background:#183872; padding:32px 36px; }
   header .kicker { font-family:'Inter',sans-serif; font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#cced60; }
   header h1 { font-family:'Inter',sans-serif; font-size:26px; font-weight:800; color:#fff; margin-top:6px; }
   header .date { color:#a9bde0; font-size:14px; margin-top:4px; }
-  .banner { background:#cced60; color:#183872; font-family:'Inter',sans-serif; font-weight:700; font-size:16px; padding:16px 36px; }
-  .body { padding:28px 36px 36px; }
-  .lead { font-size:16px; margin-bottom:24px; }
-  .lead strong { font-weight:600; }
-  .snapshot h2 { font-family:'Inter',sans-serif; font-size:13px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#5a6b8c; margin-bottom:12px; }
-  table { width:100%; border-collapse:collapse; font-size:14px; }
-  th { text-align:left; font-family:'Inter',sans-serif; font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:#5a6b8c; padding:8px 10px; border-bottom:2px solid #e3e8f2; }
-  td { padding:9px 10px; border-bottom:1px solid #eef1f7; }
-  td.num { font-family:'Inter',sans-serif; font-weight:700; text-align:right; }
+  .banner { background:#cced60; color:#183872; font-family:'Inter',sans-serif; font-weight:700; font-size:15px; padding:14px 36px; }
+  .body { padding:26px 36px 34px; }
+  .correction { background:#fff6e5; border-left:4px solid #e0a12b; border-radius:8px; padding:16px 18px; margin-bottom:24px; font-size:14px; }
+  .correction b { font-family:'Inter',sans-serif; }
+  .lead { font-size:15px; margin-bottom:22px; }
+  .counts { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-bottom:26px; }
+  .count { background:#f4f6fa; border-radius:12px; padding:14px 12px; text-align:center; }
+  .count .n { font-family:'Inter',sans-serif; font-size:26px; font-weight:800; }
+  .count .l { font-size:11px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:#5a6b8c; margin-top:2px; }
+  .count.hot .n { color:#e0592b; }
+  .count.due .n { color:#183872; }
+  .count.cool .n { color:#2b8ca6; }
+  h2.sec { font-family:'Inter',sans-serif; font-size:13px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:#183872; margin:26px 0 12px; padding-bottom:8px; border-bottom:2px solid #cced60; }
+  table { width:100%; border-collapse:collapse; font-size:13.5px; }
+  th { text-align:left; font-family:'Inter',sans-serif; font-size:11px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:#5a6b8c; padding:8px 10px; border-bottom:2px solid #e3e8f2; }
+  td { padding:9px 10px; border-bottom:1px solid #eef1f7; vertical-align:top; }
   tr:last-child td { border-bottom:none; }
-  tfoot td { font-family:'Inter',sans-serif; font-weight:800; border-top:2px solid #183872; }
-  .buckets { margin-top:28px; display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-  .bucket { background:#f4f6fa; border-radius:12px; padding:16px 18px; }
-  .bucket .label { font-family:'Inter',sans-serif; font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:#5a6b8c; }
-  .bucket .count { font-family:'Inter',sans-serif; font-size:28px; font-weight:800; color:#183872; margin-top:4px; }
-  .bucket .sub { font-size:12px; color:#8090ad; margin-top:2px; }
-  .note { margin-top:26px; font-size:13px; color:#5a6b8c; border-top:1px solid #eef1f7; padding-top:16px; }
-  footer { text-align:center; font-size:12px; color:#8090ad; margin-top:22px; }
+  .tag { display:inline-block; font-family:'Inter',sans-serif; font-size:10px; font-weight:700; padding:2px 7px; border-radius:20px; background:#e7edf7; color:#183872; }
+  .tag.react { background:#efe6f7; color:#6b3fa0; }
+  .tag.inbound { background:#dcf2ee; color:#1f7a68; }
+  .tag.cold { background:#e2ecfb; color:#2456a6; }
+  .hotrow td { background:#fff4ef; }
+  .note-inline { font-size:12px; color:#8090ad; }
+  .footer-note { margin-top:24px; font-size:12.5px; color:#5a6b8c; border-top:1px solid #eef1f7; padding-top:16px; }
+  footer { text-align:center; font-size:12px; color:#8090ad; }
 </style>
 </head>
 <body>
@@ -42,45 +49,79 @@
     <header>
       <div class="kicker">CHS Happenings · Sponsor Nurture</div>
       <h1>Sponsor Re-Engagement Check</h1>
-      <div class="date">Friday, July 10, 2026</div>
+      <div class="date">Friday, July 10, 2026 · corrected run</div>
     </header>
-    <div class="banner">Nothing due this week — every prospect is still mid-sequence</div>
+    <div class="banner">Reactivation cohort finished · 20 live prospects cooling · first touches unlock Aug 5</div>
     <div class="body">
-      <p class="lead">Swept all seven Kit nurture sequences. <strong>Zero completions</strong> — no one has finished a sequence yet, so there's nothing to reconcile in Airtable and no one due for a personal follow-up. <strong>54 prospects</strong> are actively in flight. First completions will land as the earliest cohorts (Reactivation, added June 10) run out their drip.</p>
 
-      <div class="snapshot">
-        <h2>In-flight snapshot</h2>
-        <table>
-          <thead>
-            <tr><th>Sequence</th><th>Active</th><th>Completed</th><th>Oldest add</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Cold · Standard</td><td class="num">6</td><td class="num">0</td><td>Jun 26</td></tr>
-            <tr><td>Cold · Professional Services</td><td class="num">15</td><td class="num">0</td><td>Jun 29</td></tr>
-            <tr><td>Warm · Outbound</td><td class="num">9</td><td class="num">0</td><td>Jun 26</td></tr>
-            <tr><td>Warm · Referral</td><td class="num">0</td><td class="num">0</td><td>—</td></tr>
-            <tr><td>Reactivation</td><td class="num">20</td><td class="num">0</td><td>Jun 10</td></tr>
-            <tr><td>Inbound</td><td class="num">2</td><td class="num">0</td><td>Jun 6</td></tr>
-            <tr><td>Stay Warm</td><td class="num">2</td><td class="num">0</td><td>Jul 6</td></tr>
-          </tbody>
-          <tfoot>
-            <tr><td>Total</td><td class="num">54</td><td class="num">0</td><td></td></tr>
-          </tfoot>
-        </table>
+      <div class="correction">
+        <b>Correction to this morning's first pass.</b> That run reported "0 completions, nothing finished." That was wrong. It keyed off Kit's <i>completed_at</i> field, which Kit's v4 sequence endpoint never returns, so every prospect looked unfinished. The real completion signals are the <i>sponsor-*-done</i> tags and the Airtable "Sequence Complete - Cooling" status the close-out Zap maintains. Reading those: the Reactivation cohort did finish, right on schedule.
       </div>
 
-      <div class="buckets">
-        <div class="bucket"><div class="label">Completions this run</div><div class="count">0</div><div class="sub">Nothing to reconcile</div></div>
-        <div class="bucket"><div class="label">Due now</div><div class="count">0</div><div class="sub">No touches to send</div></div>
-        <div class="bucket"><div class="label">Cooling</div><div class="count">0</div><div class="sub">No unlock dates pending</div></div>
-        <div class="bucket"><div class="label">Stay Warm</div><div class="count">0</div><div class="sub">Monthly cadence</div></div>
-        <div class="bucket"><div class="label">Hot</div><div class="count">0</div><div class="sub">No reply/click overrides</div></div>
+      <p class="lead">The full Reactivation cohort completed its ~26-day run (Kit-enrolled June 10) and the close-out Zap flipped all of them to <b>Sequence Complete - Cooling on July 6</b>, alongside a few Inbound and Cold Standard finishers. Everything is already reconciled in Airtable, so there were no new status flips to make. Because they finished just four days ago, all are still inside the 30-day cooling window. First personal touches come due around <b>August 5</b>. Two prospects clicked the calendar link and are hot right now.</p>
+
+      <div class="counts">
+        <div class="count hot"><div class="n">2</div><div class="l">Hot</div></div>
+        <div class="count due"><div class="n">0</div><div class="l">Due now</div></div>
+        <div class="count cool"><div class="n">20</div><div class="l">Cooling</div></div>
+        <div class="count"><div class="n">23</div><div class="l">Completed</div></div>
+        <div class="count"><div class="n">3</div><div class="l">Dead / skip</div></div>
       </div>
 
-      <p class="note">Method note: completion is read straight from each subscriber's <em>completed_at</em> timestamp (not <em>state</em>, which stays "active" after finishing). No Airtable writes were needed this run. Watch the Reactivation cohort — added June 10, it's the closest to producing the first completions.</p>
+      <h2 class="sec">🔥 Hot — handle personally now</h2>
+      <table>
+        <thead><tr><th>Prospect</th><th>Signal</th><th>Airtable</th></tr></thead>
+        <tbody>
+          <tr class="hotrow"><td><b>Intercoastal Mortgage</b><br><span class="note-inline">Penny Lacuesta · PLacuesta@icmtg.com</span></td><td>Clicked calendar link <b>today (Jul 10)</b></td><td>Already "Hot - Calendar Clicked"</td></tr>
+          <tr class="hotrow"><td><b>Fifth Third Bank</b><br><span class="note-inline">Jason Hessberg · jason.hessberg@53.com</span></td><td>Clicked calendar link Jul 3</td><td>Already "Hot - Calendar Clicked"</td></tr>
+        </tbody>
+      </table>
+
+      <h2 class="sec">⏳ Cooling — unlock for Touch 1 around Aug 5</h2>
+      <table>
+        <thead><tr><th>Prospect</th><th>Email</th><th>Track</th><th>Completed</th><th>Touch 1 unlock</th></tr></thead>
+        <tbody>
+          <tr><td>Historic Charleston Foundation</td><td>bphillips@historiccharleston.org</td><td><span class="tag cold">Cold Std</span></td><td>Jul 6</td><td>Aug 5</td></tr>
+          <tr><td>Revolutionary Charleston Walking Tours</td><td>revolutionarycharleston@gmail.com</td><td><span class="tag inbound">Inbound</span></td><td>Jul 6</td><td>Aug 5</td></tr>
+          <tr><td>Otter Mortgage Team</td><td>todd@ottermortgage.com</td><td><span class="tag inbound">Inbound</span></td><td>Jul 7</td><td>Aug 6</td></tr>
+          <tr><td>Charter Financial Group of Carolina</td><td>flavio@cfgcarolina.com</td><td><span class="tag react">Reactivation</span></td><td>Jul 6</td><td>Aug 5</td></tr>
+          <tr><td>Creative Living</td><td>SL.creativeliving@gmail.com</td><td><span class="tag react">Reactivation</span></td><td>Jul 6</td><td>Aug 5</td></tr>
+          <tr><td>VIP Insurance &amp; Retirement Solutions</td><td>andrew@vipartnersonline.com</td><td><span class="tag react">Reactivation</span></td><td>Jul 6</td><td>Aug 5</td></tr>
+          <tr><td>Guild Mortgage</td><td>rlee@guildmortgage.net</td><td><span class="tag react">Reactivation</span></td><td>Jul 6</td><td>Aug 5</td></tr>
+          <tr><td>Sweet Palm Coffee</td><td>sweetpalmcoffee@yahoo.com</td><td><span class="tag react">Reactivation</span></td><td>Jul 6</td><td>Aug 5</td></tr>
+          <tr><td>Sensible CFO &amp; Consulting</td><td>dnetzley@sensiblecfo.net</td><td><span class="tag react">Reactivation</span></td><td>Jul 6</td><td>Aug 5</td></tr>
+          <tr><td>Gregory's Sourdough / Trina's Treats</td><td>gregorys.sourdough@gmail.com</td><td><span class="tag react">Reactivation</span></td><td>Jul 6</td><td>Aug 5</td></tr>
+          <tr><td>Eli's Table</td><td>allyssa@teamchg.com</td><td><span class="tag react">Reactivation</span></td><td>Jul 6</td><td>Aug 5</td></tr>
+          <tr><td>Nick Almond</td><td>almondn79@gmail.com</td><td><span class="tag react">Reactivation</span></td><td>Jul 6</td><td>Aug 5</td></tr>
+          <tr><td>John Roberts Financial <span class="note-inline">(he called you)</span></td><td>holycityjohn@gmail.com</td><td><span class="tag react">Reactivation</span></td><td>Jul 6</td><td>Aug 5</td></tr>
+          <tr><td>Justin Hall Consulting</td><td>justin@thejustinhall.com</td><td><span class="tag react">Reactivation</span></td><td>Jul 6</td><td>Aug 5</td></tr>
+          <tr><td>Cameron Broach</td><td>broachcameron@gmail.com</td><td><span class="tag react">Reactivation</span></td><td>Jul 6</td><td>Aug 5</td></tr>
+          <tr><td>Chad Hitchcock</td><td>chitchcock@apexprofootballleague.com</td><td><span class="tag react">Reactivation</span></td><td>Jul 6</td><td>Aug 5</td></tr>
+          <tr><td>Mauricio Maldonado</td><td>mjmaldonado7@gmail.com</td><td><span class="tag react">Reactivation</span></td><td>Jul 6</td><td>Aug 5</td></tr>
+          <tr><td>Hamilton Van Sciver</td><td>hamiltonvansciver@gmail.com</td><td><span class="tag react">Reactivation</span></td><td>Jul 6</td><td>Aug 5</td></tr>
+          <tr><td>Faith Philpott</td><td>fphilpot@squareup.com</td><td><span class="tag react">Reactivation</span></td><td>Jul 6</td><td>Aug 5</td></tr>
+          <tr><td>Alexandra Pagonis</td><td>alexandra.pagonis@gmail.com</td><td><span class="tag react">Reactivation</span></td><td>Jul 6</td><td>Aug 5</td></tr>
+        </tbody>
+      </table>
+
+      <h2 class="sec">🚫 Completed but dead — skip re-engagement</h2>
+      <table>
+        <thead><tr><th>Prospect</th><th>Email</th><th>Why skip</th></tr></thead>
+        <tbody>
+          <tr><td>The ALS Association</td><td>savannah.kelly@als.org</td><td>Stage = Lost - No Response</td></tr>
+          <tr><td>Stillwater Ponds</td><td>ericka.sommers@gmail.com</td><td>Stage = Lost - No Response</td></tr>
+          <tr><td>Bookish</td><td>leax1996@gmail.com</td><td>Stage = Lost - No Response</td></tr>
+        </tbody>
+      </table>
+
+      <div class="footer-note">
+        <b>What I changed / didn't:</b> No Airtable writes were needed — the close-out Zap had already flipped all 23 finishers to "Sequence Complete - Cooling." No outreach sent (recommend-only). The two Hot prospects are already tagged Hot in Airtable.<br><br>
+        <b>Detection fix for future runs:</b> completion must be read from the <i>sponsor-*-done</i> tags and the Airtable cooling status, never Kit's <i>completed_at</i> (which does not exist on the v4 sequence endpoint). The Zapier MCP also silently rewrites results — every Kit pull here used a "dump raw, don't filter" instruction to avoid dropped fields.<br><br>
+        <b>Next action:</b> nothing due today. First re-engagement wave opens Aug 5 for the Reactivation cohort. Worth queuing a personal Touch 1 batch that week.
+      </div>
     </div>
   </div>
-  <footer>CHS Happenings · sponsor-reengage · generated 2026-07-10</footer>
+  <footer>CHS Happenings · sponsor-reengage · corrected 2026-07-10</footer>
 </div>
 </body>
 </html>
