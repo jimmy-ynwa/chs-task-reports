@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week in Review — Jul 13–19, 2026</title>
+<style>
+  :root{
+    --navy:#003466; --lime:#AEDC2E; --gold:#ECD19C; --steel:#7095A7;
+    --bg:#F4F5F0; --card:#FFFFFF; --ink:#1A1A2E; --body:#3D3D52; --muted:#888899; --line:#E8E8EE;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",sans-serif;background:var(--bg);color:var(--body);line-height:1.5;padding-bottom:60px}
+  .header{background:var(--navy);padding:36px 20px;text-align:center}
+  .header h1{color:#fff;font-size:24px;font-weight:700;letter-spacing:-0.01em}
+  .header .range{color:rgba(255,255,255,0.6);font-size:13px;margin-top:4px}
+  .header .stat{color:var(--lime);font-size:14px;font-weight:600;margin-top:14px;letter-spacing:0.01em}
+  .wrap{max-width:760px;margin:0 auto;padding:24px 20px}
+  .card{background:var(--card);border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,0.06),0 4px 14px rgba(0,0,0,0.04);padding:24px;margin-bottom:16px}
+  h2{font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--navy);font-weight:700;border-left:3px solid var(--lime);padding-left:10px;margin-bottom:16px}
+  h3{font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--steel);font-weight:700;margin:16px 0 8px}
+  h3:first-child{margin-top:0}
+  p{margin-bottom:8px;font-size:14px}
+  .navy-card{background:var(--navy);color:rgba(255,255,255,0.9)}
+  .navy-card h2{color:var(--lime);border-left-color:var(--lime)}
+  .focus-item{display:flex;gap:14px;margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.1)}
+  .focus-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+  .focus-num{color:var(--lime);font-size:20px;font-weight:700;flex-shrink:0}
+  .focus-text b{color:#fff;display:block;margin-bottom:3px;font-size:14.5px}
+  .focus-text span{color:rgba(255,255,255,0.55);font-size:13px}
+  .gold-card{background:linear-gradient(180deg,#fdfaf4,#fbf6ea);border:1px solid var(--gold);border-left:4px solid var(--gold)}
+  .gold-card h3{color:#9c7a3f}
+  .gold-card .last{font-size:12px;color:var(--muted);margin-bottom:12px;font-style:italic}
+  .pill{display:inline-block;background:var(--navy);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;margin-right:6px}
+  .pill-warn{background:var(--gold);color:#7a5a1f}
+  .flag{border-left:3px solid var(--lime);padding-left:10px;margin:8px 0}
+  .caution{border-left:3px solid var(--gold);padding-left:10px;margin:8px 0;background:rgba(236,209,156,0.15);border-radius:0 6px 6px 0;padding:8px 10px}
+  .day-label{font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--steel);font-weight:700;margin:14px 0 6px}
+  .day-label:first-child{margin-top:0}
+  .appt{font-size:14px;color:var(--ink);margin-bottom:2px}
+  .appt-time{color:var(--muted);font-weight:600;margin-right:6px}
+  .prep{font-size:12.5px;color:var(--body);border-left:2px solid var(--lime);padding-left:8px;margin:3px 0 10px 4px}
+  .prep .src{color:var(--muted);font-style:italic}
+  .stat-row{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:14px}
+  .stat-box{flex:1;min-width:110px}
+  .stat-box .num{font-size:22px;font-weight:700;color:var(--navy)}
+  .stat-box .lbl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.04em}
+  .delta-up{color:#1a8a4a;font-weight:600}
+  .delta-down{color:#c0392b;font-weight:600}
+  .delta-flat{color:var(--muted);font-weight:600}
+  ul{padding-left:18px;margin-bottom:10px}
+  li{font-size:14px;margin-bottom:6px}
+  .bar-row{display:flex;align-items:center;gap:10px;margin-bottom:6px;font-size:13px}
+  .bar-label{width:120px;flex-shrink:0;color:var(--body)}
+  .bar-track{flex:1;background:var(--line);border-radius:4px;height:14px;overflow:hidden}
+  .bar-fill{background:var(--steel);height:100%;border-radius:4px}
+  .bar-count{width:30px;text-align:right;color:var(--muted);font-size:12px}
+  .empty-state{color:var(--muted);font-style:italic;font-size:13.5px}
+  .name-tag{font-weight:700;color:var(--ink)}
+  .money{font-weight:700;color:var(--navy)}
+  .mailbox-tag{font-size:10px;background:var(--line);color:var(--steel);padding:2px 6px;border-radius:4px;font-weight:700;margin-right:6px}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Week in Review</h1>
+  <div class="range">Monday, July 13 – Sunday, July 19, 2026</div>
+  <div class="stat">9 deals · $14.6M pipeline (flat) · 11,728 subs · 113 sponsor prospects (+42) · 7 meetings ahead</div>
+</div>
+
+<div class="wrap">
+
+  <!-- NEXT WEEK'S FOCUS -->
+  <div class="card navy-card">
+    <h2>Next Week's Focus</h2>
+    <div class="focus-item">
+      <div class="focus-num">1</div>
+      <div class="focus-text"><b>Close the loop on Fleet Feet and Cisneros — for real this time.</b>
+      <span>Two weeks running, the "book the personal touch" experiment got skipped. Neither is on next week's calendar yet. [Sharpen]</span></div>
+    </div>
+    <div class="focus-item">
+      <div class="focus-num">2</div>
+      <div class="focus-text"><b>Confirm the Wilkie buyer agreement came back signed.</b>
+      <span>Sent via Authentisign 7/16. Their West Ashley house-hunting trip is booked for Jul 31–Aug 3 — worth a check-in before then. [TFG Pipeline / Email]</span></div>
+    </div>
+    <div class="focus-item">
+      <div class="focus-num">3</div>
+      <div class="focus-text"><b>Nudge Carolina H3 — the $500 proposal has been sitting since May 28.</b>
+      <span>Only live proposal in the pipeline; nearly 8 weeks stale. [Sponsorship Pipeline]</span></div>
+    </div>
+    <div class="focus-item">
+      <div class="focus-num">4</div>
+      <div class="focus-text"><b>Use the light calendar to book outreach, not just admin.</b>
+      <span>Only 7 events next week and zero TFG client meetings — real open runway for the calls above instead of more prospecting volume. [Week Ahead]</span></div>
+    </div>
+    <div class="focus-item">
+      <div class="focus-num">5</div>
+      <div class="focus-text"><b>Take a real look at why growth stalled.</b>
+      <span>Net subscribers went flat-to-negative this week after two straight weeks of +120ish gains — and ad-pulse already flagged true CPA drifting to $1.08. [Newsletter]</span></div>
+    </div>
+  </div>
+
+  <!-- SHARPEN -->
+  <div class="card gold-card">
+    <h2 style="color:#9c7a3f;border-left-color:var(--gold)">Sharpen</h2>
+    <div class="last">Last week's experiment: "Book the Fleet Feet coffee + a Cisneros follow-up by Wed 7/15, before adding any new cold prospect." Status: <b>not done.</b> Neither touch made the calendar, and the prospector added 42 more cold names anyway.</div>
+    <h3>Pattern worth noticing</h3>
+    <p>This is the second week running the same experiment has been overridden by the automation. The high-ltv-sponsor-prospector runs daily and doesn't wait for Jimmy — so "slow down and go personal" keeps losing to "the machine already added 6 more names today." The intent is right; the mechanism to enforce it isn't.</p>
+    <h3>Experiment for next week</h3>
+    <p>Pause the <span class="name-tag">high-ltv-sponsor-prospector-daily</span> task Monday–Wednesday, and use that 3-day window to actually book and take the Fleet Feet coffee with Chris and a Cisneros follow-up call. Make the pause the forcing function instead of a reminder.</p>
+  </div>
+
+  <!-- THE WEEK AHEAD -->
+  <div class="card">
+    <h2>The Week Ahead</h2>
+    <p style="color:var(--muted);font-size:13px;margin-bottom:14px">7 appointments next week, ~4 hrs total. Light week — no TFG client meetings or closings booked. Busiest day: Wed 7/22 (3 events).</p>
+
+    <div class="day-label">Monday 7/20</div>
+    <div class="appt"><span class="appt-time">6:15 PM</span>Monday RunDay 🏃 <span class="pill" style="background:var(--steel)">PERSONAL</span></div>
+
+    <div class="day-label">Tuesday 7/21</div>
+    <div class="appt"><span class="appt-time">10:00 AM</span>LinkedIn Post & Monitoring</div>
+
+    <div class="day-label">Wednesday 7/22</div>
+    <div class="appt"><span class="appt-time">9:00 AM</span>1 Million Cups — Frothy Beard Brewing <span class="pill">TFG</span></div>
+    <div class="prep">Good spot for a casual Fleet Feet or Cisneros ask if either crosses paths. <span class="src">[Sharpen]</span></div>
+    <div class="appt"><span class="appt-time">10:00 AM</span>LinkedIn Post & Monitoring</div>
+    <div class="appt"><span class="appt-time">6:45 PM</span>Run CBW — Charleston Beer Works <span class="pill" style="background:var(--steel)">PERSONAL</span></div>
+
+    <div class="day-label">Thursday 7/23</div>
+    <div class="appt"><span class="appt-time">10:00 AM</span>LinkedIn Post & Monitoring</div>
+    <div class="appt"><span class="appt-time">12:00 PM</span>Newsletter Club Weekly Call</div>
+    <div class="prep">Issue day. Worth raising the flat-growth week and the ad-pulse CPA finding on this call. <span class="src">[Newsletter]</span></div>
+
+    <div class="caution">Heads-up: no external/client-facing meetings on the books all week — the calendar is wide open for the outreach this review keeps flagging.</div>
+  </div>
+
+  <!-- WHAT YOU BUILT IN CLAUDE -->
+  <div class="card">
+    <h2>What You Built In Claude</h2>
+    <h3>Shipped</h3>
+    <ul>
+      <li>[Jul 13–16] Enrolled 16 sponsor prospects into Kit Cold sequences across two batches (Signature Kitchens, Fletcher Aesthetics, Verità Bridal, Mappus Insurance, Menopause Solutions +11 more) — the engine behind this week's 42-prospect wave.</li>
+      <li>[Jul 16] Dug Will Wilkie's real email out of a 2024 thread after it turned up missing from the CRM — the fix that made Thursday's buyer-agreement Authentisign send possible.</li>
+      <li>[this week] Caught a bot hammering marketchs.com's Zapier webhooks directly; added "email contains @" filters across all 4 lead Zaps (Buyer's Window, Seller's, Renovate, Heat Index).</li>
+      <li>[this week] Rotated the GitHub deploy PAT across 5 scheduled tasks, verified live, and built a reusable rotate-deploy-token skill.</li>
+      <li>[this week] Fixed a Chart.js race condition that was silently killing the leaderboard on the CTOR click-analysis dashboard.</li>
+      <li>[this week] Upgraded ad-pulse with a Meta-vs-Beehiiv attribution check — fixed a spend-doubling bug, confirmed true CPA is $1.08 vs. Meta's claimed $0.74.</li>
+      <li>[this week] Rewrote the newsletter-pack lead teaser into a curiosity-gap format and locked it in as the default.</li>
+      <li>[this week] Overhauled the weekly-review skill itself — fixed false "needs response" flags, sponsor-count accuracy, real-name enforcement, and Dinner Club structure.</li>
+    </ul>
+    <h3>Explored</h3>
+    <ul>
+      <li>Brainstormed no-code hosting alternatives (Netlify, Cloudflare direct-upload, Carrd) for a future course, so non-technical students skip the git/deploy pipeline.</li>
+      <li>Deep-dove the "Image_Googling" Meta ad's CPR drift ($0.72 → $1.08 — auction-cost creep, not creative fatigue) and sketched 5 FOMO-angle concepts for an August refresh.</li>
+      <li>Marketchs quarterly price-band check hit missing Q2 data — punted with a nudge email rather than force a bad deploy.</li>
+      <li>Open thread on whether CHS ad spend still "teaches" transferable skills worth the cost against the New NEXT pivot — no decision made.</li>
+    </ul>
+  </div>
+
+  <!-- NEW NEXT COMMAND -->
+  <div class="card">
+    <h2>New NEXT Command</h2>
+    <p class="empty-state">No changes to the New NEXT Command this week — last touched 7/5. It came up as a talking point (a filter for the ad-spend and CHS Gmail decisions) but no session actually edited the ledger. Real ledger holds 16 modules in localStorage; the on-disk seed still shows only 8 — an Export would give the exact current count.</p>
+  </div>
+
+  <!-- TFG DEAL PIPELINE -->
+  <div class="card">
+    <h2>TFG Deal Pipeline</h2>
+    <div class="stat-row">
+      <div class="stat-box"><div class="num">$14.6M</div><div class="lbl">Active Pipeline <span class="delta-flat">— flat</span></div></div>
+      <div class="stat-box"><div class="num">$361K</div><div class="lbl">Proj. Commission <span class="delta-flat">— flat</span></div></div>
+      <div class="stat-box"><div class="num">9</div><div class="lbl">Active Deals <span class="delta-flat">— flat</span></div></div>
+      <div class="stat-box"><div class="num">0</div><div class="lbl">Closings</div></div>
+    </div>
+    <p>No new deals added and no closings this week — the pipeline is holding exactly where it was after last week's Cisneros add. Streak of zero closings continues.</p>
+
+    <h3>Pipeline by stage</h3>
+    <div class="bar-row"><div class="bar-label">CLIENT!</div><div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--navy)"></div></div><div class="bar-count">5</div></div>
+    <div class="bar-row"><div class="bar-label">Later (stale)</div><div class="bar-track"><div class="bar-fill" style="width:60%;background:var(--gold)"></div></div><div class="bar-count">3</div></div>
+    <div class="bar-row"><div class="bar-label">Cultivating</div><div class="bar-track"><div class="bar-fill" style="width:20%"></div></div><div class="bar-count">1</div></div>
+
+    <h3>Stale deals (60+ days, dormant)</h3>
+    <ul>
+      <li><span class="name-tag">Riklins Downtown</span> — <span class="money">$4.0M</span>, silent since 3/8</li>
+      <li><span class="name-tag">Zach Kallick — MTP</span> — <span class="money">$3.0M</span></li>
+      <li><span class="name-tag">Chris & Erin Riklin</span> — <span class="money">$650K</span>, last touched 7/13 (the "checking in" email — first movement in a while)</li>
+    </ul>
+
+    <h3>Approaching expected close</h3>
+    <ul>
+      <li><span class="name-tag">Jim Conlon</span> Investment Property — <span class="money">$300K</span> — expected 8/1</li>
+    </ul>
+
+    <h3>Interaction activity this week</h3>
+    <p>7 business touches — 4 logged in the CRM (Susie Riklin downtown market read, Linehan/Mattison IOP read, Mark Mattison's thank-you, Chris Riklin catch-up) plus 3 more via email not yet in Airtable: the Wilkie buyer brokerage agreement send (7/16), and two Conlon prep documents shared with Kim (7/17). Real client-facing outreach this week outpaced last week's — but still zero contact with the three stale "Later" deals besides Riklin.</p>
+  </div>
+
+  <!-- CHS HAPPENINGS -->
+  <div class="card">
+    <h2>CHS Happenings Newsletter</h2>
+    <div class="stat-row">
+      <div class="stat-box"><div class="num">11,728</div><div class="lbl">Subscribers <span class="delta-up">+20 WoW</span></div></div>
+      <div class="stat-box"><div class="num">68.9%</div><div class="lbl">Open Rate <span class="delta-down">↓ from 71.0%</span></div></div>
+      <div class="stat-box"><div class="num">9.7%</div><div class="lbl">Click Rate <span class="delta-up">↑ from 9.4%</span></div></div>
+    </div>
+    <div class="caution">Growth is stalling: Beehiiv's own 7-day tracker shows 110 new vs. 116 churned this week (net –6) — a sharp drop from +123 the week before and +133 the week before that. Three-week deceleration trend, worth a real look next week.</div>
+
+    <h3>Jul 16 issue — "The old Dashi space already has a surprising new life"</h3>
+    <p>11,665 sent · 68.95% open (8,034 unique) · 9.70% click (779 unique, 734 verified) · 0.14% unsub (16) · 0 spam reports</p>
+
+    <h3>Top 3 clicked links</h3>
+    <ul>
+      <li><span class="name-tag">Bolchoz Second Act</span> — 440 unique clicks (runaway lead, again)</li>
+      <li><span class="name-tag">The Cult Donut Comes South</span> — 131 unique clicks</li>
+      <li><span class="name-tag">Charleston Gets Second Place, Again</span> — 99 unique clicks</li>
+    </ul>
+    <p style="color:var(--muted);font-size:12.5px">Acquisition still Meta-heavy: 73 of 110 new subs (66%) came from Meta ads, 23 from Nextdoor referral, 36 direct.</p>
+  </div>
+
+  <!-- SPONSORSHIP PIPELINE -->
+  <div class="card">
+    <h2>CHS Happenings Sponsorship Pipeline</h2>
+    <div class="stat-row">
+      <div class="stat-box"><div class="num">113</div><div class="lbl">Total Prospects <span class="delta-up">+42</span></div></div>
+      <div class="stat-box"><div class="num">$800</div><div class="lbl">Revenue Booked (signed+paid)</div></div>
+      <div class="stat-box"><div class="num">$500</div><div class="lbl">Live Proposal (Carolina H3)</div></div>
+    </div>
+    <p>Massive intake week — 42 new prospects added via the daily high-LTV prospector, and a big enrollment wave pushed nearly all of them straight from Target into Cultivating (Kit sequences). Funnel now: 102 Cultivating, 5 Sponsored (4 paid + 1 gratis), 1 Proposal Sent, 1 Target, 4 Lost.</p>
+
+    <h3>Follow-ups due</h3>
+    <ul>
+      <li><span class="name-tag">Carolina H3</span> — $500 proposal sent 5/28, still open. Nearly 8 weeks stale — the one live proposal in the pipeline.</li>
+    </ul>
+
+    <h3>Interaction activity this week</h3>
+    <p class="empty-state">Zero sponsor interactions logged in Airtable this week, and no clear sponsor-specific conversation surfaced in either mailbox — a quiet week for direct sponsor contact despite the intake surge. Fleet Feet (hot lead from last week) didn't resurface.</p>
+  </div>
+
+  <!-- CALENDAR LOAD (LAST WEEK) -->
+  <div class="card">
+    <h2>Calendar Load — Last Week</h2>
+    <div class="stat-row">
+      <div class="stat-box"><div class="num">13</div><div class="lbl">Meetings <span class="delta-flat">— same as prior week</span></div></div>
+      <div class="stat-box"><div class="num">~7</div><div class="lbl">Est. Hours</div></div>
+      <div class="stat-box"><div class="num">Thu 7/16</div><div class="lbl">Busiest Day</div></div>
+    </div>
+    <h3>Breakdown</h3>
+    <div class="bar-row"><div class="bar-label">CHS Happenings</div><div class="bar-track"><div class="bar-fill" style="width:70%"></div></div><div class="bar-count">7</div></div>
+    <div class="bar-row"><div class="bar-label">Personal</div><div class="bar-track"><div class="bar-fill" style="width:60%;background:var(--gold)"></div></div><div class="bar-count">6</div></div>
+    <div class="bar-row"><div class="bar-label">TFG</div><div class="bar-track"><div class="bar-fill" style="width:0%"></div></div><div class="bar-count">0</div></div>
+    <p style="color:var(--muted);font-size:12.5px">Thursday 7/16 stacked the beehiiv Summer Release live event, Newsletter Club call, LinkedIn monitoring, and a strength workout. No TFG-calendar events at all last week — every client touch happened over email instead.</p>
+  </div>
+
+  <!-- EMAIL HIGHLIGHTS -->
+  <div class="card">
+    <h2>Email Highlights</h2>
+    <h3>Worth knowing</h3>
+    <ul>
+      <li><span class="mailbox-tag">TFG</span>K Street Financial is still chasing down a $1,100 overcharge Jimmy flagged 7/16 — policy #16471012, "reviewing with Home Office," no resolution yet.</li>
+      <li><span class="mailbox-tag">TFG</span>Sent a CHS MLS support inquiry (7/18) asking whether the Flexmls MCP Server is active for CHS Regional MLS — worth a follow-up if no reply by midweek.</li>
+      <li><span class="mailbox-tag">TFG</span>Family thread on Mom's spiking school tax bill ($954 → $3,734, new-construction reassessment) — resolved with an explanation from the county, appeal option open if wanted.</li>
+      <li><span class="mailbox-tag">CHS</span>Reader replies to this week's quick-hit poll ran heavy and positive (11+ participants) — good engagement signal even in a soft-growth week.</li>
+    </ul>
+    <h3>Open threads</h3>
+    <p class="empty-state">Nothing sitting unanswered — Jimmy replied same-day or next-day on everything flagged this week (Chris Riklin catch-up is sent and awaiting his reply, not overdue on Jimmy's side).</p>
+  </div>
+
+</div>
+</body>
+</html>
