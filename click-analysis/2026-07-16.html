@@ -251,19 +251,20 @@
   <div class="card">
     <table>
       <thead>
-        <tr><th>Story</th><th>Email clicks (Beehiiv)</th><th>Site page views, trailing 7 days*</th><th>Email ÷ views</th></tr>
+        <tr><th>Story</th><th>Email clicks (Beehiiv)</th><th>GA4 views</th><th>GA4 users</th><th>Email ÷ views</th></tr>
       </thead>
       <tbody>
-        <tr><td class="url-cell">Bolchoz's Second Act</td><td>512</td><td>1,081</td><td><div class="bar-track"><div class="bar-fill" style="width:47%"></div></div><span class="note">0.47</span></td></tr>
-        <tr><td class="url-cell">The Cult Donut Comes South</td><td>149</td><td>386</td><td><div class="bar-track"><div class="bar-fill" style="width:39%"></div></div><span class="note">0.39</span></td></tr>
-        <tr><td class="url-cell">Second Place, Again</td><td>113</td><td>333</td><td><div class="bar-track"><div class="bar-fill" style="width:34%"></div></div><span class="note">0.34</span></td></tr>
-        <tr><td class="url-cell">El Molino Makes It Four</td><td>89</td><td>180</td><td><div class="bar-track"><div class="bar-fill" style="width:49%"></div></div><span class="note">0.49</span></td></tr>
-        <tr><td class="url-cell">The Smashburger Comeback</td><td>75</td><td>205</td><td><div class="bar-track"><div class="bar-fill" style="width:37%"></div></div><span class="note">0.37</span></td></tr>
-        <tr><td class="url-cell">A Burger Joint On The Harbor</td><td>74</td><td>259</td><td><div class="bar-track"><div class="bar-fill" style="width:29%"></div></div><span class="note">0.29</span></td></tr>
-        <tr><td class="url-cell">Dashi (lead, self-link only)</td><td>22</td><td>95</td><td><div class="bar-track"><div class="bar-fill" style="width:23%"></div></div><span class="note">0.23</span></td></tr>
+        <tr><td class="url-cell">Bolchoz's Second Act</td><td>512</td><td>711</td><td>475</td><td><div class="bar-track"><div class="bar-fill" style="width:72%"></div></div><span class="note">0.72</span></td></tr>
+        <tr><td class="url-cell">The Cult Donut Comes South</td><td>149</td><td>257</td><td>168</td><td><div class="bar-track"><div class="bar-fill" style="width:58%"></div></div><span class="note">0.58</span></td></tr>
+        <tr><td class="url-cell">Second Place, Again</td><td>113</td><td>260</td><td>162</td><td><div class="bar-track"><div class="bar-fill" style="width:43%"></div></div><span class="note">0.43</span></td></tr>
+        <tr><td class="url-cell">El Molino Makes It Four</td><td>89</td><td>122</td><td>77</td><td><div class="bar-track"><div class="bar-fill" style="width:73%"></div></div><span class="note">0.73</span></td></tr>
+        <tr><td class="url-cell">The Smashburger Comeback</td><td>75</td><td>154</td><td>83</td><td><div class="bar-track"><div class="bar-fill" style="width:49%"></div></div><span class="note">0.49</span></td></tr>
+        <tr><td class="url-cell">A Burger Joint On The Harbor</td><td>74</td><td>213</td><td>140</td><td><div class="bar-track"><div class="bar-fill" style="width:35%"></div></div><span class="note">0.35</span></td></tr>
+        <tr><td class="url-cell">Live Music This Weekend</td><td>28</td><td>56</td><td>23</td><td><div class="bar-track"><div class="bar-fill" style="width:50%"></div></div><span class="note">0.50</span></td></tr>
+        <tr><td class="url-cell">Dashi (lead, self-link only)</td><td>22</td><td>60</td><td>43</td><td><div class="bar-track"><div class="bar-fill" style="width:37%"></div></div><span class="note">0.37</span></td></tr>
       </tbody>
     </table>
-    <p class="note">*GA4 wasn't reachable this run (connector unavailable) — this column uses Beehiiv's own site analytics for the trailing 7 days as a stand-in. It's page-level and site-wide (not scoped strictly to traffic from this one issue), so treat the ratio as directional, not exact.</p>
+    <p class="note">Real GA4 data, pulled via the Zapier MCP's Google Analytics 4 connector (property: CHS Happenings, properties/481754311), scoped exactly to this issue's window, July 16-22. Views = screenPageViews, Users = totalUsers.</p>
   </div>
 </section>
 
@@ -271,27 +272,26 @@
   <h2>Where all web traffic came from</h2>
   <div class="card">
     <table>
-      <thead><tr><th>Source</th><th>Sessions, trailing 7 days</th></tr></thead>
+      <thead><tr><th>Source / medium</th><th>Sessions, July 16-22</th></tr></thead>
       <tbody>
-        <tr><td>Direct</td><td>1,013</td></tr>
-        <tr><td>Nextdoor.com</td><td>327</td></tr>
-        <tr><td>Meta Ads</td><td>180</td></tr>
-        <tr><td>Google.com</td><td>59</td></tr>
-        <tr><td>Gmail app (in-app browser)</td><td>39</td></tr>
-        <tr><td>chshappenings.com (internal)</td><td>27</td></tr>
-        <tr><td>Facebook.com</td><td>3</td></tr>
-        <tr><td>Instagram / yahoo / Beehiiv / other</td><td>9</td></tr>
+        <tr><td>(direct) / (none)</td><td>855</td></tr>
+        <tr><td>nextdoor.com / referral</td><td>267</td></tr>
+        <tr><td>metaads (all variants)</td><td>175</td></tr>
+        <tr><td>google / organic</td><td>56</td></tr>
+        <tr><td>newsletter / email <span class="note">(explicit GA4 tag)</span></td><td>44</td></tr>
+        <tr><td>mail.google.com / referral</td><td>4</td></tr>
+        <tr><td>bing / organic, facebook.com, instagram.com / ig, beehiiv, other</td><td>~22</td></tr>
       </tbody>
     </table>
-    <p class="note">Site-wide numbers (all pages, all issues), not scoped to this one send — provided as context since GA4 wasn't available this run. Beehiiv's own email data above (1,539 total clicks, 800 unique clickers) remains the trustworthy read on this specific issue's email engagement.</p>
+    <p class="note">Real GA4 sessions for this issue's exact window (July 16-22), via Zapier. Total tracked sessions: ~1,423.</p>
   </div>
 </section>
 
 <section>
   <h2>Attribution caveat</h2>
   <div class="caveat">
-    GA4 wasn't reachable this run, so "site traffic" here comes from Beehiiv's own website analytics instead of the usual GA4 property — directional, not the exact cut Jimmy normally gets, and flag this to reconnect GA4 before next week's run.<br><br>
-    Even with GA4, "direct" is always a mixed bucket: typed URLs, bookmarks, privacy browsers, lost ad tags, and email clicks whose referrer got stripped. Only 39 sessions this week were explicitly tagged as coming from a mail app, but Beehiiv logged 1,539 total email clicks for this single issue alone — a strong sign email traffic is landing in "direct" uncredited, not that email underperformed. Nextdoor and Meta Ads are legitimate non-email demand and should be trusted as such. External links (Eventbrite, venue sites, marketchs.com) never show up in on-site analytics at all, so this view only ever tells half the story for event clicks.
+    GA4 is live this run via the Zapier MCP (property: CHS Happenings), scoped precisely to this issue's send window rather than a rolling 7-day, all-issues stand-in.<br><br>
+    The numbers make the under-crediting case directly: GA4's own "newsletter / email" tag caught only 44 sessions for this issue, while Beehiiv logged 800 unique email clickers (1,539 total clicks) on the same send. That's not email underperforming, that's most email traffic losing its referrer and landing in "(direct) / (none)", which at 855 sessions is 60% of everything tracked this week, by far the largest bucket. Several stories (Bolchoz, El Molino) show email-clicks-to-views ratios above 0.7, reinforcing that email is the dominant driver even where GA4 can't label it as such. Nextdoor (267 sessions) and Meta Ads (175) are legitimate non-email demand and can be trusted at face value. External links (Eventbrite, venue sites, marketchs.com) never touch this GA4 property at all, so event clicks are only ever half-visible here.
   </div>
 </section>
 
@@ -301,9 +301,9 @@
     <li><strong>Bolchoz's Second Act should've probably led.</strong> It pulled 526 clicks as an ICYMI item, 34% of the whole issue's clicks and 24x the lead story's own self-link traffic. That's about as loud a lead-selection signal as this playbook gets.</li>
     <li><strong>Dashi's low click count isn't a red flag.</strong> The full story ran in-email, so its only clicks were view-online, share, and comment links (22 total). Nothing to fix here, just a different read pattern than click-through ICYMI stories.</li>
     <li><strong>Events drew broad, shallow interest.</strong> 268 clicks (17% of the issue) spread across 15-plus links, no single event breaking away from the pack. Fine for community goodwill, not a traffic engine.</li>
-    <li><strong>El Molino and Bolchoz lean hardest on email.</strong> Both sit near 0.47-0.49 email-clicks-to-site-views, meaning email is doing real work getting readers there. Other stories pull more of their traffic from elsewhere (Nextdoor, Meta Ads).</li>
-    <li><strong>Nextdoor and Meta Ads are now bigger non-email demand sources than Google</strong> for the site overall (327 and 180 sessions vs. 59). Diversification off email is paying off.</li>
-    <li><strong>Reconnect GA4 before next week.</strong> This run substituted Beehiiv's own site analytics since the GA4 connector wasn't reachable — still useful, but not the exact numbers you're used to.</li>
+    <li><strong>Email is doing more of the heavy lifting than it looks like.</strong> With real GA4 now scoped to this exact issue, Bolchoz and El Molino both sit above 0.7 email-clicks-to-views, meaning email directly drove the clear majority of their traffic, not just a slice of it.</li>
+    <li><strong>Nextdoor and Meta Ads are bigger non-email demand sources than Google</strong> for this issue's window (267 and 175 sessions vs. Google's 56). Diversification off email is paying off.</li>
+    <li><strong>GA4's own tagging proves the under-crediting theory.</strong> It caught just 44 sessions as "newsletter/email" while Beehiiv logged 800 unique clickers on the same send, the gap almost certainly landed in the 855-session "direct" bucket (60% of all traffic). GA4 is now wired through the Zapier MCP at no extra cost, no need for a paid connector, and this week's numbers are the real thing rather than a stand-in.</li>
   </ul>
 </section>
 
