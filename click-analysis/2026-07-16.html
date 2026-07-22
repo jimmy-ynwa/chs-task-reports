@@ -120,6 +120,7 @@
     white-space: nowrap;
   }
   .tag.icymi { background: #183872; color: #fff; }
+  .tag.lead { background: var(--lime); color: var(--navy); border: 2px solid var(--navy); }
   .tag.event { background: #e9dfc7; color: #6b5a2a; }
   .tag.chsprop { background: var(--lime); color: var(--navy); }
   .tag.tfg { background: #7095A7; color: #fff; }
@@ -198,7 +199,7 @@
         <tr><th>#</th><th>Link</th><th>Section</th><th>Total clicks</th><th>Share of #1</th></tr>
       </thead>
       <tbody>
-        <tr><td>1</td><td class="url-cell"><a href="https://www.chshappenings.com/p/bolchoz-second-act">/p/bolchoz-second-act</a><br><span class="note">Bolchoz's Second Act</span></td><td><span class="tag icymi">ICYMI</span></td><td>526</td><td><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></td></tr>
+        <tr><td>1</td><td class="url-cell"><a href="https://www.chshappenings.com/p/bolchoz-second-act">/p/bolchoz-second-act</a><br><span class="note">Bolchoz's Second Act — this IS the lead story's "Read the full story" link. The RESTAURANTS teaser is headlined as the old Dashi space (withholding the payoff on purpose), but the full piece lives at this URL, not at the issue's own dashi-gets-new-life page.</span></td><td><span class="tag lead">Lead Story</span></td><td>526</td><td><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></td></tr>
         <tr><td>2</td><td class="url-cell"><a href="https://www.chshappenings.com/p/the-cult-donut-comes-south">/p/the-cult-donut-comes-south</a></td><td><span class="tag icymi">ICYMI</span></td><td>154</td><td><div class="bar-track"><div class="bar-fill" style="width:29%"></div></div></td></tr>
         <tr><td>3</td><td class="url-cell"><a href="https://www.chshappenings.com/p/charleston-gets-second-place-again">/p/charleston-gets-second-place-again</a><br><span class="note">Second Place, Again</span></td><td><span class="tag icymi">ICYMI</span></td><td>118</td><td><div class="bar-track"><div class="bar-fill" style="width:22%"></div></div></td></tr>
         <tr><td>4</td><td class="url-cell"><a href="https://www.chshappenings.com/p/el-molino-makes-it-four">/p/el-molino-makes-it-four</a></td><td><span class="tag icymi">ICYMI</span></td><td>91</td><td><div class="bar-track"><div class="bar-fill" style="width:17%"></div></div></td></tr>
@@ -211,7 +212,7 @@
         <tr><td>11</td><td class="url-cell"><a href="https://www.instagram.com/p/Dax1whJNwXc/">Instagram post</a></td><td><span class="tag chsprop">CHS Property</span></td><td>26</td><td><div class="bar-track"><div class="bar-fill" style="width:5%"></div></div></td></tr>
         <tr><td>12</td><td class="url-cell"><a href="https://fireflydistillery.com/event/firefly-singles-happy-hour-july/">Firefly Singles Happy Hour</a></td><td><span class="tag event">Event</span></td><td>25</td><td><div class="bar-track"><div class="bar-fill" style="width:5%"></div></div></td></tr>
         <tr><td>13</td><td class="url-cell"><a href="https://charlestonstage.com/shows-and-tickets/littlewomen">Charleston Stage — Little Women</a></td><td><span class="tag event">Event</span></td><td>22</td><td><div class="bar-track"><div class="bar-fill" style="width:4%"></div></div></td></tr>
-        <tr><td>14</td><td class="url-cell"><a href="https://www.chshappenings.com/p/dashi-gets-new-life">/p/dashi-gets-new-life</a><br><span class="note">Issue's own self-link (view online / share / comments)</span></td><td><span class="tag chsprop">CHS Property</span></td><td>22</td><td><div class="bar-track"><div class="bar-fill" style="width:4%"></div></div></td></tr>
+        <tr><td>14</td><td class="url-cell"><a href="https://www.chshappenings.com/p/dashi-gets-new-life">/p/dashi-gets-new-life</a><br><span class="note">This is the issue's own webpage, not a separate story — its clicks are view-online, share, and comment links, not story reads. The actual lead story read-through is row 1 above.</span></td><td><span class="tag chsprop">CHS Property</span></td><td>22</td><td><div class="bar-track"><div class="bar-fill" style="width:4%"></div></div></td></tr>
         <tr><td>15</td><td class="url-cell"><a href="https://www.uptownsocialchs.com/">Uptown Social</a></td><td><span class="tag event">Event</span></td><td>16</td><td><div class="bar-track"><div class="bar-fill" style="width:3%"></div></div></td></tr>
         <tr><td>16</td><td class="url-cell"><a href="https://www.ticketmaster.com/event/Z7r9jZ1A7jf-_">Ticketmaster event</a></td><td><span class="tag event">Event</span></td><td>14</td><td><div class="bar-track"><div class="bar-fill" style="width:3%"></div></div></td></tr>
         <tr><td>17</td><td class="url-cell"><a href="https://www.charlestoneuchreclub.com/p/event-schedule.html">Charleston Euchre Club</a></td><td><span class="tag event">Event</span></td><td>12</td><td><div class="bar-track"><div class="bar-fill" style="width:2%"></div></div></td></tr>
@@ -237,13 +238,14 @@
 <section>
   <h2>Clicks by section</h2>
   <div class="section-panel">
-    <div class="section-item"><div class="pct" style="color:var(--navy)">67.6%</div><div class="n">ICYMI &middot; 1,040 clicks</div></div>
+    <div class="section-item"><div class="pct" style="color:var(--navy)">34.2%</div><div class="n">Lead Story &middot; 526 clicks</div></div>
+    <div class="section-item"><div class="pct" style="color:var(--navy)">33.4%</div><div class="n">ICYMI &middot; 514 clicks</div></div>
     <div class="section-item"><div class="pct" style="color:#6b5a2a">17.4%</div><div class="n">Event &middot; 268 clicks</div></div>
     <div class="section-item"><div class="pct" style="color:#7a9a1e">7.5%</div><div class="n">Engagement &amp; system &middot; 115 clicks</div></div>
     <div class="section-item"><div class="pct" style="color:var(--navy)">7.2%</div><div class="n">CHS Property &middot; 111 clicks</div></div>
     <div class="section-item"><div class="pct" style="color:#7095A7">0.3%</div><div class="n">TFG / Biz &middot; 5 clicks</div></div>
   </div>
-  <p class="note">No dedicated "Lead Story" slice this issue: the Dashi feature ran in full inside the email, so its only clicks were the self-link (view online / share / comments), which falls under CHS Property per the classification rule.</p>
+  <p class="note">Correction from the prior version of this report: Bolchoz's Second Act is the issue's actual Lead Story link (the RESTAURANTS teaser's "Read the full story" destination), not an ICYMI item. It was mis-tagged ICYMI in the first pass. The issue's own webpage (dashi-gets-new-life) is a separate self-link, classified CHS Property.</p>
 </section>
 
 <section>
@@ -254,14 +256,14 @@
         <tr><th>Story</th><th>Email clicks (Beehiiv)</th><th>GA4 views</th><th>GA4 users</th><th>Email ÷ views</th></tr>
       </thead>
       <tbody>
-        <tr><td class="url-cell">Bolchoz's Second Act</td><td>512</td><td>711</td><td>475</td><td><div class="bar-track"><div class="bar-fill" style="width:72%"></div></div><span class="note">0.72</span></td></tr>
+        <tr><td class="url-cell">Bolchoz's Second Act (lead story)</td><td>512</td><td>711</td><td>475</td><td><div class="bar-track"><div class="bar-fill" style="width:72%"></div></div><span class="note">0.72</span></td></tr>
         <tr><td class="url-cell">The Cult Donut Comes South</td><td>149</td><td>257</td><td>168</td><td><div class="bar-track"><div class="bar-fill" style="width:58%"></div></div><span class="note">0.58</span></td></tr>
         <tr><td class="url-cell">Second Place, Again</td><td>113</td><td>260</td><td>162</td><td><div class="bar-track"><div class="bar-fill" style="width:43%"></div></div><span class="note">0.43</span></td></tr>
         <tr><td class="url-cell">El Molino Makes It Four</td><td>89</td><td>122</td><td>77</td><td><div class="bar-track"><div class="bar-fill" style="width:73%"></div></div><span class="note">0.73</span></td></tr>
         <tr><td class="url-cell">The Smashburger Comeback</td><td>75</td><td>154</td><td>83</td><td><div class="bar-track"><div class="bar-fill" style="width:49%"></div></div><span class="note">0.49</span></td></tr>
         <tr><td class="url-cell">A Burger Joint On The Harbor</td><td>74</td><td>213</td><td>140</td><td><div class="bar-track"><div class="bar-fill" style="width:35%"></div></div><span class="note">0.35</span></td></tr>
         <tr><td class="url-cell">Live Music This Weekend</td><td>28</td><td>56</td><td>23</td><td><div class="bar-track"><div class="bar-fill" style="width:50%"></div></div><span class="note">0.50</span></td></tr>
-        <tr><td class="url-cell">Dashi (lead, self-link only)</td><td>22</td><td>60</td><td>43</td><td><div class="bar-track"><div class="bar-fill" style="width:37%"></div></div><span class="note">0.37</span></td></tr>
+        <tr><td class="url-cell">dashi-gets-new-life (issue's own page, not the lead)</td><td>22</td><td>60</td><td>43</td><td><div class="bar-track"><div class="bar-fill" style="width:37%"></div></div><span class="note">0.37</span></td></tr>
       </tbody>
     </table>
     <p class="note">Real GA4 data, pulled via the Zapier MCP's Google Analytics 4 connector (property: CHS Happenings, properties/481754311), scoped exactly to this issue's window, July 16-22. Views = screenPageViews, Users = totalUsers.</p>
@@ -298,8 +300,8 @@
 <section>
   <h2>Takeaways</h2>
   <ul class="takeaways">
-    <li><strong>Bolchoz's Second Act should've probably led.</strong> It pulled 526 clicks as an ICYMI item, 34% of the whole issue's clicks and 24x the lead story's own self-link traffic. That's about as loud a lead-selection signal as this playbook gets.</li>
-    <li><strong>Dashi's low click count isn't a red flag.</strong> The full story ran in-email, so its only clicks were view-online, share, and comment links (22 total). Nothing to fix here, just a different read pattern than click-through ICYMI stories.</li>
+    <li><strong>The lead performed great, no notes.</strong> Bolchoz's Second Act (the actual "Read the full story" link behind this week's Dashi-space teaser) pulled 526 clicks, the single biggest link in the issue and roughly equal to all 5 ICYMI stories combined (514). Correction from the first pass of this report: that link was mis-tagged as an ICYMI story. It's the lead, and it crushed it.</li>
+    <li><strong>dashi-gets-new-life on its own tells you almost nothing.</strong> That URL is just the issue's own webpage, its 22 clicks are view-online, share, and comment links, not a story read. The teaser there deliberately withholds the payoff (per the locked lead-teaser style) and routes the actual read to the Bolchoz URL above, which is where the real engagement shows up.</li>
     <li><strong>Events drew broad, shallow interest.</strong> 268 clicks (17% of the issue) spread across 15-plus links, no single event breaking away from the pack. Fine for community goodwill, not a traffic engine.</li>
     <li><strong>Email is doing more of the heavy lifting than it looks like.</strong> With real GA4 now scoped to this exact issue, Bolchoz and El Molino both sit above 0.7 email-clicks-to-views, meaning email directly drove the clear majority of their traffic, not just a slice of it.</li>
     <li><strong>Nextdoor and Meta Ads are bigger non-email demand sources than Google</strong> for this issue's window (267 and 175 sessions vs. Google's 56). Diversification off email is paying off.</li>
