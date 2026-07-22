@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHS Happenings Click Analysis — July 16, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #183872;
+    --lime: #CCED60;
+    --navy-10: rgba(24,56,114,0.08);
+    --navy-20: rgba(24,56,114,0.16);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    background: #f4f5f2;
+    color: var(--navy);
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px 60px; }
+  .hero {
+    background: var(--navy);
+    color: #fff;
+    padding: 40px 20px 32px;
+    text-align: center;
+  }
+  .hero .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: var(--lime);
+    margin-bottom: 10px;
+  }
+  .hero h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 1.3;
+    margin: 0 0 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero .meta { font-size: 14px; opacity: 0.85; }
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin: -30px auto 0;
+    max-width: 940px;
+    padding: 0 20px;
+  }
+  .kpi-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 18px 16px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    text-align: center;
+  }
+  .kpi-card .num {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 26px;
+    color: var(--navy);
+  }
+  .kpi-card .label {
+    font-size: 12px;
+    color: #5b6b8c;
+    margin-top: 4px;
+  }
+  section { margin-top: 40px; }
+  h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 19px;
+    border-bottom: 3px solid var(--lime);
+    display: inline-block;
+    padding-bottom: 6px;
+    margin-bottom: 18px;
+  }
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 22px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  th {
+    font-family: 'Inter', sans-serif;
+    text-align: left;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #5b6b8c;
+    padding: 8px 10px;
+    border-bottom: 2px solid var(--navy-10);
+  }
+  td {
+    padding: 9px 10px;
+    border-bottom: 1px solid var(--navy-10);
+    vertical-align: middle;
+  }
+  tr:last-child td { border-bottom: none; }
+  .url-cell { max-width: 340px; word-break: break-word; }
+  .url-cell a { color: var(--navy); text-decoration: none; font-weight: 500; }
+  .tag {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 5px;
+    background: var(--navy-10);
+    color: var(--navy);
+    white-space: nowrap;
+  }
+  .tag.icymi { background: #183872; color: #fff; }
+  .tag.event { background: #e9dfc7; color: #6b5a2a; }
+  .tag.chsprop { background: var(--lime); color: var(--navy); }
+  .tag.tfg { background: #7095A7; color: #fff; }
+  .bar-track {
+    background: var(--navy-10);
+    border-radius: 4px;
+    height: 8px;
+    width: 100px;
+    overflow: hidden;
+  }
+  .bar-fill { background: var(--navy); height: 100%; border-radius: 4px; }
+  .section-panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+  .section-item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .section-item .pct {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+  }
+  .section-item .n { font-size: 12px; color: #5b6b8c; margin-top: 2px; }
+  .caveat {
+    background: #fff8e8;
+    border-left: 4px solid var(--lime);
+    padding: 16px 18px;
+    border-radius: 6px;
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+  .takeaways { list-style: none; padding: 0; margin: 0; }
+  .takeaways li {
+    background: #fff;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    font-size: 14px;
+    line-height: 1.55;
+    border-left: 4px solid var(--navy);
+  }
+  .takeaways li strong { color: var(--navy); }
+  .note { font-size: 12px; color: #7a89a8; margin-top: 8px; }
+  .footer { text-align: center; font-size: 12px; color: #8a97b3; margin-top: 50px; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="eyebrow">CHS Happenings — Click Analysis</div>
+  <h1>The old Dashi space already has a surprising new life</h1>
+  <div class="meta">Sent Thursday, July 16, 2026 &middot; 11,652 delivered</div>
+</div>
+
+<div class="kpi-row">
+  <div class="kpi-card"><div class="num">69.7%</div><div class="label">Open rate</div></div>
+  <div class="kpi-card"><div class="num">9.3%</div><div class="label">Verified click rate</div></div>
+  <div class="kpi-card"><div class="num">1,539</div><div class="label">Total clicks &middot; 800 unique clickers</div></div>
+  <div class="kpi-card"><div class="num">0.15%</div><div class="label">Unsubscribe rate</div></div>
+</div>
+
+<div class="wrap">
+
+<section>
+  <h2>Ranked links</h2>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>#</th><th>Link</th><th>Section</th><th>Total clicks</th><th>Share of #1</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td class="url-cell"><a href="https://www.chshappenings.com/p/bolchoz-second-act">/p/bolchoz-second-act</a><br><span class="note">Bolchoz's Second Act</span></td><td><span class="tag icymi">ICYMI</span></td><td>526</td><td><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></td></tr>
+        <tr><td>2</td><td class="url-cell"><a href="https://www.chshappenings.com/p/the-cult-donut-comes-south">/p/the-cult-donut-comes-south</a></td><td><span class="tag icymi">ICYMI</span></td><td>154</td><td><div class="bar-track"><div class="bar-fill" style="width:29%"></div></div></td></tr>
+        <tr><td>3</td><td class="url-cell"><a href="https://www.chshappenings.com/p/charleston-gets-second-place-again">/p/charleston-gets-second-place-again</a><br><span class="note">Second Place, Again</span></td><td><span class="tag icymi">ICYMI</span></td><td>118</td><td><div class="bar-track"><div class="bar-fill" style="width:22%"></div></div></td></tr>
+        <tr><td>4</td><td class="url-cell"><a href="https://www.chshappenings.com/p/el-molino-makes-it-four">/p/el-molino-makes-it-four</a></td><td><span class="tag icymi">ICYMI</span></td><td>91</td><td><div class="bar-track"><div class="bar-fill" style="width:17%"></div></div></td></tr>
+        <tr><td>5</td><td class="url-cell"><a href="https://www.chshappenings.com/p/the-smashburger-comeback">/p/the-smashburger-comeback</a></td><td><span class="tag icymi">ICYMI</span></td><td>75</td><td><div class="bar-track"><div class="bar-fill" style="width:14%"></div></div></td></tr>
+        <tr><td>6</td><td class="url-cell"><a href="https://www.chshappenings.com/p/a-burger-joint-on-the-harbor">/p/a-burger-joint-on-the-harbor</a></td><td><span class="tag icymi">ICYMI</span></td><td>76</td><td><div class="bar-track"><div class="bar-fill" style="width:14%"></div></div></td></tr>
+        <tr><td>7</td><td class="url-cell"><a href="https://www.eventbrite.com/e/charleston-creative-market-tickets-1991760218430">Charleston Creative Market</a></td><td><span class="tag event">Event</span></td><td>53</td><td><div class="bar-track"><div class="bar-fill" style="width:10%"></div></div></td></tr>
+        <tr><td>8</td><td class="url-cell"><a href="https://www.pickershullabaloo.com/">Pickers Hullabaloo</a></td><td><span class="tag event">Event</span></td><td>43</td><td><div class="bar-track"><div class="bar-fill" style="width:8%"></div></div></td></tr>
+        <tr><td>9</td><td class="url-cell"><a href="https://www.chshappenings.com/p/live-music-this-weekend">Live Music This Weekend</a></td><td><span class="tag chsprop">CHS Property</span></td><td>28</td><td><div class="bar-track"><div class="bar-fill" style="width:5%"></div></div></td></tr>
+        <tr><td>10</td><td class="url-cell"><a href="https://www.eventbrite.com/e/fort-sumter-dayaway-marinemax-charleston-tickets-1987139001245">Fort Sumter Dayaway (MarineMax)</a></td><td><span class="tag event">Event</span></td><td>27</td><td><div class="bar-track"><div class="bar-fill" style="width:5%"></div></div></td></tr>
+        <tr><td>11</td><td class="url-cell"><a href="https://www.instagram.com/p/Dax1whJNwXc/">Instagram post</a></td><td><span class="tag chsprop">CHS Property</span></td><td>26</td><td><div class="bar-track"><div class="bar-fill" style="width:5%"></div></div></td></tr>
+        <tr><td>12</td><td class="url-cell"><a href="https://fireflydistillery.com/event/firefly-singles-happy-hour-july/">Firefly Singles Happy Hour</a></td><td><span class="tag event">Event</span></td><td>25</td><td><div class="bar-track"><div class="bar-fill" style="width:5%"></div></div></td></tr>
+        <tr><td>13</td><td class="url-cell"><a href="https://charlestonstage.com/shows-and-tickets/littlewomen">Charleston Stage — Little Women</a></td><td><span class="tag event">Event</span></td><td>22</td><td><div class="bar-track"><div class="bar-fill" style="width:4%"></div></div></td></tr>
+        <tr><td>14</td><td class="url-cell"><a href="https://www.chshappenings.com/p/dashi-gets-new-life">/p/dashi-gets-new-life</a><br><span class="note">Issue's own self-link (view online / share / comments)</span></td><td><span class="tag chsprop">CHS Property</span></td><td>22</td><td><div class="bar-track"><div class="bar-fill" style="width:4%"></div></div></td></tr>
+        <tr><td>15</td><td class="url-cell"><a href="https://www.uptownsocialchs.com/">Uptown Social</a></td><td><span class="tag event">Event</span></td><td>16</td><td><div class="bar-track"><div class="bar-fill" style="width:3%"></div></div></td></tr>
+        <tr><td>16</td><td class="url-cell"><a href="https://www.ticketmaster.com/event/Z7r9jZ1A7jf-_">Ticketmaster event</a></td><td><span class="tag event">Event</span></td><td>14</td><td><div class="bar-track"><div class="bar-fill" style="width:3%"></div></div></td></tr>
+        <tr><td>17</td><td class="url-cell"><a href="https://www.charlestoneuchreclub.com/p/event-schedule.html">Charleston Euchre Club</a></td><td><span class="tag event">Event</span></td><td>12</td><td><div class="bar-track"><div class="bar-fill" style="width:2%"></div></div></td></tr>
+        <tr><td>18</td><td class="url-cell"><a href="https://www.charlestonbattery.com/schedule/">Charleston Battery schedule</a></td><td><span class="tag event">Event</span></td><td>12</td><td><div class="bar-track"><div class="bar-fill" style="width:2%"></div></div></td></tr>
+        <tr><td>19</td><td class="url-cell"><a href="https://www.scetv.org/events/rei-presents-sea-turtles-south-carolina-sc-dnr">SCETV — Sea Turtles</a></td><td><span class="tag event">Event</span></td><td>10</td><td><div class="bar-track"><div class="bar-fill" style="width:2%"></div></div></td></tr>
+        <tr><td>20</td><td class="url-cell"><a href="https://www.navymemorial.org/lone-sailor-statue-charleston-sc">Navy Memorial — Lone Sailor Statue</a><br><span class="note">History source</span></td><td><span class="tag chsprop">CHS Property</span></td><td>10</td><td><div class="bar-track"><div class="bar-fill" style="width:2%"></div></div></td></tr>
+        <tr><td>21</td><td class="url-cell"><a href="https://chshappenings.com/media-kit">Media Kit</a></td><td><span class="tag chsprop">CHS Property</span></td><td>8</td><td><div class="bar-track"><div class="bar-fill" style="width:2%"></div></div></td></tr>
+        <tr><td>22</td><td class="url-cell"><a href="https://schistory.org/july-2005-arthur-ravenel-jr-bridge-opens-to-traffic/">SC History — Ravenel Bridge</a><br><span class="note">History source</span></td><td><span class="tag chsprop">CHS Property</span></td><td>8</td><td><div class="bar-track"><div class="bar-fill" style="width:2%"></div></div></td></tr>
+        <tr><td>23</td><td class="url-cell"><a href="https://www.cafehosanna.com/">Cafe Hosanna</a></td><td><span class="tag event">Event</span></td><td>7</td><td><div class="bar-track"><div class="bar-fill" style="width:1%"></div></div></td></tr>
+        <tr><td>24</td><td class="url-cell"><a href="https://baguettemagic.com/">Baguette Magic</a></td><td><span class="tag event">Event</span></td><td>6</td><td><div class="bar-track"><div class="bar-fill" style="width:1%"></div></div></td></tr>
+        <tr><td>25</td><td class="url-cell"><a href="https://millersallday.com/">Miller's All Day</a></td><td><span class="tag event">Event</span></td><td>6</td><td><div class="bar-track"><div class="bar-fill" style="width:1%"></div></div></td></tr>
+        <tr><td>26</td><td class="url-cell"><a href="https://culturalarts.northcharleston.org/about/PCCB.php">North Charleston Cultural Arts (PCCB)</a></td><td><span class="tag event">Event</span></td><td>5</td><td><div class="bar-track"><div class="bar-fill" style="width:1%"></div></div></td></tr>
+        <tr><td>27</td><td class="url-cell"><a href="https://puretheatre.org/">PURE Theatre</a></td><td><span class="tag event">Event</span></td><td>5</td><td><div class="bar-track"><div class="bar-fill" style="width:1%"></div></div></td></tr>
+        <tr><td>28</td><td class="url-cell"><a href="https://navyyardcharleston.com/">Navy Yard Charleston</a></td><td><span class="tag event">Event</span></td><td>5</td><td><div class="bar-track"><div class="bar-fill" style="width:1%"></div></div></td></tr>
+        <tr><td>29</td><td class="url-cell"><a href="https://www.thefarrellgroupchs.com/">The Farrell Group site</a></td><td><span class="tag tfg">TFG / Biz</span></td><td>4</td><td><div class="bar-track"><div class="bar-fill" style="width:1%"></div></div></td></tr>
+        <tr><td>30</td><td class="url-cell"><a href="https://www.linkedin.com/in/jimmyfarrell/">Jimmy's LinkedIn</a></td><td><span class="tag tfg">TFG / Biz</span></td><td>1</td><td><div class="bar-track"><div class="bar-fill" style="width:0%"></div></div></td></tr>
+      </tbody>
+    </table>
+    <p class="note">Engagement &amp; system links (poll responses, likes, comments, subscribe-preference links, social shares, Beehiiv recommendation widgets, plus a couple of small survey/Dinner Club/guide clicks) are aggregated below rather than listed individually — roughly 45 distinct URLs, most at 1-2 clicks each.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Clicks by section</h2>
+  <div class="section-panel">
+    <div class="section-item"><div class="pct" style="color:var(--navy)">67.6%</div><div class="n">ICYMI &middot; 1,040 clicks</div></div>
+    <div class="section-item"><div class="pct" style="color:#6b5a2a">17.4%</div><div class="n">Event &middot; 268 clicks</div></div>
+    <div class="section-item"><div class="pct" style="color:#7a9a1e">7.5%</div><div class="n">Engagement &amp; system &middot; 115 clicks</div></div>
+    <div class="section-item"><div class="pct" style="color:var(--navy)">7.2%</div><div class="n">CHS Property &middot; 111 clicks</div></div>
+    <div class="section-item"><div class="pct" style="color:#7095A7">0.3%</div><div class="n">TFG / Biz &middot; 5 clicks</div></div>
+  </div>
+  <p class="note">No dedicated "Lead Story" slice this issue: the Dashi feature ran in full inside the email, so its only clicks were the self-link (view online / share / comments), which falls under CHS Property per the classification rule.</p>
+</section>
+
+<section>
+  <h2>Email clicks vs. site traffic, by story</h2>
+  <div class="card">
+    <table>
+      <thead>
+        <tr><th>Story</th><th>Email clicks (Beehiiv)</th><th>Site page views, trailing 7 days*</th><th>Email ÷ views</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="url-cell">Bolchoz's Second Act</td><td>512</td><td>1,081</td><td><div class="bar-track"><div class="bar-fill" style="width:47%"></div></div><span class="note">0.47</span></td></tr>
+        <tr><td class="url-cell">The Cult Donut Comes South</td><td>149</td><td>386</td><td><div class="bar-track"><div class="bar-fill" style="width:39%"></div></div><span class="note">0.39</span></td></tr>
+        <tr><td class="url-cell">Second Place, Again</td><td>113</td><td>333</td><td><div class="bar-track"><div class="bar-fill" style="width:34%"></div></div><span class="note">0.34</span></td></tr>
+        <tr><td class="url-cell">El Molino Makes It Four</td><td>89</td><td>180</td><td><div class="bar-track"><div class="bar-fill" style="width:49%"></div></div><span class="note">0.49</span></td></tr>
+        <tr><td class="url-cell">The Smashburger Comeback</td><td>75</td><td>205</td><td><div class="bar-track"><div class="bar-fill" style="width:37%"></div></div><span class="note">0.37</span></td></tr>
+        <tr><td class="url-cell">A Burger Joint On The Harbor</td><td>74</td><td>259</td><td><div class="bar-track"><div class="bar-fill" style="width:29%"></div></div><span class="note">0.29</span></td></tr>
+        <tr><td class="url-cell">Dashi (lead, self-link only)</td><td>22</td><td>95</td><td><div class="bar-track"><div class="bar-fill" style="width:23%"></div></div><span class="note">0.23</span></td></tr>
+      </tbody>
+    </table>
+    <p class="note">*GA4 wasn't reachable this run (connector unavailable) — this column uses Beehiiv's own site analytics for the trailing 7 days as a stand-in. It's page-level and site-wide (not scoped strictly to traffic from this one issue), so treat the ratio as directional, not exact.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Where all web traffic came from</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th>Source</th><th>Sessions, trailing 7 days</th></tr></thead>
+      <tbody>
+        <tr><td>Direct</td><td>1,013</td></tr>
+        <tr><td>Nextdoor.com</td><td>327</td></tr>
+        <tr><td>Meta Ads</td><td>180</td></tr>
+        <tr><td>Google.com</td><td>59</td></tr>
+        <tr><td>Gmail app (in-app browser)</td><td>39</td></tr>
+        <tr><td>chshappenings.com (internal)</td><td>27</td></tr>
+        <tr><td>Facebook.com</td><td>3</td></tr>
+        <tr><td>Instagram / yahoo / Beehiiv / other</td><td>9</td></tr>
+      </tbody>
+    </table>
+    <p class="note">Site-wide numbers (all pages, all issues), not scoped to this one send — provided as context since GA4 wasn't available this run. Beehiiv's own email data above (1,539 total clicks, 800 unique clickers) remains the trustworthy read on this specific issue's email engagement.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Attribution caveat</h2>
+  <div class="caveat">
+    GA4 wasn't reachable this run, so "site traffic" here comes from Beehiiv's own website analytics instead of the usual GA4 property — directional, not the exact cut Jimmy normally gets, and flag this to reconnect GA4 before next week's run.<br><br>
+    Even with GA4, "direct" is always a mixed bucket: typed URLs, bookmarks, privacy browsers, lost ad tags, and email clicks whose referrer got stripped. Only 39 sessions this week were explicitly tagged as coming from a mail app, but Beehiiv logged 1,539 total email clicks for this single issue alone — a strong sign email traffic is landing in "direct" uncredited, not that email underperformed. Nextdoor and Meta Ads are legitimate non-email demand and should be trusted as such. External links (Eventbrite, venue sites, marketchs.com) never show up in on-site analytics at all, so this view only ever tells half the story for event clicks.
+  </div>
+</section>
+
+<section>
+  <h2>Takeaways</h2>
+  <ul class="takeaways">
+    <li><strong>Bolchoz's Second Act should've probably led.</strong> It pulled 526 clicks as an ICYMI item, 34% of the whole issue's clicks and 24x the lead story's own self-link traffic. That's about as loud a lead-selection signal as this playbook gets.</li>
+    <li><strong>Dashi's low click count isn't a red flag.</strong> The full story ran in-email, so its only clicks were view-online, share, and comment links (22 total). Nothing to fix here, just a different read pattern than click-through ICYMI stories.</li>
+    <li><strong>Events drew broad, shallow interest.</strong> 268 clicks (17% of the issue) spread across 15-plus links, no single event breaking away from the pack. Fine for community goodwill, not a traffic engine.</li>
+    <li><strong>El Molino and Bolchoz lean hardest on email.</strong> Both sit near 0.47-0.49 email-clicks-to-site-views, meaning email is doing real work getting readers there. Other stories pull more of their traffic from elsewhere (Nextdoor, Meta Ads).</li>
+    <li><strong>Nextdoor and Meta Ads are now bigger non-email demand sources than Google</strong> for the site overall (327 and 180 sessions vs. 59). Diversification off email is paying off.</li>
+    <li><strong>Reconnect GA4 before next week.</strong> This run substituted Beehiiv's own site analytics since the GA4 connector wasn't reachable — still useful, but not the exact numbers you're used to.</li>
+  </ul>
+</section>
+
+</div>
+
+<div class="footer">CHS Happenings &middot; Click Analysis &middot; Generated for the July 16, 2026 issue</div>
+
+</body>
+</html>
