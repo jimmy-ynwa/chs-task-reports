@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New NEXT List — Wiring Runbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --base:#0D1017;--blue:#2E6BFF;--blue-soft:#7BA5FF;--tangerine:#F04E23;--green:#8FE39A;
+    --paper:#F4F6FA;--slate:#AEB7C6;--slate-dim:#8A93A4;--card:#151A24;--card-border:#242B38;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--base);color:var(--paper);font-family:'Geist',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.55;padding:48px 20px 80px;}
+  .wrap{max-width:780px;margin:0 auto;}
+  .mono{font-family:'Geist Mono','SFMono-Regular',Menlo,monospace;letter-spacing:0.02em;}
+  .eyebrow{font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin:0 0 10px;}
+  h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:44px;line-height:1.05;margin:0 0 12px;color:#fff;}
+  h1 em{font-style:italic;color:var(--blue);}
+  .subline{font-size:15px;color:var(--slate);margin:0 0 12px;max-width:60ch;}
+  .time{font-family:'Geist Mono',monospace;font-size:12px;color:var(--tangerine);letter-spacing:0.06em;margin:0 0 36px;}
+  h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:26px;color:#fff;margin:42px 0 6px;}
+  .phase-note{font-size:13.5px;color:var(--slate);margin:0 0 18px;}
+  p{margin:0 0 14px;}
+
+  .callout{background:var(--card);border:1px solid var(--card-border);border-left:3px solid var(--blue);border-radius:10px;padding:16px 20px;margin:0 0 28px;}
+  .callout.warn{border-left-color:var(--tangerine);}
+  .callout .cl{font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue-soft);margin:0 0 6px;}
+  .callout.warn .cl{color:var(--tangerine);}
+  .callout p{font-size:13.5px;color:var(--slate);margin:0 0 8px;}
+  .callout p:last-child{margin-bottom:0;}
+  .callout b{color:var(--paper);}
+
+  ol.steps{list-style:none;counter-reset:s;margin:0;padding:0;}
+  ol.steps li{counter-increment:s;position:relative;padding:0 0 20px 44px;margin:0;border-left:1px solid var(--card-border);}
+  ol.steps li:last-child{border-left-color:transparent;}
+  ol.steps li::before{
+    content:counter(s,decimal-leading-zero);
+    position:absolute;left:-13px;top:0;
+    width:26px;height:26px;border-radius:50%;
+    background:var(--base);border:1px solid var(--blue);
+    color:var(--blue);font-family:'Geist Mono',monospace;font-size:11px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .st{font-size:15.5px;color:var(--paper);font-weight:600;margin:2px 0 5px;}
+  .sd{font-size:13.5px;color:var(--slate);margin:0 0 6px;}
+  .sd b{color:var(--paper);font-weight:500;}
+  .path{font-family:'Geist Mono',monospace;font-size:12px;color:var(--blue-soft);background:rgba(46,107,255,0.07);border:1px solid rgba(46,107,255,0.18);border-radius:5px;padding:2px 7px;display:inline-block;margin-top:2px;}
+  .gotcha{font-size:12.5px;color:var(--tangerine);margin-top:6px;}
+  .gotcha b{color:var(--tangerine);}
+
+  .check{background:var(--card);border:1px solid var(--card-border);border-radius:12px;padding:22px 26px;margin-top:24px;}
+  .check .cl{font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);margin:0 0 12px;}
+  .check ul{margin:0;padding-left:18px;}
+  .check li{font-size:13.5px;color:var(--slate);margin-bottom:7px;}
+  .check li b{color:var(--paper);}
+
+  footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--card-border);font-family:'Geist Mono',monospace;font-size:11px;color:var(--slate-dim);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <p class="eyebrow">New NEXT · Runbook</p>
+  <h1>Wire the <em>New NEXT list</em></h1>
+  <p class="subline">The capture page is live and the LinkedIn profile points at it, but the form has nowhere to deliver. This closes that loop, so the 30-day posting plan launches into a working funnel instead of a dead end.</p>
+  <p class="time">One sitting · ~45-60 minutes</p>
+
+  <div class="callout">
+    <p class="cl">Before you start</p>
+    <p>You'll need: access to <b>jimmyfarrell.com</b> in Cloudflare, the page's source folder (if you no longer have it, say so and I'll rebuild the page), and about an hour. Email routing on <b>jimmy@jimmyfarrell.com</b> is already live, which is what unblocks step 1.</p>
+  </div>
+
+  <h2>Phase 1 — The account</h2>
+  <p class="phase-note">A separate Kit account, isolated from CHS, so nothing entangles when CHS sunsets.</p>
+  <ol class="steps">
+    <li>
+      <div class="st">Confirm the address actually receives</div>
+      <div class="sd">Send a test email to <b>jimmy@jimmyfarrell.com</b> from any account and confirm it lands in your CHS inbox. Do this first. If routing is silently broken, every step after this fails in a confusing way.</div>
+    </li>
+    <li>
+      <div class="st">Open a new Kit account with that address</div>
+      <div class="sd">Sign up fresh at kit.com using <b>jimmy@jimmyfarrell.com</b>. Do not use your CHS address, Kit ties one account to one email and you want these fully separate. Choose the free <b>Newsletter</b> plan.</div>
+    </li>
+    <li>
+      <div class="st">Set the sender identity to you, not the entity</div>
+      <div class="sd">Account name and from-name: <b>Jimmy Farrell</b>. This matches the posting-identity decision, you're the brand, Farrell Digital Ventures is the backdrop.</div>
+    </li>
+  </ol>
+
+  <h2>Phase 2 — The form</h2>
+  <p class="phase-note">One form, double opt-in, with the confirmation email doing the welcome work the free plan won't automate.</p>
+  <ol class="steps">
+    <li>
+      <div class="st">Create an inline form</div>
+      <div class="sd">Name it <b>New NEXT List</b>.</div>
+      <div class="path">Grow → Landing Pages &amp; Forms → Create → Form → Inline</div>
+    </li>
+    <li>
+      <div class="st">Keep double opt-in ON</div>
+      <div class="sd">Leave <b>Send confirmation email</b> checked and <b>Auto-confirm new subscribers</b> unchecked. You're pointing a cold audience at a brand-new sending domain, and double opt-in protects deliverability from day one.</div>
+    </li>
+    <li>
+      <div class="st">Make the confirmation email carry the welcome</div>
+      <div class="sd">This is the free-plan workaround. Sequences need a paid tier, but the confirmation email is a form setting, not an automation. Rewrite it so it does real work: who you are, what they'll get, how often. It's the first thing every subscriber reads.</div>
+      <div class="gotcha"><b>Free-plan note:</b> also expect "Powered by Kit" branding and no Zapier integration until you upgrade to Creator (~$33/mo). Neither blocks you at zero subscribers.</div>
+    </li>
+    <li>
+      <div class="st">Grab the numeric form ID</div>
+      <div class="sd">Open the form and read the <b>number in the browser URL</b>. That's the ID the page needs.</div>
+      <div class="gotcha"><b>The gotcha that already burned us once:</b> use the numeric ID, not the alphanumeric UID from the embed snippet. The alphanumeric one produces a form that submits and silently fails, no error, no subscriber.</div>
+    </li>
+  </ol>
+
+  <h2>Phase 3 — Wire and deploy</h2>
+  <p class="phase-note">Connect the live page to the live form, then redeploy.</p>
+  <ol class="steps">
+    <li>
+      <div class="st">Paste the ID into the page</div>
+      <div class="sd">In <b>index.html</b>, find the commented <b>KIT FORM INTEGRATION POINT</b> block and replace <b>REPLACE_WITH_YOUR_FORM_ID</b> in the form action with your numeric ID. Leave the rest of the markup alone, the styling already wraps Kit's fields.</div>
+    </li>
+    <li>
+      <div class="st">Redeploy to Cloudflare Pages</div>
+      <div class="sd">Zip the folder and drag-drop as a wipe-replace, your standard deploy pattern. The zip doubles as the recoverable master.</div>
+    </li>
+    <li>
+      <div class="st">Test it end to end with a real address</div>
+      <div class="sd">Submit the form from the live site. Confirm three things: the confirmation email arrives, clicking it confirms you, and the subscriber shows up in Kit. If any link in that chain breaks, it's almost always the form ID.</div>
+    </li>
+  </ol>
+
+  <h2>Phase 4 — Sending domain</h2>
+  <p class="phase-note">Not needed to capture subscribers. Needed before you send your first broadcast.</p>
+  <ol class="steps">
+    <li>
+      <div class="st">Add jimmyfarrell.com as the sending domain in Kit</div>
+      <div class="sd">Kit will hand you CNAME records to add.</div>
+      <div class="path">Settings → Email → Sending domain</div>
+    </li>
+    <li>
+      <div class="st">Add the CNAMEs in Cloudflare</div>
+      <div class="sd">Add them to the <b>jimmyfarrell.com</b> zone. This is a different zone from chshappenings.com, so your standing "never touch the CHS DNS" rule isn't in play here. But jimmyfarrell.com now has MX records from Email Routing, so add only what Kit asks for and don't disturb the MX entries.</div>
+      <div class="gotcha"><b>Hard rule:</b> if Kit asks you to set DMARC to p=none, don't. Keep the stronger <b>p=quarantine</b>. Kit requests the weaker policy for convenience, it isn't a requirement.</div>
+    </li>
+    <li>
+      <div class="st">Set the CAN-SPAM footer address</div>
+      <div class="sd">Every broadcast needs a physical mailing address. Use a virtual mailbox (iPostal1 was the plan) rather than your home address.</div>
+    </li>
+  </ol>
+
+  <div class="check">
+    <p class="cl">Done when</p>
+    <ul>
+      <li>A real email submitted at <b>jimmyfarrell.com</b> produces a confirmation email and a confirmed subscriber in Kit</li>
+      <li>The confirmation email reads like a welcome, not a system notice</li>
+      <li>The LinkedIn Website field still points at jimmyfarrell.com with the link text <b>"See how it's built"</b></li>
+      <li>You know your subscriber count, which is your honest baseline of <b>zero</b> before the 30-day plan starts moving it</li>
+    </ul>
+  </div>
+
+  <div class="callout warn" style="margin-top:28px;">
+    <p class="cl">Why this is the blocker</p>
+    <p>The whole strategy is "LinkedIn is discovery, the list is the business." Right now the discovery half works and the business half doesn't exist. Launching the posting cadence before this is wired would spend a first month of fresh attention on a form that goes nowhere, and a launch month is the one thing you can't rerun.</p>
+  </div>
+
+  <footer>Farrell Digital Ventures · New NEXT · Runbook · July 26, 2026</footer>
+</div>
+</body>
+</html>
