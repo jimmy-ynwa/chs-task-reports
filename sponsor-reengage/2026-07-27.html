@@ -80,12 +80,43 @@
 </header>
 
 <div class="scoreboard">
-  <div class="stat hot"><div class="n">2</div><div class="l">Hot — act now</div></div>
+  <div class="stat"><div class="n">0</div><div class="l">Hot</div></div>
   <div class="stat"><div class="n">0</div><div class="l">Touch due today</div></div>
   <div class="stat"><div class="n">26</div><div class="l">Cooling</div></div>
   <div class="stat"><div class="n">1</div><div class="l">Stay Warm</div></div>
-  <div class="stat"><div class="n">11</div><div class="l">Media-kit clicks</div></div>
+  <div class="stat hot"><div class="n">13</div><div class="l">Bogus click tags</div></div>
 </div>
+
+<section style="border-color:#c1440e">
+  <div class="sechead" style="background:#fff6f1;border-bottom-color:#f3d5c6">
+    <h2 style="color:#c1440e">⚠ Correction — every click tag in Kit is machine-generated</h2>
+    <div class="note">Issued after Jimmy confirmed with Penny Lacuesta directly that she never clicked. This supersedes the Hot section of the first version of this report.</div>
+  </div>
+  <div class="body">
+    <p>Penny said she didn't click. So the tag was checked against every other click in the system, and the pattern is unambiguous: <strong>all 13 click tags fired inside a 123-second window at 12:23 PM ET</strong>, spread across 22 days and 13 different businesses.</p>
+    <table>
+      <thead><tr><th>Prospect</th><th>Tag fired (ET)</th><th>Days after enrollment</th></tr></thead>
+      <tbody>
+        <tr><td class="biz">S&amp;J Yachts</td><td>12:22:43</td><td>3</td></tr>
+        <tr><td class="biz">Coastal Strategic Capital</td><td>12:22:45</td><td>2</td></tr>
+        <tr><td class="biz">Center for Periodontics</td><td>12:22:49</td><td>3</td></tr>
+        <tr><td class="biz">CopeGrand Homes</td><td>12:23:13</td><td>3</td></tr>
+        <tr><td class="biz">Fifth Third Bank</td><td>12:23:35</td><td>6</td></tr>
+        <tr><td class="biz">Mappus Insurance / Afore</td><td>12:23:40</td><td>2</td></tr>
+        <tr><td class="biz">Intercoastal Mortgage</td><td>12:23:49</td><td>34</td></tr>
+        <tr><td class="biz">C.T. Lowndes &amp; Company</td><td>12:23:50</td><td>2</td></tr>
+        <tr><td class="biz">Moody &amp; O'Neal CPAs</td><td>12:23:52</td><td>3</td></tr>
+        <tr><td class="biz">GDC Home</td><td>12:24:01</td><td>3</td></tr>
+        <tr><td class="biz">Dolphin Architects + Builders</td><td>12:24:42</td><td>2</td></tr>
+        <tr><td class="biz">Daniel Island Club</td><td>12:24:43</td><td>3</td></tr>
+        <tr><td class="biz">LaFond Law Group</td><td>12:24:46</td><td>3</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:16px"><strong>What this means.</strong> Thirteen independent people do not click across a two-minute band. The cold-cohort tags also land exactly 2–3 days after enrollment — which is when the sequence's next email sends. The tag is firing on <strong>send</strong>, not on click. Either the Kit link trigger is misconfigured, or something is prefetching every URL in the email as it goes out.</p>
+    <p><strong>Consequence.</strong> <code>clicked-media-kit</code> and <code>clicked-calendar-link</code> carry zero signal today. Not "mostly noise" — no signal at all. Intercoastal Mortgage and Fifth Third Bank have been retracted from Hot; there is no evidence either one engaged. The good news: no outreach went out on the bad signal, and no CRM record was changed.</p>
+    <p><strong>Fix before trusting these again.</strong> Open the two link triggers in Kit and confirm they're set to fire on click rather than on delivery, then send yourself a test through the sequence and check whether the tag lands without touching the email. Until that's verified, the skill has been changed to refuse to promote anyone to Hot on a click tag alone.</p>
+  </div>
+</section>
 
 <section>
   <div class="sechead">
@@ -101,25 +132,12 @@
 <section>
   <div class="sechead">
     <h2>Hot — handle personally</h2>
-    <span class="pill hot">Both clicked the calendar link</span>
-    <div class="note">Buying signal overrides the cadence. Both of these are sitting quietly in "Cooling" with no one chasing them.</div>
+    <span class="pill gray">None</span>
+    <div class="note">Retracted. See the correction above.</div>
   </div>
   <div class="body">
-
-    <div class="card">
-      <h3>Intercoastal Mortgage — Penny Lacuesta</h3>
-      <p class="sig">▲ Clicked the calendar link on July 10 · PLacuesta@icmtg.com</p>
-      <p>Finished Warm Outbound and clicked through to book time. That is the single strongest signal in the whole pipeline and it is 17 days old with no follow-up logged. She already knows you — the Patriots Point shoot is in her record.</p>
-      <p><strong>Suggested move:</strong> skip email. Call or text her directly this week, reference the calendar click lightly ("saw you poked at my calendar"), and offer two concrete times.</p>
-    </div>
-
-    <div class="card">
-      <h3>Fifth Third Bank — Jason Hessberg</h3>
-      <p class="sig">▲ Clicked the calendar link on July 3 · jason.hessberg@53.com</p>
-      <p>Finished Warm Outbound after the Midlands-expansion hook and clicked to schedule. 24 days cold since. Corporate marketing calendars move slowly, so this one is still live — but it needs a human.</p>
-      <p><strong>Suggested move:</strong> short personal email tying the Lowcountry branch push to a Q4 placement, with a direct ask for 15 minutes. Attach nothing; make the ask the whole email.</p>
-    </div>
-
+    <p>The first version of this report put <strong>Intercoastal Mortgage</strong> and <strong>Fifth Third Bank</strong> here on the strength of a calendar-link click. Both tags were machine-generated. Neither prospect has demonstrated any engagement, and both stay in Cooling on their normal schedule.</p>
+    <p class="muted">With the click tags disqualified, the only remaining Hot signal available is a logged Airtable Interaction dated after a prospect's completion. None of the 26 cooling prospects has one. Kit still cannot detect email replies, so a genuine reply would land in Gmail rather than here — worth glancing at the CHS inbox before the August 5 batch goes out.</p>
   </div>
 </section>
 
@@ -186,9 +204,9 @@
 
 <section>
   <div class="sechead">
-    <h2>Watch — media kit clicked, still mid-sequence</h2>
-    <span class="pill">11 prospects</span>
-    <div class="note">Not completions, so they're outside the cadence. But every one of them opened the media kit and every one is still sitting on plain "Cold - In Sequence" in Airtable — the click never moved them anywhere.</div>
+    <h2>Disqualified — "media kit clicked," mid-sequence</h2>
+    <span class="pill gray">11 prospects · no signal</span>
+    <div class="note">Listed for the record only. Every tag below is part of the 12:23 PM cluster and reflects nothing the prospect did.</div>
   </div>
   <div class="body">
     <table>
@@ -207,7 +225,7 @@
         <tr><td class="biz">Coastal Strategic Capital</td><td>Jul 11</td></tr>
       </tbody>
     </table>
-    <p class="muted" style="margin-top:14px">Recommendation: add an Airtable-side status for a media-kit click, or at minimum let the rest of the sequence run and pick these up first when their cooling window opens. The three most recent — CopeGrand, the perio practice, and S&amp;J Yachts — clicked inside the last 48 hours and are worth a personal note now rather than waiting on the drip.</p>
+    <p class="muted" style="margin-top:14px">These 11 stay exactly where they are: in sequence, on the normal schedule, with no special handling. The earlier recommendation to fast-track CopeGrand, the perio practice, and S&amp;J Yachts was based on the bad tags and is withdrawn. Nothing was sent to any of them.</p>
   </div>
 </section>
 
