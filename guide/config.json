@@ -1,0 +1,134 @@
+{
+  "_readme": "Config for the Charleston Insider's Guide monthly market refresh. The scheduled Cowork session reads this, makes the Flexmls MCP calls described in RECIPE.md, writes data.json, then runs refresh.py. This file is the single source of truth for how each neighborhood is defined. Do not rely on project memory: it is unreachable from an unattended run.",
+
+  "global": {
+    "property_type_codes": ["A"],
+    "sold_status": ["Closed"],
+    "sold_window_filter": "CloseDate Ge days(-365)",
+    "header_template": "Market Data · {MONTH} {YEAR} · 12-Month Solds",
+    "footer_template": "Market data prepared by Jimmy Farrell / The Farrell Group · {MONTH} {YEAR} · All data deemed reliable but not guaranteed",
+    "no_active_data": "HARD RULE from Jimmy, 2026-07-28: no active-listing statistics anywhere on this page, panels or prose. Active counts, active median list, low active list, active median DOM are all banned. Every published figure must come from closed sales."
+  },
+
+  "panels": [
+    { "id": "sob-market", "name": "South of Broad", "filter": "SubdivisionName Eq 'South of Broad'",
+      "stats": [["Median Sold","median_sold"],["Median $/sqft","median_ppsf"],["Median DOM","median_dom"],["Sales (12mo)","sales"],["High Sale","high_sale"],["Sold &lt;30 Days","pct_under_30"]] },
+
+    { "id": "hv-market", "name": "Harleston Village", "filter": "SubdivisionName Eq 'Harleston Village'",
+      "stats": [["Median Sold","median_sold"],["Median $/sqft","median_ppsf"],["Median DOM","median_dom"],["Sales (12mo)","sales"],["List-to-Sale","list_to_sale"],["Sold &lt;30 Days","pct_under_30"]] },
+
+    { "id": "fq-market", "name": "French Quarter", "filter": "MLSAreaMinor Eq '51 - Peninsula Charleston Inside of Crosstown'",
+      "method": "ADDRESS_POLYGON",
+      "stats": [["Median Sold","median_sold"],["Median $/sqft","median_ppsf"],["Median DOM","median_dom"],["Sales (12mo)","sales"],["List-to-Sale","list_to_sale"],["Sold &lt;30 Days","pct_under_30"]] },
+
+    { "id": "ans-market", "name": "Ansonborough", "filter": "SubdivisionName Eq 'Ansonborough'",
+      "stats": [["Median Sold","median_sold"],["Median $/sqft","median_ppsf"],["Median DOM","median_dom"],["Sales (12mo)","sales"],["List-to-Sale","list_to_sale"],["Sat 121+ Days","pct_121_plus"]] },
+
+    { "id": "gd-market", "name": "Garden District", "filter": "SubdivisionName Eq 'Wraggborough'",
+      "note_fixed": "The MLS files the Garden District as Wraggborough. 'Garden District' returns zero listings.",
+      "stats": [["Median Sold","median_sold"],["Median $/sqft","median_ppsf"],["Median DOM","median_dom"],["Sales (12mo)","sales"],["Entry Point","entry_point"],["Sold &lt;30 Days","pct_under_30"]] },
+
+    { "id": "rad-market", "name": "Radcliffeborough", "filter": "SubdivisionName Eq 'Radcliffeborough'",
+      "stats": [["Median Sold","median_sold"],["Median $/sqft","median_ppsf"],["Median DOM","median_dom"],["Sales (12mo)","sales"],["List-to-Sale","list_to_sale"],["Sold &lt;30 Days","pct_under_30"]] },
+
+    { "id": "can-market", "name": "Cannonborough/Elliotborough", "filter": "SubdivisionName Eq 'Cannonborough-Elliotborough','Elliotborough','Cannonborough'",
+      "note_fixed": "Three MLS codes cover this one neighborhood and must be merged.",
+      "stats": [["Median Sold","median_sold"],["Median $/sqft","median_ppsf"],["Median DOM","median_dom"],["Sales (12mo)","sales"],["Sold &lt;30 Days","pct_under_30"],["High Sale","high_sale"]] },
+
+    { "id": "east-market", "name": "Eastside", "filter": "SubdivisionName Eq 'Eastside'",
+      "stats": [["Median Sold","median_sold"],["Median $/sqft","median_ppsf"],["Median DOM","median_dom"],["Sales (12mo)","sales"],["Entry Point","entry_point"],["Sold &lt;30 Days","pct_under_30"]] },
+
+    { "id": "west-market", "name": "Westside", "filter": "SubdivisionName Eq 'Westside','Bee Street Lofts','Bee Street Condominiums'",
+      "note_fixed": "Jimmy confirmed the Bee Street condo buildings belong to Westside and are merged in.",
+      "stats": [["Median Sold","median_sold"],["Median $/sqft","median_ppsf"],["Median DOM (Sold)","median_dom"],["Sales (12mo)","sales"],["Entry Point","entry_point"],["Sold &lt;30 Days","pct_under_30"]] },
+
+    { "id": "nc-market", "name": "North Central", "filter": "SubdivisionName Eq 'North Central'",
+      "stats": [["Median Sold","median_sold"],["Median $/sqft","median_ppsf"],["Median DOM","median_dom"],["Sales (12mo)","sales"],["Entry Point","entry_point"],["List-to-Sale","list_to_sale"]] },
+
+    { "id": "hpt-market", "name": "Hampton Park Terrace", "filter": "SubdivisionName Eq 'Hampton Park Terrace'",
+      "stats": [["Median Sold","median_sold"],["Median $/sqft","median_ppsf"],["Median DOM","median_dom"],["Sales (12mo)","sales"],["Entry Point","entry_point"],["Sold &lt;30 Days","pct_under_30"]] },
+
+    { "id": "wt-market", "name": "Wagener Terrace", "filter": "SubdivisionName Eq 'Wagener Terrace'",
+      "stats": [["Median Sold","median_sold"],["Median $/sqft","median_ppsf"],["Median DOM","median_dom"],["Sales (12mo)","sales"],["Sold &lt;30 Days","pct_under_30"],["Total Volume","total_volume"]] },
+
+    { "id": "ji-market", "name": "James Island", "filter": "MLSAreaMinor Eq '21 - James Island'",
+      "extra_sold_filter": "PropertySubType Eq 'Single Family Detached'",
+      "note_fixed": "First four stats are detached only. Attached median is pulled separately with PropertySubType Eq 'Single Family Attached'. Total Volume is all sub-types.",
+      "stats": [["Median Sold","median_sold"],["Median $/sqft","median_ppsf"],["Median DOM","median_dom"],["Detached Sales (12mo)","sales"],["Attached Median","attached_median"],["Total Volume","total_volume"]] },
+
+    { "id": "joi-market", "name": "Johns Island", "filter": "MLSAreaMinor Eq '23 - Johns Island'",
+      "stats": [["Median Sold","median_sold"],["Median $/sqft","median_ppsf"],["Median DOM","median_dom"],["Sales (12mo)","sales"],["List-to-Sale","list_to_sale"],["Total Volume","total_volume"]] },
+
+    { "id": "di-market", "name": "Daniel Island", "filter": "MLSAreaMinor Eq '77 - Daniel Island'",
+      "note_fixed": "High null-DOM rate (~15%), mostly builder closings entered after the fact. Any speed claim needs the 'never publicly marketed' qualifier.",
+      "stats": [["Median Sold","median_sold"],["Median $/sqft","median_ppsf"],["Median DOM","median_dom"],["Sales (12mo)","sales"],["High Sale (at list)","high_list"],["Total Volume","total_volume"]] },
+
+    { "id": "pc-market", "name": "Park Circle", "filter": "SubdivisionName Eq 'Park Circle'",
+      "note_fixed": "A subdivision, not an area. Sits inside MLS area 31. New-construction closings priced at exactly list flatter the list-to-sale ratio.",
+      "stats": [["Median Sold","median_sold"],["Median $/sqft","median_ppsf"],["Median DOM","median_dom"],["Sales (12mo)","sales"],["List-to-Sale","list_to_sale"],["Sold &lt;30 Days","pct_under_30"]] },
+
+    { "id": "fb-market", "name": "Folly Beach", "filter": "MLSAreaMinor Eq '22 - Folly Beach to Battery Island'",
+      "extra_sold_filter": "ClosePrice Ge 100000",
+      "note_fixed": "The $100K floor is MANDATORY. MLS Area 22 files marina slips and parking spaces at 2 McDonough Rd and 66-67 W 9th/10th St as residential sales, ten of them between $16K and $52K. Nothing exists between $100K and $275,300, so any floor in that range gives the identical set. Do not raise it.",
+      "stats": [["Median Sold","median_sold"],["Median $/sqft","median_ppsf"],["Median DOM","median_dom"],["Sales (12mo)","sales"],["List-to-Sale","list_to_sale"],["Sold &lt;30 Days","pct_under_30"]] },
+
+    { "id": "si-market", "name": "Sullivan's Island", "filter": "MLSAreaMinor Eq startswith('43 - Sullivan')",
+      "note_fixed": "The apostrophe in \"43 - Sullivan's Island\" breaks a literal Eq in _filter. Use startswith. High null-DOM rate (~17%); same qualifier as Daniel Island.",
+      "stats": [["Median Sold","median_sold"],["Median $/sqft","median_ppsf"],["Median DOM","median_dom"],["Sales (12mo)","sales"],["List-to-Sale","list_to_sale"],["Sold &lt;30 Days","pct_under_30"]] },
+
+    { "id": "iop-market", "name": "Isle of Palms", "filter": "MLSAreaMinor Eq '44 - Isle of Palms'",
+      "note_fixed": "Wild Dunes is MLS area 45, already excluded from area 44. Pull it separately for the note: SubdivisionName Eq 'Wild Dunes','Wild Dunes Resort','Wild Dunes Yacht Harbor'.",
+      "stats": [["Median Sold","median_sold"],["Median $/sqft","median_ppsf"],["Median DOM","median_dom"],["Sales (12mo)","sales"],["List-to-Sale","list_to_sale"],["Sold &lt;30 Days","pct_under_30"]] },
+
+    { "id": "west-ashley", "name": "West Ashley", "filter": "MLSAreaMinor Eq '11 - West of the Ashley Inside I-526','12 - West of the Ashley Outside I-526','13 - West of the Ashley beyond Rantowles Creek'",
+      "stats": [["Median Sold","median_sold"],["Median $/sqft","median_ppsf"],["Median DOM","median_dom"],["Sales (12mo)","sales"],["List-to-Sale","list_to_sale"],["Sold &lt;30 Days","pct_under_30"]] },
+
+    { "id": "mount-pleasant", "name": "South Mount Pleasant", "filter": "MLSAreaMinor Eq '42 - Mt Pleasant S of IOP Connector'",
+      "stats": [["Median Sold","median_sold"],["Median $/sqft","median_ppsf"],["Median DOM","median_dom"],["Sales (12mo)","sales"],["List-to-Sale","list_to_sale"],["Sold &lt;30 Days","pct_under_30"]] },
+
+    { "id": "seas-eat", "name": "North Mount Pleasant", "filter": "MLSAreaMinor Eq '41 - Mt Pleasant N of IOP Connector'",
+      "note_fixed": "Section id is misleading; this really is the North Mount Pleasant panel.",
+      "stats": [["Median Sold","median_sold"],["Median $/sqft","median_ppsf"],["Median DOM","median_dom"],["Sales (12mo)","sales"],["List-to-Sale","list_to_sale"],["Sold &lt;30 Days","pct_under_30"]] }
+  ],
+
+  "french_quarter_boundary": {
+    "description": "Jimmy's original Flexmls map polygon. Geo search is disabled on the MCP feed, so rebuild by pulling every Area 51 closing with UnparsedAddress and assigning by street.",
+    "west": "Meeting Street",
+    "north": "Market Street",
+    "east": "East Bay Street",
+    "south": "Broad Street",
+    "inside_streets": ["State St","Church St (Broad-to-Market only)","Cumberland St","Chalmers St","Queen St (east of Meeting only)","Prioleau St","Exchange St","Vendue Range","Middle Atlantic Wharf","Concord St (Broad-to-Market only)","Gillon St","Unity Alley","Lodge Alley","Philadelphia Alley"],
+    "excluded_traps": [
+      "Elliott St and Bedons Alley are SOUTH of Broad. The MLS codes most of them 'South of Broad'. Jimmy's call is to EXCLUDE them.",
+      "103 and 106 Church St sit just below the Broad crossing at roughly #105-110. Exclude.",
+      "Dockside (330 Concord St) is north of Market. Exclude.",
+      "Gadsdenboro is north of Calhoun. Exclude.",
+      "Fort Sumter House (1 King St) is south of Broad. Exclude."
+    ],
+    "judge_by_address_not_subdivision": "Four included listings are miscoded 'South of Broad' (4 Prioleau, 55 Concord, 75 Concord, 4 Exchange). Listings coded 'None', 'Downtown', 'City of Charleston' or 'Historic District' are legitimate candidates. Always judge by street address."
+  },
+
+  "superlative_claims": {
+    "_why": "Four superlative claims on the April 2026 page were false, and had been false when written. Recompute the holder of each every run and rewrite the prose if it changed. Never carry a superlative forward.",
+    "_collect_even_if_not_displayed": "data.json MUST carry every metric listed in checks below for ALL 12 peninsula panels, even when that metric is not one of the panel's six displayed stats. Otherwise the winner is picked from a partial pool and the check silently lies. Caught during the 2026-07-28 build: only Wagener Terrace carried total_volume, so the volume check named it the leader when South of Broad is 6.8x larger.",
+    "checks": [
+      { "claim": "lowest median $/sqft on the Peninsula", "metric": "median_ppsf", "direction": "min", "scope": "peninsula" },
+      { "claim": "highest 30-day absorption on the Peninsula", "metric": "pct_under_30", "direction": "max", "scope": "peninsula" },
+      { "claim": "most sales on the Peninsula", "metric": "sales", "direction": "max", "scope": "peninsula" },
+      { "claim": "highest 12-month sold volume on the Peninsula", "metric": "total_volume", "direction": "max", "scope": "peninsula" },
+      { "claim": "fastest median DOM on the Peninsula", "metric": "median_dom", "direction": "min", "scope": "peninsula" },
+      { "claim": "slowest median DOM on the Peninsula", "metric": "median_dom", "direction": "max", "scope": "peninsula" },
+      { "claim": "strongest list-to-sale on the Peninsula", "metric": "list_to_sale", "direction": "max", "scope": "peninsula" }
+    ],
+    "peninsula_ids": ["sob-market","hv-market","fq-market","ans-market","gd-market","rad-market","can-market","east-market","west-market","nc-market","hpt-market","wt-market"]
+  },
+
+  "anomaly_gates": {
+    "_why": "Hold the run and flag rather than publishing something obviously broken.",
+    "median_sold_pct_change_abort": 35,
+    "sales_count_pct_change_abort": 50,
+    "min_sales_for_publish": 3,
+    "total_panels_expected": 22,
+    "total_stat_cells_expected": 132
+  }
+}
