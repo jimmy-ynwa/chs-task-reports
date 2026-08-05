@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CHS Happenings — Click Analysis — July 30, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#183872;
+    --lime:#CCED60;
+    --ink:#0e2148;
+    --muted:#5a6b8c;
+    --line:#dfe5f0;
+    --bg:#f4f6fb;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    font-family:'DM Sans',system-ui,-apple-system,sans-serif;
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px 72px;}
+  h1,h2,h3,.kpi-val,.rank{font-family:'Inter',system-ui,sans-serif;}
+
+  /* HERO */
+  .hero{
+    background:var(--navy);
+    color:#fff;
+    padding:44px 20px 40px;
+    margin-bottom:28px;
+  }
+  .hero-inner{max-width:1080px;margin:0 auto;}
+  .eyebrow{
+    display:inline-block;
+    background:var(--lime);
+    color:var(--navy);
+    font-family:'Inter',sans-serif;
+    font-weight:800;
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    padding:6px 12px;
+    border-radius:3px;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    margin:0 0 10px;
+    font-size:32px;
+    line-height:1.2;
+    font-weight:800;
+    letter-spacing:-.02em;
+  }
+  .hero .meta{
+    margin:0;
+    color:#c3d0e8;
+    font-size:15px;
+  }
+  .hero .meta strong{color:var(--lime);font-weight:700;}
+
+  /* KPI */
+  .kpis{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+    margin-bottom:34px;
+  }
+  .kpi{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-top:3px solid var(--lime);
+    border-radius:6px;
+    padding:18px 16px;
+  }
+  .kpi-label{
+    font-size:10px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--muted);
+    font-weight:700;
+    margin-bottom:8px;
+  }
+  .kpi-val{
+    font-size:30px;
+    font-weight:800;
+    color:var(--navy);
+    line-height:1;
+    letter-spacing:-.02em;
+  }
+  .kpi-sub{font-size:12px;color:var(--muted);margin-top:7px;}
+
+  /* SECTIONS */
+  section{margin-bottom:38px;}
+  h2{
+    font-size:13px;
+    letter-spacing:.13em;
+    text-transform:uppercase;
+    color:var(--navy);
+    font-weight:800;
+    margin:0 0 4px;
+    padding-bottom:9px;
+    border-bottom:2px solid var(--lime);
+  }
+  .sub{font-size:13px;color:var(--muted);margin:10px 0 16px;line-height:1.55;}
+
+  .card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:20px 22px;
+  }
+
+  table{width:100%;border-collapse:collapse;background:var(--white);border:1px solid var(--line);border-radius:6px;overflow:hidden;}
+  th{
+    background:var(--navy);
+    color:#fff;
+    font-family:'Inter',sans-serif;
+    font-size:10px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    text-align:left;
+    padding:11px 12px;
+    font-weight:700;
+  }
+  td{
+    padding:11px 12px;
+    border-top:1px solid var(--line);
+    font-size:14px;
+    vertical-align:middle;
+  }
+  tr:nth-child(even) td{background:#fafbfe;}
+  .rank{font-weight:800;color:var(--muted);font-size:13px;width:34px;}
+  .num{text-align:right;font-variant-numeric:tabular-nums;font-weight:700;color:var(--navy);white-space:nowrap;}
+  .lbl{font-weight:500;}
+  .lbl small{display:block;color:var(--muted);font-size:11px;margin-top:2px;word-break:break-all;}
+
+  .tag{
+    display:inline-block;
+    font-family:'Inter',sans-serif;
+    font-size:9px;
+    letter-spacing:.09em;
+    text-transform:uppercase;
+    font-weight:800;
+    padding:3px 7px;
+    border-radius:3px;
+    white-space:nowrap;
+  }
+  .t-lead{background:var(--navy);color:var(--lime);}
+  .t-icymi{background:var(--lime);color:var(--navy);}
+  .t-event{background:#e6ecf7;color:var(--navy);}
+  .t-chs{background:#eef1f7;color:var(--muted);}
+  .t-tfg{background:#dbe4f2;color:var(--navy);}
+
+  .bar{
+    height:7px;
+    background:#e8edf6;
+    border-radius:4px;
+    overflow:hidden;
+    min-width:70px;
+  }
+  .bar span{display:block;height:100%;background:var(--navy);border-radius:4px;}
+  .bar.lime span{background:var(--lime);}
+
+  /* SECTION SPLIT */
+  .split{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .split .card{border-top:3px solid var(--navy);}
+  .split .card.hl{border-top-color:var(--lime);}
+  .split .n{font-family:'Inter',sans-serif;font-size:26px;font-weight:800;color:var(--navy);line-height:1;}
+  .split .p{font-size:13px;color:var(--muted);margin-top:6px;}
+  .split .t{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:9px;}
+
+  .callout{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-left:4px solid var(--lime);
+    border-radius:6px;
+    padding:18px 22px;
+    font-size:14px;
+    line-height:1.65;
+  }
+  .callout strong{color:var(--navy);}
+
+  ul.take{list-style:none;padding:0;margin:0;}
+  ul.take li{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-left:4px solid var(--navy);
+    border-radius:6px;
+    padding:15px 18px;
+    margin-bottom:11px;
+    font-size:14px;
+    line-height:1.6;
+  }
+  ul.take li b{color:var(--navy);font-family:'Inter',sans-serif;font-weight:800;display:block;margin-bottom:4px;font-size:14px;}
+
+  .foot{
+    text-align:center;
+    color:var(--muted);
+    font-size:12px;
+    padding-top:26px;
+    border-top:1px solid var(--line);
+  }
+
+  @media(max-width:840px){
+    .kpis{grid-template-columns:repeat(2,1fr);}
+    .split{grid-template-columns:1fr;}
+    .hero h1{font-size:24px;}
+    td,th{font-size:12px;padding:9px 8px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Weekly Click Analysis</span>
+    <h1>They campaigned against it. Then they voted for it</h1>
+    <p class="meta">Sent Thursday, July 30, 2026 · 7:00 AM ET &nbsp;·&nbsp; <strong>11,692 delivered</strong> &nbsp;·&nbsp; 99.82% delivery rate</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- KPIs -->
+  <div class="kpis">
+    <div class="kpi">
+      <div class="kpi-label">Open Rate</div>
+      <div class="kpi-val">71.3%</div>
+      <div class="kpi-sub">8,330 unique opens</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Verified Click Rate</div>
+      <div class="kpi-val">9.26%</div>
+      <div class="kpi-sub">vs 8.3% baseline · record 13.06%</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Total Clicks</div>
+      <div class="kpi-val">1,914</div>
+      <div class="kpi-sub">817 unique clickers (771 verified)</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Unsubscribe Rate</div>
+      <div class="kpi-val">0.26%</div>
+      <div class="kpi-sub">30 unsubs · 0 spam reports</div>
+    </div>
+  </div>
+
+  <!-- RANKED LINKS -->
+  <section>
+    <h2>Every content link, ranked</h2>
+    <p class="sub">Total clicks = email clicks + web clicks. Bar shows share of the No. 1 link. Poll responses, likes, comments, preference and social-share links are aggregated at the bottom rather than listed individually.</p>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Link</th>
+          <th>Section</th>
+          <th style="text-align:right">Clicks</th>
+          <th style="width:130px">Share of No. 1</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="rank">1</td>
+          <td class="lbl">Charleston Place becomes a resort<small>chshappenings.com/p/the-hotel-is-becoming-a-resort</small></td>
+          <td><span class="tag t-icymi">ICYMI</span></td>
+          <td class="num">396</td>
+          <td><div class="bar lime"><span style="width:100%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">2</td>
+          <td class="lbl">The Route 41 vote that flipped<small>chshappenings.com/p/the-room-booed</small></td>
+          <td><span class="tag t-lead">Lead Story</span></td>
+          <td class="num">391</td>
+          <td><div class="bar"><span style="width:98.7%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">3</td>
+          <td class="lbl">15 spots for outdoor dining<small>charlestoncitypaper.com</small></td>
+          <td><span class="tag t-icymi">ICYMI</span></td>
+          <td class="num">201</td>
+          <td><div class="bar"><span style="width:50.8%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">4</td>
+          <td class="lbl">Pepsi plant trades for $13.5M<small>chshappenings.com/p/six-years-vacant-now-13-5-million</small></td>
+          <td><span class="tag t-icymi">ICYMI</span></td>
+          <td class="num">107</td>
+          <td><div class="bar"><span style="width:27.0%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">5</td>
+          <td class="lbl">Happy hour RSVP form<small>tally.so/r/eq8YzE</small></td>
+          <td><span class="tag t-chs">CHS Property</span></td>
+          <td class="num">91</td>
+          <td><div class="bar"><span style="width:23.0%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">6</td>
+          <td class="lbl">She'd never been to Charleston<small>chshappenings.com/p/she-d-never-been-to-charleston</small></td>
+          <td><span class="tag t-icymi">ICYMI</span></td>
+          <td class="num">78</td>
+          <td><div class="bar"><span style="width:19.7%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">7</td>
+          <td class="lbl">West Ashley wine shop<small>chshappenings.com/p/west-ashley-stopped-driving-downtown-for-wine</small></td>
+          <td><span class="tag t-icymi">ICYMI</span></td>
+          <td class="num">66</td>
+          <td><div class="bar"><span style="width:16.7%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">8</td>
+          <td class="lbl">MarketCHS<small>marketchs.com</small></td>
+          <td><span class="tag t-tfg">TFG / Biz</span></td>
+          <td class="num">34</td>
+          <td><div class="bar"><span style="width:8.6%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">9</td>
+          <td class="lbl">Firefly Distillery events<small>fireflydistillery.com/events</small></td>
+          <td><span class="tag t-event">Event</span></td>
+          <td class="num">32</td>
+          <td><div class="bar"><span style="width:8.1%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">10</td>
+          <td class="lbl">MLK at County Hall, 1967 (history source)<small>live5news.com</small></td>
+          <td><span class="tag t-chs">CHS Property</span></td>
+          <td class="num">31</td>
+          <td><div class="bar"><span style="width:7.8%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">11</td>
+          <td class="lbl">Live Music This Weekend<small>chshappenings.com/p/live-music-this-weekend</small></td>
+          <td><span class="tag t-chs">CHS Property</span></td>
+          <td class="num">30</td>
+          <td><div class="bar"><span style="width:7.6%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">12</td>
+          <td class="lbl">American Gardens happenings<small>americangardenschs.com</small></td>
+          <td><span class="tag t-event">Event</span></td>
+          <td class="num">26</td>
+          <td><div class="bar"><span style="width:6.6%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">13</td>
+          <td class="lbl">Lowcountry Ladies sunset yoga<small>eventbrite.com</small></td>
+          <td><span class="tag t-event">Event</span></td>
+          <td class="num">26</td>
+          <td><div class="bar"><span style="width:6.6%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">14</td>
+          <td class="lbl">Gibbes Museum programs<small>gibbesmuseum.org</small></td>
+          <td><span class="tag t-event">Event</span></td>
+          <td class="num">23</td>
+          <td><div class="bar"><span style="width:5.8%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">15</td>
+          <td class="lbl">Theatre 99 upcoming shows<small>theatre99.com</small></td>
+          <td><span class="tag t-event">Event</span></td>
+          <td class="num">20</td>
+          <td><div class="bar"><span style="width:5.1%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">16</td>
+          <td class="lbl">Media kit<small>chshappenings.com/media-kit</small></td>
+          <td><span class="tag t-chs">CHS Property</span></td>
+          <td class="num">19</td>
+          <td><div class="bar"><span style="width:4.8%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">17</td>
+          <td class="lbl">This issue online (self-link)<small>chshappenings.com/p/they-campaigned-against-it-then-voted-for-it</small></td>
+          <td><span class="tag t-chs">CHS Property</span></td>
+          <td class="num">18</td>
+          <td><div class="bar"><span style="width:4.5%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">18</td>
+          <td class="lbl">North Charleston farmers market<small>northcharleston.org</small></td>
+          <td><span class="tag t-event">Event</span></td>
+          <td class="num">13</td>
+          <td><div class="bar"><span style="width:3.3%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">19</td>
+          <td class="lbl">Last week's Where Are We?<small>chshappenings.com/p/charlestons-newest-port-terminal…#where-are-we</small></td>
+          <td><span class="tag t-chs">CHS Property</span></td>
+          <td class="num">12</td>
+          <td><div class="bar"><span style="width:3.0%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">20</td>
+          <td class="lbl">Unitarian Church Cemetery<small>atlasobscura.com</small></td>
+          <td><span class="tag t-chs">CHS Property</span></td>
+          <td class="num">11</td>
+          <td><div class="bar"><span style="width:2.8%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">21</td>
+          <td class="lbl">Duo pop-up workout<small>eventbrite.com</small></td>
+          <td><span class="tag t-event">Event</span></td>
+          <td class="num">11</td>
+          <td><div class="bar"><span style="width:2.8%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">22</td>
+          <td class="lbl">Charleston Battery schedule<small>charlestonbattery.com</small></td>
+          <td><span class="tag t-event">Event</span></td>
+          <td class="num">11</td>
+          <td><div class="bar"><span style="width:2.8%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">23</td>
+          <td class="lbl">Charleston Museum events<small>charlestonmuseum.org</small></td>
+          <td><span class="tag t-event">Event</span></td>
+          <td class="num">10</td>
+          <td><div class="bar"><span style="width:2.5%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">24</td>
+          <td class="lbl">The Farrell Group (sponsor lockup)<small>thefarrellgroupchs.com</small></td>
+          <td><span class="tag t-tfg">TFG / Biz</span></td>
+          <td class="num">10</td>
+          <td><div class="bar"><span style="width:2.5%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">25</td>
+          <td class="lbl">The Farrell Group (footer)<small>thefarrellgroupchs.com</small></td>
+          <td><span class="tag t-tfg">TFG / Biz</span></td>
+          <td class="num">10</td>
+          <td><div class="bar"><span style="width:2.5%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">26</td>
+          <td class="lbl">Two Blokes Brewing events<small>twoblokesbrewing.com</small></td>
+          <td><span class="tag t-event">Event</span></td>
+          <td class="num">9</td>
+          <td><div class="bar"><span style="width:2.3%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">27</td>
+          <td class="lbl">Full STEAM Ahead, Children's Museum<small>explorecml.org</small></td>
+          <td><span class="tag t-event">Event</span></td>
+          <td class="num">9</td>
+          <td><div class="bar"><span style="width:2.3%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">28</td>
+          <td class="lbl">Fly Fishing Film Tour<small>ticketmaster.com</small></td>
+          <td><span class="tag t-event">Event</span></td>
+          <td class="num">5</td>
+          <td><div class="bar"><span style="width:1.3%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">29</td>
+          <td class="lbl">Mount Pleasant makeover (archive, web only)<small>chshappenings.com/p/mount-pleasants-makeover…</small></td>
+          <td><span class="tag t-chs">CHS Property</span></td>
+          <td class="num">2</td>
+          <td><div class="bar"><span style="width:0.5%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">30</td>
+          <td class="lbl">Calendar (web only)<small>calendar.chshappenings.com</small></td>
+          <td><span class="tag t-chs">CHS Property</span></td>
+          <td class="num">2</td>
+          <td><div class="bar"><span style="width:0.5%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">31</td>
+          <td class="lbl">Instagram<small>instagram.com/chs.happenings</small></td>
+          <td><span class="tag t-chs">CHS Property</span></td>
+          <td class="num">2</td>
+          <td><div class="bar"><span style="width:0.5%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">32</td>
+          <td class="lbl">Jimmy Farrell on LinkedIn<small>linkedin.com/in/jimmyfarrell</small></td>
+          <td><span class="tag t-tfg">TFG / Biz</span></td>
+          <td class="num">2</td>
+          <td><div class="bar"><span style="width:0.5%"></span></div></td>
+        </tr>
+        <tr>
+          <td class="rank">—</td>
+          <td class="lbl"><b>Engagement &amp; system links (aggregated)</b><small>131 poll-response links, 45 social shares, 10 likes, 10 comment clicks, 18 preference/hosted-page links</small></td>
+          <td><span class="tag t-chs">System</span></td>
+          <td class="num">204</td>
+          <td><div class="bar"><span style="width:51.5%"></span></div></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- CLICKS BY SECTION -->
+  <section>
+    <h2>Clicks by section</h2>
+    <p class="sub">All 1,914 clicks (email + web) allocated. Lead Story and ICYMI shown as separate slices.</p>
+    <div class="split">
+      <div class="card hl">
+        <div class="t">ICYMI (5 stories)</div>
+        <div class="n">848</div>
+        <div class="p">44.3% of all clicks</div>
+      </div>
+      <div class="card hl">
+        <div class="t">Lead Story</div>
+        <div class="n">391</div>
+        <div class="p">20.4% of all clicks</div>
+      </div>
+      <div class="card">
+        <div class="t">CHS Property</div>
+        <div class="n">220</div>
+        <div class="p">11.5% of all clicks</div>
+      </div>
+      <div class="card">
+        <div class="t">Engagement &amp; System</div>
+        <div class="n">204</div>
+        <div class="p">10.7% of all clicks</div>
+      </div>
+      <div class="card">
+        <div class="t">Events (12 links)</div>
+        <div class="n">195</div>
+        <div class="p">10.2% of all clicks</div>
+      </div>
+      <div class="card">
+        <div class="t">TFG / Biz</div>
+        <div class="n">56</div>
+        <div class="p">2.9% of all clicks</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GA4 COMPARISON -->
+  <section>
+    <h2>Email clicks vs web traffic</h2>
+    <p class="sub">Beehiiv email clicks against GA4 pageviews and users for every published page linked in this issue, July 30 through August 5.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Page</th>
+          <th style="text-align:right">Email clicks</th>
+          <th style="text-align:right">Web views</th>
+          <th style="text-align:right">Web users</th>
+          <th style="width:150px">Email ÷ web views</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="lbl">/p/the-room-booed <span class="tag t-lead" style="margin-left:6px">Lead Story</span></td>
+          <td class="num">379</td>
+          <td class="num">891</td>
+          <td class="num">595</td>
+          <td><div class="bar"><span style="width:43%"></span></div><div style="font-size:11px;color:var(--muted);margin-top:4px">0.43×</div></td>
+        </tr>
+        <tr>
+          <td class="lbl">/p/the-hotel-is-becoming-a-resort</td>
+          <td class="num">391</td>
+          <td class="num">1,014</td>
+          <td class="num">612</td>
+          <td><div class="bar"><span style="width:39%"></span></div><div style="font-size:11px;color:var(--muted);margin-top:4px">0.39×</div></td>
+        </tr>
+        <tr>
+          <td class="lbl">/p/six-years-vacant-now-13-5-million</td>
+          <td class="num">106</td>
+          <td class="num">262</td>
+          <td class="num">167</td>
+          <td><div class="bar"><span style="width:40%"></span></div><div style="font-size:11px;color:var(--muted);margin-top:4px">0.40×</div></td>
+        </tr>
+        <tr>
+          <td class="lbl">/p/she-d-never-been-to-charleston</td>
+          <td class="num">78</td>
+          <td class="num">119</td>
+          <td class="num">75</td>
+          <td><div class="bar"><span style="width:66%"></span></div><div style="font-size:11px;color:var(--muted);margin-top:4px">0.66×</div></td>
+        </tr>
+        <tr>
+          <td class="lbl">/p/west-ashley-stopped-driving-downtown-for-wine</td>
+          <td class="num">66</td>
+          <td class="num">92</td>
+          <td class="num">57</td>
+          <td><div class="bar"><span style="width:72%"></span></div><div style="font-size:11px;color:var(--muted);margin-top:4px">0.72×</div></td>
+        </tr>
+        <tr>
+          <td class="lbl">/p/live-music-this-weekend</td>
+          <td class="num">28</td>
+          <td class="num">47</td>
+          <td class="num">21</td>
+          <td><div class="bar"><span style="width:60%"></span></div><div style="font-size:11px;color:var(--muted);margin-top:4px">0.60×</div></td>
+        </tr>
+        <tr>
+          <td class="lbl">/p/they-campaigned-against-it… (issue self-link)</td>
+          <td class="num">18</td>
+          <td class="num">9</td>
+          <td class="num">8</td>
+          <td><div class="bar"><span style="width:100%"></span></div><div style="font-size:11px;color:var(--muted);margin-top:4px">2.00×</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- SOURCES -->
+  <section>
+    <h2>Where all web traffic came from</h2>
+    <p class="sub">GA4 sessions by source/medium across the whole chshappenings.com property, July 30 through August 5.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Source / medium</th>
+          <th style="text-align:right">Sessions</th>
+          <th style="text-align:right">Users</th>
+          <th style="text-align:right">Pageviews</th>
+          <th style="width:130px">Share</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="lbl">(direct) / (none)</td><td class="num">883</td><td class="num">712</td><td class="num">1,851</td><td><div class="bar"><span style="width:100%"></span></div></td></tr>
+        <tr><td class="lbl">nextdoor.com / referral</td><td class="num">692</td><td class="num">641</td><td class="num">1,047</td><td><div class="bar lime"><span style="width:78%"></span></div></td></tr>
+        <tr><td class="lbl">metaads / 1_25mi+_25yo</td><td class="num">129</td><td class="num">128</td><td class="num">241</td><td><div class="bar"><span style="width:15%"></span></div></td></tr>
+        <tr><td class="lbl">google / organic</td><td class="num">41</td><td class="num">34</td><td class="num">78</td><td><div class="bar"><span style="width:5%"></span></div></td></tr>
+        <tr><td class="lbl">newsletter / email</td><td class="num">30</td><td class="num">26</td><td class="num">83</td><td><div class="bar"><span style="width:3%"></span></div></td></tr>
+        <tr><td class="lbl">app.beehiiv.com / referral</td><td class="num">9</td><td class="num">1</td><td class="num">26</td><td><div class="bar"><span style="width:1%"></span></div></td></tr>
+        <tr><td class="lbl">metaads / {{adset.name}} (broken tag)</td><td class="num">5</td><td class="num">5</td><td class="num">14</td><td><div class="bar"><span style="width:0.6%"></span></div></td></tr>
+        <tr><td class="lbl">metaads / 1_25mi _25yo</td><td class="num">4</td><td class="num">3</td><td class="num">7</td><td><div class="bar"><span style="width:0.5%"></span></div></td></tr>
+        <tr><td class="lbl">ig / social</td><td class="num">3</td><td class="num">3</td><td class="num">9</td><td><div class="bar"><span style="width:0.3%"></span></div></td></tr>
+        <tr><td class="lbl">newsletter-daily / email</td><td class="num">3</td><td class="num">1</td><td class="num">5</td><td><div class="bar"><span style="width:0.3%"></span></div></td></tr>
+        <tr><td class="lbl">All other sources (15 rows)</td><td class="num">22</td><td class="num">20</td><td class="num">77</td><td><div class="bar"><span style="width:2.5%"></span></div></td></tr>
+      </tbody>
+    </table>
+
+    <div style="height:16px"></div>
+    <div class="split">
+      <div class="card hl">
+        <div class="t">Beehiiv unique email clickers</div>
+        <div class="n">817</div>
+        <div class="p">771 verified · measured at the send</div>
+      </div>
+      <div class="card">
+        <div class="t">GA4 "newsletter / email" sessions</div>
+        <div class="n">30</div>
+        <div class="p">3.6% of what Beehiiv counted</div>
+      </div>
+      <div class="card">
+        <div class="t">GA4 "(direct) / (none)" sessions</div>
+        <div class="n">883</div>
+        <div class="p">Largest single bucket in the property</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATTRIBUTION CAVEAT -->
+  <section>
+    <h2>Attribution caveat</h2>
+    <div class="callout">
+      <p style="margin-top:0"><strong>GA "direct" is a mixed bucket.</strong> It holds typed URLs, bookmarks, privacy browsers, ad clicks that lost their tags, and email clicks whose referrer was stripped by the mail client. There is no way from this data to say what share of those 883 sessions came from Thursday's email, and this report does not try to.</p>
+      <p><strong>What the data does support: email is under-credited here.</strong> The lead story alone logged 334 unique email clickers in Beehiiv. GA4's explicitly tagged "newsletter / email" channel logged 30 sessions across the entire property for the whole week. Those two numbers cannot both be describing the same behavior, so the explicit email tag is capturing a small fraction of real email traffic.</p>
+      <p style="margin-bottom:0"><strong>Practical rule:</strong> trust Beehiiv for email engagement, trust GA4 for non-email demand, and never add the two together. External links — venues, Eventbrite, City Paper, marketchs.com — never touch this GA4 property at all, so their only measurement is the Beehiiv click count above.</p>
+    </div>
+  </section>
+
+  <!-- TAKEAWAYS -->
+  <section>
+    <h2>Takeaways</h2>
+    <ul class="take">
+      <li><b>The lead was right, and it was a photo finish</b>
+      Route 41 pulled 391 clicks. Charleston Place pulled 396. A five-click gap on 1,914 total is a tie, not a lead-selection miss — the Verdict hook did its job and CTOR landed at 9.26%, a full point above the 8.3% baseline. Both stories were Tier 1 material; either could have led.</li>
+
+      <li><b>ICYMI is doing more work than the lead, again</b>
+      The five ICYMI items pulled 848 clicks, 44.3% of everything, versus 20.4% for the lead. That is the structural pattern, not a one-week fluke. The ICYMI slot is the highest-leverage real estate in the issue and should be treated as such when picking stories.</li>
+
+      <li><b>Events drew 10.2% and it is broad and shallow</b>
+      195 clicks spread across 12 venue links, top one at 32. Nobody link is a destination — readers are browsing the block, not chasing a single event. That is fine for utility but it means no individual venue link is worth pitching as a sponsor placement on click volume alone.</li>
+
+      <li><b>Route 41 and Charleston Place both over-indexed on non-email</b>
+      Both landed roughly 600 GA4 users against roughly 340 unique email clickers — 1.7 to 1.8x more web demand than email demand. Nextdoor sent 692 sessions and 641 users that week, second only to direct. These are the push-on-paid candidates: civic conflict and luxury-development stories travel outside the list.</li>
+
+      <li><b>The happy hour ask converted at 91 clicks</b>
+      Fifth-highest link in the issue, ahead of two ICYMI stories and every event. When the ask is specific and dated, readers act. Worth remembering for the community play launching next week.</li>
+
+      <li><b>Media kit got 19 clicks and marketchs got 34</b>
+      Small but real. Marketchs at 34 out-clicked every event link and every venue in the issue, which is a decent argument for keeping the TFG real-estate blurb where it sits.</li>
+    </ul>
+  </section>
+
+  <div class="foot">
+    CHS Happenings · Click Analysis · Issue of July 30, 2026 · Generated August 5, 2026<br>
+    Sources: Beehiiv post stats and per-link clicks · Google Analytics 4 property 481754311 via Zapier
+  </div>
+
+</div>
+</body>
+</html>
