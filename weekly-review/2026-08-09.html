@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week in Review — August 3 – 9, 2026</title>
+<style>
+  :root{
+    --navy:#003466; --lime:#AEDC2E; --gold:#ECD19C; --steel:#7095A7;
+    --bg:#F4F5F0; --card:#FFFFFF; --ink:#1A1A2E; --body:#3D3D52;
+    --muted:#888899; --rule:#E8E8EE;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--body);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;line-height:1.5;}
+  header.top{background:var(--navy);padding:28px 20px 26px;}
+  header.top .inner{max-width:760px;margin:0 auto;}
+  header.top .kicker{color:rgba(255,255,255,.55);font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:8px;}
+  header.top h1{color:#fff;margin:0 0 6px;font-size:30px;line-height:1.15;letter-spacing:-.02em;font-weight:800;}
+  .range{color:#fff;font-size:17px;font-weight:600;opacity:.9;margin-bottom:10px;}
+  .summary{color:var(--lime);font-size:14px;font-weight:600;letter-spacing:.01em;}
+  .wrap{max-width:760px;margin:0 auto;padding:16px 20px 56px;}
+  .card{background:var(--card);border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.06),0 6px 20px rgba(0,0,0,.04);
+    padding:24px;margin-bottom:16px;}
+  h2{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--navy);font-weight:700;
+    border-left:3px solid var(--lime);padding-left:10px;margin:0 0 16px;}
+  h3{font-size:10px;text-transform:uppercase;letter-spacing:.13em;color:var(--steel);font-weight:700;
+    margin:20px 0 10px;}
+  h3:first-of-type{margin-top:0;}
+  p{margin:0 0 10px;font-size:15px;}
+  .lede{font-size:15px;color:var(--ink);}
+  ul{margin:0 0 4px;padding-left:0;list-style:none;}
+  li{font-size:14.5px;margin-bottom:10px;padding-left:0;}
+  li b, strong{color:var(--ink);font-weight:700;}
+  .src{color:var(--muted);font-size:12.5px;}
+  /* stat grid */
+  .stats{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:6px;}
+  .stat{flex:1 1 150px;background:#F7F8F5;border-radius:10px;padding:12px 14px;}
+  .stat .n{font-size:22px;font-weight:800;color:var(--navy);letter-spacing:-.02em;line-height:1.15;}
+  .stat .l{font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700;margin-top:4px;}
+  .stat .d{font-size:12px;font-weight:700;margin-top:5px;}
+  .up{color:#2E8B3D;} .down{color:#C0392B;} .flat{color:var(--muted);}
+  .pill{display:inline-block;background:var(--navy);color:#fff;font-size:10px;font-weight:800;
+    text-transform:uppercase;letter-spacing:.1em;padding:3px 8px;border-radius:999px;vertical-align:2px;}
+  .pill.lime{background:var(--lime);color:#20320a;}
+  .pill.gold{background:var(--gold);color:#5b4520;}
+  .pill.grey{background:#E8E8EE;color:#5a5a6e;}
+  /* funnel bars */
+  .bar{margin-bottom:9px;}
+  .bar .lab{display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px;}
+  .bar .lab span:first-child{color:var(--ink);font-weight:600;}
+  .bar .lab span:last-child{color:var(--muted);font-weight:600;}
+  .track{height:8px;background:#EDEFEA;border-radius:99px;overflow:hidden;}
+  .fill{height:100%;background:var(--navy);border-radius:99px;}
+  .fill.steel{background:var(--steel);}
+  .fill.lime{background:var(--lime);}
+  .fill.gold{background:var(--gold);}
+  /* action + caution rails */
+  .act{border-left:3px solid var(--lime);padding:2px 0 2px 12px;margin:8px 0 12px;font-size:14px;}
+  .caut{border-left:3px solid var(--gold);padding:2px 0 2px 12px;margin:8px 0 12px;font-size:14px;}
+  .note{border-left:3px solid var(--rule);padding:2px 0 2px 12px;margin:8px 0 12px;font-size:14px;color:var(--body);}
+  /* focus card */
+  .focus{background:var(--navy);color:#fff;}
+  .focus h2{color:#fff;border-left-color:var(--lime);}
+  .focus ol{margin:0;padding:0;list-style:none;counter-reset:f;}
+  .focus li{counter-increment:f;position:relative;padding-left:32px;margin-bottom:18px;font-size:15px;color:#fff;}
+  .focus li:last-child{margin-bottom:0;}
+  .focus li::before{content:counter(f);position:absolute;left:0;top:-1px;color:var(--lime);font-weight:800;font-size:17px;}
+  .focus li b{color:#fff;display:block;margin-bottom:3px;font-size:15px;}
+  .focus li span{color:rgba(255,255,255,.62);font-size:13.5px;}
+  /* sharpen */
+  .sharpen{background:linear-gradient(0deg,rgba(236,209,156,.13),rgba(236,209,156,.13)),#fff;
+    border-left:4px solid var(--gold);}
+  .sharpen .last{font-size:12.5px;color:var(--muted);margin-bottom:16px;}
+  .sharpen p{font-size:15px;color:var(--ink);}
+  /* day groups */
+  .day{margin-bottom:16px;}
+  .day:last-child{margin-bottom:0;}
+  .appt{font-size:14.5px;color:var(--ink);margin-bottom:3px;}
+  .appt .t{color:var(--steel);font-weight:700;font-variant-numeric:tabular-nums;}
+  .empty{color:var(--muted);font-size:14px;font-style:italic;}
+  a{color:var(--navy);}
+  footer{max-width:760px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font-size:12px;}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="inner">
+    <div class="kicker">The Farrell Group · CHS Happenings</div>
+    <h1>Week in Review</h1>
+<div class="range">August 3 – 9, 2026</div>
+<div class="summary">TRIO booked for Aug 20 · first paid First Seater · $14.71M pipeline · 11,722 subs · PA on Thursday</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ===== NEXT WEEK'S FOCUS ===== -->
+  <div class="card focus">
+    <h2>Next Week's Focus</h2>
+    <ol>
+      <li>
+        <b>Get TRIO shipping-ready before Thursday</b>
+        <span>Booked in email Friday for the Aug 20 primary and Sept 3 secondary. No Airtable Package, Placement or ad copy exists yet — and you leave for PA on the 13th. Ask Ellen for creative now. <span class="src">[Sponsorship Pipeline + Email]</span></span>
+      </li>
+      <li>
+        <b>Bank Thursday's issue on Wednesday</b>
+        <span>Aug 13 is issue day and departure day. Everything that can be built Wednesday should be. <span class="src">[The Week Ahead]</span></span>
+      </li>
+      <li>
+        <b>The lead slot cost four points of click rate</b>
+        <span>Aug 6 led with the Community launch. Opens held at 70.4%, clicks fell 9.69% → 5.53%, unsubs went 28 → 51. The butcher ICYMI outclicked the Community link 102 to 62. Next lead is a news story. <span class="src">[CHS Stats]</span></span>
+      </li>
+      <li>
+        <b>Log the Blum page</b>
+        <span>The Kiawah River / Dunes West page went out Saturday. The CRM still shows July 20 as last contact. <span class="src">[TFG Pipeline + Email]</span></span>
+      </li>
+      <li>
+        <b>Renee Burchard is scouting Summerville for you</b>
+        <span>First paid First Seater and a Dinner Club expansion lead in the same person. You asked Friday for 5–6 upscale-casual spots. <span class="src">[Email]</span></span>
+      </li>
+    </ol>
+  </div>
+
+  <!-- ===== SHARPEN ===== -->
+  <div class="card sharpen">
+    <h2>Sharpen</h2>
+    <div class="last"><b>Last week's experiment:</b> partially done. No 15-minute call was booked with Annie Gallagher — the media kit sent July 31 is still the last word in that thread. But the mechanism worked under a different name: Ellen Rose at TRIO Solutions emailed at 11:40 AM Friday, and two placements were sold by 4:24 PM the same day.</div>
+    <h3>Pattern worth noticing</h3>
+    <p>Every dollar that moved this week came from someone who wrote first. TRIO booked two placements off an inbound. Renee Burchard's $100 First Seater came out of a subscriber thread. Over the same seven days, 20 cold Touch 1 emails went out and produced zero logged replies, and Annie Gallagher has been quiet for nine days. Four weeks of data now say the same thing: response converts, initiation doesn't. <span class="src">[Sponsorship Pipeline + Email]</span></p>
+    <h3>Experiment for next week</h3>
+    <p>Wednesday Aug 12, one sitting, fifteen minutes, before the PA trip: take the three warmest open threads — TRIO (ad copy), Renee (Summerville list), Annie Gallagher — and reply to each with <em>one specific ask and one date</em>. No "let me know." Put the block on the calendar first.</p>
+  </div>
+
+  <!-- ===== THE WEEK AHEAD ===== -->
+  <div class="card">
+    <h2>The Week Ahead · Aug 10 – 16</h2>
+    <div class="stats">
+      <div class="stat"><div class="n">7</div><div class="l">Appointments</div></div>
+      <div class="stat"><div class="n">~6.5h</div><div class="l">Committed time</div></div>
+      <div class="stat"><div class="n">Thu 13</div><div class="l">Busiest day</div></div>
+      <div class="stat"><div class="n">0</div><div class="l">Client-facing</div></div>
+    </div>
+
+    <div class="caut"><b>Heads-up — Thursday is issue day and travel day.</b> The Aug 13 CHS Happenings issue and "Leave for PA" land on the same date. You're in PA Aug 14–18.</div>
+    <div class="caut"><b>Heads-up — the Aug 20 issue carries TRIO's primary ad.</b> You return Aug 18, two days before it ships. Copy and creative need to be in hand before Thursday.</div>
+
+    <div class="day">
+      <h3>Today · Sunday Aug 9</h3>
+      <div class="appt"><span class="t">9:30 AM</span> — Liverpool vs Monaco (friendly, Anfield)</div>
+      <div class="appt"><span class="t">11:00 AM</span> — Strength Training</div>
+    </div>
+
+    <div class="day">
+      <h3>Monday Aug 10</h3>
+      <div class="appt"><span class="t">6:15 PM</span> — Monday RunDay, Fleet Feet Mount Pleasant</div>
+    </div>
+
+    <div class="day">
+      <h3>Tuesday Aug 11</h3>
+      <div class="appt"><span class="t">10:00 AM</span> — LinkedIn Post &amp; Monitoring</div>
+      <div class="act">Prep: this is the natural home for the Sharpen block — three replies, three specific asks. <span class="src">[Sharpen]</span></div>
+      <div class="appt"><span class="t">11:30 AM</span> — Labcorp appointment, 1280 Hospital Dr</div>
+    </div>
+
+    <div class="day">
+      <h3>Wednesday Aug 12</h3>
+      <div class="appt"><span class="t">10:00 AM</span> — LinkedIn Post &amp; Monitoring</div>
+      <div class="act">Prep: build Thursday's issue today. Weather, happenings, history, live music and the Broker's Take can all be locked before you pack. <span class="src">[The Week Ahead]</span></div>
+      <div class="appt"><span class="t">6:45 PM</span> — Run CBW, Charleston Beer Works</div>
+    </div>
+
+    <div class="day">
+      <h3>Thursday Aug 13 <span class="pill">High-stakes</span></h3>
+      <div class="appt"><span class="t">7:00 AM</span> — CHS Happenings issue sends</div>
+      <div class="appt"><span class="t">10:00 AM</span> — LinkedIn Post &amp; Monitoring</div>
+      <div class="appt"><span class="t">12:00 PM</span> — Newsletter Club weekly call</div>
+      <div class="appt"><span class="t">All day</span> — Leave for PA</div>
+      <div class="act">Prep: confirm TRIO's ad copy and media are in the Airtable Placement for Aug 20 before you're on the road. <span class="src">[Sponsorship Pipeline]</span></div>
+    </div>
+
+    <div class="day">
+      <h3>Friday Aug 14 – Sunday Aug 16</h3>
+      <div class="appt"><span class="t">All days</span> — In PA (through Aug 18)</div>
+      <div class="appt"><span class="t">Sun 1:00 PM</span> — Liverpool FC vs Como 1907 (friendly, Anfield)</div>
+    </div>
+  </div>
+
+  <!-- ===== WHAT YOU BUILT IN CLAUDE ===== -->
+  <div class="card">
+    <h2>What You Built In Claude</h2>
+    <h3>Shipped</h3>
+    <ul>
+      <li><b>Aug 4</b> — New NEXT Command repaired: the <code>2026-08-04-anywhere-unfold</code> pass shipped, and CE-008 (Brock Mesarich / AI for Non-Techies) was rebuilt into the seed, clearing the old CE-006 ID collision.</li>
+      <li><b>Aug 5</b> — CHS CTOR Log artifact rebaked with the latest issue data.</li>
+      <li><b>Aug 6</b> — Newsletter pack: the Aug 6 issue plus five web posts (Mount Pleasant butcher, happiest-city ranking, Folly rental cap, hospitality school, North Charleston duckpins).</li>
+      <li><b>Aug 6</b> — <b>Paw &amp; Tide Co. site preview</b> — a full multi-page pet-care site mockup: home, services, about, FAQ and contact, all in one file.</li>
+      <li><b>Aug 7</b> — <b>DNNR Questionnaire Change List (v2)</b> — a spec'd change list for the Dinner Club signup questionnaire.</li>
+      <li><b>Aug 3 &amp; 7</b> — Sponsor enrollment run plus 20 cold Touch 1 sends across three prospector runs.</li>
+      <li><b>Aug 5</b> — Deploy token rotated after cloud Cowork lost GitHub write access between Aug 3 and Aug 5; support ticket filed with Anthropic the same day.</li>
+    </ul>
+    <h3>Explored</h3>
+    <ul>
+      <li><b>Aug 3–8</b> — Real estate tool analysis session — a look across the marketchs lead-tool lineup.</li>
+      <li><b>Aug 3–8</b> — Connie entry log — continued work on Connie, which sits in New NEXT Command as CI-002.</li>
+      <li><b>Aug 3–8</b> — Browser consents automation session.</li>
+      <li><b>Aug 3–8</b> — Happy Hour Aug 27 entries — RSVP roster maintenance alongside the daily Tally→Kit sync.</li>
+    </ul>
+  </div>
+
+  <!-- ===== NEW NEXT COMMAND ===== -->
+  <div class="card">
+    <h2>New NEXT Command</h2>
+    <p class="lede">Touched <b>Tuesday Aug 4</b> — the first change since the Anywhere-test rename.</p>
+    <h3>Changed this week</h3>
+    <ul>
+      <li><b>Anywhere-test unfold shipped</b> — repair version <code>2026-08-04-anywhere-unfold</code> is now stamped in the artifact, completing the rename work started in late July.</li>
+      <li><b>CE-008 · Brock Mesarich</b> — rebuilt into the seed. AI for Non-Techies: ~90K YouTube, 27K Instagram, ~800-member Skool community at $67→$87/mo. Verdict logged as the closest real-world map to the productize-the-playbook lane; Anywhere test <b>pass</b>. This clears the CE-006 ID collision flagged in the July 20 export.</li>
+    </ul>
+    <h3>Added / removed</h3>
+    <p class="empty">No modules or competitive-intel entries added or removed. Intel still runs CI-001 (HTML Pub) and CI-002 (Connie).</p>
+    <div class="note">Standing caveat: the artifact's real inventory lives in browser localStorage, not the file. These are file-level reads — export before counting anything.</div>
+  </div>
+
+  <!-- ===== TFG PIPELINE ===== -->
+  <div class="card">
+    <h2>TFG Deal Pipeline</h2>
+    <div class="stats">
+      <div class="stat"><div class="n">$14.71M</div><div class="l">Active pipeline</div><div class="d flat">— flat</div></div>
+      <div class="stat"><div class="n">$362,450</div><div class="l">Projected commission</div><div class="d flat">— flat</div></div>
+      <div class="stat"><div class="n">10</div><div class="l">Active deals</div><div class="d flat">— flat</div></div>
+      <div class="stat"><div class="n">~48</div><div class="l">Interactions</div><div class="d down">▼ from ~77</div></div>
+    </div>
+
+    <h3>Pipeline by stage</h3>
+    <div class="bar">
+      <div class="lab"><span>CLIENT! · 6 deals</span><span>$5.81M</span></div>
+      <div class="track"><div class="fill" style="width:39.5%"></div></div>
+    </div>
+    <div class="bar">
+      <div class="lab"><span>Later · 3 deals</span><span>$7.65M</span></div>
+      <div class="track"><div class="fill steel" style="width:52%"></div></div>
+    </div>
+    <div class="bar">
+      <div class="lab"><span>Cultivating · 1 deal</span><span>$1.25M</span></div>
+      <div class="track"><div class="fill gold" style="width:8.5%"></div></div>
+    </div>
+
+    <h3>Movement this week</h3>
+    <ul>
+      <li><b>Wilkie ($950K buyer)</b> — the Orange Grove &amp; Riverland Terrace comparison page went out Aug 6; Will replied that night with a full post-tour read. <b>James Island is the new direction</b> — they hadn't looked there and are now actively starting, reasoning it sits between downtown and the beach. Orange Grove stays the front-runner, Riverland Terrace drops to long shot, Shadowmoss is off the list entirely. Penny Lacuesta still not connected with.</li>
+      <li><b>Tomlinson · 1300 Fenwick Plantation ($385K listing)</b> — pre-list walkthrough request sent Aug 6; Sharon replied the same evening that she'll get a date from the renter. Access code/key still outstanding. Tenants out mid-August; they travel Europe the first two weeks of September.</li>
+      <li><b>Linehan &amp; Mattison ($2M IOP buyers)</b> — four-home update plus a presentation page covering all 11 actives went out Aug 6. Market read sent with it: 11 active SFD 4+ BR in Areas 44/45, median ask $2.20M, $877/sf, 64 DOM, five price cuts totaling $1.09M.</li>
+      <li><b>Blum ($1.6M buyers)</b> — a new page on Kiawah River, Kiawah River Estates and Dunes West went out Aug 8. Not yet logged in the CRM.</li>
+    </ul>
+
+    <h3>Status</h3>
+    <ul>
+      <li>No new deals, no stage changes, no closings this week.</li>
+      <li>8 deals are over 60 days old, carrying $13.08M in aggregate.</li>
+      <li>Interactions: 3 logged in the CRM plus roughly 45 emails sent and received across both mailboxes.</li>
+    </ul>
+  </div>
+
+  <!-- ===== CHS HAPPENINGS ===== -->
+  <div class="card">
+    <h2>CHS Happenings · Newsletter</h2>
+    <div class="stats">
+      <div class="stat"><div class="n">11,722</div><div class="l">Active subscribers</div><div class="d down">▼ 68</div></div>
+      <div class="stat"><div class="n">70.36%</div><div class="l">Open rate</div><div class="d flat">— +0.08</div></div>
+      <div class="stat"><div class="n">5.53%</div><div class="l">Click rate</div><div class="d down">▼ 4.16 pts</div></div>
+      <div class="stat"><div class="n">51</div><div class="l">Unsubscribes</div><div class="d down">▲ from 28</div></div>
+    </div>
+
+    <h3>Aug 6 issue — "🌴 I built you a room and right now it's empty"</h3>
+    <p>11,654 sent, 11,641 delivered (99.89%). 8,191 unique opens. 453 unique email clickers. 0 spam complaints, 0.15% bounce.</p>
+    <div class="caut"><b>The lead was the Community launch, and the click math shows it.</b> Opens were untouched at 70.4% — the subject line worked. But clicks nearly halved and unsubscribes almost doubled. The Community link drew 62 unique clicks; an ICYMI about a Mount Pleasant butcher drew 102.</div>
+
+    <h3>Top links (unique email clicks)</h3>
+    <ul>
+      <li><b>102</b> — Mount Pleasant Just Got a Butcher Worth Knowing <span class="src">(ICYMI)</span></li>
+      <li><b>81</b> — Charleston Is the Seventh Happiest City in America <span class="src">(ICYMI)</span></li>
+      <li><b>62</b> — CHS Happenings Community <span class="src">(the lead)</span></li>
+      <li><b>41</b> — Lowcountry Seafood Festival <span class="src">(Happenings)</span></li>
+      <li><b>37</b> — Folly Beach Capped Its Rentals Three Years Ago <span class="src">(ICYMI)</span></li>
+    </ul>
+
+    <h3>Growth &amp; acquisition (7 days)</h3>
+    <ul>
+      <li>121 new · 185 churned · <b>net −64</b>. Churn is running ahead of gross adds under the deliberate $7.50/day Meta setting.</li>
+      <li>Sources: Meta ads 68 · direct 19 · creatorstoolbox paid rec 18 · <b>Nextdoor 14</b> · Google organic 5.</li>
+      <li><b>First paid subscriber.</b> Renee Burchard's $100 First Seater payment landed Aug 6 through Stripe — the first revenue from the new paid tier. Beehiiv logged $500 in earnings over the window.</li>
+    </ul>
+  </div>
+
+  <!-- ===== SPONSORSHIP ===== -->
+  <div class="card">
+    <h2>Sponsorship Pipeline</h2>
+    <div class="stats">
+      <div class="stat"><div class="n">204</div><div class="l">Sponsor records</div><div class="d up">▲ 14</div></div>
+      <div class="stat"><div class="n">20</div><div class="l">Cold Touch 1 sends</div><div class="d down">▼ from 42</div></div>
+      <div class="stat"><div class="n">$1,050</div><div class="l">Revenue booked</div><div class="d flat">— flat</div></div>
+      <div class="stat"><div class="n">2</div><div class="l">Placements sold</div><div class="d up">▲ TRIO</div></div>
+    </div>
+
+    <div class="act"><b>Won this week — TRIO Solutions.</b> Ellen Rose wrote Friday 11:40 AM asking whether ad availability was still open. By 4:24 PM the same day, TRIO's primary ad was placed in the Aug 20 issue and the secondary in Sept 3. <b>Nothing is in Airtable yet</b> — no Proposal, no Package, no Placement, no ad copy. That's the single loose thread on the CHS side.</div>
+
+    <h3>Funnel</h3>
+    <div class="bar">
+      <div class="lab"><span>Cultivating</span><span>193</span></div>
+      <div class="track"><div class="fill steel" style="width:95%"></div></div>
+    </div>
+    <div class="bar">
+      <div class="lab"><span>Target</span><span>1</span></div>
+      <div class="track"><div class="fill" style="width:3%"></div></div>
+    </div>
+    <div class="bar">
+      <div class="lab"><span>Sponsored (incl. 1 gratis)</span><span>5</span></div>
+      <div class="track"><div class="fill lime" style="width:6%"></div></div>
+    </div>
+    <div class="bar">
+      <div class="lab"><span>Lost</span><span>5</span></div>
+      <div class="track"><div class="fill gold" style="width:6%"></div></div>
+    </div>
+
+    <h3>Notes</h3>
+    <ul>
+      <li><b>Outreach:</b> 20 cold Touch 1 emails — 10 on Aug 3, 2 on Aug 6, 8 on Aug 7. Zero inbound replies logged against them. Prospector held its Mon/Wed/Fri cadence and added 14 records.</li>
+      <li><b>Carolina H3</b> is now marked Lost – No Response. The CRM finally matches reality; the $500 proposal is dead.</li>
+      <li><b>Annie Gallagher Interiors</b> — media kit sent July 31, no reply in nine days. Worth one closing note or a Lost mark.</li>
+      <li><b>Proposals table</b> still holds four records at "Sent," all dated March–May. Stale.</li>
+      <li>No paid August placements were on the books before TRIO. Aug 20 is now the first.</li>
+    </ul>
+  </div>
+
+  <!-- ===== CALENDAR LOAD ===== -->
+  <div class="card">
+    <h2>Calendar Load · Last Week</h2>
+    <div class="stats">
+      <div class="stat"><div class="n">15</div><div class="l">Commitments held</div><div class="d down">▼ from 18</div></div>
+      <div class="stat"><div class="n">~14.5h</div><div class="l">In meetings</div><div class="d down">▼ from ~20.5h</div></div>
+      <div class="stat"><div class="n">Thu 6</div><div class="l">Busiest day</div></div>
+      <div class="stat"><div class="n">5</div><div class="l">Fitness sessions</div><div class="d flat">— held</div></div>
+    </div>
+
+    <h3>Where the time went</h3>
+    <div class="bar">
+      <div class="lab"><span>CHS Happenings · 8 held</span><span>~7.75h</span></div>
+      <div class="track"><div class="fill" style="width:53%"></div></div>
+    </div>
+    <div class="bar">
+      <div class="lab"><span>Personal · 6</span><span>~6.25h</span></div>
+      <div class="track"><div class="fill steel" style="width:43%"></div></div>
+    </div>
+    <div class="bar">
+      <div class="lab"><span>TFG · 1</span><span>~1h</span></div>
+      <div class="track"><div class="fill gold" style="width:7%"></div></div>
+    </div>
+
+    <ul>
+      <li><b>Thursday Aug 6 carried seven commitments</b> — three of them stacked between noon and 3 PM, with the Eryn Groh chat and the Newsletter Club call both booked for 12:00.</li>
+      <li><b>King's Leaf Point Hope did not happen.</b> A meeting ran long; regrets went to Brittany Walker at 5:57 PM with a note to reschedule. That reschedule hasn't been sent.</li>
+      <li>Friday and Saturday were both clear. One TFG-calendared item all week — 1 Million Cups on Wednesday.</li>
+    </ul>
+  </div>
+
+  <!-- ===== EMAIL ===== -->
+  <div class="card">
+    <h2>Email Highlights</h2>
+
+    <h3>Needs a response</h3>
+    <div class="act"><b>[TFG] Randy Floyd, DRB Group — Oak Bend on James Island.</b> Kim forwarded his note Aug 4. Worth a look given the Wilkies just pivoted toward James Island.</div>
+    <div class="act"><b>[CHS] Brittany Walker, Charlotte Berger PR.</b> You sent regrets for King's Leaf Point Hope Aug 6 and said you'd reach back out to reschedule. Still open.</div>
+    <div class="act"><b>[CHS] Annie Gallagher Interiors.</b> Media kit sent July 31, silent since. One closing note, or close the file.</div>
+    <div class="act"><b>[CHS] Ellen Rose, TRIO Solutions — ad copy.</b> The placements are agreed; the creative isn't in hand. <span class="src">Booking itself is handled.</span></div>
+
+    <h3>Handled</h3>
+    <ul>
+      <li><b>[TFG] Will Wilkie</b> — full post-tour reply Aug 6; you responded Aug 7 morning and are revising the search. <span class="pill grey">Handled</span></li>
+      <li><b>[TFG] Sharon &amp; Jack Tomlinson</b> — walkthrough date coming from the renter; you acknowledged Aug 7. <span class="pill grey">Handled</span></li>
+      <li><b>[CHS] Ellen Rose, TRIO Solutions</b> — inbound 11:40 AM Friday, two placements sold by 4:24 PM. <span class="pill lime">Won</span></li>
+      <li><b>[CHS] Renee Burchard</b> — first paid First Seater; thanked Aug 7 and asked her for 5–6 Summerville upscale-casual restaurant picks for the Dinner Club. <span class="pill grey">Handled</span></li>
+      <li><b>[CHS] Reader replies</b> — Cindy Saadeh, JoAnna Eason, Lora Sedgwick and Josh Blum all answered inside a day. <span class="pill grey">Handled</span></li>
+      <li><b>[TFG] Turia Web Design</b> — MarketCHS added to the thefarrellgroupchs.com menu Aug 3. <span class="pill grey">Done</span></li>
+      <li><b>[TFG] Anthropic support</b> — cloud Cowork lost GitHub write access Aug 3–5; ticket filed and replied to Aug 5. No fix yet. <span class="pill gold">Open with them</span></li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  Generated Sunday, August 9, 2026 · Sources: Airtable (TFG CRM, CHS Happenings), Beehiiv, Google Calendar, Gmail (both mailboxes), Cowork session history and artifacts.
+</footer>
+
+</body>
+</html>
