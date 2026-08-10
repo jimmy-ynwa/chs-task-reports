@@ -1,0 +1,356 @@
+{
+ "sob-market": {
+  "median_sold": 3076000,
+  "median_ppsf": 1124.28,
+  "median_dom": 23,
+  "sales": 107,
+  "high_sale": 21028560,
+  "entry_point": 700000,
+  "total_volume": 417190447,
+  "list_to_sale": 96.1,
+  "pct_under_30": 55,
+  "pct_121_plus": 18,
+  "_previous": {
+   "median_sold": 3100000,
+   "sales": 105
+  }
+ },
+ "hv-market": {
+  "median_sold": 1725000,
+  "median_ppsf": 894.21,
+  "median_dom": 27,
+  "sales": 63,
+  "high_sale": 7600000,
+  "entry_point": 343500,
+  "total_volume": 145384500,
+  "list_to_sale": 96.0,
+  "pct_under_30": 52,
+  "pct_121_plus": 14,
+  "_previous": {
+   "median_sold": 1730000,
+   "sales": 67
+  }
+ },
+ "fq-market": {
+  "median_sold": 2525000,
+  "median_ppsf": 1077.02,
+  "median_dom": 11,
+  "sales": 31,
+  "high_sale": 8750000,
+  "entry_point": 450000,
+  "total_volume": 85363500,
+  "list_to_sale": 95.7,
+  "pct_under_30": 55,
+  "pct_121_plus": 13,
+  "_previous": {
+   "median_sold": 2530000,
+   "sales": 31
+  }
+ },
+ "ans-market": {
+  "median_sold": 1162500,
+  "median_ppsf": 866.81,
+  "median_dom": 73,
+  "sales": 32,
+  "high_sale": 7000000,
+  "entry_point": 265000,
+  "total_volume": 62818000,
+  "list_to_sale": 94.0,
+  "pct_under_30": 38,
+  "pct_121_plus": 34,
+  "_previous": {
+   "median_sold": 1200000,
+   "sales": 33
+  }
+ },
+ "gd-market": {
+  "median_sold": 1950000,
+  "median_ppsf": 756.78,
+  "median_dom": 44,
+  "sales": 7,
+  "high_sale": 3775000,
+  "entry_point": 1590000,
+  "total_volume": 15075500,
+  "list_to_sale": 94.1,
+  "pct_under_30": 43,
+  "pct_121_plus": 29,
+  "_previous": {
+   "median_sold": 1950000,
+   "sales": 7
+  }
+ },
+ "rad-market": {
+  "median_sold": 1125000,
+  "median_ppsf": 637.76,
+  "median_dom": 15,
+  "sales": 25,
+  "high_sale": 4500000,
+  "entry_point": 289000,
+  "total_volume": 38421574,
+  "list_to_sale": 96.0,
+  "pct_under_30": 60,
+  "pct_121_plus": 12,
+  "_previous": {
+   "median_sold": 1130000,
+   "sales": 25
+  }
+ },
+ "can-market": {
+  "median_sold": 1265000,
+  "median_ppsf": 774.74,
+  "median_dom": 16,
+  "sales": 42,
+  "high_sale": 2850000,
+  "entry_point": 305000,
+  "total_volume": 58975000,
+  "list_to_sale": 95.3,
+  "pct_under_30": 62,
+  "pct_121_plus": 14,
+  "_previous": {
+   "median_sold": 1280000,
+   "sales": 41
+  }
+ },
+ "east-market": {
+  "median_sold": 867500,
+  "median_ppsf": 530.91,
+  "median_dom": 18,
+  "sales": 24,
+  "high_sale": 1220000,
+  "entry_point": 275000,
+  "total_volume": 20511000,
+  "list_to_sale": 96.0,
+  "pct_under_30": 62,
+  "pct_121_plus": 21,
+  "_previous": {
+   "median_sold": 870000,
+   "sales": 23
+  }
+ },
+ "west-market": {
+  "median_sold": 678250,
+  "median_ppsf": 497.5,
+  "median_dom": 19,
+  "sales": 36,
+  "high_sale": 2707500,
+  "entry_point": 335000,
+  "total_volume": 29785375,
+  "list_to_sale": 97.4,
+  "pct_under_30": 64,
+  "pct_121_plus": 14,
+  "_previous": {
+   "median_sold": 684000,
+   "sales": 35
+  }
+ },
+ "nc-market": {
+  "median_sold": 825000,
+  "median_ppsf": 575.98,
+  "median_dom": 15,
+  "sales": 55,
+  "high_sale": 1426000,
+  "entry_point": 300000,
+  "total_volume": 45191204,
+  "list_to_sale": 97.8,
+  "pct_under_30": 62,
+  "pct_121_plus": 9,
+  "_previous": {
+   "median_sold": 822000,
+   "sales": 58
+  }
+ },
+ "hpt-market": {
+  "median_sold": 1613500,
+  "median_ppsf": 695.16,
+  "median_dom": 55,
+  "sales": 12,
+  "high_sale": 3200000,
+  "entry_point": 745000,
+  "total_volume": 20663000,
+  "list_to_sale": 95.7,
+  "pct_under_30": 25,
+  "pct_121_plus": 25,
+  "_previous": {
+   "median_sold": 1620000,
+   "sales": 13
+  }
+ },
+ "wt-market": {
+  "median_sold": 1025000,
+  "median_ppsf": 613.03,
+  "median_dom": 6,
+  "sales": 49,
+  "high_sale": 3500000,
+  "entry_point": 425000,
+  "total_volume": 57091158,
+  "list_to_sale": 98.3,
+  "pct_under_30": 74,
+  "pct_121_plus": 2,
+  "_previous": {
+   "median_sold": 1030000,
+   "sales": 53
+  }
+ },
+ "ji-market": {
+  "median_sold": 695000,
+  "median_ppsf": 370.45,
+  "median_dom": 15,
+  "sales": 497,
+  "high_sale": 13980000,
+  "entry_point": 215000,
+  "total_volume": 498801017.25,
+  "list_to_sale": 97.7,
+  "pct_under_30": 62,
+  "pct_121_plus": 7,
+  "_previous": {
+   "median_sold": 693000,
+   "sales": 501
+  },
+  "attached_median": 350000
+ },
+ "joi-market": {
+  "median_sold": 665500,
+  "median_ppsf": 302.5,
+  "median_dom": 26,
+  "sales": 767,
+  "high_sale": 6400000,
+  "entry_point": 210000,
+  "total_volume": 635571389.64,
+  "list_to_sale": 97.9,
+  "pct_under_30": 54,
+  "pct_121_plus": 12,
+  "_previous": {
+   "median_sold": 666000,
+   "sales": 777
+  }
+ },
+ "di-market": {
+  "median_sold": 1495000,
+  "median_ppsf": 560.29,
+  "median_dom": 8,
+  "sales": 327,
+  "high_sale": 12500000,
+  "entry_point": 265000,
+  "total_volume": 657917353.71,
+  "list_to_sale": 97.3,
+  "pct_under_30": 68,
+  "pct_121_plus": 8,
+  "_previous": {
+   "median_sold": 1530000,
+   "sales": 324
+  },
+  "high_list": 12500000
+ },
+ "pc-market": {
+  "median_sold": 555990,
+  "median_ppsf": 368.75,
+  "median_dom": 30,
+  "sales": 77,
+  "high_sale": 1235000,
+  "entry_point": 322000,
+  "total_volume": 46172643,
+  "list_to_sale": 98.0,
+  "pct_under_30": 49,
+  "pct_121_plus": 9,
+  "_previous": {
+   "median_sold": 555000,
+   "sales": 80
+  }
+ },
+ "fb-market": {
+  "median_sold": 935566,
+  "median_ppsf": 547.66,
+  "median_dom": 76,
+  "sales": 133,
+  "high_sale": 3500000,
+  "entry_point": 275300,
+  "total_volume": 148508617,
+  "list_to_sale": 94.2,
+  "pct_under_30": 37,
+  "pct_121_plus": 28,
+  "_previous": {
+   "median_sold": 949000,
+   "sales": 129
+  }
+ },
+ "si-market": {
+  "median_sold": 4700000,
+  "median_ppsf": 1424.54,
+  "median_dom": 52.5,
+  "sales": 34,
+  "high_sale": 14000000,
+  "entry_point": 800000,
+  "total_volume": 183138747,
+  "list_to_sale": 94.9,
+  "pct_under_30": 41,
+  "pct_121_plus": 32,
+  "_previous": {
+   "median_sold": 4700000,
+   "sales": 36
+  }
+ },
+ "iop-market": {
+  "median_sold": 2400000,
+  "median_ppsf": 1017.81,
+  "median_dom": 29.5,
+  "sales": 122,
+  "high_sale": 15000000,
+  "entry_point": 199000,
+  "total_volume": 360673714.17,
+  "list_to_sale": 94.8,
+  "pct_under_30": 50,
+  "pct_121_plus": 22,
+  "_previous": {
+   "median_sold": 2350000,
+   "sales": 125
+  }
+ },
+ "west-ashley": {
+  "median_sold": 489000,
+  "median_ppsf": 267.59,
+  "median_dom": 22,
+  "sales": 1659,
+  "high_sale": 8445000,
+  "entry_point": 36500,
+  "total_volume": 948347714.79,
+  "list_to_sale": 98.0,
+  "pct_under_30": 56,
+  "pct_121_plus": 9,
+  "_previous": {
+   "median_sold": 488000,
+   "sales": 1636
+  }
+ },
+ "mount-pleasant": {
+  "median_sold": 975000,
+  "median_ppsf": 457.28,
+  "median_dom": 19,
+  "sales": 901,
+  "high_sale": 7300000,
+  "entry_point": 282500,
+  "total_volume": 1149403071.24,
+  "list_to_sale": 96.5,
+  "pct_under_30": 58,
+  "pct_121_plus": 10,
+  "_previous": {
+   "median_sold": 975000,
+   "sales": 907
+  }
+ },
+ "seas-eat": {
+  "median_sold": 855000,
+  "median_ppsf": 354.13,
+  "median_dom": 22,
+  "sales": 1031,
+  "high_sale": 4425000,
+  "entry_point": 185000,
+  "total_volume": 1054426867.64,
+  "list_to_sale": 98.3,
+  "pct_under_30": 58,
+  "pct_121_plus": 7,
+  "_previous": {
+   "median_sold": 851000,
+   "sales": 1042
+  }
+ }
+}
