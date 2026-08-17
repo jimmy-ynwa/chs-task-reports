@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New NEXT — LinkedIn Docs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --base:#0D1017;--surface:#151B26;--surface-2:#1B2230;
+    --blue:#2E6BFF;--blue-soft:#7BA5FF;--spark:#F04E23;
+    --paper:#F4F6FA;--slate:#AEB7C6;--slate-dim:#8A93A4;
+    --line:rgba(255,255,255,.09);--line-2:rgba(255,255,255,.15);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--base);color:var(--paper);font-family:'Geist',sans-serif;line-height:1.6;padding:48px 20px 80px;position:relative;overflow-x:hidden;}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(100% 55% at 12% 0%, rgba(46,107,255,.13) 0%, transparent 58%);}
+  .wrap{position:relative;z-index:1;max-width:640px;margin:0 auto;}
+
+  .bars{display:flex;align-items:flex-end;gap:5px;height:36px;margin-bottom:26px;}
+  .bars span{display:block;width:8px;border-radius:1px;}
+  .bars span:nth-child(1){height:15px;background:var(--slate);opacity:.5;}
+  .bars span:nth-child(2){height:23px;background:var(--blue-soft);}
+  .bars span:nth-child(3){height:36px;background:var(--blue);}
+  .bars span:nth-child(4){height:18px;background:var(--spark);}
+
+  .kick{font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--blue-soft);margin-bottom:14px;}
+  h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(38px,8vw,52px);line-height:1.03;margin-bottom:14px;}
+  h1 em{font-style:italic;color:var(--blue);}
+  .lede{font-size:15.5px;color:var(--slate);max-width:52ch;margin-bottom:34px;}
+
+  a.card{
+    display:block;text-decoration:none;background:var(--surface);
+    border:1px solid var(--line);border-left:3px solid var(--blue);
+    padding:18px 20px;margin-bottom:12px;
+    transition:border-color .16s ease, background .16s ease, transform .12s ease;
+  }
+  a.card:hover{background:var(--surface-2);border-color:var(--line-2);border-left-color:var(--spark);transform:translateX(2px);}
+  a.card:focus-visible{outline:2px solid var(--blue-soft);outline-offset:3px;}
+  .ct{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:5px;flex-wrap:wrap;}
+  .cn{font-family:'Instrument Serif',serif;font-size:23px;color:#fff;line-height:1.1;}
+  .cvv{font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-soft);border:1px solid var(--line-2);padding:2px 8px;border-radius:2px;white-space:nowrap;}
+  .cd{font-size:13.5px;color:var(--slate);}
+
+  .note{margin-top:30px;padding:16px 20px;background:var(--surface);border-left:3px solid var(--spark);font-size:13px;color:var(--slate);}
+  .note b{color:var(--paper);}
+
+  footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line-2);font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--slate-dim);}
+</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="bars" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+    <p class="kick">Farrell Digital Ventures</p>
+    <h1>New NEXT<br><em>LinkedIn Docs</em></h1>
+    <p class="lede">The three working documents, always current. Bookmark this page rather than the individual docs — these addresses never change, and each doc carries its own version stamp inside.</p>
+
+    <a class="card" href="north-star.html">
+      <div class="ct"><span class="cn">North Star</span><span class="cvv">v2</span></div>
+      <p class="cd">The direction and the standing rules. Persona, the two dials, four pillars, weekly rhythm, the one metric, guardrails. Change this least often</p>
+    </a>
+
+    <a class="card" href="working-file.html">
+      <div class="ct"><span class="cn">Working File</span><span class="cvv">v3</span></div>
+      <p class="cd">The execution layer. What's already built, the van der Blom playbook and current algorithm data, Authority ÷ Insight, open decisions. This is where new research lands</p>
+    </a>
+
+    <a class="card" href="30-day-plan.html">
+      <div class="ct"><span class="cn">First 30 Days</span><span class="cvv">v3</span></div>
+      <p class="cd">Twelve posts across three lanes, four carrying video. Briefs, the three-question test, a written insight specimen, and a bench of spares</p>
+    </a>
+
+    <div class="note">
+      <b>How this works:</b> the URLs are permanent, so a bookmark always lands on the latest version. Every edit bumps the version number and adds a line to that doc's version history, so you can see what moved and when without diffing anything.
+    </div>
+
+    <footer>
+      <span>New NEXT · Jimmy Farrell</span>
+    </footer>
+
+  </div>
+</body>
+</html>

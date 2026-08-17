@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New NEXT — North Star</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --base:#0D1017;
+    --surface:#151B26;
+    --surface-2:#1B2230;
+    --blue:#2E6BFF;
+    --blue-soft:#7BA5FF;
+    --spark:#F04E23;
+    --paper:#F4F6FA;
+    --slate:#AEB7C6;
+    --slate-dim:#8A93A4;
+    --line:rgba(255,255,255,.09);
+    --line-2:rgba(255,255,255,.15);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  body{
+    background:#070A0F;
+    font-family:'Geist',sans-serif;color:var(--paper);
+    line-height:1.6;padding:32px 16px;
+  }
+  .page{
+    background:var(--base);max-width:8.5in;margin:0 auto;
+    padding:0.8in 0.9in 0.65in;
+    border:1px solid var(--line);
+    box-shadow:0 24px 60px rgba(0,0,0,.5);
+    position:relative;overflow:hidden;
+  }
+  .page::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(110% 60% at 12% 0%, rgba(46,107,255,.12) 0%, transparent 55%);
+  }
+  .inner{position:relative;z-index:1;}
+
+  .kick{
+    font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.28em;
+    text-transform:uppercase;font-weight:500;color:var(--blue-soft);
+    display:flex;align-items:center;gap:14px;
+  }
+  .kick::after{content:"";flex:1;height:1px;background:var(--line-2);}
+  h1{
+    font-family:'Instrument Serif',serif;font-weight:400;
+    font-size:58px;line-height:1.0;letter-spacing:.005em;margin:16px 0 12px;
+  }
+  h1 em{font-style:italic;color:var(--blue);}
+  .vchip{display:inline-block;font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:3px 10px;border:1px solid var(--blue);color:var(--blue-soft);border-radius:2px;margin-top:14px;}
+  .standfirst{
+    font-family:'Instrument Serif',serif;font-style:italic;
+    font-size:17px;color:#C6CDD9;max-width:54ch;
+  }
+  .how{
+    margin-top:16px;padding:12px 16px;background:var(--surface);
+    border-left:3px solid var(--spark);font-size:12.5px;color:var(--slate);
+  }
+  .how b{color:var(--paper);}
+  .toprule{height:1px;background:var(--line-2);margin:26px 0 30px;}
+
+  section{margin-bottom:28px;page-break-inside:avoid;}
+  .sh{display:flex;align-items:baseline;gap:14px;margin-bottom:10px;}
+  .n{font-family:'Geist Mono',monospace;font-weight:500;font-size:13px;color:var(--blue);min-width:26px;}
+  h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:30px;letter-spacing:.005em;line-height:1.05;}
+  .body{padding-left:40px;}
+  p{font-size:14.5px;color:var(--slate);margin-bottom:11px;}
+  p strong,.ink{color:var(--paper);font-weight:500;}
+
+  .arc{display:grid;grid-template-columns:1fr 1fr 1.15fr;gap:12px;padding-left:40px;margin-top:4px;}
+  .arc .card{background:var(--surface);padding:15px 16px;border-top:3px solid var(--line-2);}
+  .arc .card.dest{border-top-color:var(--blue);background:var(--surface-2);}
+  .arc .lbl{font-family:'Geist Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate-dim);margin-bottom:6px;}
+  .arc .card.dest .lbl{color:var(--blue-soft);}
+  .arc .ttl{font-family:'Instrument Serif',serif;font-size:20px;color:var(--paper);margin-bottom:4px;line-height:1.1;}
+  .arc .txt{font-size:12px;color:var(--slate);line-height:1.45;}
+
+  .roles{padding-left:40px;}
+  .role{display:flex;gap:14px;padding:11px 0;border-top:1px solid var(--line);}
+  .role:first-child{border-top:none;}
+  .role .tag{font-family:'Geist Mono',monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;color:#fff;background:#39424F;padding:4px 9px;height:fit-content;white-space:nowrap;margin-top:2px;min-width:74px;text-align:center;}
+  .role .tag.keep{background:#1E4620;color:#8FE39A;}
+  .role .tag.demote{background:#5A2410;color:#FFB59B;}
+  .role p{margin:0;font-size:13.5px;}
+  .role b{color:var(--paper);}
+
+  .dials{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding-left:40px;margin-top:6px;}
+  .dial{background:var(--surface);padding:16px;border-left:3px solid var(--blue);}
+  .dial .dt{font-size:13px;color:var(--paper);font-weight:500;margin-bottom:3px;}
+  .dial .dv{font-family:'Instrument Serif',serif;font-size:30px;color:var(--blue-soft);line-height:1;margin:6px 0;}
+  .dial .dx{font-size:11.5px;color:var(--slate);line-height:1.4;}
+
+  .pull{margin:8px 0 14px 40px;padding:18px 22px;background:var(--surface-2);border-left:4px solid var(--spark);}
+  .pull p{font-family:'Instrument Serif',serif;font-style:italic;font-size:19px;line-height:1.3;color:var(--paper);margin:0;}
+  .pull p b{color:var(--spark);font-weight:400;font-style:normal;}
+
+  .pillars{padding-left:40px;}
+  .pillar{display:grid;grid-template-columns:52px 1fr;gap:14px;padding:12px 0;border-top:1px solid var(--line);align-items:start;}
+  .pillar:first-child{border-top:none;}
+  .pct{font-family:'Instrument Serif',serif;font-size:26px;color:var(--blue);line-height:1;padding-top:2px;}
+  .pillar .pn{font-size:15px;color:var(--paper);font-weight:500;margin-bottom:2px;}
+  .pillar .pd{font-size:12.5px;color:var(--slate);line-height:1.45;}
+
+  .cal{padding-left:40px;margin-top:6px;}
+  table{width:100%;border-collapse:collapse;font-size:12.5px;}
+  th{font-family:'Geist Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--slate-dim);font-weight:500;text-align:left;padding:0 10px 8px 0;}
+  td{padding:9px 10px 9px 0;border-top:1px solid var(--line);color:var(--slate);vertical-align:top;}
+  td.day{font-weight:500;color:var(--paper);white-space:nowrap;}
+  td .slot{font-weight:500;color:var(--blue-soft);}
+  .wk{font-family:'Instrument Serif',serif;font-style:italic;font-size:15px;color:var(--spark);margin:14px 0 4px;}
+
+  .metric{background:var(--surface-2);padding:20px 24px;margin:6px 0 0 40px;border-left:4px solid var(--blue);}
+  .metric .ml{font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue-soft);margin-bottom:6px;}
+  .metric p{font-size:14px;color:var(--paper);margin:0;}
+  .metric b{color:var(--blue-soft);font-weight:500;}
+
+  .guards{padding-left:40px;}
+  .guard{display:flex;gap:12px;padding:9px 0;border-top:1px solid var(--line);font-size:13px;color:var(--slate);}
+  .guard:first-child{border-top:none;}
+  .guard .g{color:var(--spark);font-weight:500;}
+  .guard b{color:var(--paper);}
+
+  footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--line-2);display:flex;justify-content:space-between;font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate-dim);}
+
+  @media print{
+    body{background:#0D1017;padding:0;}
+    .page{box-shadow:none;margin:0;max-width:100%;padding:0.6in 0.7in;border:none;}
+    section{margin-bottom:22px;}
+  }
+  @page{size:letter;margin:0;}
+</style>
+</head>
+<body>
+  <div class="page"><div class="inner">
+
+    <div class="kick">The Destination · Living Reference</div>
+    <h1>New NEXT<br><em>North Star</em></h1>
+    <p class="standfirst">The direction, on one page. Two Charleston businesses, finite by design. One location-independent destination. Everything below keeps the LinkedIn program pointed at the destination, not the day job.</p>
+    <div class="vchip">Version 2 · August 17, 2026</div>
+    <div class="how"><b>How to use this:</b> reread it in the early days before you write anything. If a post idea doesn't ladder up to a pillar and survive the Spain filter, it's not for this feed.</div>
+    <div class="toprule"></div>
+
+    <section>
+      <div class="sh"><span class="n">01</span><h2>The arc</h2></div>
+      <div class="arc">
+        <div class="card">
+          <div class="lbl">Means · Finite</div>
+          <div class="ttl">CHS Happenings</div>
+          <div class="txt">11K, 70%+ opens. Run at full effort until sunset. Becomes the case study, not the product.</div>
+        </div>
+        <div class="card">
+          <div class="lbl">Means · Finite</div>
+          <div class="ttl">The Farrell Group</div>
+          <div class="txt">Residential, with Kim. A temporary vehicle. Where the systems muscle gets built and tested.</div>
+        </div>
+        <div class="card dest">
+          <div class="lbl">The Destination</div>
+          <div class="ttl">New NEXT</div>
+          <div class="txt">Location-independent tech / digital-marketing business. Productize the playbook and / or build engines for other operators.</div>
+        </div>
+      </div>
+      <p style="padding-left:40px;margin-top:14px;"><span class="ink">The filter on every big bet:</span> does it still work from Spain? If it's tied to Charleston or a room I have to stand in, it's a means, not the destination.</p>
+    </section>
+
+    <section>
+      <div class="sh"><span class="n">02</span><h2>The persona — operator who learned to build</h2></div>
+      <div class="pull"><p>A guy who spent decades learning how business actually gets done, then taught himself to build the modern machine — <b>and documents how a lean operator wires it together.</b></p></div>
+      <div class="roles">
+        <div class="role"><span class="tag">Product</span><p><b>Fully portable.</b> The transferable system plus the scar tissue: building an owned audience from zero, learning Meta ads by lighting money on fire, running events, wiring the automation. This is the offer. Unmoored from Charleston and from "newsletter" as a format.</p></div>
+        <div class="role"><span class="tag keep">Proof · Keep</span><p><b>CHS, reframed.</b> Not deleted when it sunsets — converted from ongoing business into a finished case study with a beginning, middle, and a deliberate ending. The 11K at 70% opens is the receipt, not the thing left behind.</p></div>
+        <div class="role"><span class="tag demote">Edge · Demote</span><p><b>The career, as texture.</b> Three decades of BD, sales, and relationship-building is the reason the judgment is worth paying for — but it's the quiet why-you-should-listen, never the billboard. Foreground the build.</p></div>
+      </div>
+      <div class="dials">
+        <div class="dial"><div class="dt">Billing — what the profile says</div><div class="dv">80 / 20</div><div class="dx">Builder-forward. The relevance engine files you where your headline points, so the label says what you build, not "real estate."</div></div>
+        <div class="dial"><div class="dt">Substance — what posts are made of</div><div class="dv">50 / 50</div><div class="dx">The career is half your raw material. It shows up inside the stories and the design decisions, not as a bio line.</div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sh"><span class="n">03</span><h2>Selling the unsellable</h2></div>
+      <div class="body">
+        <p>Nobody buys "relationship building." It's unsellable as a noun, and everyone claims it. <strong>You don't sell the soft skill — you sell the system the soft skill got encoded into.</strong></p>
+        <p>The BD instinct isn't the product. It's the thing that let you build a better product than a technical person would have. The sponsor pre-call sequence, the favor-to-sponsor pivot, the "no personal email until they click or reply" gate — the relationship wisdom is <span class="ink">load-bearing in the design decisions.</span> Teach the system; the judgment rides inside it. Show the how, and the why quietly proves the career.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="sh"><span class="n">04</span><h2>The four pillars</h2></div>
+      <div class="pillars">
+        <div class="pillar"><div class="pct">60%</div><div><div class="pn">System teardowns</div><div class="pd">Your own machines, opened up: the sponsor desk, event ops, the dashboards, the Meta ads engine. Highest-value pillar — pure save-bait, and every one smuggles in the BD wisdom.</div></div></div>
+        <div class="pillar"><div class="pct">20%</div><div><div class="pn">The expensive lessons</div><div class="pd">The money you lit on fire and what the burns taught you. Operate-as-content. Where the career texture lives most naturally, and the most comment-worthy format there is.</div></div></div>
+        <div class="pillar"><div class="pct">15%</div><div><div class="pn">The counter-takes</div><div class="pd">The sunsetting logic. Why "LinkedIn is dying" is wrong. Why local dominance is a trap you're leaving. Opinionated but fair — builds the thinker reputation.</div></div></div>
+        <div class="pillar"><div class="pct">5%</div><div><div class="pn">The arc, live</div><div class="pd">Building New NEXT in public. The Spain filter. The parallel-build method. Lowest volume, highest affinity — the story people follow you for. Grows over time.</div></div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sh"><span class="n">05</span><h2>The weekly rhythm</h2></div>
+      <div class="cal">
+        <p style="margin-bottom:12px;">Three posts a week, Tuesday through Thursday, never daily. Daily is the guru hamster wheel the platform stopped rewarding and your temperament won't sustain. Three save-worthy posts beat seven reflexive ones. Tuesday to Thursday is the engagement sweet spot and weekends are the weakest days for a professional audience, so the old Saturday slot is retired. Wednesday is the single strongest day, so it carries the flagship. Post mid-morning, around 10 to 11 ET, and hold the window.</p>
+        <div class="wk">Week A</div>
+        <table>
+          <tr><th>Day</th><th>Slot</th><th>Job</th></tr>
+          <tr><td class="day">Tuesday</td><td><span class="slot">Teardown</span></td><td>The anchor. Always a system, opened up.</td></tr>
+          <tr><td class="day">Wed · flagship</td><td><span class="slot">Teardown</span></td><td>Your best day carries your best pillar.</td></tr>
+          <tr><td class="day">Thursday</td><td><span class="slot">Expensive lesson</span></td><td>A failure and the read behind it.</td></tr>
+        </table>
+        <div class="wk">Week B</div>
+        <table>
+          <tr><th>Day</th><th>Slot</th><th>Job</th></tr>
+          <tr><td class="day">Tuesday</td><td><span class="slot">Teardown</span></td><td>The anchor, again. Consistency is the ranking signal.</td></tr>
+          <tr><td class="day">Wed · flagship</td><td><span class="slot">Counter-take</span></td><td>An opinion, argued fairly, with the data behind it.</td></tr>
+          <tr><td class="day">Thursday</td><td><span class="slot">Teardown / arc</span></td><td>A second system, or the destination when there's something real to report.</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <div class="sh"><span class="n">06</span><h2>The only scoreboard</h2></div>
+      <div class="metric">
+        <div class="ml">Judge every post on two things</div>
+        <p><b>Would someone bookmark this?</b> &nbsp;·&nbsp; <b>Did it move a stranger toward a surface I own?</b><br><span style="font-size:12.5px;color:var(--slate);display:block;margin-top:8px;">Not followers. Not likes. Saves, which now lead every other signal on the platform, and clickthroughs to owned distribution. LinkedIn is the discovery layer, the list is the business. This is list-feeding, not audience-building.</span></p>
+      </div>
+    </section>
+
+    <section>
+      <div class="sh"><span class="n">07</span><h2>Standing guardrails</h2></div>
+      <div class="guards">
+        <div class="guard"><span class="g">→</span><p><b>LinkedIn is discovery, never the destination.</b> If it throttles you tomorrow, you shrug — the relationship was never banked there.</p></div>
+        <div class="guard"><span class="g">→</span><p><b>The profile is part of every post.</b> Headline says what you build. It files you into the right room before a word of the post is read.</p></div>
+        <div class="guard"><span class="g">→</span><p><b>Reject the vulnerability loop.</b> No performative emotional striptease. Expertise travels now — you don't have to bleed for reach.</p></div>
+        <div class="guard"><span class="g">→</span><p><b>Sustainability is a strategy input.</b> A cadence you'll ghost in two weeks is worse than a lighter one you'll keep. Design for the you that gets bored.</p></div>
+        <div class="guard"><span class="g">→</span><p><b>Charleston stays off this feed.</b> CHS, TFG, and the local layer are a different audience and a different job. This surface is New NEXT only.</p></div>
+        <div class="guard"><span class="g">→</span><p><b>Original and on-lane, or don't post.</b> The algorithm rewards what AI can't fake: your real screenshots, your own takes. And on-topic 8 of 10 beats 6 of 10 by 30%, so drift isn't neutral, it taxes you. The firewall above is now a ranking advantage, not just discipline.</p></div>
+      </div>
+    </section>
+
+    <footer>
+      <span>New NEXT · North Star</span>
+      <span>Jimmy Farrell · Built to outlast the day job</span>
+    </footer>
+
+  </div></div>
+</body>
+</html>

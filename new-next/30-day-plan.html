@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New NEXT — First 30 Days v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --base:#0D1017;--surface:#151B26;--surface-2:#1B2230;
+    --blue:#2E6BFF;--blue-soft:#7BA5FF;--spark:#F04E23;--green:#8FE39A;
+    --paper:#F4F6FA;--slate:#AEB7C6;--slate-dim:#8A93A4;
+    --line:rgba(255,255,255,.09);--line-2:rgba(255,255,255,.15);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  body{background:#070A0F;font-family:'Geist',sans-serif;color:var(--paper);line-height:1.6;padding:32px 16px;}
+  .page{background:var(--base);max-width:8.5in;margin:0 auto;padding:0.8in 0.9in 0.65in;border:1px solid var(--line);box-shadow:0 24px 60px rgba(0,0,0,.5);position:relative;overflow:hidden;}
+  .page::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(110% 60% at 12% 0%, rgba(46,107,255,.12) 0%, transparent 55%);}
+  .inner{position:relative;z-index:1;}
+
+  .kick{font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;color:var(--blue-soft);display:flex;align-items:center;gap:14px;}
+  .kick::after{content:"";flex:1;height:1px;background:var(--line-2);}
+  .vchip{display:inline-block;font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:3px 10px;border:1px solid var(--blue);color:var(--blue-soft);border-radius:2px;margin-top:14px;}
+  .vid{display:inline-block;font-family:'Geist Mono',monospace;font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;padding:2px 6px;border-radius:2px;background:rgba(240,78,35,.2);color:#FF9576;font-weight:500;}
+  .chg{padding-left:40px;}
+  .cv{display:grid;grid-template-columns:52px 1fr;gap:14px;padding:9px 0;border-top:1px solid var(--line);font-size:12.5px;}
+  .cv:first-child{border-top:none;}
+  .cv .cvn{font-family:'Geist Mono',monospace;font-size:11px;color:var(--blue);}
+  .cv .cvt{color:var(--slate);line-height:1.5;}
+  .cv .cvt b{color:var(--paper);font-weight:500;}
+  h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:54px;line-height:1.0;letter-spacing:.005em;margin:16px 0 12px;}
+  h1 em{font-style:italic;color:var(--blue);}
+  .standfirst{font-family:'Instrument Serif',serif;font-style:italic;font-size:17px;color:#C6CDD9;max-width:58ch;}
+  .why{margin-top:16px;padding:14px 18px;background:var(--surface);border-left:3px solid var(--spark);font-size:13px;color:var(--slate);}
+  .why b{color:var(--paper);}
+  .toprule{height:1px;background:var(--line-2);margin:26px 0 30px;}
+
+  section{margin-bottom:30px;page-break-inside:avoid;}
+  .sh{display:flex;align-items:baseline;gap:14px;margin-bottom:12px;}
+  .n{font-family:'Geist Mono',monospace;font-weight:500;font-size:13px;color:var(--blue);min-width:26px;}
+  h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:30px;letter-spacing:.005em;line-height:1.05;}
+  .body{padding-left:40px;}
+  p{font-size:14.5px;color:var(--slate);margin-bottom:11px;}
+  p strong{color:var(--paper);font-weight:500;}
+
+  .lanes{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;padding-left:40px;}
+  .lane{background:var(--surface);padding:14px 16px;border-top:3px solid var(--blue);}
+  .lane.ins{border-top-color:var(--spark);}
+  .lane.op{border-top-color:var(--green);}
+  .lane .ll{font-family:'Geist Mono',monospace;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--blue-soft);margin-bottom:5px;}
+  .lane.ins .ll{color:var(--spark);}
+  .lane.op .ll{color:var(--green);}
+  .lane .lt{font-size:13.5px;color:var(--paper);font-weight:600;margin-bottom:3px;}
+  .lane .lx{font-size:12px;color:var(--slate);line-height:1.45;}
+
+  .rules{display:grid;grid-template-columns:1fr 1fr;gap:11px;padding-left:40px;margin-top:4px;}
+  .rule{background:var(--surface);padding:13px 15px;border-left:3px solid var(--blue);}
+  .rule.g{border-left-color:var(--spark);}
+  .rule .rl{font-family:'Geist Mono',monospace;font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--blue-soft);margin-bottom:4px;}
+  .rule.g .rl{color:var(--spark);}
+  .rule .rt{font-size:13px;color:var(--paper);font-weight:500;margin-bottom:3px;}
+  .rule .rx{font-size:11.5px;color:var(--slate);line-height:1.45;}
+
+  .test{padding-left:40px;}
+  .q{display:grid;grid-template-columns:24px 1fr;gap:12px;padding:9px 0;border-top:1px solid var(--line);}
+  .q:first-child{border-top:none;}
+  .q .qn{font-family:'Instrument Serif',serif;font-size:20px;color:var(--spark);line-height:1;}
+  .q .qt{font-size:13.5px;color:var(--paper);}
+  .q .qx{font-size:12.5px;color:var(--slate);margin-top:2px;}
+
+  .cal{padding-left:40px;}
+  table{width:100%;border-collapse:collapse;font-size:12.5px;}
+  th{font-family:'Geist Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--slate-dim);font-weight:500;text-align:left;padding:0 10px 8px 0;}
+  td{padding:10px 10px 10px 0;border-top:1px solid var(--line);color:var(--slate);vertical-align:top;}
+  td.wk{font-family:'Instrument Serif',serif;font-style:italic;font-size:15px;color:var(--spark);white-space:nowrap;}
+  .tag{display:inline-block;font-family:'Geist Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:2px;font-weight:500;white-space:nowrap;}
+  .t-auth{background:rgba(46,107,255,.16);color:var(--blue-soft);}
+  .t-ins{background:rgba(240,78,35,.18);color:#FF9576;}
+  .t-op{background:rgba(143,227,154,.14);color:var(--green);}
+  td .topic{color:var(--paper);display:block;margin-top:4px;font-size:12.5px;}
+
+  .wkhead{font-family:'Instrument Serif',serif;font-style:italic;font-size:18px;color:var(--spark);margin:18px 0 8px 40px;}
+  .briefs{padding-left:40px;}
+  .brief{background:var(--surface);border:1px solid var(--line);border-top:2px solid var(--blue);padding:15px 17px;margin-bottom:11px;}
+  .brief.ins{border-top-color:var(--spark);}
+  .brief.op{border-top-color:var(--green);}
+  .bmeta{display:flex;align-items:center;gap:9px;margin-bottom:8px;flex-wrap:wrap;}
+  .bday{font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.1em;color:var(--slate-dim);}
+  .btopic{font-size:15.5px;color:var(--paper);font-weight:600;line-height:1.25;margin-bottom:10px;}
+  .brow{display:grid;grid-template-columns:78px 1fr;gap:12px;padding:5px 0;border-top:1px solid var(--line);font-size:12.5px;line-height:1.5;}
+  .brow:first-of-type{border-top:none;}
+  .bk{font-family:'Geist Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-soft);padding-top:2px;}
+  .bv{color:var(--slate);}
+  .bv.hook{color:var(--paper);font-style:italic;}
+  .bv b{color:var(--paper);font-weight:500;}
+
+  .spec{background:var(--surface);border:1px solid var(--line-2);padding:20px 22px;margin:0 0 16px 40px;}
+  .spec .slbl{font-family:'Geist Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--spark);margin-bottom:4px;}
+  .spec .stopic{font-size:13px;color:var(--slate);margin-bottom:14px;}
+  .spec .stopic b{color:var(--paper);}
+  .spec .post p{font-size:13.5px;color:#D4DAE4;line-height:1.6;margin:0 0 10px;}
+  .spec .post p:last-child{margin-bottom:0;}
+  .spec .cc{font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.06em;color:var(--slate-dim);margin-top:14px;padding-top:10px;border-top:1px solid var(--line);}
+  .spec .cc b{color:var(--green);}
+
+  .bench{padding-left:40px;}
+  .bi{display:grid;grid-template-columns:1fr;gap:2px;padding:9px 0;border-top:1px solid var(--line);}
+  .bi:first-child{border-top:none;}
+  .bi .bt{font-size:13.5px;color:var(--paper);}
+  .bi .bx{font-size:12.5px;color:var(--slate);}
+
+  .acts{padding-left:40px;}
+  .act{display:flex;gap:12px;padding:9px 0;border-top:1px solid var(--line);}
+  .act:first-child{border-top:none;}
+  .act .ab{font-family:'Geist Mono',monospace;font-size:11px;color:var(--blue);min-width:20px;padding-top:2px;}
+  .act p{margin:0;font-size:13.5px;color:var(--slate);}
+  .act p b{color:var(--paper);}
+
+  footer{display:flex;justify-content:space-between;margin-top:34px;padding-top:14px;border-top:1px solid var(--line-2);font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--slate-dim);}
+
+  @media print{
+    body{background:#0D1017;padding:0;}
+    .page{box-shadow:none;margin:0;max-width:100%;padding:0.6in 0.7in;border:none;}
+    section{margin-bottom:22px;}
+    .brief,.spec{page-break-inside:avoid;}
+  }
+  @page{size:letter;margin:0;}
+</style>
+</head>
+<body>
+  <div class="page"><div class="inner">
+
+    <div class="kick">Content Engine · Authority ÷ Insight ÷ Operate</div>
+    <h1>The First<br><em>30 Days</em></h1>
+    <p class="standfirst">Twelve posts, three a week, across three lanes. Four of them carry video, because the format is climbing and it compounds delivery of everything else you post.</p>
+    <div class="vchip">Version 3 · August 17, 2026</div>
+    <div class="why"><b>Why the lanes exist:</b> van der Blom's A/B on himself ran a confession post against a citation-stacked authority post, same audience, two weeks apart. Confession pulled 24K impressions with comments where readers described their own version of the mistake. Authority pulled 11K with comments that were peer compliments. Authority builds status; insight creates recognition. Your 31 years make authority the path of least resistance, so this plan puts a floor under insight rather than trusting inclination</div>
+    <div class="toprule"></div>
+
+    <section>
+      <div class="sh"><span class="n">01</span><h2>Three lanes, one per week</h2></div>
+      <div class="lanes">
+        <div class="lane"><div class="ll">Tuesday</div><div class="lt">Authority</div><div class="lx">A system, opened up. Establishes that you actually build the things you talk about. The anchor, not the star</div></div>
+        <div class="lane ins"><div class="ll">Wednesday · flagship</div><div class="lt">Insight</div><div class="lx">A confession with a cost attached. The highest-converting mode gets the strongest day of the week. This is the lane that earns followers</div></div>
+        <div class="lane op"><div class="ll">Thursday</div><div class="lt">Operate-as-content</div><div class="lx">A decision you're making right now, in public, outcome unknown. Module 011, live</div></div>
+      </div>
+      <p class="body" style="margin-top:14px;font-size:13px;">Four of each across the month. <span class="tag t-auth">Authority</span> 4 &nbsp; <span class="tag t-ins">Insight</span> 4 &nbsp; <span class="tag t-op">Operate</span> 4. Insight-to-authority is now 1:1, his stated floor.</p>
+    </section>
+
+    <section>
+      <div class="sh"><span class="n">02</span><h2>The three-question test</h2></div>
+      <p class="body" style="margin-bottom:12px;">Run any candidate insight post through this before you write it. It's the tool that generates the lane, so you're not dependent on this document once the 30 days are up.</p>
+      <div class="test">
+        <div class="q"><span class="qn">1</span><div><div class="qt">What did this actually cost you, or a client, before you figured it out?</div><div class="qx">A number helps. Dollars, months, a deal, a thesis you ran on for two years</div></div></div>
+        <div class="q"><span class="qn">2</span><div><div class="qt">What were you doing before you knew better?</div><div class="qx">The actual mistake, not the polished retrospective version of it</div></div></div>
+        <div class="q"><span class="qn">3</span><div><div class="qt">Would you be comfortable if someone asked a follow-up in the comments?</div><div class="qx"><b style="color:var(--spark);">If the answer is no, that's the post.</b> Discomfort is what separates a real confession from a tidy lesson dressed up as vulnerability. And it has to be currently uncomfortable, not "here's what I learned twenty years ago"</div></div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sh"><span class="n">03</span><h2>The rules of the road</h2></div>
+      <div class="rules">
+        <div class="rule"><div class="rl">Cadence</div><div class="rt">3x/week · Tue / Wed / Thu</div><div class="rx">Sits inside his 2-4 optimal band, down from 5-6 in prior years. Post mid-morning, 10-11 ET, and hold the window</div></div>
+        <div class="rule g"><div class="rl">The golden hour</div><div class="rt">Conversations, not comments</div><div class="rx">A reply that triggers 2+ more is what counts; a flat "great post" now costs you. Reply with a question. Be present 60-90 min</div></div>
+        <div class="rule"><div class="rl">Format</div><div class="rt">Text + one original image</div><div class="rx">Original photos and real screenshots earn +30% because AI can't fake them. Video under 90 seconds. Carousels are a depth play, not discovery, so use them for saves, not reach. Polls are dead at 0.07%</div></div>
+        <div class="rule g"><div class="rl">Links</div><div class="rt">A cost you pay on purpose</div><div class="rx">One in-body link cuts median reach 18.8%, and the first-comment dodge is dead (comments with links suppressed up to 80%). So no link on reach posts; link on conversion posts and accept the hit</div></div>
+        <div class="rule g"><div class="rl">Topic discipline</div><div class="rt">Anchor insight to the topic</div><div class="rx">Oct 2026: on-topic posts reach 65% <i>outside</i> your network; personal storytelling only 30%, staying 70% inside. Your inside network is legacy contacts from a former career, not this audience. So every confession must be about <b>the machine</b>, not just about you — then it travels as on-topic. Only 10% of initial distribution goes to connections now, down from 70% in 2024</div></div>
+        <div class="rule"><div class="rl">Write it in-app</div><div class="rt">Type, don't paste</div><div class="rx">Composing directly in LinkedIn is worth +22% vs pasting from an AI tool, and even Word costs 9%. Correlational and confounded, but cheap to comply with — and retyping forces a last edit pass into your own voice. Never let anything but you write a comment: AI-flagged comments lose 88% and leave a 15% penalty on your next genuine one</div></div>
+        <div class="rule"><div class="rl">Scoreboard</div><div class="rt">Saves, comment quality, signups</div><div class="rx">Saves lead every signal. Comment quality means readers describing their own version of your mistake, not compliments. Plus one real downstream number: signups at jimmyfarrell.com</div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sh"><span class="n">04</span><h2>Video, one a week</h2></div>
+      <div class="body">
+        <p><strong>Video isn't a fourth lane. It's a format you apply to a lane you're already writing.</strong> One post a week becomes video, rotating through the three lanes, so the cadence stays at three and nothing extra gets added to the calendar.</p>
+        <p>Two findings make this worth the friction. Video reach is climbing 15-25% month over month. And the compounding effect matters more: someone who watches one of your videos gets roughly two extra posts from you in their next 25. So a video doesn't just perform, it buys distribution for the ordinary text posts around it.</p>
+        <p>Worth noting, since it's easy to miss: <strong>van der Blom's own top-performing confession post was a video.</strong> 24K impressions, about 40K video views. Video plus insight is the proven pairing, not just video plus teardown. But it's also the hardest to shoot, so the rotation below climbs toward it rather than opening on it.</p>
+      </div>
+
+      <div class="rules" style="margin-top:14px;">
+        <div class="rule"><div class="rl">Length</div><div class="rt">Under 90 seconds, aim 45-60</div><div class="rx">Nobody on LinkedIn watches five minutes. The ceiling is 90; the sweet spot is shorter</div></div>
+        <div class="rule g"><div class="rl">Captions</div><div class="rt">Always, burned in</div><div class="rx">Most feed video is watched muted. No captions means no watch time, and watch time is the whole point</div></div>
+        <div class="rule"><div class="rl">First 3 seconds</div><div class="rt">The hook, spoken</div><div class="rx">Same hook discipline as a text post. Open on the claim, not on "hey everyone"</div></div>
+        <div class="rule"><div class="rl">Production</div><div class="rt">Real over polished</div><div class="rx">Screen recordings of actual dashboards and talking head at your desk. The algorithm rewards what AI can't fake, and a real artifact on screen is exactly that</div></div>
+      </div>
+
+      <div class="body" style="margin-top:14px;">
+        <p style="font-size:13.5px;">The rotation climbs on purpose: <strong>screen recording first</strong> (lowest friction, you're just narrating something real on your monitor), then a talking head on a low-stakes topic, then another screen recording, then the talking-head confession in Week 4 once you've got three weeks of camera reps behind you.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="sh"><span class="n">05</span><h2>The month at a glance</h2></div>
+      <div class="cal">
+        <table>
+          <tr><th>Week</th><th>Tue · Authority</th><th>Wed · Insight · flagship</th><th>Thu · Operate</th></tr>
+          <tr>
+            <td class="wk">Wk 1<br>Open with the wound</td>
+            <td><span class="tag t-auth">Authority</span> <span class="vid">▶ video</span><span class="topic">The Partner Desk</span></td>
+            <td><span class="tag t-ins">Insight</span><span class="topic">Wrong for two years</span></td>
+            <td><span class="tag t-op">Operate</span><span class="topic">Relaunching a bad launch</span></td>
+          </tr>
+          <tr>
+            <td class="wk">Wk 2<br>Numbers, honest ones</td>
+            <td><span class="tag t-auth">Authority</span><span class="topic">The solo operator's cockpit</span></td>
+            <td><span class="tag t-ins">Insight</span><span class="topic">Money on fire</span></td>
+            <td><span class="tag t-op">Operate</span> <span class="vid">▶ video</span><span class="topic">The kill threshold</span></td>
+          </tr>
+          <tr>
+            <td class="wk">Wk 3<br>What restraint costs</td>
+            <td><span class="tag t-auth">Authority</span> <span class="vid">▶ video</span><span class="topic">The no-personal-email gate</span></td>
+            <td><span class="tag t-ins">Insight</span><span class="topic">I rebuilt what I already had</span></td>
+            <td><span class="tag t-op">Operate</span><span class="topic">What the data killed</span></td>
+          </tr>
+          <tr>
+            <td class="wk">Wk 4<br>Say the hard thing</td>
+            <td><span class="tag t-auth">Authority</span><span class="topic">The 13% lead-and-hook playbook</span></td>
+            <td><span class="tag t-ins">Insight</span> <span class="vid">▶ video</span><span class="topic">Good at work we don't enjoy</span></td>
+            <td><span class="tag t-op">Operate</span><span class="topic">Does it work from anywhere?</span></td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <div class="sh"><span class="n">06</span><h2>The briefs</h2></div>
+
+      <div class="wkhead">Week 1 — Open with the wound</div>
+      <div class="briefs">
+        <div class="brief">
+          <div class="bmeta"><span class="bday">TUE</span><span class="tag t-auth">Authority</span><span class="vid">▶ video</span></div>
+          <div class="btopic">The Partner Desk: a sponsor pipeline with no sales team</div>
+          <div class="brow"><div class="bk">Hook</div><div class="bv hook">"I sell newsletter sponsorships without a sales team. The pipeline does the selling."</div></div>
+          <div class="brow"><div class="bk">Payload</div><div class="bv">A copyable map of a no-headcount funnel. Intake to Airtable to sequences</div></div>
+          <div class="brow"><div class="bk">Video</div><div class="bv"><b>60-sec screen recording.</b> Your easiest first video: just walk the pipeline on screen, intake through to the sequence firing. No face needed. Narrate what each step does and why it exists. A real system on a real screen is the un-fakeable content the algorithm now rewards</div></div>
+        </div>
+
+        <div class="brief ins">
+          <div class="bmeta"><span class="bday">WED · flagship</span><span class="tag t-ins">Insight</span></div>
+          <div class="btopic">I was wrong for two years about what my newsletter was actually doing</div>
+          <div class="brow"><div class="bk">Hook</div><div class="bv hook">"For two years I believed my newsletter was feeding my other business. Last week I finally checked."</div></div>
+          <div class="brow"><div class="bk">The cost</div><div class="bv">Two years of shaping one business around a benefit never once verified. Q1 answered with a real number</div></div>
+          <div class="brow"><div class="bk">The mistake</div><div class="bv">Never defined what proof would look like, never set a date to check. Could have asked every client "how did you hear about me" and didn't ask once</div></div>
+          <div class="brow"><div class="bk">Q3 check</div><div class="bv"><b>Uncomfortable.</b> Someone will ask what else you haven't measured. That's the signal, not the problem</div></div>
+          <div class="brow"><div class="bk">Written out</div><div class="bv">Full specimen below. Use it to set the register for the whole lane</div></div>
+        </div>
+
+        <div class="brief op">
+          <div class="bmeta"><span class="bday">THU</span><span class="tag t-op">Operate</span></div>
+          <div class="btopic">Relaunching something I launched badly the first time</div>
+          <div class="brow"><div class="bk">Hook</div><div class="bv hook">"I shipped a good product with a bad launch. Only about 30% of the plan ever fired. I'm running it again this month, in public."</div></div>
+          <div class="brow"><div class="bk">Live</div><div class="bv">The Guide relaunch, in progress right now. Two channels, three weeks, then evergreen. Outcome genuinely unknown</div></div>
+          <div class="brow"><div class="bk">Payload</div><div class="bv">The sequenced-not-blasted launch architecture, plus a standing invitation to watch it work or fail</div></div>
+        </div>
+      </div>
+
+      <div class="wkhead">Week 2 — Numbers, honest ones</div>
+      <div class="briefs">
+        <div class="brief">
+          <div class="bmeta"><span class="bday">TUE</span><span class="tag t-auth">Authority</span></div>
+          <div class="btopic">The five dashboards I built so I never app-hop</div>
+          <div class="brow"><div class="bk">Hook</div><div class="bv hook">"I run a media business and a build-in-progress from five dashboards. No app-hopping."</div></div>
+          <div class="brow"><div class="bk">Payload</div><div class="bv">A blueprint for a solo operator's cockpit, and what each panel answers</div></div>
+          <div class="brow"><div class="bk">Image</div><div class="bv">One anonymized dashboard screenshot. Real artifact, un-fakeable</div></div>
+        </div>
+
+        <div class="brief ins">
+          <div class="bmeta"><span class="bday">WED · flagship</span><span class="tag t-ins">Insight</span></div>
+          <div class="btopic">What lighting money on fire in Meta ads actually bought me</div>
+          <div class="brow"><div class="bk">Hook</div><div class="bv hook">"I lit a pile of money on fire teaching myself paid ads. Here's what the burn bought."</div></div>
+          <div class="brow"><div class="bk">The cost</div><div class="bv">Use the real dollar figure. A number is what makes Q1 land</div></div>
+          <div class="brow"><div class="bk">The mistake</div><div class="bv">Watched cost-per-click when the number that mattered was cost per subscriber who actually opens. Paid for reach, not readers</div></div>
+          <div class="brow"><div class="bk">Sharper still</div><div class="bv">The version with more teeth: your own platform over-reported results by 65% against real signups. Say what you believed before you caught it</div></div>
+        </div>
+
+        <div class="brief op">
+          <div class="bmeta"><span class="bday">THU</span><span class="tag t-op">Operate</span><span class="vid">▶ video</span></div>
+          <div class="btopic">I set a kill threshold before I launched, and I'm publishing it</div>
+          <div class="brow"><div class="bk">Hook</div><div class="bv hook">"I gave my new paid community 90 days and a number. If it misses, I kill it. Here's the number."</div></div>
+          <div class="brow"><div class="bk">Live</div><div class="bv">The Regulars, 60 paid members at day 90. Real threshold, real risk of a public miss</div></div>
+          <div class="brow"><div class="bk">Payload</div><div class="bv">Why pre-committing to a kill number beats deciding in the moment, when sunk cost does the arguing for you</div></div>
+          <div class="brow"><div class="bk">Video</div><div class="bv"><b>45-sec talking head, first face piece.</b> Low stakes on purpose — you're stating a number and a deadline, not confessing anything. Open on the number. Good rep before Week 4</div></div>
+        </div>
+      </div>
+
+      <div class="wkhead">Week 3 — What restraint costs</div>
+      <div class="briefs">
+        <div class="brief">
+          <div class="bmeta"><span class="bday">TUE</span><span class="tag t-auth">Authority</span><span class="vid">▶ video</span></div>
+          <div class="btopic">My best sales rule is a rule about when not to reach out</div>
+          <div class="brow"><div class="bk">Hook</div><div class="bv hook">"My highest-converting sales rule is a rule about when NOT to reach out."</div></div>
+          <div class="brow"><div class="bk">Payload</div><div class="bv">The click-or-reply gate. Everything before it stays automated. Judgment encoded inside the automation, which is the persona in one post</div></div>
+          <div class="brow"><div class="bk">Video</div><div class="bv"><b>60-sec screen recording.</b> Show the trigger actually firing — the moment a click flips someone from automated to personal. Seeing the rule execute beats describing it</div></div>
+        </div>
+
+        <div class="brief ins">
+          <div class="bmeta"><span class="bday">WED · flagship</span><span class="tag t-ins">Insight</span></div>
+          <div class="btopic">I spent an hour rebuilding something I'd already built and shipped</div>
+          <div class="brow"><div class="bk">Hook</div><div class="bv hook">"I rebuilt a page from scratch this week. It was already live. I just couldn't remember building it."</div></div>
+          <div class="brow"><div class="bk">The cost</div><div class="bv">An hour, plus a duplicate account, plus nearly overwriting a working page with a worse version of itself</div></div>
+          <div class="brow"><div class="bk">The mistake</div><div class="bv">Built fast, documented nothing, and trusted memory over the artifact. The recovery was sitting in plain sight the whole time</div></div>
+          <div class="brow"><div class="bk">Q3 check</div><div class="bv"><b>Very uncomfortable,</b> and completely current. It happened this month. That's what makes it work</div></div>
+        </div>
+
+        <div class="brief op">
+          <div class="bmeta"><span class="bday">THU</span><span class="tag t-op">Operate</span><span class="bday" style="color:var(--spark);">· data-gated</span></div>
+          <div class="btopic">The launch data is in, and it killed one of my assumptions</div>
+          <div class="brow"><div class="bk">Live</div><div class="bv">Real channel numbers from the Guide relaunch you started in Week 1. The loop closes in public</div></div>
+          <div class="brow"><div class="bk">Payload</div><div class="bv">How to measure a multi-channel launch honestly, and which channel you were sure about until the numbers corrected you</div></div>
+          <div class="brow"><div class="bk">Gate</div><div class="bv">Only post once real data exists. If it isn't in yet, pull a bench post forward and run this later</div></div>
+        </div>
+      </div>
+
+      <div class="wkhead">Week 4 — Say the hard thing</div>
+      <div class="briefs">
+        <div class="brief">
+          <div class="bmeta"><span class="bday">TUE</span><span class="tag t-auth">Authority</span></div>
+          <div class="btopic">The lead decides your open-to-click, not your subject line</div>
+          <div class="brow"><div class="bk">Hook</div><div class="bv hook">"The gap between a 40% and a 70% open-to-click comes down to one decision: what leads."</div></div>
+          <div class="brow"><div class="bk">Payload</div><div class="bv">The lead-and-hook gate. A framework for choosing what goes first, useful to any writer or editor</div></div>
+        </div>
+
+        <div class="brief ins">
+          <div class="bmeta"><span class="bday">WED · flagship</span><span class="tag t-ins">Insight</span><span class="vid">▶ video</span><span class="bday" style="color:var(--spark);">· the big swing</span></div>
+          <div class="btopic">We're good at work we don't enjoy, and we said so out loud</div>
+          <div class="brow"><div class="bk">Hook</div><div class="bv hook">"My wife and I are good at a business neither of us enjoys. Saying that out loud cost me something."</div></div>
+          <div class="brow"><div class="bk">The cost</div><div class="bv">Years spent building competence in the wrong direction, and the awkwardness of admitting it while still doing the work well</div></div>
+          <div class="brow"><div class="bk">The mistake</div><div class="bv">Treating "I'm good at this" as sufficient reason to keep going. Competence is not the same as fit, and it takes longer to notice than it should</div></div>
+          <div class="brow"><div class="bk">Q3 check</div><div class="bv"><b>The most uncomfortable post in the plan,</b> which by his test makes it the best one. Most people in your position would never say it. Save it for Week 4 so you've got three weeks of register under you first</div></div>
+          <div class="brow"><div class="bk">Care</div><div class="bv">This one involves Kim, so it's a joint call before it goes out. And write it as honest, not bitter — you still serve clients well, that's the tension worth holding</div></div>
+          <div class="brow"><div class="bk">Video</div><div class="bv"><b>60-90 sec talking head.</b> The pairing his own data backs — his best confession post was video, 24K impressions and ~40K views. Shoot it straight to camera, one take, no script read. If it feels slightly hard to say out loud, that discomfort is audible and it is the entire point</div></div>
+          <div class="brow"><div class="bk">Reach risk</div><div class="bv"><b>The least topic-anchored post in the plan.</b> Pure personal storytelling stays 70% inside your existing network, which is legacy contacts, not this audience. Anchor it: make it about <b>why you're building something location-independent instead</b>, so the confession lands as on-topic rather than as a personal aside</div></div>
+        </div>
+
+        <div class="brief op">
+          <div class="bmeta"><span class="bday">THU</span><span class="tag t-op">Operate</span></div>
+          <div class="btopic">Every new idea gets one filter before I build it</div>
+          <div class="brow"><div class="bk">Hook</div><div class="bv hook">"Before I build anything now, it has to pass one test: would this still work if I ran it from somewhere else entirely?"</div></div>
+          <div class="brow"><div class="bk">Live</div><div class="bv">The Anywhere filter, the parallel build, the two businesses being run at full effort and deliberately not forever</div></div>
+          <div class="brow"><div class="bk">Payload</div><div class="bv">The through-line people follow you for. Lowest volume, highest affinity. Introduces the destination and closes the month</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sh"><span class="n">07</span><h2>The insight specimen</h2></div>
+      <p class="body" style="margin-bottom:14px;">Insight is the hardest register to get right, and it's the one you have least practice in. This is Week 1 Wednesday, written out. Note what it does <i>not</i> do: no lesson delivered from above, no tidy bow, and it ends on a question that invites people to confess back.</p>
+
+      <div class="spec">
+        <div class="slbl">Wk1 Wed · Insight · flagship</div>
+        <div class="stopic"><b>Wrong for two years</b></div>
+        <div class="post">
+          <p>For two years I believed my newsletter was feeding my other business. Last week I finally checked.</p>
+          <p>The logic was clean. Build a local newsletter, get to 11,000 readers, and some of those readers eventually need what my other company sells. They'd call me instead of a stranger. Trust layer feeding the pipeline.</p>
+          <p>I ran the click analysis on a recent issue. One click on anything related to that business. One.</p>
+          <p>Now, in fairness to me, clicks were never the mechanism. The theory ran on recognition over years, not clicks in a week. One issue doesn't disprove it.</p>
+          <p>Here's the uncomfortable part. I couldn't produce the other evidence either. Not one customer I can name traced back to the newsletter. Not one.</p>
+          <p>So I spent two years half-shaping a business around a benefit I never once verified.</p>
+          <p>What I should have done on day one: define what proof would look like, and put a date on the calendar to go check. "How did you hear about me" is a question I could have asked every single customer for two years. I never asked it once.</p>
+          <p>The newsletter is still the best thing I've built. It just wasn't doing the job I'd been telling myself it was doing.</p>
+          <p>Anyone else running a strategy on a benefit you've never actually measured? I'd genuinely like to know I'm not the only one.</p>
+        </div>
+        <div class="cc">~1,150 characters · <b>golden-hour move:</b> when people describe their own unmeasured assumption, ask them what proof would have looked like. That turns a comment into a thread, which is the +25%</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sh"><span class="n">08</span><h2>The bench</h2></div>
+      <p class="body" style="margin-bottom:10px;">Cut from the twelve, kept warm. Pull one forward if a data-gated slot isn't ready, or if a week gets away from you.</p>
+      <div class="bench">
+        <div class="bi"><div class="bt">Local dominance is a trap, and I'm leaving it on purpose</div><div class="bx">Authority · the harvest-the-moat thesis. Strong, but overlaps the Week 1 insight post, so don't run them close together</div></div>
+        <div class="bi"><div class="bt">The skills layer: my weekly production runs itself</div><div class="bx">Authority · turning recurring work into reusable systems. The productize-the-playbook seed</div></div>
+        <div class="bi"><div class="bt">A "no" isn't a dead end, it's a different sequence</div><div class="bx">Authority · reactivation versus stay-warm, two nurture lanes</div></div>
+        <div class="bi"><div class="bt">The deal I lost by getting personal too early</div><div class="bx">Insight · the failure side of the Week 3 gate post. Strong pairing if you want back-to-back weeks on restraint</div></div>
+        <div class="bi"><div class="bt">"LinkedIn is dying" is reading the chart backwards</div><div class="bx">Authority · reach down 50%, engagement per post up 12-39%. Only run this if you can argue it from data, or it's just a take</div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sh"><span class="n">09</span><h2>How to run it</h2></div>
+      <div class="acts">
+        <div class="act"><span class="ab">01</span><p><b>Draft the week on the weekend.</b> Write all three in one sitting so the voice stays consistent and Tuesday morning is never a blank box</p></div>
+        <div class="act"><span class="ab">02</span><p><b>Write the insight post first, every week.</b> It's the one that will get deferred if you leave it last, because it's the one that costs something to write</p></div>
+        <div class="act"><span class="ab">03</span><p><b>Log three numbers per post.</b> Saves, signups at jimmyfarrell.com, and whether any comment described the reader's own version of your mistake. That third one is the insight lane working</p></div>
+        <div class="act"><span class="ab">04</span><p><b>Shoot the week\'s video when you draft.</b> Same sitting, while the thinking is fresh. A screen recording takes one pass; don\'t script it word for word or it reads as read</p></div>
+        <div class="act"><span class="ab">05</span><p><b>Re-run the ratio at day 30.</b> Sort what you actually posted into authority and insight. If it drifted back toward authority, that's default gravity reasserting itself, and it's worth knowing</p></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sh"><span class="n">10</span><h2>Version history</h2></div>
+      <div class="chg">
+        <div class="cv"><span class="cvn">v3</span><span class="cvt"><b>Aug 17, 2026.</b> Added video as a once-weekly format rotating through the lanes, four slots total, climbing from screen recording to talking-head confession. Added the topic-anchor rule and the in-app writing rule from the October report. Version stamps introduced</span></div>
+        <div class="cv"><span class="cvn">v2</span><span class="cvt"><b>Aug 17, 2026.</b> Full rebuild on the Authority ÷ Insight ÷ Operate split after Newsletter #70. v1 was 9 authority posts to 2 insight, the exact default gravity the data warns against; v2 is 4/4/4. Insight moved to Wednesday, the strongest day. Three-question test added as a standing tool. Bench added</span></div>
+        <div class="cv"><span class="cvn">v1</span><span class="cvt"><b>Jul 2026.</b> Original build on the four North Star pillars, weighted to system teardowns. Superseded</span></div>
+      </div>
+    </section>
+
+    <footer>
+      <span>New NEXT · First 30 Days · v3</span>
+      <span>Authority ÷ Insight ÷ Operate · Jimmy Farrell</span>
+    </footer>
+
+  </div></div>
+</body>
+</html>

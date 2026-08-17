@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New NEXT — LinkedIn Working File</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --base:#0D1017;
+    --surface:#151B26;
+    --surface-2:#1B2230;
+    --blue:#2E6BFF;
+    --blue-soft:#7BA5FF;
+    --spark:#F04E23;
+    --paper:#F4F6FA;
+    --slate:#AEB7C6;
+    --slate-dim:#8A93A4;
+    --line:rgba(255,255,255,.09);
+    --line-2:rgba(255,255,255,.15);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  body{
+    background:#070A0F;
+    font-family:'Geist',sans-serif;color:var(--paper);
+    line-height:1.6;padding:32px 16px;
+  }
+  .page{
+    background:var(--base);max-width:8.5in;margin:0 auto;
+    padding:0.8in 0.9in 0.65in;
+    border:1px solid var(--line);
+    box-shadow:0 24px 60px rgba(0,0,0,.5);
+    position:relative;overflow:hidden;
+  }
+  .page::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(110% 60% at 12% 0%, rgba(46,107,255,.12) 0%, transparent 55%);
+  }
+  .inner{position:relative;z-index:1;}
+
+  .kick{
+    font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.28em;
+    text-transform:uppercase;font-weight:500;color:var(--blue-soft);
+    display:flex;align-items:center;gap:14px;
+  }
+  .kick::after{content:"";flex:1;height:1px;background:var(--line-2);}
+  h1{
+    font-family:'Instrument Serif',serif;font-weight:400;
+    font-size:56px;line-height:1.0;letter-spacing:.005em;margin:16px 0 12px;
+  }
+  h1 em{font-style:italic;color:var(--blue);}
+  .standfirst{
+    font-family:'Instrument Serif',serif;font-style:italic;
+    font-size:17px;color:#C6CDD9;max-width:56ch;
+  }
+  .how{
+    margin-top:16px;padding:12px 16px;background:var(--surface);
+    border-left:3px solid var(--spark);font-size:12.5px;color:var(--slate);
+  }
+  .how b{color:var(--paper);}
+  .toprule{height:1px;background:var(--line-2);margin:26px 0 30px;}
+  .vchip{display:inline-block;font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:3px 10px;border:1px solid var(--blue);color:var(--blue-soft);border-radius:2px;margin-top:14px;}
+  .chg{padding-left:40px;}
+  .cv{display:grid;grid-template-columns:52px 1fr;gap:14px;padding:9px 0;border-top:1px solid var(--line);font-size:12.5px;}
+  .cv:first-child{border-top:none;}
+  .cv .cvn{font-family:'Geist Mono',monospace;font-size:11px;color:var(--blue);}
+  .cv .cvt{color:var(--slate);line-height:1.5;}
+  .cv .cvt b{color:var(--paper);font-weight:500;}
+
+  section{margin-bottom:28px;page-break-inside:avoid;}
+  .sh{display:flex;align-items:baseline;gap:14px;margin-bottom:10px;}
+  .n{font-family:'Geist Mono',monospace;font-weight:500;font-size:13px;color:var(--blue);min-width:26px;}
+  h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:30px;letter-spacing:.005em;line-height:1.05;}
+  .body{padding-left:40px;}
+  p{font-size:14.5px;color:var(--slate);margin-bottom:11px;}
+  p strong,.ink{color:var(--paper);font-weight:500;}
+
+  /* provenance map */
+  .chats{padding-left:40px;}
+  .chat{display:grid;grid-template-columns:96px 1fr;gap:14px;padding:11px 0;border-top:1px solid var(--line);align-items:start;}
+  .chat:first-child{border-top:none;}
+  .chat .dt{font-family:'Geist Mono',monospace;font-size:10.5px;letter-spacing:.06em;color:var(--slate-dim);padding-top:2px;white-space:nowrap;}
+  .chat .ct{font-size:14px;color:var(--paper);font-weight:500;margin-bottom:2px;}
+  .chat .cd{font-size:12.5px;color:var(--slate);line-height:1.45;}
+  .chat .cd a{color:var(--blue-soft);text-decoration:none;border-bottom:1px solid var(--line-2);word-break:break-all;}
+  .homebar{margin:14px 0 0 40px;padding:14px 18px;background:var(--surface-2);border-left:4px solid var(--blue);}
+  .homebar p{font-size:13.5px;color:var(--paper);margin:0;}
+
+  .pull{margin:8px 0 14px 40px;padding:18px 22px;background:var(--surface-2);border-left:4px solid var(--spark);}
+  .pull p{font-family:'Instrument Serif',serif;font-style:italic;font-size:19px;line-height:1.3;color:var(--paper);margin:0;}
+  .pull p b{color:var(--spark);font-weight:400;font-style:normal;}
+
+  /* stat row */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding-left:40px;margin-top:4px;}
+  .stat{background:var(--surface);padding:14px 16px;border-top:3px solid var(--line-2);}
+  .stat .sv{font-family:'Instrument Serif',serif;font-size:26px;color:var(--spark);line-height:1;margin-bottom:4px;}
+  .stat .sl{font-size:11.5px;color:var(--slate);line-height:1.4;}
+
+  /* labeled rows */
+  .rows{padding-left:40px;}
+  .row{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:11px 0;border-top:1px solid var(--line);align-items:start;}
+  .row:first-child{border-top:none;}
+  .row .rk{font-size:13px;color:var(--blue-soft);font-weight:500;padding-top:1px;}
+  .row .rv{font-size:13.5px;color:var(--slate);line-height:1.5;}
+  .row .rv b{color:var(--paper);font-weight:500;}
+
+  /* tactic cards */
+  .tac{padding-left:40px;}
+  .tcard{padding:12px 0;border-top:1px solid var(--line);}
+  .tcard:first-child{border-top:none;}
+  .th{display:flex;align-items:baseline;gap:10px;margin-bottom:3px;}
+  .th .tn{font-family:'Geist Mono',monospace;font-size:11px;color:var(--blue);}
+  .th .tt{font-size:14.5px;color:var(--paper);font-weight:500;}
+  .tcard .tx{font-size:13px;color:var(--slate);line-height:1.5;padding-left:26px;}
+
+  .callout{margin:6px 0 0 40px;padding:16px 20px;background:var(--surface);border-left:3px solid var(--spark);}
+  .callout p{font-size:13.5px;color:var(--slate);margin:0;}
+  .callout b{color:var(--paper);}
+
+  .verbatim{margin:14px 0 0 40px;padding:18px 22px;background:var(--surface);border:1px solid var(--line-2);}
+  .verbatim .vlbl{font-family:'Geist Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-soft);margin-bottom:12px;}
+  .verbatim p{font-size:13px;color:#C6CDD9;line-height:1.62;margin:0 0 11px;}
+  .verbatim p:last-child{margin-bottom:0;}
+  .verbatim .fold{display:block;margin-top:4px;font-family:'Geist Mono',monospace;font-size:9.5px;letter-spacing:.08em;color:var(--slate-dim);}
+
+  /* open decisions */
+  .dec{padding-left:40px;}
+  .ditem{display:grid;grid-template-columns:26px 1fr;gap:12px;padding:11px 0;border-top:1px solid var(--line);align-items:start;}
+  .ditem:first-child{border-top:none;}
+  .dmark{font-family:'Instrument Serif',serif;font-size:20px;color:var(--spark);line-height:1;padding-top:2px;}
+  .ditem .dq{font-size:14px;color:var(--paper);font-weight:500;margin-bottom:2px;}
+  .ditem .da{font-size:12.5px;color:var(--slate);line-height:1.45;}
+  .ditem .da .lean{color:var(--blue-soft);font-weight:500;}
+
+  /* next actions */
+  .acts{padding-left:40px;}
+  .act{display:flex;gap:12px;padding:9px 0;border-top:1px solid var(--line);}
+  .act:first-child{border-top:none;}
+  .act .ab{font-family:'Geist Mono',monospace;font-size:11px;color:var(--blue);min-width:20px;padding-top:2px;}
+  .act p{margin:0;font-size:13.5px;color:var(--slate);}
+  .act p b{color:var(--paper);}
+
+  footer{display:flex;justify-content:space-between;margin-top:34px;padding-top:14px;border-top:1px solid var(--line-2);font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--slate-dim);}
+
+  @media print{
+    body{background:#0D1017;padding:0;}
+    .page{box-shadow:none;margin:0;max-width:100%;padding:0.6in 0.7in;border:none;}
+    section{margin-bottom:22px;}
+  }
+  @page{size:letter;margin:0;}
+</style>
+</head>
+<body>
+  <div class="page"><div class="inner">
+
+    <div class="kick">Companion to the North Star · Working File</div>
+    <h1>The LinkedIn Thread<br><em>Consolidated</em></h1>
+    <p class="standfirst">One continuous line of thinking that got scattered across three chats, pulled back into one place. The North Star holds the strategy. This holds the execution layer under it: where the work lives, the model being copied, the playbook, and what's still open.</p>
+    <div class="vchip">Version 3 · August 17, 2026</div>
+    <div class="how"><b>How the two fit:</b> North Star = the direction and the rules. This file = the tactics, the provenance, and the loose ends. Keep both open when you sit down to write</div>
+    <div class="toprule"></div>
+
+    <section>
+      <div class="sh"><span class="n">01</span><h2>Where this lives now</h2></div>
+      <p class="body" style="margin-bottom:12px;">The LinkedIn / New NEXT thread was built across three sessions. That fragmentation is the problem this file closes. From here, this chat plus this doc is the home. New sessions distill back into here so nothing strands again.</p>
+      <div class="chats">
+        <div class="chat">
+          <div class="dt">Jun 2</div>
+          <div>
+            <div class="ct">The LinkedIn Play</div>
+            <div class="cd">Where LinkedIn got named as the New NEXT channel, deliberately walled off from the local Charleston surfaces, with CHS Happenings cast as proof of concept, not product</div>
+          </div>
+        </div>
+        <div class="chat">
+          <div class="dt">Jul 4</div>
+          <div>
+            <div class="ct">North Star built</div>
+            <div class="cd">The strategy doc itself: the arc, the persona, the two dials, the four pillars, the weekly rhythm, the one metric, the guardrails. The canonical strategy layer. <a href="https://claude.ai/chat/48bdc258-ca85-46be-b013-6ae43a652b61">claude.ai/chat/48bdc258</a></div>
+          </div>
+        </div>
+        <div class="chat">
+          <div class="dt">Jul (recent)</div>
+          <div>
+            <div class="ct">Richard van der Blom teardown</div>
+            <div class="cd">The creator model reverse-engineered into a tactical playbook. Never folded into the North Star, so it stranded here. That's the bulk of what this file rescues. Candidate Creator Eval CE-007</div>
+          </div>
+        </div>
+      </div>
+      <div class="homebar"><p>Going forward: this workstream stays in one chat. When it gets long or the topic shifts, spin a fresh one and I fold the new thinking back into this file first</p></div>
+    </section>
+
+    <section>
+      <div class="sh"><span class="n">02</span><h2>The strategy, in one breath</h2></div>
+      <div class="body">
+        <p>Full version lives in the North Star. The spine, so this file stands alone: <strong>post as Jimmy, the operator who learned to build.</strong> Foreground the machine, keep the 31-year career as the quiet why-you-should-listen. Four pillars, weighted to system teardowns. Two or three posts a week, never daily. Judge every post on one thing: would a stranger save it, and did it move them toward a surface you own. LinkedIn is the discovery layer, the list is the business. Charleston stays off this feed.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="sh"><span class="n">03</span><h2>The system that's already built</h2></div>
+      <p class="body" style="margin-bottom:12px;">Done in the Jul 4 session, and the piece that stranded worst. The full New NEXT visual identity plus the profile rewrite already exist. This is the inventory, so none of it ever gets treated as open work again.</p>
+      <div class="rows">
+        <div class="row"><div class="rk">Brand system</div><div class="rv"><b>Voltage.</b> Electric-blue anchor (#2E6BFF), tangerine spark (#F04E23), Instrument Serif over Geist and Geist Mono. The New NEXT identity, firewalled from CHS navy-and-lime and from TFG. jimmyfarrell.com, the cover, the logo, and both North Star docs all speak it</div></div>
+        <div class="row"><div class="rk">Logo mark</div><div class="rv">Abstract ascending signal bars climbing to the blue anchor, tangerine spark as punctuation. Sharp-cornered, no circles, zero DNA shared with the TFG F mark so the two Farrell companies never pattern-match. Files: <b>fdv-mark.png</b> (600x600 dark, for the FDV company page) and <b>fdv-mark-light.png</b></div></div>
+        <div class="row"><div class="rk">LinkedIn cover</div><div class="rv"><span style="color:#8FE39A;">Live.</span> Exact 1584x396 spec. Geist Mono "OPERATOR · BUILDER" eyebrow, Instrument Serif headline "Building lean digital businesses, and the judgment calls behind a one-person media company" with "one-person" in tangerine, signal bars top-right echoing the logo. Replaced the old Charleston pano. Source file: <b>jimmyfarrell-cover.png</b></div></div>
+        <div class="row"><div class="rk">Headline</div><div class="rv"><span style="color:#8FE39A;">Live and confirmed.</span> <b>Building lean media + commerce operations, and documenting how I do it | Newsletter operator, systems builder | ex-commercial real estate.</b> Builder label first for the relevance engine, career as three-word texture. Matches the Jul 4 draft verbatim</div></div>
+        <div class="row"><div class="rk">About</div><div class="rv"><span style="color:#8FE39A;">Live and confirmed.</span> Rewritten builder-forward, fold-optimized so the keyword hook and the CHS proof both sit above the "See more" line. Full verbatim copy captured below. Replaced the old real-estate-forward, "35+ years" version</div></div>
+        <div class="row"><div class="rk">FDV company page</div><div class="rv">Industry set to <b>Technology, Information and Media</b>, matched to the personal profile so the parent-and-holdings structure reads clean to the algorithm. Tagline set (120-char cap)</div></div>
+        <div class="row"><div class="rk">Capture page</div><div class="rv"><span style="color:#8FE39A;">Page is live,</span> <span style="color:var(--spark);">but the form has nowhere to deliver.</span> <b>jimmyfarrell.com</b>, single-screen capture page in the Voltage system, deployed to Cloudflare Pages. Headline leads with the synthesis; the paragraph makes CHS the proof <i>without naming it</i>, deliberately, so the page stays clean when CHS sunsets. Button and the LinkedIn Website link text both read <b>"See how it's built"</b>. The Kit form endpoint is still a placeholder until the account below exists</div></div>
+        <div class="row"><div class="rk">The loop</div><div class="rv">LinkedIn discovers → profile link sends to jimmyfarrell.com → page captures into the New NEXT list. This is the mechanical version of "LinkedIn is discovery, the list is the business." Every post in the 30-day plan feeds this chain</div></div>
+        <div class="row"><div class="rk">New NEXT list</div><div class="rv"><span style="color:var(--spark);">NOT BUILT. This is the blocker.</span> The plan was a <b>separate Kit account</b>, isolated from the CHS Kit account so nothing entangles when CHS sunsets. As of Jul 26 that account does not exist, so the capture page has nowhere to deliver and the list is at zero. Blocked on one thing: Kit ties an account to a single email, and there's no FDV address yet. Fix the address, open the account, wire the form, then the 30-day plan has a destination</div></div>
+        <div class="row"><div class="rk">Domains &amp; mail</div><div class="rv">jimmyfarrell.com and farrelldigitalventures.com both at GoDaddy; jimmyfarrell.com moved to Cloudflare by nameserver transfer. <span style="color:var(--spark);">Unverified:</span> whether Cloudflare Email Routing for <b>jimmy@jimmyfarrell.com</b> was ever switched on, and whether the Kit sending-domain CNAMEs were added. If routing is live, that's the account email problem already solved. Standing rule if the CNAMEs get added later: <b>preserve the stronger p=quarantine DMARC</b>, don't downgrade to Kit's requested p=none</div></div>
+      </div>
+      <div class="verbatim">
+        <div class="vlbl">Live About — verbatim</div>
+        <p>I build lean, one-person media and commerce operations, and I document exactly how the machine gets built. The proof: a Charleston newsletter I took from zero to 11,000+ subscribers at 70% open rates, solo.<span class="fold">↑ everything above shows before the "See more" fold</span></p>
+        <p>The audience isn't the interesting part. The machine underneath is: an automated sponsor pipeline, a live-event series, custom dashboards, and a paid-acquisition engine I learned by lighting money on fire until it worked. A working case study in running a systematized digital operation without a team.</p>
+        <p>Before this, I spent 31 years in commercial real estate across DC, Maryland, and Virginia: retail leasing, redevelopment, mixed-use. Then Charleston, where Kim and I run The Farrell Group. Over the full run, 725+ deals and close to $1.2 billion. That career isn't the headline anymore, but it's the reason the systems work. Three decades of reading rooms and closing deals, encoded into every automation and every judgment call.</p>
+        <p>Now I'm turning the playbook into the product: teaching the system, building these engines for other operators, and documenting the whole thing in public as I go.</p>
+        <p>Building a lean digital operation, or thinking about it? Follow along. I show the how.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="sh"><span class="n">04</span><h2>The model — Richard van der Blom</h2></div>
+      <div class="pull"><p>The near-perfect proof that the New NEXT shape works. <b>A lean, location-independent stack run from Spain.</b> If it works for him, it survives the filter.</p></div>
+      <div class="body">
+        <p>Founder and MD of Just Connecting. Author of the annual LinkedIn Algorithm Insights Report. Runs the paid TRIBE community plus a four-month VIP program. Based in Spain, roughly two decades on the platform. He is the on-thesis case study: research report (productize-the-playbook), TRIBE membership (recurring), VIP consulting (done-for-others), keynotes. That is the exact synthesis you are building toward, already running, already portable.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="sv">Report</div><div class="sl">Productized research. The artifact that makes him the authority</div></div>
+        <div class="stat"><div class="sv">TRIBE</div><div class="sl">Recurring community revenue. The membership layer</div></div>
+        <div class="stat"><div class="sv">VIP</div><div class="sl">Done-for-others consulting. The high-ticket lane</div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sh"><span class="n">05</span><h2>The van der Blom playbook</h2></div>
+      <p class="body" style="margin-bottom:14px;">The tone and tactics you're adopting, pulled from his own stated principles. The North Star already absorbed the strategic spine of this. What follows is the execution detail underneath it.</p>
+
+      <div class="rows">
+        <div class="row"><div class="rk">Tone</div><div class="rv"><b>Research before opinion. Patterns over posts. Calm over noise.</b> Application without hype. No urgency tactics, no "LinkedIn just changed everything" headlines. Optimise for signal, not trends. His Triple A: Authentic, Active, Approachable</div></div>
+        <div class="row"><div class="rk">The anti-pitch</div><div class="rv"><b>Sell implicitly.</b> One or two CTAs max. Earn the attention first. His line: nobody owes you their attention. The sell rides inside the value, it is never the value</div></div>
+        <div class="row"><div class="rk">Depth beats slop</div><div class="rv">Generic AI content gets deprioritized. The platform is rebuilt to reward substance, which is the whole reason your teardowns win here</div></div>
+      </div>
+
+      <div class="tac" style="margin-top:16px;">
+        <div class="tcard">
+          <div class="th"><span class="tn">T1</span><span class="tt">Optimise for the right signals</span></div>
+          <div class="tx">Dwell time, saves, and conversations. Not likes, and not flat comments (those now cost you −9%). Saves lead every other signal and the lead just widened, with under 3% of posts earning even one. A reply that sparks 2+ more replies is what the algorithm counts</div>
+        </div>
+        <div class="tcard">
+          <div class="th"><span class="tn">T2</span><span class="tt">The first 60 to 90 minutes decide it</span></div>
+          <div class="tx">Early engagement is the ranking trigger. Post when you can be present to reply, and reply fast. A quiet first hour caps the post's ceiling</div>
+        </div>
+        <div class="tcard">
+          <div class="th"><span class="tn">T3</span><span class="tt">Personal profile beats company page, badly</span></div>
+          <div class="tx">His read: companies leave 80% on the table by posting from the page. Reach lives on the human account. This is the data behind posting as Jimmy, not as the entity</div>
+        </div>
+        <div class="tcard">
+          <div class="th"><span class="tn">T4</span><span class="tt">Links cost reach, and the comment workaround is dead</span></div>
+          <div class="tx">Sharper Aug 2026 numbers supersede the earlier read. One external link in the post body cuts median reach <b>18.8%</b> (1.3M posts). And the old "put it in the first comment" dodge no longer works: LinkedIn now suppresses comments containing external links by up to <b>80%</b>. Countervailing signal worth holding: a Q1 2026 SayWhat study of 400K posts found posts with <i>multiple</i> external links beat posts with none, so this isn't a clean "never link" rule. Treat a link as a deliberate reach cost you pay when the job is capture</div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <p><b>Carousels, now resolved (Oct 2026):</b> he's unambiguous — carousels are down over 40% since the start of 2026, and anyone still calling them the top format is "copy-pasting the 2025 playbook." That settles the earlier tension; the 6.60% document-post figure was the stale reading. Carousels are off the New NEXT feed. <span style="color:var(--spark);">The format now being boosted is "Celebrate an Occasion," 25-45% better than plain text plus image, so aggressively that 1,200+ posts used it with nothing to celebrate.</span> Working rule: use it when there's a real occasion (a launch, a milestone, shipping something) and never when there isn't. Faking an occasion is exactly the performative tactic his own research says gets weeded out, and it would break the calm register you're adopting for a short-lived exploit</p>
+      </div>
+
+      <div class="callout" style="margin-top:12px;border-left-color:var(--blue);">
+        <p><b>2026 context in his research:</b> LinkedIn rebuilt around an interest graph with LLM ranking, roughly March 2026. Organic views down about 50%, engagement about 25%, follower growth about 59% year over year. The takeaway is not despair, it is that reach is now earned by depth and dwell, which favors your teardown-and-lesson approach over volume</p>
+      </div>
+
+      <div class="verbatim" style="margin-top:14px;">
+        <div class="vlbl">His July 2026 update — what's scaling vs tanking</div>
+        <p><b>Scaling:</b> personal takes with original images +30% (AI can't fake them). Saves lead every signal, under 3% of posts earn one. Reach no longer capped by network size, it travels on topic match, so a small account can out-distribute a big one. Comments that spark 2+ replies +25%. Links to in-depth content +21%.</p>
+        <p><b>Tanking:</b> flat comments −9%. Topic drift, on-topic 8/10 beats 6/10 by 30%. Carousels −40% reach, −30% engagement. Plain reshares −20 to −30%. Off-topic comments actively suppress a post.</p>
+        <p style="color:var(--blue-soft);">Net for you: attach a real screenshot to every teardown (+30%), stay ruthlessly in lane (the firewall is now a ranking advantage, not just discipline), turn first-hour comments into threads, link to depth, and never run a carousel here.</p>
+      </div>
+
+      <div class="callout" style="margin-top:14px;border-left-color:var(--spark);">
+        <p><b>Links, the reconciliation (vdB vs Bustamante):</b> both are 2026 data-informed and they still disagree, so resolve it by <b>purpose, not by rule</b>. Reach-optimised posts carry no link and maximise saves. Conversion-optimised posts carry the link and accept the reach hit, because reach you can't convert is vanity and the list is the business. Start near a 2:1 reach-to-conversion split across the week, then let your own signup-vs-save data set it. What's dead either way: the lazy middle, dropping a link in the first comment and assuming it's free.</p>
+      </div>
+      <div class="verbatim" style="margin-top:14px;">
+        <div class="vlbl">October 2026 report — the six trends</div>
+        <p><b>1. AI comments punished hard.</b> A comment flagged as AI loses 88% of its reach impact, and your <i>next</i> genuine comment starts with a 15% penalty. LinkedIn is building a trust score around commenting behaviour. Never let anything but you write a comment.</p>
+        <p><b>2. The Interest Graph sorts by topic, and format decides how far outside your network you travel.</b> On-topic niche posts reach 65% outside your network. Personal storytelling reaches only 30% outside, 70% inside. Popular general topics go 80% outside.</p>
+        <p><b>3. In-app writing beats pasting.</b> Composing directly in LinkedIn is worth +22% reach vs pasting from an AI tool; even pasting from Word costs 9%. Correlational, no stated mechanism, heavy confound with content quality — but compliance is cheap.</p>
+        <p><b>4. Signals compound faster.</b> Watch one video from a creator and you get 20-30% more of their video plus 2 extra posts in your next 25. Video is a wedge that increases later delivery of your ordinary posts to the same person.</p>
+        <p><b>5. Video climbing again.</b> 100+ video creators saw 15-25% more reach month over month since March. Keep them under 90 seconds.</p>
+        <p><b>6. Carousels down 40%+; "Celebrate an Occasion" boosted 25-45%.</b> See the note above on using it honestly.</p>
+        <p style="color:var(--spark);">The one that changes plans: finding 2. Insight and confession posts are <i>personal storytelling</i>, so they stay 70% inside your existing network. That network is a legacy asset from a former career, not the New NEXT audience. Fix: anchor every insight post to the topic — the confession has to be about the machine, not just about you. Then it reads as on-topic and travels.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="sh"><span class="n">06</span><h2>Authority vs Insight</h2></div>
+      <div class="pull"><p>Authority builds status. <b>Insight creates recognition.</b> The post that makes a reader see themselves before they finish reading is the one that converts.</p></div>
+      <div class="body">
+        <p>From his Newsletter #70, and it's the sharpest lens available for what you're about to write. He ran the A/B on himself, two weeks apart, same audience. A <strong>confession</strong> post, admitting he'd deleted half his own profile because it was quietly working against him, pulled 24K impressions and comments where readers described their own version of the same mistake. An <strong>authority</strong> post stacked with Wharton, Gartner, and Forrester citations pulled 11K and comments that were peer compliments.</p>
+        <p>His read: authority attracts peers and freebie hunters. Insight makes a reader picture their own situation mid-sentence.</p>
+      </div>
+
+      <div class="rows">
+        <div class="row"><div class="rk">The test</div><div class="rv">Three questions to find an insight post. <b>1.</b> What did this cost you or a client before you figured it out? A number helps. <b>2.</b> What were you doing before you knew better — the actual mistake, not the polished version? <b>3.</b> Would you be comfortable if someone asked a follow-up in the comments?</div></div>
+        <div class="row"><div class="rk">The signal</div><div class="rv">If the answer to <b>#3 is no, that's the post.</b> Discomfort is what separates a real confession from a tidy lesson dressed as vulnerability. And it has to be <b>currently</b> uncomfortable, not "here's what I learned twenty years ago"</div></div>
+        <div class="row"><div class="rk">Your default gravity</div><div class="rv"><span style="color:var(--spark);">This is the one aimed straight at you.</span> Thirty-one years in commercial real estate makes authority the path of least resistance — every draft will pull toward "five lessons from three decades." That's exactly the mode his data says underperforms. Writing insight will take active discipline, not inclination</div></div>
+        <div class="row"><div class="rk">Untouched material</div><div class="rv">You and Kim have named residential real estate as work you don't enjoy. Most brokers would never say that out loud. The version that would genuinely cost you something to defend in the comments is where the real insight lives</div></div>
+        <div class="row"><div class="rk">The caveat</div><div class="rv">He never ties "converts" to a downstream business outcome. No leads, no calls booked, no purchases — he measures reach and comment quality and takes the rest on faith. Probably earned in his case, but the receipts aren't in the piece. So track <b>both</b>: his leading indicators, and a real downstream action of your own</div></div>
+        <div class="row"><div class="rk">Sharpens 011</div><div class="rv">Operate-as-content says the operating is the content. His addition: the operating is only content when it includes what you got <b>wrong</b>. Confession beats credential</div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sh"><span class="n">07</span><h2>Open decisions</h2></div>
+      <div class="dec">
+        <div class="ditem">
+          <div class="dmark" style="color:#8FE39A;">&#10003;</div>
+          <div>
+            <div class="dq">Posting identity: LOCKED, post as Jimmy</div>
+            <div class="da"><span class="lean" style="color:#8FE39A;">Decided Jul 11.</span> Jimmy Farrell personally, Farrell Digital Ventures as the backdrop and current-role line, never the byline. T3 is the data behind it. Entity-forward and report-first-artifact were the alternatives, both set aside</div>
+          </div>
+        </div>
+        <div class="ditem">
+          <div class="dmark">?</div>
+          <div>
+            <div class="dq">The 30-day content plan was never built</div>
+            <div class="da">The strategy and the playbook exist. The concrete first-month post-by-post plan does not. That is the obvious next build once identity is locked</div>
+          </div>
+        </div>
+        <div class="ditem">
+          <div class="dmark">?</div>
+          <div>
+            <div class="dq">CE-007 not yet logged</div>
+            <div class="da">Van der Blom is a candidate Creator Eval entry, pending dedup against the existing evals in the New NEXT Command dashboard before it gets written live in Cowork</div>
+          </div>
+        </div>
+        <div class="ditem">
+          <div class="dmark">?</div>
+          <div>
+            <div class="dq">The teardown method might itself be a module</div>
+            <div class="da">Reverse-engineering a creator into a playbook is a repeatable system. Worth evaluating as productizable IP or a done-for-others service. Passes the Spain filter on its face</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sh"><span class="n">08</span><h2>Next actions</h2></div>
+      <div class="acts">
+        <div class="act"><span class="ab">01</span><p><b>Build the first 30 days.</b> Identity locked and the visual system is live, so this is the one thing between you and posting. Map the four pillars onto the two-week rotation with real post concepts pulled from your machines</p></div>
+        <div class="act"><span class="ab">02</span><p><b>Draft the first three specimen posts.</b> So the profile launches with content already loaded, not an empty feed</p></div>
+        <div class="act"><span class="ab">03</span><p><b>Log CE-007 in Cowork.</b> Dedup first, then write van der Blom to the Creator Evals tab</p></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sh"><span class="n">09</span><h2>Version history</h2></div>
+      <div class="chg">
+        <div class="cv"><span class="cvn">v3</span><span class="cvt"><b>Aug 17, 2026.</b> October report folded in: AI-comment trust score, the topic-graph distribution split, in-app writing, video climbing. Carousel question closed — they are down 40%+ and off the feed. Link guidance corrected again (18.8% in-body cost, first-comment dodge dead). Authority ÷ Insight section added from Newsletter #70. van der Blom confirmed as CE-009</span></div>
+        <div class="cv"><span class="cvn">v2</span><span class="cvt"><b>Aug 2026.</b> jimmyfarrell.com, the New NEXT list, and the domain plumbing logged under "already built." Live About captured verbatim. Posting identity marked locked</span></div>
+        <div class="cv"><span class="cvn">v1</span><span class="cvt"><b>Jul 2026.</b> Created to consolidate three scattered chats: provenance map, van der Blom playbook, open decisions</span></div>
+      </div>
+    </section>
+
+    <footer>
+      <span>New NEXT · LinkedIn Working File · v3</span>
+      <span>Companion to the North Star · Jimmy Farrell</span>
+    </footer>
+
+  </div></div>
+</body>
+</html>
