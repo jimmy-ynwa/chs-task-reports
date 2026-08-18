@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>100 Years of Storytelling Secrets in 57 Minutes — Creator Eval</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --base:#0D1017;
+    --blue:#2E6BFF;
+    --tangerine:#F04E23;
+    --paper:#F4F6FA;
+    --slate:#AEB7C6;
+    --card:#151A24;
+    --card-border:#242B38;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--base);
+    color:var(--paper);
+    font-family:'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height:1.55;
+    padding:48px 20px 80px;
+  }
+  .wrap{max-width:760px;margin:0 auto;}
+  .mono{font-family:'Geist Mono','SFMono-Regular',Menlo,monospace;letter-spacing:0.02em;}
+  .eyebrow{
+    font-family:'Geist Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--blue);
+    margin:0 0 10px;
+  }
+  h1{
+    font-family:'Instrument Serif', serif;
+    font-weight:400;
+    font-size:40px;
+    line-height:1.1;
+    margin:0 0 12px;
+    color:#fff;
+  }
+  .subline{
+    font-size:14px;
+    color:var(--slate);
+    margin:0 0 40px;
+  }
+  .subline a{color:var(--slate);}
+  h2{
+    font-family:'Instrument Serif', serif;
+    font-weight:400;
+    font-size:24px;
+    color:#fff;
+    margin:44px 0 14px;
+  }
+  p{margin:0 0 14px;color:var(--paper);}
+  .quick-read{
+    font-size:17px;
+    color:var(--paper);
+  }
+  .takeaways{list-style:none;margin:0;padding:0;}
+  .takeaways li{
+    border-left:2px solid var(--blue);
+    padding:4px 0 4px 16px;
+    margin-bottom:16px;
+  }
+  .takeaway-ts{
+    font-family:'Geist Mono',monospace;
+    font-size:12px;
+    color:var(--tangerine);
+    margin-right:8px;
+  }
+  .takeaway-why{
+    color:var(--slate);
+    font-size:14px;
+    margin-top:2px;
+  }
+  .relevance{
+    border-radius:12px;
+    padding:18px 22px;
+    margin:20px 0;
+    border:1px solid;
+  }
+  .relevance.high{border-color:var(--blue);background:rgba(46,107,255,0.07);}
+  .relevance.some{border-color:var(--slate);background:rgba(174,183,198,0.07);}
+  .relevance.low{border-color:var(--tangerine);background:rgba(240,78,35,0.07);}
+  .relevance-label{
+    font-family:'Geist Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    margin:0 0 6px;
+  }
+  .relevance.high .relevance-label{color:var(--blue);}
+  .relevance.some .relevance-label{color:var(--slate);}
+  .relevance.low .relevance-label{color:var(--tangerine);}
+  .relevance p{margin:0;font-size:14px;color:var(--paper);}
+  .ce-card{
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:16px;
+    padding:32px;
+    margin-top:20px;
+  }
+  .ce-card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:16px;
+    flex-wrap:wrap;
+    margin-bottom:6px;
+  }
+  .ce-id{
+    font-family:'Geist Mono',monospace;
+    font-size:13px;
+    color:var(--slate);
+    letter-spacing:0.05em;
+  }
+  .ce-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-family:'Geist Mono',monospace;
+    font-size:12px;
+    padding:5px 12px;
+    border-radius:999px;
+    border:1px solid;
+  }
+  .ce-badge.pass{color:var(--blue);border-color:var(--blue);background:rgba(46,107,255,0.08);}
+  .ce-badge.fail{color:var(--tangerine);border-color:var(--tangerine);background:rgba(240,78,35,0.08);}
+  .ce-name{
+    font-family:'Instrument Serif', serif;
+    font-weight:400;
+    font-size:34px;
+    color:#fff;
+    margin:2px 0 8px;
+  }
+  .ce-subtitle{
+    font-size:16px;
+    color:var(--slate);
+    margin:0 0 24px;
+  }
+  .ce-field{margin-bottom:20px;}
+  .ce-field:last-child{margin-bottom:0;}
+  .ce-label{
+    font-family:'Geist Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--blue);
+    margin:0 0 6px;
+  }
+  .ce-field p{margin:0;font-size:15px;}
+  .ce-field ul{margin:0;padding-left:18px;}
+  .ce-field li{margin-bottom:6px;font-size:15px;}
+  .ce-divider{border:none;border-top:1px solid var(--card-border);margin:24px 0;}
+  .ce-logged{
+    font-family:'Geist Mono',monospace;
+    font-size:12px;
+    color:var(--slate);
+    margin-top:24px;
+  }
+  .fit-note{
+    font-size:13px;
+    color:var(--slate);
+    background:rgba(46,107,255,0.06);
+    border:1px solid rgba(46,107,255,0.2);
+    border-radius:10px;
+    padding:14px 18px;
+    margin-top:20px;
+  }
+  .dedup-note{
+    font-size:13px;
+    color:var(--slate);
+    background:rgba(46,107,255,0.06);
+    border:1px solid rgba(46,107,255,0.2);
+    border-radius:10px;
+    padding:14px 18px;
+    margin-top:20px;
+  }
+  .notes{
+    font-size:13px;
+    color:var(--slate);
+  }
+  .notes ul{padding-left:18px;margin:0;}
+  .notes li{margin-bottom:6px;}
+  .import-wrap{background:var(--card);border:1px solid var(--card-border);border-radius:12px;padding:20px 22px;margin-top:20px;}
+  .import-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px;}
+  .import-head p{font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin:0;}
+  .copy-btn{font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--base);background:var(--blue);border:none;border-radius:999px;padding:7px 16px;cursor:pointer;}
+  .copy-btn:active{background:var(--tangerine);}
+  pre.import-json{margin:0;font-family:'Geist Mono','SFMono-Regular',Menlo,monospace;font-size:12px;line-height:1.6;color:var(--paper);background:#0B0E14;border:1px solid var(--card-border);border-radius:8px;padding:16px;overflow-x:auto;white-space:pre;}
+  footer{
+    margin-top:56px;
+    padding-top:20px;
+    border-top:1px solid var(--card-border);
+    font-family:'Geist Mono',monospace;
+    font-size:11px;
+    color:var(--slate);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <p class="eyebrow">Creator Video Eval · New NEXT</p>
+  <h1>100 Years of Storytelling Secrets in 57 Minutes</h1>
+  <p class="subline">Kieran Drew · publish date not captured · Evaluated 18 August 2026 · <a href="https://youtu.be/OtwXXqbtuV4">youtu.be/OtwXXqbtuV4</a></p>
+
+  <h2>Quick Read</h2>
+  <p class="quick-read">Kieran Drew is a former UK dentist who quit to write online and now runs a solo education business. He claims roughly 280,000 readers and over $1.5M in sales, all of it story-driven. This is a 57-minute storytelling masterclass delivered live to a paying cohort: why storytelling holds up as AI floods the feed, the two kinds of stories a business needs, one four-part framework, and five craft rules, with a story built in real time to demonstrate each move. It matters here because the craft is immediately usable in CHS Happenings features, and because it names the one thing New NEXT is missing: a protagonist.</p>
+
+  <div class="relevance high">
+    <p class="relevance-label">Relevance to where Jimmy is now: High</p>
+    <p>Kieran is a lean solo operator running the exact newsletter-to-paid-product shape New NEXT points at, and the skill he teaches is the one that lets Jimmy build a business around his own name instead of a city brand. Nearly every framework is a same-day edit to work he is already producing.</p>
+  </div>
+
+  <h2>Key Takeaways</h2>
+  <ul class="takeaways">
+    <li>
+      <span class="takeaway-ts">5:14</span>Borrows the Bezos framing: build strategy on what will not change, not on what will. His read is that storytelling is antifragile, so the more uncertain and synthetic the internet gets, the more the storyteller is worth.
+      <div class="takeaway-why">Gives a defensible answer to the question New NEXT keeps circling: which skill compounds regardless of which model ships next.</div>
+    </li>
+    <li>
+      <span class="takeaway-ts">8:26</span>The reader is the hero, even when the story is about you. He judges a story by proximity: how close it sits to the transformation the reader actually wants. His own viral-post story beats his learning-Spanish story for a writing audience, every time.
+      <div class="takeaway-why">A clean pass/fail test for the Broker's Take and for any first-person New NEXT post, replacing gut feel with one question.</div>
+    </li>
+    <li>
+      <span class="takeaway-ts">10:05</span>Transformation tieback: tell a story from outside your niche, land a universal lesson, then use that lesson as the bridge back to your transformation. Stops you becoming the operator who only has five stories.
+      <div class="takeaway-why">This is the mechanism for writing about running, Liverpool, or Charleston civic life and still landing on newsletter operations or real estate.</div>
+    </li>
+    <li>
+      <span class="takeaway-ts">11:36</span>Two buckets, both required. Campfire stories are polished, repeated, and attached to your pillar ideas. Current stories are what happened this week and keep you fresh yet familiar. His line: you get bored of your story long before the reader does, and repetition is what creates resonance.
+      <div class="takeaway-why">Jimmy has been rotating past his own best material. The CRE-to-Charleston arc is underused, not overused, and the current bucket is a use for the noticing he already does.</div>
+    </li>
+    <li>
+      <span class="takeaway-ts">13:36</span>Remarkable means worthy of remark, not extraordinary. And you never tell the whole arc at once, you tell it in beats, one snapshot moment at a time. Seven mining prompts: the moment that set your purpose, a belief you got wrong, your first and worst attempt, your first real win, the mentor who redirected you, the scariest moment, the time you nearly quit.
+      <div class="takeaway-why">Turns Jimmy's arc into a backlog of twenty-plus posts instead of one biography that keeps getting deferred.</div>
+    </li>
+    <li>
+      <span class="takeaway-ts">32:03</span>HEAL is the whole framework: here is what happened, here is how I felt, here is what I did, here is what I learned. Loop it for long pieces, and he explicitly rejects the seven-part and eighteen-point structures as people trying to sound smart.
+      <div class="takeaway-why">Small enough to encode in a skill. The four-beat loop is the part worth building into a repeatable production step.</div>
+    </li>
+    <li>
+      <span class="takeaway-ts">34:00</span>Start in the action, not the throat-clearing, and the usual fix is deleting your first paragraph. Then set the scene: someone is doing, thinking, or feeling something somewhere, at some time. Three detail rules follow: stakes early, magic is in the specific, no side quests.
+      <div class="takeaway-why">The same discipline the 13% Playbook already rewards on lead teasers, now stated as an edit checklist instead of a feel.</div>
+    </li>
+    <li>
+      <span class="takeaway-ts">43:14</span>Two mechanical rescues for a flat draft. But/and/therefore, borrowed from the South Park writers, keeps the sequence moving instead of going linear or scattered. And the me-to-you bounce: take the hit yourself on the negatives, switch to you for the aspirational line so it becomes the sentence people highlight.
+      <div class="takeaway-why">Zero talent requirement, applies to sponsor emails, re-engagement notes, and every newsletter feature without changing the content.</div>
+    </li>
+  </ul>
+
+  <h2>The Creator Eval Card</h2>
+
+  <div class="ce-card">
+    <div class="ce-card-top">
+      <span class="ce-id mono">CE-0XX (confirm next number)</span>
+      <span class="ce-badge pass">✓ Newsletter plus digital courses, all async, and the travel feeds the content</span>
+    </div>
+    <p class="ce-name">Campfire and Current</p>
+    <p class="ce-subtitle">Former dentist turned solo writer built 280K readers and $1.5M in sales by committing to one personal story a day, split between polished campfire stories and fresh current ones.</p>
+
+    <div class="ce-field">
+      <p class="ce-label">Creator</p>
+      <p>Kieran Drew, UK. Practised dentistry, wrote in secret alongside a cosmetic dentistry diploma, quit after a mentor told him to. Now runs a solo writing and education business teaching cohorts of operators.</p>
+    </div>
+    <div class="ce-field">
+      <p class="ce-label">What it is</p>
+      <p>A one-hour masterclass on personal storytelling for business, delivered inside a paid cohort. It covers picking the right story, the four components of a story, one framework, and five craft rules, and he builds a story live to demonstrate each move.</p>
+    </div>
+    <div class="ce-field">
+      <p class="ce-label">Architecture</p>
+      <p>Daily free story output across social and a newsletter feeds a paid education layer of courses and cohort teaching. There is no funnel trick underneath it: the story is the top of funnel, and the sales emails are themselves stories, which he credits for the whole $1.5M. Same free-builds-trust, paid-converts-later shape as CHS Happenings feeding The Farrell Group, with one difference that matters. Kieran's free layer and paid layer share a single protagonist, so trust transfers with no handoff. Jimmy's free layer is a city brand, so the handoff to TFG has to be engineered every time. New NEXT would run Kieran's version, not Jimmy's current one.</p>
+    </div>
+    <div class="ce-field">
+      <p class="ce-label">Monetization</p>
+      <p>Courses and cohort teaching, sold to the audience the free storytelling built. He names Courage and Conviction with 400-plus buyers, and this session sits inside a paid program with other coaches on the call. The discipline worth noting is at 52:00: always make an invitation, but you do not need to pitch a product in every story. He refuses to sell a course off an emotional story about his grandmother, and instead invites readers to reply with their own. Conversations convert later, and the ask stays clean.</p>
+    </div>
+    <div class="ce-field">
+      <p class="ce-label">Skill-stack</p>
+      <p>The rare part is not the frameworks, it is the noticing. He trains it with a five-minute end-of-day pass on three interesting things plus a possible lesson for each, and he pressure-tests stories in person because you can watch someone get bored in a way you cannot in an inbox. The other rare input is having actually lived something worth remarking on, and his came from the job he was already in, not from a whiteboard. Everything else is mechanical and learnable: HEAL, but/and/therefore, the somewhere-and-sometime scene check, me-to-you. Jimmy already has the publishing cadence, the editing eye, and the lived material from 31 years in commercial real estate plus a deliberate exit from two location-dependent businesses. Missing: the daily capture habit, and the willingness to be the protagonist, which CHS Happenings has never asked of him.</p>
+    </div>
+    <div class="ce-field">
+      <p class="ce-label">Temperament (Welsh ↔ Bush)</p>
+      <p>Leans Welsh, hard. One operator, one collaborator named Dave on the calls, no team and no portfolio sprawl. A single audience, a small product catalogue, and a lot of walking around foreign countries. Presence-valuing to the point that the walking is the raw material: the five-hour forest walk with no podcast signal becomes the story about silence.</p>
+    </div>
+
+    <hr class="ce-divider">
+
+    <div class="ce-field">
+      <p class="ce-label">What to steal</p>
+      <ul>
+        <li>Split the story inventory into campfire and current, then audit which pillar ideas have no campfire story attached yet</li>
+        <li>Run the seven mining prompts against the CRE-to-Charleston-to-location-independent arc and bank the snapshot moments as a backlog, not a biography</li>
+        <li>Add the five-minute end-of-day capture: three interesting things, one possible lesson each. Once that exists as an actual workflow rather than a habit, it is a fair Module Inventory candidate, but it has to be built first</li>
+        <li>Adopt the invitation-not-pitch rule for sponsor and re-engagement email: when the story carries weight, end on a real question and save the pitch for a note where it fits</li>
+        <li>Two mechanical passes on every draft: delete the first paragraph, then run but/and/therefore through the sequence</li>
+      </ul>
+    </div>
+    <div class="ce-field">
+      <p class="ce-label">What doesn't map</p>
+      <p>A large fraction of this video assumes your business is the writing. Kieran has one job and it is producing stories, so a story a day is a schedule Jimmy cannot copy while two operating businesses eat the day. The bigger gap is the protagonist problem. Kieran built in first person from day one and his remarkable story is dramatic, a brain tumour at 16 and walking away from a dental career. Jimmy's 11,600 subscribers are attached to a city, not to him, and his arc is a steady successful career being deliberately outgrown, which is quieter and needs a different frame than trauma-to-triumph. The stakes are asymmetric too: Kieran experiments on an audience that came for him personally, while a first-person turn inside CHS Happenings risks a list that never signed up for Jimmy's interior life. The engine belongs to New NEXT, where the protagonist problem does not exist yet.</p>
+    </div>
+    <div class="ce-field">
+      <p class="ce-label">Why it passes the Anywhere test</p>
+      <p>He narrates this from a visibly location-independent life: Cape Town, Buenos Aires, Paraguay, a mountain walk with no signal, a Ukrainian restaurant, a girlfriend in Ecuador applying for a UK visa. The business is a newsletter, social content, and digital courses, all async, with no local clientele anywhere in it. The travel is not incidental to the model either, it is the supply line for the current stories.</p>
+    </div>
+
+    <p class="ce-logged">Logged 18 August 2026</p>
+  </div>
+
+  <div class="fit-note">
+    Logged as a candidate for New NEXT Command's <strong>Creator Evals</strong> tab. A single practitioner teaching his own method under his own name, and the closest temperament match to Welsh in the library so far.
+  </div>
+
+  <div class="dedup-note">
+    Before pasting this in as a new entry: confirm Kieran Drew isn't already logged in New NEXT Command. If he is, this is an update to that entry, not a new number.
+  </div>
+
+  <h2>New NEXT Command import block</h2>
+  <p style="font-size:14px;color:var(--slate);margin-bottom:0;">Paste-ready entry for the Creator Evals tab, keyed to the artifact's own IMPORT_SCHEMAS field names.</p>
+  <div class="import-wrap">
+    <div class="import-head">
+      <p>CE-0XX · Creator Evals</p>
+      <button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('ce-json').textContent);this.textContent='Copied';setTimeout(()=>this.textContent='Copy JSON',1600)">Copy JSON</button>
+    </div>
+    <pre class="import-json" id="ce-json">{
+  "id": "CE-0XX",
+  "name": "Campfire and Current",
+  "creator": "Kieran Drew, UK. Practised dentistry, wrote in secret alongside a cosmetic dentistry diploma, quit after a mentor told him to. Now a solo writer and educator teaching cohorts of operators.",
+  "summary": "Former dentist turned solo writer built 280K readers and $1.5M in sales by committing to one personal story a day, split between polished campfire stories and fresh current ones.",
+  "what": "A 57-minute personal-storytelling masterclass delivered inside a paid cohort: picking the right story, the four components of a story, the HEAL framework, and five craft rules, with a story built live to demonstrate each move. Source: https://youtu.be/OtwXXqbtuV4",
+  "architecture": "Daily free story output across social and a newsletter feeds a paid education layer of courses and cohort teaching. No funnel trick underneath: the story is the top of funnel and the sales emails are themselves stories, which he credits for the full $1.5M. Same free-builds-trust, paid-converts-later shape as CHS Happenings feeding The Farrell Group, with one difference that matters: his free and paid layers share one protagonist, so trust transfers with no handoff, while Jimmy's free layer is a city brand and the handoff to TFG has to be engineered each time. New NEXT would run his version.",
+  "monetization": "Courses and cohort teaching sold to the audience the free storytelling built. Names Courage and Conviction at 400-plus buyers. Key discipline: always make an invitation, but do not pitch a product in every story. He refuses to sell off an emotional story and instead invites readers to reply with their own, letting conversations convert later.",
+  "skillstack": "The rare part is the noticing, trained with a five-minute end-of-day pass on three interesting things plus a possible lesson each, and pressure-tested in person where boredom is visible. The other rare input is having lived something worth remarking on, and his came from the job he was already in rather than a whiteboard. Everything else is mechanical: HEAL, but/and/therefore, the somewhere-and-sometime scene check, me-to-you. Jimmy has the cadence, the editing eye, and the lived material from 31 years in CRE plus a deliberate exit from two location-dependent businesses. Missing: the daily capture habit and the willingness to be the protagonist.",
+  "temperament": "Leans Welsh, hard. One operator, one collaborator on the calls, no team and no portfolio sprawl. Single audience, small catalogue, a lot of walking around foreign countries, and the walking is the raw material.",
+  "steal": [
+    "Split the story inventory into campfire and current, then audit which pillar ideas have no campfire story attached yet",
+    "Run the seven mining prompts against the CRE-to-Charleston-to-location-independent arc and bank snapshot moments as a backlog, not a biography",
+    "Add the five-minute end-of-day capture: three interesting things, one possible lesson each. Module Inventory candidate once it is an actual workflow",
+    "Adopt the invitation-not-pitch rule for sponsor and re-engagement email: when the story carries weight, end on a real question",
+    "Two mechanical passes on every draft: delete the first paragraph, then run but/and/therefore through the sequence"
+  ],
+  "nomap": "A large fraction of the video assumes your business is the writing, so a story a day is not a schedule Jimmy can copy with two operating businesses eating the day. The bigger gap is the protagonist problem: Kieran built in first person from day one off a dramatic story, a brain tumour at 16 and walking away from dentistry, while Jimmy's 11,600 subscribers are attached to a city and his arc is a steady successful career being deliberately outgrown, which needs a different frame than trauma-to-triumph. Stakes are asymmetric too, since a first-person turn inside CHS Happenings risks a list that never signed up for Jimmy's interior life. The engine belongs to New NEXT.",
+  "spain": true,
+  "spainReason": "Newsletter, social content, and digital courses, all async, with no local clientele. He narrates from Cape Town, Buenos Aires, Paraguay, and a signal-free mountain walk, and the travel is the supply line for the current stories rather than a distraction from the work.",
+  "date": "2026-08-18"
+}</pre>
+  </div>
+
+  <h2>Notes &amp; Caveats</h2>
+  <div class="notes">
+    <ul>
+      <li>CE number is a placeholder. Send the next free number and the card header plus the import block both get patched and republished.</li>
+      <li>Publish date not captured. The YouTube page loaded the title and runtime but not the upload date in the text pull, and it was not worth a second attempt.</li>
+      <li>This is a session inside a paid cohort, so several references point at material not in the transcript: the magnetic post format, the seductive promise framework, prior weeks on copywriting, and a collaborator named Dave. The frameworks stand alone. The surrounding curriculum does not, and should not be reconstructed from guesswork.</li>
+      <li>Every number here is his own claim in the transcript and is unverified: 280,000 readers, over $1.5M in sales, 400-plus buyers of Courage and Conviction, 178 pages of an unsold guide.</li>
+      <li>Dedup against New NEXT Command is unconfirmed. The live artifact is not reliably readable from this session.</li>
+    </ul>
+  </div>
+
+  <footer>Farrell Digital Ventures · New NEXT · Creator Video Eval</footer>
+</div>
+</body>
+</html>
