@@ -323,40 +323,38 @@
   </div>
 
   <h2>New NEXT Command import block</h2>
-  <p style="font-size:14px;color:var(--slate);margin-bottom:0;">Paste-ready entry for the Creator Evals tab, keyed to the artifact's own IMPORT_SCHEMAS field names.</p>
+  <p style="font-size:14px;color:var(--slate);margin-bottom:0;">Paste-ready field block for the Creator Evals tab. The artifact's importer wants plain text, one Label: value per line, not JSON. Verified against its own parser: all 14 fields resolve, no unrecognized labels.</p>
   <div class="import-wrap">
     <div class="import-head">
-      <p>CE-010 · Creator Evals</p>
-      <button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('ce-json').textContent);this.textContent='Copied';setTimeout(()=>this.textContent='Copy JSON',1600)">Copy JSON</button>
+      <p>CE-010 · Creator Evals · field block</p>
+      <button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('ce-json').textContent);this.textContent='Copied';setTimeout(()=>this.textContent='Copy block',1600)">Copy block</button>
     </div>
-    <pre class="import-json" id="ce-json">{
-  "id": "CE-010",
-  "name": "Campfire and Current",
-  "creator": "Kieran Drew, UK. Practised dentistry, wrote in secret alongside a cosmetic dentistry diploma, quit after a mentor told him to. Now a solo writer and educator teaching cohorts of operators.",
-  "summary": "Former dentist turned solo writer built 280K readers and $1.5M in sales by committing to one personal story a day, split between polished campfire stories and fresh current ones.",
-  "what": "A 57-minute personal-storytelling masterclass delivered inside a paid cohort: picking the right story, the four components of a story, the HEAL framework, and five craft rules, with a story built live to demonstrate each move. Source: https://youtu.be/OtwXXqbtuV4",
-  "architecture": "Daily free story output across social and a newsletter feeds a paid education layer of courses and cohort teaching. No funnel trick underneath: the story is the top of funnel and the sales emails are themselves stories, which he credits for the full $1.5M. Same free-builds-trust, paid-converts-later shape as CHS Happenings feeding The Farrell Group, with one difference that matters: his free and paid layers share one protagonist, so trust transfers with no handoff, while Jimmy's free layer is a city brand and the handoff to TFG has to be engineered each time. New NEXT would run his version.",
-  "monetization": "Courses and cohort teaching sold to the audience the free storytelling built. Names Courage and Conviction at 400-plus buyers. Key discipline: always make an invitation, but do not pitch a product in every story. He refuses to sell off an emotional story and instead invites readers to reply with their own, letting conversations convert later.",
-  "skillstack": "The rare part is the noticing, trained with a five-minute end-of-day pass on three interesting things plus a possible lesson each, and pressure-tested in person where boredom is visible. The other rare input is having lived something worth remarking on, and his came from the job he was already in rather than a whiteboard. Everything else is mechanical: HEAL, but/and/therefore, the somewhere-and-sometime scene check, me-to-you. Jimmy has the cadence, the editing eye, and the lived material from 31 years in CRE plus a deliberate exit from two location-dependent businesses. Missing: the daily capture habit and the willingness to be the protagonist.",
-  "temperament": "Leans Welsh, hard. One operator, one collaborator on the calls, no team and no portfolio sprawl. Single audience, small catalogue, a lot of walking around foreign countries, and the walking is the raw material.",
-  "steal": [
-    "Split the story inventory into campfire and current, then audit which pillar ideas have no campfire story attached yet",
-    "Run the seven mining prompts against the CRE-to-Charleston-to-location-independent arc and bank snapshot moments as a backlog, not a biography",
-    "Add the five-minute end-of-day capture: three interesting things, one possible lesson each. Module Inventory candidate once it is an actual workflow",
-    "Adopt the invitation-not-pitch rule for sponsor and re-engagement email: when the story carries weight, end on a real question",
-    "Two mechanical passes on every draft: delete the first paragraph, then run but/and/therefore through the sequence"
-  ],
-  "nomap": "A large fraction of the video assumes your business is the writing, so a story a day is not a schedule Jimmy can copy with two operating businesses eating the day. The bigger gap is the protagonist problem: Kieran built in first person from day one off a dramatic story, a brain tumour at 16 and walking away from dentistry, while Jimmy's 11,600 subscribers are attached to a city and his arc is a steady successful career being deliberately outgrown, which needs a different frame than trauma-to-triumph. Stakes are asymmetric too, since a first-person turn inside CHS Happenings risks a list that never signed up for Jimmy's interior life. The engine belongs to New NEXT.",
-  "spain": true,
-  "spainReason": "Newsletter, social content, and digital courses, all async, with no local clientele. He narrates from Cape Town, Buenos Aires, Paraguay, and a signal-free mountain walk, and the travel is the supply line for the current stories rather than a distraction from the work.",
-  "date": "2026-08-18"
-}</pre>
+    <pre class="import-json" id="ce-json">ID: CE-010
+Name: Campfire and Current
+Creator: Kieran Drew, UK. Practised dentistry, wrote in secret alongside a cosmetic dentistry diploma, quit after a mentor told him to. Now a solo writer and educator teaching cohorts of operators.
+Subtitle: Former dentist turned solo writer built 280K readers and $1.5M in sales by committing to one personal story a day, split between polished campfire stories and fresh current ones.
+What it is: A 57-minute personal-storytelling masterclass delivered inside a paid cohort, covering how to pick the right story, the four components of a story, the HEAL framework, and five craft rules, with a story built live to demonstrate each move. Source: https://youtu.be/OtwXXqbtuV4
+Architecture: Daily free story output across social and a newsletter feeds a paid education layer of courses and cohort teaching. No funnel trick underneath, the story is the top of funnel and the sales emails are themselves stories, which he credits for the full $1.5M. Same free-builds-trust, paid-converts-later shape as CHS Happenings feeding The Farrell Group, with one difference that matters, his free and paid layers share one protagonist so trust transfers with no handoff, while Jimmy's free layer is a city brand and the handoff to TFG has to be engineered each time. New NEXT would run his version.
+Monetization: Courses and cohort teaching sold to the audience the free storytelling built. Names Courage and Conviction at 400-plus buyers. The discipline worth stealing is that he always makes an invitation but does not pitch a product in every story. He refuses to sell off an emotional story and instead invites readers to reply with their own, letting conversations convert later.
+Skill-stack: The rare part is the noticing, trained with a five-minute end-of-day pass on three interesting things plus a possible lesson each, and pressure-tested in person where boredom is visible on a face. The other rare input is having lived something worth remarking on, and his came from the job he was already in rather than off a whiteboard. Everything else is mechanical, HEAL plus but/and/therefore plus the somewhere-and-sometime scene check plus me-to-you. Jimmy has the cadence, the editing eye, and the lived material from 31 years in CRE plus a deliberate exit from two location-dependent businesses. Missing, the daily capture habit and the willingness to be the protagonist.
+Temperament: Leans Welsh, hard. One operator, one collaborator on the calls, no team and no portfolio sprawl. Single audience, small catalogue, a lot of walking around foreign countries, and the walking is the raw material.
+What to steal:
+- Split the story inventory into campfire and current, then audit which pillar ideas have no campfire story attached yet
+- Run the seven mining prompts against the CRE to Charleston to location-independent arc and bank the snapshot moments as a backlog, not a biography
+- Add the five-minute end-of-day capture, three interesting things and one possible lesson each. Module Inventory candidate once it is an actual workflow and not just a habit
+- Adopt the invitation-not-pitch rule for sponsor and re-engagement email, ending on a real question when the story carries weight
+- Two mechanical passes on every draft, delete the first paragraph, then run but/and/therefore through the sequence
+What doesn't map: A large fraction of the video assumes your business is the writing, so a story a day is not a schedule Jimmy can copy with two operating businesses eating the day. The bigger gap is the protagonist problem. Kieran built in first person from day one off a dramatic story, a brain tumour at 16 and walking away from dentistry, while Jimmy's 11,600 subscribers are attached to a city and his arc is a steady successful career being deliberately outgrown, which needs a different frame than trauma-to-triumph. The stakes are asymmetric too, since a first-person turn inside CHS Happenings risks a list that never signed up for Jimmy's interior life. The engine belongs to New NEXT.
+Anywhere test: pass
+Why it passes the Anywhere test: Newsletter, social content, and digital courses, all async, with no local clientele anywhere in it. He narrates from Cape Town, Buenos Aires, Paraguay, and a signal-free mountain walk, and the travel is the supply line for the current stories rather than a distraction from the work.
+Logged: 2026-08-18</pre>
   </div>
 
   <h2>Notes &amp; Caveats</h2>
   <div class="notes">
     <ul>
       <li>CE number confirmed by Jimmy as CE-010 and patched into the card header and the import block.</li>
+      <li>The import block was originally shipped as JSON, which New NEXT Command rejected with No recognized fields found. Its importer parses a plain-text field block instead. The block above was rebuilt in that format and run through a faithful copy of the artifact's own parser before shipping. The creator-video-eval skill has been corrected so this does not recur.</li>
       <li>Publish date not captured. The YouTube page loaded the title and runtime but not the upload date in the text pull, and it was not worth a second attempt.</li>
       <li>This is a session inside a paid cohort, so several references point at material not in the transcript: the magnetic post format, the seductive promise framework, prior weeks on copywriting, and a collaborator named Dave. The frameworks stand alone. The surrounding curriculum does not, and should not be reconstructed from guesswork.</li>
       <li>Every number here is his own claim in the transcript and is unverified: 280,000 readers, over $1.5M in sales, 400-plus buyers of Courage and Conviction, 178 pages of an unsold guide.</li>
