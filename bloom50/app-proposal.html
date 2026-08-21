@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>An app for Bloom50 — a proposal for Kim</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Nunito+Sans:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Lifted verbatim from bloom50-deploy/assets/bloom50.css — do not approximate. */
+  --ink:#001B33; --navy:#003466; --navy-lift:#0B5892;
+  --ink-soft:#4a5563; --dim:#656f79;
+  --terracotta:#d9826b;            /* decorative only — never behind white text */
+  --terracotta-mid:#c55133;        /* solid fills carrying white text (AA 4.6:1) */
+  --terracotta-deep:#af5237;       /* terracotta as TEXT on a light surface */
+  --gold:#c8a951; --gold-deep:#866927; --gold-lift:#E3C878;
+  --blush:#FFEEE4; --shell:#FBF7F1; --cream:#f6f1e8;
+  --line:rgba(0,52,102,.13);
+  --moss:#6B8B3A; --moss-text:#5b7631;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Nunito',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --ui:'Nunito Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--shell); color:var(--ink);
+  font-family:var(--sans); font-size:18px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+  background-image:
+    radial-gradient(900px 520px at 82% -8%, rgba(200,169,81,.18), transparent 62%),
+    radial-gradient(760px 480px at 6% 14%, rgba(217,130,107,.13), transparent 60%);
+  background-attachment:fixed;
+}
+.wrap{max-width:980px;margin:0 auto;padding:0 24px}
+.narrow{max-width:680px}
+section{padding:76px 0}
+section + section{border-top:1px solid var(--line)}
+
+/* ---------- type ---------- */
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(40px,6.4vw,66px);line-height:1.06;letter-spacing:-.02em;margin:0 0 20px}
+h1 em{font-style:italic;color:var(--terracotta-deep)}
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.14;letter-spacing:-.015em;margin:0 0 14px}
+h3{font-family:var(--serif);font-weight:600;font-size:25px;line-height:1.2;margin:0 0 8px}
+p{margin:0 0 18px;max-width:64ch}
+.lede{font-size:21px;line-height:1.55;color:var(--ink-soft);max-width:56ch}
+.eyebrow{font-family:var(--ui);font-size:14px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--terracotta-deep);margin:0 0 16px;display:block}
+strong{font-weight:700}
+em.hl{font-style:normal;background:linear-gradient(transparent 62%, rgba(200,169,81,.42) 62%);padding:0 2px}
+
+/* ---------- letter head ---------- */
+.hero{padding:86px 0 70px}
+.from{display:flex;align-items:center;gap:12px;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 34px;font-weight:600;font-family:var(--ui)}
+.from .dot{width:7px;height:7px;border-radius:50%;background:var(--terracotta-deep)}
+.sig{font-family:var(--serif);font-style:italic;font-size:25px;color:var(--terracotta-deep);margin-top:26px}
+
+/* ---------- the swap ---------- */
+.swap{display:grid;grid-template-columns:1fr auto 1fr;gap:22px;align-items:stretch;margin:34px 0 0}
+.swap-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 28px}
+.swap-card.now{background:var(--cream);border-style:dashed}
+.swap-card h4{font-family:var(--ui);font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 16px}
+.swap-card.after h4{color:var(--terracotta-deep)}
+.swap ol{margin:0;padding-left:22px}
+.swap li{margin:0 0 10px;font-size:17.5px;line-height:1.5}
+.swap li:last-child{margin:0}
+.swap li.new{color:var(--terracotta-deep);font-weight:700}
+.swap .dead{margin:16px 0 0;padding:14px 16px;background:#fff;border:1px dashed var(--line);border-radius:11px;font-size:16.5px;line-height:1.45;color:var(--ink-soft);font-style:italic}
+.swap-card.after .dead{border-style:solid;border-color:rgba(107,139,58,.4);background:#F1F5EA;color:var(--moss-text);font-style:normal;font-weight:600}
+.arrow{display:flex;align-items:center;color:var(--gold);font-size:30px}
+
+/* ---------- three asks ---------- */
+.asks{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:34px}
+.ask{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 24px;display:flex;flex-direction:column}
+.ask .cadence{align-self:flex-start;font-family:var(--ui);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 13px;border-radius:999px;margin-bottom:16px}
+.cadence.once{background:#F1F5EA;color:var(--moss-text);border:1px solid rgba(107,139,58,.32)}
+.cadence.weekly{background:var(--blush);color:var(--terracotta-deep);border:1px solid rgba(175,82,55,.3)}
+.ask h3{font-size:22px;margin-bottom:10px}
+.ask p{font-size:17px;margin:0 0 14px;color:var(--ink-soft)}
+.ask .time{font-family:var(--ui);margin-top:auto;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep)}
+
+/* ---------- onboarding steps ---------- */
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:34px;counter-reset:fl}
+.flow-step{background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:14px;padding:24px 26px}
+.flow-step .n{counter-increment:fl;font-family:var(--ui);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);display:block;margin-bottom:8px}
+.flow-step .n::before{content:"Step " counter(fl)}
+.flow-step h4{font-family:var(--serif);font-size:20px;font-weight:600;margin:0 0 7px}
+.flow-step p{font-size:16.5px;margin:0;color:var(--ink-soft)}
+.who{display:inline-block;margin-top:12px;font-family:var(--ui);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+
+/* ---------- phones ---------- */
+.phones{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:44px;align-items:start}
+.phone-col{text-align:center}
+.phone{
+  width:100%;max-width:252px;margin:0 auto;
+  background:linear-gradient(150deg,#0a2036 0%,#001B33 100%);
+  border-radius:36px;padding:9px;
+  box-shadow:0 28px 60px -22px rgba(0,27,51,.5), 0 3px 10px rgba(0,27,51,.16);
+}
+.screen{background:var(--shell);border-radius:28px;overflow:hidden;text-align:left;min-height:440px;display:flex;flex-direction:column;position:relative}
+.notch{height:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.notch i{display:block;width:58px;height:5px;border-radius:3px;background:var(--line)}
+.scr-pad{padding:4px 15px 16px;flex:1}
+.scr-brand{font-family:var(--serif);font-size:14px;font-weight:700;color:var(--terracotta-deep)}
+.scr-date{font-family:var(--ui);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);font-weight:700;margin-top:1px}
+.scr-h{font-family:var(--serif);font-size:19px;font-weight:600;line-height:1.14;margin:11px 0 7px}
+.badge{display:inline-block;background:var(--blush);color:var(--terracotta-deep);font-family:var(--ui);font-size:10px;font-weight:700;letter-spacing:.04em;padding:5px 9px;border-radius:999px}
+.blk{margin-top:14px}
+.blk-h{display:flex;justify-content:space-between;align-items:center;font-family:var(--ui);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:7px}
+.blk-h b{color:var(--gold-deep);font-weight:700}
+
+/* exercise row — a real checkbox and a real labelled watch button */
+.row{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 10px;margin-bottom:6px;font-size:12.5px;font-weight:600}
+.row span.t{flex:1;line-height:1.25}
+.box{width:18px;height:18px;border-radius:5px;border:1.6px solid #B9C2CC;flex-shrink:0;background:#fff;position:relative}
+.row.done .box{background:var(--moss);border-color:var(--moss)}
+.row.done .box::after{content:"";position:absolute;left:6px;top:2.5px;width:4px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(43deg)}
+.row.done span.t{color:var(--dim);text-decoration:line-through}
+.watch{display:inline-flex;align-items:center;gap:4px;flex-shrink:0;background:var(--blush);color:var(--terracotta-deep);border:1px solid rgba(175,82,55,.28);border-radius:999px;padding:3px 9px 3px 7px;font-family:var(--ui);font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.watch .tri{width:0;height:0;border-left:6px solid var(--terracotta-deep);border-top:4px solid transparent;border-bottom:4px solid transparent}
+
+/* portrait video — a YouTube Short is vertical, so the frame is vertical */
+.vwrap{margin:12px 0 6px;background:#0a1622;border-radius:12px;padding:0;display:flex;justify-content:center;overflow:hidden;position:relative;height:190px}
+.vshort{width:107px;height:190px;background:linear-gradient(165deg,#123049 0%,#0a1622 100%);position:relative;display:flex;align-items:center;justify-content:center}
+.vshort::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 42%, rgba(200,169,81,.34), transparent 66%)}
+.pbig{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.95);position:relative;z-index:1;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+.pbig::after{content:"";position:absolute;left:16px;top:12px;border-left:13px solid var(--ink);border-top:8px solid transparent;border-bottom:8px solid transparent}
+.vcap{position:absolute;bottom:8px;left:0;right:0;text-align:center;z-index:2;color:#fff;font-family:var(--ui);font-size:9px;font-weight:700;letter-spacing:.06em;opacity:.9}
+.gearchip{display:inline-block;background:#F8F1DF;color:var(--gold-deep);font-family:var(--ui);font-size:10px;font-weight:700;padding:4px 9px;border-radius:999px;letter-spacing:.04em}
+.nogear{background:#F1F5EA;color:var(--moss-text)}
+
+.setrow{display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:12.5px}
+.setrow .n{width:16px;color:var(--dim);font-family:var(--ui);font-size:10.5px;font-weight:700}
+.setrow .val{flex:1;background:#fff;border:1px solid var(--line);border-radius:8px;padding:7px 9px;font-weight:700;font-variant-numeric:tabular-nums}
+.setrow.live .val{border-color:var(--terracotta-mid);border-width:1.6px;background:#FFF6F1}
+.setrow .box{width:18px;height:18px}
+.setrow.ok .box{background:var(--moss);border-color:var(--moss)}
+.setrow.ok .box::after{content:"";position:absolute;left:6px;top:2.5px;width:4px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(43deg)}
+.prefill{font-size:10.5px;color:var(--dim);margin:8px 0 0;font-style:italic}
+
+.chart{display:flex;align-items:flex-end;gap:5px;height:92px;margin:14px 0 7px}
+.chart i{flex:1;background:var(--blush);border-radius:3px 3px 0 0;display:block}
+.chart i.up{background:var(--terracotta)}
+.axis{display:flex;justify-content:space-between;font-family:var(--ui);font-size:9px;color:var(--dim);font-weight:700;letter-spacing:.05em}
+.pb{background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 12px;margin-top:12px}
+.pb .k{font-family:var(--ui);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);font-weight:700}
+.pb .v{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--terracotta-deep);font-variant-numeric:tabular-nums;line-height:1.2}
+.streak{display:flex;align-items:center;gap:8px;background:#F1F5EA;border:1px solid rgba(107,139,58,.32);border-radius:10px;padding:10px 11px;margin-top:8px;font-size:11.5px;font-weight:700;color:var(--moss-text)}
+.streak b{font-size:17px;font-family:var(--serif)}
+.tabs{display:flex;border-top:1px solid var(--line);background:#fff;flex-shrink:0}
+.tabs i{flex:1;text-align:center;padding:10px 0 12px;font-family:var(--ui);font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#97A2AE;font-style:normal}
+.tabs i.on{color:var(--terracotta-deep)}
+.cap-under{font-size:17px;color:var(--ink-soft);margin:20px auto 0;max-width:252px;line-height:1.48;text-align:left}
+.cap-under b{color:var(--ink);display:block;font-family:var(--serif);font-size:20px;font-weight:600;margin-bottom:4px}
+
+/* ---------- home screen mockup ---------- */
+.homeshot{display:grid;grid-template-columns:280px 1fr;gap:52px;align-items:center;margin-top:40px}
+.hs-screen{background:linear-gradient(168deg,#0d2c48 0%,#001B33 55%,#0a1f36 100%);border-radius:28px;min-height:500px;padding:26px 18px 12px;position:relative;overflow:hidden}
+.hs-screen::before{content:"";position:absolute;width:280px;height:280px;right:-30%;top:-14%;border-radius:50%;background:radial-gradient(circle,rgba(217,130,107,.34),transparent 68%)}
+.hs-time{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;color:#fff;font-family:var(--ui);font-size:12px;font-weight:700;margin-bottom:26px;padding:0 6px}
+.hs-time .bars{display:flex;gap:3px;align-items:flex-end}
+.hs-time .bars i{width:3px;background:#fff;border-radius:1px;display:block}
+.hs-grid{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:16px 14px}
+.app{text-align:center}
+.app .ic{width:100%;aspect-ratio:1;border-radius:14px;box-shadow:0 2px 6px rgba(0,0,0,.28);position:relative;overflow:hidden}
+.app .ic::after{content:"";position:absolute;inset:0;border-radius:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,.34);pointer-events:none}
+.app .lb{display:block;margin-top:5px;color:rgba(255,255,255,.92);font-family:var(--ui);font-size:8px;font-weight:600;letter-spacing:.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.app.hero-app .ic{
+  background:linear-gradient(155deg,#00294f 0%,#001B33 100%);
+  box-shadow:0 6px 18px rgba(217,130,107,.42), 0 2px 6px rgba(0,0,0,.34);
+  display:flex;align-items:center;justify-content:center;
+}
+.app.hero-app .ic::before{content:"";position:absolute;inset:0;border-radius:14px;border:1.5px solid rgba(227,200,120,.55)}
+.app.hero-app .ic svg{width:74%;height:74%;position:relative;z-index:1}
+.app.hero-app .lb{color:#fff;font-weight:700}
+.hs-dock{position:relative;z-index:2;margin-top:22px;background:rgba(255,255,255,.14);border-radius:20px;padding:10px 12px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;backdrop-filter:blur(8px)}
+.hs-dock .ic{border-radius:12px}
+.pointer{display:flex;align-items:center;gap:10px;margin-top:18px;font-family:var(--ui);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--terracotta-deep)}
+.pointer .ln{height:2px;width:40px;background:linear-gradient(90deg,var(--terracotta),var(--gold));border-radius:2px}
+
+/* ---------- publish split ---------- */
+.split{display:grid;grid-template-columns:252px 1fr;gap:44px;align-items:center;margin-top:40px}
+.split-out{display:flex;flex-direction:column;gap:18px}
+.dest{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px 26px;position:relative}
+.dest .tick{position:absolute;left:-31px;top:50%;width:31px;height:1.5px;background:var(--gold)}
+.dest h3{font-size:21px;margin-bottom:6px}
+.dest p{font-size:17px;margin:0;color:var(--ink-soft)}
+.live{display:inline-flex;align-items:center;gap:7px;font-family:var(--ui);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--moss-text);margin-top:12px}
+.live .d{width:7px;height:7px;border-radius:50%;background:var(--moss)}
+.pubbtn{background:linear-gradient(135deg,var(--terracotta-mid) 0%,var(--terracotta-deep) 100%);color:#fff;text-align:center;border-radius:10px;padding:12px;font-family:var(--ui);font-size:13px;font-weight:700;letter-spacing:.04em;margin-top:13px}
+.fieldy{background:#fff;border:1px solid var(--line);border-radius:9px;padding:9px 10px;font-size:12.5px;margin-bottom:6px;font-weight:700}
+.fieldy small{display:block;font-family:var(--ui);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);font-weight:700;margin-bottom:3px}
+.picked{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px}
+.picked span{background:var(--blush);color:var(--terracotta-deep);border-radius:999px;padding:2px 7px;font-family:var(--ui);font-size:8.5px;font-weight:700}
+
+/* ---------- value ---------- */
+.vals{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:34px}
+.val{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px}
+.val h3{font-size:22px}
+.val p{font-size:17.5px;margin:0;color:var(--ink-soft)}
+.val .mark{width:32px;height:3px;background:var(--gold);border-radius:2px;margin-bottom:16px}
+
+/* ---------- cost strip ----------
+   NOTE: background-color and background-image are set separately on purpose.
+   Using the `background` shorthand and then a `background-image` line wipes
+   the shorthand's gradient out and leaves white text on a cream page. */
+.strip{
+  background-color:var(--ink);
+  background-image:
+    radial-gradient(620px 320px at 88% 8%, rgba(217,130,107,.34), transparent 62%),
+    linear-gradient(150deg, var(--ink) 0%, var(--navy) 100%);
+  border-radius:20px;padding:44px;color:rgba(255,255,255,.90);margin-top:10px
+}
+.strip h2{color:#fff}
+.strip p{color:rgba(255,255,255,.84)}
+.figs{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:30px}
+.fig b{display:block;font-family:var(--serif);font-size:40px;font-weight:600;color:var(--gold-lift);line-height:1.1}
+.fig span{font-size:15px;color:rgba(255,255,255,.78);letter-spacing:.03em}
+
+/* ---------- close ---------- */
+.close{padding:80px 0 96px}
+.close h2{max-width:24ch}
+
+/* ---------- motion ---------- */
+.rise{opacity:0;transform:translateY(20px);transition:opacity .75s cubic-bezier(.2,.7,.3,1),transform .75s cubic-bezier(.2,.7,.3,1)}
+.rise.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rise{opacity:1;transform:none;transition:none}
+}
+@media (max-width:900px){
+  .homeshot{grid-template-columns:1fr;gap:32px}
+  .homeshot .phone{max-width:280px}
+}
+@media (max-width:860px){
+  .phones{grid-template-columns:1fr;gap:52px}
+  .split{grid-template-columns:1fr;gap:34px}
+  .dest .tick{display:none}
+  .swap{grid-template-columns:1fr;gap:14px}
+  .arrow{justify-content:center;transform:rotate(90deg)}
+  .asks,.vals,.flow{grid-template-columns:1fr}
+  .figs{grid-template-columns:1fr;gap:20px}
+  .strip{padding:32px 26px}
+  section{padding:56px 0}
+  .cap-under{max-width:none}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap narrow">
+    <div class="from"><span class="dot"></span> Jimmy &rarr; Kim</div>
+    <h1 class="rise">Before you say <em>no</em></h1>
+    <p class="lede rise">I want to build Bloom50 an app. Not a big scary one. Read the next two minutes before you veto it, because the part I think you'll like is the part that has nothing to do with your clients.</p>
+    <p class="rise">It's the part where your website updates itself, and you never have to ask me to do it.</p>
+    <p class="rise">We have to decide this now, before the site goes live — because it changes how the Workouts page gets built.</p>
+    <div class="sig rise">— J</div>
+  </div>
+</section>
+
+<!-- THE SWAP -->
+<section>
+  <div class="wrap">
+    <div class="narrow">
+      <span class="eyebrow rise">What changes for you</span>
+      <h2 class="rise">Your Wednesday, more or less unchanged</h2>
+      <p class="lede rise">You already plan the workout. That's the work, and it's already done. The board stays exactly where it is — the only difference is that the workout also exists somewhere after class.</p>
+    </div>
+    <div class="swap rise">
+      <div class="swap-card now">
+        <h4>How this presently goes</h4>
+        <ol>
+          <li>Plan the workout</li>
+          <li>Write it on the board</li>
+          <li>Run the class</li>
+          <li>Wipe the board</li>
+        </ol>
+        <p class="dead">And that's where it ends. The workout only ever existed on a whiteboard, so nobody who missed class can do it, nobody who came can repeat it, and the website has nothing new to show.</p>
+      </div>
+      <div class="arrow" aria-hidden="true">&rarr;</div>
+      <div class="swap-card after">
+        <h4>How yours would go</h4>
+        <ol>
+          <li class="new">Tap the exercises you want from your list</li>
+          <li>Write it on the board</li>
+          <li>Run the class</li>
+          <li class="new">Tap Publish</li>
+        </ol>
+        <p class="dead">The workout is now on your clients' phones and on your website, permanently, and you never touched a keyboard.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THREE ASKS -->
+<section>
+  <div class="wrap">
+    <div class="narrow">
+      <span class="eyebrow rise">The whole ask</span>
+      <h2 class="rise">Three things, and only one of them repeats</h2>
+      <p class="lede rise">This is the complete list of what you'd ever have to do. There isn't a fourth thing hiding behind it.</p>
+    </div>
+    <div class="asks rise">
+      <div class="ask">
+        <span class="cadence weekly">Every week</span>
+        <h3>Build Wednesday's workout</h3>
+        <p>All 73 of your exercises are already in there, pulled from the six workouts you've already run. You tap the ones you want, set the timing, and it's built. Nothing gets written out and nothing gets spelled.</p>
+        <span class="time">About 5 minutes</span>
+      </div>
+      <div class="ask">
+        <span class="cadence once">Once, before launch</span>
+        <h3>Approve the videos</h3>
+        <p>Every movement gets a short demo clip. I find all 73 and put them on a single page, grouped by body part. You go down the list and flag anything you wouldn't put in front of a 62-year-old. Then it's done forever.</p>
+        <span class="time">One sitting, about 40 minutes</span>
+      </div>
+      <div class="ask">
+        <span class="cadence once">Once per client</span>
+        <h3>Add a client</h3>
+        <p>Her name and her email, in the app. That's your whole part — you never help her install anything, and there's no password for either of you to invent or reset.</p>
+        <span class="time">Under a minute each</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ONBOARDING -->
+<section>
+  <div class="wrap">
+    <div class="narrow">
+      <span class="eyebrow rise">How a client actually gets in</span>
+      <h2 class="rise">You do one step. She does two.</h2>
+      <p class="lede rise">This is the part that decides whether an app for women over 50 gets used or quietly ignored, so it's the part I've made simplest.</p>
+    </div>
+    <div class="flow rise">
+      <div class="flow-step">
+        <span class="n"></span>
+        <h4>You add her</h4>
+        <p>Name and email, in your app. An email goes out immediately that reads like it came from you — because it did.</p>
+        <span class="who">You &middot; 30 seconds</span>
+      </div>
+      <div class="flow-step">
+        <span class="n"></span>
+        <h4>She taps the button</h4>
+        <p>One button in the email and she's signed in for a year. There's also a 6-digit code in the same email, so if you're standing next to her at Wednesday class you can just read it out.</p>
+        <span class="who">Her &middot; 10 seconds</span>
+      </div>
+      <div class="flow-step">
+        <span class="n"></span>
+        <h4>She saves it to her phone</h4>
+        <p>The app offers to put itself on her home screen, next to her other apps. After that it opens with one tap, like anything else on her phone.</p>
+        <span class="who">Her &middot; one tap</span>
+      </div>
+    </div>
+    <div class="narrow" style="margin-top:26px">
+      <p class="rise">No app store, no download, no account to create. If she can open an email, she's in.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOME SCREEN -->
+<section>
+  <div class="wrap">
+    <div class="narrow">
+      <span class="eyebrow rise">What it looks like on her phone</span>
+      <h2 class="rise">Your name, sitting on her home screen</h2>
+      <p class="lede rise">Not a website she has to remember. An icon, with your lotus on it, in among her mail and her photos.</p>
+    </div>
+    <div class="homeshot">
+      <div class="rise">
+        <div class="phone" style="max-width:280px">
+          <div class="hs-screen">
+            <div class="hs-time">
+              <span>9:41</span>
+              <span class="bars"><i style="height:4px"></i><i style="height:6px"></i><i style="height:8px"></i><i style="height:10px"></i></span>
+            </div>
+            <div class="hs-grid">
+              <div class="app"><div class="ic" style="background:linear-gradient(160deg,#4CD07B,#25A85A)"></div><span class="lb">Phone</span></div>
+              <div class="app"><div class="ic" style="background:linear-gradient(160deg,#6FE07F,#33B44A)"></div><span class="lb">Messages</span></div>
+              <div class="app"><div class="ic" style="background:linear-gradient(160deg,#7F8794,#4E5661)"></div><span class="lb">Camera</span></div>
+              <div class="app"><div class="ic" style="background:linear-gradient(160deg,#FFD35C,#F58B4C)"></div><span class="lb">Photos</span></div>
+
+              <div class="app"><div class="ic" style="background:linear-gradient(160deg,#FFFFFF,#E6E9EE)"></div><span class="lb">Calendar</span></div>
+              <div class="app"><div class="ic" style="background:linear-gradient(160deg,#5BB8F5,#1E6FD9)"></div><span class="lb">Weather</span></div>
+              <div class="app"><div class="ic" style="background:linear-gradient(160deg,#FFE9A8,#F2C14A)"></div><span class="lb">Notes</span></div>
+              <div class="app"><div class="ic" style="background:linear-gradient(160deg,#8FD9A8,#4E9E6B)"></div><span class="lb">Maps</span></div>
+
+              <div class="app"><div class="ic" style="background:linear-gradient(160deg,#FB7C8E,#D6304F)"></div><span class="lb">Music</span></div>
+              <div class="app"><div class="ic" style="background:linear-gradient(160deg,#A9B2BD,#6B7480)"></div><span class="lb">Settings</span></div>
+              <div class="app"><div class="ic" style="background:linear-gradient(160deg,#FF9AA8,#E33E5C)"></div><span class="lb">Health</span></div>
+              <div class="app"><div class="ic" style="background:linear-gradient(160deg,#6FC3F7,#2A7FD4)"></div><span class="lb">Mail</span></div>
+
+              <div class="app"><div class="ic" style="background:linear-gradient(160deg,#2B3440,#0F151C)"></div><span class="lb">Clock</span></div>
+              <div class="app"><div class="ic" style="background:linear-gradient(160deg,#7ACBFF,#2C88E0)"></div><span class="lb">Safari</span></div>
+              <div class="app"><div class="ic" style="background:linear-gradient(160deg,#8FA0B4,#5A6A7D)"></div><span class="lb">Files</span></div>
+
+              <div class="app hero-app">
+                <div class="ic">
+                  <svg viewBox="0 0 64 64" aria-hidden="true">
+                    <ellipse cx="32" cy="48" rx="15" ry="5.2" fill="#7d9c3c"/>
+                    <path d="M32 48 L26 44 M32 48 L32 43 M32 48 L38 44" stroke="#5b7631" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+                    <path d="M32 44 C25 35 25 25 32 16 C39 25 39 35 32 44 Z" fill="#d9826b" transform="rotate(-52 32 44)"/>
+                    <path d="M32 44 C25 35 25 25 32 16 C39 25 39 35 32 44 Z" fill="#d9826b" transform="rotate(52 32 44)"/>
+                    <path d="M32 44 C25 35 25 25 32 16 C39 25 39 35 32 44 Z" fill="#e0947f" transform="rotate(-26 32 44)"/>
+                    <path d="M32 44 C25 35 25 25 32 16 C39 25 39 35 32 44 Z" fill="#e0947f" transform="rotate(26 32 44)"/>
+                    <path d="M32 44 C25 35 25 25 32 16 C39 25 39 35 32 44 Z" fill="#d9826b"/>
+                    <path d="M32 44 C28.5 37 28.5 30 32 24 C35.5 30 35.5 37 32 44 Z" fill="#F0A78F"/>
+                  </svg>
+                </div>
+                <span class="lb">Bloom50</span>
+              </div>
+            </div>
+            <div class="hs-dock">
+              <div class="ic" style="background:linear-gradient(160deg,#4CD07B,#25A85A);aspect-ratio:1"></div>
+              <div class="ic" style="background:linear-gradient(160deg,#6FC3F7,#2A7FD4);aspect-ratio:1"></div>
+              <div class="ic" style="background:linear-gradient(160deg,#7ACBFF,#2C88E0);aspect-ratio:1"></div>
+              <div class="ic" style="background:linear-gradient(160deg,#FB7C8E,#D6304F);aspect-ratio:1"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rise">
+        <div class="pointer"><span class="ln"></span> Bottom right</div>
+        <h3 style="margin-top:12px">It looks like it belongs there</h3>
+        <p>She doesn't go to a website and she doesn't hunt through her email for a link. It sits with her other apps and opens with one tap, the same as everything else on that screen.</p>
+        <p>And every time she picks up her phone, your lotus is on it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHONES -->
+<section>
+  <div class="wrap">
+    <div class="narrow">
+      <span class="eyebrow rise">What your clients see</span>
+      <h2 class="rise">Your workouts, in her pocket, with your name on them</h2>
+      <p class="lede rise">Same workouts you already teach. She just gets to take them home, look up a movement she's unsure about, and watch her own numbers climb.</p>
+    </div>
+
+    <div class="phones">
+      <!-- 1: this week -->
+      <div class="phone-col rise">
+        <div class="phone"><div class="screen">
+          <div class="notch"><i></i></div>
+          <div class="scr-pad">
+            <div class="scr-brand">Bloom50</div>
+            <div class="scr-date">Wednesday &middot; Aug 26</div>
+            <div class="scr-h">Balance &amp; Strength</div>
+            <span class="badge">45s on &middot; 15s rest &middot; 2 rounds</span>
+            <div class="blk">
+              <div class="blk-h"><span>Standing</span><b>Bender Ball</b></div>
+              <div class="row done"><span class="box"></span><span class="t">Reverse Lunge w/ OH Arms</span><span class="watch"><span class="tri"></span>Watch</span></div>
+              <div class="row done"><span class="box"></span><span class="t">Sumo Tap</span><span class="watch"><span class="tri"></span>Watch</span></div>
+              <div class="row"><span class="box"></span><span class="t">Plie Squat</span><span class="watch"><span class="tri"></span>Watch</span></div>
+              <div class="row"><span class="box"></span><span class="t">Double Pulse Squat</span><span class="watch"><span class="tri"></span>Watch</span></div>
+            </div>
+            <div class="blk">
+              <div class="blk-h"><span>Mat</span><b>Bender Ball</b></div>
+              <div class="row"><span class="box"></span><span class="t">Crunch Up</span><span class="watch"><span class="tri"></span>Watch</span></div>
+            </div>
+          </div>
+          <div class="tabs"><i class="on">Today</i><i>Library</i><i>Progress</i><i>Me</i></div>
+        </div></div>
+        <p class="cap-under"><b>She opens it Tuesday night</b>Sees exactly what's coming, ticks movements off as she goes, and shows up ready instead of cold.</p>
+      </div>
+
+      <!-- 2: logging with a real vertical clip -->
+      <div class="phone-col rise">
+        <div class="phone"><div class="screen">
+          <div class="notch"><i></i></div>
+          <div class="scr-pad">
+            <div class="scr-brand">Bloom50</div>
+            <div class="scr-h" style="margin-top:8px">Goblet Squat</div>
+            <span class="gearchip">Dumbbells</span>
+            <div class="vwrap">
+              <div class="vshort"><span class="pbig"></span></div>
+              <span class="vcap">HOW IT SHOULD LOOK &middot; 0:14</span>
+            </div>
+            <div class="blk-h" style="margin-top:12px"><span>Your sets</span></div>
+            <div class="setrow ok"><span class="n">1</span><span class="val">12 reps &middot; 12 lb</span><span class="box"></span></div>
+            <div class="setrow live"><span class="n">2</span><span class="val">12 reps &middot; 12 lb</span><span class="box"></span></div>
+            <p class="prefill">Last time you used 10 lb.</p>
+          </div>
+          <div class="tabs"><i>Today</i><i class="on">Library</i><i>Progress</i><i>Me</i></div>
+        </div></div>
+        <p class="cap-under"><b>She stops guessing</b>Every movement has a clip, filmed the way she'll actually watch it, and the app remembers what she lifted last time.</p>
+      </div>
+
+      <!-- 3: progress -->
+      <div class="phone-col rise">
+        <div class="phone"><div class="screen">
+          <div class="notch"><i></i></div>
+          <div class="scr-pad">
+            <div class="scr-brand">Bloom50</div>
+            <div class="scr-date">Your progress</div>
+            <div class="scr-h">Goblet Squat</div>
+            <div class="chart">
+              <i style="height:38%"></i><i style="height:38%"></i><i style="height:52%"></i>
+              <i style="height:52%"></i><i style="height:66%"></i><i style="height:66%"></i>
+              <i class="up" style="height:82%"></i><i class="up" style="height:100%"></i>
+            </div>
+            <div class="axis"><span>8 WKS AGO</span><span>THIS WEEK</span></div>
+            <div class="pb"><div class="k">Your heaviest set</div><div class="v">12 lb &times; 12</div></div>
+            <div class="streak"><b>6</b> Wednesdays in a row</div>
+          </div>
+          <div class="tabs"><i>Today</i><i>Library</i><i class="on">Progress</i><i>Me</i></div>
+        </div></div>
+        <p class="cap-under"><b>She sees it working</b>This is the screen that keeps her paying. Eight weeks of proof she started at 8 lb and she's at 12 now.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLISH SPLIT -->
+<section>
+  <div class="wrap">
+    <div class="narrow">
+      <span class="eyebrow rise">The part I think you'll actually love</span>
+      <h2 class="rise">You build it once. It lands in two places.</h2>
+      <p class="lede rise">The same screen where you set up Wednesday's class is the screen that updates bloom50collective.com. There is no second step, and there's no waiting on anybody.</p>
+    </div>
+
+    <div class="split">
+      <div class="rise">
+        <div class="phone"><div class="screen" style="min-height:390px">
+          <div class="notch"><i></i></div>
+          <div class="scr-pad">
+            <div class="scr-brand">Bloom50 &middot; Kim</div>
+            <div class="scr-h" style="margin-top:8px">New workout</div>
+            <div class="fieldy" style="margin-top:11px"><small>Name</small>Balance &amp; Strength</div>
+            <div class="fieldy"><small>Class date</small>Wed, Aug 26</div>
+            <div class="fieldy"><small>Timing</small>45s on &middot; 15s rest &middot; 2 rounds</div>
+            <div class="fieldy"><small>Standing &middot; Bender Ball</small>
+              <div class="picked"><span>R-Lunge</span><span>Sumo Tap</span><span>Fig. 8</span><span>Plie Squat</span><span>+1</span></div>
+            </div>
+            <div class="fieldy"><small>Mat &middot; no equipment</small>
+              <div class="picked"><span>Crunch Up</span><span>Superwoman</span><span>+4</span></div>
+            </div>
+            <div class="pubbtn">Publish</div>
+          </div>
+        </div></div>
+      </div>
+      <div class="split-out">
+        <div class="dest rise">
+          <span class="tick" aria-hidden="true"></span>
+          <h3>Your clients' app</h3>
+          <p>Wednesday's workout is on their phones the second you publish it. If you change a set at 6am, it's changed on their screen at 6am.</p>
+        </div>
+        <div class="dest rise">
+          <span class="tick" aria-hidden="true"></span>
+          <h3>bloom50collective.com</h3>
+          <p>The free workout library on your site rebuilds itself — the card, the timing, the exercise list and any equipment links. Nobody edits anything.</p>
+          <span class="live"><span class="d"></span> Live within a minute</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="narrow" style="margin-top:38px">
+      <p class="rise">The gear links come along for the ride. Right now your Shop page sells a stability ball and a balance pad that appear in <em class="hl">zero</em> of your workouts, while the bender ball, mini band and mat you use every single week aren't sold at all. Once each exercise knows what equipment it needs, that can't drift again — and the three things you actually put in women's hands start earning.</p>
+      <p class="rise">And when a workout needs nothing at all, it says so. A bodyweight Tuesday is a feature, not a gap — it's the one your client can do in a hotel room.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE -->
+<section>
+  <div class="wrap">
+    <div class="narrow">
+      <span class="eyebrow rise">Why it's worth doing</span>
+      <h2 class="rise">The business case, briefly</h2>
+    </div>
+    <div class="vals">
+      <div class="val rise">
+        <span class="mark"></span>
+        <h3>Clients who see progress renew</h3>
+        <p>The hardest part of your job is a woman deciding, in month three, whether this is working. A chart showing she went from 8 lb to 12 lb answers that better than anything you can say to her.</p>
+      </div>
+      <div class="val rise">
+        <span class="mark"></span>
+        <h3>You're in her week, not just her Wednesday</h3>
+        <p>Right now you have her for an hour. With the library open to her, she can do a Bloom50 workout on a Monday in her living room — and it still has your name on it.</p>
+      </div>
+      <div class="val rise">
+        <span class="mark"></span>
+        <h3>Almost nobody else is doing this</h3>
+        <p>Most trainers hand out PDFs and text reminders. "My clients get an app" is a real, concrete difference on a discovery call — and it's yours, not a platform you rent by the month.</p>
+      </div>
+      <div class="val rise">
+        <span class="mark"></span>
+        <h3>The free library starts pulling its weight</h3>
+        <p>A workout library that genuinely updates every week is a reason for strangers to keep coming back to your site. One that updates whenever someone gets around to editing it won't.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COST -->
+<section>
+  <div class="wrap">
+    <div class="strip rise">
+      <h2>What it costs you</h2>
+      <p style="max-width:52ch">Nothing per month, and no time beyond the five minutes you already spend planning Wednesday's workout. It runs on the same hosting your website already uses. I build it, I maintain it, I fix it when it breaks.</p>
+      <div class="figs">
+        <div class="fig"><b>$0</b><span>Added monthly cost</span></div>
+        <div class="fig"><b>73</b><span>Of your exercises already loaded</span></div>
+        <div class="fig"><b>6</b><span>Of your workouts already in it</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSE -->
+<section class="close">
+  <div class="wrap narrow">
+    <span class="eyebrow rise">One more thing</span>
+    <h2 class="rise">I've already built the boring half</h2>
+    <p class="lede rise">Every exercise from all six of your workouts is pulled apart and organized — 73 movements, sorted, deduplicated, matched to equipment. That part's done. What's left is the part I'm good at.</p>
+    <p class="rise">All I need from you is a yes, five class dates, and one sitting to watch the videos.</p>
+    <div class="sig rise">— J</div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.rise');
+  if(!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    els.forEach(function(e){ e.classList.add('in'); }); return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, { threshold:0.08, rootMargin:'0px 0px -40px 0px' });
+  els.forEach(function(e,i){ e.style.transitionDelay = (Math.min(i,4)*70)+'ms'; io.observe(e); });
+})();
+</script>
+</body>
+</html>
