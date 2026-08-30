@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Board — Friday openings · Aug 30, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#183872; --navy-deep:#0f2650; --lime:#CCED60;
+    --ink:#12203c; --body:#41506b; --muted:#7a879f;
+    --bg:#f4f6fa; --card:#fff; --line:#dde4ef;
+    --radius:12px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--bg);color:var(--body);
+    font-family:'Open Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px}
+
+  header{background:var(--navy);color:#fff;padding:26px 0 24px}
+  header .kicker{
+    font-family:'Inter';font-weight:800;font-size:10.5px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--lime);margin:0 0 8px
+  }
+  header h1{
+    margin:0 0 6px;font-family:'Inter';font-weight:800;font-size:27px;
+    line-height:1.15;letter-spacing:-.02em;color:#fff
+  }
+  header .sub{margin:0;color:#b9c7e2;font-size:14px}
+
+  .howto{
+    background:#fff;border-bottom:1px solid var(--line);
+    padding:14px 0;font-size:13.5px;color:var(--body)
+  }
+  .howto b{color:var(--ink);font-family:'Inter'}
+
+  main{padding:22px 0 44px}
+  .postwrap{position:relative;margin:0 0 34px}
+  .postbar{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    background:var(--navy);border-radius:var(--radius) var(--radius) 0 0;
+    padding:11px 15px
+  }
+  .postbar span{
+    font-family:'Inter';font-weight:700;font-size:11px;letter-spacing:.11em;
+    text-transform:uppercase;color:var(--lime)
+  }
+  .copybtn{
+    font-family:'Inter';font-weight:700;font-size:12.5px;cursor:pointer;
+    background:var(--lime);color:var(--navy-deep);border:0;border-radius:999px;
+    padding:7px 16px;transition:opacity .12s
+  }
+  .copybtn:hover{opacity:.86}
+  .copybtn.done{background:#fff}
+
+  .post{
+    background:var(--card);border:1px solid var(--line);border-top:0;
+    border-radius:0 0 var(--radius) var(--radius);padding:22px 20px 26px;
+    color:var(--ink)
+  }
+  .post h2{
+    font-family:'Inter';font-weight:800;font-size:20px;line-height:1.25;
+    letter-spacing:-.015em;color:var(--navy);margin:0 0 14px
+  }
+  .post h3{
+    font-family:'Inter';font-weight:800;font-size:11.5px;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--navy);margin:26px 0 9px;
+    padding-bottom:6px;border-bottom:2px solid var(--lime)
+  }
+  .post h3:first-of-type{margin-top:22px}
+  .post p{margin:0 0 13px;color:var(--body)}
+  .post ul{margin:0 0 13px;padding-left:19px}
+  .post li{margin:0 0 10px;color:var(--body)}
+  .post strong{color:var(--ink)}
+  .post .hood{color:var(--muted);font-size:13.5px}
+  .post .signoff{
+    margin:24px 0 0;padding-top:15px;border-top:1px solid var(--line);
+    font-size:14px;color:var(--body)
+  }
+
+  hr.split{border:0;border-top:1px solid var(--line);margin:0 0 26px}
+
+  .commentary{
+    background:#fff;border:1px solid var(--line);border-left:4px solid var(--muted);
+    border-radius:var(--radius);padding:20px 20px 22px
+  }
+  .commentary h2{
+    font-family:'Inter';font-weight:800;font-size:13px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--muted);margin:0 0 4px
+  }
+  .commentary .note{font-size:13px;color:var(--muted);margin:0 0 16px}
+  .commentary h4{
+    font-family:'Inter';font-weight:700;font-size:13.5px;color:var(--ink);
+    margin:18px 0 6px
+  }
+  .commentary p,.commentary li{font-size:13.5px;color:var(--body)}
+  .commentary ul{margin:0 0 10px;padding-left:19px}
+  .stats{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 6px}
+  .stat{
+    background:var(--bg);border:1px solid var(--line);border-radius:999px;
+    padding:5px 12px;font-size:12.5px;font-family:'Inter';color:var(--body)
+  }
+  .stat b{color:var(--navy);font-weight:800}
+  .flag{
+    background:#fffaf0;border:1px solid #f0dcb4;border-radius:8px;
+    padding:11px 13px;margin:0 0 11px;font-size:13.5px;color:#6b5320
+  }
+  .flag b{color:#4a3a12}
+
+  footer{padding:0 0 40px;font-size:12.5px;color:var(--muted);text-align:center}
+
+  @media (min-width:720px){
+    header{padding:36px 0 32px}
+    header h1{font-size:33px}
+    .wrap{padding:0 24px}
+    .post{padding:28px 30px 32px}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="kicker">The Board · Members</p>
+    <h1>Friday openings</h1>
+    <p class="sub">Sunday, August 30, 2026 · dry run</p>
+  </div>
+</header>
+
+<div class="howto">
+  <div class="wrap">
+    <b>Copy everything in the box below and paste it into Beehiiv.</b> Notes on how it was built are underneath, and are not part of the post.
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+
+    <div class="postwrap">
+      <div class="postbar">
+        <span>The post</span>
+        <button class="copybtn" id="copy">Copy post</button>
+      </div>
+      <div class="post" id="postbody">
+
+        <h2>Four new names this week, and one of them has never had a store anywhere</h2>
+
+        <p>Busy week on the tracker. A French Quarter restaurant with a roof that opens, a lingerie label going physical for the first time in nine years, and a café finally escaping the inside of a gym.</p>
+
+        <h3>New this week</h3>
+        <ul>
+          <li><strong>Quarter French</strong> <span class="hood">· French Quarter</span><br>56-seat courtyard under a fully retractable roof — one of the only all-seasons outdoor rooms on Broad.</li>
+          <li><strong>Lorette</strong> <span class="hood">· Downtown</span><br>Nine years online-only. This is the brand's first physical store anywhere, and they picked Charleston.</li>
+          <li><strong>The Larrikin</strong> <span class="hood">· Downtown</span><br>Espresso ordered by size — 4, 6 or 10 ounces — instead of cortado, cappuccino, latte.</li>
+          <li><strong>JustFit Kitchen Café</strong> <span class="hood">· Morrison Yard, Upper Peninsula</span><br>First storefront the public can actually walk into. Café one is locked inside a gym.</li>
+        </ul>
+
+        <h3>Still coming</h3>
+        <ul>
+          <li><strong>Alteño</strong> <span class="hood">· Downtown</span><br>The Denver original is Michelin-recommended and made Esquire's 2025 best-new list.</li>
+          <li><strong>Riva Mare</strong> <span class="hood">· Navy Yard, North Charleston</span><br>Indigo Road goes up on the roof of Storehouse Nine in the Design District.</li>
+          <li><strong>CR Design Center</strong> <span class="hood">· Mount Pleasant</span><br>45,000 square feet in the box Harris Teeter left — CoStar's Charleston Lease of the Year.</li>
+        </ul>
+
+        <h3>Now open</h3>
+        <p>Nothing flipped open this week. Next Round Social in North Charleston was the last one, and that was two weeks ago.</p>
+
+        <p class="signoff">Mondays the calendar. Wednesdays the music. Fridays what's opening and closing.</p>
+
+      </div>
+    </div>
+
+    <hr class="split">
+
+    <div class="commentary">
+      <h2>Behind the post</h2>
+      <p class="note">Notes for Jimmy. Not part of what gets posted.</p>
+
+      <div class="stats">
+        <span class="stat"><b>26</b> rows in the table</span>
+        <span class="stat"><b>7</b> items in the post</span>
+        <span class="stat"><b>4</b> new since last Friday</span>
+        <span class="stat"><b>0</b> rumored</span>
+        <span class="stat"><b>0</b> closings</span>
+      </div>
+
+      <h4>Rotation</h4>
+      <p>First run, so <code>board/_featured-log.json</code> started empty and the three "Still coming" picks were chosen on hook strength. Alteño, Riva Mare and CR Design Center are now logged and will sit out the next three Fridays. Nine Opening Soon rows remain unfeatured: Two Blokes Brewing, Kaia, Philosophia, BlackOut Burger, Celedore, KYN, Dôen, CurrentBurger, Restore II at Point Hope.</p>
+
+      <h4>Two structural gaps</h4>
+      <div class="flag">
+        <b>No closings exist. All 26 rows are Type = Opening.</b>
+        The channel promises "opening and closing" and half of it has never appeared. Charleston restaurants close constantly, so this is a sourcing gap, not reality — closings are harder to catch because nobody announces them, which is exactly what makes them worth having. Fix belongs in <code>openings-closings-scan</code>: Eater Carolinas closing coverage, the P&amp;C food section, and ABL licence-transfer notices, which often signal a change of hands before anything is public.
+      </div>
+      <div class="flag">
+        <b>No Rumored rows exist. Zero.</b>
+        Every row is Opening Soon, Announced or Now Open — all publicly known. The field's own description calls Rumored "the members-only tier and the whole reason this table is worth paying for." Right now Friday delivers aggregation, not exclusivity. The SC DOR alcohol beverage licence filings are the fix: public, three to six months ahead of press, nobody local works them systematically. Note the <code>abl-notice-sweep</code> skill already exists and is scheduled Thursdays — its second half files Jimmy's picks as Rumored rows. It just hasn't produced any yet.
+      </div>
+
+      <h4>Notes</h4>
+      <ul>
+        <li>Run on a Sunday as a dry run, so "since last Friday" resolved to Aug 28 onward. A real Friday run covers the full week.</li>
+        <li>Three rows created Aug 23–26 (Char House Social, Disco Dragon Books, Dulce Churros) fell just outside the "new this week" window and are held for next Friday rather than being used as filler.</li>
+        <li>Dôen has no Neighborhood value — it would need one before it can be featured.</li>
+        <li>No calendar link. Cloudflare Access is not live yet.</li>
+      </ul>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Built by <code>board-drop</code> · reads Airtable, never writes to it</div>
+</footer>
+
+<script>
+(function(){
+  var btn = document.getElementById('copy');
+  var body = document.getElementById('postbody');
+  btn.addEventListener('click', function(){
+    var text = body.innerText.replace(/\n{3,}/g, '\n\n').trim();
+    function done(){
+      btn.textContent = 'Copied';
+      btn.className = 'copybtn done';
+      setTimeout(function(){ btn.textContent = 'Copy post'; btn.className = 'copybtn'; }, 2000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else { fallback(); }
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); done(); } catch(e){ btn.textContent = 'Select and copy'; }
+      document.body.removeChild(ta);
+    }
+  });
+})();
+</script>
+</body>
+</html>
