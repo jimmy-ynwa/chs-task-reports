@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Board — Monday events · Aug 30, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#183872; --navy-deep:#0f2650; --lime:#CCED60;
+    --ink:#12203c; --body:#41506b; --muted:#7a879f;
+    --bg:#f4f6fa; --card:#fff; --line:#dde4ef;
+    --radius:12px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--bg);color:var(--body);
+    font-family:'Open Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px}
+
+  header{background:var(--navy);color:#fff;padding:26px 0 24px}
+  header .kicker{
+    font-family:'Inter';font-weight:800;font-size:10.5px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--lime);margin:0 0 8px
+  }
+  header h1{
+    margin:0 0 6px;font-family:'Inter';font-weight:800;font-size:27px;
+    line-height:1.15;letter-spacing:-.02em;color:#fff
+  }
+  header .sub{margin:0;color:#b9c7e2;font-size:14px}
+
+  .howto{
+    background:#fff;border-bottom:1px solid var(--line);
+    padding:14px 0;font-size:13.5px;color:var(--body)
+  }
+  .howto b{color:var(--ink);font-family:'Inter'}
+
+  main{padding:22px 0 44px}
+
+  .postwrap{position:relative;margin:0 0 34px}
+  .postbar{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    background:var(--navy);border-radius:var(--radius) var(--radius) 0 0;
+    padding:11px 15px
+  }
+  .postbar span{
+    font-family:'Inter';font-weight:700;font-size:11px;letter-spacing:.11em;
+    text-transform:uppercase;color:var(--lime)
+  }
+  .copybtn{
+    font-family:'Inter';font-weight:700;font-size:12.5px;cursor:pointer;
+    background:var(--lime);color:var(--navy-deep);border:0;border-radius:999px;
+    padding:7px 16px;transition:opacity .12s
+  }
+  .copybtn:hover{opacity:.86}
+  .copybtn.done{background:#fff}
+
+  .post{
+    background:var(--card);border:1px solid var(--line);border-top:0;
+    border-radius:0 0 var(--radius) var(--radius);padding:22px 20px 26px;
+    color:var(--ink)
+  }
+  .post h2{
+    font-family:'Inter';font-weight:800;font-size:20px;line-height:1.25;
+    letter-spacing:-.015em;color:var(--navy);margin:0 0 14px
+  }
+  .post h3{
+    font-family:'Inter';font-weight:800;font-size:11.5px;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--navy);margin:26px 0 9px;
+    padding-bottom:6px;border-bottom:2px solid var(--lime)
+  }
+  .post h3:first-of-type{margin-top:22px}
+  .post p{margin:0 0 13px;color:var(--body)}
+  .post ul{margin:0 0 13px;padding-left:19px}
+  .post li{margin:0 0 6px;color:var(--body)}
+  .post strong{color:var(--ink)}
+  .post .day{
+    font-family:'Inter';font-weight:700;font-size:14px;color:var(--ink);
+    margin:16px 0 5px
+  }
+  .post .signoff{
+    margin:24px 0 0;padding-top:15px;border-top:1px solid var(--line);
+    font-size:14px;color:var(--body)
+  }
+  .post em{color:var(--body)}
+
+  hr.split{border:0;border-top:1px solid var(--line);margin:0 0 26px}
+
+  .commentary{
+    background:#fff;border:1px solid var(--line);border-left:4px solid var(--muted);
+    border-radius:var(--radius);padding:20px 20px 22px
+  }
+  .commentary h2{
+    font-family:'Inter';font-weight:800;font-size:13px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--muted);margin:0 0 4px
+  }
+  .commentary .note{font-size:13px;color:var(--muted);margin:0 0 16px}
+  .commentary h4{
+    font-family:'Inter';font-weight:700;font-size:13.5px;color:var(--ink);
+    margin:18px 0 6px
+  }
+  .commentary p,.commentary li{font-size:13.5px;color:var(--body)}
+  .commentary ul{margin:0 0 10px;padding-left:19px}
+  .stats{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 6px}
+  .stat{
+    background:var(--bg);border:1px solid var(--line);border-radius:999px;
+    padding:5px 12px;font-size:12.5px;font-family:'Inter';color:var(--body)
+  }
+  .stat b{color:var(--navy);font-weight:800}
+  .flag{
+    background:#fffaf0;border:1px solid #f0dcb4;border-radius:8px;
+    padding:11px 13px;margin:0 0 11px;font-size:13.5px;color:#6b5320
+  }
+  .flag b{color:#4a3a12}
+
+  footer{padding:0 0 40px;font-size:12.5px;color:var(--muted);text-align:center}
+
+  @media (min-width:720px){
+    header{padding:36px 0 32px}
+    header h1{font-size:33px}
+    .wrap{padding:0 24px}
+    .post{padding:28px 30px 32px}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="kicker">The Board · Members</p>
+    <h1>Monday events</h1>
+    <p class="sub">Sunday, August 30, 2026 · covering Aug 30 – Sep 6</p>
+  </div>
+</header>
+
+<div class="howto">
+  <div class="wrap">
+    <b>Copy everything in the box below and paste it into Beehiiv.</b> Notes on how it was built are underneath, and are not part of the post.
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+
+    <div class="postwrap">
+      <div class="postbar">
+        <span>The post</span>
+        <button class="copybtn" id="copy">Copy post</button>
+      </div>
+      <div class="post" id="postbody">
+
+        <h2>Labor Day weekend, and Charleston is not going quietly</h2>
+
+        <p>Last real weekend of summer, and the calendar knows it. Two festivals, a RiverDogs homestand that runs Tuesday straight through Saturday, and Middleton Place spending three days pretending it's 1776. Thirty-one things on the board this week, plus whatever your neighborhood bar posts on Thursday.</p>
+
+        <h3>Day by day</h3>
+
+        <p class="day">Sunday, Aug 30</p>
+        <ul>
+          <li>American Gardens Sunday Bazaar — 10:30 AM, American Gardens</li>
+          <li>Drag Brunch — 11:30 AM, Uptown Social</li>
+          <li>Golden Hour by Marsh Wear — 2 PM, Driftwood</li>
+          <li><strong>WWE Summer Tour</strong> — 7 PM, North Charleston Coliseum</li>
+        </ul>
+
+        <p class="day">Monday, Aug 31</p>
+        <ul>
+          <li>Charleston Men's Chorus auditions — 6 PM, St. Philip's Church</li>
+          <li>"Light the Way For Hope" luminary, Overdose Awareness Day — 6:30 PM, Moncks Corner Unity Park</li>
+        </ul>
+
+        <p class="day">Tuesday, Sept 1</p>
+        <ul>
+          <li>Mount Pleasant Farmers Market — 3:30 PM</li>
+          <li><strong>RiverDogs vs. Augusta GreenJackets</strong> — 7:05 PM, Riley Park</li>
+        </ul>
+
+        <p class="day">Wednesday, Sept 2</p>
+        <ul>
+          <li>Early Morning Bird Walk — 8:30 AM, Caw Caw Interpretive Center</li>
+          <li>The Women of Middleton Place — 11 AM, Middleton Place</li>
+          <li>Toothbrush Rag Rug &amp; Basket Making — 2 PM, Park Circle Community Building</li>
+          <li>WakeUp Carolina overdose prevention training — 6 PM, Tides Folly Beach</li>
+          <li><strong>Charleston Battery vs. Hartford Athletic</strong> — 7 PM, Patriots Point</li>
+          <li>RiverDogs vs. Augusta — 7:05 PM, Riley Park</li>
+        </ul>
+
+        <p class="day">Thursday, Sept 3</p>
+        <ul>
+          <li>Reflections: In Conversation with the Artist — 3 PM, Gibbes Museum</li>
+          <li>Yappy Hour — 5:30 PM, James Island County Park</li>
+          <li>RiverDogs vs. Augusta — 7:05 PM, Riley Park</li>
+        </ul>
+
+        <p class="day">Friday, Sept 4</p>
+        <ul>
+          <li>Horse Care Demonstration — 2 PM, Middleton Place</li>
+          <li><strong>Edisto Beach Shag Festival</strong> — 3 PM, Bay Creek Park</li>
+          <li>Beneath da Crown: Rice, Cotton &amp; Indigo — 6 PM, Drummond Studio Gallery</li>
+        </ul>
+
+        <p class="day">Saturday, Sept 5</p>
+        <ul>
+          <li>Charleston Farmers Market — 8 AM, Marion Square</li>
+          <li>Otter Flow morning yoga — 8 AM, Charles Towne Landing</li>
+          <li>Sweet Jessamine Flower Truck pop-up — 8 AM, Hotel Bennett</li>
+          <li><strong>Taco &amp; Margarita Festival</strong> — 11 AM, Riverfront Park</li>
+          <li>Labor Day weekend at Middleton Place: Build A Barrel, Storytime Under the Oaks, a reading of the Declaration, and Ink &amp; Quill writing — 10:30 AM onward</li>
+          <li>Lowcountry Cookoff — 12 PM, Goose Creek</li>
+          <li>Pantheon, a 90s &amp; 2000s dance party — 4 PM, Charleston Union Station</li>
+          <li>Farm BINGO with goats and Highland cows — 6 PM, Flowertown Charm</li>
+          <li>Good Night/Life Charleston, benefiting Hope Connections for Cancer — 7 PM</li>
+          <li>RiverDogs vs. Augusta — 6:05 PM, Riley Park</li>
+        </ul>
+
+        <p class="day">Sunday, Sept 6</p>
+        <ul>
+          <li>American Gardens Sunday Bazaar — 10:30 AM</li>
+        </ul>
+
+        <p><em>The Children's Museum of the Lowcountry runs drop-in programming every single weekday this week — STEAM, storytime, art room, the lot. Not listing eighteen of them.</em></p>
+
+        <h3>Rest of the month</h3>
+        <ul>
+          <li><strong>Jill Lepore, Democracy Then and Now</strong> — Sept 8, Gaillard Center</li>
+          <li>Sweetgrass Basket Weaving Workshop — Sept 12, The Charleston Museum</li>
+          <li>Charleston Pride Pageant — Sept 17, American Theater</li>
+          <li>Pickle Palooza III — Sept 18</li>
+          <li><strong>Disco Inferno</strong> — Sept 18, Charleston Music Hall</li>
+          <li>The Legacy of Rice Culture Family Day — Sept 19, Middleton Place</li>
+          <li><strong>CSO season opening weekend</strong> — Sept 25 &amp; 26, Gaillard Center</li>
+          <li>Beeple x Sō Percussion — Sept 26, Gaillard Center</li>
+          <li>LinkU Invitational — Sept 27, Credit One Stadium</li>
+          <li>Jodi Picoult, Hollow Bones — Sept 29, Charleston Music Hall</li>
+        </ul>
+
+        <h3>On sale now</h3>
+
+        <p>Everything below is 30 to 60 days out and already selling. This is the part people are annoyed about the week it sells out.</p>
+
+        <ul>
+          <li>Sept 30 — <strong>Bayside</strong>, Charleston Music Hall</li>
+          <li>Sept 30 — Andy Frasco &amp; the U.N., Pour House</li>
+          <li>Oct 1 — <strong>Ashley McBryde</strong>, The Refinery</li>
+          <li>Oct 1 — Lily Rose, The Windjammer</li>
+          <li>Oct 2 — <strong>Sugarland, Ride or Die Tour</strong>, North Charleston Coliseum</li>
+          <li>Oct 2 — <strong>Turnpike Troubadours</strong>, Firefly Distillery</li>
+          <li>Oct 2 — Lalah Hathaway, Charleston Music Hall</li>
+          <li>Oct 3 — The Fab Four, Charleston Music Hall</li>
+          <li>Oct 4 — The Expendables, The Windjammer</li>
+          <li>Oct 6–8 — Mrs. Doubtfire, North Charleston PAC</li>
+          <li>Oct 7 — Willow Avalon, Music Farm</li>
+          <li>Oct 8 — Russian Circles, Music Farm</li>
+        </ul>
+
+        <p class="signoff">Mondays the calendar. Wednesdays the music. Fridays what's opening and closing.</p>
+
+      </div>
+    </div>
+
+    <hr class="split">
+
+    <div class="commentary">
+      <h2>Behind the post</h2>
+      <p class="note">Notes for Jimmy. Not part of what gets posted.</p>
+
+      <div class="stats">
+        <span class="stat"><b>56</b> rows pulled</span>
+        <span class="stat"><b>31</b> named in the post</span>
+        <span class="stat"><b>124</b> on-sale rows available</span>
+        <span class="stat"><b>12</b> on-sale shown</span>
+      </div>
+
+      <h4>What was filtered</h4>
+      <ul>
+        <li>Quality Score 4 and up only. Anything at 3 or below never made the query.</li>
+        <li>Skip, Duplicate and Past excluded on Status. Likely Cancelled excluded on Listing Status.</li>
+        <li>Live Music category excluded — that's Wednesday's post, and the Live Music table is authoritative for shows.</li>
+        <li>Eighteen Children's Museum drop-in sessions collapsed into one line. They're legitimately 4-star but they're daily museum programming, not events, and listing them individually would have doubled the post.</li>
+      </ul>
+
+      <h4>Duplicate rows worth knowing about</h4>
+      <div class="flag">
+        <b>The Airtable has real duplicates, and this post had to dedupe by hand.</b>
+        Mount Pleasant Farmers Market Sept 1 appears twice (different Venue spellings). Sweet Jessamine Flower Truck Sept 5 appears twice. Pantheon Sept 5 appears twice with slightly different titles. In the on-sale window it's worse: Bayside, Sugarland, Saxsquatch, Lily Rose and Ashley McBryde each appear two or three times, and The Fab Four appears three times.
+        <br><br>
+        The members' calendar build has billing-normalization logic that catches exactly this. Airtable does not. Either that logic moves upstream into the scrape, or every downstream reader repeats the work.
+      </div>
+
+      <h4>Notes</h4>
+      <ul>
+        <li>Run on a Sunday, so the week reads Aug 30 – Sep 6 rather than a clean Monday-to-Sunday. A real Monday run lines up.</li>
+        <li>No calendar link in this post. Cloudflare Access is not in front of calendar.chshappenings.com yet, so linking it would hand the full members' calendar to anyone the post reaches.</li>
+        <li>Sept 4 has no RiverDogs game in the data — the homestand runs Sept 1, 2, 3 and 5. Worth a glance at the schedule before posting.</li>
+        <li>Pantheon is stored with a 4 PM start. That's early for a dance party but it is what the source published, so it's rendered as-is rather than corrected.</li>
+        <li>A Disco Inferno date on Sept 12 was dropped — it's at the Koger Center in Columbia, out of scope.</li>
+      </ul>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Built by <code>board-drop</code> · reads Airtable, never writes to it</div>
+</footer>
+
+<script>
+(function(){
+  var btn = document.getElementById('copy');
+  var body = document.getElementById('postbody');
+  btn.addEventListener('click', function(){
+    var text = body.innerText.replace(/\n{3,}/g, '\n\n').trim();
+    function done(){
+      btn.textContent = 'Copied';
+      btn.className = 'copybtn done';
+      setTimeout(function(){ btn.textContent = 'Copy post'; btn.className = 'copybtn'; }, 2000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else { fallback(); }
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); done(); } catch(e){ btn.textContent = 'Select and copy'; }
+      document.body.removeChild(ta);
+    }
+  });
+})();
+</script>
+</body>
+</html>
