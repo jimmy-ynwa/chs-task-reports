@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Board — Calendar launch · Aug 31, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#183872; --navy-deep:#0f2650; --lime:#CCED60;
+    --ink:#12203c; --body:#41506b; --muted:#7a879f;
+    --bg:#f4f6fa; --card:#fff; --line:#dde4ef; --radius:12px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--bg);color:var(--body);
+    font-family:'Open Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px}
+  header{background:var(--navy);color:#fff;padding:26px 0 24px}
+  header .kicker{
+    font-family:'Inter';font-weight:800;font-size:10.5px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--lime);margin:0 0 8px
+  }
+  header h1{
+    margin:0 0 6px;font-family:'Inter';font-weight:800;font-size:27px;
+    line-height:1.15;letter-spacing:-.02em;color:#fff
+  }
+  header .sub{margin:0;color:#b9c7e2;font-size:14px}
+  .howto{background:#fff;border-bottom:1px solid var(--line);padding:14px 0;font-size:13.5px}
+  .howto b{color:var(--ink);font-family:'Inter'}
+  main{padding:22px 0 44px}
+  .postwrap{margin:0 0 34px}
+  .postbar{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    background:var(--navy);border-radius:var(--radius) var(--radius) 0 0;padding:11px 15px
+  }
+  .postbar span{
+    font-family:'Inter';font-weight:700;font-size:11px;letter-spacing:.11em;
+    text-transform:uppercase;color:var(--lime)
+  }
+  .copybtn{
+    font-family:'Inter';font-weight:700;font-size:12.5px;cursor:pointer;
+    background:var(--lime);color:var(--navy-deep);border:0;border-radius:999px;
+    padding:7px 16px;transition:opacity .12s
+  }
+  .copybtn:hover{opacity:.86}
+  .copybtn.done{background:#fff}
+  .post{
+    background:var(--card);border:1px solid var(--line);border-top:0;
+    border-radius:0 0 var(--radius) var(--radius);padding:22px 20px 26px;color:var(--ink)
+  }
+  .post h2{
+    font-family:'Inter';font-weight:800;font-size:21px;line-height:1.25;
+    letter-spacing:-.015em;color:var(--navy);margin:0 0 15px
+  }
+  .post p{margin:0 0 14px;color:var(--body)}
+  .post ul{margin:0 0 14px;padding-left:19px}
+  .post li{margin:0 0 7px;color:var(--body)}
+  .post strong{color:var(--ink)}
+  .pw{
+    background:var(--navy);border-radius:10px;padding:15px 17px;margin:0 0 16px
+  }
+  .pw .lab{
+    font-family:'Inter';font-weight:800;font-size:10.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--lime);margin:0 0 5px
+  }
+  .pw .val{
+    font-family:'Inter';font-weight:800;font-size:22px;color:#fff;margin:0;
+    letter-spacing:.01em
+  }
+  .post .signoff{
+    margin:24px 0 0;padding-top:15px;border-top:1px solid var(--line);
+    font-size:14px;color:var(--body)
+  }
+  hr.split{border:0;border-top:1px solid var(--line);margin:0 0 26px}
+  .commentary{
+    background:#fff;border:1px solid var(--line);border-left:4px solid var(--muted);
+    border-radius:var(--radius);padding:20px 20px 22px
+  }
+  .commentary h2{
+    font-family:'Inter';font-weight:800;font-size:13px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--muted);margin:0 0 4px
+  }
+  .commentary .note{font-size:13px;color:var(--muted);margin:0 0 16px}
+  .commentary h4{font-family:'Inter';font-weight:700;font-size:13.5px;color:var(--ink);margin:18px 0 6px}
+  .commentary p,.commentary li{font-size:13.5px;color:var(--body)}
+  .commentary ul{margin:0 0 10px;padding-left:19px}
+  .flag{
+    background:#fffaf0;border:1px solid #f0dcb4;border-radius:8px;
+    padding:11px 13px;margin:0 0 11px;font-size:13.5px;color:#6b5320
+  }
+  .flag b{color:#4a3a12}
+  footer{padding:0 0 40px;font-size:12.5px;color:var(--muted);text-align:center}
+  @media (min-width:720px){
+    header{padding:36px 0 32px}
+    header h1{font-size:33px}
+    .wrap{padding:0 24px}
+    .post{padding:28px 30px 32px}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="kicker">The Board · Members</p>
+    <h1>Calendar launch</h1>
+    <p class="sub">Monday, August 31, 2026 · standalone announcement</p>
+  </div>
+</header>
+
+<div class="howto">
+  <div class="wrap">
+    <b>Drop your password into the box, then copy everything and paste it into Beehiiv.</b> Notes are underneath and aren't part of the post.
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+
+    <div class="postwrap">
+      <div class="postbar">
+        <span>The post</span>
+        <button class="copybtn" id="copy">Copy post</button>
+      </div>
+      <div class="post" id="postbody">
+
+        <h2>The calendar just doubled</h2>
+
+        <p>Sixty days instead of thirty. Which sounds like a small change until you look at what's sitting in the back half of it.</p>
+
+        <p><strong>Sugarland</strong> at the Coliseum. <strong>Turnpike Troubadours</strong> at Firefly. <strong>Trampled by Turtles</strong> at The Refinery. <strong>The Red Clay Strays</strong> at Credit One with The Revivalists. All October. All on sale right now.</p>
+
+        <p>That's the entire point of the second month. The near weeks were never the problem — you already know what you're doing Saturday. What you miss is the show that quietly went on sale in August for a night in October, and by the time it crosses your feed the good seats are gone and you're looking at the upper bowl.</p>
+
+        <p>So everything past day 30 is badged <strong>On sale now</strong>, with a filter that shows you only those. There are 157 of them today, out of 1,130 listings total.</p>
+
+        <p>Fair warning on the far end: it's mostly ticketed rooms out there — the Music Hall, the Gaillard, Credit One, the PAC — because those places sell seats and publish early. Your neighborhood bar books three weeks ahead, so that layer fills in as venues announce it. Nothing's missing. It just hasn't happened yet.</p>
+
+        <p><strong>One housekeeping thing.</strong> The calendar is behind a password now. It's members-only and it should act like it.</p>
+
+        <div class="pw">
+          <p class="lab">Password</p>
+          <p class="val">[ DROP YOUR PASSWORD HERE ]</p>
+        </div>
+
+        <p>Type it once and you're done — it remembers you on that device for a year. Phone and laptop means twice, then never again.</p>
+
+        <p><strong>calendar.chshappenings.com</strong></p>
+
+        <p class="signoff">Mondays the calendar. Wednesdays the music. Fridays what's opening and closing.</p>
+
+      </div>
+    </div>
+
+    <hr class="split">
+
+    <div class="commentary">
+      <h2>Behind the post</h2>
+      <p class="note">Notes for Jimmy. Not part of what gets posted.</p>
+
+      <div class="flag">
+        <b>Replace the password placeholder before you post.</b> I don't know which value you set on the Pages project, so I left it blank rather than guess. It's the navy box in the middle of the post.
+      </div>
+
+      <h4>Where the numbers came from</h4>
+      <ul>
+        <li><strong>1,130 listings</strong> and <strong>157 on sale now</strong> — from this morning's calendar build log, the same run that's live. 823 events plus 307 shows, across 55 days.</li>
+        <li>The four named acts are all real rows in the Live Music table, verified in the 30-to-60-day window. Nothing invented.</li>
+      </ul>
+
+      <h4>Why a standalone post rather than the usual Monday list</h4>
+      <p>You posted a full events roundup yesterday. Running another one today buries the calendar news underneath a list nobody needs twice in 24 hours. This does one job and gets out.</p>
+
+      <h4>Two things still worth fixing in Airtable</h4>
+      <ul>
+        <li><strong>Pantheon</strong> (Sept 5, Charleston Union Station) carries a 4:00 PM start, which looks wrong for a 90s dance party. This morning's Monday post listed it without a time rather than assert one.</li>
+        <li><strong>RiverDogs Sept 4 and Sept 6</strong> are flagged Duplicate with no twin row, so they drop out of the calendar and the posts. Clearing those two flags puts the full homestand back.</li>
+      </ul>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Built for The Board · reads Airtable, never writes to it</div>
+</footer>
+
+<script>
+(function(){
+  var btn = document.getElementById('copy');
+  var body = document.getElementById('postbody');
+  btn.addEventListener('click', function(){
+    var text = body.innerText.replace(/\n{3,}/g, '\n\n').trim();
+    function done(){
+      btn.textContent = 'Copied';
+      btn.className = 'copybtn done';
+      setTimeout(function(){ btn.textContent = 'Copy post'; btn.className = 'copybtn'; }, 2000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else { fallback(); }
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); done(); } catch(e){ btn.textContent = 'Select and copy'; }
+      document.body.removeChild(ta);
+    }
+  });
+})();
+</script>
+</body>
+</html>
