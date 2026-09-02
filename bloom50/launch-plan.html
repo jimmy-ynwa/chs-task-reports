@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Bloom50 — launch plan</title>
+<title>Bloom50 — what's left, and how to do it</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Nunito+Sans:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito+Sans:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#001B33; --navy:#003466; --ink-soft:#4a5563; --dim:#656f79;
-  --terracotta:#d9826b; --terracotta-mid:#c55133; --terracotta-deep:#af5237;
+  --ink:#001B33; --navy:#003466; --soft:#4a5563; --dim:#656f79;
+  --terra:#d9826b; --terra-mid:#c55133; --terra-deep:#af5237;
   --gold:#c8a951; --gold-deep:#866927; --gold-lift:#E3C878;
   --blush:#FFEEE4; --shell:#FBF7F1; --cream:#f6f1e8;
   --line:rgba(0,52,102,.13);
@@ -21,580 +21,585 @@
   --ui:'Nunito Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--shell);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1000px;margin:0 auto;padding:0 26px}
-h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.12;letter-spacing:-.015em;margin:0}
-h1{font-size:clamp(36px,5.4vw,54px)}
-h2{font-size:clamp(26px,3.4vw,36px)}
-h3{font-size:23px}
-p{margin:0 0 16px;max-width:70ch}
-a{color:var(--terracotta-deep)}
-code{background:rgba(0,27,51,.07);padding:2px 7px;border-radius:5px;font-size:.9em;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+body{margin:0;background:var(--shell);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.6}
+.wrap{max-width:920px;margin:0 auto;padding:0 26px}
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.12;letter-spacing:-.015em;margin:0}
+h1{font-size:clamp(34px,5vw,50px)}
+h2{font-size:clamp(26px,3.3vw,34px)}
+h3{font-size:22px}
+p{margin:0 0 14px;max-width:68ch}
 
-/* header */
-.top{background:linear-gradient(150deg,var(--ink) 0%,var(--navy) 100%);color:#fff;padding:58px 0 52px;position:relative;overflow:hidden}
-.top::before{content:"";position:absolute;width:620px;height:620px;right:-10%;top:-70%;border-radius:50%;background:radial-gradient(circle,rgba(217,130,107,.36),transparent 68%)}
+.top{background:linear-gradient(150deg,var(--ink),var(--navy));color:#fff;padding:52px 0 46px;position:relative;overflow:hidden}
+.top::before{content:"";position:absolute;width:600px;height:600px;right:-10%;top:-70%;border-radius:50%;background:radial-gradient(circle,rgba(217,130,107,.34),transparent 68%)}
 .top .wrap{position:relative;z-index:2}
 .top h1{color:#fff}
-.top .sub{color:rgba(255,255,255,.86);font-size:20px;max-width:60ch;margin-top:14px}
-.stamp{font-family:var(--ui);font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-lift);margin-bottom:14px}
-.tally{display:flex;flex-wrap:wrap;gap:14px 40px;margin-top:30px;padding-top:22px;border-top:1px solid rgba(255,255,255,.2)}
-.tally div{display:flex;flex-direction:column;gap:2px}
-.tally .k{font-family:var(--ui);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-lift)}
-.tally .v{font-family:var(--ui);font-size:19px;font-weight:700;color:#fff}
+.top p{color:rgba(255,255,255,.88);font-size:19px;margin-top:12px}
+.stamp{font-family:var(--ui);font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-lift);display:block;margin-bottom:12px}
 
-/* sections */
-section{padding:60px 0}
-section + section{border-top:1px solid var(--line)}
-.part{font-family:var(--ui);font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--terracotta-deep);margin-bottom:12px;display:block}
-.intro{font-size:20px;color:var(--ink-soft);max-width:64ch;margin-top:14px}
+section{padding:54px 0}
+section+section{border-top:1px solid var(--line)}
+.part{font-family:var(--ui);font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--terra-deep);display:block;margin-bottom:10px}
+.lede{font-size:19px;color:var(--soft);max-width:62ch;margin-top:12px}
 
-/* group heads */
-.grp{margin-top:44px}
-.grp > h3{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px}
-.count{font-family:var(--ui);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
-.grp > p{color:var(--ink-soft);font-size:17px}
+h3.grp{margin:40px 0 4px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.grp .n{font-family:var(--ui);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.grp + p{color:var(--soft);font-size:17px;margin-bottom:18px}
 
-/* task rows */
-.task{display:flex;gap:14px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:16px 18px;margin-bottom:9px;align-items:flex-start}
-.task input{appearance:none;-webkit-appearance:none;width:22px;height:22px;min-width:22px;margin:2px 0 0;border:2px solid #B9C2CC;border-radius:6px;background:#fff;position:relative;cursor:pointer;transition:all .18s}
+.task{display:flex;gap:14px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:17px 19px;margin-bottom:10px;align-items:flex-start}
+.task input{appearance:none;-webkit-appearance:none;width:22px;height:22px;min-width:22px;margin:3px 0 0;border:2px solid #B9C2CC;border-radius:6px;background:#fff;position:relative;cursor:pointer}
 .task input:checked{background:var(--moss);border-color:var(--moss)}
 .task input:checked::after{content:"";position:absolute;left:7px;top:2px;width:5px;height:11px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(43deg)}
-.task input:checked ~ .body{opacity:.45}
-.task input:checked ~ .body .t{text-decoration:line-through}
-.body{flex:1;min-width:0}
-.t{font-weight:700;font-size:17.5px;display:block;margin-bottom:2px}
-.d{font-size:16px;color:var(--ink-soft);margin:0}
-.d + .d{margin-top:6px}
-.meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}
-.tag{font-family:var(--ui);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:999px;border:1px solid}
-.who-j{background:var(--blush);color:var(--terracotta-deep);border-color:rgba(175,82,55,.3)}
-.who-k{background:#F8F1DF;color:var(--gold-deep);border-color:rgba(134,105,39,.3)}
-.who-c{background:#EAF0F7;color:var(--navy);border-color:rgba(0,52,102,.24)}
-.blocks{background:#F1F5EA;color:var(--moss-text);border-color:rgba(107,139,58,.34)}
-.stop{background:#FBE9E4;color:#93321a;border-color:rgba(147,50,26,.32)}
-.done-when{margin-top:9px;font-size:15.5px;color:var(--dim);font-style:italic}
+.task input:checked~.b{opacity:.45}
+.task input:checked~.b .t{text-decoration:line-through}
+.b{flex:1;min-width:0}
+.t{font-weight:700;font-size:17.5px;display:block;margin-bottom:4px}
+.b p{font-size:16.5px;color:var(--soft);margin:0 0 8px}
+.b p:last-child{margin-bottom:0}
+.who{font-family:var(--ui);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:999px;border:1px solid;display:inline-block;margin-top:4px}
+.j{background:var(--blush);color:var(--terra-deep);border-color:rgba(175,82,55,.3)}
+.k{background:#F8F1DF;color:var(--gold-deep);border-color:rgba(134,105,39,.3)}
+.c{background:#EAF0F7;color:var(--navy);border-color:rgba(0,52,102,.24)}
 
-/* phase */
-.phase{background:#fff;border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:16px;padding:26px 28px;margin-top:26px}
-.phase.blocked{border-left-color:var(--terracotta-mid)}
-.phase.parallel{border-left-color:var(--moss)}
-.phase__h{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
-.phase__n{font-family:var(--ui);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep)}
-.phase.blocked .phase__n{color:var(--terracotta-deep)}
-.phase.parallel .phase__n{color:var(--moss-text)}
-.phase h3{font-size:24px}
-.phase > p{color:var(--ink-soft);font-size:17px;max-width:66ch}
+ol.steps{margin:10px 0 8px;padding-left:22px}
+ol.steps li{font-size:16.5px;color:var(--ink);margin-bottom:7px;padding-left:3px}
+ol.steps li:last-child{margin-bottom:0}
+.path{font-family:var(--ui);font-weight:700;color:var(--navy)}
+.send{background:#F1F5EA;border:1px solid rgba(107,139,58,.34);border-radius:9px;padding:9px 13px;font-size:16px;color:var(--moss-text);font-weight:700;margin-top:10px;display:inline-block}
+
+.phase{background:#fff;border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:15px;padding:24px 26px;margin-top:24px}
+.phase.first{border-left-color:var(--terra-mid)}
+.phase.now{border-left-color:var(--moss)}
+.ph-n{font-family:var(--ui);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);display:block;margin-bottom:4px}
+.phase.first .ph-n{color:var(--terra-deep)}
+.phase.now .ph-n{color:var(--moss-text)}
+.phase>p{color:var(--soft);font-size:17px}
 .phase .task{background:var(--shell)}
 
-/* callout */
-.note{background:linear-gradient(135deg,var(--blush) 0%,var(--shell) 100%);border:1px solid rgba(175,82,55,.2);border-radius:14px;padding:22px 26px;margin:28px 0}
-.note h4{font-family:var(--ui);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terracotta-deep);margin-bottom:8px}
+.note{background:linear-gradient(135deg,var(--blush),var(--shell));border:1px solid rgba(175,82,55,.2);border-radius:13px;padding:20px 24px;margin:24px 0}
+.note.g{background:linear-gradient(135deg,#F1F5EA,var(--shell));border-color:rgba(107,139,58,.3)}
+.note h4{font-family:var(--ui);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-deep);margin:0 0 8px}
+.note.g h4{color:var(--moss-text)}
 .note p{margin:0;font-size:17px;color:var(--ink)}
-.note p + p{margin-top:10px}
-.note.green{background:linear-gradient(135deg,#F1F5EA 0%,var(--shell) 100%);border-color:rgba(107,139,58,.3)}
-.note.green h4{color:var(--moss-text)}
+.note p+p{margin-top:9px}
 
-/* ref table */
-table{width:100%;border-collapse:collapse;margin-top:20px;font-size:16.5px}
-th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
-th{font-family:var(--ui);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
-td:first-child{font-weight:700;white-space:nowrap}
-
-.legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-footer{background:var(--ink);color:rgba(255,255,255,.8);padding:34px 0;font-size:16px;margin-top:20px}
-footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
-
+footer{background:var(--ink);color:rgba(255,255,255,.8);padding:30px 0;font-size:16px}
 @media print{
   body{background:#fff;font-size:11pt}
-  .top{background:#fff !important;color:var(--ink);padding:0 0 18pt}
-  .top::before{display:none}
-  .top h1,.top .sub,.tally .v{color:var(--ink) !important}
-  .tally .k{color:#555 !important}
-  .task,.phase,.note{break-inside:avoid;box-shadow:none}
-  section{padding:18pt 0}
+  .top{background:#fff!important;color:var(--ink);padding:0 0 16pt}
+  .top::before{display:none}.top h1,.top p{color:var(--ink)!important}
+  .stamp{color:#666!important}
+  .task,.phase,.note{break-inside:avoid}
+  section{padding:16pt 0}
   footer{background:#fff;color:#555}
 }
-@media (max-width:720px){
-  section{padding:44px 0}
-  .phase{padding:22px 20px}
-}
+@media (max-width:720px){section{padding:40px 0}.phase{padding:20px 18px}}
 </style>
 </head>
 <body>
 
 <header class="top">
   <div class="wrap">
-    <span class="stamp">Bloom50 Collective · build plan</span>
-    <h1>What's left, and in what order</h1>
-    <p class="sub">Two launches, not one. The website can go live on its own schedule. The app follows, and the Workouts page upgrades underneath it without a redesign.</p>
-    <div class="tally">
-      <div><span class="k">Site pages built</span><span class="v">9 of 9</span></div>
-      <div><span class="k">Site blockers</span><span class="v">21</span></div>
-      <div><span class="k">App phases</span><span class="v">7</span></div>
-      <div><span class="k">Videos curated</span><span class="v">0 of 73</span></div>
-      <div><span class="k">Seed data</span><span class="v">Ready</span></div>
-    </div>
+    <span class="stamp">Bloom50 Collective</span>
+    <h1>What's left, and how to do it</h1>
+    <p>Two things to finish. The website, then the app. The website does not wait on the app.</p>
   </div>
 </header>
 
-<!-- ═══════════════ PART ONE — THE SITE ═══════════════ -->
+<!-- PART ONE -->
 <section>
   <div class="wrap">
     <span class="part">Part one</span>
-    <h2>What's left to launch the site</h2>
-    <p class="intro">All nine pages are built, validated and deployed to the preview. Nothing below is a code problem — it's content, credentials and four decisions. Counts come from an audit of the current deploy folder, not from memory.</p>
+    <h2>Finishing the website</h2>
+    <p class="lede">All nine pages are built and on the test address. Nothing below is code. It's passwords, links, and words Kim has to write. Twenty-one things.</p>
 
-    <div class="note green">
-      <h4>Read this before you sequence anything</h4>
-      <p>None of this waits on the app. The Workouts page already renders from the seed file rather than hand-written HTML, so swapping it to the live database later is a data-source change, not a rebuild. Launch the site the moment the list below is clear.</p>
+    <div class="note g">
+      <h4>Do not wait for the app</h4>
+      <p>The Workouts page already reads the workouts from a list I keep in a file. Later it will read the same list from the app instead. The page will not have to be rebuilt. Launch the site as soon as this list is clear.</p>
     </div>
 
-    <!-- A -->
-    <div class="grp">
-      <h3>Credentials to paste <span class="count">6 items · 62 occurrences</span></h3>
-      <p>Search the deploy folder for <code>PASTE_</code>. Each one appears on multiple pages, so use find-and-replace across the folder rather than editing page by page.</p>
+    <h3 class="grp">Links and passwords I need from you <span class="n">Six</span></h3>
+    <p>Each one is missing in several places at once. Once you send me one, I put it everywhere it belongs.</p>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Instagram URL</span>
-        <p class="d"><code>PASTE_INSTAGRAM_URL</code> — footer of all 9 pages.</p>
-        <div class="meta"><span class="tag who-j">Jimmy</span></div>
-      </span></label>
+    <label class="task"><input type="checkbox"><span class="b">
+      <span class="t">1. Kim's Instagram and Facebook addresses</span>
+      <p>Open each page, copy the web address from the top of the browser. Send me both.</p>
+      <p>They go in the footer of all nine pages.</p>
+      <span class="who j">You</span>
+    </span></label>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Facebook URL</span>
-        <p class="d"><code>PASTE_FACEBOOK_URL</code> — footer of all 9 pages.</p>
-        <div class="meta"><span class="tag who-j">Jimmy</span></div>
-      </span></label>
+    <label class="task"><input type="checkbox"><span class="b">
+      <span class="t">2. The booking calendar</span>
+      <p>Right now the coaching page has a grey box where the calendar should be. Nobody can book a call.</p>
+      <ol class="steps">
+        <li>Log into TidyCal.</li>
+        <li>Go to <span class="path">Booking Types</span> and click <span class="path">New</span>.</li>
+        <li>Name it <strong>Free consultation</strong>. Set the length to 15 minutes.</li>
+        <li>Under <span class="path">Calendars</span>, connect Kim's Google Calendar. Now it only offers times she's free.</li>
+        <li>Go to <span class="path">Advanced</span>, then <span class="path">Questions</span>. Switch questions on.</li>
+        <li>Add the five questions. They're written out on the coaching page — copy them from there.</li>
+        <li>Tick <strong>Required</strong> on the first three. Now nobody can book without answering.</li>
+        <li>Click <span class="path">Embed</span> and copy the code it gives you.</li>
+      </ol>
+      <span class="send">Send me the embed code</span>
+      <br><span class="who j">You</span>
+    </span></label>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Zapier catch hook for the email capture</span>
-        <p class="d"><code>PASTE_ZAPIER_EMAIL_HOOK_URL</code> — 7 pages. Until this is real, the form shows "not connected yet" rather than failing silently.</p>
-        <p class="d">Zap: Catch Hook → Airtable row → email Kim.</p>
-        <div class="meta"><span class="tag who-j">Jimmy</span></div>
-      </span></label>
+    <label class="task"><input type="checkbox"><span class="b">
+      <span class="t">3. The email sign-up connection</span>
+      <p>The "get the weekly workout" box on seven pages goes nowhere. It tells people it isn't connected instead of failing quietly, but it still doesn't work.</p>
+      <ol class="steps">
+        <li>In Zapier, click <span class="path">Create</span>, then <span class="path">Zap</span>.</li>
+        <li>For the trigger, choose <strong>Webhooks by Zapier</strong>, then <strong>Catch Hook</strong>.</li>
+        <li>Zapier shows you a web address. Copy it.</li>
+        <li>Add a step: Airtable, <strong>Create Record</strong>. Point it at wherever you want the emails kept.</li>
+        <li>Add a second step: Gmail, <strong>Send Email</strong>, to Kim, so she knows someone signed up.</li>
+        <li>Turn the Zap on.</li>
+      </ol>
+      <span class="send">Send me the web address from step 3</span>
+      <br><span class="who j">You</span>
+    </span></label>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">TidyCal booking type, with the five questions</span>
-        <p class="d"><code>PASTE_TIDYCAL_USERNAME</code> — coaching page. Create a 15-minute type called <strong>Free consultation</strong>, connect Kim's Google Calendar, then under <strong>Advanced → Questions</strong> add the five intake questions and mark the first three <strong>Required</strong>.</p>
-        <p class="d">Replace the whole placeholder block with the embed. The commented-out markup above it shows the shape.</p>
-        <div class="meta"><span class="tag who-j">Jimmy</span><span class="tag stop">Booking is dead until this lands</span></div>
-      </span></label>
+    <label class="task"><input type="checkbox"><span class="b">
+      <span class="t">4. Amazon links for the gear</span>
+      <p>Thirty-six places across the shop page, the workouts page and the archive.</p>
+      <ol class="steps">
+        <li>Apply at affiliate-program.amazon.com if you haven't. Approval takes a few days.</li>
+        <li>Once approved, find each product on Amazon while logged in.</li>
+        <li>A grey bar appears across the top of the page. That's SiteStripe.</li>
+        <li>Click <span class="path">Text</span> on that bar. It gives you a link. Copy it.</li>
+        <li>Do that for: resistance bands, light dumbbells, ankle weights, stability ball, balance pad.</li>
+      </ol>
+      <p>Don't copy prices or product photos by hand. Amazon's rules forbid both.</p>
+      <span class="send">Send me the five links, labelled</span>
+      <br><span class="who j">You</span>
+    </span></label>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Amazon affiliate links</span>
-        <p class="d"><code>PASTE_AMAZON_AFFILIATE_LINK</code> — 36 occurrences across the shop page, the workouts page and the archive. Needs Associates approval first, then SiteStripe.</p>
-        <p class="d">Don't hand-copy product images or prices — Associates terms forbid both.</p>
-        <div class="meta"><span class="tag who-j">Jimmy</span></div>
-      </span></label>
+    <label class="task"><input type="checkbox"><span class="b">
+      <span class="t">5. Visitor counting</span>
+      <p>So you know how many people come and which pages they read.</p>
+      <ol class="steps">
+        <li>In Cloudflare, open <span class="path">Analytics &amp; Logs</span>, then <span class="path">Web Analytics</span>.</li>
+        <li>Click <span class="path">Add a site</span>. Type bloom50collective.com.</li>
+        <li>It gives you a small block of code. Copy all of it.</li>
+      </ol>
+      <span class="send">Send me that block</span>
+      <br><span class="who j">You</span>
+    </span></label>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Cloudflare Analytics token</span>
-        <p class="d">Not in the pages yet. One snippet before <code>&lt;/body&gt;</code> in the shared footer.</p>
-        <div class="meta"><span class="tag who-j">Jimmy</span></div>
-      </span></label>
-    </div>
+    <label class="task"><input type="checkbox"><span class="b">
+      <span class="t">6. The logo as a clean file</span>
+      <p>Ask the Fiverr seller for the SVG. It stays sharp at any size. When it arrives I'll swap the lotus in the page dividers to match it.</p>
+      <span class="who j">You</span>
+    </span></label>
 
-    <!-- B -->
-    <div class="grp">
-      <h3>Content only Kim can write <span class="count">7 items</span></h3>
-      <p>Each of these has a quiet gold-edged placeholder sitting in the live page telling her exactly what's needed. They're fine on a preview and must be gone before the address gets shared.</p>
+    <h3 class="grp">Words only Kim can write <span class="n">Seven</span></h3>
+    <p>Each one has a small gold-edged box sitting on the live page telling her what's needed. Fine on a test address. They have to be gone before she sends the link to anyone.</p>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Three testimonials — first name and age</span>
-        <p class="d">Home page, About (under the pull quote), Coaching (directly under the pricing). The age does more work than anything inside the quote.</p>
-        <div class="meta"><span class="tag who-k">Kim</span><span class="tag stop">Highest-value gap on the site</span></div>
-      </span></label>
+    <label class="task"><input type="checkbox"><span class="b">
+      <span class="t">7. Three client quotes</span>
+      <p>One or two sentences each. First name and age. The age matters more than anything in the quote — "Debbie, 61" does the work.</p>
+      <p>They go on the home page, the About page under the big quote, and the coaching page right under the prices. That last one is the most important inch on the site. Somebody has just read $540.</p>
+      <span class="who k">Kim</span>
+    </span></label>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">"You might recognize yourself here" — four lines</span>
-        <p class="d">About page. Things she actually hears from women who are nervous to start, in their words. The strongest of the four also belongs on the home page.</p>
-        <div class="meta"><span class="tag who-k">Kim</span></div>
-      </span></label>
+    <label class="task"><input type="checkbox"><span class="b">
+      <span class="t">8. Four lines that start "you"</span>
+      <p>On the About page, under "You might recognize yourself here."</p>
+      <p>She should think of the last four women who told her why they were nervous to start, and write down what they actually said. "My knees hurt going down stairs," not "joint discomfort." One sentence each.</p>
+      <p>The best of the four also goes on the home page.</p>
+      <span class="who k">Kim</span>
+    </span></label>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Wednesday class logistics — four short answers</span>
-        <p class="d">Training page. Where to meet in the park, where to park, what to bring, how long it runs. Plus which days the paid $15 classes will run.</p>
-        <p class="d">These are the nervous-first-timer questions, and they decide whether someone shows up.</p>
-        <div class="meta"><span class="tag who-k">Kim</span></div>
-      </span></label>
+    <label class="task"><input type="checkbox"><span class="b">
+      <span class="t">9. Wednesday class details</span>
+      <p>Four short answers. Where in the park to meet. Where to park the car. What to bring. How long it runs.</p>
+      <p>Plus: which days will the paid $15 classes run?</p>
+      <p>These are what a nervous first-timer wants to know. They decide whether she shows up.</p>
+      <span class="who k">Kim</span>
+    </span></label>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Rescheduling window and package expiry</span>
-        <p class="d">Four FAQ entries marked <strong>[KIM — CONFIRM]</strong>, two on Coaching and two on Training, plus the policies page. Proposed: 24 hours' notice, four-session packages good for three months, eight-session for six.</p>
-        <div class="meta"><span class="tag who-k">Kim</span></div>
-      </span></label>
+    <label class="task"><input type="checkbox"><span class="b">
+      <span class="t">10. Cancelling and expiry rules</span>
+      <p>Four questions on the site say "Kim to confirm." Two on the coaching page, two on the training page.</p>
+      <p>What I've suggested, for her to accept or change: cancel with 24 hours' notice and it doesn't count. Four-session packages good for three months. Eight-session for six months.</p>
+      <span class="who k">Kim</span>
+    </span></label>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">The small group four-session price</span>
-        <p class="d">Training page. $72 per person is mine, not hers — a straight 10% off matching her one-on-one four-pack. She confirms, changes, or drops it.</p>
-        <div class="meta"><span class="tag who-k">Kim</span></div>
-      </span></label>
+    <label class="task"><input type="checkbox"><span class="b">
+      <span class="t">11. The small group four-pack price</span>
+      <p>$72 a person is my number, not hers. It's 10% off, matching the discount on her one-on-one four-pack. She confirms it, changes it, or tells me to drop the package.</p>
+      <span class="who k">Kim</span>
+    </span></label>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">The then-and-now caption</span>
-        <p class="d">About page. One line, already drafted from her own bio. She only has to make it sound like she said it.</p>
-        <div class="meta"><span class="tag who-k">Kim</span></div>
-      </span></label>
+    <label class="task"><input type="checkbox"><span class="b">
+      <span class="t">12. The caption under her two photos</span>
+      <p>One line on the About page, already drafted from her own words. She just has to make it sound like she said it.</p>
+      <span class="who k">Kim</span>
+    </span></label>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Is "stretching and flexibility" a credential or a focus?</span>
-        <p class="d">It replaced "behavior change" on the About and Home pages. Currently worded as a focus, since her bio names behavior coaching as the third certification. If she holds an actual flexibility credential, say which and it gets worded properly.</p>
-        <div class="meta"><span class="tag who-k">Kim</span></div>
-      </span></label>
-    </div>
+    <label class="task"><input type="checkbox"><span class="b">
+      <span class="t">13. Is stretching and flexibility a certification?</span>
+      <p>It replaced "behavior change" on two pages. Right now it's worded as something she focuses on, not something she's certified in. If she holds an actual certificate, tell me which and I'll word it properly.</p>
+      <span class="who k">Kim</span>
+    </span></label>
 
-    <!-- C -->
-    <div class="grp">
-      <h3>Photos <span class="count">2 needed</span></h3>
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Kim training one person</span>
-        <p class="d">Training page sells one-on-one work and has no picture of it. Mid-session, both in frame, landscape 4:3, 1400px+. Save as <code>/assets/training.jpg</code>. Client's permission first.</p>
-        <div class="meta"><span class="tag who-k">Kim</span></div>
-      </span></label>
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">A class actually happening</span>
-        <p class="d">The current shot is the after — everyone smiling, holding a ball. Missing is the during. Landscape, 1600px+. <code>/assets/class-action.jpg</code>.</p>
-        <p class="d">While she's out there, one more landscape frame of her with the whole whiteboard visible would upgrade the portrait that currently carries two pages.</p>
-        <div class="meta"><span class="tag who-k">Kim</span></div>
-      </span></label>
-    </div>
+    <h3 class="grp">Two photos <span class="n">Kim's phone is fine</span></h3>
 
-    <!-- D -->
-    <div class="grp">
-      <h3>Setup and legal <span class="count">4 items</span></h3>
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Policies page — six answers</span>
-        <p class="d">Publication date, city and state, which tools store bookings and email, retention period, and whether the free outdoor class needs a waiver. That last one is worth an actual attorney's thirty minutes.</p>
-        <div class="meta"><span class="tag who-j">Jimmy</span><span class="tag who-k">Kim</span></div>
-      </span></label>
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Attach the custom domain</span>
-        <p class="d">Cloudflare → Workers &amp; Pages → bloom50 → Custom domains → add <code>bloom50collective.com</code>. DNS is already at Cloudflare, so there are no records to copy. Cancel any GoDaddy hosting plan.</p>
-        <div class="meta"><span class="tag who-j">Jimmy</span></div>
-      </span></label>
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Logo as SVG</span>
-        <p class="d">From the Fiverr seller. When it arrives, the hand-drawn lotus in the section rules gets swapped to match in the same pass.</p>
-        <div class="meta"><span class="tag who-j">Jimmy</span></div>
-      </span></label>
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Decide the "In person" ribbon</span>
-        <p class="d">Still open from an earlier round. The Personal Training card on the home page carries it. Keep or cut.</p>
-        <div class="meta"><span class="tag who-j">Jimmy</span></div>
-      </span></label>
-    </div>
+    <label class="task"><input type="checkbox"><span class="b">
+      <span class="t">14. Kim training one person</span>
+      <p>The training page sells one-on-one work and has no picture of one-on-one work. The group shot can't do it — it shows a crowd, and the promise here is that it's just the two of them.</p>
+      <p>Mid-session. Both of them in the frame. Held sideways. Ask the client first.</p>
+      <span class="who k">Kim</span>
+    </span></label>
 
-    <!-- E -->
-    <div class="grp">
-      <h3>Ship it <span class="count">2 items</span></h3>
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Deploy the complete folder</span>
-        <p class="d">Cloudflare wipes and replaces on every upload. The whole <code>bloom50-deploy</code> folder goes up, including <code>workouts/archive/</code>. Anything missing is deleted from the live site.</p>
-        <p class="d">Stylesheet and script now carry a version stamp, so one normal refresh is enough — no more stale-CSS ghosts.</p>
-        <div class="meta"><span class="tag who-j">Jimmy</span></div>
-      </span></label>
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Back up to Drive</span>
-        <p class="d">A copy of the deploy folder into <strong>01 Deploy package</strong>. All four Bloom50 subfolders are currently empty and the source has been lost once already.</p>
-        <div class="meta"><span class="tag who-j">Jimmy</span></div>
-      </span></label>
-    </div>
+    <label class="task"><input type="checkbox"><span class="b">
+      <span class="t">15. A class actually happening</span>
+      <p>The photo we have is the after — everyone smiling, holding a ball. What's missing is the middle. Arms overhead, half way down a squat, somebody laughing.</p>
+      <p>Ask someone to take a few while she's leading. Held sideways.</p>
+      <p>While she's out there: one more of her with the whole whiteboard in frame. The photo we have is cropped tight and it's carrying two pages.</p>
+      <span class="who k">Kim</span>
+    </span></label>
+
+    <h3 class="grp">Legal and setup <span class="n">Four</span></h3>
+
+    <label class="task"><input type="checkbox"><span class="b">
+      <span class="t">16. Six answers for the policies page</span>
+      <p>The date you publish it. City and state. Which services store the bookings and the emails. How long client records are kept.</p>
+      <p>And one worth an actual lawyer's half hour: does the free outdoor class need people to sign a waiver?</p>
+      <span class="who j">You</span> <span class="who k">Kim</span>
+    </span></label>
+
+    <label class="task"><input type="checkbox"><span class="b">
+      <span class="t">17. Point the real address at the site</span>
+      <p>Right now the site only answers at the long test address.</p>
+      <ol class="steps">
+        <li>In Cloudflare, open <span class="path">Workers &amp; Pages</span>.</li>
+        <li>Click the <strong>bloom50</strong> project.</li>
+        <li>Go to <span class="path">Custom domains</span>.</li>
+        <li>Click <span class="path">Set up a custom domain</span>. Type bloom50collective.com.</li>
+        <li>Click add. Nothing else to do — the domain already lives at Cloudflare.</li>
+        <li>Cancel any hosting plan still running at GoDaddy.</li>
+      </ol>
+      <span class="who j">You</span>
+    </span></label>
+
+    <label class="task"><input type="checkbox"><span class="b">
+      <span class="t">18. Decide on the "In person" tag</span>
+      <p>Small orange banner on the Personal Training card on the home page. You asked about removing it a while back and we never settled it. Keep or cut.</p>
+      <span class="who j">You</span>
+    </span></label>
+
+    <label class="task"><input type="checkbox"><span class="b">
+      <span class="t">19. Two photo files to drop in</span>
+      <p>When Kim sends the photos, I'll crop them and hand back the folder ready to upload.</p>
+      <span class="who c">Me</span>
+    </span></label>
+
+    <h3 class="grp">Go live <span class="n">Two</span></h3>
+
+    <label class="task"><input type="checkbox"><span class="b">
+      <span class="t">20. Upload the whole folder</span>
+      <p>Cloudflare deletes everything and puts up whatever you give it. So the entire folder goes up every time, not just the files that changed.</p>
+      <ol class="steps">
+        <li>Cloudflare, <span class="path">Workers &amp; Pages</span>, the <strong>bloom50</strong> project.</li>
+        <li>Click <span class="path">Create deployment</span>.</li>
+        <li>Drag the whole <strong>bloom50-deploy</strong> folder in. All of it.</li>
+        <li>Deploy. Wait about a minute.</li>
+        <li>Refresh the site once.</li>
+      </ol>
+      <p>The archive lives in a folder inside a folder. If you ever upload only part of it, that page disappears.</p>
+      <span class="who j">You</span>
+    </span></label>
+
+    <label class="task"><input type="checkbox"><span class="b">
+      <span class="t">21. Put a copy in Google Drive</span>
+      <p>Drop the folder into <strong>01 Deploy package</strong>. All four Bloom50 folders in Drive are empty right now, and these files have already gone missing once.</p>
+      <span class="who j">You</span>
+    </span></label>
   </div>
 </section>
 
-<!-- ═══════════════ PART TWO — THE APP ═══════════════ -->
+<!-- PART TWO -->
 <section>
   <div class="wrap">
     <span class="part">Part two</span>
-    <h2>Building the app, step by step</h2>
-    <p class="intro">Seven phases. Two of them block everything else and both are account setup, so they come first. Video curation runs in parallel from day one because it's the longest single stretch of work in the project and nothing else waits on it.</p>
-
-    <div class="legend">
-      <span class="tag who-j">Jimmy</span>
-      <span class="tag who-k">Kim</span>
-      <span class="tag who-c">Claude</span>
-      <span class="tag blocks">Runs in parallel</span>
-      <span class="tag stop">Blocks other work</span>
-    </div>
+    <h2>Building the app</h2>
+    <p class="lede">Seven stages. The first one is all account setup and almost all of it is yours. Nothing gets built until it's done.</p>
 
     <div class="note">
-      <h4>The north star, so scope doesn't creep</h4>
-      <p>It's a training ledger: <strong>Capture, Reflect, Guide.</strong> Log the workout fast, see whether it's working, know what to do next. If a proposed feature isn't one of those three, it's bloat and it doesn't ship in v1.</p>
-      <p>Already out of scope and staying out: running, Strava, nutrition tracking, per-client program assignment, messaging, social feeds, badges, push notifications.</p>
+      <h4>What the app is, in one line</h4>
+      <p>Kim taps together Wednesday's workout on her phone. One button puts it on her clients' phones and on the website at the same time. Her clients tick off what they did and watch their weights go up.</p>
+      <p>If a feature isn't one of those three things, it doesn't go in.</p>
     </div>
 
-    <!-- PHASE 0 -->
-    <div class="phase blocked">
-      <div class="phase__h"><span class="phase__n">Phase 0</span><h3>Decisions and accounts</h3></div>
-      <p>Nothing gets built until these exist. All five are half-hour jobs and four of them are yours.</p>
+    <!-- STAGE 1 -->
+    <div class="phase first">
+      <span class="ph-n">Stage 1 — do this first</span>
+      <h3>Accounts and one decision</h3>
+      <p>Five jobs. Four are yours. Half an hour each at most.</p>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Name the app</span>
-        <p class="d">Recommendation: call it <strong>Bloom50</strong> and inherit the brand. Ten years of name recognition shouldn't get split for a second identity. Alternates on the table were Trellis and Tend.</p>
-        <div class="meta"><span class="tag who-j">Jimmy</span><span class="tag who-k">Kim</span></div>
-        <p class="done-when">Done when: the name is settled, because it goes in the invite email and on the home-screen icon.</p>
+      <label class="task"><input type="checkbox"><span class="b">
+        <span class="t">Name it</span>
+        <p>My advice: call it <strong>Bloom50</strong>. Kim has spent ten years building that name. A second one splits it for nothing.</p>
+        <p>The name goes in the invite email and under the icon on her clients' phones, so it has to be settled before I build either.</p>
+        <span class="who j">You</span> <span class="who k">Kim</span>
       </span></label>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Create the Pages project and the D1 database</span>
-        <p class="d">A <em>second</em> Cloudflare Pages project at <code>app.bloom50collective.com</code>, with its own D1 binding. The marketing site's project stays untouched — no build step, no risk to a working deploy.</p>
-        <div class="meta"><span class="tag who-j">Jimmy</span><span class="tag stop">Blocks phases 1, 3, 4, 5</span></div>
-        <p class="done-when">Done when: the subdomain resolves and the D1 binding shows in the dashboard.</p>
+      <label class="task"><input type="checkbox"><span class="b">
+        <span class="t">Make the place the app's information will live</span>
+        <ol class="steps">
+          <li>In Cloudflare, open <span class="path">Storage &amp; Databases</span>, then <span class="path">D1</span>.</li>
+          <li>Click <span class="path">Create database</span>.</li>
+          <li>Name it <strong>bloom50</strong>. Leave everything else alone.</li>
+          <li>Create it. That's all — I fill it.</li>
+        </ol>
+        <p>This is where the exercises, the workouts, the client list and everyone's logged sets get kept.</p>
+        <span class="who j">You</span>
       </span></label>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Cloudflare API token</span>
-        <p class="d">Scopes: Pages Edit, D1 Edit, Workers Scripts Edit. Browser login was flaky last time, so a token is the reliable path. <strong>Roll it when the build session ends.</strong></p>
-        <div class="meta"><span class="tag who-j">Jimmy</span></div>
+      <label class="task"><input type="checkbox"><span class="b">
+        <span class="t">Make the app its own address</span>
+        <p>The app is a separate thing from the website. Keeping them apart means I can never break the website while working on the app.</p>
+        <ol class="steps">
+          <li>Cloudflare, <span class="path">Workers &amp; Pages</span>, <span class="path">Create</span>.</li>
+          <li>Choose <span class="path">Pages</span>, then <span class="path">Upload assets</span>.</li>
+          <li>Name it <strong>bloom50-app</strong>. Create it.</li>
+          <li>Open its <span class="path">Settings</span>, then <span class="path">Custom domains</span>. Add <strong>app.bloom50collective.com</strong>.</li>
+          <li>Still in Settings, open <span class="path">Bindings</span>. Click add, choose <strong>D1 database</strong>.</li>
+          <li>Type <strong>DB</strong> as the name, and pick the <strong>bloom50</strong> database you just made.</li>
+        </ol>
+        <p>Step 5 and 6 are what let the app read and write its own information. It's a one-time setting and it survives every future update.</p>
+        <span class="who j">You</span>
       </span></label>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Resend account and DNS records</span>
-        <p class="d">Free tier. The DNS records go at Cloudflare so mail verifies against <code>bloom50collective.com</code>. If invites send from anywhere else they land in spam, and this audience does not go digging in a spam folder.</p>
-        <div class="meta"><span class="tag who-j">Jimmy</span><span class="tag stop">Blocks phase 3</span></div>
-        <p class="done-when">Done when: a test email from the domain lands in a real inbox, not promotions.</p>
+      <label class="task"><input type="checkbox"><span class="b">
+        <span class="t">A key so I can do the building</span>
+        <ol class="steps">
+          <li>Cloudflare, click your icon top right, then <span class="path">API Tokens</span>.</li>
+          <li><span class="path">Create Token</span>, then <span class="path">Custom token</span>.</li>
+          <li>Give it three permissions, all under Account: <strong>Cloudflare Pages — Edit</strong>, <strong>D1 — Edit</strong>, <strong>Workers Scripts — Edit</strong>.</li>
+          <li>Create it. Copy the key. It's only shown once.</li>
+        </ol>
+        <span class="send">Send me the key. Delete it when we're done building.</span>
+        <br><span class="who j">You</span>
       </span></label>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Decide how /workouts/ renders</span>
-        <p class="d"><strong>Server-render (recommended).</strong> A <code>functions/</code> folder in the deploy package with a D1 binding. Real SEO on your best lead magnet, and the binding persists across deploys.</p>
-        <p class="d"><strong>The catch:</strong> wipe-and-replace deletes that folder if it's ever missing from an upload. Mitigation is a runbook check that fails loudly. If the binding fights back, client-side fetch ships instead and upgrades later — the data layer is identical either way.</p>
-        <div class="meta"><span class="tag who-j">Jimmy</span></div>
+      <label class="task"><input type="checkbox"><span class="b">
+        <span class="t">A way to send the invite emails</span>
+        <p>The invite has to come from Kim's own domain. If it comes from anywhere else it lands in spam, and these women will not go looking in a spam folder.</p>
+        <ol class="steps">
+          <li>Go to resend.com and sign up. The free level is enough.</li>
+          <li>Open <span class="path">Domains</span>, click <span class="path">Add Domain</span>, type bloom50collective.com.</li>
+          <li>It shows you three records to add. Leave that tab open.</li>
+          <li>In Cloudflare, open the domain, then <span class="path">DNS</span>, then <span class="path">Records</span>.</li>
+          <li>Add each of the three exactly as shown. Turn the orange cloud <strong>off</strong> for each one.</li>
+          <li>Back in Resend, click verify. Give it a few minutes.</li>
+          <li>Open <span class="path">API Keys</span>, create one, copy it.</li>
+        </ol>
+        <span class="send">Send me that key</span>
+        <br><span class="who j">You</span>
+      </span></label>
+
+      <label class="task"><input type="checkbox"><span class="b">
+        <span class="t">One decision from you</span>
+        <p>There are two ways the website can get the workouts out of the app.</p>
+        <p><strong>The better way:</strong> the workouts are already in the page when it arrives. Google can read them, so the free workout library brings in strangers. The cost is one extra folder that must be in the upload every single time. If it's ever missing, that page breaks quietly.</p>
+        <p><strong>The safer way:</strong> the page arrives empty and fills itself in a moment later. Nothing extra to remember. But Google often doesn't see the workouts, so they bring in nobody.</p>
+        <p>I'd take the better way and add a check that shouts at you if the folder is missing. Your call — the app is identical either way, and we can switch later.</p>
+        <span class="who j">You</span>
       </span></label>
     </div>
 
-    <!-- PHASE 1 -->
+    <!-- STAGE 2 -->
+    <div class="phase now">
+      <span class="ph-n">Stage 2 — start today, runs alongside everything</span>
+      <h3>Finding a video for all 73 exercises</h3>
+      <p>This is the longest job in the whole project. It needs nothing from anyone to begin. It has been sitting still since before Kim said yes.</p>
+
+      <label class="task"><input type="checkbox"><span class="b">
+        <span class="t">Find the clips</span>
+        <p>About 55 of the 73 have a good short video on YouTube already. I find and check each one.</p>
+        <p>Five are two moves joined together — a squat into a press. For those I show the two halves instead of hunting for the combination.</p>
+        <p>The last thirteen are Kim's own names. Sumo Tap, Reach Overs, Rainbows, Behind Knee Lift. Nothing on YouTube is called that. Those get the closest ordinary movement, marked so Kim knows it's approximate.</p>
+        <span class="who c">Me</span>
+      </span></label>
+
+      <label class="task"><input type="checkbox"><span class="b">
+        <span class="t">Make it survive a video being deleted</span>
+        <p>Alongside each video I save what I searched for to find it. If someone takes their video down, the app runs that search instead of showing a broken box.</p>
+        <p>I also set up a weekly check of all 73 that tells Kim if any have died. Borrowed videos disappear. That's the price of not filming them.</p>
+        <span class="who c">Me</span>
+      </span></label>
+
+      <label class="task"><input type="checkbox"><span class="b">
+        <span class="t">Kim watches them</span>
+        <p>I pick these by reading titles and descriptions, not by watching all 73. For women over 50 that isn't good enough on its own.</p>
+        <p>I'll build her one page with every clip grouped together, anything rough flagged. She goes down it and says yes or no. About forty minutes, once.</p>
+        <p>No client sees the library until she's done this.</p>
+        <span class="who k">Kim</span>
+      </span></label>
+    </div>
+
+    <!-- STAGE 3 -->
     <div class="phase">
-      <div class="phase__h"><span class="phase__n">Phase 1</span><h3>The data layer</h3></div>
-      <p>Short phase — the hard part was done months ago. 73 exercises, 10 gear items, 6 workouts, 92 slots, already validated with zero broken references.</p>
+      <span class="ph-n">Stage 3</span>
+      <h3>Putting her exercises in</h3>
+      <p>Short stage. The hard part is already finished — I pulled all of this off her website months ago and checked it.</p>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Apply the schema and load the seed</span>
-        <p class="d">Fourteen tables. <code>assignments</code> ships unused — it costs nothing and it's the seam if per-client programming is ever wanted.</p>
-        <div class="meta"><span class="tag who-c">Claude</span><span class="tag blocks">Needs phase 0</span></div>
-        <p class="done-when">Done when: a query returns all six workouts with blocks, items and gear intact.</p>
+      <label class="task"><input type="checkbox"><span class="b">
+        <span class="t">Load the 73 exercises, 10 pieces of gear and 6 workouts</span>
+        <p>Everything from her six published workouts, sorted and with the duplicates merged.</p>
+        <p>Her shorthand comes along. She writes "OH Tricep" some weeks and "OH Tricep Press" others. The app knows they're the same move and still shows whichever she wrote.</p>
+        <span class="who c">Me</span>
       </span></label>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Kim decodes three exercises</span>
-        <p class="d">Flagged <code>needs_review</code> in the seed because they couldn't be read off her board:</p>
-        <p class="d"><strong>Fig. 8</strong> — hip circle, ball pass, or arm figure-eight?<br>
-        <strong>Press Cuts (1 weight)</strong> — what's the pattern?<br>
+      <label class="task"><input type="checkbox"><span class="b">
+        <span class="t">Three exercises Kim has to explain</span>
+        <p>I couldn't work these out from her whiteboard:</p>
+        <p><strong>Fig. 8</strong> — is that a hip circle, passing the ball around, or arms tracing a figure eight?<br>
+        <strong>Press Cuts, one weight</strong> — what's the movement?<br>
         <strong>Hold / Release</strong> — what's being held?</p>
-        <div class="meta"><span class="tag who-k">Kim</span><span class="tag blocks">Also blocks their videos</span></div>
+        <p>They also can't have videos until she answers.</p>
+        <span class="who k">Kim</span>
       </span></label>
 
-      <label class="task"><input type="checkbox"><span class="body">
+      <label class="task"><input type="checkbox"><span class="b">
         <span class="t">Five class dates</span>
-        <p class="d">Only Balance &amp; Strength is dated. The other five show "date to add" rather than a fabricated date, and the library can't order itself properly without them.</p>
-        <div class="meta"><span class="tag who-k">Kim</span></div>
+        <p>Only one of the six workouts has a date. The rest say "date to add" on the live site rather than showing a date I made up.</p>
+        <span class="who k">Kim</span>
       </span></label>
     </div>
 
-    <!-- PHASE 2 -->
-    <div class="phase parallel">
-      <div class="phase__h"><span class="phase__n">Phase 2</span><h3>Videos — start now, runs alongside everything</h3></div>
-      <p>The longest stretch of work in the project and the only one with a hard dependency on Kim's attention at the end. It has been on hold since before she said yes. It should start today.</p>
-
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Curate 73 clips in three tiers</span>
-        <p class="d"><strong>Tier 1</strong> — exact-match verified Short, roughly 55 of them.<br>
-        <strong>Tier 2</strong> — the 5 compounds play their two component clips instead of hunting for a combo video.<br>
-        <strong>Tier 3</strong> — roughly 13 have no match because they're Kim's own names. Sumo Tap, Reach Overs, Rainbows, Behind Knee Lift and friends get the closest base movement, flagged "closest match" in her admin.</p>
-        <div class="meta"><span class="tag who-c">Claude</span><span class="tag blocks">No dependencies</span></div>
-      </span></label>
-
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Store the search query beside every video ID</span>
-        <p class="d">Non-negotiable and cheap. When a video gets deleted the app degrades into a live YouTube search for that exercise instead of a dead embed.</p>
-        <div class="meta"><span class="tag who-c">Claude</span></div>
-      </span></label>
-
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Weekly link-health job</span>
-        <p class="d">Pings all 73, flags dead ones on Kim's screen. Curated links rot — that's the price of not filming, and it's manageable only if it's planned for.</p>
-        <div class="meta"><span class="tag who-c">Claude</span></div>
-      </span></label>
-
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Kim's spot-check, one sitting</span>
-        <p class="d">Clips are chosen on title, channel and description — not by watching all 73. For a library aimed at women 50+ that isn't good enough on its own. I'll rebuild the review page as I go, grouped, showing the clip actually picked, with anything high-impact or aggressive flagged for her explicitly.</p>
-        <div class="meta"><span class="tag who-k">Kim</span><span class="tag stop">Gate before any client sees the library</span></div>
-        <p class="done-when">Done when: every one of the 73 is approved or replaced. About 40 minutes.</p>
-      </span></label>
-    </div>
-
-    <!-- PHASE 3 -->
+    <!-- STAGE 4 -->
     <div class="phase">
-      <div class="phase__h"><span class="phase__n">Phase 3</span><h3>Sign-in and the roster</h3></div>
-      <p>The single biggest addition over Cadence, and the thing that decides whether her clients actually use this. No passwords anywhere — nothing to create, forget or reset.</p>
+      <span class="ph-n">Stage 4</span>
+      <h3>Getting people signed in</h3>
+      <p>This is the part that decides whether her clients use the app or quietly don't. There are no passwords anywhere. Nothing to make up, forget, or reset.</p>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Magic link plus a 6-digit code, in the same email</span>
-        <p class="d">The code isn't redundant. It covers the two real failure modes: the email lands in spam, or Kim is standing next to her at Wednesday class and can just read it aloud.</p>
-        <p class="d">Session lasts a year. The email reads as though it came from Kim, because it did.</p>
-        <div class="meta"><span class="tag who-c">Claude</span><span class="tag blocks">Needs Resend</span></div>
+      <label class="task"><input type="checkbox"><span class="b">
+        <span class="t">Sign in by email, two ways in the same message</span>
+        <p>Kim types a name and an email. An email goes out that looks like it came from her. It has a button, and it has a six-digit code.</p>
+        <p>The button signs her in for a year. The code is there for the two times the button fails: the email went to spam, or Kim is standing next to her at Wednesday class and can just read the numbers out.</p>
+        <span class="who c">Me</span>
       </span></label>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Swap the hardcoded identity for a real one</span>
-        <p class="d">Cadence already scopes every query by <code>uid</code>, hardcoded to <code>"me"</code>. Multi-tenancy is that constant becoming a session. It's a small change, not a rewrite — the genuine work here is sign-in and the roster.</p>
-        <div class="meta"><span class="tag who-c">Claude</span></div>
+      <label class="task"><input type="checkbox"><span class="b">
+        <span class="t">The client list, and Kim's own account</span>
+        <p>Kim's account can do three things nobody else's can: build a workout, publish it, and add a client. That's her whole side of the app.</p>
+        <span class="who c">Me</span>
       </span></label>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Trainer role and the roster screen</span>
-        <p class="d"><code>users.role = 'trainer'</code> gates the builder, the roster and the publish toggle. Add a client with a name and an email; that's Kim's entire part in onboarding.</p>
-        <div class="meta"><span class="tag who-c">Claude</span></div>
-      </span></label>
-
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Kim's email, plus two test addresses</span>
-        <p class="d">Her trainer account, and a couple of throwaways to test the invite flow end to end before a real client sees it.</p>
-        <div class="meta"><span class="tag who-j">Jimmy</span></div>
+      <label class="task"><input type="checkbox"><span class="b">
+        <span class="t">Kim's email, plus two spare addresses</span>
+        <p>For her account, and so I can send myself invites and check the whole thing works before a real client ever gets one.</p>
+        <span class="who j">You</span>
       </span></label>
     </div>
 
-    <!-- PHASE 4 -->
+    <!-- STAGE 5 -->
     <div class="phase">
-      <div class="phase__h"><span class="phase__n">Phase 4</span><h3>Kim's side</h3></div>
-      <p>Genuinely small, and it stays small because of one decision: everyone sees the same workout. No per-client assignment means her whole surface is one screen plus a roster.</p>
+      <span class="ph-n">Stage 5</span>
+      <h3>Kim's side</h3>
+      <p>Small, and it stays small because everyone gets the same workout. No building separate programmes for each person. That decision is what keeps this from turning into a second job for her.</p>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">The workout builder</span>
-        <p class="d">Name, class date, timing, then tap exercises out of her own library into blocks. No typing, no spelling. Five minutes on a Wednesday morning.</p>
-        <p class="d">Her shorthand is preserved — the <code>aka</code> field means "OH Tricep" and "OH Tricep Press" are one movement to the app and two ways of writing it to her.</p>
-        <div class="meta"><span class="tag who-c">Claude</span><span class="tag blocks">Needs phase 1</span></div>
+      <label class="task"><input type="checkbox"><span class="b">
+        <span class="t">Building a workout</span>
+        <p>Name, date, timing. Then she taps exercises out of her own list into groups. No typing, no spelling anything. Five minutes on a Wednesday morning.</p>
+        <span class="who c">Me</span>
       </span></label>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">One publish toggle</span>
-        <p class="d">Lands in two places at once — her clients' phones and the public website. That's the mechanic the whole pitch rests on.</p>
-        <div class="meta"><span class="tag who-c">Claude</span></div>
+      <label class="task"><input type="checkbox"><span class="b">
+        <span class="t">One publish button</span>
+        <p>It lands in two places at once. Her clients' phones, and the website. That's the whole thing she said yes to.</p>
+        <span class="who c">Me</span>
       </span></label>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Video admin</span>
-        <p class="d">Where she sees "closest match" flags, replaces a clip, and gets told when a link dies.</p>
-        <div class="meta"><span class="tag who-c">Claude</span></div>
+      <label class="task"><input type="checkbox"><span class="b">
+        <span class="t">A screen for the videos</span>
+        <p>Where she swaps out a clip she doesn't like, sees which ones I marked approximate, and gets told when one has been deleted.</p>
+        <span class="who c">Me</span>
       </span></label>
     </div>
 
-    <!-- PHASE 5 -->
+    <!-- STAGE 6 -->
     <div class="phase">
-      <div class="phase__h"><span class="phase__n">Phase 5</span><h3>The client app</h3></div>
-      <p>Four tabs. React, Vite, installs to the home screen as a PWA — no app store, no download.</p>
+      <span class="ph-n">Stage 6</span>
+      <h3>The client's side</h3>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Today, Library, Progress, Me</span>
-        <p class="d"><strong>Today</strong> — this week's workout, tick movements off as you go.<br>
-        <strong>Library</strong> — all 73, open access, log three sets on a Monday in your living room. This is the differentiation claim.<br>
-        <strong>Progress</strong> — weight climbing, sessions logged, personal bests. The screen that keeps her paying.<br>
-        <strong>Me</strong> — settings and the export button.</p>
-        <div class="meta"><span class="tag who-c">Claude</span><span class="tag blocks">Needs phases 1 and 3</span></div>
+      <label class="task"><input type="checkbox"><span class="b">
+        <span class="t">Four screens</span>
+        <p><strong>Today</strong> — this week's workout, tick things off as you do them.</p>
+        <p><strong>Library</strong> — all 73 exercises, open to her any day. She can do a Bloom50 workout on a Monday in her living room. This is the part nobody else offers.</p>
+        <p><strong>Progress</strong> — her weights going up, sessions counted, best lifts. This is the screen that keeps her paying Kim.</p>
+        <p><strong>Me</strong> — settings, and a button that downloads everything she's ever logged.</p>
+        <span class="who c">Me</span>
       </span></label>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Add to Home Screen prompt</span>
-        <p class="d">Fires after first sign-in. This is the step that turns a link into an icon, and an icon is what gets opened twice a week.</p>
-        <div class="meta"><span class="tag who-c">Claude</span></div>
+      <label class="task"><input type="checkbox"><span class="b">
+        <span class="t">Saving it to her home screen</span>
+        <p>After she signs in, the app offers to put itself on her phone's home screen, next to her other apps. There's no app store and nothing to download.</p>
+        <p>That step is what turns a link she loses into an icon she taps.</p>
+        <span class="who c">Me</span>
       </span></label>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">The five reliability rules, from the first commit</span>
-        <p class="d">Cadence lost a real workout. Root cause: fire-and-forget saves with swallowed errors, and a failed load that was indistinguishable from an empty day — so a network blip rendered an empty screen and then wrote that emptiness over real data.</p>
-        <p class="d">Confirm writes before showing "saved," retry once. A failed load never renders or persists emptiness. Surface failures visibly. Guard writes when load state is unknown. One-button JSON export, per client and all-clients.</p>
-        <div class="meta"><span class="tag who-c">Claude</span><span class="tag stop">Not a later hardening pass</span></div>
+      <label class="task"><input type="checkbox"><span class="b">
+        <span class="t">Making sure nobody loses a workout</span>
+        <p>My own app lost one once. It said "saved" before it had saved, and a moment of bad signal looked exactly like an empty day — so it wrote the emptiness over the real thing.</p>
+        <p>So: it doesn't say saved until it is saved. It tries again by itself. If a day won't load it keeps what's on screen and says something's wrong, instead of showing blank. And there's always a button to download everything.</p>
+        <p>This goes in from the first day. Not afterwards.</p>
+        <span class="who c">Me</span>
       </span></label>
     </div>
 
-    <!-- PHASE 6 -->
+    <!-- STAGE 7 -->
     <div class="phase">
-      <div class="phase__h"><span class="phase__n">Phase 6</span><h3>The website connection</h3></div>
-      <p>The part that sells Kim and the reason the app was worth doing before launch rather than after.</p>
+      <span class="ph-n">Stage 7</span>
+      <h3>Connecting it to the website, then opening the doors</h3>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">The public endpoint</span>
-        <p class="d"><code>GET /api/public/workouts</code> — published workouts only, by class date, with blocks, items, exercise names and gear links. Edge-cached, short TTL, no auth. The only endpoint the marketing site ever touches.</p>
-        <div class="meta"><span class="tag who-c">Claude</span></div>
+      <label class="task"><input type="checkbox"><span class="b">
+        <span class="t">The Workouts page starts reading from the app</span>
+        <p>The page doesn't change to look at. Same featured workout, same archive, same filter, same print sheet. It just gets its workouts from Kim instead of from me.</p>
+        <p>After this, nobody edits that page again. Ever.</p>
+        <span class="who c">Me</span>
       </span></label>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Point /workouts/ and the archive at it</span>
-        <p class="d">The design doesn't change. The featured card, the archive, the equipment filter and the print sheet already render from the seed file's exact shape — this swaps the source underneath them.</p>
-        <div class="meta"><span class="tag who-c">Claude</span></div>
+      <label class="task"><input type="checkbox"><span class="b">
+        <span class="t">The Shop page too</span>
+        <p>This fixes something that's wrong today. The shop sells a stability ball, ankle weights and a balance pad that appear in <em>none</em> of her workouts. The bender ball, mini band and mat she uses every single week aren't sold at all.</p>
+        <p>Once both pages read the same list, that can't drift apart again.</p>
+        <span class="who c">Me</span>
       </span></label>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Point /shop/ at the gear table</span>
-        <p class="d">This is what permanently closes the gear mismatch: the Shop page currently sells a stability ball, ankle weights and a balance pad that appear in <em>zero</em> workouts, while the bender ball, mini band and mat used every single week aren't sold at all. Once both pages read the same table, it can't drift again.</p>
-        <div class="meta"><span class="tag who-c">Claude</span></div>
-      </span></label>
-
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Update the deploy runbook</span>
-        <p class="d">If server-rendering wins, the runbook gets a loud check that the <code>functions/</code> folder is in the upload. Wipe-and-replace plus a missing folder equals a silently broken page, and this site's source has been lost once already.</p>
-        <div class="meta"><span class="tag who-c">Claude</span><span class="tag who-j">Jimmy</span></div>
-      </span></label>
-    </div>
-
-    <!-- PHASE 7 -->
-    <div class="phase">
-      <div class="phase__h"><span class="phase__n">Phase 7</span><h3>Put it in front of people</h3></div>
-
-      <label class="task"><input type="checkbox"><span class="body">
+      <label class="task"><input type="checkbox"><span class="b">
         <span class="t">Kim builds one real workout, start to finish</span>
-        <p class="d">Not a demo. A genuine Wednesday class, built in the app, published, checked on the website and on a phone. If any part of it annoys her, that's the thing to fix before anyone else sees it.</p>
-        <div class="meta"><span class="tag who-k">Kim</span></div>
+        <p>Not a pretend one. An actual Wednesday class. She builds it, publishes it, then we check it on the website and on a phone.</p>
+        <p>Anything that annoys her gets fixed now, before anyone else sees it.</p>
+        <span class="who k">Kim</span>
       </span></label>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Invite two or three regulars first</span>
-        <p class="d">Women from Wednesday class who'll tell her the truth. Watch whether the invite email actually gets opened and whether Add to Home Screen actually happens — those two steps are where adoption dies.</p>
-        <div class="meta"><span class="tag who-k">Kim</span></div>
+      <label class="task"><input type="checkbox"><span class="b">
+        <span class="t">Invite two or three regulars</span>
+        <p>Women from Wednesday who'll tell her the truth. Watch two things: did they open the email, and did they save it to their home screen. That's where this either works or dies.</p>
+        <span class="who k">Kim</span>
       </span></label>
 
-      <label class="task"><input type="checkbox"><span class="body">
-        <span class="t">Then the rest of the roster</span>
-        <p class="d">Once the first three have logged a workout each without needing help.</p>
-        <div class="meta"><span class="tag who-k">Kim</span></div>
+      <label class="task"><input type="checkbox"><span class="b">
+        <span class="t">Then everyone else</span>
+        <p>Once those first three have each logged a workout without needing help.</p>
+        <span class="who k">Kim</span>
       </span></label>
     </div>
-  </div>
-</section>
-
-<!-- ═══════════════ REFERENCE ═══════════════ -->
-<section>
-  <div class="wrap">
-    <span class="part">Reference</span>
-    <h2>The short version</h2>
-
-    <table>
-      <tr><th>Item</th><th>Where it stands</th></tr>
-      <tr><td>Stack</td><td>React + Vite · Cloudflare Pages · Pages Functions · D1 · PWA</td></tr>
-      <tr><td>App lives at</td><td><code>app.bloom50collective.com</code> — separate Pages project</td></tr>
-      <tr><td>Marketing site</td><td>Unchanged. <code>bloom50-deploy</code>, wipe-and-replace, plus <code>functions/</code> if server-rendering</td></tr>
-      <tr><td>Sign-in</td><td>Magic link + 6-digit code via Resend. No passwords.</td></tr>
-      <tr><td>Data shape</td><td>Relational for library and roster. One JSON document per person per day for logs.</td></tr>
-      <tr><td>Seeded</td><td>73 exercises · 10 gear items · 6 workouts · 92 slots · zero broken references</td></tr>
-      <tr><td>Videos</td><td>73 needed · 0 curated · unblocked since Kim's yes</td></tr>
-      <tr><td>Running cost</td><td>$0 per month at this scale</td></tr>
-    </table>
 
     <div class="note">
-      <h4>The one thing most likely to go wrong</h4>
-      <p>Not the code. It's that video curation keeps getting deferred because it's tedious and nothing appears to depend on it — right up until phase 7, when the library is the whole differentiation claim and 73 clips need Kim's eyes before a single client sees them.</p>
-      <p>It's the long pole. Start it first, finish it early, and everything else has slack.</p>
+      <h4>The thing most likely to go wrong</h4>
+      <p>Not the building. It's the videos. Seventy-three of them, tedious, and nothing seems to depend on them — right up until the end, when the library is the whole reason this is worth having and Kim needs to watch every clip before a client sees one.</p>
+      <p>Start them first. Finish them early. Then nothing else is in a hurry.</p>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">
-    <span>Bloom50 Collective — launch plan</span>
-    <span>Built for Jimmy · tick boxes as you go</span>
-  </div>
+  <div class="wrap">Bloom50 Collective — tick the boxes as you go</div>
 </footer>
 
 </body>
