@@ -1,10 +1,45 @@
 {
   "_note": "Openings & Closings rows featured in the Friday board drop. Key = Airtable record id, value = ISO dates it appeared. board-drop prefers rows not featured in the last three Fridays.",
-  "rec1ptNMzlwcLu6wb": ["2026-08-30"],
-  "recdn1sqBFG2qiHyS": ["2026-08-30"],
-  "rec56ew2HtHnuhrwn": ["2026-08-30"],
-  "recjUBVH0FMkRtseU": ["2026-08-30"],
-  "recMyrQ9GMWNHF1tJ": ["2026-08-30"],
-  "recEWqXWEgNiJ5cEx": ["2026-08-30"],
-  "recRBLGw5mRmfeuLa": ["2026-08-30"]
+  "rec1ptNMzlwcLu6wb": [
+    "2026-08-30"
+  ],
+  "recdn1sqBFG2qiHyS": [
+    "2026-08-30"
+  ],
+  "rec56ew2HtHnuhrwn": [
+    "2026-08-30"
+  ],
+  "recjUBVH0FMkRtseU": [
+    "2026-08-30"
+  ],
+  "recMyrQ9GMWNHF1tJ": [
+    "2026-08-30"
+  ],
+  "recEWqXWEgNiJ5cEx": [
+    "2026-08-30"
+  ],
+  "recRBLGw5mRmfeuLa": [
+    "2026-08-30"
+  ],
+  "rec0vNsVMEKcBw2yc": [
+    "2026-09-04"
+  ],
+  "rec1BdZplX4h4pZS6": [
+    "2026-09-04"
+  ],
+  "reczFmip00VeO1CK8": [
+    "2026-09-04"
+  ],
+  "recwbOZhd5dcC6yXQ": [
+    "2026-09-04"
+  ],
+  "recoEAmzJmASKpvJZ": [
+    "2026-09-04"
+  ],
+  "recoL71HnLNc3YI3T": [
+    "2026-09-04"
+  ],
+  "rec7aVN1dMviWmGVD": [
+    "2026-09-04"
+  ]
 }
