@@ -16,7 +16,19 @@
   header.mast .inner{max-width:720px;margin:0 auto;}
   header.mast h1{font-family:'Inter',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.01em;margin:0;color:var(--lime);}
   header.mast p{margin:6px 0 0;font-size:14px;opacity:.85;}
-  .howto{font-size:14px;color:#4a5568;margin:22px 0 10px;}
+
+  /* Eyes-only block — deliberately NOT white, NOT the post's styling */
+  .eyesonly{background:#fff3e0;border:2px solid #e8a33d;border-radius:12px;margin:22px 0;padding:18px 18px 6px;}
+  .eyesonly .tag{font-family:'Inter',sans-serif;font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#9a5b0a;margin:0 0 4px;}
+  .eyesonly .sub{font-size:13px;color:#7a5a2e;margin:0 0 14px;}
+  .eyesonly ul{padding-left:20px;margin:0 0 14px;}
+  .eyesonly li{font-size:14px;line-height:1.6;color:#4a3a1e;margin-bottom:9px;}
+  .eyesonly li b{color:#1c2333;}
+
+  .rule{border:0;border-top:2px solid #d6dded;margin:30px 0 22px;}
+
+  .posttag{font-family:'Inter',sans-serif;font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#1a7a3e;margin:0 0 6px;}
+  .howto{font-size:14px;color:#4a5568;margin:0 0 14px;}
   .postbox{background:#fff;border:1px solid #dde3ee;border-radius:12px;overflow:hidden;}
   .postbar{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--navy);padding:10px 16px;}
   .postbar span{font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--lime);}
@@ -27,18 +39,11 @@
   #post p{font-size:16px;line-height:1.62;margin:0 0 14px;}
   #post ul{list-style:none;padding:0;margin:0;}
   #post li{font-size:16px;line-height:1.58;margin:0 0 16px;padding-left:14px;border-left:3px solid #e6ecf7;}
-  #post li b{color:var(--navy);}
-  .caveat{font-size:14px;color:#5a6478;font-style:italic;margin:0 0 16px;}
-  .paren{color:#5a6478;font-size:14px;}
+  #post li strong{color:var(--navy);}
+  #post em{color:#5a6478;font-style:italic;}
   .calline{margin:26px 0 8px;font-size:16px;font-weight:600;}
   .calline a{color:var(--navy);}
   .cadence{font-size:15px;color:#4a5568;margin:0;}
-  hr.rule{border:0;border-top:2px solid #d6dded;margin:44px 0 0;}
-  .commentary{margin-top:28px;}
-  .commentary h3{font-family:'Inter',sans-serif;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#6b7488;margin:0 0 14px;}
-  .commentary li,.commentary p{font-size:14px;line-height:1.6;color:#4a5568;}
-  .commentary ul{padding-left:20px;margin:0 0 16px;}
-  .commentary li{margin-bottom:9px;}
   @media(max-width:720px){ #post h2{font-size:22px;} #post{padding:20px 16px 24px;} }
 </style>
 </head>
@@ -49,7 +54,26 @@
 </div></header>
 
 <div class="wrap">
-  <p class="howto">Copy everything inside the box and paste it into Beehiiv.</p>
+
+  <div class="eyesonly">
+    <p class="tag">🔒 For your eyes only — don't post this part</p>
+    <p class="sub">Behind the post. Row counts, what got filtered, what's thin, what's waiting on you.</p>
+    <ul>
+      <li><b>Rows pulled:</b> 52 in Openings &amp; Closings. 43 carry a Hook and are eligible; 9 do not and were skipped.</li>
+      <li><b>All 9 hookless rows are new</b> — they landed in Wednesday's ABL notice sweep as Rumored (Hachiya Ramen, Old Village Inn LLC, Agaves Folly LLC, B Gourmet II LLC, Gibby's Bottle Shop, 1303 Ashley River Road LLC, Love Charleston LLC, CIG Holdings LLC, Deannas Wine Bar). That's nine entries' worth of material waiting on a line being written. Worth an hour.</li>
+      <li><b>Held back for volume, not quality:</b> Brown Jordan (4,000 sq ft luxury outdoor showroom, Navy Yard), Ellie's Quality General (Riverland Terrace), The Bicycle Shoppe (now Closed, 40 years at 280 Meeting), Cafe Lucca, and the seven Gather MTP tenant rows that landed Sept. 2. Plenty in the tank for next Friday.</li>
+      <li><b>"Now open" is genuinely empty.</b> No row has moved to Now Open since last Friday. The most recent is Next Round Social on Aug. 17.</li>
+      <li><b>Rotation:</b> none of the seven featured rows appeared in the Aug. 30 drop. Log carries today's date.</li>
+      <li><b>Sourcing:</b> all four Rumored rows carry a Source URL — three from the SC public notices filings, Big John's from the Post and Courier. None skipped for missing sourcing.</li>
+      <li><b>Free-side eligibility:</b> Theatre 99, The Mason Jar and Two Blokes Brewing have Confirmed checked and could carry a newsletter teaser. The three ABL rumors and Big John's do not — those stay in the channel.</li>
+      <li><b>Flag:</b> Cafe Lucca still sits at Opening Soon with a Date of Sept. 1, now in the past. Either it opened and nobody stamped it, or the date slipped. Left as the table has it.</li>
+    </ul>
+  </div>
+
+  <hr class="rule">
+
+  <p class="posttag">✅ Paste this into Beehiiv</p>
+  <p class="howto">Hit Copy, then paste straight into the Community post editor — the bold, italics and link come across already styled. No cleanup needed.</p>
 
   <div class="postbox">
     <div class="postbar"><span>The post</span><button id="copy">Copy post</button></div>
@@ -63,26 +87,26 @@
 
       <h3>New this week — rumored</h3>
 
-      <p class="caveat">Nothing below is announced. A filing is evidence of intent, not a statement of it. Members only — don't repeat these as fact.</p>
+      <p><em>Nothing below is announced. A filing is evidence of intent, not a statement of it. Members only — don't repeat these as fact.</em></p>
 
       <ul>
-        <li><b>The Copper Table</b> — Downtown. Full liquor going into the Maritime Building's ground floor on East Bay, the restaurant space that's sat empty since IHOP left in 2020. <span class="paren">(Name comes off the filing entity, not a sign out front.)</span></li>
-        <li><b>The old Bohemian Bull</b> — Mount Pleasant. Bohemian Bull has been sold, and the restaurant says the new owners have different plans. The buyer's full-liquor filing landed ten days after the LLC was formed. <span class="paren">(Trade name unresolved.)</span></li>
-        <li><b>Chef Loong Dim Sum</b> — Mount Pleasant. West Ashley's dim sum house is taking the old White Duck Taco building on Johnnie Dodds for a second room.</li>
+        <li><strong>The Copper Table</strong> — Downtown. Full liquor going into the Maritime Building's ground floor on East Bay, the restaurant space that's sat empty since IHOP left in 2020. <em>(Name comes off the filing entity, not a sign out front.)</em></li>
+        <li><strong>The old Bohemian Bull</strong> — Mount Pleasant. Bohemian Bull has been sold, and the restaurant says the new owners have different plans. The buyer's full-liquor filing landed ten days after the LLC was formed. <em>(Trade name unresolved.)</em></li>
+        <li><strong>Chef Loong Dim Sum</strong> — Mount Pleasant. West Ashley's dim sum house is taking the old White Duck Taco building on Johnnie Dodds for a second room.</li>
       </ul>
 
       <h3>Closing</h3>
 
       <ul>
-        <li><b>Big John's Tavern</b> — Downtown. Cut from seven days a week to four, with three lawsuits pending and a $250,000 founding investor suing his own partners. <span class="paren">(Rumored. Nobody has said the word closed.)</span></li>
-        <li><b>Theatre 99</b> — Downtown. Final show Sept. 12 after 21 years, with no new home announced yet.</li>
-        <li><b>The Mason Jar by Fatboys</b> — West Ashley. Twelve years of Southern comfort on Ashley River Road, closing Sept. 27.</li>
+        <li><strong>Big John's Tavern</strong> — Downtown. Cut from seven days a week to four, with three lawsuits pending and a $250,000 founding investor suing his own partners. <em>(Rumored. Nobody has said the word closed.)</em></li>
+        <li><strong>Theatre 99</strong> — Downtown. Final show Sept. 12 after 21 years, with no new home announced yet.</li>
+        <li><strong>The Mason Jar by Fatboys</strong> — West Ashley. Twelve years of Southern comfort on Ashley River Road, closing Sept. 27.</li>
       </ul>
 
       <h3>Still coming</h3>
 
       <ul>
-        <li><b>Two Blokes Brewing</b> — Cannonborough-Elliotborough. A small-batch experimental system downtown while the core beers stay in Mount Pleasant.</li>
+        <li><strong>Two Blokes Brewing</strong> — Cannonborough-Elliotborough. A small-batch experimental system downtown while the core beers stay in Mount Pleasant.</li>
       </ul>
 
       <h3>Now open</h3>
@@ -96,32 +120,37 @@
     </div>
   </div>
 
-  <hr class="rule">
-
-  <div class="commentary">
-    <h3>Behind the post</h3>
-    <ul>
-      <li><b>Rows pulled:</b> 52 in Openings &amp; Closings. 43 carry a Hook and are eligible; 9 do not and were skipped.</li>
-      <li><b>All 9 hookless rows are new</b> — they landed in Wednesday's ABL notice sweep as Rumored (Hachiya Ramen, Old Village Inn LLC, Agaves Folly LLC, B Gourmet II LLC, Gibby's Bottle Shop, 1303 Ashley River Road LLC, Love Charleston LLC, CIG Holdings LLC, Deannas Wine Bar). That's nine entries' worth of material waiting on a line being written. Worth an hour.</li>
-      <li><b>Held back for volume, not quality:</b> Brown Jordan (4,000 sq ft luxury outdoor showroom, Navy Yard), Ellie's Quality General (Riverland Terrace), The Bicycle Shoppe (now Closed, 40 years at 280 Meeting), Cafe Lucca, and the seven Gather MTP tenant rows that landed Sept. 2. Plenty in the tank for next Friday.</li>
-      <li><b>"Now open" is genuinely empty.</b> No row has moved to Now Open since last Friday. The most recent is Next Round Social on Aug. 17.</li>
-      <li><b>Rotation:</b> none of the seven featured rows appeared in the Aug. 30 drop. Log updated with today's date.</li>
-      <li><b>Sourcing:</b> all four Rumored rows carry a Source URL — three from the SC public notices filings, Big John's from the Post and Courier. None skipped for missing sourcing.</li>
-      <li><b>Free-side eligibility:</b> Theatre 99, The Mason Jar and Two Blokes Brewing have Confirmed checked and could carry a newsletter teaser. The three ABL rumors and Big John's do not — those stay in the channel.</li>
-      <li><b>Flag:</b> Cafe Lucca still sits at Opening Soon with a Date of Sept. 1, now in the past. Either it opened and nobody stamped it, or the date slipped. Left as the table has it.</li>
-    </ul>
-  </div>
 </div>
 
 <script>
-document.getElementById('copy').addEventListener('click', function(){
-  var t = document.getElementById('post').innerText;
-  navigator.clipboard.writeText(t).then(function(){
-    var b = document.getElementById('copy');
-    b.textContent = 'Copied';
-    setTimeout(function(){ b.textContent = 'Copy post'; }, 2000);
-  });
-});
+function copyPost(){
+  var el = document.getElementById('post');
+  var html = el.innerHTML;
+  var text = el.innerText;
+  var btn = document.getElementById('copy');
+  function done(){ btn.textContent = 'Copied — paste into Beehiiv'; setTimeout(function(){ btn.textContent = 'Copy post'; }, 2200); }
+  if (navigator.clipboard && window.ClipboardItem) {
+    navigator.clipboard.write([
+      new ClipboardItem({
+        'text/html': new Blob([html], {type:'text/html'}),
+        'text/plain': new Blob([text], {type:'text/plain'})
+      })
+    ]).then(done).catch(function(){ fallbackCopy(el, done); });
+  } else {
+    fallbackCopy(el, done);
+  }
+}
+function fallbackCopy(el, done){
+  var range = document.createRange();
+  range.selectNodeContents(el);
+  var sel = window.getSelection();
+  sel.removeAllRanges();
+  sel.addRange(range);
+  document.execCommand('copy');
+  sel.removeAllRanges();
+  done();
+}
+document.getElementById('copy').addEventListener('click', copyPost);
 </script>
 </body>
 </html>
