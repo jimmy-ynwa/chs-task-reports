@@ -102,7 +102,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.8);padding:30px 0;font-size
     <span class="stamp">Bloom50 Collective</span>
     <h1>What's left, and how to do it</h1>
     <p>Two things to finish. The website, then the app. The website does not wait on the app.</p>
-    <p style="font-size:16px;color:rgba(255,255,255,.72);margin-top:6px">Updated 6 September &mdash; Kim's whole library is loaded into the app and checked: 73 exercises, 10 pieces of gear, 6 workouts, nothing broken. All 73 have a video answer. The invite emails can now send from her own domain. Stage 3 done, stage 2 done bar Kim watching.</p>
+    <p style="font-size:16px;color:rgba(255,255,255,.72);margin-top:6px">Updated 6 September. Only what's left is on this page &mdash; finished work is taken off rather than crossed out. Stage 1 is gone because it's done: the app is called Bloom50, her library is loaded and checked, all 73 videos are found, and the invite emails can send from her own domain.</p>
   </div>
 </header>
 
@@ -189,7 +189,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.8);padding:30px 0;font-size
   <div class="wrap">
     <span class="part">Part two</span>
     <h2>Building the app</h2>
-    <p class="lede">Seven stages. The first one is all account setup and almost all of it is yours. Nothing gets built until it's done.</p>
+    <p class="lede">Seven stages, starting at two. Everything below is still open.</p>
 
     <div class="note">
       <h4>What the app is, in one line</h4>
@@ -197,104 +197,17 @@ footer{background:var(--ink);color:rgba(255,255,255,.8);padding:30px 0;font-size
       <p>If a feature isn't one of those three things, it doesn't go in.</p>
     </div>
 
-    <!-- STAGE 1 -->
-    <div class="phase">
-      <span class="ph-n">Stage 1 — finished</span>
-      <h3>Accounts and one decision</h3>
-      <p>All six done on 6 September. The app is called Bloom50, and nothing here is outstanding.</p>
-
-      <label class="task"><input type="checkbox" checked><span class="b">
-        <span class="t">Name it</span>
-        <p><strong>It's Bloom50.</strong> Settled 6 September. Kim has spent ten years building that name and a second one would have split it for nothing.</p>
-        <p>That's what goes in the invite email and under the icon on her clients' phones.</p>
-        <span class="who j">You</span> <span class="who k">Kim</span>
-      </span></label>
-
-      <label class="task"><input type="checkbox" checked><span class="b">
-        <span class="t">Make the place the app's information will live</span>
-        <ol class="steps">
-          <li>In Cloudflare, open <span class="path">Storage &amp; Databases</span>, then <span class="path">D1</span>.</li>
-          <li>Click <span class="path">Create database</span>.</li>
-          <li>Name it <strong>bloom50</strong>. Leave everything else alone.</li>
-          <li>Create it. That's all — I fill it.</li>
-        </ol>
-        <p>Done. Named <strong>bloom50</strong>, and it now holds her entire library.</p>
-        <span class="who j">You</span>
-      </span></label>
-
-      <label class="task"><input type="checkbox" checked><span class="b">
-        <span class="t">Make the app its own address</span>
-        <p>The app is a separate thing from the website. Keeping them apart means I can never break the website while working on the app.</p>
-        <ol class="steps">
-          <li>Cloudflare, <span class="path">Workers &amp; Pages</span>, <span class="path">Create</span>.</li>
-          <li>Choose <span class="path">Pages</span>, then <span class="path">Upload assets</span>.</li>
-          <li>Name it <strong>bloom50-app</strong>. Create it.</li>
-          <li>Open its <span class="path">Settings</span>, then <span class="path">Custom domains</span>. Add <strong>app.bloom50collective.com</strong>.</li>
-          <li>Still in Settings, open <span class="path">Bindings</span>. Click add, choose <strong>D1 database</strong>.</li>
-          <li>Type <strong>DB</strong> as the name, and pick the <strong>bloom50</strong> database you just made.</li>
-        </ol>
-        <p>Done. <strong>app.bloom50collective.com</strong> is live and wired to its own database.</p>
-        <span class="who j">You</span>
-      </span></label>
-
-      <label class="task"><input type="checkbox" checked><span class="b">
-        <span class="t">A key so I can do the building</span>
-        <ol class="steps">
-          <li>Cloudflare, click your icon top right, then <span class="path">API Tokens</span>.</li>
-          <li><span class="path">Create Token</span>, then <span class="path">Custom token</span>.</li>
-          <li>Give it three permissions, all under Account: <strong>Cloudflare Pages — Edit</strong>, <strong>D1 — Edit</strong>, <strong>Workers Scripts — Edit</strong>.</li>
-          <li>Create it. Copy the key. It's only shown once.</li>
-        </ol>
-<p>Done &mdash; and it turned out I can't reach Cloudflare directly from where I work. So instead I write the commands and you run them on your Mac. That's how the library got loaded, and it works fine.</p>
-        <span class="send">Key deleted 6 September, straight after the load. Next one gets made when it's needed and stays in Terminal.</span>
-        <br><span class="who j">You</span>
-      </span></label>
-
-      <label class="task"><input type="checkbox" checked><span class="b">
-        <span class="t">A way to send the invite emails</span>
-        <p>The invite has to come from Kim's own domain. If it comes from anywhere else it lands in spam, and these women will not go looking in a spam folder.</p>
-        <ol class="steps">
-          <li>Go to resend.com and sign up. The free level is enough.</li>
-          <li>Open <span class="path">Domains</span>, click <span class="path">Add Domain</span>, type bloom50collective.com.</li>
-          <li>It shows you four records to add. Leave that tab open.</li>
-          <li>In Cloudflare, open the domain, then <span class="path">DNS</span>, then <span class="path">Records</span>.</li>
-          <li>Add each of the four exactly as shown. There is no orange cloud on these &mdash; Cloudflare only offers that on website records.</li>
-          <li>Back in Resend, click verify. Give it a few minutes.</li>
-          <li>Open <span class="path">API Keys</span>, create one, copy it.</li>
-        </ol>
-<p>Done. All four records added and verified on 6 September. The invite will now arrive from Kim's own domain rather than somewhere strange &mdash; which is the difference between her clients seeing it and it dying in spam.</p>
-        <span class="send">Still to grab: a Resend API key, when we build the sign-in. Keep it on your Mac.</span>
-        <br><span class="who j">You</span>
-      </span></label>
-
-      <label class="task"><input type="checkbox" checked><span class="b">
-        <span class="t">One decision from you &mdash; made</span>
-        <p><strong>You chose the better way on 6 September.</strong> The two options were:</p>
-        <p><strong>The better way:</strong> the workouts are already in the page when it arrives. Google can read them, so the free workout library brings in strangers. The cost is one extra folder that must be in the upload every single time. If it's ever missing, that page breaks quietly.</p>
-        <p><strong>The safer way:</strong> the page arrives empty and fills itself in a moment later. Nothing extra to remember. But Google often doesn't see the workouts, so they bring in nobody.</p>
-        <p>So the workouts will already be in the page when it arrives, Google can read them, and the free library brings in strangers. I build the check that shouts if the folder is missing. Reversible later if the discipline doesn't stick.</p>
-        <span class="who j">You</span>
-      </span></label>
-    </div>
-
     <!-- STAGE 2 -->
     <div class="phase now">
       <span class="ph-n">Stage 2 — found. Now it needs Kim.</span>
       <h3>Finding a video for all 73 exercises</h3>
-      <p>The job I thought would sink this took a day. All 73 have an answer. The only thing left is Kim watching them.</p>
+      <p>All 73 have an answer: 55 spot-on, 10 closest match, 5 combined moves, 3 waiting on Kim. The only thing left is her watching them.</p>
 
-      <label class="task"><input type="checkbox" checked><span class="b">
-        <span class="t">Find the clips</span>
-        <p><strong>Done 6 September.</strong> Every clip was checked the same day: it exists, it plays, and it is allowed to run inside the app.</p>
-        <p><strong>55</strong> are spot-on. <strong>10</strong> are the closest ordinary movement, because Kim's name for it isn't what anyone else calls it — Sumo Tap, Reach Overs, Rainbows, Up Jacks and the rest. Those are marked so she knows.</p>
-        <p><strong>5</strong> are two moves joined together and play their two halves instead. <strong>3</strong> are deliberately empty, waiting on Kim.</p>
-        <span class="who c">Me</span>
-      </span></label>
 
       <label class="task"><input type="checkbox"><span class="b">
-        <span class="t">Make it survive a video being deleted</span>
-        <p><strong>Half done.</strong> What I searched to find each clip is now saved alongside it. If someone takes their video down, the app runs that search instead of showing a broken box.</p>
-        <p>Still to build: the weekly check of all 73 that tells Kim if any have died. That arrives with her video screen in stage 5.</p>
+        <span class="t">The weekly check for dead videos</span>
+        <p>What I searched to find each clip is already saved alongside it, so a deleted video turns into a live search rather than a broken box. That part is in.</p>
+        <p>Still to build: the weekly sweep of all 73 that tells Kim if any have died. Borrowed videos disappear — that's the price of not filming them. It arrives with her video screen in stage 5.</p>
         <span class="who c">Me</span>
       </span></label>
 
@@ -310,17 +223,10 @@ footer{background:var(--ink);color:rgba(255,255,255,.8);padding:30px 0;font-size
 
     <!-- STAGE 3 -->
     <div class="phase">
-      <span class="ph-n">Stage 3 — finished</span>
+      <span class="ph-n">Stage 3 — three things from Kim</span>
       <h3>Putting her exercises in</h3>
-      <p>Loaded and verified on 6 September. Her library is now somewhere a computer can read it, for the first time.</p>
+      <p>The library is loaded and verified. What's left are answers only Kim has.</p>
 
-      <label class="task"><input type="checkbox" checked><span class="b">
-        <span class="t">Load the 73 exercises, 10 pieces of gear and 6 workouts</span>
-        <p><strong>In and checked.</strong> 73 exercises, 10 pieces of gear, 6 workouts, 24 blocks, 92 exercise slots and 103 links between exercises and equipment. Every integrity check came back zero &mdash; nothing missing, nothing pointing at anything that isn't there.</p>
-        <p>Her shorthand came along. She writes "OH Tricep" some weeks and "OH Tricep Press" others. The app knows they're the same move and still shows whichever she wrote.</p>
-        <p>Proof it reads back properly: Balance &amp; Strength comes out in her order &mdash; warm up, standing, mat, fence &mdash; with Figure 8 third in the standing block, exactly where her whiteboard has it.</p>
-        <span class="who c">Me</span>
-      </span></label>
 
       <label class="task"><input type="checkbox"><span class="b">
         <span class="t">Three exercises Kim has to explain</span>
