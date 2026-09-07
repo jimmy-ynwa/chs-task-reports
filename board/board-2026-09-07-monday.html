@@ -8,56 +8,79 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{ --navy:#183872; --lime:#CCED60; }
-  *{ box-sizing:border-box; }
-  body{ margin:0; background:#F4F6FA; color:#183872; font-family:'Open Sans',system-ui,sans-serif; line-height:1.6; }
-  .wrap{ max-width:760px; margin:0 auto; padding:0 16px 64px; }
-  header.mast{ background:var(--navy); color:#fff; padding:28px 16px; }
-  header.mast .inner{ max-width:760px; margin:0 auto; }
-  header.mast h1{ font-family:'Inter',sans-serif; font-weight:800; font-size:26px; margin:0 0 6px; letter-spacing:-.4px; }
-  header.mast .date{ color:var(--lime); font-weight:700; font-size:14px; text-transform:uppercase; letter-spacing:1.2px; }
-  .instruct{ font-size:14px; color:#4a5878; margin:22px 0 12px; }
-  .postwrap{ background:#fff; border:1px solid #e0e5f0; border-radius:12px; overflow:hidden; }
-  .postbar{ display:flex; align-items:center; justify-content:space-between; gap:12px; background:var(--navy); padding:10px 16px; }
-  .postbar span{ color:var(--lime); font-family:'Inter',sans-serif; font-weight:700; font-size:12px; letter-spacing:1.2px; text-transform:uppercase; }
-  button#copy{ background:var(--lime); color:var(--navy); border:0; border-radius:6px; padding:8px 16px; font-family:'Inter',sans-serif; font-weight:700; font-size:13px; cursor:pointer; }
-  button#copy:active{ transform:translateY(1px); }
-  #post{ padding:24px 20px 28px; }
-  #post h2{ font-family:'Inter',sans-serif; font-size:20px; font-weight:800; margin:30px 0 10px; letter-spacing:-.3px; }
-  #post h2:first-child{ margin-top:0; }
-  #post h3{ font-family:'Inter',sans-serif; font-size:15px; font-weight:700; margin:24px 0 8px; text-transform:uppercase; letter-spacing:1px; border-bottom:2px solid var(--lime); padding-bottom:5px; }
-  #post p{ margin:0 0 14px; font-size:16px; }
-  #post ul{ margin:0 0 16px; padding-left:20px; }
-  #post li{ margin-bottom:7px; font-size:15px; }
-  #post strong{ font-weight:700; }
-  hr.rule{ border:0; border-top:3px solid var(--navy); margin:48px 0 26px; }
-  .commentary{ background:#fff; border:1px dashed #9aa7c4; border-radius:12px; padding:22px 20px; }
-  .commentary h3{ font-family:'Inter',sans-serif; font-size:16px; font-weight:800; margin:0 0 4px; text-transform:uppercase; letter-spacing:1px; }
-  .commentary .sub{ font-size:13px; color:#6a7695; margin:0 0 16px; }
-  .commentary h4{ font-family:'Inter',sans-serif; font-size:14px; font-weight:700; margin:18px 0 6px; }
-  .commentary ul{ margin:0 0 6px; padding-left:20px; }
-  .commentary li{ font-size:14px; margin-bottom:5px; color:#33415f; }
-  @media (max-width:720px){ #post{ padding:20px 16px 24px; } header.mast h1{ font-size:22px; } }
+  :root{--navy:#183872;--lime:#CCED60;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:#f4f6fa;color:#1c2333;font-family:'Open Sans',system-ui,sans-serif;}
+  .wrap{max-width:720px;margin:0 auto;padding:0 16px 64px;}
+  header.mast{background:var(--navy);padding:26px 16px;}
+  header.mast .inner{max-width:720px;margin:0 auto;}
+  header.mast h1{font-family:'Inter',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.01em;margin:0;color:var(--lime);}
+  header.mast p{margin:6px 0 0;font-size:14px;opacity:.85;color:#fff;}
+
+  /* Eyes-only block — deliberately NOT white, NOT the post's styling */
+  .eyesonly{background:#fff3e0;border:2px solid #e8a33d;border-radius:12px;margin:22px 0;padding:18px 18px 6px;}
+  .eyesonly .tag{font-family:'Inter',sans-serif;font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#9a5b0a;margin:0 0 4px;}
+  .eyesonly .sub{font-size:13px;color:#7a5a2e;margin:0 0 14px;}
+  .eyesonly ul{padding-left:20px;margin:0 0 14px;}
+  .eyesonly li{font-size:14px;line-height:1.6;color:#4a3a1e;margin-bottom:9px;}
+  .eyesonly li b{color:#1c2333;}
+
+  .rule{border:0;border-top:2px solid #d6dded;margin:30px 0 22px;}
+
+  .posttag{font-family:'Inter',sans-serif;font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#1a7a3e;margin:0 0 6px;}
+  .howto{font-size:14px;color:#4a5568;margin:0 0 14px;}
+  .postbox{background:#fff;border:1px solid #dde3ee;border-radius:12px;overflow:hidden;}
+  .postbar{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--navy);padding:10px 16px;}
+  .postbar span{font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--lime);}
+  #copy{background:var(--lime);color:var(--navy);border:0;border-radius:6px;padding:8px 16px;font-family:'Inter',sans-serif;font-weight:700;font-size:13px;cursor:pointer;}
+  #copy:active{transform:translateY(1px);}
+  #post{padding:24px 20px 28px;}
+  #post h2{font-family:'Inter',sans-serif;font-size:24px;font-weight:800;letter-spacing:-.02em;margin:0 0 14px;color:var(--navy);}
+  #post h3{font-family:'Inter',sans-serif;font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);margin:28px 0 10px;border-bottom:2px solid var(--lime);padding-bottom:5px;}
+  #post p{font-size:16px;line-height:1.62;margin:0 0 14px;}
+  #post ul{padding-left:20px;margin:0 0 16px;}
+  #post li{font-size:16px;line-height:1.55;margin:0 0 8px;}
+  #post strong{color:var(--navy);}
+  #post em{color:#5a6478;font-style:italic;}
+  .calline{margin:26px 0 8px;font-size:16px;font-weight:600;}
+  .calline a{color:var(--navy);}
+  .cadence{font-size:15px;color:#4a5568;margin:0;}
+  @media(max-width:720px){ #post h2{font-size:22px;} #post{padding:20px 16px 24px;} }
 </style>
 </head>
 <body>
 
-<header class="mast">
-  <div class="inner">
-    <h1>The Board · Monday events</h1>
-    <div class="date">Monday, September 7, 2026</div>
-  </div>
-</header>
+<header class="mast"><div class="inner">
+  <h1>The Board · Monday events</h1>
+  <p>Monday, September 7, 2026</p>
+</div></header>
 
 <div class="wrap">
 
-  <p class="instruct">Copy everything inside the box below and paste it straight into Beehiiv. Nothing else on this page belongs in the post.</p>
+  <div class="eyesonly">
+    <p class="tag">🔒 For your eyes only — don't post this part</p>
+    <p class="sub">Behind the post. Row counts, what got filtered, what's thin, what's waiting on you.</p>
+    <ul>
+      <li><b>Rows pulled:</b> 102 Events rows scoring 4 or 5, start times Sept. 7–15, Status not Skip / Duplicate / Past. The post covers Mon. 9/7 through Sun. 9/13 — the handful of 9/14–9/15 rows are held for next Monday. Plus 14 five-star rows across Sept. 14 – Oct. 1 for "Rest of the month," and 223 Live Music rows between Oct. 7 and Oct. 31 cut down to 12 for "On sale now."</li>
+      <li><b>Live Music was excluded from the day-by-day entirely.</b> That's Wednesday's post, and the Live Music table is authoritative for shows.</li>
+      <li><b>Duplicates collapsed:</b> the Labor of Love beach sweep came in three times under three spellings of the same Folly access point. Thursday's RiverDogs game came in three times — "vs TBD - Playoff Game 1," "vs. Hickory Crawdads," and "CAR Division Series" are one game. Remembering 9/11, Fossil Friday and the Sweet Jessamine flower truck were doubled.</li>
+      <li><b>Judgment call:</b> Saturday 8 PM at Sweatman's Garden carries two rows — "Garden of Eden Drag Revue" and "Drag Queen Bingo With Ava Clear," same venue, same time. Featured as one. If those are genuinely two separate things, the second needs its own row with a distinct time.</li>
+      <li><b>The on-sale block was the worst of it.</b> The Aug. 19, Aug. 24, Aug. 31 and Sept. 2 scrapes each re-filed the same shows under slightly different billings — Sunn O))), Willow Avalon, Stop Light Observations, the Red Clay Strays and CSO Masterworks all appeared two or three times. Collapsed on date + venue + normalized title.</li>
+      <li><b>Dropped as out of area:</b> PFLAG Pawleys Island (Georgetown), EMBODI Youth Symposium at Ashley Ridge High School (Summerville), Shakespeare at Sunset (Kiawah), and Disco Inferno at the Koger Center — that one's Columbia, but the same show plays Charleston Music Hall on 9/18 and is listed under Rest of the month.</li>
+      <li><b>Flag — start times that can't be right:</b> Children's Museum rows carry 6:00 and 7:00 AM starts (Early Connections, CML SuperStars, Building Buddies, Storytime Adventures). The museum does not open at 6 AM. Rendered as grouped drop-in programming without times rather than print something wrong. Almost certainly a timezone artifact in the ingest — worth a look at that feed.</li>
+      <li><b>Flag — bad ZIP:</b> "Charleston Pride - Red Party" lists its venue as "Tattoo Moose Park Circle · 4845 Chateau Ave · North Charleston, SC · 29407." That ZIP belongs to West Ashley, not Park Circle. The street address is the reliable part.</li>
+      <li><b>Nov. 1–6 is bare</b> in Live Music. That's the scrape horizon not having reached it yet, not a data problem — so the on-sale block effectively runs Oct. 7–31.</li>
+      <li><b>Nothing empty.</b> Every section had material and no day in the window came back blank.</li>
+    </ul>
+  </div>
 
-  <div class="postwrap">
-    <div class="postbar">
-      <span>The post</span>
-      <button id="copy">Copy post</button>
-    </div>
+  <hr class="rule">
+
+  <p class="posttag">✅ Paste this into Beehiiv</p>
+  <p class="howto">Hit Copy, then paste straight into the Community post editor — the bold, italics and link come across already styled. No cleanup needed.</p>
+
+  <div class="postbox">
+    <div class="postbar"><span>The post</span><button id="copy">Copy post</button></div>
 
     <div id="post">
 
@@ -67,7 +90,7 @@
 
       <p><strong>The RiverDogs are in the playoffs.</strong> Carolina League Division Series against Hickory, home at The Joe Thursday and Friday, 7:05 both nights. Win and it keeps going. Lose and the season is over and you spent it somewhere else. That's the whole pitch.</p>
 
-      <p><strong>Then Saturday tries to be four days at once.</strong> Two Oktoberfests within a few miles of each other — Park Circle Oktoberfest at Holy City and BLŌKTOBERFEST at Two Blokes — plus Citadel–Charleston Southern at Johnson Hagood, Drifter Fest at The Refinery, and an R&B cooler festival on the Ashley. Pick a lane early, because you are not doing all of it.</p>
+      <p><strong>Then Saturday tries to be four days at once.</strong> Two Oktoberfests within a few miles of each other — Park Circle Oktoberfest at Holy City and BLŌKTOBERFEST at Two Blokes — plus Citadel–Charleston Southern at Johnson Hagood, Drifter Fest at The Refinery, and an R&amp;B cooler festival on the Ashley. Pick a lane early, because you are not doing all of it.</p>
 
       <p>Friday is the 25th anniversary of 9/11. Patriots Point holds its ceremony at 10 AM, and the Gaillard Center runs a volunteer meal pack that morning.</p>
 
@@ -188,94 +211,57 @@
       <p>These are the ones you'll be annoyed about the week they sell out.</p>
       <ul>
         <li><strong>Wed 10/7</strong> — Willow Avalon, Music Farm</li>
-        <li><strong>Fri 10/9</strong> — <strong>MercyMe with Jeremy Camp</strong>, North Charleston Coliseum</li>
-        <li><strong>Sun 10/11</strong> — <strong>Thundercat</strong> with Tiacorine, Charleston Music Hall</li>
+        <li><strong>Fri 10/9 — MercyMe with Jeremy Camp</strong>, North Charleston Coliseum</li>
+        <li><strong>Sun 10/11 — Thundercat</strong> with Tiacorine, Charleston Music Hall</li>
         <li><strong>Wed 10/14</strong> — Meredith Willson's <em>The Music Man</em>, Gaillard Center</li>
         <li><strong>Thu 10/15</strong> — Black Violin, Gaillard Center</li>
         <li><strong>Fri 10/16</strong> — Trampled by Turtles, The Refinery</li>
         <li><strong>Fri 10/16</strong> — The Marshall Tucker Band, Charleston Music Hall</li>
-        <li><strong>Sat 10/17</strong> — <strong>The Red Clay Strays</strong> with The Revivalists and Haley Reinhart, Credit One Stadium</li>
+        <li><strong>Sat 10/17 — The Red Clay Strays</strong> with The Revivalists and Haley Reinhart, Credit One Stadium</li>
         <li><strong>Tue 10/20</strong> — Chucho Valdés 85th Birthday Celebration, Gaillard Center</li>
         <li><strong>Fri 10/23</strong> — Johnny Blue Skies &amp; the Dark Clouds, Credit One Stadium</li>
         <li><strong>Sun 10/25</strong> — Ghostbusters in Concert, Gaillard Center</li>
         <li><strong>Wed 10/28</strong> — CeCe Winans: Come Worship!, North Charleston Coliseum</li>
       </ul>
 
-      <p>The full 60-day calendar, members only → <a href="https://calendar.chshappenings.com">calendar.chshappenings.com</a></p>
+      <p class="calline">The full 60-day calendar, members only → <a href="https://calendar.chshappenings.com">calendar.chshappenings.com</a></p>
 
-      <p>Mondays the calendar. Wednesdays the music. Fridays what's opening and closing.</p>
+      <p class="cadence">Mondays the calendar. Wednesdays the music. Fridays what's opening and closing.</p>
 
     </div>
-  </div>
-
-  <hr class="rule">
-
-  <div class="commentary">
-    <h3>Behind the post</h3>
-    <p class="sub">Not part of the post. Do not paste this section.</p>
-
-    <h4>What was pulled</h4>
-    <ul>
-      <li>102 Events rows scoring 4 or 5, start times Sept 7 through Sept 15, Status not Skip / Duplicate / Past. Post covers Mon 9/7 through Sun 9/13; the handful of 9/14–9/15 rows were held for next Monday's post.</li>
-      <li>14 Events rows scoring 5 in the Sept 14 – Oct 1 window for "Rest of the month."</li>
-      <li>223 Live Music rows at Status = Scheduled between Oct 7 and Oct 31, cut to 12 for "On sale now." Nothing is on the books yet for Nov 1–6 — the scrape horizon just hasn't reached it.</li>
-      <li>Live Music was excluded from the day-by-day entirely. That's Wednesday's post.</li>
-    </ul>
-
-    <h4>Duplicates collapsed</h4>
-    <ul>
-      <li>Labor of Love beach sweep, Monday — three rows, three different spellings of the same Folly Beach access point.</li>
-      <li>Thursday RiverDogs — three rows for one game: "vs TBD - Playoff Game 1", "vs. Hickory Crawdads", and "CAR Division Series". Rendered as one playoff opener.</li>
-      <li>Remembering 9/11 at Patriots Point — two rows. Fossil Friday — two rows. Sweet Jessamine flower truck — two rows.</li>
-      <li>Saturday 8 PM at Sweatman's Garden carries two rows, "Garden of Eden Drag Revue" and "Drag Queen Bingo With Ava Clear." Same venue, same time. Featured as one. If they're genuinely two separate things, the second needs its own row with a distinct time.</li>
-      <li>The on-sale block had heavy duplication too — the Aug 19, Aug 24, Aug 31 and Sept 2 scrapes each re-filed the same shows under slightly different billings (Sunn O))), Willow Avalon, Stop Light Observations, the Red Clay Strays and CSO Masterworks all appeared two or three times). Collapsed on date + venue + normalized title.</li>
-    </ul>
-
-    <h4>Dropped as out of area</h4>
-    <ul>
-      <li>PFLAG Pawleys Island community check-in, Georgetown — Monday.</li>
-      <li>EMBODI Youth Symposium, Ashley Ridge High School, Summerville — Saturday.</li>
-      <li>Disco Inferno at the Koger Center — that's Columbia. The same show plays Charleston Music Hall on 9/18 and is listed under Rest of the month.</li>
-      <li>Shakespeare at Sunset, Kiawah Island Town Hall, 9/17.</li>
-    </ul>
-
-    <h4>Data that looks wrong</h4>
-    <ul>
-      <li>Children's Museum of the Lowcountry rows carry start times of 6:00 and 7:00 AM — Early Connections on Wednesday and Friday, CML SuperStars on Sunday, Building Buddies and Storytime Adventures most mornings. The museum does not open at 6 AM. Rendered as grouped drop-in programming without times rather than printing a time that's almost certainly a timezone artifact in the ingest. Worth a look at the source feed.</li>
-      <li>"Charleston Pride - Red Party" lists its venue as "Tattoo Moose Park Circle · 4845 Chateau Ave · North Charleston, SC · 29407" — that ZIP belongs to West Ashley, not Park Circle. Address in the row is the reliable part.</li>
-    </ul>
-
-    <h4>Nothing empty</h4>
-    <ul>
-      <li>Every section had material. No day in the window came back blank.</li>
-    </ul>
   </div>
 
 </div>
 
 <script>
-(function(){
+function copyPost(){
+  var el = document.getElementById('post');
+  var html = el.innerHTML;
+  var text = el.innerText;
   var btn = document.getElementById('copy');
-  btn.addEventListener('click', function(){
-    var text = document.getElementById('post').innerText;
-    var done = function(){
-      var old = btn.textContent;
-      btn.textContent = 'Copied';
-      setTimeout(function(){ btn.textContent = old; }, 2000);
-    };
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(done, function(){ fallback(text, done); });
-    } else { fallback(text, done); }
-  });
-  function fallback(text, done){
-    var ta = document.createElement('textarea');
-    ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
-    document.body.appendChild(ta); ta.select();
-    try { document.execCommand('copy'); done(); } catch(e){}
-    document.body.removeChild(ta);
+  function done(){ btn.textContent = 'Copied — paste into Beehiiv'; setTimeout(function(){ btn.textContent = 'Copy post'; }, 2200); }
+  if (navigator.clipboard && window.ClipboardItem) {
+    navigator.clipboard.write([
+      new ClipboardItem({
+        'text/html': new Blob([html], {type:'text/html'}),
+        'text/plain': new Blob([text], {type:'text/plain'})
+      })
+    ]).then(done).catch(function(){ fallbackCopy(el, done); });
+  } else {
+    fallbackCopy(el, done);
   }
-})();
+}
+function fallbackCopy(el, done){
+  var range = document.createRange();
+  range.selectNodeContents(el);
+  var sel = window.getSelection();
+  sel.removeAllRanges();
+  sel.addRange(range);
+  document.execCommand('copy');
+  sel.removeAllRanges();
+  done();
+}
+document.getElementById('copy').addEventListener('click', copyPost);
 </script>
-
 </body>
 </html>
