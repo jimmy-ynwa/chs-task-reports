@@ -266,18 +266,33 @@ function plainFrom(root){
   return out.join('\n').replace(/\n{3,}/g, '\n\n').trim();
 }
 
+/* Beehiiv's editor parses pasted HTML against its own schema: it keeps inline
+   marks (strong / em / a) and throws away everything else — inline styles,
+   heading levels, list structure. Proven 2026-09-07: bold, italics and the
+   link arrived intact while every margin, every <h3> and every bullet did not.
+   So do not hand it structure to preserve. Flatten to plain paragraphs,
+   write the bullets as literal characters, and make the blank lines real
+   empty paragraphs, which is the one spacing primitive that survives. */
+
 function htmlFrom(root){
-  var c = root.cloneNode(true);
-  var set = function(sel, css){
-    Array.prototype.forEach.call(c.querySelectorAll(sel), function(n){ n.setAttribute('style', css); });
-  };
-  set('p',  'margin:0 0 16px;line-height:1.6;');
-  set('h2', 'margin:0 0 16px;font-size:24px;font-weight:700;');
-  set('h3', 'margin:28px 0 10px;font-size:18px;font-weight:700;');
-  set('ul', 'margin:0 0 20px;padding-left:22px;');
-  set('ol', 'margin:0 0 20px;padding-left:22px;');
-  set('li', 'margin:0 0 10px;line-height:1.5;');
-  return c.innerHTML;
+  var parts = [];
+  var SPACER = '<p>&nbsp;</p>';   // &nbsp; so an "empty node" filter can't drop it
+  Array.prototype.forEach.call(root.children, function(node){
+    var tag = node.tagName.toLowerCase();
+    if (tag === 'ul' || tag === 'ol') {
+      Array.prototype.forEach.call(node.children, function(li){
+        parts.push('<p>• ' + li.innerHTML.trim() + '</p>');
+      });
+      parts.push(SPACER);
+    } else if (tag === 'h2' || tag === 'h3') {
+      parts.push('<p><strong>' + node.innerHTML.trim() + '</strong></p>');
+      parts.push(SPACER);
+    } else {
+      parts.push('<p>' + node.innerHTML.trim() + '</p>');
+      parts.push(SPACER);
+    }
+  });
+  return parts.join('');
 }
 
 function copyPair(html, text, btn, label){
