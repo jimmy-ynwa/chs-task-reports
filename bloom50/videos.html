@@ -285,7 +285,7 @@ a{color:inherit}
 </div>
 
 
-<h2>The four I couldn't replace <span class="count">Wednesday</span></h2>
+<h2 data-keep>The four I couldn't replace <span class="count">Wednesday</span></h2>
 <div class="how" style="border-left:4px solid var(--warn)">
   <p><strong>Figure 8 &middot; Goal Post Arms Pulse &middot; Reach Overs &middot; Single Leg Lower</strong></p>
   <p>These four still have their old clips, and I've left them off this page on purpose &mdash; there's no point asking you to review something I already know is wrong.</p>
@@ -365,6 +365,7 @@ a{color:inherit}
       c.classList.toggle('hide', !show);
     });
     [].forEach.call(document.querySelectorAll('h2'), function(hh){
+      if(hh.hasAttribute('data-keep')) return;
       var g=hh.nextElementSibling; if(!g) return;
       var any=g.querySelectorAll('.card:not(.hide)').length>0;
       hh.style.display=any?'':'none'; g.style.display=any?'':'none';
