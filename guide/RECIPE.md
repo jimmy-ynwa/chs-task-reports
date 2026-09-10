@@ -46,8 +46,21 @@ For **every** panel in `config.json`, all queries use:
 
 **Min / max.** `_orderby: "+FIELD"` or `"-FIELD"`, `_limit: 1`, `_page: 1`.
 
-**Total volume.** Paginate `_select: ListingId,ClosePrice` at `_limit: 25` and sum. Only do
-this where the panel needs it, plus the peninsula superlative pool (see Step 3).
+**Total volume.** Paginate `_select: ListingId,ClosePrice,ListPrice` at `_limit: 25` and sum.
+Only do this where the panel needs it, plus the peninsula superlative pool (see Step 3).
+
+### The pagination trap — as dangerous as the DOM one
+
+**Always order by `+ClosePrice,+ListingId`, never `+ClosePrice` alone.** ClosePrice is not a
+unique key, so ordering by it alone is not a total order: at every price tie the server may
+repeat a record on one page and silently drop a different one. Found 2026-09-10 on South
+Mount Pleasant (page 13 repeated two listings and omitted 25009421 and 26001291) and again on
+North Mount Pleasant (page 8/9 boundary, dropped 26014091).
+
+The reason it survived earlier runs: a duplicate and a drop cancel out, so **row count == N
+proves nothing.** Verify on DISTINCT ListingId instead. Panels of one or two pages are safe;
+anything past ~8 pages is where it bites. Medians, min/max and counts are unaffected — they
+read a single record or a total, so ties are harmless there. Only the sums corrupt.
 
 **List-to-sale.** `sum(ClosePrice) / sum(ListPrice)` over the same record set. Do NOT use
 `MarketStatisticsRatio` — it returns an unweighted monthly series over a different window.
