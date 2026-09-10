@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>TRIO Campaign Results</title>
+<meta name="description" content="Sponsorship results for TRIO Solutions' two CHS Happenings placements, August 20 and September 3, 2026.">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+  :root{
+    --navy:#183872;
+    --navy-deep:#101F3D;
+    --lime:#CCED60;
+    --paper:#FAFBFD;
+    --surface:#FFFFFF;
+    --ink:#141F35;
+    --muted:#5A6B87;
+    --hair:#DFE6F1;
+    --rail:#EEF3FA;
+    --up:#1C6B47;
+    --note:#8A5A12;
+    --display:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    --body:"Open Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --navy:#7FA3E0;
+      --navy-deep:#0A1120;
+      --lime:#CCED60;
+      --paper:#0C1526;
+      --surface:#131E33;
+      --ink:#E6EDF9;
+      --muted:#9AAAC6;
+      --hair:#25334C;
+      --rail:#1A2740;
+      --up:#6FCFA0;
+      --note:#E8C179;
+    }
+  }
+  :root[data-theme="dark"]{
+    --navy:#7FA3E0;
+    --navy-deep:#0A1120;
+    --lime:#CCED60;
+    --paper:#0C1526;
+    --surface:#131E33;
+    --ink:#E6EDF9;
+    --muted:#9AAAC6;
+    --hair:#25334C;
+    --rail:#1A2740;
+    --up:#6FCFA0;
+    --note:#E8C179;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--body);font-size:16px;line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+  }
+  .masthead{background:var(--navy-deep);color:#F2F6FC;padding-block:44px 40px;padding-left:20px;padding-right:20px}
+  .inner{max-width:760px;margin:0 auto}
+  .kicker{
+    font-family:var(--display);font-size:11px;font-weight:800;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--lime);margin:0 0 14px;
+  }
+  h1{
+    font-family:var(--display);font-weight:800;font-size:clamp(28px,5.2vw,38px);
+    line-height:1.1;letter-spacing:-.025em;margin:0;text-wrap:balance;color:#FFFFFF;
+  }
+  .standfirst{margin:14px 0 0;color:#BECDE6;font-size:16px;max-width:56ch}
+  main{padding-block:0 76px;padding-left:20px;padding-right:20px}
+  section{max-width:760px;margin:0 auto}
+  h2{
+    font-family:var(--display);font-size:12px;font-weight:800;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--navy);margin:52px 0 18px;
+    padding-bottom:10px;border-bottom:2px solid var(--lime);
+  }
+  p{margin:0 0 16px;max-width:65ch}
+  p:last-child{margin-bottom:0}
+  strong{font-weight:600;color:var(--ink)}
+  em{font-style:italic}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hair);
+    border:1px solid var(--hair);border-radius:4px;overflow:hidden;margin-top:34px}
+  .stat{background:var(--surface);padding:20px 18px}
+  .stat .v{font-family:var(--display);font-size:clamp(22px,4vw,29px);font-weight:800;
+    letter-spacing:-.025em;color:var(--navy);line-height:1.05;font-variant-numeric:tabular-nums}
+  .stat .k{font-family:var(--display);font-size:10px;font-weight:700;letter-spacing:.11em;
+    text-transform:uppercase;color:var(--muted);margin-top:9px}
+
+  .band{background:var(--rail);border-left:3px solid var(--lime);
+    padding:20px 24px;margin-top:22px;border-radius:0 4px 4px 0}
+  .band p{margin:0}
+
+  .scroll{overflow-x:auto;margin-top:8px;border:1px solid var(--hair);border-radius:4px;background:var(--surface)}
+  table{border-collapse:collapse;width:100%;min-width:600px;font-size:15px}
+  caption{caption-side:bottom;text-align:left;padding:14px 18px;color:var(--muted);
+    font-size:13px;line-height:1.55;border-top:1px solid var(--hair)}
+  th{font-family:var(--display);font-size:10px;font-weight:800;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--navy);text-align:left;padding:14px 18px;
+    background:var(--rail);border-bottom:1px solid var(--hair);white-space:nowrap}
+  td{padding:15px 18px;border-bottom:1px solid var(--hair);vertical-align:top}
+  tbody tr:last-child td{border-bottom:none}
+  th.n,td.n{text-align:right;font-variant-numeric:tabular-nums}
+  .issue{font-family:var(--display);font-weight:700;color:var(--ink);display:block}
+  .issue span{display:block;font-family:var(--body);font-weight:400;color:var(--muted);
+    font-size:13px;margin-top:3px;line-height:1.4}
+  .tag{font-family:var(--display);font-size:10px;font-weight:800;letter-spacing:.08em;
+    padding:4px 9px;border-radius:3px;white-space:nowrap;display:inline-block}
+  .tag.a{background:var(--lime);color:#101F3D}
+  .tag.b{background:transparent;color:var(--navy);border:1px solid var(--navy)}
+
+  .fix{border-top:1px solid var(--hair);padding-top:20px;margin-top:24px}
+  .fix:first-of-type{border-top:none;padding-top:0;margin-top:0}
+  .fix h3{font-family:var(--display);font-size:17px;font-weight:700;color:var(--ink);
+    margin:0 0 8px;letter-spacing:-.01em}
+  .fix h3 .badge{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--note);display:block;margin-bottom:6px;letter-spacing:.12em}
+
+  footer{max-width:760px;margin:64px auto 0;padding-top:22px;border-top:1px solid var(--hair);
+    color:var(--muted);font-size:13px;line-height:1.6}
+  footer b{color:var(--navy);font-family:var(--display);font-weight:700}
+
+  @media (max-width:640px){
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .band{padding:17px 19px}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="masthead">
+  <div class="inner">
+    <p class="kicker">CHS Happenings &middot; Sponsorship Results</p>
+    <h1>TRIO Solutions: how the two placements ran</h1>
+    <p class="standfirst">August 20 and September 3, 2026. Both ads have run, both sets of numbers have finished settling, and this is everything the data says &mdash; including the part that went the wrong way.</p>
+  </div>
+</div>
+
+<main>
+<section>
+
+  <div class="stats">
+    <div class="stat"><div class="v">22,893</div><div class="k">Emails delivered</div></div>
+    <div class="stat"><div class="v">16,228</div><div class="k">Opened</div></div>
+    <div class="stat"><div class="v">70.9%</div><div class="k">Open rate</div></div>
+    <div class="stat"><div class="v">18</div><div class="k">Clicks to TRIO</div></div>
+  </div>
+
+  <div class="band">
+    <p><strong>Both issues beat our own recent average.</strong> CHS Happenings has been running a 66.7% open rate over the past four weeks. TRIO's two issues came in at 70.5% and 71.3% &mdash; the strong half of the summer, not the quiet half. For reference, the newsletter industry norm is 30&ndash;40%.</p>
+  </div>
+
+  <h2>Placement by placement</h2>
+  <div class="scroll">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Issue</th>
+          <th scope="col">Slot</th>
+          <th scope="col" class="n">Delivered</th>
+          <th scope="col" class="n">Opened</th>
+          <th scope="col" class="n">Open rate</th>
+          <th scope="col" class="n">Clicks</th>
+          <th scope="col" class="n">Share of clickers</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong class="issue">August 20<span>&ldquo;Charleston's biggest landowner isn't the city&rdquo;</span></strong></td>
+          <td><span class="tag a">PRIMARY</span></td>
+          <td class="n">11,477</td>
+          <td class="n">8,088</td>
+          <td class="n">70.5%</td>
+          <td class="n">11</td>
+          <td class="n">1.22%</td>
+        </tr>
+        <tr>
+          <td><strong class="issue">September 3<span>&ldquo;What 5.5 acres and a 100-year-old oak are becoming&rdquo;</span></strong></td>
+          <td><span class="tag b">SECONDARY</span></td>
+          <td class="n">11,416</td>
+          <td class="n">8,140</td>
+          <td class="n">71.3%</td>
+          <td class="n">7</td>
+          <td class="n">1.12%</td>
+        </tr>
+      </tbody>
+      <caption><strong>Clicks</strong> are unique people, not repeat taps &mdash; August was 10 clicks from the email plus 1 from the web edition. <strong>Share of clickers</strong> is TRIO's slice of everyone who clicked anything at all in that issue. It's the fairest way to judge an ad, because it takes out how busy the issue itself happened to be.</caption>
+    </table>
+  </div>
+
+  <h2>The honest read</h2>
+  <p><strong>Clicks went from 11 to 7, and that looks worse than it was.</strong></p>
+  <p>The September 3 issue clicked less across the board. Every link in it &mdash; stories, events, everything &mdash; pulled about 24% fewer clicks than the August 20 issue did. Against that backdrop TRIO essentially held its ground: 1.22% of all clickers in August, 1.12% in September. The ad didn't wear out. It got a smaller pool to work with.</p>
+  <p>What actually moved was <strong>position</strong>. On August 20, TRIO had the full top-of-issue treatment &mdash; the logo sitting in the header above any story copy, and the sponsor block placed immediately before the lead feature. On September 3 it ran in the mid-issue slot, after the lead story and before the roundup. That difference is consistent and measurable: 1.24 clicks per thousand readers who opened, versus 0.86.</p>
+  <p>The calls to action read differently too, and it's worth naming. August asked people to <em>&ldquo;See what they'd do for your brand.&rdquo;</em> September asked them to <em>&ldquo;Find out if you're a fit.&rdquo;</em> Same audience, same length, same claims &mdash; but the second one quietly asks the reader to decide whether they qualify before they click. With this audience, the invitation outpulled the filter.</p>
+
+  <h2>Two things I'd change next time</h2>
+
+  <div class="fix">
+    <h3><span class="badge">Fix this first</span>Tag the link</h3>
+    <p>Both ads pointed at trio-solutions.com with no tracking tag on the link. Our platform counted the clicks, so the numbers above are solid &mdash; but on your end those visitors are invisible. You can't see them land, can't follow them to a contact form, and can't put a dollar figure on the traffic. A tagged link costs nothing to add and turns &ldquo;18 clicks&rdquo; into something you can actually evaluate against everything else you're running.</p>
+  </div>
+
+  <div class="fix">
+    <h3><span class="badge">Worth knowing</span>The list dipped slightly during the run</h3>
+    <p>Delivered volume went from 11,477 to 11,416 between the two sends. It's a small move and it didn't affect your open rates &mdash; September actually opened better than August &mdash; but you should hear it from me rather than not hear it at all.</p>
+  </div>
+
+  <h2>If there's a next run</h2>
+  <p>You'd start it knowing two things neither of us knew in August: <strong>the Primary slot is where the money goes</strong>, and <strong>an invitational call to action outpulls a qualifying one</strong> with these readers. That's a real head start over guessing, and it's the argument for treating a second campaign as a continuation rather than a fresh test.</p>
+  <p>The other thing frequency buys is recognition. Two placements introduce a name. It takes more than two before readers stop reading &ldquo;TRIO&rdquo; as an ad and start reading it as a Charleston business they've seen around.</p>
+
+  <footer>
+    <p><b>About these numbers.</b> Pulled September 10, 2026 &mdash; a week after the final placement, so opens and clicks have fully matured and won't move again. Delivered, opens and open rates come from the CHS Happenings sending platform. Click figures are unique clickers on the trio-solutions.com link in each issue. Nothing here is modeled or estimated.</p>
+  </footer>
+
+</section>
+</main>
+</body>
+</html>
