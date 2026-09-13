@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week in Review — Sep 7–13, 2026</title>
+<style>
+  :root{
+    --navy:#003466; --lime:#AEDC2E; --gold:#ECD19C; --steel:#7095A7;
+    --bg:#F4F5F0; --card:#FFFFFF; --ink:#1A1A2E; --body:#3D3D52;
+    --muted:#888899; --rule:#E8E8EE;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--body);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased; line-height:1.55;
+  }
+  header.bar{background:var(--navy); padding:28px 20px 26px;}
+  header.bar .inner{max-width:760px;margin:0 auto;}
+  header.bar h1{color:#fff;margin:0 0 6px;font-size:30px;line-height:1.15;letter-spacing:-.02em;font-weight:750;}
+  .range{color:rgba(255,255,255,.72);font-size:14px;font-weight:500;letter-spacing:.01em;}
+  .summary{color:var(--lime);font-size:15px;font-weight:650;margin-top:10px;line-height:1.4;}
+  .wrap{max-width:760px;margin:0 auto;padding:16px 20px 56px;display:flex;flex-direction:column;gap:16px;}
+  .card{background:var(--card);border-radius:16px;padding:24px;box-shadow:0 1px 3px rgba(26,26,46,.07),0 6px 18px rgba(26,26,46,.045);}
+  h2{font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:var(--navy);font-weight:700;
+     border-left:3px solid var(--lime);padding-left:10px;margin:0 0 16px;}
+  h3{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--steel);font-weight:700;margin:20px 0 9px;}
+  h3:first-of-type{margin-top:4px;}
+  p{margin:0 0 11px;font-size:15px;}
+  p:last-child{margin-bottom:0;}
+  .lede{font-size:16px;color:var(--ink);font-weight:600;margin-bottom:12px;}
+  ul{margin:0 0 4px;padding-left:19px;}
+  li{font-size:14.5px;margin-bottom:8px;}
+  li:last-child{margin-bottom:0;}
+  b,strong{color:var(--ink);font-weight:650;}
+  .muted{color:var(--muted);font-size:13px;}
+  a{color:var(--navy);}
+
+  /* stats */
+  .stats{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px;}
+  .stat{flex:1 1 150px;background:#F7F8F5;border-radius:11px;padding:12px 14px;}
+  .stat .k{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700;}
+  .stat .v{font-size:22px;font-weight:750;color:var(--navy);letter-spacing:-.02em;line-height:1.2;margin-top:3px;}
+  .stat .d{font-size:12px;font-weight:600;margin-top:2px;}
+  .up{color:#2E8B3D;} .down{color:#C0392B;} .flat{color:var(--muted);}
+  .pill{display:inline-block;background:var(--navy);color:#fff;font-size:10.5px;font-weight:700;
+        letter-spacing:.07em;text-transform:uppercase;padding:3px 9px;border-radius:20px;vertical-align:middle;}
+  .pill.ghost{background:#E9EDF2;color:var(--navy);}
+  .pill.gold{background:var(--gold);color:#6B5424;}
+
+  /* pipeline bars */
+  .bar-row{margin-bottom:12px;}
+  .bar-lab{display:flex;justify-content:space-between;font-size:13px;margin-bottom:5px;}
+  .bar-lab b{color:var(--ink);}
+  .track{height:9px;background:#EDEFEA;border-radius:5px;overflow:hidden;}
+  .fill{height:100%;border-radius:5px;background:var(--navy);}
+  .fill.b{background:var(--steel);} .fill.c{background:var(--gold);}
+
+  /* flags */
+  .flag{border-left:3px solid var(--lime);padding:2px 0 2px 12px;margin:10px 0;font-size:14.5px;}
+  .caution{border-left:3px solid var(--gold);padding:2px 0 2px 12px;margin:10px 0;font-size:14.5px;}
+  .src{color:var(--muted);font-size:12px;font-style:italic;}
+
+  /* focus card */
+  .focus{background:var(--navy);}
+  .focus h2{color:#fff;border-left-color:var(--lime);}
+  .focus .item{display:flex;gap:13px;padding:13px 0;border-top:1px solid rgba(255,255,255,.13);}
+  .focus .item:first-of-type{border-top:none;padding-top:2px;}
+  .focus .num{color:var(--lime);font-size:19px;font-weight:750;line-height:1.25;min-width:20px;}
+  .focus .hl{color:#fff;font-weight:680;font-size:15.5px;display:block;margin-bottom:3px;}
+  .focus .ctx{color:rgba(255,255,255,.58);font-size:14px;}
+  .focus .ctx .src{color:rgba(255,255,255,.38);}
+
+  /* sharpen */
+  .sharpen{border-left:4px solid var(--gold);background:linear-gradient(90deg,rgba(236,209,156,.16),rgba(236,209,156,.05) 60%,#fff);}
+  .sharpen .last{color:var(--muted);font-size:13px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--rule);}
+
+  /* week ahead */
+  .day{margin-bottom:16px;}
+  .day:last-child{margin-bottom:0;}
+  .appt{font-size:14.5px;color:var(--ink);margin-bottom:3px;}
+  .appt .t{color:var(--steel);font-weight:650;font-variant-numeric:tabular-nums;}
+  .prep{border-left:3px solid var(--lime);padding:1px 0 1px 11px;margin:5px 0 12px 2px;font-size:13.5px;color:var(--body);}
+
+  .split{display:flex;flex-wrap:wrap;gap:18px;}
+  .split > div{flex:1 1 300px;}
+  .empty{color:var(--muted);font-size:14px;font-style:italic;}
+  @media (max-width:520px){
+    header.bar h1{font-size:25px;}
+    .card{padding:20px;}
+    .stat{flex:1 1 44%;}
+  }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="inner">
+    <h1>Week in Review</h1>
+    <div class="range">Monday, September 7 – Sunday, September 13, 2026</div>
+    <div class="summary">The issue slipped to Friday and posted its best click rate in three weeks — 8.97%, on a 69.9% open.</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ============ NEXT WEEK'S FOCUS ============ -->
+  <section class="card focus">
+    <h2>Next Week's Focus</h2>
+
+    <div class="item">
+      <div class="num">1</div>
+      <div>
+        <span class="hl">Bring the buyer agency agreement Thursday</span>
+        <span class="ctx">Stacy Lunceford and Andy Smith, 9:00 AM at Mercantile &amp; Mash. The meeting moved from the 11th to the 17th; the agreement has been the open item on this file since August 18. <span class="src">[Week Ahead · TFG Pipeline]</span></span>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="num">2</div>
+      <div>
+        <span class="hl">iSmash needs terms in writing before Wednesday noon</span>
+        <span class="ctx">The Sept 17 Primary has no ad copy, no package, no fee and no email in either mailbox — third week carrying it. newsletter-pack fires Wednesday at noon and will build the issue around that slot either way. <span class="src">[Sponsorship Pipeline]</span></span>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="num">3</div>
+      <div>
+        <span class="hl">Magnolia &amp; Moss is paid — the record doesn't say so</span>
+        <span class="ctx">Hannah wrote on Sept 6: "I have signed the contract and paid the invoice." The Package still reads Contract Signed ☐, Payment Received ☐. Booked revenue is understated by $250. <span class="src">[Sponsorship Pipeline · Email]</span></span>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="num">4</div>
+      <div>
+        <span class="hl">Tuesday is four deep, and two of them collide</span>
+        <span class="ctx">Bob Diftler 8:30 AM, Alison at noon, Chucktown Startups 5:00–7:00 PM, speed work 6:15 PM. The last two overlap. <span class="src">[Week Ahead]</span></span>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="num">5</div>
+      <div>
+        <span class="hl">marketchs.com is running two months stale</span>
+        <span class="ctx">Friday's refresh found 0 of 15 areas loaded for August — and July missing too. Monthly Snapshots still end at June, so the Heat Index is quoting June numbers. The export checklist is sitting in a Gmail draft. <span class="src">[What You Built In Claude]</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SHARPEN ============ -->
+  <section class="card sharpen">
+    <h2>Sharpen</h2>
+    <div class="last"><b>Last week's experiment</b> (bundle the Magnolia &amp; Moss copy with the signature-and-$250 ask): <b>overtaken by events.</b> Hannah signed and paid Sunday the 6th, before the bundle was needed. Copy went Tuesday, she gave two notes, the "custom" line was reworked Wednesday, the ad ran Friday and pulled 51 unique clicks.</div>
+
+    <h3>Pattern worth noticing</h3>
+    <p>Thursday 7 AM is a rule Jimmy enforces on himself more strictly than his readers do. A medical appointment took Tuesday, Thursday couldn't be made, so a 120-word note went out instead — and it opened at <b>65.04%</b> on its own. The issue landed Friday and did <b>69.88% open / 8.97% click</b>, the best click rate since August 27 and a point and a half above the last on-time Thursday (7.43% on Sept 3). Two data points aren't a law. But nothing about this week suggests the day of the week is what's carrying the newsletter.</p>
+
+    <h3>Experiment for next week</h3>
+    <p>Before newsletter-pack fires Wednesday at noon, send iSmash Charleston one email that puts the Sept 17 Primary in writing — what runs, what it's worth, what they owe, even if the answer this once is nothing. Three weeks of silence on a scheduled Primary is either a missing invoice or a missing expectation, and one email tells you which.</p>
+  </section>
+
+  <!-- ============ THE WEEK AHEAD ============ -->
+  <section class="card">
+    <h2>The Week Ahead — Sep 14–20</h2>
+    <div class="stats">
+      <div class="stat"><div class="k">Appointments</div><div class="v">12</div><div class="d flat">~11 hrs committed</div></div>
+      <div class="stat"><div class="k">Busiest day</div><div class="v">Tuesday</div><div class="d down">4 commitments</div></div>
+      <div class="stat"><div class="k">Client-facing</div><div class="v">2</div><div class="d flat">Thu &amp; Fri</div></div>
+    </div>
+
+    <div class="day">
+      <h3>Monday, Sept 14</h3>
+      <div class="appt"><span class="t">8:45 AM</span> — Dr. Kidd follow-up</div>
+      <div class="appt"><span class="t">6:15 PM</span> — Monday RunDay, Fleet Feet Houston Northcutt</div>
+      <div class="prep">Prep: Fleet Feet's three gratis placements start Sept 24 and none of them has ad copy yet — only Chris's themes, relayed through Jennifer Roberts on Sept 5. Monday RunDay is staff, not Chris; the Chris conversation is still parked for late September. <span class="src">[Sponsorship Pipeline]</span></div>
+    </div>
+
+    <div class="day">
+      <h3>Tuesday, Sept 15 <span class="pill gold">Heavy</span></h3>
+      <div class="appt"><span class="t">8:30 AM</span> — Coffee with Bob Diftler, The Hidden House</div>
+      <div class="prep">Prep: Bob asked to get together with no stated agenda — a 60-second scan of the "Getting together next week" thread before you walk in. <span class="src">[Email Highlights]</span></div>
+      <div class="appt"><span class="t">12:00 PM</span> — With Alison, 6:33 Physical Therapy</div>
+      <div class="appt"><span class="t">3:00 PM</span> — Liverpool v Tottenham, League Cup</div>
+      <div class="appt"><span class="t">5:00 PM</span> — Chucktown Startups Happy Hour, Over the Horizon Brewing</div>
+      <div class="appt"><span class="t">6:15 PM</span> — Half-Marathon Speed Work, Fleet Feet Mount Pleasant</div>
+      <div class="caution">Heads-up: the happy hour runs to 7:00 and speed work starts at 6:15. One of them gives.</div>
+    </div>
+
+    <div class="day">
+      <h3>Wednesday, Sept 16</h3>
+      <div class="appt"><span class="t">8:00 AM</span> — Build + Brew, Brittlebank Park</div>
+      <div class="appt"><span class="t">12:00 PM</span> — <i>newsletter-pack builds the Sept 17 issue (scheduled)</i></div>
+      <div class="prep">Prep: the Sept 17 issue carries two ads — iSmash Primary (no copy, no fee) and the Kids On Point Secondary (copy written and approved by Meg on Friday). Stories Ready is the gate; the issue row is still bare. <span class="src">[Sponsorship Pipeline]</span></div>
+      <div class="appt"><span class="t">6:45 PM</span> — Run CBW, Charleston Beer Works</div>
+    </div>
+
+    <div class="day">
+      <h3>Thursday, Sept 17 <span class="pill">High stakes</span></h3>
+      <div class="appt"><span class="t">7:00 AM</span> — CHS Happenings issue sends</div>
+      <div class="appt"><span class="t">9:00 AM</span> — Meet Stacy Lunceford and Andy Smith, Mercantile &amp; Mash</div>
+      <div class="prep">Prep: Cultivating stage, 25 days old, last interaction Aug 30 when Stacy said yes. No price on the deal yet — this is the meeting that sets one. Bring the buyer agency agreement; it's been unsigned since the file opened. <span class="src">[TFG Pipeline]</span></div>
+      <div class="appt"><span class="t">5:30 PM</span> — LTF Ice Cream Spirit Night, Jeni's</div>
+    </div>
+
+    <div class="day">
+      <h3>Friday, Sept 18</h3>
+      <div class="appt"><span class="t">1:00 PM</span> — Lunch with Meg Mathis, Mercantile &amp; Mash</div>
+      <div class="prep">Prep: Meg is a PR consultant, recently arrived from Detroit, who found you through the newsletter and brought Kids On Point. She has other clients. This is the warmest new channel to open all month — go in curious about the roster, not the one placement. <span class="src">[Email Highlights]</span></div>
+      <div class="appt"><span class="t">All day</span> — Dutch Bros "Buck for Kids Day" runs (the ad's subject)</div>
+    </div>
+
+    <div class="day">
+      <h3>Saturday, Sept 19</h3>
+      <div class="appt"><span class="t">7:15 AM</span> — Half-Marathon Long Training Run</div>
+    </div>
+
+    <div class="day">
+      <h3>Sunday, Sept 20</h3>
+      <div class="appt"><span class="t">9:00 AM</span> — Bournemouth v Liverpool</div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT YOU BUILT IN CLAUDE ============ -->
+  <section class="card">
+    <h2>What You Built In Claude</h2>
+
+    <h3>Shipped</h3>
+    <ul>
+      <li><b>Sep 7–8</b> — Five 1080×1350 Charleston Insider's Guide Instagram slides plus a <code>build-slides.py</code> regenerator; swapped a slide-4 photo that put "steer away if" over a real business's sign, then tuned captions under Instagram's 125-character truncation line.</li>
+      <li><b>Sep 8</b> — CHS Happenings P&amp;L for July–August, pulled from Xero. July net <b>−$840.64</b>; August unreadable because the books stop Aug 5 and Meta Ads is uncoded. Flagged the chart-of-accounts miscoding that's zeroing Gross Profit.</li>
+      <li><b>Sep 8</b> — Built and then hardened the Charleston land-use agenda sweep skill and its Tuesday 7 AM task — sequential fetching, mandatory reach-and-failure reporting so it can't fake a clean run. <span class="muted">Still needs one manual "Run now" to grant tool approvals.</span></li>
+      <li><b>Sep 9</b> — CTOR log artifact rebaked.</li>
+      <li><b>Sep 9–10</b> — Event scraper cleanup: events table deduped <b>1,015 → 688</b> rows with the live set untouched at 386; memory index condensed 167 → 138 lines, four wrong or contradictory memories fixed, 11 orphans relinked.</li>
+      <li><b>Sep 10</b> — Wilkie buyer briefing rebuilt on <b>lot size instead of square footage</b> and deployed to thefarrellgrouppresentations.com; email out the same afternoon. The screen change cut James Island's apparent inventory from 32 to 15 by dropping townhomes under a quarter acre.</li>
+      <li><b>Sep 12</b> — Bloom50 tester walkthrough artifact published for Kim — install, build a real workout, add a test client, six feedback questions — and sent.</li>
+      <li><b>Sep 12–13</b> — Live Music table housekeeping: 115 stale rows cleared in four batched deletes.</li>
+    </ul>
+
+    <h3>Explored</h3>
+    <ul>
+      <li><b>Sep 8</b> — Skill library artifact refresh failed at step one; <code>list_skills</code> timed out after 180 seconds and the artifact was left unchanged.</li>
+      <li><b>Sep 11</b> — Monthly marketchs refresh went looking for August and found nothing: <b>0 of 15 areas loaded</b>, and July missing as well. Saved a Gmail draft with the export checklist rather than guessing. No deploy.</li>
+    </ul>
+  </section>
+
+  <!-- ============ NEW NEXT COMMAND ============ -->
+  <section class="card">
+    <h2>New NEXT Command</h2>
+    <p class="empty">No changes this week — last touched August 15, 2026. Four weeks quiet.</p>
+    <div class="caution">The file's <code>updatedAt</code> lags the real ledger, which lives in browser localStorage. Before next Sunday, open the artifact and hit <b>Export</b> — then the diff is real instead of inferred.</div>
+  </section>
+
+  <!-- ============ TFG DEAL PIPELINE ============ -->
+  <section class="card">
+    <h2>TFG Deal Pipeline</h2>
+    <div class="stats">
+      <div class="stat"><div class="k">Active pipeline</div><div class="v">$14.70M</div><div class="d flat">— flat, 4th week</div></div>
+      <div class="stat"><div class="k">Projected commission</div><div class="v">$362,248</div><div class="d flat">— unchanged</div></div>
+      <div class="stat"><div class="k">Active deals</div><div class="v">12</div><div class="d down">▼ 2 from 14</div></div>
+      <div class="stat"><div class="k">Interactions</div><div class="v">7 + ~55</div><div class="d up">▲ logged + email</div></div>
+    </div>
+
+    <h3>By stage</h3>
+    <div class="bar-row">
+      <div class="bar-lab"><span>CLIENT! · 6 deals</span><b>$5.80M</b></div>
+      <div class="track"><div class="fill" style="width:76%"></div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-lab"><span>Later · 4 deals</span><b>$7.65M</b></div>
+      <div class="track"><div class="fill b" style="width:100%"></div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-lab"><span>Cultivating · 2 deals</span><b>$1.25M</b></div>
+      <div class="track"><div class="fill c" style="width:16%"></div></div>
+    </div>
+
+    <h3>What moved</h3>
+    <ul>
+      <li><b>Two marketchs leads closed out.</b> Joe (Seller's Window, Wild Dunes) and Patty (Renovate or Sell) both went New → Dead. Neither carried a price, so the pipeline number is unchanged.</li>
+      <li><b>Wilkie — paused by the client.</b> Will replied to Thursday's briefing: the job search is still in a holding pattern, nothing has stuck. He wants to keep seeing new listings to narrow the neighborhood, but explicitly asked not to work homes until employment lands. He'll say the word the day it does and expects to move fast.</li>
+      <li><b>Tomlinson — 1300 Fenwick, prep running.</b> Stanley Steemer got the carpet stains out, HOA roofers replaced the roof, keypad reprogrammed and a lockbox installed for remote access. Powerwash moved to Monday when the painter is on site. Sharon replied from Europe asking for Kim's Venmo to settle the carpet invoice; Kim answered Friday.</li>
+      <li><b>Blum — no reply.</b> Jimmy wrote Sept 9: "Seems like things have changed, Jon and Tracy? Appreciate your letting me know." Nothing back as of Sunday morning.</li>
+      <li>No new deals, no stage advances, no closings.</li>
+    </ul>
+
+    <h3>Aged</h3>
+    <p>9 deals are past 60 days, carrying $14.33M. Cisneros crossed the line this week at 65 days — his listing is still with another broker, so this is a calendar watch, nothing more.</p>
+
+    <h3>Activity</h3>
+    <p>7 interactions logged in the two CRMs (5 TFG, 2 sponsor), plus roughly 55 genuine messages across both mailboxes — 31 sent, 20-plus received. Thursday carried the load: the Wilkie briefing, the Greystar intro reply, and the TRIO wrap all went out inside five hours.</p>
+  </section>
+
+  <!-- ============ CHS HAPPENINGS ============ -->
+  <section class="card">
+    <h2>CHS Happenings — Newsletter</h2>
+    <div class="stats">
+      <div class="stat"><div class="k">Active subscribers</div><div class="v">11,416</div><div class="d down">▼ 94 from 11,510</div></div>
+      <div class="stat"><div class="k">New / churned</div><div class="v">34 / 137</div><div class="d down">▼ new subs from 109</div></div>
+      <div class="stat"><div class="k">Open rate</div><div class="v">69.88%</div><div class="d flat">— vs 71.3% Sept 3</div></div>
+      <div class="stat"><div class="k">Click rate</div><div class="v">8.97%</div><div class="d up">▲ 1.54 pts</div></div>
+    </div>
+
+    <h3>The Friday issue</h3>
+    <p class="lede">🌴 The Navy Yard's restaurant on a roof — sent Friday, Sept 11, 7:00 AM</p>
+    <p>11,325 delivered · 7,914 unique opens · 710 unique clickers · 12 unsubscribes (0.11%, the lowest in weeks). Lead story: Riva Mare.</p>
+
+    <div class="flag"><b>Thursday's note did its own work.</b> The 120-word "Patience is bitter, but its fruit is sweet" explainer went to 11,363 on Sept 10 and opened at <b>65.04%</b> — with a Dinner Club sign-up link and a community invite riding along. 39 unsubscribes on that one.</div>
+
+    <h3>Top clicks — Sept 11 issue</h3>
+    <ul>
+      <li><b>374 unique</b> — The Navy Yard's First Real Restaurant Is on a Roof</li>
+      <li><b>84</b> — The Old Village Got Its Pool, and a Waiting List</li>
+      <li><b>66</b> — Beemok Spent 18 Months Asking One Question</li>
+      <li><b>60</b> — The Sixth Swig &amp; Swine Is Named After a Drummer</li>
+      <li><b>53</b> — Charleston Mag: Broad Street Rising <span class="muted">(external)</span></li>
+      <li><b>51 (+4 web)</b> — Magnolia &amp; Moss, the sponsor link</li>
+    </ul>
+    <p class="muted">Five own web posts shipped Thursday alongside the issue. The lead out-clicked everything else four to one — the first time in three weeks an in-house story beat the field that decisively.</p>
+
+    <div class="caution"><b>Worth watching flatly:</b> 34 new subscribers against 137 churned is the thinnest acquisition week on this log. Meta spend is deliberately set at $7.50/day to hold net-net, so the shape is expected — but 109 → 34 is a three-fold drop in new at unchanged spend. Nextdoor referral (20) was the single biggest source.</div>
+  </section>
+
+  <!-- ============ SPONSORSHIP PIPELINE ============ -->
+  <section class="card">
+    <h2>CHS Happenings — Sponsorship</h2>
+    <div class="stats">
+      <div class="stat"><div class="k">Booked (Airtable)</div><div class="v">$800</div><div class="d flat">— 3 signed &amp; paid</div></div>
+      <div class="stat"><div class="k">Actually collected</div><div class="v">$1,050</div><div class="d up">▲ $250 unrecorded</div></div>
+      <div class="stat"><div class="k">Proposals "Sent"</div><div class="v">$4,175</div><div class="d flat">— 5 records</div></div>
+      <div class="stat"><div class="k">Next 5 placements</div><div class="v">4 of 5</div><div class="d down">running comped</div></div>
+    </div>
+
+    <h3>Inbound and referral — the whole top of funnel</h3>
+    <ul>
+      <li><b>Meg Mathis / Kids On Point.</b> PR consultant, new to Charleston from Detroit, wrote in Wednesday because she reads the newsletter. Pitched Dutch Bros' "Buck for Kids Day" — $1 a drink at four Charleston locations on Sept 18. Jimmy gave a gratis Secondary in the Sept 17 issue, wrote the copy himself Thursday evening, Meg approved it Friday morning: "That is really generous, and the Kids On Point team will be thrilled." Lunch booked for the 18th.</li>
+      <li><b>MELT Mural Festival.</b> Comped Featured Event for the Sept 24 issue, promoting the free Sept 26 festival at Building 64. Assets in hand, copy not yet written.</li>
+      <li><b>Magnolia &amp; Moss.</b> Hannah signed and paid the first $250 on Sunday the 6th — the day after last week's review ran. Copy went Tuesday, she came back with two notes (the biggest: her "custom" means custom-made table numbers and tumblers, not custom sourcing), Jimmy reworked the line Wednesday and the ad ran Friday to 51 unique clicks.</li>
+    </ul>
+
+    <div class="caution"><b>Record correction.</b> The Magnolia &amp; Moss Package still shows Contract Signed ☐ and Payment Received ☐ despite Hannah's Sept 6 email. Booked revenue reads $800 when $1,050 has actually come in.</div>
+
+    <h3>What's scheduled</h3>
+    <ul>
+      <li><b>Sept 17</b> — iSmash Charleston, Primary. <span class="pill ghost">No fee, no copy</span> Third week with no package, no number and no email in either mailbox. Treat as comped until something proves otherwise.</li>
+      <li><b>Sept 17</b> — Kids On Point, Secondary. <span class="pill ghost">Comped</span> Copy written and approved.</li>
+      <li><b>Sept 24</b> — Fleet Feet #1, Primary. <span class="pill ghost">Gratis</span> Theme only (Work Place Fit, Wade@FleetFeetMountPleasant.com). Copy still to write.</li>
+      <li><b>Sept 24</b> — Magnolia &amp; Moss #2, Secondary. <span class="pill">Paid</span> Draft written, needs Hannah's nod by the 23rd.</li>
+      <li><b>Sept 24</b> — MELT Mural Festival, Featured Event. <span class="pill ghost">Comped</span> Copy still to write.</li>
+      <li><b>Oct 8</b> — Magnolia &amp; Moss #3 (paid) and Fleet Feet #2 (gratis) both land. <b>The collision was parked on Hannah's payment — she's paid, so the tiebreak is live.</b> Oct 15 is the open issue.</li>
+    </ul>
+
+    <h3>Proposal hygiene</h3>
+    <p>Five proposals read "Sent" at $4,175, and the number hasn't been true for months. Carolina H3 ($500) is dead. Stillwater Ponds ($1,500) has a sponsor stage of Lost – No Response. Opt Alternatives ($300) already converted to a signed, paid package. Magnolia &amp; Moss ($875) became the $500 three-placement package. Bookish ($1,000) is the only one that is what it says it is.</p>
+
+    <h3>TRIO</h3>
+    <p>Jimmy sent Ellen Rose the campaign wrap Thursday at 1:46 PM — subject "<b>Your TRIO numbers, and one ask</b>," opening "Both placements have run and the numbers have stopped moving. Here's the full picture, including the part I'd rather you hear from me than go looking for." <b>No reply as of Sunday morning.</b> Both placements were comped against the April 10 make-good; TRIO has never paid.</p>
+  </section>
+
+  <!-- ============ CALENDAR LOAD ============ -->
+  <section class="card">
+    <h2>Calendar Load — Last Week</h2>
+    <div class="stats">
+      <div class="stat"><div class="k">Commitments</div><div class="v">8</div><div class="d flat">plus 2 prep markers</div></div>
+      <div class="stat"><div class="k">Client/sponsor meetings</div><div class="v">0</div><div class="d flat">— none scheduled</div></div>
+      <div class="stat"><div class="k">Busiest day</div><div class="v">Wednesday</div><div class="d flat">3 blocks</div></div>
+    </div>
+    <ul>
+      <li><b>Mon 9/7</b> — Prep day, no solid food.</li>
+      <li><b>Tue 9/8</b> — Medical procedure, 9:45–11:45 AM. This is the day that moved the newsletter.</li>
+      <li><b>Wed 9/9</b> — 8:00 AM photos at Kim's Bloom50 class (Kim with one person, a class actually happening, whiteboard in frame) · 10:00 AM haircut · 3:00 PM Liverpool 2–1 Atlético · 6:45 PM Run CBW.</li>
+      <li><b>Thu 9/10</b> — No calendared commitments. The heaviest email day of the week instead.</li>
+      <li><b>Sat 9/12</b> — 7:15 AM half-marathon long run · 10:00 AM Liverpool 0–0 Fulham.</li>
+      <li><b>Sun 9/13</b> — TableBud Party at The Dinghy, 3:30 PM. <span class="muted">Still ahead as of this writing.</span></li>
+    </ul>
+    <p class="muted">Zero external business meetings on the calendar last week, by design — the week was built around Tuesday. Next week has two.</p>
+  </section>
+
+  <!-- ============ EMAIL HIGHLIGHTS ============ -->
+  <section class="card">
+    <h2>Email Highlights</h2>
+
+    <h3>Open — needs something from you</h3>
+    <div class="flag"><b>[CHS] Ellen Rose, TRIO.</b> The wrap-and-ask went Thursday. Five days, no reply.</div>
+    <div class="flag"><b>[TFG] Jon &amp; Tracy Blum.</b> "Seems like things have changed?" sent Sept 9. No answer. A $1.6M CLIENT!-stage file where the last briefing went out Sept 1.</div>
+    <div class="flag"><b>[CHS] Bryan Ford, Dinner Club.</b> Charged for a seat he was flagged as an ambassador for. Jimmy promised a refund "as soon as I hear back from DNNR" on Saturday — the refund itself is still pending. His reaction in the thread: "This is exactly one of the reasons why I'm moving this in-house next month."</div>
+    <div class="flag"><b>[CHS] Brittany Walker, Charlotte Berger PR.</b> King's Leaf Point Hope. Jimmy committed Saturday — "I'll go visit them in the next week or so" — with no date attached. She asked for a heads-up when he goes in.</div>
+
+    <h3>Handled</h3>
+    <ul>
+      <li><b>[CHS] Meg Mathis</b> — five exchanges Wednesday to Friday, gratis placement agreed, copy approved, lunch set for the 18th at Mercantile &amp; Mash. <span class="pill ghost">Handled</span></li>
+      <li><b>[CHS] Hannah, Magnolia &amp; Moss</b> — signed, paid, copy corrected, ad ran. <span class="pill ghost">Handled</span></li>
+      <li><b>[TFG] John Beinert, Greystar → Joe Monaco</b> — Jimmy made the intro Tuesday off his DC commercial years, Beinert came back Thursday with the practical routing ("go above the leasing professional"), Jimmy thanked him, Monaco thanked them both. A favour done, nothing owed. <span class="pill ghost">Handled</span></li>
+      <li><b>[TFG] Will Wilkie</b> — replied within the hour. <span class="pill ghost">Handled</span></li>
+      <li><b>[CHS] "Where Am I?" replies</b> — Richard Stein, Kathy, Allison Edens, Edward Gallagher all got personal answers Friday; the Godwin's Beer Hall photo stumped almost everyone. <span class="pill ghost">Handled</span></li>
+      <li><b>[CHS] Josh Skidmore</b> — flagged that the subject line oversold Riva Mare as the Navy Yard's first restaurant. Jimmy agreed and edited the published version the same hour. <span class="pill ghost">Handled</span></li>
+    </ul>
+
+    <h3>Still carried from prior weeks</h3>
+    <p class="muted">No traffic this week on: Kate Gerding's dates for the Charleston Candle Co. in-store profile; Nancy Kelly's DNNR answer; Elly Bockley's Dinner Club feedback; the Adams County PA interim tax bills on 11 Sunspot Trail.</p>
+  </section>
+
+</div>
+</body>
+</html>
