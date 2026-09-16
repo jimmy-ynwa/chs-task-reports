@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Board · Wednesday music · September 16, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{ --navy:#183872; --lime:#CCED60; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; padding:0 0 60px; background:#f4f6fa; color:var(--navy);
+        font-family:'Open Sans',-apple-system,BlinkMacSystemFont,sans-serif; line-height:1.55; }
+  .wrap{ max-width:720px; margin:0 auto; padding:0 16px; }
+  .masthead{ background:var(--navy); color:#fff; padding:22px 16px; }
+  .masthead .inner{ max-width:720px; margin:0 auto; }
+  .masthead h1{ font-family:'Inter',sans-serif; font-size:20px; margin:0; color:var(--lime);
+                letter-spacing:.2px; font-weight:700; }
+  .masthead .date{ font-size:13px; opacity:.85; margin-top:4px; }
+
+  .eyes{ background:#fff3e0; border:2px solid #e8a33d; border-radius:8px;
+         padding:16px 18px; margin:22px 0; font-size:14px; line-height:1.5; }
+  .eyes h2{ font-family:'Inter',sans-serif; font-size:15px; margin:0 0 2px; }
+  .eyes .sub{ font-size:12.5px; opacity:.75; margin:0 0 12px; }
+  .eyes ul{ margin:0; padding-left:18px; }
+  .eyes li{ margin-bottom:7px; }
+
+  hr.div{ border:0; border-top:1px solid #d4dae6; margin:26px 0; }
+
+  .paste-tag{ display:inline-block; background:#e6f6e6; color:#1d6b2f; border:1px solid #9ed3a6;
+              border-radius:20px; padding:5px 13px; font-size:13px; font-weight:700; }
+  .paste-note{ font-size:13.5px; margin:10px 0 22px; opacity:.85; }
+
+  .steplabel{ font-family:'Inter',sans-serif; font-weight:700; font-size:13px;
+              text-transform:uppercase; letter-spacing:.6px; margin:0 0 8px; opacity:.7; }
+
+  .box{ border:1px solid #cdd5e4; border-radius:8px; overflow:hidden; background:#fff; margin-bottom:28px; }
+  .box .bar{ background:var(--navy); padding:10px 14px; display:flex; justify-content:flex-end; }
+  .box button{ background:var(--lime); color:var(--navy); border:0; border-radius:5px;
+               font-family:'Inter',sans-serif; font-weight:700; font-size:13.5px;
+               padding:8px 16px; cursor:pointer; }
+  .box button:active{ transform:translateY(1px); }
+
+  #title{ padding:16px 18px; font-family:'Inter',sans-serif; font-weight:700;
+          font-size:21px; line-height:1.3; outline:none; }
+  #title:focus{ background:#fbfcff; }
+
+  #post{ padding:20px 20px 26px; }
+  #post p{ margin:0 0 14px; font-size:15.5px; }
+  #post h3{ font-family:'Inter',sans-serif; font-size:16px; margin:26px 0 10px; font-weight:700; }
+  #post ul{ margin:0 0 16px; padding-left:20px; }
+  #post li{ margin-bottom:7px; font-size:15px; }
+  #post strong{ font-weight:700; }
+  #post a{ color:var(--navy); }
+
+  @media (max-width:720px){
+    #title{ font-size:19px; }
+    #post{ padding:16px 16px 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="masthead"><div class="inner">
+  <h1>The Board · Wednesday music</h1>
+  <div class="date">Wednesday, September 16, 2026</div>
+</div></div>
+
+<div class="wrap">
+
+  <div class="eyes">
+    <h2>🔒 For your eyes only — don't post this part</h2>
+    <p class="sub">Notes on how this one got built. Everything below the green tag is the post.</p>
+    <ul>
+      <li><b>Title options, your pick:</b> loaded → <i>"Zac Brown Thursday, James Taylor Sunday"</i> (names the two biggest draws, tells you the shape of the week). Alt 1 → <i>"Two stadium shows and sixty-five others"</i> (leads with volume instead of names). Alt 2 → <i>"Credit One twice in four days"</i> (shortest, leans on the venue being the unusual part). The title box is editable — retype it in place and the Copy title button picks up your version.</li>
+      <li><b>Staleness gate:</b> passed. Newest <i>Last Seen</i> in the Live Music table is 2026-09-16 — today. Tuesday night's prefetch wrote.</li>
+      <li><b>Rows pulled:</b> 74 Scheduled rows dated Sept 17–20; 84 for Sept 21–27; 135 for Oct 1–20, plus a targeted sweep of the big rooms past Oct 20.</li>
+      <li><b>Collapsed as duplicates (3 pairs):</b> Johnny Holliday at The Washout Thursday, Carolina Kingsnakes at The Washout Saturday, Jerry Feels Good &amp; Alvin B Saxxy at Prohibition Friday — each filed twice under slightly different billings.</li>
+      <li><b>Dropped 4 placeholder rows:</b> "LIVE MUSIC TONIGHT" at The Commodore on Sept 17, 18, 19 and 20 — no artist, no time, and the same venue already has a timed Jazz Series row on three of those nights. Nothing a reader could act on.</li>
+      <li><b>Final count in the post: 67 shows, Thursday through Sunday.</b> That's 74 rows minus the 3 duplicate pairs and the 4 placeholders.</li>
+      <li><b>Worth a look:</b> Winyah w/ Old Mervs at The Windjammer is filed on <i>both</i> Thursday and Friday at 6 PM, from the same scrape batch. Could be a genuine two-nighter, could be one show written twice. I rendered it as the table has it and said so in the line rather than picking one.</li>
+      <li><b>Bold rule in force:</b> inside a day, bold is 1–2 headliners (3 on Saturday) and they lead the list — everything else plain, in time order. In "Next week" and "On sale," there's no day heading, so every date is bolded and three genuinely big names get bolded on top of that.</li>
+      <li><b>Genre check:</b> 29 named/bolded shows. Americana-and-country is the largest bucket at 9 — under half, so it passes. Thursday's two bolds are both Americana (Zac Brown, Asleep At the Wheel); that's the real shape of Thursday, not a data artifact.</li>
+      <li><b>Scrape horizon:</b> the Coliseum has nothing listed past Oct 20 and the Music Hall stops at Nov 8. That's how far the scrape reaches, not an empty November. I capped "On sale" at 12 and kept it inside October rather than padding it with thin November rows.</li>
+      <li><b>Untimed but real:</b> Ship Wrek (Building 64, Fri), Ohm Radio Block Party (The Refinery, Sat), Charleston Jazz Orchestra Piano Legends (Music Hall, Sat), Travis Tritt (Coliseum, next Sat), 20 Years of Home Team BBQ (The Refinery, next Sat). Listed with "time TBA" — no times invented.</li>
+      <li><b>Jimmy's pick:</b> North Mississippi Allstars, blues — deliberately off the Americana/country run that dominates the lead this week.</li>
+      <li><b>Calendar link:</b> CALENDAR_GATE_LIVE is true, so the members' calendar line is in.</li>
+    </ul>
+  </div>
+
+  <hr class="div">
+
+  <span class="paste-tag">✅ Paste this into Beehiiv</span>
+  <p class="paste-note">Two boxes into two fields — the title goes in the title field, the body in the body field. Formatting comes across already styled.</p>
+
+  <p class="steplabel">Step 1 — the title</p>
+  <div class="box">
+    <div class="bar"><button id="btnTitle">Copy title</button></div>
+    <div id="title" contenteditable="true">Zac Brown Thursday, James Taylor Sunday</div>
+  </div>
+
+  <p class="steplabel">Step 2 — the body</p>
+  <div class="box">
+    <div class="bar"><button id="btnPost">Copy post</button></div>
+    <div id="post">
+
+<p>Credit One Stadium has two shows this week — Zac Brown Band on Thursday and James Taylor on Sunday. One at each end of the weekend, and both big enough to pull a crowd out to Daniel Island on a school night.</p>
+
+<p>In between: Asleep At the Wheel at the Music Hall Thursday, JET at Music Farm Friday, the Charleston Jazz Orchestra playing Piano Legends Saturday, and the North Mississippi Allstars at the Pour House that same night.</p>
+
+<p>Sixty-seven shows, Thursday through Sunday. All of them below.</p>
+
+<h3>Thursday, September 17</h3>
+<ul>
+<li><strong>Zac Brown Band — Love &amp; Fear</strong> — Credit One Stadium, 7 PM</li>
+<li><strong>Asleep At the Wheel</strong> — Charleston Music Hall, 8 PM</li>
+<li>Goodnight, Texas — The Charleston Pour House, 6 PM</li>
+<li>Fowl Play — The Dinghy, 6 PM</li>
+<li>Winyah w/ Old Mervs — The Windjammer, 6 PM (listed for Thursday and Friday both)</li>
+<li>The Great American Songbook, featuring Alva Anderson — Forte Jazz Lounge, 7 PM</li>
+<li>Gracious Day — Henry's On The Market, 7 PM</li>
+<li>Johnny Holliday — The Washout, 7 PM</li>
+<li>Jazz Series — The Commodore, 7:30 PM</li>
+<li>Campbell &amp; Sons — The Royal American, 9 PM</li>
+<li>Reverse Cowgirl, inside stage — The Windjammer, 9 PM</li>
+<li>Krystal and the Drive Home — Prohibition, 9:30 PM</li>
+<li>Suffering Moses — Henry's On The Market, 10 PM</li>
+<li>VYNL — Henry's On The Market, 10 PM</li>
+</ul>
+
+<h3>Friday, September 18</h3>
+<ul>
+<li><strong>JET</strong> — Music Farm, 8 PM</li>
+<li><strong>Dog Named Squid</strong>, album release, w/ The Boonies + Social Void — The Royal American, 9 PM</li>
+<li>Dale Baker Duo — Henry's On The Market, 2 PM</li>
+<li>Ray Wag — The Dinghy, 3 PM</li>
+<li>Winyah w/ Old Mervs — The Windjammer, 6 PM</li>
+<li>Restless Natives — The Charleston Pour House, 6 PM</li>
+<li>Zach Quillen — Henry's On The Market, 6 PM</li>
+<li>Doug Walters — New Realm Brewing Co., 6 PM</li>
+<li>Rocketpiano Man: Billy Joel and Elton John, with Joe Clarke and the Forte Show Band — Forte Jazz Lounge, 7 PM</li>
+<li>Punk Pixies for PSAF, a benefit with Angel Gray / Skunk Mother / Poster Grrrl — The Tin Roof, 7 PM</li>
+<li>Eddie Bush — The Dinghy, 7 PM</li>
+<li>Jazz Series — The Commodore, 7:30 PM</li>
+<li>Live music — The Washout, 8 PM</li>
+<li>Sunny &amp; The Hunny — Henry's On The Market, 9:30 PM</li>
+<li>Macelyn Batten, inside stage — The Windjammer, 9:30 PM</li>
+<li>Jerry Feels Good &amp; Alvin B Saxxy — Prohibition, 10 PM</li>
+<li>VYNL — Henry's On The Market, 10 PM</li>
+<li>Grace Miller Moody — Henry's On The Market, 10 PM</li>
+<li>East Bay Band — Henry's On The Market, 10 PM</li>
+<li>Ship Wrek — Building 64, time TBA</li>
+</ul>
+
+<h3>Saturday, September 19</h3>
+<ul>
+<li><strong>North Mississippi Allstars</strong> — The Charleston Pour House, 8:30 PM</li>
+<li><strong>George Birge</strong>, NUTRL Beach Stage — The Windjammer, 6 PM</li>
+<li><strong>Charleston Jazz Presents: Piano Legends</strong>, with the Charleston Jazz Orchestra — Charleston Music Hall, time TBA</li>
+<li>Krystal Halvorson, brunch — Prohibition, 11 AM</li>
+<li>Hunter Fieck — Henry's On The Market, 2 PM</li>
+<li>Gracious Day — The Dinghy, 3 PM</li>
+<li>Lola Grace — Henry's On The Market, 6 PM</li>
+<li>Restless Natives — The Charleston Pour House, 6 PM</li>
+<li>Legacy: R&amp;B, Soul and Motown of the 60s, 70s and 80s — Forte Jazz Lounge, 7 PM</li>
+<li>Metal Raven / Firenest / Carne Con Papas / Diabeetus — The Tin Roof, 7 PM</li>
+<li>40 Years Too Late — The Dinghy, 7 PM</li>
+<li>Jazz Series — The Commodore, 7:30 PM</li>
+<li>Mommy's Little Monster, a Social Distortion tribute, w/ Super Runaway + Modern Fires — The Royal American, 9 PM</li>
+<li>Carolina Kingsnakes — The Washout, 9 PM</li>
+<li>Sunny &amp; The Hunny — Henry's On The Market, 9:30 PM</li>
+<li>Purple Magnolia, inside stage — The Windjammer, 9:30 PM</li>
+<li>DJ DAYZ — Prohibition, 10 PM</li>
+<li>Better On Wine — Henry's On The Market, 10 PM</li>
+<li>East Bay Band — Henry's On The Market, 10 PM</li>
+<li>Chris Williams — Henry's On The Market, 10 PM</li>
+<li>Ohm Radio Block Party — The Refinery, time TBA</li>
+</ul>
+
+<h3>Sunday, September 20</h3>
+<ul>
+<li><strong>James Taylor and His All-Star Band</strong> — Credit One Stadium, 7 PM</li>
+<li><strong>She Returns From War / Kristina Murray</strong> — The Tin Roof, 7:30 PM</li>
+<li>New Ghost Town, brunch — Prohibition, 11 AM</li>
+<li>Motown Throwdown — The Charleston Pour House, 1:30 PM</li>
+<li>Joe Fisher — Henry's On The Market, 2 PM</li>
+<li>David Perry — The Dinghy, 3 PM</li>
+<li>Tripping Billy Goats, the James Taylor pre-show — New Realm Brewing Co., 4 PM</li>
+<li>Reggae Sundays — The Washout, 6 PM</li>
+<li>Dave Landeo — The Dinghy, 6:30 PM</li>
+<li>Andy Thomas — The Charleston Pour House, 7:30 PM</li>
+<li>Gracious Day — Henry's On The Market, 9:30 PM</li>
+<li>CTRL room — Prohibition, 10 PM</li>
+</ul>
+
+<h3>Next week</h3>
+<ul>
+<li><strong>Fri Sept 25</strong> — CSO Masterworks 1, Gaillard Center, 7:30 PM (repeats Saturday)</li>
+<li><strong>Fri Sept 25</strong> — The Grass is Dead, The Charleston Pour House, 9 PM</li>
+<li><strong>Sat Sept 26</strong> — <strong>Travis Tritt</strong> with Tyler Reese Tritt, North Charleston Coliseum, time TBA</li>
+<li><strong>Sat Sept 26</strong> — Charlton Singleton &amp; Friends present New Jack Swing, Charleston Music Hall, 8 PM</li>
+<li><strong>Sat Sept 26</strong> — Beeple x Sō Percussion, Gaillard Center, 6:30 PM</li>
+<li><strong>Sat Sept 26</strong> — 20 Years of Home Team BBQ, The Refinery, time TBA</li>
+<li><strong>Sun Sept 27</strong> — <strong>Reverend Horton Heat</strong>, The Charleston Pour House, 8 PM</li>
+<li><strong>Sun Sept 27</strong> — SUSTO Stringband, NUTRL Beach Stage, The Windjammer, 6 PM</li>
+</ul>
+
+<h3>On sale now — October and beyond</h3>
+<ul>
+<li><strong>Oct 1</strong> — Ashley McBryde, Into The Wild Tour, with Colton Bowlin — The Refinery</li>
+<li><strong>Oct 2</strong> — <strong>Sugarland</strong>, Ride or Die Tour — North Charleston Coliseum</li>
+<li><strong>Oct 2</strong> — Lalah Hathaway — Charleston Music Hall</li>
+<li><strong>Oct 3</strong> — The Fab Four, A Hard Day's Night — Charleston Music Hall</li>
+<li><strong>Oct 9</strong> — MercyMe, with Jeremy Camp — North Charleston Coliseum</li>
+<li><strong>Oct 10</strong> — The Black Jacket Symphony plays Def Leppard's Hysteria — Charleston Music Hall</li>
+<li><strong>Oct 13</strong> — All Them Witches, with Emma Ruth Rundle — Charleston Music Hall</li>
+<li><strong>Oct 15</strong> — Black Violin — Gaillard Center</li>
+<li><strong>Oct 16</strong> — Trampled by Turtles — The Refinery</li>
+<li><strong>Oct 16</strong> — The Marshall Tucker Band — Charleston Music Hall</li>
+<li><strong>Oct 17</strong> — <strong>The Red Clay Strays</strong>, Grateful Tour, with The Revivalists and Haley Reinhart — Credit One Stadium</li>
+<li><strong>Oct 20</strong> — <strong>Chucho Valdés</strong>, 85th Birthday Celebration — Gaillard Center</li>
+</ul>
+
+<h3>Jimmy's pick</h3>
+<p>North Mississippi Allstars, Saturday at the Pour House, 8:30 PM. Luther and Cody Dickinson have been playing hill-country blues for thirty years and the Pour House is the right size room for it — close enough to actually watch the slide work instead of watching a screen.</p>
+
+<p>The full 60-day calendar, members only → <a href="https://calendar.chshappenings.com">calendar.chshappenings.com</a></p>
+
+<p>Mondays the calendar, Wednesdays the music, Fridays what's opening and closing.</p>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  function buildRich(){
+    var post = document.getElementById('post');
+    var out = [];
+    var kids = post.children;
+    for (var i = 0; i < kids.length; i++){
+      var el = kids[i];
+      var tag = el.tagName;
+      if (tag === 'P'){
+        out.push('<p>' + el.innerHTML.trim() + '</p>');
+        out.push('<p>&nbsp;</p>');
+      } else if (tag === 'H3'){
+        out.push('<p><strong>' + el.innerHTML.trim() + '</strong></p>');
+        out.push('<p>&nbsp;</p>');
+      } else if (tag === 'UL'){
+        var lis = el.getElementsByTagName('li');
+        for (var j = 0; j < lis.length; j++){
+          out.push('<p>• ' + lis[j].innerHTML.trim() + '</p>');
+        }
+        out.push('<p>&nbsp;</p>');
+      }
+    }
+    return out.join('');
+  }
+
+  function stripTags(html){
+    var d = document.createElement('div');
+    d.innerHTML = html;
+    return d.textContent.replace(/\s+/g, ' ').trim();
+  }
+
+  function buildPlain(){
+    var post = document.getElementById('post');
+    var out = '';
+    var kids = post.children;
+    for (var i = 0; i < kids.length; i++){
+      var el = kids[i];
+      var tag = el.tagName;
+      if (tag === 'P' || tag === 'H3'){
+        out += stripTags(el.innerHTML) + '\n\n';
+      } else if (tag === 'UL'){
+        var lis = el.getElementsByTagName('li');
+        for (var j = 0; j < lis.length; j++){
+          out += '• ' + stripTags(lis[j].innerHTML) + '\n';
+        }
+        out += '\n';
+      }
+    }
+    return out.replace(/\n{3,}/g, '\n\n').trim();
+  }
+
+  function flash(btn, msg){
+    var old = btn.textContent;
+    btn.textContent = msg;
+    setTimeout(function(){ btn.textContent = old; }, 2000);
+  }
+
+  function copyBoth(html, plain, btn){
+    if (window.ClipboardItem && navigator.clipboard && navigator.clipboard.write){
+      var item = new ClipboardItem({
+        'text/html': new Blob([html], {type:'text/html'}),
+        'text/plain': new Blob([plain], {type:'text/plain'})
+      });
+      navigator.clipboard.write([item]).then(function(){
+        flash(btn, 'Copied — paste into Beehiiv');
+      }).catch(function(){ fallback(plain, btn); });
+    } else {
+      fallback(plain, btn);
+    }
+  }
+
+  function fallback(plain, btn){
+    var ta = document.createElement('textarea');
+    ta.value = plain;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch(e){}
+    document.body.removeChild(ta);
+    flash(btn, 'Copied — paste into Beehiiv');
+  }
+
+  document.getElementById('btnTitle').addEventListener('click', function(){
+    var t = document.getElementById('title').textContent.trim();
+    copyBoth('<p>' + t + '</p>', t, this);
+  });
+
+  document.getElementById('btnPost').addEventListener('click', function(){
+    copyBoth(buildRich(), buildPlain(), this);
+  });
+
+  window.__buildRich = buildRich;
+  window.__buildPlain = buildPlain;
+})();
+</script>
+
+</body>
+</html>
