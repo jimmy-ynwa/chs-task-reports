@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ABL Notice Sweep — 17 September 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --navy:#183872; --lime:#cced60; --ink:#1c2230; --mut:#6b7280; --line:#e3e7ee; }
+  * { box-sizing:border-box; }
+  body { margin:0; padding:28px 18px 60px; background:#f6f8fb; color:var(--ink);
+         font-family:'Open Sans',-apple-system,sans-serif; font-size:15px; line-height:1.5; }
+  .wrap { max-width:1060px; margin:0 auto; }
+  header { background:var(--navy); color:#fff; border-radius:10px 10px 0 0; padding:22px 26px; }
+  h1 { font-family:'Inter',sans-serif; font-size:23px; font-weight:700; margin:0 0 4px; letter-spacing:-.2px; }
+  header .sub { font-size:13px; opacity:.82; }
+  .counts { background:#fff; border:1px solid var(--line); border-top:none; padding:14px 26px;
+            font-family:'Inter',sans-serif; font-size:14px; }
+  .counts b { color:var(--navy); }
+  .counts .hi { background:var(--lime); color:var(--navy); font-weight:700; padding:1px 7px; border-radius:4px; }
+  h2 { font-family:'Inter',sans-serif; font-size:15px; font-weight:700; color:var(--navy);
+       margin:30px 0 8px; text-transform:uppercase; letter-spacing:.06em; }
+  h2 .n { font-weight:400; text-transform:none; letter-spacing:0; color:var(--mut); font-size:13px; }
+  table { width:100%; border-collapse:collapse; background:#fff; border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+  th { background:var(--navy); color:#fff; font-family:'Inter',sans-serif; font-size:11px; font-weight:600;
+       text-transform:uppercase; letter-spacing:.05em; text-align:left; padding:9px 11px; }
+  td { padding:10px 11px; border-top:1px solid var(--line); font-size:13.5px; vertical-align:top; }
+  td.num { font-family:'Inter',sans-serif; font-weight:700; color:var(--navy); width:34px; }
+  .biz { font-weight:600; }
+  .addr { color:#333; }
+  .lic { font-size:12.5px; color:var(--mut); }
+  .read { font-size:12.5px; }
+  .up { color:#8a5a00; font-weight:600; }
+  .date { white-space:nowrap; font-size:12.5px; color:var(--mut); }
+  .flag { display:inline-block; background:#fdf0d5; color:#8a5a00; font-size:11px; font-weight:600;
+          padding:1px 6px; border-radius:3px; margin-top:3px; }
+  .quiet table { opacity:.9; }
+  .quiet th { background:#7f8aa3; }
+  .quiet { margin-top:6px; }
+  .match { font-size:12.5px; color:var(--mut); font-style:italic; }
+  .caveats { margin-top:28px; padding:14px 18px; background:#fff; border:1px solid var(--line);
+             border-left:4px solid var(--lime); border-radius:6px; font-size:13px; color:#3d4655; }
+  .caveats p { margin:0 0 6px; color:#3d4655; }
+  .caveats p:last-child { margin:0; }
+  .dropped { margin-top:22px; font-size:12.5px; color:var(--mut); }
+  @media (max-width:720px){ td,th{font-size:12.5px;padding:8px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>ABL Notice Sweep</h1>
+    <div class="sub">Charleston County &middot; notices published 18 Aug – 17 Sep 2026 &middot; run Thursday 17 September</div>
+  </header>
+
+  <div class="counts">
+    <b>77</b> rows returned &rarr; <b>36</b> distinct filings &rarr; <b>5</b> dropped as out-of-footprint &rarr;
+    <span class="hi">15 on-premises not yet tracked</span> &middot; <b>11</b> already tracked &middot; <b>5</b> off-premises retail
+  </div>
+
+  <h2>Not yet tracked — on premises <span class="n">(mark the ones you want filed)</span></h2>
+  <table>
+    <tr>
+      <th>#</th><th>Business / applicant</th><th>Address</th><th>Licence</th>
+      <th>Read <span style="font-weight:400;text-transform:none">(heuristic)</span></th><th>First published</th><th>Status</th>
+    </tr>
+    <tr><td class="num">1</td><td class="biz">Old Village Swim Club LLC</td><td class="addr">1305 Erckmann Drive, Mt. Pleasant, SC 29464</td><td class="lic">Beer, wine &amp; liquor &middot; ON</td><td class="read">Likely new premises</td><td class="date">27 Aug</td><td>Not yet tracked</td></tr>
+    <tr><td class="num">2</td><td class="biz">Patriots Point Beverage Manager, LLC</td><td class="addr">32 Patriots Point Rd., Mount Pleasant</td><td class="lic">Beer, wine &amp; liquor &middot; ON</td><td class="read">Likely new premises</td><td class="date">26 Aug</td><td>Not yet tracked</td></tr>
+    <tr><td class="num">3</td><td class="biz">Patriots Point Beverage Manager, LLC</td><td class="addr">28 Patriots Point Rd., Mount Pleasant<span class="flag">Second address, same applicant, same day</span></td><td class="lic">Beer, wine &amp; liquor &middot; ON</td><td class="read">Likely new premises</td><td class="date">26 Aug</td><td>Not yet tracked</td></tr>
+    <tr><td class="num">4</td><td class="biz">The Point Racket and Social Club</td><td class="addr">3121 Marlin Road, Charleston, SC 29455 (Johns Island)</td><td class="lic">Beer &amp; wine &middot; ON</td><td class="read">Likely new premises</td><td class="date">26 Aug</td><td>Not yet tracked</td></tr>
+    <tr><td class="num">5</td><td class="biz">Mi Lindo Oaxaca Taqueria</td><td class="addr">7259 N. Hwy 17, Awendaw, SC 29429</td><td class="lic">Beer, wine &amp; liquor &middot; ON</td><td class="read">Likely new premises</td><td class="date">26 Aug</td><td>Not yet tracked</td></tr>
+    <tr><td class="num">6</td><td class="biz">REVELRY BREWING COMPANY, LLC</td><td class="addr">10 Conroy St, Charleston, SC 29403</td><td class="lic">Liquor only &middot; ON</td><td class="read up">Likely upgrade at an existing spot</td><td class="date">20 Aug</td><td>Not yet tracked</td></tr>
+    <tr><td class="num">7</td><td class="biz">Hanuman CHS Inc</td><td class="addr">2455 Prospect Dr, North Charleston, SC 29406</td><td class="lic">Beer, wine and/or liquor &middot; ON</td><td class="read">Likely new premises</td><td class="date">21 Aug</td><td>Not yet tracked</td></tr>
+    <tr><td class="num">8</td><td class="biz">Mango Tree CHS, LLC <span style="font-weight:400">d/b/a</span> Ti-Ney Bangkok Huger</td><td class="addr">396 Huger St, Ste. 110, Charleston</td><td class="lic">Beer &amp; wine, 7-day &middot; ON</td><td class="read">Likely new premises</td><td class="date">22 Aug</td><td>Not yet tracked</td></tr>
+    <tr><td class="num">9</td><td class="biz">LA Estacion DEl Sabor C, LLC</td><td class="addr">5117 Dorchester Rd, Suite C, North Charleston</td><td class="lic">Beer, wine &amp; liquor &middot; ON</td><td class="read">Likely new premises</td><td class="date">19 Aug</td><td>Not yet tracked</td></tr>
+    <tr><td class="num">10</td><td class="biz">T&amp;F barber LLC</td><td class="addr">5900 Rivers Ave, unit D-4, North Charleston, SC 29405</td><td class="lic">Beer &amp; wine &middot; ON</td><td class="read">Likely new premises</td><td class="date">19 Aug</td><td>Not yet tracked</td></tr>
+    <tr><td class="num">11</td><td class="biz">Dhara Hospitality Group LLC <span style="font-weight:400">— operating as Comfort Suites</span></td><td class="addr">1130 Hungryneck Blvd, Mount Pleasant, SC 29464</td><td class="lic">Beer &amp; wine &middot; ON</td><td class="read">Likely new premises</td><td class="date">2 Sep</td><td>Not yet tracked</td></tr>
+    <tr><td class="num">12</td><td class="biz">Sand Dollar 2.0, LLC</td><td class="addr">7 Center Street, Folly Beach, SC 29439</td><td class="lic">Beer, wine &amp; liquor &middot; ON</td><td class="read">Likely new premises</td><td class="date">4 Sep</td><td>Not yet tracked</td></tr>
+    <tr><td class="num">13</td><td class="biz">E. L. Cook Construction LLC, dba —</td><td class="addr">Address truncated in the results snippet (begins &ldquo;4…&rdquo;)<span class="flag">Address unresolved — detail page not opened</span></td><td class="lic">Beer &amp; wine 7-day + liquor &middot; ON</td><td class="read">Likely new premises</td><td class="date">4 Sep</td><td>Not yet tracked</td></tr>
+    <tr><td class="num">14</td><td class="biz">The Citadel / Top Shelf Catering Company</td><td class="addr">7 Jones Ave, Charleston, SC 29403</td><td class="lic">Beer &amp; wine &middot; ON</td><td class="read">Likely new premises</td><td class="date">3 Sep</td><td>Not yet tracked</td></tr>
+    <tr><td class="num">15</td><td class="biz">Jack&rsquo;s Diner, LLC</td><td class="addr">41-B George St, Charleston, SC 29401</td><td class="lic">Beer &amp; wine, on-premises &middot; ON</td><td class="read">Likely new premises</td><td class="date">13 Sep</td><td>Not yet tracked</td></tr>
+  </table>
+
+  <h2>Already in the tracker <span class="n">— no action needed unless something looks wrong</span></h2>
+  <div class="quiet">
+  <table>
+    <tr><th>#</th><th>Business / applicant</th><th>Address</th><th>Licence</th><th>First published</th><th>Matched row</th></tr>
+    <tr><td class="num">16</td><td class="biz">babas on meeting, LLC DBA babas on king</td><td class="addr">1011 King St, Charleston</td><td class="lic">Beer &amp; wine &middot; ON</td><td class="date">27 Aug</td><td class="match">Babas on King</td></tr>
+    <tr><td class="num">17</td><td class="biz">Avant Field, LLC d/b/a Hachiya Ramen</td><td class="addr">654 Hopewell Drive, Suite 110</td><td class="lic">Beer &amp; wine &middot; ON</td><td class="date">19 Aug</td><td class="match">Hachiya Ramen (Point Hope)</td></tr>
+    <tr><td class="num">18</td><td class="biz">Caf&eacute; Kaya, LLC</td><td class="addr">186 Coming Street, Suite A, Charleston</td><td class="lic">Beer, wine &amp; liquor &middot; ON</td><td class="date">19 Aug</td><td class="match">Kaia</td></tr>
+    <tr><td class="num">19</td><td class="biz">Camp 1234 LLC d/b/a Char Social House</td><td class="addr">1234 Camp Road, Unit A, Charleston</td><td class="lic">Beer, wine &amp; liquor &middot; ON</td><td class="date">19 Aug</td><td class="match">Char House Social</td></tr>
+    <tr><td class="num">20</td><td class="biz">Deannas Wine Bar LLC</td><td class="addr">521 Wappoo Road, Charleston, SC 29407</td><td class="lic">Beer &amp; wine &middot; ON</td><td class="date">19 Aug</td><td class="match">Deannas Wine Bar</td></tr>
+    <tr><td class="num">21</td><td class="biz">LY341 LLC</td><td class="addr">341 Johnnie Dodds Blvd, Mount Pleasant</td><td class="lic">Beer &amp; wine &middot; ON</td><td class="date">19 Aug</td><td class="match">Chef Loong Dim Sum — Mount Pleasant</td></tr>
+    <tr><td class="num">22</td><td class="biz">Itus LLC</td><td class="addr">2668 N Hwy 17, Mt Pleasant, SC 29466</td><td class="lic">Beer, wine &amp; liquor &middot; ON</td><td class="date">19 Aug</td><td class="match">Itus LLC (former Bohemian Bull)</td></tr>
+    <tr><td class="num">23</td><td class="biz">Mi Tierra Caliente LLC</td><td class="addr">1813 Reynold Ave Unit B, North Charleston<span class="flag">Near-miss match — tracker row at 1813 Reynolds is BlackOut Burger, a different business. One of the two is likely wrong.</span></td><td class="lic">Beer, wine &amp; liquor &middot; ON</td><td class="date">19 Aug</td><td class="match">BlackOut Burger</td></tr>
+    <tr><td class="num">24</td><td class="biz">THE COPPER TABLE, LLC</td><td class="addr">215 East Bay Street, Suite 101, Charleston</td><td class="lic">Beer, wine &amp; liquor &middot; ON</td><td class="date">21 Aug</td><td class="match">The Copper Table</td></tr>
+    <tr><td class="num">25</td><td class="biz">Ellie&rsquo;s Market LLC</td><td class="addr">1919 Maybank Hwy, Charleston, SC 29412</td><td class="lic">Beer, wine &amp; liquor &middot; ON</td><td class="date">22 Aug</td><td class="match">Ellie&rsquo;s Quality General</td></tr>
+    <tr><td class="num">26</td><td class="biz">CIG Holdings, LLC</td><td class="addr">601 Solana Way, Mount Pleasant, SC 29464</td><td class="lic">Beer &amp; wine &middot; ON</td><td class="date">29 Aug</td><td class="match">CIG Holdings, LLC</td></tr>
+  </table>
+  </div>
+
+  <h2>Off-premises retail <span class="n">— carry-out only</span></h2>
+  <div class="quiet">
+  <table>
+    <tr><th>#</th><th>Business / applicant</th><th>Address</th><th>Licence</th><th>Read</th><th>First published</th><th>Status</th></tr>
+    <tr><td class="num">27</td><td class="biz">goat.sheep.cow., llc</td><td class="addr">11 Fulton Street, Charleston, SC 29401</td><td class="lic">Beer &amp; wine &middot; OFF</td><td class="read">Likely new premises</td><td class="date">23 Aug</td><td>Not yet tracked</td></tr>
+    <tr><td class="num">28</td><td class="biz">SAIRAMS 5075 LLC</td><td class="addr">5075 Dorchester Rd, Unit 7B, North Charleston</td><td class="lic">Liquor only &middot; OFF</td><td class="read up">Likely upgrade at an existing spot</td><td class="date">6 Sep</td><td>Not yet tracked</td></tr>
+    <tr><td class="num">29</td><td class="biz">Maple Leaf Advisors, LLC</td><td class="addr">5325 Park Forest Parkway, Suite E, North Charleston</td><td class="lic">Liquor only &middot; OFF</td><td class="read up">Likely upgrade at an existing spot</td><td class="date">13 Sep</td><td>Not yet tracked</td></tr>
+    <tr><td class="num">30</td><td class="biz">Robert L. Cochran</td><td class="addr">6824 Highway 162, Ste. B, Hollywood, SC 29449</td><td class="lic">Beer, wine &amp; liquor &middot; OFF</td><td class="read">Likely new premises</td><td class="date">9 Sep</td><td>Not yet tracked</td></tr>
+    <tr><td class="num">31</td><td class="biz">Gibbys Bottle Shop <span style="font-weight:400">(applicant field empty in the notice)</span></td><td class="addr">932 Savannah Hwy, Charleston, SC 29407</td><td class="lic">Beer, wine &amp; liquor &middot; OFF</td><td class="read">Likely new premises</td><td class="date">20 Aug</td><td class="match">Already tracked — Gibby&rsquo;s Bottle Shop</td></tr>
+  </table>
+  </div>
+
+  <div class="dropped">
+    <b>Dropped as out-of-footprint</b> (the county filter keys on the publishing paper, not the premises):
+    Reserve Lounge 2.0, 1115 Miles Jamison Rd, Summerville &middot;
+    Publix Super Markets #1740, 1612 Beech Hill Rd, Summerville &middot;
+    Parker&rsquo;s Kitchen #133, 1080 N. Maple St, Summerville &middot;
+    Taste Asian Bistro Summerville Inc., 10645 Dorchester Rd, Summerville &middot;
+    Family Dollar #33873, 1462 Main St, Bonneau.
+  </div>
+
+  <div class="caveats">
+    <p>A filing is an <b>intention</b>, not an opening date. Nothing here is publishable as fact.</p>
+    <p>South Carolina does not require re-advertising to renew the same business at the same location — so an <b>already-open business appearing here means something changed</b>: a new licence class, an ownership transfer, or altered premises. The notice never says which.</p>
+    <p>This can only see businesses that serve alcohol. It is not a complete picture of Charleston openings.</p>
+  </div>
+
+</div>
+</body>
+</html>
