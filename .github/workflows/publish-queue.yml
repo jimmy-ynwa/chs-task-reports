@@ -1,0 +1,31 @@
+# Publishes pages that cloud tasks drop into the Airtable "Publish Queue" table
+# (base appWa4GJWOvIujI2Q, table tbltFUn4uyxQt8u0n). Cloud sessions can't push to
+# this repo, so they queue pages there and this workflow pushes them for them.
+name: Publish queue
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: publish-queue
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Publish queued pages
+        env:
+          AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
+        run: python3 _scripts/publish_queue.py
