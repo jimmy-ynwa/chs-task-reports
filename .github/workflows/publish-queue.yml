@@ -1,11 +1,11 @@
-# Publishes pages that cloud tasks drop into the Airtable "Publish Queue" table
+    - cron: "7,17,27,37,47,57 * * * *"# Publishes pages that cloud tasks drop into the Airtable "Publish Queue" table
 # (base appWa4GJWOvIujI2Q, table tbltFUn4uyxQt8u0n). Cloud sessions can't push to
 # this repo, so they queue pages there and this workflow pushes them for them.
 name: Publish queue
 
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "7,17,27,37,47,57 * * * *"
   workflow_dispatch:
 
 permissions:
