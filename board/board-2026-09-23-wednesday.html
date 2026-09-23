@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Board — Wednesday Music — 2026-09-23</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#183872;
+    --lime:#CCED60;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Open Sans',sans-serif;
+    background:#f4f5f2;
+    color:var(--navy);
+  }
+  .masthead{
+    background:var(--navy);
+    color:#fff;
+    padding:22px 20px;
+  }
+  .masthead h1{
+    font-family:'Inter',sans-serif;
+    font-size:20px;
+    margin:0 0 4px 0;
+    color:var(--lime);
+  }
+  .masthead p{
+    margin:0;
+    font-size:13px;
+    opacity:.85;
+  }
+  .wrap{
+    max-width:720px;
+    margin:0 auto;
+    padding:20px;
+  }
+  .eyes{
+    background:#fff3e0;
+    border:2px solid #e8a33d;
+    border-radius:10px;
+    padding:18px 18px 8px 18px;
+    margin-bottom:24px;
+  }
+  .eyes h2{
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    margin:0 0 2px 0;
+  }
+  .eyes .sub{
+    font-size:12.5px;
+    margin:0 0 14px 0;
+    opacity:.8;
+  }
+  .eyes ul{
+    margin:0 0 14px 0;
+    padding-left:18px;
+  }
+  .eyes li{
+    font-size:13.5px;
+    line-height:1.5;
+    margin-bottom:8px;
+  }
+  .rule{
+    border:none;
+    border-top:1px solid #ddd;
+    margin:24px 0;
+  }
+  .ready{
+    display:inline-block;
+    background:#e6f4d9;
+    color:#2c5e1a;
+    font-weight:700;
+    font-size:13px;
+    padding:6px 12px;
+    border-radius:20px;
+    margin-bottom:10px;
+  }
+  .ready-note{
+    font-size:13px;
+    margin:0 0 20px 0;
+    opacity:.85;
+  }
+  .step-label{
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:13px;
+    color:var(--navy);
+    margin:0 0 8px 0;
+    text-transform:uppercase;
+    letter-spacing:.03em;
+  }
+  .titlebox{
+    background:#fff;
+    border:1px solid #ddd;
+    border-radius:8px;
+    padding:16px;
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:19px;
+    margin-bottom:10px;
+    outline:none;
+  }
+  .copybar{
+    background:var(--navy);
+    border-radius:0 0 8px 8px;
+    margin-top:-10px;
+    margin-bottom:24px;
+    padding:10px;
+    text-align:center;
+  }
+  .copybtn{
+    background:var(--lime);
+    color:var(--navy);
+    border:none;
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:14px;
+    padding:10px 18px;
+    border-radius:6px;
+    cursor:pointer;
+    width:100%;
+  }
+  .postbox{
+    background:#fff;
+    border:1px solid #ddd;
+    border-radius:8px;
+    padding:20px;
+    margin-bottom:10px;
+  }
+  #post h3{
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    color:var(--navy);
+    margin:20px 0 8px 0;
+  }
+  #post h3:first-child{margin-top:0;}
+  #post p{
+    font-size:14.5px;
+    line-height:1.55;
+    margin:0 0 10px 0;
+  }
+  #post ul{
+    margin:0 0 14px 0;
+    padding-left:20px;
+  }
+  #post li{
+    font-size:14.5px;
+    line-height:1.5;
+    margin-bottom:6px;
+  }
+  #post strong{color:var(--navy);}
+  #post a{color:#1a5fb4;}
+  .calendar-line{
+    font-size:14px;
+    font-style:italic;
+  }
+  .cadence{
+    font-size:13px;
+    opacity:.8;
+  }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <h1>The Board · Wednesday music</h1>
+  <p>Wednesday, September 23, 2026</p>
+</div>
+
+<div class="wrap">
+
+  <div class="eyes">
+    <h2>🔒 For your eyes only — don't post this part</h2>
+    <p class="sub">Notes on how this got built. None of this goes to Beehiiv.</p>
+    <ul>
+      <li><b>Staleness gate:</b> passed. Newest Live Music "Last Seen" stamp in Airtable is 2026-09-23 (today) — Tuesday's prefetch ran clean.</li>
+      <li><b>Title options, your pick:</b> loaded into the title box is "The CSO's Season Opener Shares a Weekend With Travis Tritt." Alt 1: "Fifty-Plus Shows This Week, One of Them Is Beeple" — leads with volume, then the outlier. Alt 2: "Gaillard's Got a Symphony and a Digital Artist This Weekend" — more literal, names both Gaillard bookings directly. Edit the box before copying and the button picks up your version.</li>
+      <li><b>Bold rule in force:</b> inside each day, bold marks the 1–2 shows worth reorganizing your night around (3 max Saturday, since it's stacked). In "Next week" and "On sale," the date is bolded on every row plus the name on the 2–3 biggest draws — that's the forward-looking-list convention.</li>
+      <li><b>Row counts:</b> 76 Live Music rows matched Thu–Sun this week (Status = Scheduled), most of them recurring bar sets at Henry's On The Market (5 stages), The Dinghy, Forte Jazz Lounge, The Commodore, and Prohibition. Those got collapsed into one line per day rather than listed individually — nobody needs "Pop Rock Cult (Henry's Music Hall)" and "Pop Rock Cult (Henry's Stage)" as two rows.</li>
+      <li><b>Duplicates collapsed:</b> several shows had two Airtable rows from separate scrape passes — The Rose Electric, The Great American Songbook ft. Joe Clarke, NIGHT & DAY (Cole Porter), Soul/R&B/Motown w/ Charles Grant, Art Blakey Tribute. Each appears once here.</li>
+      <li><b>Next week / on-sale sourcing:</b> next week pulled straight from Live Music (Sep 28–Oct 4). The on-sale block (Oct 8 onward) was filtered down to real ticketed rooms — Music Hall, Music Farm, Gaillard, the Coliseum, The Refinery, Credit One Stadium, Windjammer, and touring acts at Pour House — cutting out the weekly bar residencies that also happen to fall in that window.</li>
+      <li><b>Genre check:</b> named picks this week span classical (CSO, Beeple), country (Travis Tritt), soul (Charlton Singleton), and rock (Reverend Horton Heat) — no single genre over half the bolded list.</li>
+      <li><b>Geographic scope:</b> nothing out-of-area (Georgetown/Columbia/Summerville/Kiawah-Seabrook) turned up in this window — didn't need to drop anything.</li>
+      <li><b>Times:</b> a handful of rows (The Rose Electric at The Commodore, "Live Music Tonight" at The Washout, a few others) carry no start time in the source — they're grouped into the "regulars" line rather than given an invented time.</li>
+    </ul>
+  </div>
+
+  <hr class="rule">
+
+  <span class="ready">✅ Paste this into Beehiiv</span>
+  <p class="ready-note">Two boxes below, two fields in the Community composer. Copy the title into the post's title field, copy the body into the post's body field — the formatting comes through already styled, no cleanup needed.</p>
+
+  <p class="step-label">Step 1 — the title</p>
+  <div class="titlebox" id="titleBox" contenteditable="true">The CSO's Season Opener Shares a Weekend With Travis Tritt</div>
+  <div class="copybar"><button class="copybtn" id="copyTitleBtn">Copy title</button></div>
+
+  <p class="step-label">Step 2 — the body</p>
+  <div class="postbox">
+    <div id="post">
+
+<p>Fifty-plus shows on the board this week, and the two biggest bookings could not be more different — the Charleston Symphony opens its season at the Gaillard the same weekend Travis Tritt rolls into North Charleston Coliseum.</p>
+
+<h3>Thursday, September 24</h3>
+<ul>
+<li><strong>The Great American Songbook featuring Joe Clarke</strong> — Forte Jazz Lounge, 7pm</li>
+<li>Campbell &amp; Sons — The Royal American, 9pm</li>
+<li>The Rose Electric (special show) — The Commodore</li>
+<li>Dallas Baker &amp; Friends — The Charleston Pour House, 6pm</li>
+<li>Plus the regulars: Henry's On The Market's five stages, The Dinghy's rotating acoustic sets</li>
+</ul>
+
+<h3>Friday, September 25</h3>
+<ul>
+<li><strong>CSO Masterworks 1: Season Opening Weekend</strong> — Gaillard Center, 7:30pm</li>
+<li>NIGHT &amp; DAY: The Music of Cole Porter — Forte Jazz Lounge, 7pm</li>
+<li>The Grass is Dead + Reedy River String Band — The Charleston Pour House, bluegrass double bill</li>
+<li>Hard Rock Showcase: Unattended Children / Saddle Breaker / AS-33 — The Tin Roof, 7:30pm</li>
+</ul>
+
+<h3>Saturday, September 26</h3>
+<ul>
+<li><strong>Travis Tritt with Tyler Reese Tritt</strong> — North Charleston Coliseum</li>
+<li><strong>Beeple x Sō Percussion</strong> — Gaillard Center, 6:30pm</li>
+<li>CSO Masterworks 1 (Saturday) — Gaillard Center, 7:30pm</li>
+<li>Charlton Singleton &amp; Friends presents New Jack Swing — Charleston Music Hall, 8pm</li>
+<li>4th Annual Holy City Homegrown Festival — The Charleston Pour House</li>
+</ul>
+
+<h3>Sunday, September 27</h3>
+<ul>
+<li><strong>Reverend Horton Heat with Messer Chups</strong> — The Charleston Pour House, 8pm</li>
+<li>Motown Throwdown — The Charleston Pour House, 1:30pm</li>
+<li>Reggae Sundays — The Washout, 6pm</li>
+</ul>
+
+<h3>Next week, condensed</h3>
+<ul>
+<li><strong>Wed 9/30</strong> — Andy Frasco &amp; the U.N. — The Charleston Pour House</li>
+<li><strong>Thu 10/1</strong> — Ashley McBryde: Into The Wild Tour w/ Colton Bowlin — The Refinery</li>
+<li><strong>Fri 10/2</strong> — <strong>Lalah Hathaway</strong> — Charleston Music Hall</li>
+<li><strong>Fri 10/2</strong> — Art Blakey &amp; The Jazz Messengers: A Tribute — Forte Jazz Lounge</li>
+<li><strong>Sat 10/3</strong> — <strong>The Fab Four</strong> — Charleston Music Hall</li>
+<li><strong>Sat 10/3</strong> — Infinity Song — Music Farm</li>
+<li><strong>Sun 10/4</strong> — He Is Legend w/ In Angles &amp; Excide — Music Farm</li>
+<li><strong>Sun 10/4</strong> — The Expendables w/ Matt &amp; Zack — The Windjammer</li>
+</ul>
+
+<h3>On sale, October and beyond</h3>
+<ul>
+<li><strong>10/8</strong> — Russian Circles w/ Pelican — Music Farm</li>
+<li><strong>10/9</strong> — <strong>MercyMe</strong>, Jeremy Camp, Tim Timmons, Sam Wesley — North Charleston Coliseum</li>
+<li><strong>10/10</strong> — The Black Jacket Symphony Presents Def Leppard's "Hysteria" — Charleston Music Hall</li>
+<li><strong>10/12</strong> — <strong>Cannons</strong> — Charleston Music Hall</li>
+<li><strong>10/13</strong> — All Them Witches — Charleston Music Hall</li>
+<li><strong>10/14</strong> — Scott Bradlee's Postmodern Jukebox — Charleston Music Hall</li>
+<li><strong>10/15</strong> — sunn O))) w/ Shane Parish — Music Farm</li>
+<li><strong>10/15</strong> — Black Violin — Gaillard Center</li>
+<li><strong>10/16</strong> — Trampled by Turtles — The Refinery</li>
+<li><strong>10/16</strong> — The Marshall Tucker Band — Charleston Music Hall</li>
+<li><strong>10/20</strong> — Chucho Valdés 85th Birthday Celebration — Gaillard Center</li>
+<li><strong>10/23</strong> — <strong>Johnny Blue Skies &amp; the Dark Clouds</strong>: Mutiny for the Masses Tour — Credit One Stadium</li>
+<li><strong>10/23</strong> — The Greyboy Allstars — The Charleston Pour House</li>
+<li><strong>11/5</strong> — Bitch Cabal feat. Wednesday &amp; Mannequin Pussy — Charleston Music Hall</li>
+<li><strong>11/8</strong> — Tab Benoit — Charleston Music Hall</li>
+</ul>
+
+<h3>Jimmy's pick</h3>
+<p>Beeple x Sō Percussion, Gaillard Center, Saturday at 6:30pm. Beeple is the digital artist behind a $69 million NFT sale — now he's built a live audiovisual set around a percussion quartet, and the Gaillard almost never books anything like it. Everything else this week is a genre you already know what to expect from. This one you don't.</p>
+
+<p class="calendar-line">The full 60-day calendar, members only → calendar.chshappenings.com</p>
+<p class="cadence">Mondays the calendar, Wednesdays the music, Fridays what's opening and closing.</p>
+
+    </div>
+  </div>
+  <div class="copybar"><button class="copybtn" id="copyPostBtn">Copied — paste into Beehiiv</button></div>
+
+</div>
+
+<script>
+function buildHtmlFlavor(){
+  const post = document.getElementById('post');
+  const parts = [];
+  post.childNodes.forEach(node=>{
+    if(node.nodeType !== 1) return;
+    if(node.tagName === 'H3'){
+      parts.push('<p><strong>'+node.innerHTML+'</strong></p>');
+      parts.push('<p>&nbsp;</p>');
+    } else if(node.tagName === 'P'){
+      parts.push('<p>'+node.innerHTML+'</p>');
+      parts.push('<p>&nbsp;</p>');
+    } else if(node.tagName === 'UL'){
+      node.querySelectorAll('li').forEach(li=>{
+        parts.push('<p>• '+li.innerHTML+'</p>');
+      });
+      parts.push('<p>&nbsp;</p>');
+    }
+  });
+  return parts.join('');
+}
+
+function buildPlainFlavor(){
+  const post = document.getElementById('post');
+  const lines = [];
+  post.childNodes.forEach(node=>{
+    if(node.nodeType !== 1) return;
+    if(node.tagName === 'H3' || node.tagName === 'P'){
+      lines.push(node.textContent.trim());
+      lines.push('');
+    } else if(node.tagName === 'UL'){
+      node.querySelectorAll('li').forEach(li=>{
+        lines.push('• '+li.textContent.trim());
+      });
+      lines.push('');
+    }
+  });
+  return lines.join('\n').replace(/\n{3,}/g,'\n\n').trim();
+}
+
+async function copyRich(html, plain, btn, label){
+  try{
+    const item = new ClipboardItem({
+      'text/html': new Blob([html], {type:'text/html'}),
+      'text/plain': new Blob([plain], {type:'text/plain'})
+    });
+    await navigator.clipboard.write([item]);
+  }catch(e){
+    const ta = document.createElement('textarea');
+    ta.value = plain;
+    ta.style.position='fixed';
+    ta.style.opacity='0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+  }
+  const orig = btn.textContent;
+  btn.textContent = label;
+  setTimeout(()=>{btn.textContent = orig;}, 2000);
+}
+
+document.getElementById('copyTitleBtn').addEventListener('click', function(){
+  const title = document.getElementById('titleBox').textContent.trim();
+  copyRich('<p><strong>'+title+'</strong></p>', title, this, 'Copied — paste into Beehiiv');
+});
+
+document.getElementById('copyPostBtn').addEventListener('click', function(){
+  const html = buildHtmlFlavor();
+  const plain = buildPlainFlavor();
+  copyRich(html, plain, this, 'Copied — paste into Beehiiv');
+});
+</script>
+
+</body>
+</html>
