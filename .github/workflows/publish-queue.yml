@@ -1,9 +1,13 @@
 # Publishes pages that cloud tasks drop into the Airtable "Publish Queue" table
 # (base appWa4GJWOvIujI2Q, table tbltFUn4uyxQt8u0n). Cloud sessions can't push to
 # this repo, so they queue pages there and this workflow pushes them for them.
+# It starts three ways: an Airtable automation opens a "Publish queue" issue the
+# moment a row is queued (the main path), a timer as a backup, or by hand.
 name: Publish queue
 
 on:
+  issues:
+    types: [opened]
   schedule:
     - cron: "7,17,27,37,47,57 * * * *"
   workflow_dispatch:
@@ -11,6 +15,7 @@ on:
 permissions:
   contents: write
   pages: write
+  issues: write
 
 concurrency:
   group: publish-queue
@@ -18,6 +23,7 @@ concurrency:
 
 jobs:
   publish:
+    if: github.event_name != 'issues' || startsWith(github.event.issue.title, 'Publish queue')
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -29,3 +35,8 @@ jobs:
           AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
           GH_TOKEN: ${{ github.token }}
         run: python3 _scripts/publish_queue.py
+      - name: Close the trigger issue
+        if: always() && github.event_name == 'issues'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue close ${{ github.event.issue.number }} --repo ${{ github.repository }} --comment "Queue emptied by run ${{ github.run_id }}"
