@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week in Review — Sep 20 – 27, 2026</title>
+<style>
+  :root{
+    --navy:#003466;
+    --lime:#AEDC2E;
+    --gold:#ECD19C;
+    --steel:#7095A7;
+    --bg:#F4F5F0;
+    --card:#FFFFFF;
+    --ink:#1A1A2E;
+    --body:#3D3D52;
+    --muted:#888899;
+    --line:#E8E8EE;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",sans-serif;
+    color:var(--body);
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--navy);}
+  .header{
+    background:var(--navy);
+    padding:32px 16px 28px;
+    text-align:center;
+  }
+  .header h1{
+    color:#fff;
+    font-size:22px;
+    margin:0 0 8px;
+    font-weight:700;
+    letter-spacing:-0.01em;
+  }
+  .header .range{
+    color:rgba(255,255,255,0.75);
+    font-size:14px;
+    margin:0 0 10px;
+    font-weight:500;
+  }
+  .header .summary{
+    color:var(--lime);
+    font-size:15px;
+    font-weight:600;
+    max-width:520px;
+    margin:0 auto;
+    line-height:1.45;
+  }
+  .wrapper{
+    max-width:760px;
+    margin:0 auto;
+    padding:20px 16px 60px;
+  }
+  .card{
+    background:var(--card);
+    border-radius:16px;
+    box-shadow:0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,52,102,0.05);
+    padding:24px;
+    margin-bottom:16px;
+  }
+  .card.navy{
+    background:var(--navy);
+    color:rgba(255,255,255,0.9);
+  }
+  .card.gold{
+    background:#FBF6EC;
+    border-left:4px solid var(--gold);
+  }
+  .runnote{
+    background:#FBF6EC;
+    border-left:4px solid var(--gold);
+    border-radius:12px;
+    padding:14px 18px;
+    font-size:13.5px;
+    color:var(--body);
+    margin-bottom:16px;
+    line-height:1.55;
+  }
+  .runnote strong{color:var(--ink);}
+  h2{
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--navy);
+    font-weight:700;
+    border-left:3px solid var(--lime);
+    padding-left:10px;
+    margin:0 0 16px;
+  }
+  .card.navy h2{
+    color:#fff;
+    border-left:3px solid var(--lime);
+  }
+  h3{
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--steel);
+    font-weight:700;
+    margin:18px 0 8px;
+  }
+  h3:first-of-type{margin-top:0;}
+  p{margin:0 0 10px; line-height:1.55; font-size:14.5px;}
+  .stat-pill{
+    display:inline-block;
+    background:var(--navy);
+    color:#fff;
+    font-size:11.5px;
+    font-weight:700;
+    padding:3px 9px;
+    border-radius:20px;
+    margin-left:6px;
+  }
+  .card.navy .stat-pill{
+    background:rgba(255,255,255,0.15);
+  }
+  .delta-up{color:#1a8a4a; font-weight:700;}
+  .delta-down{color:#c0392b; font-weight:700;}
+  .delta-flat{color:var(--muted); font-weight:700;}
+  .priorities{list-style:none; margin:0; padding:0;}
+  .priorities li{
+    display:flex;
+    gap:14px;
+    margin-bottom:18px;
+    align-items:flex-start;
+  }
+  .priorities li:last-child{margin-bottom:0;}
+  .pnum{
+    color:var(--lime);
+    font-weight:800;
+    font-size:20px;
+    line-height:1.2;
+    min-width:22px;
+  }
+  .phead{
+    font-weight:700;
+    color:#fff;
+    font-size:15px;
+    margin-bottom:3px;
+  }
+  .pctx{
+    color:rgba(255,255,255,0.6);
+    font-size:13.5px;
+    line-height:1.5;
+  }
+  .psrc{
+    color:var(--lime);
+    font-size:11px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+    margin-top:4px;
+    display:block;
+  }
+  .followup{
+    border-left:3px solid var(--lime);
+    padding:8px 0 8px 12px;
+    margin:8px 0;
+  }
+  .caution{
+    border-left:3px solid var(--gold);
+    padding:8px 0 8px 12px;
+    margin:8px 0;
+    background:#FBF6EC;
+    border-radius:0 8px 8px 0;
+  }
+  .day-block{margin-bottom:18px;}
+  .day-block:last-child{margin-bottom:0;}
+  .appt{
+    font-size:14px;
+    color:var(--ink);
+    margin:0 0 4px;
+    font-weight:600;
+  }
+  .appt-time{color:var(--muted); font-weight:500;}
+  .prep{
+    border-left:3px solid var(--lime);
+    padding:6px 0 6px 12px;
+    margin:4px 0 10px;
+    font-size:13px;
+    color:var(--body);
+  }
+  .prep .src{
+    color:var(--steel);
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+    font-weight:700;
+    margin-left:4px;
+  }
+  .bullets{margin:0 0 10px; padding-left:0; list-style:none;}
+  .bullets li{
+    font-size:14px;
+    line-height:1.55;
+    margin-bottom:8px;
+    padding-left:16px;
+    position:relative;
+  }
+  .bullets li:before{
+    content:"—";
+    position:absolute;
+    left:0;
+    color:var(--steel);
+  }
+  .datepfx{color:var(--muted); font-weight:600;}
+  .sharpen-label{
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--steel);
+    font-weight:700;
+    margin:14px 0 6px;
+  }
+  .sharpen-label:first-child{margin-top:0;}
+  .sharpen-status{
+    font-size:12.5px;
+    color:var(--muted);
+    margin-bottom:6px;
+  }
+  .divider{
+    border:none;
+    border-top:1px solid var(--line);
+    margin:18px 0;
+  }
+  .metric-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    font-size:14px;
+    padding:7px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .metric-row:last-child{border-bottom:none;}
+  .metric-label{color:var(--body);}
+  .metric-val{font-weight:700; color:var(--ink);}
+  .linkrow{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    font-size:13.5px;
+    padding:6px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .linkrow:last-child{border-bottom:none;}
+  .linkrow .title{color:var(--ink);}
+  .linkrow .count{color:var(--steel); font-weight:700; white-space:nowrap;}
+  table.calendartbl{width:100%; border-collapse:collapse; font-size:13.5px;}
+  table.calendartbl td{padding:6px 4px; border-bottom:1px solid var(--line); vertical-align:top;}
+  table.calendartbl td.t{color:var(--muted); white-space:nowrap; width:118px;}
+  .tag-chs{color:var(--navy); font-weight:700; font-size:10.5px; text-transform:uppercase;}
+  .tag-personal{color:var(--steel); font-weight:700; font-size:10.5px; text-transform:uppercase;}
+  .tag-tfg{color:var(--muted); font-weight:700; font-size:10.5px; text-transform:uppercase;}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Week in Review</h1>
+  <div class="range">Sep 20 – 27, 2026</div>
+  <div class="summary">Open rate up to 71.4%, click-to-open up to 9.4% — best week in a month. First inbound sponsor lead since prospecting went dark.</div>
+</div>
+
+<div class="wrapper">
+
+  <div class="runnote">
+    <strong>Run note:</strong> the desktop bridge dropped mid-run and reconnected only briefly, so three sections couldn't pull fresh data this cycle: the CHS Happenings mailbox (jimmy@chshappenings.com), Cowork session history, and the New NEXT Command artifact on your Mac. Everything else below is fully current. Those three sections show what's known and flag the gap — worth a manual glance next time you're at the desktop, or just wait for next Sunday's run to pick them back up.
+  </div>
+
+  <div class="card navy">
+    <h2>Next Week's Focus</h2>
+    <ol class="priorities">
+      <li>
+        <span class="pnum">1</span>
+        <div>
+          <div class="phead">Get Hannah's sign-off on the Magnolia &amp; Moss #3 copy before Oct 7</div>
+          <div class="pctx">It's drafted and ready — "December gets booked in October" — but sits unapproved with the Oct 8 primary slot closing the run. This is also the placement that closes out her $500 package.</div>
+          <span class="psrc">Sponsorship Pipeline</span>
+        </div>
+      </li>
+      <li>
+        <span class="pnum">2</span>
+        <div>
+          <div class="phead">Write the Fleet Feet #2 Secondary ad copy for Oct 8</div>
+          <div class="pctx">Chris's brief (via Jennifer) has been sitting since early September — the Fit Process theme, photos in hand — but the actual copy still isn't written. It's the only thing blocking that slot.</div>
+          <span class="psrc">Sponsorship Pipeline</span>
+        </div>
+      </li>
+      <li>
+        <span class="pnum">3</span>
+        <div>
+          <div class="phead">Use iSmash's anniversary party Thursday to lock Placements #2 and #3</div>
+          <div class="pctx">Amanda's 3-placement gratis package only has one date scheduled (Sept 17, already run). You're walking into her party Oct 1 at 5:30 — good moment to pin the other two dates in person instead of over email.</div>
+          <span class="psrc">The Week Ahead</span>
+        </div>
+      </li>
+      <li>
+        <span class="pnum">4</span>
+        <div>
+          <div class="phead">Give Goldie's Shoes a personal reply, not just the auto-sequence</div>
+          <div class="pctx">Courtney Stark found you through the site's Tally form Friday — the first real inbound lead since cold prospecting went dark. She's already dropped into the "Inbound - In Sequence" nurture, but with referral being the whole top of funnel now, a personal note beats a template.</div>
+          <span class="psrc">Sponsorship Pipeline</span>
+        </div>
+      </li>
+      <li>
+        <span class="pnum">5</span>
+        <div>
+          <div class="phead">Log this week's sponsor touches into Airtable — it's been zero for two weeks running</div>
+          <div class="pctx">Real activity kept happening (Meg Mathis breakfast, the Char House Social call, the Natasha LinkedIn chat) but none of it hit the Interactions table. See Sharpen below.</div>
+          <span class="psrc">Interactions / Calendar</span>
+        </div>
+      </li>
+    </ol>
+  </div>
+
+  <div class="card gold">
+    <h2 style="border-left-color:#C9A227;">Sharpen</h2>
+    <div class="sharpen-status">Last week's experiment (put Dinner Club on the calendar as a real 6–9 PM block; treat "not on the calendar" as "not confirmed"): <strong>partially run.</strong> The Dinner Club Afterparty made it onto the CHS calendar for Wednesday 9/23 — but the dinner itself, the 6:00–9:00 PM block the rule was actually about, still isn't there. Only the after-party half of the night got the discipline.</div>
+    <div class="sharpen-label">Pattern worth noticing</div>
+    <p>Airtable's Interactions table has logged zero sponsor touches for two straight weeks — while the calendar and inbox both show real activity happening: the Meg Mathis make-good breakfast, the Char House Social call with Josh, a LinkedIn chat with Natasha. The relationship work is getting done; it's just not making it into the system that's supposed to track it. With sponsorship running on inbound and referral alone now, that log is the only record of how the funnel is actually moving — and right now it's blind.</p>
+    <div class="sharpen-label">Experiment for next week</div>
+    <p>Block 10 minutes this Friday (Oct 2) to log the week's sponsor-facing conversations into Interactions — Meg, Josh, Natasha, and whatever the Goldie's Shoes follow-up turns into. One sitting, not real-time discipline, to see if a standing Friday block is enough to close the gap.</p>
+  </div>
+
+  <div class="card">
+    <h2>The Week Ahead</h2>
+    <p style="margin-bottom:16px;">10 commitments, ~11 hours across the four calendars queried. Wednesday is the heaviest day — a three-hour LinkedIn mastermind block stacked right after a TFG networking breakfast.</p>
+
+    <div class="day-block">
+      <h3>Monday, Sep 28</h3>
+      <div class="appt"><span class="appt-time">12:00–4:00 PM</span> — Aetna Visit</div>
+      <div class="appt"><span class="appt-time">6:15–7:45 PM</span> — Monday RunDay 🏃</div>
+    </div>
+
+    <div class="day-block">
+      <h3>Tuesday, Sep 29</h3>
+      <div class="appt"><span class="appt-time">9:30–10:30 AM</span> — With Alison (6:33 Physical Therapy)</div>
+      <div class="appt"><span class="appt-time">6:15–7:30 PM</span> — Half-Marathon Speed Work</div>
+    </div>
+
+    <div class="day-block">
+      <h3>Wednesday, Sep 30 <span class="stat-pill">Heaviest day</span></h3>
+      <div class="appt"><span class="appt-time">9:00–10:00 AM</span> — 1 Million Cups (Frothy Beard Brewing)</div>
+      <div class="appt"><span class="appt-time">10:00 AM–12:00 PM</span> — #6 Mastermind Session: AI &amp; LinkedIn (guest: Charlie Hills)</div>
+      <div class="prep">Charlie Hills is an outside guest speaker on applied AI for creators — worth 60 seconds skimming his material beforehand if you want a sharper question ready. <span class="src">[Email — unverified this run]</span></div>
+      <div class="appt"><span class="appt-time">12:00–1:00 PM</span> — "3 Things I'm Prioritizing on LinkedIn" Q&amp;A</div>
+      <div class="prep">Back-to-back with the mastermind — no buffer between the two, and both butt up against the 9 AM 1 Million Cups start. A genuinely stacked morning-into-afternoon; worth protecting the 1:00 PM+ window after it. <span class="src">[Calendar]</span></div>
+      <div class="appt"><span class="appt-time">6:45–8:00 PM</span> — Run CBW (Charleston Beer Works)</div>
+    </div>
+
+    <div class="day-block">
+      <h3>Thursday, Oct 1</h3>
+      <div class="appt"><span class="appt-time">5:30–6:30 PM</span> — iSmash 1-Year Anniversary Celebration <span class="stat-pill">Sponsor</span></div>
+      <div class="prep">Amanda's gratis 3-placement package has only Placement #1 scheduled (already ran Sept 17). Good chance to lock #2 and #3 dates face to face. <span class="src">[Sponsorship Pipeline]</span></div>
+    </div>
+
+    <div class="day-block">
+      <h3>Friday, Oct 2 – Sunday, Oct 4</h3>
+      <div class="appt"><span class="appt-time">Sat 7:15–9:30 AM</span> — Half-Marathon Long Training Run</div>
+      <p style="margin:6px 0 0; font-size:13px; color:var(--muted);">Nothing else on any of the four calendars through Sunday.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>What You Built In Claude</h2>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:14px;">Session history was unreachable this run (desktop bridge down — see run note above), so this is reconstructed from what's independently dated: Beehiiv and Airtable timestamps, not a session log. Treat it as a floor, not a full account.</p>
+    <h3>Shipped</h3>
+    <ul class="bullets">
+      <li><span class="datepfx">Sep 23–25</span> — This week's CHS Happenings issue built and sent: "🌴 A meat recall turned Charleston into locavores overnight" (Sept 24), plus five companion web posts (the Sullivan's Island castle, the airport ranking, Mount Pleasant dumplings, the Calhoun Street building, the farmers/meat-recall deep dive).</li>
+      <li><span class="datepfx">Sep 23</span> — iSmash Charleston and Kids On Point sponsor records both touched the same afternoon — consistent with a sponsor-performance results pass around that week's placements.</li>
+    </ul>
+    <h3>Explored</h3>
+    <p style="font-size:13.5px; color:var(--muted);">No Cowork sessions detected for this period — the session-history tool wasn't reachable this run.</p>
+  </div>
+
+  <div class="card">
+    <h2>New NEXT Command</h2>
+    <p>New NEXT Command unavailable this run — it lives at <code>~/Documents/Claude/Artifacts/new-next-command/index.html</code> on your Mac, and the desktop bridge was down for the whole window this ran in. Last confirmed baseline is the Sept 2 export: 21 modules, 2 competitive-intel entries, 10 creator evals. No newer data to diff against this week — worth a fresh Export next time you're in front of it, since the real ledger lives in localStorage and the file can lag by weeks.</p>
+  </div>
+
+  <div class="card">
+    <h2>CHS Happenings Newsletter</h2>
+    <div class="metric-row">
+      <span class="metric-label">Active subscribers</span>
+      <span class="metric-val">11,218 <span class="delta-down">▼97</span></span>
+    </div>
+    <div class="metric-row">
+      <span class="metric-label">Net new (7d)</span>
+      <span class="metric-val">−84 <span class="delta-up">easing</span></span>
+    </div>
+    <div class="metric-row">
+      <span class="metric-label">New / churned</span>
+      <span class="metric-val">19 new · 103 churned</span>
+    </div>
+    <hr class="divider">
+    <p style="margin-bottom:6px; font-weight:700; color:var(--ink); font-size:14px;">Sept 24 issue — "A meat recall turned Charleston into locavores overnight"</p>
+    <div class="metric-row">
+      <span class="metric-label">Open rate</span>
+      <span class="metric-val">71.43% <span class="delta-up">▲0.8 pt</span></span>
+    </div>
+    <div class="metric-row">
+      <span class="metric-label">Click-to-open</span>
+      <span class="metric-val">9.43% <span class="delta-up">▲2.75 pt</span></span>
+    </div>
+    <div class="metric-row">
+      <span class="metric-label">Delivered / unique opens / unique clickers</span>
+      <span class="metric-val">11,146 / 7,962 / 751</span>
+    </div>
+    <div class="metric-row">
+      <span class="metric-label">Unsubs / spam</span>
+      <span class="metric-val">17 (0.15%) / 1</span>
+    </div>
+    <h3>Top clicked links</h3>
+    <div class="linkrow"><span class="title">A Secret Castle Hides Among Sullivan's Island Beach Houses</span><span class="count">238 clicks</span></div>
+    <div class="linkrow"><span class="title">A Meat Recall Just Made Charleston Obsessed With Its Farmers</span><span class="count">156 clicks</span></div>
+    <div class="linkrow"><span class="title">Mount Pleasant Is Getting Charleston's Best Dumplings</span><span class="count">123 clicks</span></div>
+    <p style="margin-top:10px; font-size:13px; color:var(--muted);">The Secret Castle story alone pulled 32% of everyone who clicked anything — a strong lead pick. Worth noting for next week: MELT Mural Festival's two comped links pulled ~75 combined unique clicks, solid engagement for free inventory.</p>
+  </div>
+
+  <div class="card">
+    <h2>Sponsorship Pipeline</h2>
+    <p style="margin-bottom:14px;"><strong>Inbound is the whole top of funnel now</strong> — cold prospecting stays off. This week's one new signal: <strong>Goldie's Shoes</strong> (Courtney Stark, goldie@goldiesshoes.com), a Mount Pleasant shoe boutique that found the site through the Tally intake form Sept 25. She's auto-enrolled in the inbound nurture sequence; Stage reads "Maybe." No ad experience yet — a clean slate to pitch.</p>
+    <hr class="divider">
+    <p style="margin-bottom:6px; font-weight:700; color:var(--ink); font-size:14px;">Revenue — unchanged this week</p>
+    <div class="metric-row">
+      <span class="metric-label">Collected all-time</span>
+      <span class="metric-val">$1,050 <span class="delta-flat">flat</span></span>
+    </div>
+    <div class="metric-row">
+      <span class="metric-label">Booked / signed</span>
+      <span class="metric-val">$1,300</span>
+    </div>
+    <div class="metric-row">
+      <span class="metric-label">Outstanding</span>
+      <span class="metric-val">$250 (Magnolia &amp; Moss balance, due Oct 15)</span>
+    </div>
+    <p style="margin-top:10px; font-size:13px; color:var(--muted);">No package changed hands this week — a quiet, flat number, not a problem to solve. Five active packages are running fully comped right now (Fleet Feet, iSmash, Kids On Point, MELT, plus Bloom50's family-business gratis run) against one paid deal (Magnolia &amp; Moss) and one still-open proposal (Bookish, $1,000, sitting as "Sent" since March — the proposal-hygiene cleanup flagged in prior weeks is still undone).</p>
+    <hr class="divider">
+    <p style="margin-bottom:6px; font-weight:700; color:var(--ink); font-size:14px;">Upcoming placements (next 2 weeks)</p>
+    <div class="followup"><strong>Oct 1</strong> — Bloom50 Collective Primary #1. No copy on file yet.</div>
+    <div class="followup"><strong>Oct 8</strong> — Magnolia &amp; Moss #3 Primary. Copy drafted, needs Hannah's approval by Oct 7.</div>
+    <div class="followup"><strong>Oct 8</strong> — Fleet Feet #2 Secondary. Theme briefed, copy not yet written.</div>
+    <hr class="divider">
+    <p style="margin-bottom:6px; font-weight:700; color:var(--ink); font-size:14px;">Interactions logged (Airtable)</p>
+    <div class="caution">Zero logged in the Interactions table this week — same as last week. Email-side sponsor activity couldn't be counted this run since the CHS mailbox was unreachable (see run note). See Sharpen above.</div>
+  </div>
+
+  <div class="card">
+    <h2>Calendar Load — Last Week</h2>
+    <p style="margin-bottom:12px;">10 commitments, ~12.5 hours across Personal, CHS Happenings, and TFG. Busiest day: <strong>Tuesday</strong> (3 items). CHS 5 / Personal 4 / TFG 1 — a real shift toward CHS-facing time versus last week's Personal-heavy split (CHS 2 / Personal 8 / TFG 0).</p>
+    <table class="calendartbl">
+      <tr><td class="t">Mon 9/21, 6:15p</td><td>Monday RunDay 🏃 <span class="tag-personal">Personal</span></td></tr>
+      <tr><td class="t">Tue 9/22, 2:00p</td><td>Chat with Dan Nguyen <span class="tag-personal">Personal</span></td></tr>
+      <tr><td class="t">Tue 9/22, 3:30p</td><td>Josh x Jimmy: Char House Social call <span class="tag-chs">CHS</span></td></tr>
+      <tr><td class="t">Tue 9/22, 6:15p</td><td>Half-Marathon Speed Work <span class="tag-personal">Personal</span></td></tr>
+      <tr><td class="t">Wed 9/23, 8:00p</td><td>Dinner Club Afterparty (Commonhouse Aleworks) <span class="tag-chs">CHS</span></td></tr>
+      <tr><td class="t">Thu 9/24, 9:00a</td><td>Meet Meg Mathis (Mercantile &amp; Mash) <span class="tag-chs">CHS</span></td></tr>
+      <tr><td class="t">Thu 9/24, 11:30a</td><td>Meet Stacy Lunceford and Andy Smith (Poe's Tavern) <span class="tag-tfg">TFG</span></td></tr>
+      <tr><td class="t">Fri 9/25, 9:00a</td><td>Jimmy &lt;&gt; Natasha (LinkedIn) <span class="tag-chs">CHS</span></td></tr>
+      <tr><td class="t">Fri 9/25, 6:30p</td><td>Jimmy Farrell x Anson Restaurant <span class="tag-chs">CHS</span></td></tr>
+      <tr><td class="t">Sat 9/26, 7:15a</td><td>Half-Marathon Long Training Run <span class="tag-personal">Personal</span></td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Email Highlights</h2>
+    <p>Unreachable this run — the CHS Happenings mailbox (jimmy@chshappenings.com) needs the desktop bridge, which was down for the window this ran in (see run note at top). Nothing to report here; not the same as nothing happened. Worth a manual scan of starred/important mail from the last 7 days when you get a chance, or it'll pick back up automatically next Sunday.</p>
+  </div>
+
+</div>
+</body>
+</html>
