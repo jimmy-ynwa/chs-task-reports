@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Let's Be Honest — ad copy for Kim to react to</title>
+<style>
+  :root{
+    --cream:#FBF6EF;
+    --paper:#FFFFFF;
+    --ink:#2A1F2D;
+    --body:#4A3F4D;
+    --muted:#8A7F8D;
+    --plum:#3B1F3A;
+    --plum-2:#55304F;
+    --coral:#E2655A;
+    --blush:#F6D9D2;
+    --sage:#A9BBA0;
+    --line:#E9DFD3;
+    --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:var(--cream);color:var(--body);font-family:var(--sans);font-size:17px;line-height:1.6}
+  img{display:block;max-width:100%}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--coral)}
+  h2{font-family:var(--serif);font-weight:400;color:var(--ink);font-size:clamp(34px,6vw,58px);line-height:1.05;letter-spacing:-.02em}
+  h2 em{font-style:italic;color:var(--coral)}
+  .lede{max-width:600px;margin-top:16px;font-size:19px}
+
+  /* HERO */
+  .hero{background:var(--plum);color:#fff;overflow:hidden}
+  .hero-inner{display:grid;grid-template-columns:1.25fr .75fr;min-height:620px}
+  .hero-copy{padding:56px 20px 56px max(20px,calc((100vw - 1040px)/2 + 20px));display:flex;flex-direction:column;justify-content:center}
+  .hero .eyebrow{color:var(--blush);margin-bottom:22px}
+  .hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(60px,12vw,138px);line-height:.88;letter-spacing:-.03em}
+  .hero h1 em{font-style:italic;color:var(--coral);display:block}
+  .hero .sub{margin-top:30px;max-width:460px;font-size:20px;line-height:1.45;color:#EBDDE6}
+  .hero .meta{margin-top:26px;font-size:13px;letter-spacing:.06em;color:#BFA9BA}
+  .hero-photo{background:#2a1529 url("https://bloom50collective.com/assets/kim-portrait.jpg") center 20%/cover no-repeat;min-height:360px;position:relative}
+  .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--plum) 0%,rgba(59,31,58,0) 28%)}
+
+  /* LETTER */
+  .letter{padding:76px 0 30px}
+  .letter .col{max-width:620px}
+  .letter p{font-size:20px;line-height:1.6;color:var(--ink);margin-bottom:18px}
+  .letter p.small{font-size:17px;color:var(--body)}
+  .sig{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--ink);margin-top:8px}
+
+  /* THE ARC */
+  .arc{padding:60px 0 10px}
+  .arc-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:40px;border-top:2px solid var(--ink)}
+  .step{padding:24px 22px 12px 0}
+  .step + .step{padding-left:22px;border-left:1px solid var(--line)}
+  .step .n{font-family:var(--serif);font-size:15px;color:var(--coral);font-style:italic}
+  .step h3{font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.1;color:var(--ink);margin:6px 0 10px}
+  .step p{font-size:16px}
+
+  /* TIMELINE */
+  .timeline{padding:90px 0 20px}
+  .tl{margin-top:44px}
+  .tl-row{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:end;padding:16px 0}
+  .tl-row:nth-child(2){margin-left:9%}
+  .tl-row:nth-child(3){margin-left:18%}
+  .tl-date{font-family:var(--serif);font-size:clamp(60px,11vw,116px);line-height:.85;letter-spacing:-.04em;color:var(--ink)}
+  .tl-date small{display:block;font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--coral);margin-bottom:10px}
+  .tl-what b{display:block;font-family:var(--serif);font-weight:400;font-size:28px;color:var(--ink);line-height:1.1}
+  .tl-what span{display:block;font-size:15.5px;margin-top:6px}
+  .pill{display:inline-block;background:var(--plum);color:#fff;font-size:12px;letter-spacing:.06em;padding:5px 12px;border-radius:99px;margin-top:10px}
+  .note{margin-top:30px;max-width:640px;padding:18px 22px;border-left:4px solid var(--coral);background:var(--paper);font-size:16px}
+
+  /* ADS */
+  .ads-head{padding:96px 0 0}
+  .place{margin-top:64px}
+  .place-top{display:flex;align-items:baseline;gap:22px;flex-wrap:wrap;border-top:2px solid var(--ink);padding-top:20px}
+  .place-top .big{font-family:var(--serif);font-size:96px;line-height:.8;color:var(--coral);letter-spacing:-.05em}
+  .place-top .when{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--coral)}
+  .place-top h3{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5vw,48px);line-height:1;letter-spacing:-.02em;color:var(--ink)}
+  .place-top .job-line{flex-basis:100%;font-size:18px;color:var(--ink)}
+  .place-grid{display:grid;grid-template-columns:minmax(0,470px) 1fr;gap:44px;margin-top:28px;align-items:start}
+  .place.flip .place-grid{grid-template-columns:1fr minmax(0,470px)}
+  .place.flip .ad{order:2}
+
+  .ad{background:var(--paper);border:1px solid var(--line);box-shadow:0 18px 40px -22px rgba(59,31,58,.35)}
+  .ad-tag{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--muted);padding:10px 18px}
+  .ad-photo{aspect-ratio:16/10;background-size:cover;background-position:center;background-color:#d9c7b8}
+  .ad-body{padding:24px 24px 26px}
+  .ad-body h4{font-family:var(--serif);font-weight:400;font-size:31px;line-height:1.08;letter-spacing:-.01em;color:var(--ink);margin-bottom:14px}
+  .ad-body p{font-size:16.5px;line-height:1.55;color:var(--body);margin-bottom:13px}
+  .ad-body p.q{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--ink);border-left:3px solid var(--coral);padding-left:14px}
+  .ad-body p.q span{display:block;font-family:var(--sans);font-style:normal;font-size:13px;color:var(--muted);margin-top:4px}
+  .ad-body p.fine{font-size:14.5px;color:var(--muted)}
+  .ad-btn{display:inline-block;background:var(--coral);color:#fff;font-weight:700;font-size:16px;padding:14px 26px;border-radius:99px;margin-top:6px}
+
+  .notes{padding-top:6px}
+  .lab{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--muted);margin:0 0 6px}
+  .notes .item{padding:14px 0;border-top:1px solid var(--line);font-size:16px}
+  .notes .item:first-child{border-top:0;padding-top:0}
+  .notes .item b{color:var(--ink)}
+
+  /* OTHER VOICES */
+  .voices{padding:96px 0 10px}
+  .v-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
+  .v{background:var(--paper);border:1px solid var(--line);padding:24px}
+  .v .tag{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--plum-2)}
+  .v h3{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.1;color:var(--ink);margin:8px 0 12px}
+  .v p{font-size:15.5px;padding:8px 0;border-top:1px solid var(--line);font-family:var(--serif);color:var(--ink);font-size:18px;line-height:1.3}
+
+  /* VOICE RULES */
+  .voice{padding:96px 0 10px}
+  .voice-grid{display:grid;grid-template-columns:1fr 1fr;margin-top:34px}
+  .voice-col{padding:28px 32px}
+  .voice-col.yes{background:var(--sage);color:var(--plum)}
+  .voice-col.no{background:var(--plum);color:#F3E7EE}
+  .voice-col h3{font-family:var(--serif);font-weight:400;font-size:28px;margin-bottom:12px}
+  .voice-col p{font-size:16.5px;padding:9px 0;border-top:1px solid rgba(0,0,0,.14)}
+  .voice-col.no p{border-top-color:rgba(255,255,255,.18)}
+
+  /* ASKS */
+  .asks{padding:96px 0 10px}
+  .ask{display:grid;grid-template-columns:70px 1fr;gap:10px;padding:22px 0;border-top:1px solid var(--line)}
+  .ask:last-child{border-bottom:1px solid var(--line)}
+  .ask .num{font-family:var(--serif);font-size:44px;line-height:1;color:var(--coral)}
+  .ask b{display:block;font-family:var(--serif);font-weight:400;font-size:25px;line-height:1.15;color:var(--ink);margin-bottom:4px}
+  .ask span{font-size:16px}
+  .ask em{font-style:normal;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--plum-2);background:var(--blush);padding:3px 9px;border-radius:99px;margin-left:8px;white-space:nowrap}
+
+  /* APPROVE */
+  .approve{background:var(--plum);color:#fff;margin-top:96px;padding:84px 0 90px}
+  .approve h2{color:#fff;max-width:720px}
+  .approve h2 em{color:var(--coral)}
+  .approve p{max-width:560px;margin-top:18px;font-size:19px;color:#E5D3DF}
+  .btns{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+  .btn{display:inline-block;text-decoration:none;font-weight:700;font-size:17px;padding:18px 30px;border-radius:99px}
+  .btn.go{background:var(--coral);color:#fff}
+  .btn.chg{border:2px solid #fff;color:#fff}
+  .fine{margin-top:22px;font-size:14px;color:#BFA9BA}
+  footer{padding:30px 0 50px;font-size:13px;color:var(--muted)}
+
+  @media (max-width:860px){
+    body{font-size:16.5px}
+    .hero-inner{grid-template-columns:1fr;min-height:0}
+    .hero-copy{padding:44px 20px 34px}
+    .hero-photo{min-height:420px;order:2}
+    .hero-photo::after{background:linear-gradient(180deg,var(--plum) 0%,rgba(59,31,58,0) 26%)}
+    .arc-grid{grid-template-columns:1fr}
+    .step + .step{padding-left:0;border-left:0;border-top:1px solid var(--line)}
+    .tl-row{grid-template-columns:1fr;gap:12px}
+    .tl-row:nth-child(2){margin-left:6%}
+    .tl-row:nth-child(3){margin-left:12%}
+    .place-grid,.place.flip .place-grid{grid-template-columns:1fr;gap:26px}
+    .place.flip .ad{order:0}
+    .place-top .big{font-size:72px}
+    .v-grid{grid-template-columns:1fr}
+    .voice-grid{grid-template-columns:1fr}
+    .ask{grid-template-columns:52px 1fr}
+    .ask .num{font-size:36px}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="eyebrow">Jimmy → Kim · Ad copy · For your reaction</div>
+      <h1>Let's be <em>honest</em></h1>
+      <p class="sub">Three ads, written out word for word. Each one has a single job: get her to a Wednesday class.</p>
+      <div class="meta">CHS Happenings · Thursdays Oct 1, Oct 15 and Oct 29 · Free for Bloom50</div>
+    </div>
+    <div class="hero-photo" role="img" aria-label="Kim Farrell beside her workout whiteboard"></div>
+  </div>
+</header>
+
+<section class="letter">
+  <div class="wrap">
+    <div class="col">
+      <p>Kim — you have three free ad spots in CHS Happenings. They go to about 11,000 Charlestonians, and a big share of them are women over 50. That's your person.</p>
+      <p>Below is the exact copy for all three, written in your voice. Cut it, rewrite it, tell me what doesn't sound like you. It's much easier to react to real words than to a plan.</p>
+      <p class="small">And there's no "book a call" anywhere in it. These ads are about one thing: getting her to walk up to the courts on a Wednesday morning.</p>
+      <div class="sig">— J</div>
+    </div>
+  </div>
+</section>
+
+<section class="arc">
+  <div class="wrap">
+    <div class="eyebrow">How the three fit together</div>
+    <h2 style="margin-top:12px">Every headline starts with <em>"Let's be honest"</em></h2>
+    <p class="lede">It sounds like you talking, and it lets us say the true thing out loud. By the second ad, she'll recognize it before she reads a word.</p>
+    <div class="arc-grid">
+      <div class="step">
+        <div class="n">Ad one</div>
+        <h3>She feels seen</h3>
+        <p>The belly fat, the menopause, the honest opener. She meets you and hears a free class exists.</p>
+      </div>
+      <div class="step">
+        <div class="n">Ad two</div>
+        <h3>She pictures it</h3>
+        <p>What Wednesday actually looks like, from the moment she walks up. The fear-remover.</p>
+      </div>
+      <div class="step">
+        <div class="n">Ad three</div>
+        <h3>She brings a friend</h3>
+        <p>Mary's words, and an easy reason to say "come with me." Curiosity turns into a plan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="timeline">
+  <div class="wrap">
+    <div class="eyebrow">The calendar</div>
+    <h2 style="margin-top:12px">Each ad lands <em>a few days before</em> a Wednesday</h2>
+    <div class="tl">
+      <div class="tl-row">
+        <div class="tl-date"><small>Thursday</small>10.01</div>
+        <div class="tl-what"><b>Let's be honest about the belly fat</b><span>She reads it Thursday. Her first chance to come is the following Wednesday.</span><div class="pill">Class: Wed Oct 7</div></div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-date"><small>Thursday</small>10.15</div>
+        <div class="tl-what"><b>Let's be honest about burpees</b><span>The "what will it be like" ad, timed so she can decide over the weekend.</span><div class="pill">Class: Wed Oct 21</div></div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-date"><small>Thursday</small>10.29</div>
+        <div class="tl-what"><b>Let's be honest: it's easier with a friend</b><span>By now she's seen you twice. This one gets her to bring someone.</span><div class="pill">Class: Wed Nov 4</div></div>
+      </div>
+    </div>
+    <div class="note"><b>Heads up on timing.</b> Ad one goes out this Thursday, so I need your reaction by Tuesday night to get it scheduled.</div>
+  </div>
+</section>
+
+<section class="ads-head">
+  <div class="wrap">
+    <div class="eyebrow">The copy</div>
+    <h2 style="margin-top:12px">Here's exactly what <em>she'll read</em></h2>
+    <p class="lede">Each ad is shown the way it will look in the newsletter: photo, headline, a few short lines, one button.</p>
+
+    <!-- AD 1 -->
+    <div class="place">
+      <div class="place-top">
+        <div class="big">1</div>
+        <div>
+          <div class="when">Thursday, October 1</div>
+          <h3>She feels seen</h3>
+        </div>
+        <div class="job-line">She sees herself in it, and learns there's a free way to try you out.</div>
+      </div>
+      <div class="place-grid">
+        <div class="ad">
+          <div class="ad-tag">Sponsored · Bloom50 Collective</div>
+          <div class="ad-photo" style="background-image:url('https://bloom50collective.com/assets/kim-portrait.jpg');background-position:center 22%"></div>
+          <div class="ad-body">
+            <h4>Let's be honest about the belly fat</h4>
+            <p>Menopause moved in and brought it with her, and it does not respond to logic.</p>
+            <p>I'm Kim. I've been a personal trainer for ten years, and I coach women over 50 right here in Mount Pleasant. I can't promise the belly fat will listen. I can promise a workout that meets you exactly where you are, next to women who get it.</p>
+            <p>Wednesdays at 8:30. Memorial Waterfront Park. Free.</p>
+            <span class="ad-btn">Come to a free class</span>
+          </div>
+        </div>
+        <div class="notes">
+          <div class="item"><div class="lab">Photo</div>Your portrait beside the whiteboard, already on the site.</div>
+          <div class="item"><div class="lab">The button goes to</div>The class schedule on your Training page.</div>
+          <div class="item"><div class="lab">Where it comes from</div>The first line is straight off your homepage. I wrote "brought it with her" so it reads as a sentence on its own. Change it back if you prefer your original.</div>
+          <div class="item"><div class="lab">Check this</div>"I can promise a workout that meets you where you are" is the only promise in the ad. Say so if that's too much.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AD 2 -->
+    <div class="place flip">
+      <div class="place-top">
+        <div class="big">2</div>
+        <div>
+          <div class="when">Thursday, October 15</div>
+          <h3>She pictures it</h3>
+        </div>
+        <div class="job-line">Every reason she'd talk herself out of it gets answered before she thinks of it.</div>
+      </div>
+      <div class="place-grid">
+        <div class="ad">
+          <div class="ad-tag">Sponsored · Bloom50 Collective</div>
+          <div class="ad-photo" style="background-image:url('https://bloom50collective.com/assets/class-warmup.jpg')"></div>
+          <div class="ad-body">
+            <h4>Let's be honest about burpees</h4>
+            <p>There aren't any.</p>
+            <p>Here's Wednesday. You walk up to the courts at Memorial Waterfront Park, by the splash pad, at 8:30. We warm up together. Then 45 minutes of strength work, and I explain every move as we go.</p>
+            <p>Wear sneakers. Bring water. Worried you're not fit enough? That's exactly who this class is for.</p>
+            <p class="fine">Free. Every Wednesday.</p>
+            <span class="ad-btn">See you Wednesday</span>
+          </div>
+        </div>
+        <div class="notes">
+          <div class="item"><div class="lab">Photo</div>The Wednesday warm-up, already on the site.</div>
+          <div class="item"><div class="lab">The button goes to</div>The class schedule on your Training page.</div>
+          <div class="item"><div class="lab">Where it comes from</div>Everything in it is from your website and your class: the time, the place, the 45 minutes, no burpees.</div>
+          <div class="item"><div class="lab">Check this</div>"Strength work" and "I explain every move." Right for how you run it, or would you say it differently?</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AD 3 -->
+    <div class="place">
+      <div class="place-top">
+        <div class="big">3</div>
+        <div>
+          <div class="when">Thursday, October 29</div>
+          <h3>She brings a friend</h3>
+        </div>
+        <div class="job-line">Someone else's words carry the ad, and there's an easy reason to invite a friend.</div>
+      </div>
+      <div class="place-grid">
+        <div class="ad">
+          <div class="ad-tag">Sponsored · Bloom50 Collective</div>
+          <div class="ad-photo" style="background-image:url('https://bloom50collective.com/assets/class-warmup.jpg');background-position:left center"></div>
+          <div class="ad-body">
+            <h4>Let's be honest: it's easier with a friend</h4>
+            <p class="q">"She takes the chore out of fitness and creates a welcoming space that leaves you counting down the days until your next session."<span>Mary C.</span></p>
+            <p>Text a friend right now. Tell her Wednesday, 8:30, Memorial Waterfront Park. It's free for both of you, and I'll be the one with the whiteboard.</p>
+            <p class="fine">Want a second morning? Monday classes are at 8:30 too, $12.</p>
+            <span class="ad-btn">Bring a friend Wednesday</span>
+          </div>
+        </div>
+        <div class="notes">
+          <div class="item"><div class="lab">Photo</div>Today it's the warm-up shot. The best version is a new photo of women laughing at class, and there are two chances to take one (Oct 7 or Oct 21).</div>
+          <div class="item"><div class="lab">The button goes to</div>The class schedule on your Training page.</div>
+          <div class="item"><div class="lab">Where it comes from</div>Mary's words are exactly as they appear on your homepage. The Monday line is the only mention of the paid class.</div>
+          <div class="item"><div class="lab">Check this</div>Are you fine with Mary's quote running in an ad? I left it signed just "Mary C.," as on your site. Add more if you like (a class regular, say).</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="voices">
+  <div class="wrap">
+    <div class="eyebrow">If "Let's be honest" isn't you</div>
+    <h2 style="margin-top:12px">Three other ways <em>to sound</em></h2>
+    <p class="lede">Same three ads, same photos, same one ask. Only the headlines change. Tell me if you'd rather go one of these ways.</p>
+    <div class="v-grid">
+      <div class="v">
+        <div class="tag">Option B</div>
+        <h3>Wednesday, 8:30</h3>
+        <p>Wednesday, 8:30. Come as you are.</p>
+        <p>Wednesday, 8:30. No burpees.</p>
+        <p>Wednesday, 8:30. Bring a friend.</p>
+      </div>
+      <div class="v">
+        <div class="tag">Option C</div>
+        <h3>Come as you are</h3>
+        <p>Come as you are. Leave stronger.</p>
+        <p>Come as you are. We'll warm up together.</p>
+        <p>Come as you are. Bring someone.</p>
+      </div>
+      <div class="v">
+        <div class="tag">Option D</div>
+        <h3>Just once</h3>
+        <p>Try one Wednesday. That's it.</p>
+        <p>Try it once. Then decide.</p>
+        <p>Try it once. Bring a friend.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="voice">
+  <div class="wrap">
+    <div class="eyebrow">How we'll sound</div>
+    <h2 style="margin-top:12px">Warm, honest, and a little <em>funny</em></h2>
+    <p class="lede">Her readers have seen every "fight your age" ad there is. We're the opposite of that.</p>
+    <div class="voice-grid">
+      <div class="voice-col yes">
+        <h3>Always</h3>
+        <p>One ask per ad: come to class</p>
+        <p>Real photos of real Wednesdays</p>
+        <p>Your words, in first person</p>
+        <p>"Memorial Waterfront Park" as the location</p>
+        <p>Strong, capable, right now</p>
+      </div>
+      <div class="voice-col no">
+        <h3>Never</h3>
+        <p>Anti-aging, or "get your body back"</p>
+        <p>Before and after, or weight-loss promises</p>
+        <p>"Seniors," or anything that talks down</p>
+        <p>The phrase "under the bridge"</p>
+        <p>Health claims you're not comfortable standing behind</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="asks">
+  <div class="wrap">
+    <div class="eyebrow">What I need from you</div>
+    <h2 style="margin-top:12px">Five small things, <em>in order</em></h2>
+    <div style="margin-top:34px">
+      <div class="ask"><div class="num">1</div><div><b>React to the words <em>by Tue, Sep 29</em></b><span>Cross out anything that doesn't sound like you. Rewrite freely. Or tell me the voice is wrong and pick B, C or D above.</span></div></div>
+      <div class="ask"><div class="num">2</div><div><b>Tell me what a first-timer has to do <em>by Tue, Sep 29</em></b><span>Your website says nothing to sign up for. Your app shows a waiver at first sign-up. If she walks up cold on a Wednesday, what should happen? I want the ads to say the truth.</span></div></div>
+      <div class="ask"><div class="num">3</div><div><b>Check the claims <em>by Tue, Sep 29</em></b><span>Menopause, belly fat, strength. It's your name on it, so I want you comfortable with every sentence.</span></div></div>
+      <div class="ask"><div class="num">4</div><div><b>OK Mary's quote</b><span>It's already on your site, but I'd want her to know it's going in an ad too.</span></div></div>
+      <div class="ask"><div class="num">5</div><div><b>One photo of the group laughing <em>by Thu, Oct 22</em></b><span>Take it at the Oct 7 or Oct 21 class, with everyone's okay. It's the picture that would carry ad three.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="approve">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--blush)">Your call</div>
+    <h2 style="margin-top:12px">Does this sound like <em>you?</em></h2>
+    <p>If it's close, tell me what to change and I'll send you the next version. If it's right, say so and I'll get ad one scheduled.</p>
+    <div class="btns">
+      <a class="btn go" href="mailto:jimmy@chshappenings.com?subject=Bloom50%20ads%3A%20these%20work&body=These%20work%20as%20written.%0A">These work as written</a>
+      <a class="btn chg" href="mailto:jimmy@chshappenings.com?subject=Bloom50%20ads%3A%20changes&body=Here%20is%20what%20I%20want%20to%20change%3A%0A">I want to change something</a>
+    </div>
+    <div class="fine">Or just tell Jimmy. Either way works.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Bloom50 Collective · Ad copy · September 28, 2026 · Draft for Kim's reaction</div>
+</footer>
+
+</body>
+</html>
