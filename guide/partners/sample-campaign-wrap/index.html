@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
+<title>Sample Campaign Wrap</title>
+<style>
+:root{--navy:#183872;--navy-deep:#112a5a;--navy-lift:#2a4f9a;--lime:#CCED60;--white:#fff;--mist:#c3d1ec;--ink:#12213d;
+--display:"Helvetica Neue","Arial Black",Arial,system-ui,sans-serif;--body:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color-scheme:dark}
+*{box-sizing:border-box}
+html{background:var(--navy)}
+body{margin:0;background:var(--navy);color:var(--white);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:980px;margin:0 auto;padding-inline:20px}
+p{margin:0 0 14px;font-size:16px}
+strong{font-weight:800}
+.ribbon{display:inline-block;background:var(--lime);color:var(--navy);font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:7px 12px;margin:0}
+.eyebrow{color:var(--lime);font-weight:800;font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin:26px 0 18px}
+.hero{padding-block:28px 56px;overflow:hidden}
+h1{margin:0;font-weight:400}
+.mega{display:block;font-family:var(--display);font-weight:900;font-size:clamp(84px,25vw,236px);line-height:.82;letter-spacing:-.055em;font-variant-numeric:tabular-nums}
+.mega.lime{color:var(--lime);text-align:right;margin-top:34px}
+.mega-cap{display:block;font-size:clamp(16px,3.4vw,24px);font-weight:700;margin-top:12px;max-width:16em;color:var(--mist);line-height:1.25}
+.mega-cap.right{margin-left:auto;text-align:right}
+.sub{margin:34px 0 0;font-size:17px;max-width:34em;color:var(--mist)}
+.sub strong{color:var(--white)}
+h2{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--lime);margin:0 0 20px}
+.band{padding-block:48px}
+.band.deep{background:var(--navy-deep)}
+.band.white{background:var(--white);color:var(--ink)}
+.band.white h2{color:var(--navy)}
+.band.white strong{color:var(--navy)}
+.lede{font-family:var(--display);font-weight:900;font-size:clamp(26px,5.4vw,44px);line-height:1.05;letter-spacing:-.03em;margin:0 0 22px;max-width:18em;text-wrap:balance}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:26px 20px;margin:34px 0 0}
+.fact .n{font-family:var(--display);font-weight:900;font-size:clamp(34px,6vw,52px);letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.fact .l{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);margin-top:8px}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th{text-align:left;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);padding:0 0 10px;font-weight:800}
+th.n,td.n{text-align:right;font-variant-numeric:tabular-nums}
+td{padding:14px 0 12px;border-top:1px solid #d5dded;vertical-align:top}
+td.n{padding-left:12px;white-space:nowrap;font-weight:700}
+td .sub2{display:block;font-size:12px;color:#5c6b85;margin-top:2px}
+tr.tot td{border-top:3px solid var(--navy);font-weight:800;color:var(--navy);font-size:17px}
+.two{display:grid;grid-template-columns:1fr;gap:34px}
+@media(min-width:760px){.two{grid-template-columns:1fr 1fr;gap:56px}}
+.two>*{min-width:0}
+.moves{margin:0;padding:0;list-style:none;display:grid;gap:18px}
+.moves li{font-size:16px;padding-left:18px;position:relative}
+.moves li:before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;background:var(--lime)}
+.thanks{background:var(--lime);color:var(--navy);padding-block:54px}
+.thanks p{font-family:var(--display);font-weight:900;font-size:clamp(22px,4.4vw,34px);line-height:1.12;letter-spacing:-.025em;max-width:22em;margin:0 0 18px;text-wrap:balance}
+.thanks .sig{font-size:18px;font-family:var(--body);font-weight:800;letter-spacing:0;margin:0}
+footer{padding-block:34px 56px;font-size:12.5px;color:var(--mist);max-width:none}
+footer p{font-size:12.5px;max-width:60em}
+.cmp{display:grid;gap:26px;margin-top:8px}
+.cmp .row .h{display:flex;justify-content:space-between;gap:12px;font-size:14px;font-weight:700;margin-bottom:8px}
+.cmp .row .h span:last-child{color:var(--mist);font-weight:600;font-variant-numeric:tabular-nums;text-align:right}
+.cmp .bars{display:grid;gap:6px}
+.cmp .bars i{display:block;height:26px;position:relative;font-style:normal}
+.cmp .bars i b{position:absolute;left:10px;top:0;line-height:26px;font-size:13px;font-weight:800;white-space:nowrap}
+.cmp .bars .x{background:var(--white);color:var(--navy)}
+.cmp .bars .y{background:var(--lime);color:var(--navy)}
+.axis{position:relative;height:112px;margin:30px 0 8px}
+.axis .line{position:absolute;left:0;right:0;top:48px;height:4px;background:var(--navy-lift)}
+.axis .pt{position:absolute;top:36px;width:16px;height:28px;transform:translateX(-8px)}
+.axis .pt.base{background:var(--white)}
+.axis .pt.hit{background:var(--lime)}
+.axis .lb{position:absolute;font-size:12px;line-height:1.25;white-space:nowrap;color:var(--mist)}
+.axis .lb b{display:block;font-size:20px;font-family:var(--display);font-weight:900;color:var(--white);letter-spacing:-.02em}
+.axis .lb.up{top:-6px}
+.axis .lb.dn{top:72px}
+th.n{padding-left:14px}
+</style></head><body>
+<section class="hero"><div class="wrap">
+<p class="ribbon">Sample report &middot; business name removed &middot; every number is real</p>
+<p class="eyebrow">CHS Happenings &middot; Campaign Wrap</p>
+<h1>
+<span class="mega">70.9%</span>
+<span class="mega-cap">of readers opened both issues you were in</span>
+<span class="mega lime">18</span>
+<span class="mega-cap right">people clicked through to your site</span>
+</h1>
+<p class="sub"><strong>How your two placements ran,</strong> Aug. 20 in the Primary slot and Sept. 3 in the Secondary slot. Both are finished and fully settled.</p>
+</div></section>
+<section class="band deep"><div class="wrap">
+<h2>The short version</h2>
+<p class="lede">22,893 inboxes. 16,228 opens.</p>
+<div class="facts">
+<div class="fact"><div class="n">22,893</div><div class="l">Delivered, both issues</div></div>
+<div class="fact"><div class="n">16,228</div><div class="l">Unique opens</div></div>
+<div class="fact"><div class="n">70.9%</div><div class="l">Blended open rate</div></div>
+<div class="fact"><div class="n">18</div><div class="l">Clicks to your site</div></div>
+</div>
+<p style="margin-top:30px;color:var(--mist);max-width:40em">Typical newsletters open at 30 to 40%. Clicks are unique people, not taps: 17 came from the email and 1 from the web.</p>
+</div></section>
+<section class="band"><div class="wrap">
+<h2>Your issues against our own average</h2>
+<p class="lede">Both beat our four-week open rate.</p>
+<div class="axis" role="img" aria-label="Four-week average 66.7%, Aug. 20 issue 70.5%, Sept. 3 issue 71.3%">
+<div class="line"></div>
+<div class="pt base" style="left:44.67%"></div>
+<div class="pt hit" style="left:70%"></div>
+<div class="pt hit" style="left:75.33%"></div>
+<div class="lb dn" style="left:44.67%;transform:translateX(-50%);text-align:center"><b>66.7%</b>our four-week average</div>
+<div class="lb up" style="left:70%;transform:translateX(-100%);text-align:right;padding-right:14px"><b>70.5%</b>Aug. 20</div>
+<div class="lb up" style="left:75.33%;padding-left:14px"><b>71.3%</b>Sept. 3</div>
+</div>
+<p style="color:var(--mist);font-size:13px">Scale runs from 60% to 75% so the gap is visible.</p>
+</div></section>
+<section class="band white"><div class="wrap">
+<h2>Placement by placement</h2>
+<table>
+<thead><tr><th>Placement</th><th class="n">Opens</th><th class="n">Clicks</th></tr></thead>
+<tbody>
+<tr><td>Aug. 20 &middot; Primary<span class="sub2">11,477 delivered &middot; 70.5% open rate &middot; 1.22% of all clickers</span></td><td class="n">8,088</td><td class="n">11</td></tr>
+<tr><td>Sept. 3 &middot; Secondary<span class="sub2">11,416 delivered &middot; 71.3% open rate &middot; 1.12% of all clickers</span></td><td class="n">8,140</td><td class="n">7</td></tr>
+<tr class="tot"><td>Campaign total</td><td class="n">16,228</td><td class="n">18</td></tr>
+</tbody></table>
+<p style="margin:22px 0 0;font-size:13px;color:#5c6b85">Aug. 20 was 10 email clicks plus 1 web click. Sept. 3 was 7 email clicks and none on the web. Share of clickers is your slice of everyone who clicked anything in that issue.</p>
+</div></section>
+<section class="band"><div class="wrap">
+<h2>The honest read</h2>
+<p class="lede">Clicks fell from 11 to 7. That looks worse than it was.</p>
+<div class="two">
+<div>
+<p>Email clicks to you dropped 30% between the two placements. The whole Sept. 3 issue clicked less, though. Its click rate was 7.68% against 10.16% on Aug. 20, a 24% drop for every link in the newsletter, yours included.</p>
+<p>Your share of all clickers barely moved, 1.22% to 1.12%. <strong>The creative did not wear out. It got a smaller pie.</strong></p>
+<p>What did change was the slot. Aug. 20 had full top billing, with your logo in the header above everything and your block right before the lead story. Sept. 3 was a mid-issue Secondary. That seat is worth about a third of a click per thousand openers: 1.24 against 0.86.</p>
+</div>
+<div class="cmp">
+<div class="row"><div class="h"><span>Email clicks to you</span><span>10 &rarr; 7</span></div><div class="bars"><i class="x" style="width:100%"><b>Aug. 20 &middot; 10</b></i><i class="y" style="width:70%"><b>Sept. 3 &middot; 7</b></i></div></div>
+<div class="row"><div class="h"><span>Click rate, whole issue</span><span>10.16% &rarr; 7.68%</span></div><div class="bars"><i class="x" style="width:100%"><b>Aug. 20 &middot; 10.16%</b></i><i class="y" style="width:75.6%"><b>Sept. 3 &middot; 7.68%</b></i></div></div>
+<div class="row"><div class="h"><span>Your share of all clickers</span><span>1.22% &rarr; 1.12%</span></div><div class="bars"><i class="x" style="width:100%"><b>Aug. 20 &middot; 1.22%</b></i><i class="y" style="width:91.8%"><b>Sept. 3 &middot; 1.12%</b></i></div></div>
+</div>
+</div>
+</div></section>
+<section class="band deep"><div class="wrap">
+<h2>What I'd change next time</h2>
+<ul class="moves">
+<li><strong>Tag the link.</strong> Both ads pointed at your bare homepage. I counted the clicks, but you can't see those visitors on your end. A tagged link turns 18 clicks into 18 sessions and what each one did next.</li>
+<li><strong>Keep the Primary slot.</strong> Top billing plus a seat before the lead story is where your money goes.</li>
+<li><strong>Invite, don't filter.</strong> Aug. 20 invited readers to see what you could do for their brand. Sept. 3 asked them to find out if they were a fit. The second asks people to rule themselves out before they click.</li>
+</ul>
+</div></section>
+<section class="band"><div class="wrap">
+<h2>Where the campaign stands</h2>
+<table style="color:var(--white)">
+<thead><tr><th style="color:var(--lime)">Placement</th><th class="n" style="color:var(--lime)">Status</th></tr></thead>
+<tbody>
+<tr><td style="border-color:var(--navy-lift)">Aug. 20 &middot; Primary</td><td class="n" style="border-color:var(--navy-lift)">Ran</td></tr>
+<tr><td style="border-color:var(--navy-lift)">Sept. 3 &middot; Secondary</td><td class="n" style="border-color:var(--navy-lift)">Ran</td></tr>
+<tr class="tot"><td style="color:var(--lime);border-color:var(--lime)">Campaign</td><td class="n" style="color:var(--lime);border-color:var(--lime)">Complete</td></tr>
+</tbody></table>
+</div></section>
+<section class="thanks"><div class="wrap">
+<p>If you want to run it back, you now know what I didn't know in August: the Primary slot is where your money goes, and an inviting call to action beats a qualifying one with this audience.</p>
+<p>Thanks for trusting the newsletter with your story. I'll hold slots whenever you're ready to talk.</p>
+<p class="sig">Jimmy</p>
+</div></section>
+<footer><div class="wrap">
+<p>All figures pulled from Beehiiv on Sept. 10, 2026, seven days after the final placement, so opens and clicks are settled. Clicks are unique people, not taps. Nothing here is modeled or estimated.</p>
+</div></footer>
+</body></html>
