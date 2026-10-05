@@ -1,115 +1,122 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
 <title>Dermhaus Proposal</title>
-<style>:root{--navy:#183872;--navy-deep:#112a5a;--navy-lift:#2a4f9a;--lime:#CCED60;--white:#fff;--mist:#c3d1ec;--ink:#12213d;--display:"Helvetica Neue","Arial Black",Arial,system-ui,sans-serif;--body:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color-scheme:dark}
+<style>:root{--navy:#183872;--navy-deep:#112a5a;--navy-lift:#2a4f9a;--lime:#CCED60;--white:#fff;--mist:#c3d1ec;--ink:#12213d;--slate:#5c6b85;--display:"Helvetica Neue","Arial Black",Arial,system-ui,sans-serif;--body:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color-scheme:dark}
 *{box-sizing:border-box}
 html{background:var(--navy)}
-body{margin:0;background:var(--navy);color:var(--white);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased}
-.wrap{max-width:980px;margin:0 auto;padding-inline:20px}
+body{margin:0;background:var(--navy);color:var(--white);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:980px;margin:0 auto;padding-inline:20px;position:relative}
 p{margin:0 0 14px;font-size:16px}
 strong{font-weight:800}
+.hl{background:var(--lime);color:var(--navy);padding:0 .14em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .ribbon{display:inline-block;background:var(--lime);color:var(--navy);font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:7px 12px;margin:0}
 .eyebrow{color:var(--lime);font-weight:800;font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin:26px 0 18px}
-.hero{padding-block:28px 52px}
-.hero h1{font-family:var(--display);font-weight:900;font-size:clamp(34px,6.6vw,60px);line-height:1.03;letter-spacing:-.035em;margin:0;max-width:15em;text-wrap:balance}
-.sub{margin:26px 0 0;font-size:17px;max-width:34em;color:var(--mist)}
+.hero{position:relative;overflow:hidden;padding-block:28px 64px}
+.ghost{position:absolute;right:-3vw;top:6px;font-family:var(--display);font-weight:900;font-size:clamp(260px,52vw,560px);line-height:.8;letter-spacing:-.07em;color:transparent;-webkit-text-stroke:2px rgba(204,237,96,.38);pointer-events:none;user-select:none}
+.hero h1{position:relative;font-family:var(--display);font-weight:900;font-size:clamp(36px,7.4vw,72px);line-height:1.08;letter-spacing:-.035em;margin:0;max-width:13em;text-wrap:balance}
+.sub{position:relative;margin:28px 0 0;font-size:17px;max-width:30em;color:var(--mist)}
 .sub strong{color:var(--white)}
-.rate{margin:14px 0 0;font-size:15px;max-width:34em;color:var(--mist)}
+.rate{position:relative;margin:14px 0 0;font-size:14px;max-width:34em;color:var(--mist)}
 .rate strong{color:var(--lime)}
-h2{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--lime);margin:0 0 20px}
-.band{padding-block:48px}
+h2{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--lime);margin:0 0 22px}
+h2:before{content:"";display:inline-block;width:34px;height:4px;background:var(--lime);vertical-align:middle;margin-right:12px}
+.band{padding-block:56px}
 .band.deep{background:var(--navy-deep)}
 .band.white{background:var(--white);color:var(--ink)}
 .band.white h2{color:var(--navy)}
+.band.white h2:before{background:var(--lime);box-shadow:0 0 0 1px var(--navy)}
 .band.white strong{color:var(--navy)}
-.lede{font-family:var(--display);font-weight:900;font-size:clamp(26px,5.4vw,44px);line-height:1.05;letter-spacing:-.03em;margin:0 0 22px;max-width:18em;text-wrap:balance}
-.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:26px 20px;margin:34px 0 0}
-.fact .n{font-family:var(--display);font-weight:900;font-size:clamp(34px,6vw,52px);letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.lede{font-family:var(--display);font-weight:900;font-size:clamp(26px,5.4vw,46px);line-height:1.1;letter-spacing:-.03em;margin:0 0 24px;max-width:17em;text-wrap:balance}
+.row{display:grid;grid-template-columns:minmax(92px,176px) 1fr auto;gap:6px 22px;align-items:center;padding:22px 0;border-top:1px solid rgba(204,237,96,.28)}
+.dnum{font-family:var(--display);font-weight:900;line-height:.82;letter-spacing:-.06em;font-variant-numeric:tabular-nums}
+.row.p .dnum{font-size:clamp(70px,15vw,132px);color:var(--lime)}
+.row.s .dnum{font-size:clamp(52px,10vw,92px);color:var(--white)}
+.dmo{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--mist);margin-top:10px}
+.tag{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;margin-bottom:8px}
+.tag.pri{background:var(--lime);color:var(--navy)}
+.tag.sec{border:1.5px solid var(--lime);color:var(--lime)}
+.what{font-size:15px;color:var(--mist);min-width:0}
+.what b{display:block;color:var(--white);font-size:17px;margin-bottom:2px}
+.r{font-weight:800;font-size:15px;color:var(--mist);font-variant-numeric:tabular-nums;white-space:nowrap}
+@media(max-width:560px){.row{grid-template-columns:96px 1fr}.r{grid-column:2}}
+.total{display:flex;flex-wrap:wrap;gap:10px 24px;align-items:baseline;justify-content:space-between;border-top:3px solid var(--lime);padding-top:20px;margin-top:6px}
+.total .l{font-weight:800;font-size:15px}
+.total .l s{color:var(--mist);font-weight:400;margin-right:8px}
+.total .v{font-family:var(--display);font-weight:900;font-size:28px;letter-spacing:-.03em;color:var(--lime)}
+.note{margin-top:20px;color:var(--mist);font-size:14px;max-width:44em}
+.bigstat{display:grid;grid-template-columns:auto 1fr;gap:6px 24px;align-items:end;margin:34px 0 8px}
+.bigstat .n{font-family:var(--display);font-weight:900;font-size:clamp(84px,21vw,210px);line-height:.8;letter-spacing:-.07em;color:var(--lime)}
+.bigstat .c{font-size:clamp(15px,2.6vw,22px);font-weight:800;color:var(--white);max-width:11em;line-height:1.2;padding-bottom:6px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:24px 20px;margin:30px 0 0}
+.fact .n{font-family:var(--display);font-weight:900;font-size:clamp(30px,5vw,44px);letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.fact.lm .n{color:var(--lime)}
 .fact .l{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);margin-top:8px}
-table{border-collapse:collapse;width:100%;font-size:15px}
-th{text-align:left;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);padding:0 0 10px;font-weight:800}
-th.n,td.n{text-align:right;font-variant-numeric:tabular-nums}
-td{padding:14px 0 12px;border-top:1px solid #d5dded;vertical-align:top}
-td.n{padding-left:12px;white-space:nowrap;font-weight:700}
-td .sub2{display:block;font-size:12px;color:#5c6b85;margin-top:2px}
-tr.tot td{border-top:3px solid var(--navy);font-weight:800;color:var(--navy);font-size:17px}
-.two{display:grid;grid-template-columns:1fr;gap:34px}
-@media(min-width:760px){.two{grid-template-columns:1fr 1fr;gap:56px}}
+.two{display:grid;grid-template-columns:1fr;gap:26px}
+@media(min-width:760px){.two{grid-template-columns:1fr 1fr;gap:40px}}
 .two>*{min-width:0}
-.bad{border-left:4px solid var(--lime);padding-left:16px}
-.thanks{background:var(--lime);color:var(--navy);padding-block:54px}
-.thanks p{font-family:var(--display);font-weight:900;font-size:clamp(22px,4.4vw,34px);line-height:1.12;letter-spacing:-.025em;max-width:22em;margin:0 0 18px;text-wrap:balance}
+.card{border-left:8px solid var(--lime);background:#f1f5fb;padding:20px 22px}
+.card p{margin:0;color:var(--ink);font-size:16px}
+.proofline{margin-top:30px;color:var(--ink);max-width:42em}
+.quote{margin:38px 0 0;position:relative;padding-top:34px}
+.quote:before{content:"\201C";position:absolute;left:-4px;top:-18px;font-family:var(--display);font-weight:900;font-size:150px;line-height:1;color:var(--lime);-webkit-text-stroke:2px var(--navy)}
+.quote p{font-size:clamp(18px,3.2vw,26px);line-height:1.42;font-style:italic;margin:0 0 12px;color:var(--navy);font-weight:600}
+.quote cite{font-style:normal;font-size:14px;color:var(--slate)}
+.alt{border:2px dashed var(--lime);padding:24px 26px}
+.alt p{margin:0;color:var(--mist);font-size:15px}
+.alt strong{color:var(--lime)}
+.thanks{background:var(--lime);color:var(--navy);padding-block:60px}
+.thanks p{font-family:var(--display);font-weight:900;font-size:clamp(26px,5.2vw,44px);line-height:1.08;letter-spacing:-.03em;max-width:20em;margin:0 0 20px;text-wrap:balance}
 .thanks .sig{font-size:18px;font-family:var(--body);font-weight:800;letter-spacing:0;margin:0}
 footer{padding-block:34px 56px;font-size:12.5px;color:var(--mist)}
 footer p{font-size:12.5px;max-width:60em}
-.tag{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;margin-left:8px;vertical-align:1px}
-.tag.free{background:var(--navy);color:var(--lime)}
-.tag.pri{background:var(--lime);color:var(--navy)}
-.tag.sec{background:#d5dded;color:var(--navy)}
-tr.gap td{color:#5c6b85}
-.quote{border-left:5px solid var(--lime);padding-left:20px;margin:0}
-.quote p{font-size:clamp(18px,3.2vw,24px);line-height:1.45;font-style:italic;margin:0 0 12px}
-.quote cite{font-style:normal;font-size:14px;color:var(--mist)}
-.alt{border:2px dashed var(--navy-lift);padding:20px 22px;margin-top:8px}
-.alt p{margin:0;color:var(--mist);font-size:15px}
-.alt strong{color:var(--white)}
 </style></head>
 <body>
-<section class="hero"><div class="wrap">
+<section class="hero"><div class="ghost" aria-hidden="true">5</div><div class="wrap">
 <p class="ribbon">Proposal for Dermhaus &middot; Oct. 5, 2026</p>
 <p class="eyebrow">CHS Happenings &middot; Sponsorship</p>
-<h1>Five placements in front of Charleston, from your Open House through the holidays</h1>
+<h1><span class="hl">Five placements</span> in front of Charleston, from your Open House through the holidays</h1>
 <p class="sub"><strong>Three Primaries, one Secondary and a Featured Event,</strong> Oct. 15 through Dec. 10. A push before your Oct. 24 Open House, then a steady monthly rhythm.</p>
 <p class="rate">The early-stage business rate: 35% off, <strong>$1,300</strong> for all five (a $2,000 value).</p>
 </div></section>
-<section class="band white"><div class="wrap">
-<h2>The season, issue by issue</h2>
-<table>
-<thead><tr><th>Issue</th><th class="n">Rate</th></tr></thead>
-<tbody>
-<tr><td>Thu, Oct. 15<span class="tag sec">Featured Event</span><span class="sub2">The only featured event in the issue, nine days before your Open House on Sat., Oct. 24</span></td><td class="n">$250</td></tr>
-<tr><td>Thu, Oct. 22<span class="tag pri">Primary</span><span class="sub2">Top of the issue, two days before the Open House</span></td><td class="n">$500</td></tr>
-<tr><td>Thu, Nov. 5<span class="tag sec">Secondary</span><span class="sub2">Mid-newsletter, right after the main story. The follow-up after the Open House</span></td><td class="n">$250</td></tr>
-<tr><td>Thu, Nov. 19<span class="tag pri">Primary</span><span class="sub2">Top of the issue, the week before Thanksgiving</span></td><td class="n">$500</td></tr>
-<tr><td>Thu, Dec. 10<span class="tag pri">Primary</span><span class="sub2">Top of the issue, mid-December, ahead of the holidays</span></td><td class="n">$500</td></tr>
-<tr class="gap"><td>Face value of the five placements</td><td class="n"><s>$2,000</s></td></tr>
-<tr class="tot"><td>Your price: the early-stage business rate, 35% off</td><td class="n">$1,300</td></tr>
-</tbody></table>
-<p style="margin-top:20px;color:#5c6b85;font-size:14px">Every placement includes a photo or graphic, so it stands out in the newsletter. No Thanksgiving week. I skipped Nov. 26 on purpose. Payment can be split: half when Oct. 15 runs, half in November.</p>
-</div></section>
 <section class="band deep"><div class="wrap">
+<h2>The season, issue by issue</h2>
+<div class="row s"><div><div class="dnum">15</div><div class="dmo">Thu &middot; Oct.</div></div><div class="what"><span class="tag sec">Featured Event</span><b>Nine days before the Open House</b>The only featured event in the issue, mid-read where engagement peaks.</div><div class="r">$250</div></div>
+<div class="row p"><div><div class="dnum">22</div><div class="dmo">Thu &middot; Oct.</div></div><div class="what"><span class="tag pri">Primary</span><b>Two days before the Open House</b>Top of the issue, the first thing readers see.</div><div class="r">$500</div></div>
+<div class="row s"><div><div class="dnum">5</div><div class="dmo">Thu &middot; Nov.</div></div><div class="what"><span class="tag sec">Secondary</span><b>The follow-up</b>Mid-newsletter, right after the main story.</div><div class="r">$250</div></div>
+<div class="row p"><div><div class="dnum">19</div><div class="dmo">Thu &middot; Nov.</div></div><div class="what"><span class="tag pri">Primary</span><b>The week before Thanksgiving</b>Top of the issue.</div><div class="r">$500</div></div>
+<div class="row p"><div><div class="dnum">10</div><div class="dmo">Thu &middot; Dec.</div></div><div class="what"><span class="tag pri">Primary</span><b>Mid-December, ahead of the holidays</b>Top of the issue.</div><div class="r">$500</div></div>
+<div class="total"><div class="l"><s>$2,000 value</s> Your price, the early-stage business rate, 35% off</div><div class="v">$1,300</div></div>
+<p class="note">Every placement includes a photo or graphic, so it stands out in the newsletter. No Thanksgiving week. I skipped Nov. 26 on purpose. Payment can be split: half when Oct. 15 runs, half in November.</p>
+</div></section>
+<section class="band"><div class="wrap">
 <h2>Why start with the Open House</h2>
-<p class="lede">Two placements land before Oct. 24, then the rhythm continues.</p>
+<p class="lede">Two placements land <span class="hl">before Oct. 24</span>, then the rhythm continues.</p>
 <p style="color:var(--mist);max-width:40em">The Featured Event tells readers where to be on Oct. 24. The Primary two days later is the first thing ~7,900 people see. Since medical dermatology is your focus, the copy leads with it: open daily, kids welcome, insurance accepted. The aesthetic side surprises people once they're in the door. After that, a Secondary and two more Primaries keep Dermhaus in the inbox on the monthly rhythm you described. Meta, the billboard and influencers haven't paid off for you. This is the opposite: readers who opted in, hearing about Dermhaus in my voice.</p>
+<div class="bigstat"><div class="n">~7,900</div><div class="c">Charlestonians open it every Thursday</div></div>
 <div class="facts">
 <div class="fact"><div class="n">11,161</div><div class="l">Subscribers</div></div>
 <div class="fact"><div class="n">71.19%</div><div class="l">Open rate</div></div>
 <div class="fact"><div class="n">7.29%</div><div class="l">Click rate</div></div>
-<div class="fact"><div class="n">~7,900</div><div class="l">Open every Thursday</div></div>
 </div>
 <div class="facts">
-<div class="fact"><div class="n">66%</div><div class="l">Female</div></div>
-<div class="fact"><div class="n">86%</div><div class="l">Age 35+</div></div>
-<div class="fact"><div class="n">48%</div><div class="l">Household income $150K+</div></div>
-<div class="fact"><div class="n">87%</div><div class="l">College educated</div></div>
+<div class="fact lm"><div class="n">66%</div><div class="l">Female</div></div>
+<div class="fact lm"><div class="n">86%</div><div class="l">Age 35+</div></div>
+<div class="fact lm"><div class="n">48%</div><div class="l">Household income $150K+</div></div>
+<div class="fact lm"><div class="n">87%</div><div class="l">College educated</div></div>
 </div>
-<p style="margin-top:26px;color:var(--mist);max-width:40em">Research says it takes 5 to 7 exposures before a brand sticks. Five placements gets Dermhaus there, and every one is written in my voice, not ad copy. You offered a booking link or code. Use it, and we'll see exactly what the newsletter produced.</p>
+<p style="margin-top:28px;color:var(--mist);max-width:40em">Research says it takes 5 to 7 exposures before a brand sticks. Five placements gets Dermhaus there, and every one is written in my voice, not ad copy. You offered a booking link or code. Use it, and we'll see exactly what the newsletter produced.</p>
 </div></section>
-<section class="band"><div class="wrap">
+<section class="band white"><div class="wrap">
 <h2>What you get back</h2>
-<p class="lede">You won't have to ask how it went.</p>
+<p class="lede">You won't have to <span class="hl">ask how it went.</span></p>
 <div class="two">
-<div>
-<p><strong>The Wednesday after every placement:</strong> your own results page. Reach across the email and the website, opens, clicks to you, a straight read on the creative, and what I'd change next.</p>
+<div class="card"><p><strong>The Wednesday after every placement:</strong> your own results page. Reach across the email and the website, opens, clicks to you, a straight read on the creative, and what I'd change next.</p></div>
+<div class="card"><p><strong>When the campaign wraps:</strong> totals across all five placements, how the audience grew while you were in it, what pulled hardest, and what a second campaign should look like.</p></div>
 </div>
-<div class="bad">
-<p><strong>When the campaign wraps:</strong> totals across all five placements, how the audience grew while you were in it, what pulled hardest, and what a second campaign should look like.</p>
-</div>
-</div>
-<p style="margin-top:26px;color:var(--mist);max-width:40em"><strong style="color:var(--white)">Opt Alternatives, spring 2026:</strong> 51,281 delivered, 37,403 opens, about 73% average open rate, audience up 17% during the run. Ad three underperformed. I told her so, we rewrote the creative, and clicks doubled on the next run. That's the point of reporting.</p>
-<div class="quote" style="margin-top:34px">
-<p>&ldquo;Jimmy and CHS Happenings have been phenomenal in supporting my business growth. As a new company, I really appreciated his proactive approach and guidance to helping me put together the right marketing strategy to maximize my impact in the newsletter. He's incredibly responsive, supportive, and actively engaged in the community.&rdquo;</p>
-<cite><strong style="color:var(--white)">Kaitlyn Fariello</strong> &middot; Founder, Opt Alternatives &middot; full-service accounting, Charleston</cite>
+<p class="proofline"><strong>Opt Alternatives, spring 2026:</strong> 51,281 delivered, 37,403 opens, about 73% average open rate, audience up 17% during the run. Ad three underperformed. I told her so, we rewrote the creative, and clicks doubled on the next run. That's the point of reporting.</p>
+<div class="quote">
+<p>Jimmy and CHS Happenings have been phenomenal in supporting my business growth. As a new company, I really appreciated his proactive approach and guidance to helping me put together the right marketing strategy to maximize my impact in the newsletter. He's incredibly responsive, supportive, and actively engaged in the community.&rdquo;</p>
+<cite><strong>Kaitlyn Fariello</strong> &middot; Founder, Opt Alternatives &middot; full-service accounting, Charleston</cite>
 </div>
 </div></section>
 <section class="band deep"><div class="wrap">
