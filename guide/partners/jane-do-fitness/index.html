@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
+<title>Jane Do. Fitness Results</title>
+<style>
+:root{--navy:#183872;--navy-deep:#112a5a;--navy-lift:#2a4f9a;--lime:#CCED60;--white:#fff;--mist:#c3d1ec;--ink:#12213d;
+--display:"Helvetica Neue","Arial Black",Arial,system-ui,sans-serif;--body:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color-scheme:dark}
+*{box-sizing:border-box}
+html{background:var(--navy)}
+body{margin:0;background:var(--navy);color:var(--white);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:980px;margin:0 auto;padding-inline:20px}
+p{margin:0 0 14px;font-size:16px}
+strong{font-weight:800}
+a{color:inherit;overflow-wrap:anywhere}
+.eyebrow{color:var(--lime);font-weight:800;font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin:26px 0 18px}
+.hero{padding-block:28px 56px;overflow:hidden}
+h1{margin:0;font-weight:400}
+.mega{display:block;font-family:var(--display);font-weight:900;font-size:clamp(84px,25vw,236px);line-height:.82;letter-spacing:-.055em;font-variant-numeric:tabular-nums}
+.mega.lime{color:var(--lime);text-align:right;margin-top:34px}
+.mega-cap{display:block;font-size:clamp(16px,3.4vw,24px);font-weight:700;margin-top:12px;max-width:16em;color:var(--mist);line-height:1.25}
+.mega-cap.right{margin-left:auto;text-align:right}
+.sub{margin:34px 0 0;font-size:17px;max-width:34em;color:var(--mist)}
+.sub strong{color:var(--white)}
+h2{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--lime);margin:0 0 20px}
+.band{padding-block:48px}
+.band.deep{background:var(--navy-deep)}
+.band.white{background:var(--white);color:var(--ink)}
+.band.white h2{color:var(--navy)}
+.band.white strong{color:var(--navy)}
+.lede{font-family:var(--display);font-weight:900;font-size:clamp(26px,5.4vw,44px);line-height:1.05;letter-spacing:-.03em;margin:0 0 22px;max-width:18em;text-wrap:balance}
+.stack{display:flex;height:46px;margin:6px 0 12px}
+.stack span{display:block}
+.stack .a{background:var(--lime)}
+.stack .b{background:var(--white)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 28px;font-size:14px;color:var(--mist)}
+.legend b{color:var(--white);font-variant-numeric:tabular-nums}
+.sw{display:inline-block;width:12px;height:12px;margin-right:8px;vertical-align:-1px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:26px 20px;margin:34px 0 0}
+.fact .n{font-family:var(--display);font-weight:900;font-size:clamp(34px,6vw,52px);letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.fact .l{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);margin-top:8px}
+.gauge{position:relative;height:64px;margin:46px 0 34px}
+.gauge .track{position:absolute;left:0;right:0;top:26px;height:10px;background:var(--navy-lift)}
+.gauge .band1{position:absolute;top:20px;height:22px;background:var(--white);opacity:.9}
+.gauge .mark{position:absolute;top:8px;width:4px;height:46px;background:var(--lime);transform:translateX(-2px)}
+.gauge .mk{position:absolute;top:-22px;font-family:var(--display);font-weight:900;font-size:26px;color:var(--lime);letter-spacing:-.03em;white-space:nowrap}
+.gauge .t{position:absolute;top:58px;font-size:12px;color:var(--mist);transform:translateX(-50%);white-space:nowrap}
+.gauge .t.l{transform:none}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th{text-align:left;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);padding:0 0 10px;font-weight:800}
+th.n,td.n{text-align:right;font-variant-numeric:tabular-nums}
+th.n{padding-left:14px}
+td{padding:14px 0 12px;border-top:1px solid #d5dded;vertical-align:top}
+td.n{padding-left:12px;white-space:nowrap;font-weight:700}
+td .bar{display:block;height:6px;background:var(--navy);margin-top:9px}
+td .sub2{display:block;font-size:12px;color:#5c6b85;margin-top:2px}
+tr.tot td{border-top:3px solid var(--navy);font-weight:800;color:var(--navy);font-size:17px}
+.two{display:grid;grid-template-columns:1fr;gap:34px}
+@media(min-width:760px){.two{grid-template-columns:1fr 1fr;gap:56px}}
+.two>*{min-width:0}
+.bad{border-left:4px solid var(--lime);padding-left:16px}
+.moves{margin:0;padding:0;list-style:none;display:grid;gap:18px}
+.moves li{font-size:16px;padding-left:18px;position:relative}
+.moves li:before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;background:var(--lime)}
+.cmp{display:grid;gap:26px;margin-top:8px}
+.cmp .row .h{display:flex;justify-content:space-between;gap:12px;font-size:14px;font-weight:700;margin-bottom:8px}
+.cmp .row .h span:last-child{color:var(--mist);font-weight:600;font-variant-numeric:tabular-nums;text-align:right}
+.cmp .bars{display:grid;gap:6px}
+.cmp .bars i{display:block;height:26px;position:relative;font-style:normal}
+.cmp .bars i b{position:absolute;left:10px;top:0;line-height:26px;font-size:13px;font-weight:800;white-space:nowrap}
+.cmp .bars .x{background:var(--white);color:var(--navy)}
+.cmp .bars .y{background:var(--lime);color:var(--navy)}
+.stand td{border-color:var(--navy-lift)}
+.stand th{color:var(--lime)}
+.thanks{background:var(--lime);color:var(--navy);padding-block:54px}
+.thanks p{font-family:var(--display);font-weight:900;font-size:clamp(22px,4.4vw,34px);line-height:1.12;letter-spacing:-.025em;max-width:22em;margin:0 0 18px;text-wrap:balance}
+.thanks .sig{font-size:18px;font-family:var(--body);font-weight:800;letter-spacing:0;margin:0}
+footer{padding-block:34px 56px;font-size:12.5px;color:var(--mist)}
+footer p{font-size:12.5px;max-width:60em}
+@media(prefers-reduced-motion:no-preference){.stack .a,.stack .b{transform-origin:left;animation:g .9s ease-out both}@keyframes g{from{transform:scaleX(0)}}}
+</style></head><body>
+<section class="hero"><div class="wrap">
+<p class="eyebrow">CHS Happenings &middot; Sponsorship Results</p>
+<h1>
+<span class="mega">9,545</span>
+<span class="mega-cap">times The Movement Social was seen</span>
+<span class="mega lime">13</span>
+<span class="mega-cap right">people clicked through to your ticket page</span>
+</h1>
+<p class="sub"><strong>Your Featured Event in the Oct. 1 issue,</strong> two days before The Movement Social at The Refinery. Here's what it delivered.</p>
+</div></section><section class="band deep"><div class="wrap">
+<h2>The short version</h2>
+<p class="lede">7,975 people opened the issue with your event in it.</p>
+<div class="stack" role="img" aria-label="Impressions: 7,975 email opens and 1,570 web views"><span class="a" style="flex:7975"></span><span class="b" style="flex:1570"></span></div>
+<div class="legend"><span><i class="sw" style="background:var(--lime)"></i><b>7,975</b> opened the email</span><span><i class="sw" style="background:var(--white)"></i><b>1,570</b> web views of pages carrying your card</span></div>
+<div class="facts">
+<div class="fact"><div class="n">11,088</div><div class="l">Inboxes it reached</div></div>
+<div class="fact"><div class="n">71.9%</div><div class="l">Open rate</div></div>
+<div class="fact"><div class="n">10</div><div class="l">Clicks from the email</div></div>
+<div class="fact"><div class="n">3</div><div class="l">Clicks from the web</div></div>
+</div>
+<p style="margin-top:30px;color:var(--mist);max-width:40em">Seen is email opens plus web views. The web side is the issue's own page (177 views) and the six stories that carried your card (1,393 views). Clicks are unique people, not taps.</p>
+</div></section><section class="band"><div class="wrap">
+<h2>How that compares</h2>
+<p class="lede">1.25 clicks for every 1,000 people who opened.</p>
+<p style="color:var(--mist);max-width:40em">A sponsor block here usually earns 1 to 2. Yours landed right in that range, for an event that asked people to buy a ticket.</p>
+<div class="gauge" role="img" aria-label="1.25 clicks per 1,000 openers against a usual range of 1 to 2">
+<div class="track"></div><div class="band1" style="left:33.33%;width:33.33%"></div><div class="mark" style="left:41.67%"></div><div class="mk" style="left:41.67%;padding-left:10px">1.25</div>
+<span class="t l" style="left:0">0</span><span class="t" style="left:50.00%">usual, 1 to 2</span><span class="t" style="left:100%;transform:translateX(-100%)">3</span>
+</div>
+</div></section><section class="band white"><div class="wrap">
+<h2>Where the clicks came from</h2>
+<table>
+<thead><tr><th>Where it ran</th><th class="n">Views</th><th class="n">Clicks</th></tr></thead>
+<tbody>
+<tr><td>The email<span class="sub2">Featured Event, after the weekend picks</span><span class="bar" style="width:100.0%"></span></td><td class="n">7,975</td><td class="n">10</td></tr>
+<tr><td>510 King Street story<span class="sub2">Card near the end of the story</span><span class="bar" style="width:20.0%"></span></td><td class="n">196</td><td class="n">2</td></tr>
+<tr><td>Brewery chef story<span class="sub2">Card near the end of the story</span><span class="bar" style="width:10.0%"></span></td><td class="n">413</td><td class="n">1</td></tr>
+<tr><td>The issue's own web page</td><td class="n">177</td><td class="n">0</td></tr>
+<tr><td>Four other web stories<span class="sub2">Ben Sawyer Bridge, Stars Rooftop, upper peninsula parks, outdoor basketball</span></td><td class="n">784</td><td class="n">0</td></tr>
+<tr class="tot"><td>All of it</td><td class="n">9,545</td><td class="n">13</td></tr>
+</tbody></table>
+</div></section><section class="band"><div class="wrap">
+<h2>The honest read</h2>
+<div class="two">
+<div>
+<p class="lede" style="font-size:clamp(22px,4vw,30px)">What worked</p>
+<p><strong>A crowd saw it.</strong> Nearly eight thousand opens plus six web stories put The Movement Social in front of readers 9,545 times.</p><p>The links were tagged, so you can match these visits against your sales.</p>
+</div>
+<div class="bad">
+<p class="lede" style="font-size:clamp(22px,4vw,30px)">What didn't</p>
+<p><strong>Two days is short.</strong> The issue landed Thursday for a Saturday morning event with a paid ticket. That's a fast decision to ask of someone who just heard about it.</p><p>Clicks also tell me who looked, not who bought.</p>
+</div>
+</div>
+
+</div></section><section class="band deep"><div class="wrap">
+<h2>What I'd change next time</h2>
+<ul class="moves">
+<li><strong>Give it a week.</strong> Announce the next Movement Social at least a week out, then run a short &ldquo;this Saturday&rdquo; reminder.</li>
+<li><strong>Tell me how tickets went.</strong> If you saw sales from CHS Happenings, I'll line them up against these numbers.</li>
+</ul>
+</div></section><section class="thanks"><div class="wrap">
+<p>Thanks for letting me put The Movement Social in front of Charleston. Making it a series is the right instinct, and I'd love to help it grow.</p>
+<p class="sig">Jimmy</p>
+</div></section><footer><div class="wrap">
+<p>Numbers pulled from Beehiiv on Oct. 7, 2026, six days after the issue went out, so opens and clicks have settled. Impressions are email opens plus page views of the issue and of every story that carried your card. Clicks are unique people, not taps. All links carried tracking tags. Nothing here is modeled or estimated.</p>
+</div></footer>
+</body></html>
