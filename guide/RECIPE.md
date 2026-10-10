@@ -133,6 +133,13 @@ no active median list price, no low active list, no active median DOM. He consul
 page over a 30 to 60 day window and active inventory is stale the day it's entered.
 `refresh.py` aborts if it finds any, but prose is on you.
 
+**Footer credit, since the October 2026 refresh:** The Farrell Group closed Oct 31, 2026.
+The footer ("Market data prepared by...") and the hero eyebrow now credit CHS Happenings
+only, not The Farrell Group. `config.json`'s `footer_template` reflects this — do not
+restore the old "/ The Farrell Group" credit in a future run. The "Selling a home?" Modern
+Listing Model pitch block and its link to thefarrellgroupchs.com were deliberately left in
+place pending Jimmy's call on whether to remove them.
+
 ## Step 6 — Publish
 
 ```
