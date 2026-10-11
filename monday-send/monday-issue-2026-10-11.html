@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='robots' content='noindex'>
+<title>The Monday Issue</title>
+<style>
+:root{--navy:#183872;--lime:#CCED60;--ink:#12213f;--paper:#f7f8f3;--mute:#5b6784;--line:#d9ddea;--soft:#eef3d6}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;line-height:1.6;font-size:17px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Georgia,'Times New Roman',serif;color:var(--navy);margin:0}
+h2{font-size:clamp(30px,5.4vw,52px);line-height:1.02;margin-bottom:14px;letter-spacing:-.5px}
+h3{font-size:21px;margin-bottom:6px}
+p{margin:0 0 12px}
+section{padding:54px 0 46px;border-bottom:1px solid var(--line)}
+.kicker{display:inline-block;background:var(--lime);color:var(--navy);font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;margin-bottom:14px}
+.note{font-size:14px;color:var(--mute)}
+.hero{background:var(--navy);color:#fff;padding:52px 0 54px;overflow:hidden}
+.hero .meta{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#aebbe0;margin-bottom:6px}
+.hero .big{font-family:Georgia,serif;font-weight:900;font-size:clamp(70px,19vw,176px);line-height:.84;letter-spacing:-4px;color:var(--lime);margin:0 0 0 -4px}
+.hero .big small{display:block;font-size:.26em;letter-spacing:.02em;color:#fff;font-weight:400;font-style:italic;margin:0 0 6px 4px}
+.hero .sub{font-family:Georgia,serif;font-size:clamp(20px,3.6vw,30px);line-height:1.22;max-width:700px;margin:22px 0 0}
+.calls{display:grid;grid-template-columns:1.25fr 1fr;gap:34px;align-items:start}
+.calls ol{margin:0;padding-left:20px}
+.calls li{margin:0 0 10px}
+.ask{background:var(--navy);color:#fff;padding:24px 24px 14px;border-radius:4px}
+.ask h3{color:var(--lime)}
+.ask p{color:#dbe3f5}
+.row{display:grid;grid-template-columns:minmax(0,480px) minmax(0,1fr);gap:0 38px;align-items:stretch}
+.row .src{align-self:start}
+.mail{background:#fff;border-left:1px solid #b9c2dc;border-right:1px solid #b9c2dc;padding:0 16px;font-size:15px;line-height:1.5}
+.mail.first{border-top:1px solid #b9c2dc;border-radius:18px 18px 0 0;padding-top:16px}
+.mail.last{border-bottom:1px solid #b9c2dc;border-radius:0 0 18px 18px;padding-bottom:16px}
+.ribbon{background:#c0392b;color:#fff;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;display:inline-block;margin-bottom:8px}
+.bar{background:var(--lime);border:.5px solid var(--navy);border-radius:10px;padding:5px;text-align:center;font-weight:700;color:var(--navy);margin:8px 0 6px;font-size:15px}
+.card{border:1px solid var(--navy);border-radius:15px;padding:12px 14px;margin:6px 0}
+.card h4{margin:0 0 4px;font-size:16px;color:var(--navy)}
+.card p{margin:0 0 8px;font-size:15px}
+.desk{background:var(--navy);border-radius:14px;padding:20px 22px;margin:8px 0}
+.desk .eb{color:var(--lime);font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin:0 0 8px}
+.desk .hd{color:#fff;font-size:20px;line-height:1.25;font-weight:800;margin:0 0 8px}
+.desk .hd span{background:var(--lime);color:var(--navy);padding:1px 6px;border-radius:3px}
+.desk .sb{color:#cdd9e6;font-size:14px;margin:0 0 12px}
+.desk .btn{display:inline-block;background:var(--lime);color:var(--navy);font-weight:700;font-size:14px;padding:9px 16px;border-radius:8px}
+.subj{background:#f1f3f9;border-radius:10px;padding:10px 12px;margin:0 0 10px;font-size:14px}
+.subj b{color:var(--navy)}
+.ph{background:var(--soft);border:1px dashed #9db45a;border-radius:8px;padding:6px 10px;color:#4a5d12;font-size:14px}
+.rank{margin:6px 0 4px;padding:0;list-style:none}
+.rank li{display:flex;gap:10px;margin:0 0 8px;align-items:baseline}
+.rank .n{font-family:Georgia,serif;font-weight:900;font-size:30px;line-height:.9;color:var(--lime);-webkit-text-stroke:1.2px var(--navy);flex:0 0 26px}
+.day{font-weight:800;color:var(--navy);font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin:10px 0 4px}
+.ev{margin:0 0 7px;font-size:14.5px}
+.ev b{color:var(--navy)}
+.ev em{font-style:normal;color:var(--mute);font-size:13px}
+.big-num{font-family:Georgia,serif;font-weight:900;font-size:46px;line-height:1;color:var(--navy);margin:2px 0 4px}
+.bars{display:flex;gap:8px;margin:8px 0}
+.bars span{flex:1;background:var(--lime);border:1px solid var(--navy);border-radius:8px;padding:8px;text-align:center;font-size:13px;font-weight:700;color:var(--navy)}
+.src{border-left:6px solid var(--lime);padding:2px 0 2px 16px;margin:12px 0 26px}
+.src .lab{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);display:block;margin-bottom:4px}
+.src p{font-size:15px;margin:0 0 8px}
+.src ul{margin:0 0 8px;padding-left:18px;font-size:15px}
+.src li{margin:0 0 4px}
+.clock{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin:26px 0 8px}
+.clock div{padding:14px 12px 16px;background:#fff;border-top:6px solid var(--navy);font-size:14px;line-height:1.4}
+.clock div:nth-child(even){background:var(--soft)}
+.clock div.mon{background:var(--navy);color:#fff;border-top-color:var(--lime)}
+.clock b{display:block;font-family:Georgia,serif;font-size:21px;color:var(--navy);margin-bottom:4px}
+.clock .mon b{color:var(--lime)}
+.stage{display:grid;grid-template-columns:70px 1fr;gap:16px;margin:0 0 26px}
+.stage .sn{font-family:Georgia,serif;font-weight:900;font-size:60px;line-height:.85;color:var(--lime);-webkit-text-stroke:2px var(--navy)}
+.stage h3{margin-top:2px}
+.stage .rule{font-size:15px;background:#fff;border-left:5px solid var(--navy);padding:8px 12px;margin:8px 0}
+table{border-collapse:collapse;width:100%;background:#fff;margin:16px 0;font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--navy);color:#fff}
+.tag{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);background:#e9f6b8;padding:2px 7px;white-space:nowrap}
+.find{background:#fff;border-left:8px solid #e0a100;padding:14px 18px;margin:16px 0}
+.find.red{border-left-color:#c0392b}
+.find h3{font-size:19px}
+.find p{margin:4px 0;font-size:15.5px}
+.cta{background:var(--navy);color:#fff;padding:52px 0 44px}
+.cta h2{color:var(--lime)}
+.cta li{margin:9px 0}
+.cta p{color:#dbe3f5}
+footer{padding:26px 0;font-size:13px;color:var(--mute)}
+@media(max-width:860px){
+ .row{grid-template-columns:minmax(0,1fr)}
+ .calls{grid-template-columns:1fr}
+ .clock{grid-template-columns:repeat(2,1fr)}
+ .src{margin:14px 0 22px}
+ .stage{grid-template-columns:48px 1fr;gap:10px}
+ .stage .sn{font-size:44px}
+ table{font-size:14px}
+ body{font-size:16px}
+}
+</style>
+</head>
+<body>
+
+<div class='hero'><div class='wrap'>
+<div class='meta'>CHS Happenings &middot; Build sheet &middot; Oct 11, 2026</div>
+<div class='big'><small>if the poll says yes:</small>Monday, built.</div>
+<div class='sub'>The full sample issue, using this week's real events and shows, plus exactly how the Monday pack gets made and where every piece comes from.</div>
+</div></div>
+
+<section><div class='wrap'>
+<span class='kicker'>Before you read</span>
+<h2>Questions? None that block me.</h2>
+<div class='calls'>
+<div>
+<p>I made six calls so I could keep moving. Each one is easy to change.</p>
+<ol>
+<li><b>Sends Monday at 7 AM</b>, the same clock Thursday runs on.</li>
+<li><b>Goes to the people who voted yes</b> for the first six Mondays. Everyone who didn't say no joins after that. A reader who voted no never gets it.</li>
+<li><b>You make the picks, the pack does the rest.</b> Each Friday it proposes three ranked-list topics with shortlists from your own data. You choose and type your five picks. It never picks for you.</li>
+<li><b>No news on Monday.</b> If something breaks, Monday points to Thursday in one line.</li>
+<li><b>Same brand, trimmed template.</b> A copy of LATEST Less Code with the Thursday-only blocks removed.</li>
+<li><b>Your cap is 45 minutes a week.</b> If it needs more, the issue gets smaller.</li>
+</ol>
+</div>
+<div class='ask'>
+<h3>Two things I'd still like your call on</h3>
+<p><b>1. The Dinner Club line.</b> Your Dinner Club Dates table has nothing after September 23. Should Monday only mention Dinner Club when a date is open for sign-ups? That's my default.</p>
+<p><b>2. Monday partner slot.</b> Bonus for existing partners, or sold on its own? I built it as one slot either way.</p>
+<p class='note' style='color:#aebbe0'>If you say nothing, I use the defaults.</p>
+</div>
+</div>
+</div></section>
+
+<section><div class='wrap'>
+<span class='kicker'>Part 1 &middot; The issue</span>
+<h2>What lands in the inbox</h2>
+<p>This is the sample for the week of Oct 12. Real events and shows come straight from your tables as of today, not re-checked. Anything that needs your voice or your pick shows as a green dashed box.</p>
+
+<div class='row'>
+<div class='mail first'>
+<span class='ribbon'>Sample</span>
+<div class='subj'><b>Subject:</b> &#127796; <i>[the verdict, teased, not described]</i><br><b>Preview:</b> <i>[one line that finishes the thought]</i></div>
+<div class='desk'><p class='eb'>The Partner Desk</p><p class='hd'>Charleston's most engaged audience is reading <span>right now</span></p><p class='sb'>Your business could be in this spot next week</p><span class='btn'>See sponsorship options &rarr;</span></div>
+<p style='margin:8px 0'><b>Happy Monday, Charleston.</b> <span class='ph'>[One or two lines from you. Optional. Last week's poll result can ride here.]</span></p>
+</div>
+<div class='src'><span class='lab'>Top of the issue</span>
+<p>The Partner Desk is your house ad. It runs in every issue and never gets filled by a sponsor, same rule as Thursday.</p>
+<p>Subject lines follow the same playbook as Thursday: tease the verdict, keep the palm tree. The pack writes three options and shows its reasoning. You pick.</p></div>
+</div>
+
+<div class='row'>
+<div class='mail'>
+<div class='bar'>THE RANKED LIST</div>
+<div class='card'>
+<h4><span class='ph'>The 5 [category] worth the wait</span></h4>
+<p><span class='ph'>[Your intro, two sentences max]</span></p>
+<ol class='rank'>
+<li><span class='n'>1</span><span class='ph'>[Your #1] &mdash; your one-line reason, in your words</span></li>
+<li><span class='n'>2</span><span class='ph'>[Your #2] &mdash; your reason</span></li>
+<li><span class='n'>3</span><span class='ph'>[Your #3] &mdash; your reason</span></li>
+<li><span class='n'>4</span><span class='ph'>[Your #4] &mdash; your reason</span></li>
+<li><span class='n'>5</span><span class='ph'>[Your #5] &mdash; your reason</span></li>
+</ol>
+<p><b>Read the full ranking &rarr;</b> <span class='note'>(web post with all the detail)</span></p>
+</div>
+</div>
+<div class='src'><span class='lab'>Where it comes from</span>
+<p><b>You.</b> This is the one piece the pack cannot make. Your verdicts are what Thursday's best leads were built on (13.2%, 12.6% and 12.0% click-to-open this season).</p>
+<p><b>Shortlists come from your own data:</b></p>
+<ul><li>Your star ratings in the Dinner Club Venues table</li><li>Places in Openings &amp; Closings marked Now Open in the last 60 days</li><li>Past Thursday issues, so it never repeats a recent topic</li></ul>
+<p>Each Friday the pack drops three topic options into a Todoist task. You reply with your pick and five names. Your one-liners go in verbatim, the same way your My Takes field works today.</p></div>
+</div>
+
+<div class='row'>
+<div class='mail'>
+<div class='bar'>THE WEEK AHEAD</div>
+<div class='ev' style='margin-top:6px'><span class='ph'>[Forecast in one line]</span></div>
+<div class='day'>Mon Oct 12</div>
+<p class='ev'><b>Voices of Promise</b> &middot; 6 PM &middot; We Are Family Community Center, North Charleston</p>
+<div class='day'>Tue Oct 13</div>
+<p class='ev'><b>Pitch a Friend with Charleston Pride</b> &middot; 7 PM &middot; Share House, 23 Ann St</p>
+<div class='day'>Wed Oct 14</div>
+<p class='ev'><b>Early Morning Bird Walk</b> &middot; 8:30 AM &middot; Caw Caw Interpretive Center</p>
+<p class='ev'><b>The Hampton Park Farmers Market</b> &middot; 3:30 PM &middot; Hampton Park</p>
+<div class='day'>Thu Oct 15</div>
+<p class='ev'><b>North Charleston Farmers Market</b> &middot; 3 PM &middot; Park Circle Pavilion</p>
+<p class='ev'><b>Halloween in the Swamp</b> &middot; 7 PM &middot; Cypress Gardens</p>
+<div class='day'>Marked for the weekend <em>(full list in Thursday)</em></div>
+<p class='ev'><b>Stingrays Opening Night</b> &middot; Sat 6:05 PM &middot; North Charleston Coliseum</p>
+<p class='ev'><b>Conversations of Freedom: Uncovering the Kitchen House</b> &middot; Sun 3 PM &middot; Middleton Place</p>
+</div>
+<div class='src'><span class='lab'>Where it comes from</span>
+<p>The <b>Events table</b> in your Charleston Event Tracker. The pack runs Sunday afternoon and takes Monday through Thursday in full, plus two or three weekend teasers.</p>
+<p><b>What it keeps:</b></p>
+<ul><li>Quality score 4 or 5</li><li>Listing still confirmed at its source</li><li>A confirmed start time (your no-time rule)</li><li>Nothing marked Skip or Duplicate</li><li>Your venue filters and curation blocklist</li><li>No more than two of one category</li></ul>
+<p>The weekend stays Thursday's job, so Monday never repeats it.</p></div>
+</div>
+
+<div class='row'>
+<div class='mail'>
+<div class='bar'>MONDAY MUSIC</div>
+<div class='day'>Mon Oct 12</div>
+<p class='ev'><b>Cannons</b> &middot; 8 PM &middot; Charleston Music Hall <em>Rock/Indie</em></p>
+<p class='ev'><b>Derek Cribb</b> &middot; 6 PM &middot; The Dinghy, Isle of Palms</p>
+<div class='day'>Tue Oct 13</div>
+<p class='ev'><b>All Them Witches</b> &middot; 8 PM &middot; Charleston Music Hall <em>Rock/Indie</em></p>
+<p class='ev'><b>Pterocat / 2 Slices</b> &middot; 7:30 PM &middot; The Tin Roof</p>
+<div class='day'>Wed Oct 14</div>
+<p class='ev'><b>The Almost Every Wednesday Band</b> &middot; 6 PM &middot; The Dinghy</p>
+<p class='note'>Full weekend lineup, Friday through Sunday, runs in Thursday.</p>
+</div>
+<div class='src'><span class='lab'>Where it comes from</span>
+<p>The <b>Live Music table</b>, same data your Thursday block uses. Thursday covers Friday to Sunday, so Monday covers Monday to Thursday and the two never overlap.</p>
+<p>Two picks a day, genre varied, using the same picking rules as the Thursday block.</p>
+<p><b>Careful here.</b> See Part 4. This table has the messiest data of the lot.</p></div>
+</div>
+
+<div class='row'>
+<div class='mail'>
+<div class='bar'>MONDAY MATH</div>
+<div class='card'>
+<div class='big-num'>$8.05M &rarr; $13.5M</div>
+<p><span class='ph'>[Three short paragraphs. What is it, what changed, what happens next. Every claim linked to its source.]</span></p>
+<p class='note'>Sample number only. It's from a Meeting Street Road property in your Development Watch ideas.</p>
+</div>
+</div>
+<div class='src'><span class='lab'>Where it comes from</span>
+<p>You drop in one number and its source link by Sunday noon. Optional.</p>
+<p>The pack writes it up, and anything without a source gets cut. That's your no-unsourced-flourishes rule.</p>
+<p><b>Overlap rule:</b> that sample idea is slotted for Thursday's Development Watch. The pack checks the Development Watch tables first and never uses a story Thursday is running.</p>
+<p>No number by Sunday noon? The section is skipped and the issue still goes out.</p></div>
+</div>
+
+<div class='row'>
+<div class='mail'>
+<div class='bar'>YOUR CALL</div>
+<div class='card'>
+<p><b>Last week:</b> <span class='ph'>[result of last Monday's question, plus your one-line reaction]</span></p>
+<p><b>This week:</b> <span class='ph'>[one question, one tap]</span></p>
+<div class='bars'><span>Option A</span><span>Option B</span></div>
+</div>
+</div>
+<div class='src'><span class='lab'>Where it comes from</span>
+<p>Beehiiv polls. The pack builds this week's poll from the question you give it (or proposes three) and pulls last week's results automatically.</p>
+<p>It follows your standing poll rule: never a poll whose payoff is a feature planned for the paid tier.</p></div>
+</div>
+
+<div class='row'>
+<div class='mail'>
+<div class='bar'>PRESENTED BY [PARTNER]</div>
+<div class='card'><p><span class='ph'>[One sponsor slot. Approved copy, or the block is deleted. Never bracketed, never blank.]</span></p></div>
+<div class='card'>
+<h4>Dinner Club</h4>
+<p><span class='ph'>[Next date, neighborhood, one-line reason to go, reserve button]</span></p>
+</div>
+</div>
+<div class='src'><span class='lab'>Where it comes from</span>
+<p><b>Partner slot:</b> the Placements table. Same fill-or-delete rule Thursday uses. One slot only, clearly labeled.</p>
+<p><b>Dinner Club:</b> the next Confirmed date in Dinner Club Dates. Right now there isn't one, so the pack would flag it and drop the block rather than guess.</p></div>
+</div>
+
+<div class='row'>
+<div class='mail last'>
+<div class='bar'>THE BACKSTORY <span style='font-weight:400'>(optional)</span></div>
+<div class='card'><p><span class='ph'>[Short history of one Charleston place. Banked ahead of time. Only when you've got one ready.]</span></p></div>
+<p class='note' style='text-align:center;margin:8px 0 0'>Thursday: the news. Monday: your week.</p>
+</div>
+<div class='src'><span class='lab'>Where it comes from</span>
+<p>Your bank of finished pieces. You write them in batches when you feel like it. Sources are embedded in every one, the same way your history blocks work now. The section is dropped when the bank is empty.</p></div>
+</div>
+
+<p style='margin-top:30px'><b>What stays on Thursday and is not in Monday:</b> the news lead and its six stories, ICYMI, Development Watch, openings and closings, Where Am I?, Featured Event, and the weekend live music.</p>
+</div></section>
+
+<section><div class='wrap'>
+<span class='kicker'>Part 2 &middot; The pack</span>
+<h2>The weekly clock</h2>
+<p>A scheduled cloud task builds Monday the same way Wednesday builds Thursday. No Mac, no pay-as-you-go billing. It all runs inside your Claude subscription.</p>
+
+<div class='clock'>
+<div><b>Fri morning</b>Pack drops three ranked-list topics, with shortlists, into a Todoist task.</div>
+<div><b>Sat to Sun noon</b>You pick, type five picks and your one-liners. Optional: a number, a poll question. Tick Ready.</div>
+<div><b>Sun 4 PM</b>Cloud run builds the whole draft and a report page.</div>
+<div><b>Sun evening</b>You read the report, tweak it, schedule it. About 15 minutes.</div>
+<div class='mon'><b>Mon 7 AM</b>It sends.</div>
+<div><b>Next Sunday</b>Stats have settled. Numbers get logged next to Thursday's.</div>
+</div>
+<p class='note'>Your time: about 20 minutes on the picks, 10 on the number, 5 on the poll, 10 to 15 on review. That fits the 45-minute cap.</p>
+
+<h2 style='margin-top:44px'>What the run does, step by step</h2>
+
+<div class='stage'><div class='sn'>0</div><div>
+<h3>Check the gate</h3>
+<p>Reads the Monday row for that week. If Ready is unticked, it changes nothing and reports that it's waiting. That's exactly how Wednesday works, and you can kick it off by hand any time.</p>
+<div class='rule'>The only required input is your five picks. Everything else has a fallback.</div>
+</div></div>
+
+<div class='stage'><div class='sn'>1</div><div>
+<h3>Build the Week Ahead</h3>
+<p>Pulls Monday through Sunday from the Events table, applies your filters, ranks what's left, and writes one-line descriptions using the same description rules the Thursday pack uses. Monday to Thursday in full, weekend as teasers.</p>
+<div class='rule'>Rule: no confirmed start time, no listing. Same as Thursday.</div>
+</div></div>
+
+<div class='stage'><div class='sn'>2</div><div>
+<h3>Build Monday Music</h3>
+<p>Pulls Monday to Thursday from the Live Music table, removes cancelled shows and repeats, then picks two a day with genre variety.</p>
+</div></div>
+
+<div class='stage'><div class='sn'>3</div><div>
+<h3>Write the ranked list</h3>
+<p>Takes your five picks and your one-liners exactly as typed. It drafts the headline, the two-sentence intro and the subject line, and scores them against the 13% Playbook so it knows how hard the hook is.</p>
+<div class='rule'>It never invents an opinion. If a one-liner is missing, that line is left blank and flagged.</div>
+</div></div>
+
+<div class='stage'><div class='sn'>4</div><div>
+<h3>Write Monday Math, the poll and the Dinner Club line</h3>
+<p>Writes up your number from its source. Builds this week's poll in Beehiiv and fetches last week's results. Finds the next open Dinner Club date.</p>
+</div></div>
+
+<div class='stage'><div class='sn'>5</div><div>
+<h3>Fill the partner slot and assemble</h3>
+<p>Fills the single sponsor slot from the Placements table or deletes it. Builds the draft from a new Monday template, checks the size so Gmail never clips it (target: under 60% of the limit; Thursday runs 86 to 91%), and checks that no placeholder text survived.</p>
+</div></div>
+
+<div class='stage'><div class='sn'>6</div><div>
+<h3>Log it and report</h3>
+<p>Adds a Monday row to the Issues table, records a predicted click-to-open band <b>before</b> the send, and publishes a report page through the Publish Queue. Todoist gets a task with the link, the same hand-off you use now.</p>
+</div></div>
+
+<h2 style='margin-top:44px'>Everything it pulls from</h2>
+<table>
+<tr><th>Source</th><th>What Monday takes</th><th>Already built?</th></tr>
+<tr><td>Events table (Charleston Event Tracker)</td><td>Week Ahead</td><td><span class='tag'>Reuse</span></td></tr>
+<tr><td>Live Music table</td><td>Monday Music, Monday to Thursday</td><td><span class='tag'>Reuse</span></td></tr>
+<tr><td>Issues table</td><td>A new Monday row holds your picks. Past rows feed the subject-line scoring.</td><td><span class='tag'>Add fields</span></td></tr>
+<tr><td>Dinner Club Dates and Venues</td><td>Next date, plus your ratings for ranked-list shortlists</td><td><span class='tag'>Reuse</span></td></tr>
+<tr><td>Openings &amp; Closings</td><td>Recently opened places for shortlists</td><td><span class='tag'>Reuse</span></td></tr>
+<tr><td>Development Watch Ideas and Log</td><td>Candidates for Monday Math, checked so Thursday's story is never reused</td><td><span class='tag'>Reuse</span></td></tr>
+<tr><td>Placements and Sponsors</td><td>The one partner slot</td><td><span class='tag'>Reuse</span></td></tr>
+<tr><td>Beehiiv</td><td>Poll, last week's results, the draft post, the Monday template, the send list</td><td><span class='tag'>New template</span></td></tr>
+<tr><td>National Weather Service feed</td><td>One-line forecast (optional)</td><td><span class='tag'>Reuse</span></td></tr>
+</table>
+<p><b>Not used on Monday:</b> story links, the six web posts, ICYMI sources, Post &amp; Courier. Monday has no news, which is also why it's lighter to make.</p>
+</div></section>
+
+<section><div class='wrap'>
+<span class='kicker'>Part 3 &middot; The build</span>
+<h2>What I'd have to make</h2>
+<table>
+<tr><th>Piece</th><th>What it is</th></tr>
+<tr><td>Monday row fields</td><td>A few new fields on the Issues table: issue type, topic, five picks, one-liners, number and source, poll question, Ready box.</td></tr>
+<tr><td>Monday template</td><td>A trimmed copy of LATEST Less Code in Beehiiv, with Thursday-only blocks removed.</td></tr>
+<tr><td>The Monday pack</td><td>One new skill, built from pieces the Thursday pack already uses.</td></tr>
+<tr><td>Two scheduled tasks</td><td>Friday topic menu and Sunday 4 PM build, both in the cloud.</td></tr>
+<tr><td>Stats</td><td>Your existing weekly click-to-open log gets a Monday line, plus a scorecard comparing Monday to Thursday for the pilot.</td></tr>
+</table>
+<p><b>Order:</b> fields, template, then the skill, then a dry run with no send. A realistic first send is Monday Nov 2, which matches the pilot plan. Poll goes in Thursday's issue Oct 15, you read it Oct 19, build runs Oct 19 to 25.</p>
+<p><b>One thing I'll confirm while building:</b> that Beehiiv can turn the people who voted yes into a send list. If it can't, I'll use a tag instead.</p>
+<p><b>Why it's worth building twice:</b> this is a second edition built from the same parts as the first. If it works, it's a concrete example for New NEXT of one automated edition feeding another.</p>
+</div></section>
+
+<section><div class='wrap'>
+<span class='kicker'>Part 4 &middot; What I found</span>
+<h2>Weak spots in your data today</h2>
+<p>I looked at what the pack would pull this week. Two things need handling before Monday can be trusted.</p>
+
+<div class='find red'>
+<h3>Live Music is full of repeats and cancelled shows</h3>
+<p>Of the first 40 rows for the next four days, <b>12 were marked Likely Cancelled</b> and at least 6 more were exact repeats of another row. Rosy Bones, Mel Washington, Derek Cribb, Jeff Bateman and Pterocat each appear twice, and The Almost Every Wednesday Band three times.</p>
+<p>The Wednesday cleanup you already run is what keeps Thursday's block honest. Monday's Sunday run would be working with whatever that cleanup left behind, so the pack has to remove cancelled shows and repeats itself. You can see the effect in the sample: Wednesday Oct 14 ended up with a single clean show, because the others were cancelled or conflicting rows.</p>
+</div>
+
+<div class='find'>
+<h3>No Dinner Club date after September 23</h3>
+<p>The Dinner Club Dates table has nothing newer. The Monday block would show nothing until a date is entered. That's one more weekly thing to keep up, or Monday drops the block.</p>
+</div>
+
+<div class='find'>
+<h3>Monday and Thursday could drift into each other</h3>
+<p>The weekend overlaps both. My rule: Monday covers Monday to Thursday in full, Thursday covers Friday to Sunday in full. Monday only teases two or three weekend items.</p>
+</div>
+
+<div class='find'>
+<h3>Your picks are the whole engine</h3>
+<p>If you skip a week, there is no ranked list and no lead. The pack won't make one for you. The fallback is a short week: Week Ahead, Music and the poll, with a note that the ranking returns next Monday. The rule from the plan still applies: a missed Monday should cost nothing.</p>
+</div>
+</div></section>
+
+<div class='cta'><div class='wrap'>
+<h2>If it's a yes</h2>
+<ol>
+<li>Tell me the poll number you'd call a win. I suggested 75% of votes and a real response rate.</li>
+<li>Answer the two questions near the top, or let the defaults stand.</li>
+<li>Say go and I start with the fields and the template, then the skill, then a dry run you can read before anything sends.</li>
+</ol>
+<p>Nothing sends to readers until you schedule it, including during the dry run.</p>
+</div></div>
+
+<footer><div class='wrap'>Sources: your Events, Live Music, Dinner Club, Development Watch, Openings &amp; Closings, Placements and Issues tables as of Oct 11, 2026; the LATEST Less Code template as it stands today; the Wednesday build chain. Event and show details are shown as stored and have not been re-checked against venue sites. Sample copy in green boxes is a placeholder, not a draft.</div></footer>
+</body>
+</html>
