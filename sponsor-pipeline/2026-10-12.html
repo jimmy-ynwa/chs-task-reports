@@ -1,1 +1,608 @@
-PLACEHOLDER
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sponsor Pipeline Check &mdash; October 12, 2026</title>
+<style>
+
+  :root {
+    --navy: #183872;
+    --lime: #cced60;
+    --body: #262626;
+    --muted: #444444;
+    --secondary: #6e6e6e;
+    --divider: #e6e6e6;
+    --page-bg: #f4f4f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page-bg);
+    color: var(--body);
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  h1, h2, h3, .pill, .bucket-title, .stat-num {
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px 60px; }
+  header.top {
+    background: var(--navy);
+    color: #fff;
+    padding: 36px 20px 30px;
+  }
+  header.top .wrap { padding: 0 20px; }
+  header.top .eyebrow {
+    color: var(--lime);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 12.5px;
+    margin: 0 0 10px;
+  }
+  header.top h1 {
+    margin: 0 0 8px;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.25;
+  }
+  header.top .sub {
+    color: #cfd8e8;
+    font-size: 14.5px;
+    margin: 0;
+  }
+  .action-box {
+    margin: -22px 0 28px;
+    background: #fff;
+    border: 2px solid var(--navy);
+    border-left: 8px solid var(--lime);
+    border-radius: 10px;
+    padding: 20px 24px;
+    box-shadow: 0 6px 18px rgba(24,56,114,0.10);
+  }
+  .action-box h2 {
+    margin: 0 0 10px;
+    color: var(--navy);
+    font-size: 17px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .action-box ol { margin: 0; padding-left: 20px; }
+  .action-box li { margin-bottom: 8px; }
+  .action-box .tag {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 6px;
+  }
+  .tag-approve { background: var(--lime); color: var(--navy); }
+  .tag-review { background: #fde9c8; color: #7a4b00; }
+  .tag-fyi { background: var(--divider); color: var(--muted); }
+
+  section.block {
+    background: #fff;
+    border: 1px solid var(--divider);
+    border-radius: 10px;
+    padding: 26px 28px 30px;
+    margin-bottom: 26px;
+  }
+  section.block h2 {
+    color: var(--navy);
+    font-size: 20px;
+    margin: 0 0 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  section.block h2 .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px; height: 26px;
+    background: var(--navy);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 13px;
+  }
+  section.block .lede {
+    color: var(--secondary);
+    font-size: 14.5px;
+    margin: 0 0 18px;
+  }
+  .callout {
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 14.5px;
+  }
+  .callout.stop {
+    background: #fdeceb;
+    border: 1px solid #e6a49c;
+    color: #7a2418;
+  }
+  .callout.stop strong { color: #a3271a; }
+  .callout.ok {
+    background: #eef7e2;
+    border: 1px solid #b9dd8f;
+    color: #375618;
+  }
+  .callout.note {
+    background: #f4f4f4;
+    border: 1px solid var(--divider);
+    color: var(--muted);
+  }
+
+  .stat-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 14px 0 20px;
+  }
+  .stat-tile {
+    flex: 1 1 130px;
+    background: #f9faf7;
+    border: 1px solid var(--divider);
+    border-radius: 8px;
+    padding: 12px 14px;
+    text-align: left;
+  }
+  .stat-tile .stat-num {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--navy);
+    display: block;
+  }
+  .stat-tile .stat-label {
+    font-size: 12px;
+    color: var(--secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  table.simple, table.roster-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    margin: 10px 0 4px;
+  }
+  table.simple th, table.roster-table th {
+    text-align: left;
+    background: #f4f4f4;
+    color: var(--muted);
+    font-weight: 700;
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 8px 10px;
+    border-bottom: 2px solid var(--divider);
+  }
+  table.simple td, table.roster-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--divider);
+    vertical-align: top;
+  }
+  table.roster-table td.hook { color: var(--secondary); font-size: 12.8px; }
+  table.roster-table td.days { text-align: right; white-space: nowrap; }
+
+  .pill {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 20px;
+  }
+  .pill-track { background: #e6ecf7; color: var(--navy); }
+  .pill-bot { background: #f4f4f4; color: #8c8c8c; }
+
+  details.bucket {
+    border: 1px solid var(--divider);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  details.bucket summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 12px 16px;
+    background: #f9faf7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  details.bucket summary::-webkit-details-marker { display: none; }
+  details.bucket summary::after {
+    content: '+';
+    font-size: 18px;
+    color: var(--secondary);
+  }
+  details.bucket[open] summary::after { content: '−'; }
+  .bucket-count {
+    background: var(--navy);
+    color: #fff;
+    border-radius: 20px;
+    padding: 1px 10px;
+    font-size: 12px;
+  }
+  .bucket-note {
+    color: var(--secondary);
+    font-size: 13px;
+    padding: 10px 16px 0;
+    margin: 0;
+  }
+  details.bucket .roster-table { padding: 0 16px 14px; margin-top: 8px; }
+
+  ul.plain { padding-left: 20px; margin: 8px 0; }
+  ul.plain li { margin-bottom: 4px; }
+
+  footer {
+    text-align: center;
+    color: var(--secondary);
+    font-size: 12.5px;
+    padding: 20px 0 40px;
+  }
+  a { color: var(--navy); }
+
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">CHS Happenings &middot; Sponsor Pipeline</p>
+    <h1>Weekly Sponsor Pipeline Check</h1>
+    <p class="sub">October 12, 2026 &middot; Sequence close-out reconcile, re-engagement roster, enroll-readiness sweep</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="action-box">
+    <h2>What needs you</h2>
+    <ol>
+      <li><span class="tag tag-review">Review</span> <strong>149 personal re-engagement touches are due this week</strong> (100 at Touch&nbsp;1, 48 at Touch&nbsp;2, 1 breakup) &mdash; this is a separate, Jimmy-sent layer on top of whatever the automated Kit Re-Engagement sequences are already doing for the same prospects. Dates are <strong>approximate</strong> (built off Airtable's Last Modified timestamp, not a fresh Kit pull for all 191 records &mdash; see the caveat in Section&nbsp;2). Nothing has been sent; this is a proposal only.</li>
+      <li><span class="tag tag-fyi">FYI</span> Sequence close-out and the enroll-readiness sweep were both clean this week &mdash; <strong>zero completions, zero new enrollable candidates.</strong> Nothing required a write and nothing was written.</li>
+      <li><span class="tag tag-fyi">FYI</span> 26 link clicks logged this week were gateway/scanner prefetches, not humans &mdash; all landed inside the noon send window. None promoted to Hot, per standing rule.</li>
+    </ol>
+  </div>
+
+  <section class="block">
+    <h2><span class="num">1</span> Sequence close-out reconcile</h2>
+    <p class="lede">Computed from each Kit subscriber's enrollment date (<code>added_at</code>) plus the verified per-sequence delay ladder &mdash; never read off a Kit field, per standing rule.</p>
+
+    <div class="callout ok">
+      <strong>Ladder drift guard: PASS on every track that currently holds a record.</strong> Live Kit <code>email_count</code> matched the verified ladder length for Cold Standard (6 emails, 0/3/8/13/18/19&rarr;day 19) and Cold Professional Services (6 emails, same ladder). Warm Outbound, Reactivation, Inbound and Warm Referral currently hold zero Airtable records in an &ldquo;&hellip;In Sequence&rdquo; status, so there was nothing to drift-check on those tracks this run. Stay Warm was skipped entirely, by design.
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-tile"><span class="stat-num">36</span><span class="stat-label">&hellip;In Sequence records found</span></div>
+      <div class="stat-tile"><span class="stat-num">34</span><span class="stat-label">Checked against Kit (Cold)</span></div>
+      <div class="stat-tile"><span class="stat-num">0</span><span class="stat-label">Completed &rarr; flipped</span></div>
+      <div class="stat-tile"><span class="stat-num">0</span><span class="stat-label">Unsubscribed</span></div>
+      <div class="stat-tile"><span class="stat-num">0</span><span class="stat-label">Deleted (bounced)</span></div>
+      <div class="stat-tile"><span class="stat-num">0</span><span class="stat-label">Anomalies</span></div>
+    </div>
+
+    <p><strong>Before/after counts:</strong> Before = 36 candidates in an &ldquo;&hellip;In Sequence&rdquo; status (34 Cold + 2 Stay Warm, which are never touched). After = unchanged at 36 &mdash; zero writes this run, because zero records had actually finished. A fresh re-pull of both Cold sequences confirmed every one of the 34 is still Kit <code>state: active</code>, none cancelled, none bounced. No Hot/Won/Lost record was anywhere near this candidate set (the Sequence Status filter is structurally disjoint from those Stage values), so nothing at risk was touched.</p>
+
+    <p><strong>Why this is a quiet week:</strong> every one of the 34 Cold-track records was added to Kit between 2026-09-28 and 2026-10-09. The Cold ladder completes on day 19, so the earliest possible completion in this batch is <strong>2026-10-17</strong> &mdash; still five days out. Nobody in the current &ldquo;&hellip;In Sequence&rdquo; pool has reached their final email yet.</p>
+
+    <details class="bucket">
+      <summary><span class="bucket-title">All 34 Cold records checked against Kit &mdash; added date, projected completion</span><span class="bucket-count">34</span></summary>
+      <table class="roster-table">
+        <thead><tr><th>Business</th><th>Email</th><th>Track</th><th>Kit added_at</th><th>Projected completion</th></tr></thead>
+        <tbody>
+        <tr><td>Benjamin Paul Studio</td><td>ellie@benjaminpaulstudio.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-09-30</td><td>2026-10-19</td></tr>
+<tr><td>Capasso Planning Partners</td><td>charlie@capassoplanningpartners.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td>2026-10-07</td><td>2026-10-26</td></tr>
+<tr><td>Longevity Club</td><td>lc@thelongevityclub.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-09</td><td>2026-10-28</td></tr>
+<tr><td>Kristen Ash Designs</td><td>kristenash818@gmail.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-09-28</td><td>2026-10-17</td></tr>
+<tr><td>John Marmo Diamonds</td><td>john@johnmarmodiamonds.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-09-28</td><td>2026-10-17</td></tr>
+<tr><td>Monarch Esthetics</td><td>hello@monarchcharleston.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td>2026-10-07</td><td>2026-10-26</td></tr>
+<tr><td>Portico Longevity</td><td>hello@porticolongevity.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td>2026-10-09</td><td>2026-10-28</td></tr>
+<tr><td>Lucette Travel</td><td>jennifer@lucette.travel</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-09</td><td>2026-10-28</td></tr>
+<tr><td>Charleston Plastic Surgery</td><td>CPSOffice@charlestonent.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td>2026-09-28</td><td>2026-10-17</td></tr>
+<tr><td>Advantage Testing of Charleston</td><td>charleston@advantagetesting.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-04</td><td>2026-10-23</td></tr>
+<tr><td>Edited by Elizabeth</td><td>elizabeth@editedbyelizabeth.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-09-30</td><td>2026-10-19</td></tr>
+<tr><td>Ashley Yachts</td><td>info@ashleyyachts.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-09-28</td><td>2026-10-17</td></tr>
+<tr><td>CharlestonMD (Dr. W. Melvin Brown III)</td><td>info@charleston-md.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td>2026-10-05</td><td>2026-10-24</td></tr>
+<tr><td>Saxton Law</td><td>support@saxton-legal.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td>2026-10-09</td><td>2026-10-28</td></tr>
+<tr><td>Taylor Agency</td><td>ltaylor@tayloragency.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td>2026-09-30</td><td>2026-10-19</td></tr>
+<tr><td>Coastal Fertility Specialists</td><td>marketing@coastalfertilityspecialists.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td>2026-10-09</td><td>2026-10-28</td></tr>
+<tr><td>Jeter Hrubala Wealth Strategies</td><td>Beth.Hrubala@RaymondJames.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td>2026-10-09</td><td>2026-10-28</td></tr>
+<tr><td>The Charleston Atelier</td><td>hello@thecharlestonatelier.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td>2026-10-02</td><td>2026-10-21</td></tr>
+<tr><td>Embler&#x27;s Jewelers</td><td>emblersjewelers@gmail.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-09</td><td>2026-10-28</td></tr>
+<tr><td>Engaging Events, LLC</td><td>anna@engagingeventscharleston.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-09-30</td><td>2026-10-19</td></tr>
+<tr><td>Mac &amp; B Events</td><td>taryn@macandbevents.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-05</td><td>2026-10-24</td></tr>
+<tr><td>Oak Street Advisors</td><td>info@oakadvisors.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td>2026-09-28</td><td>2026-10-17</td></tr>
+<tr><td>Christina Baxter Weddings + Events</td><td>Inquiries@christinabaxterweddings.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-04</td><td>2026-10-23</td></tr>
+<tr><td>Doyle Charleston</td><td>Charleston@Doyle.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-09-28</td><td>2026-10-17</td></tr>
+<tr><td>Rogers Art Conservation, LLC</td><td>catherinegrogers@gmail.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td>2026-10-04</td><td>2026-10-23</td></tr>
+<tr><td>The Repaire Room</td><td>rebecca@therepaireroom.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td>2026-09-28</td><td>2026-10-17</td></tr>
+<tr><td>Amy Bennington Buist</td><td>amy@amybenningtonbuist.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-04</td><td>2026-10-23</td></tr>
+<tr><td>Harbour Wealth Management</td><td>matt@harbourwmg.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td>2026-10-09</td><td>2026-10-28</td></tr>
+<tr><td>Carolina Hair Surgery</td><td>mvories@CarolinaHairSurgery.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td>2026-10-09</td><td>2026-10-28</td></tr>
+<tr><td>Iron Clay Catering</td><td>info@ironclaycatering.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-04</td><td>2026-10-23</td></tr>
+<tr><td>Charles Ramberg Furnituremaker</td><td>charles@rambergfurniture.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-07</td><td>2026-10-26</td></tr>
+<tr><td>AT Curated Travel</td><td>atolbert@departurelounge.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-09-30</td><td>2026-10-19</td></tr>
+<tr><td>Seabrook Island Club</td><td>bpclark@seabrookisland.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-09-30</td><td>2026-10-19</td></tr>
+<tr><td>Style by Sonja</td><td>sonja@stylebysonja.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-05</td><td>2026-10-24</td></tr>
+        </tbody>
+      </table>
+    </details>
+
+    <p class="bucket-note" style="padding-left:0">Also sitting at &ldquo;Stay Warm &ndash; In Sequence&rdquo; (skipped by design, never touched): The Farrell Group (internal/self record) and Abode 7 Kitchen &amp; Bath.</p>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">2</span> Sponsor re-engagement recommendations</h2>
+    <p class="lede">Read-only this run, as instructed &mdash; no Airtable write, no Kit enrollment call. Proposal only; nothing goes out without your say-so.</p>
+
+    <div class="callout note">
+      <strong>Process note.</strong> There are now two separate layers acting on sponsors who finish a sequence without converting: (1) the already-running automated system (<code>sponsor-reengage</code> skill + the daily backlog-clearance task) that auto-enrolls qualifying completions into Kit &ldquo;Re-Engagement &ndash; Researched/Warm&rdquo; sequences and flips status to &ldquo;Re-engaging &ndash; In Sequence&rdquo; &mdash; this run did not touch that process at all, it kept running on its own schedule; and (2) this section, a <strong>separate personal-touch cadence</strong> (30-day cooling, then Touch&nbsp;1 at +30d, Touch&nbsp;2 at +34d, Touch&nbsp;3 at +41d, Touch&nbsp;4/breakup at +51d, then monthly) that's yours to send by hand on top of whatever Kit is already doing automatically. The two are not in conflict, but they are two different things happening to the same list &mdash; worth knowing before you read the numbers below.
+    </div>
+
+    <div class="callout note">
+      <strong>Date caveat.</strong> Computing exact Kit-verified completion dates for all 191 cooling/re-engaging records would mean re-pulling Kit sequence rosters for every track this run &mdash; not practical on a weekly check. Days-since-completion below are approximated from each Airtable record's Last Modified timestamp (close enough for close-out flips; for &ldquo;Re-engaging &ndash; In Sequence&rdquo; records it's back-dated an extra 30 days, since that status itself only gets set ~30 days after the original completion). Treat every day-count below as &plusmn; a few days, not exact.
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-tile"><span class="stat-num">191</span><span class="stat-label">Cooling / re-engaging pool</span></div>
+      <div class="stat-tile"><span class="stat-num">149</span><span class="stat-label">Touch due this week</span></div>
+      <div class="stat-tile"><span class="stat-num">32</span><span class="stat-label">Still cooling (&lt;30d)</span></div>
+      <div class="stat-tile"><span class="stat-num">0</span><span class="stat-label">Hot (real signal)</span></div>
+      <div class="stat-tile"><span class="stat-num">26</span><span class="stat-label">Clicks disqualified (bot)</span></div>
+      <div class="stat-tile"><span class="stat-num">5</span><span class="stat-label">Out of scope (your own)</span></div>
+    </div>
+
+    <p><strong>Hot list: none.</strong> Every logged Interaction in this pool that looked like a genuine reply or call (Alexandra Pagonis, Sensible CFO, Justin Hall Consulting, Faith Philpott, Hamilton Van Sciver, Mauricio Maldonado, Chad Hitchcock, Cameron Broach, Nick Almond, John Roberts Financial, Charter Financial) is dated Feb&ndash;Apr 2026 &mdash; left over from before this completion cycle, not current engagement. Nobody gets promoted to Hot off a stale note.</p>
+
+    <div class="callout stop">
+      <strong>Bot-click filter: 26 clicks disqualified, 0 promoted.</strong> Every one of the 26 link clicks logged this week (24 on the media-kit link, 2 on the calendar link) landed between 12:22 and 12:24&nbsp;PM America/New_York &mdash; squarely inside the 12:00&ndash;12:45 send-plus-prefetch window, which alone is enough to call them gateway scanner hits rather than human clicks. The second leg of the filter (matching the recipient's MX records against known scanning gateways) couldn't run this session &mdash; this sandbox's outbound DNS is blocked &mdash; but it's not needed to reach the right call here, since failing the time test alone disqualifies all 26. None were promoted to Hot.
+    </div>
+
+    <details class="bucket">
+      <summary><span class="bucket-title">26 disqualified clicks (scanner prefetch, not human)</span><span class="bucket-count">26</span></summary>
+      <table class="roster-table">
+        <thead><tr><th>Business</th><th>Email</th><th>Tag</th><th>Timestamp</th></tr></thead>
+        <tbody>
+        <tr><td>Nicholson Wealth Management</td><td>joe@nicholsonwmg.com</td><td><span class='pill pill-bot'>clicked-media-kit</span></td><td>2026-08-10 12:24 ET</td></tr>
+<tr><td>O&#x27;Neill Plastic Surgery</td><td>—</td><td><span class='pill pill-bot'>clicked-media-kit</span></td><td>2026-08-10 12:23 ET</td></tr>
+<tr><td>Charleston Center for Cosmetic &amp; Restorative Dentistry (Dr. Rink)</td><td>—</td><td><span class='pill pill-bot'>clicked-media-kit</span></td><td>2026-08-10 12:22 ET</td></tr>
+<tr><td>Rutledge &amp; Coxe</td><td>—</td><td><span class='pill pill-bot'>clicked-media-kit</span></td><td>2026-08-06 12:24 ET</td></tr>
+<tr><td>PC&amp;L Agency</td><td>—</td><td><span class='pill pill-bot'>clicked-media-kit</span></td><td>2026-08-02 12:24 ET</td></tr>
+<tr><td>Sweetgrass Plastic Surgery</td><td>—</td><td><span class='pill pill-bot'>clicked-media-kit</span></td><td>2026-08-02 12:24 ET</td></tr>
+<tr><td>Hampden Clothing</td><td>—</td><td><span class='pill pill-bot'>clicked-media-kit</span></td><td>2026-08-02 12:23 ET</td></tr>
+<tr><td>Pleasant Landscapes</td><td>—</td><td><span class='pill pill-bot'>clicked-media-kit</span></td><td>2026-08-02 12:23 ET</td></tr>
+<tr><td>Charleston Design Center</td><td>—</td><td><span class='pill pill-bot'>clicked-media-kit</span></td><td>2026-07-30 12:23 ET</td></tr>
+<tr><td>ACT Advisors</td><td>—</td><td><span class='pill pill-bot'>clicked-media-kit</span></td><td>2026-07-29 12:23 ET</td></tr>
+<tr><td>Anderson Insurance Associates</td><td>—</td><td><span class='pill pill-bot'>clicked-media-kit</span></td><td>2026-07-27 12:23 ET</td></tr>
+<tr><td>Alison Wealth Management</td><td>—</td><td><span class='pill pill-bot'>clicked-media-kit</span></td><td>2026-07-27 12:23 ET</td></tr>
+<tr><td>Farina Law Firm</td><td>—</td><td><span class='pill pill-bot'>clicked-media-kit</span></td><td>2026-07-27 12:23 ET</td></tr>
+<tr><td>CopeGrand Homes</td><td>—</td><td><span class='pill pill-bot'>clicked-media-kit</span></td><td>2026-07-26 12:23 ET</td></tr>
+<tr><td>Center for Periodontics &amp; Implant Dentistry</td><td>—</td><td><span class='pill pill-bot'>clicked-media-kit</span></td><td>2026-07-26 12:22 ET</td></tr>
+<tr><td>S&amp;J Yachts</td><td>—</td><td><span class='pill pill-bot'>clicked-media-kit</span></td><td>2026-07-25 12:22 ET</td></tr>
+<tr><td>Daniel Island Club</td><td>—</td><td><span class='pill pill-bot'>clicked-media-kit</span></td><td>2026-07-23 12:24 ET</td></tr>
+<tr><td>Moody &amp; O&#x27;Neal CPAs</td><td>—</td><td><span class='pill pill-bot'>clicked-media-kit</span></td><td>2026-07-19 12:23 ET</td></tr>
+<tr><td>Dolphin Architects + Builders</td><td>—</td><td><span class='pill pill-bot'>clicked-media-kit</span></td><td>2026-07-17 12:24 ET</td></tr>
+<tr><td>C.T. Lowndes &amp; Co.</td><td>—</td><td><span class='pill pill-bot'>clicked-media-kit</span></td><td>2026-07-17 12:23 ET</td></tr>
+<tr><td>Mappus Insurance / Afore</td><td>—</td><td><span class='pill pill-bot'>clicked-media-kit</span></td><td>2026-07-17 12:23 ET</td></tr>
+<tr><td>LaFond Law Group</td><td>—</td><td><span class='pill pill-bot'>clicked-media-kit</span></td><td>2026-07-16 12:24 ET</td></tr>
+<tr><td>GDC Home</td><td>—</td><td><span class='pill pill-bot'>clicked-media-kit</span></td><td>2026-07-15 12:24 ET</td></tr>
+<tr><td>Coastal Strategic Capital</td><td>—</td><td><span class='pill pill-bot'>clicked-media-kit</span></td><td>2026-07-11 12:22 ET</td></tr>
+<tr><td>Intercoastal Mortgage</td><td>—</td><td><span class='pill pill-bot'>clicked-calendar-link</span></td><td>2026-07-10 12:23 ET (also out of scope: Re-engaging - Personal)</td></tr>
+<tr><td>Fifth Third Bank</td><td>—</td><td><span class='pill pill-bot'>clicked-calendar-link</span></td><td>2026-07-03 12:23 ET</td></tr>
+        </tbody>
+      </table>
+    </details>
+
+    <h3 style="color:var(--navy);font-size:16px;margin:24px 0 6px;">Due this week &mdash; Touch 1 (100)</h3>
+    <p class="lede" style="margin-bottom:10px">Most are the generic Touch&nbsp;1 template. Where a specific, verifiable hook turned up during research, it's noted instead &mdash; never invented.</p>
+    <details class="bucket">
+      <summary><span class="bucket-title">Touch 1 roster</span><span class="bucket-count">100</span></summary>
+      <table class="roster-table">
+        <thead><tr><th>Business</th><th>Email</th><th>Original track</th><th>Days</th><th>Angle</th></tr></thead>
+        <tbody>
+        <tr><td>AURĀE Modern Medical + Spa</td><td>info@auraemedspa.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>33d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Celadon at Home</td><td>rhawkins@celadonathome.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>33d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Charleston Estate Auctions</td><td>auctions@charlestonestateauctions.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>33d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Charleston Estate Planning Law Firm</td><td>eleanor@charlestonestateplanning.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>33d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Charleston Wills &amp; Trusts Law Firm</td><td>karen@charlestonwills.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>33d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Contour Aesthetics + Wellness</td><td>mbartash@contourlook.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>33d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Cortney Bishop Design</td><td>info@cortneybishop.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>33d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Dolphin Architects + Builders</td><td>cibsen@dolphinbuilders.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>33d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Festoon Charleston</td><td>whitney@festooncharleston.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>33d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>GDC Home</td><td>info@gdchome.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>33d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>George C. Birlant &amp; Co.</td><td>birlantantiques@gmail.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>33d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Gold Creations</td><td>shop@goldcreationschas.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>33d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Heidi Williams, MD, Plastic &amp; Reconstructive Surgery</td><td>staff@heidiwilliamsplasticsurgery.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>33d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>JLV Creative</td><td>info@jlvcreative.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>33d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Jean&#x27;s Custom Workroom</td><td>sales@jeanscustomworkroom.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>33d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>LaFond Law Group</td><td>info@lafondlaw.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>33d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Lauren Sanchez Design</td><td>info@laurensanchezdesign.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>33d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Melissa Lenox Design</td><td>melissa@melissalenox.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>33d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Menopause Solutions</td><td>info@menopausesolutions.org</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>33d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Michael Mitchell</td><td>info@michaelmitchellinc.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>33d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Oceanside Advisors</td><td>info@oceansideadvisors.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>33d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Palmetto Weight Management (Dr. Monica Lominchar)</td><td>malissa@mlomincharmd.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>33d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Pilates of Charleston</td><td>studio@pilatesofcharleston.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>33d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Robert Lange Studios</td><td>rlscharleston@gmail.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>33d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Skatell&#x27;s Manufacturing Jewelers</td><td>info@skatells.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>33d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Ageless Medical Spa and Hair Restoration</td><td>info@agelessrxsc.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>32d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>C.T. Lowndes &amp; Company</td><td>insurance@ctlowndes.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>32d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Charleston Eye</td><td>esmalls@charlestoneye.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>32d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Cline Homes</td><td>info@cline-homes.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>32d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Compass Vision Care</td><td>hello@compassvisioncare.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>32d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Daniel Island Club</td><td>greg.keating@diclub.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>32d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Dee Ruel Jewelry Design</td><td>dee@deeruel.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>32d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Fletcher Aesthetics</td><td>admin@fletcheraestheticschs.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>32d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>GrandScapes</td><td>office@grandscapes.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>32d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Innovative Sight &amp; Sound (Charleston)</td><td>ryan@beinnovative.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>32d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Jackson CPA Firm, LLC</td><td>julia@jacksoncpafirmsc.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>32d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Lowcountry Premier Custom Homes</td><td>Info@lpchdi.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>32d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>MP Landscape Design</td><td>info@mplandscapedesign.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>32d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Mappus Insurance / Afore Insurance Services</td><td>hello@mappusinsurance.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>32d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Moody &amp; O&#x27;Neal CPAs LLC</td><td>info@moodycpas.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>32d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Pearl Medspa</td><td>contact@pearlmedspachs.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>32d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Periodontal Associates</td><td>hygiene@charlestonperio.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>32d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Salt Spa &amp; Yoga</td><td>reserve@saltspaandyoga.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>32d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Scarlett Hawkins Medspa</td><td>hello@scarletthawkinsmedspa.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>32d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Signature Kitchens &amp; Baths of Charleston</td><td>info@signaturekitchens.net</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>32d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Snee Farm Country Club</td><td>neal.cavallon@sneefarmcc.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>32d</td><td class='hook'>Reciprocal ClubCorp access + dual/triple membership perk.</td></tr>
+<tr><td>SoCa Day Spa</td><td>info@socadayspa.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>32d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Verità. A Bridal Boutique</td><td>hello@veritabridal.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>32d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Well Labs+ Charleston (Koniver Aesthetics)</td><td>charleston@wellabsplus.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>32d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Younger You Studio</td><td>info@youngeryoustudio.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>32d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>ACT Advisors (Wes Johnson, CFP®)</td><td>wes@act-advisors.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>31d</td><td class='hook'>SC Public Radio appearance / 15+ years tuning out the noise.</td></tr>
+<tr><td>Alison Wealth Management</td><td>Dave.Alison@AlisonWealth.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>31d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Anderson Insurance Associates, Inc</td><td>hello@aiasc.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>31d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Bespoke Charleston</td><td>kaitlin@bespokecharlestontravel.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>31d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>CHD Interiors</td><td>info@chdinteriors.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>31d</td><td class='hook'>England antique buying trip.</td></tr>
+<tr><td>Carolina Holistic Medicine</td><td>info@carolinaholisticmedicine.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>31d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Center for Periodontics &amp; Implant Dentistry</td><td>office@charlestonperiodontics.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>31d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Charleston HealthSpan Institute</td><td>info@charlestonhealthspan.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>31d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Charleston Women&#x27;s Wellness Center</td><td>info@cwwcenter.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>31d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Coastal Insurance Brokers</td><td>jcosgrove@sccoastalinsurance.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>31d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>CopeGrand Homes</td><td>Info@CopeGrandHomes.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>31d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Daniel Island Animal Hospital</td><td>info@danielislandvet.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>31d</td><td class='hook'>Independently-owned, serving Daniel Island since 2004.</td></tr>
+<tr><td>DavisAir, Inc.</td><td>charter@davisair.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>31d</td><td class='hook'>Gary Davis&#x27;s 2025 Mount Pleasant Town Council run / community ties.</td></tr>
+<tr><td>Dunes West Golf &amp; River Club</td><td>jenn.devaney@duneswestgolfclub.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>31d</td><td class='hook'>Arthur Hills course&#x27;s 35th anniversary.</td></tr>
+<tr><td>Farina Law Firm, PC</td><td>Allison@FarinaLaw.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>31d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Forever Finer Jewelry (Hollie Harris)</td><td>Welcome@foreverfinerjewelry.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>31d</td><td class='hook'>Charleston Daily concierge-jeweler welcome.</td></tr>
+<tr><td>Herlong Architects + Interiors</td><td>info@herlongarchitects.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>31d</td><td class='hook'>Forty years since 1986, coastal houses.</td></tr>
+<tr><td>Independent Optical</td><td>info@independent-optical.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>31d</td><td class='hook'>Dr. Sunkin&#x27;s curated designer-eyewear positioning vs. commodity chains.</td></tr>
+<tr><td>PWD Studio</td><td>carolineknight@pwdstudio.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>31d</td><td class='hook'>WSJ Mansion Global plaster-niche quote.</td></tr>
+<tr><td>Palmetto Bloom</td><td>events@palmettobloom.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>31d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Palmetto Women&#x27;s Health</td><td>info@palmettowomenshealth.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>31d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Peter Anthony Fine Art</td><td>info@peteranthonyfineart.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>31d</td><td class='hook'>Donté K. Hayes solo show / Art Charleston.</td></tr>
+<tr><td>S&amp;J Yachts (Charleston)</td><td>matt@sjyachts.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>31d</td><td class='hook'>Matt Malatich running the Charleston City Marina office since 2015.</td></tr>
+<tr><td>SNAP Integrations, LLC</td><td>info@snapintegrations.net</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>31d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>The Vein Center: Thomas R. Wieters, MD</td><td>info@theveincentercharleston.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>31d</td><td class='hook'>Dr. Wieters, first SC vein doctor to perform VNUS Closure.</td></tr>
+<tr><td>Anglin Smith Fine Art</td><td>info@anglinsmith.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>30d</td><td class='hook'>Betty Anglin Smith plus her triplets all showing at the gallery, plus Pitt Street Studio.</td></tr>
+<tr><td>Arnett Custom Homes</td><td>office@arnettconstructionsc.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>30d</td><td class='hook'>Wedding Cake House rebuild at Breach Inlet, one of seven homes on the first East Cooper Luxury Home Tour.</td></tr>
+<tr><td>Branch Flower Shop</td><td>info@branchflowershop.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>30d</td><td class='hook'>Growth past weddings into a walk-in Bowman Road shop with online ordering, delivery and workshops.</td></tr>
+<tr><td>Carriage House Interiors</td><td>Concierge@Carriagehouseinteriorsllc.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>30d</td><td class='hook'>Double win at 2026 Best of Mount Pleasant, firm plus Meghan Milligan individually.</td></tr>
+<tr><td>Cason Built Custom Homes (Seth Cason)</td><td>sethcason@gmail.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>30d</td><td class='hook'>Isle of Palms / Best House in the USA award.</td></tr>
+<tr><td>Charleston Design Center</td><td>chris@sourceconsultingllc.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>30d</td><td class='hook'>Fourteen community landing pages, no bridge crossing.</td></tr>
+<tr><td>Charleston Financial Advisors, LLC</td><td>contact@charlestonfinancial.net</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>30d</td><td class='hook'>Fee-only since 1986.</td></tr>
+<tr><td>Charleston Florist</td><td>charlestonfloristwed@gmail.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>30d</td><td class='hook'>Lucille Styles founded it on a $50 loan in 1933, five generations to Kristina Diedrick.</td></tr>
+<tr><td>Charleston Hormone Services</td><td>patients@chshormone.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>30d</td><td class='hook'>Provider bench tripled in a year.</td></tr>
+<tr><td>Citadel Enterprises</td><td>beyondexpectations@citadelenterprises.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>30d</td><td class='hook'>Multi-generational handover, Peter Loy on business development 35 years after Pete founded it in 1991.</td></tr>
+<tr><td>Corrigan Gallery</td><td>art@lesecorrigan.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>30d</td><td class='hook'>Sept 1 2005 founding, 21st anniversary a month out.</td></tr>
+<tr><td>Elizabeth Stuart</td><td>info@elizabethstuart.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>30d</td><td class='hook'>30 years in Charleston in 2026, from the 1996 design firm to a flagship store with a garden nursery.</td></tr>
+<tr><td>Evolve Modern Pilates</td><td>hello@evolvemodernpilates.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>30d</td><td class='hook'>Four local press features.</td></tr>
+<tr><td>Gown Boutique of Charleston</td><td>Info@gownboutiqueofcharleston.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>30d</td><td class='hook'>Only Charleston retailer carrying Hayley Paige, sizes 2 to 34, since Janet took over in 2018.</td></tr>
+<tr><td>Gwynn&#x27;s of Mount Pleasant</td><td>shop@gwynns.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>30d</td><td class='hook'>59 years independent, three generations, only locally owned luxury department store in Charleston.</td></tr>
+<tr><td>Hampden Clothing</td><td>info@hampdenclothing.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>30d</td><td class='hook'>Took over 312 King in 2020, largest independently-owned storefront on King Street.</td></tr>
+<tr><td>Haute Design, Inc.</td><td>info@hautedesign.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>30d</td><td class='hook'>Best of Houzz 2025 for Design, fourteen Houzz awards total.</td></tr>
+<tr><td>MB WITHIN</td><td>mollie@mbwithin.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>30d</td><td class='hook'>Marbled &amp; Fin as hospitality proof-point for the residential side.</td></tr>
+<tr><td>Mulberry Millworks</td><td>cabinets@mulberrymillworks.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>30d</td><td class='hook'>Boutique Daniel Island cabinetry showroom run alongside a development company.</td></tr>
+<tr><td>New Beginnings Construction</td><td>info@nbc-sc.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>30d</td><td class='hook'>Swept four Best of Charleston 2026 categories.</td></tr>
+<tr><td>Stella Nova Spa &amp; Salon</td><td>downtown@stella-nova.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>30d</td><td class='hook'>1991 founding, three locations across the harbor.</td></tr>
+<tr><td>Structures Building Company (Structures | Alair)</td><td>info@structures.net</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>30d</td><td class='hook'>2025 CHBA PRISM Award, renovate-not-move angle.</td></tr>
+<tr><td>The Finicky Filly</td><td>shop@thefinickyfilly.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>30d</td><td class='hook'>Mother-daughter team bought the 30-year-old boutique from its founder in 2023 and kept her involved.</td></tr>
+<tr><td>Village Restoration &amp; Custom Homes</td><td>info@VillageRestoration.net</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>30d</td><td class='hook'>Sam Lisi III founded 1978, Sam Lisi IV now GM, forty-eight years second generation.</td></tr>
+<tr><td>Wire Monkeys</td><td>erik@wiremonkeys.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>30d</td><td class='hook'>Twenty years of referral installs from a 2006 James Island theater through Seabrook and the Battery.</td></tr>
+        </tbody>
+      </table>
+    </details>
+
+    <h3 style="color:var(--navy);font-size:16px;margin:24px 0 6px;">Due this week &mdash; Touch 2 (48)</h3>
+    <details class="bucket">
+      <summary><span class="bucket-title">Touch 2 roster</span><span class="bucket-count">48</span></summary>
+      <table class="roster-table">
+        <thead><tr><th>Business</th><th>Email</th><th>Original track</th><th>Days</th><th>Angle</th></tr></thead>
+        <tbody>
+        <tr><td>Alexandra Pagonis</td><td>alexandra.pagonis@gmail.com</td><td><span class='pill pill-track'>Reactivation</span></td><td class='days'>35d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Birdsong Synergistic Medical Centre</td><td>info@birdsongmedical.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>35d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Cameron Broach</td><td>broachcameron@gmail.com</td><td><span class='pill pill-track'>Reactivation</span></td><td class='days'>35d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Chad Hitchcock</td><td>chitchcock@apexprofootballleague.com</td><td><span class='pill pill-track'>Reactivation</span></td><td class='days'>35d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Charter Financial Group Of Carolina</td><td>flavio@cfgcarolina.com</td><td><span class='pill pill-track'>Reactivation</span></td><td class='days'>35d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>City Lights Eastside</td><td>citylightseastside@gmail.com</td><td><span class='pill pill-track'>Warm Outbound</span></td><td class='days'>35d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Creative Living</td><td>SL.creativeliving@gmail.com</td><td><span class='pill pill-track'>Reactivation</span></td><td class='days'>35d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Eli&#x27;s Table</td><td>allyssa@teamchg.com</td><td><span class='pill pill-track'>Reactivation</span></td><td class='days'>35d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Faith Philpott</td><td>fphilpot@squareup.com</td><td><span class='pill pill-track'>Reactivation</span></td><td class='days'>35d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Fifth Third Bank</td><td>jason.hessberg@53.com</td><td><span class='pill pill-track'>Warm Outbound</span></td><td class='days'>35d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Front &amp; Center</td><td>marybeth@frontandcenterllc.com</td><td><span class='pill pill-track'>Warm Outbound</span></td><td class='days'>35d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Gregory&#x27;s Sourdough &amp; Sourdough Goodies / Trina&#x27;s Treats</td><td>gregorys.sourdough@gmail.com</td><td><span class='pill pill-track'>Reactivation</span></td><td class='days'>35d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Guild Mortgage</td><td>rlee@guildmortgage.net</td><td><span class='pill pill-track'>Reactivation</span></td><td class='days'>35d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Hamilton Van Sciver</td><td>hamiltonvansciver@gmail.com</td><td><span class='pill pill-track'>Reactivation</span></td><td class='days'>35d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>John Roberts Financial</td><td>holycityjohn@gmail.com</td><td><span class='pill pill-track'>Reactivation</span></td><td class='days'>35d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Justin Hall Consulting</td><td>justin@thejustinhall.com</td><td><span class='pill pill-track'>Reactivation</span></td><td class='days'>35d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Mauricio Maldonado</td><td>mjmaldonado7@gmail.com</td><td><span class='pill pill-track'>Reactivation</span></td><td class='days'>35d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Nick Almond</td><td>almondn79@gmail.com</td><td><span class='pill pill-track'>Reactivation</span></td><td class='days'>35d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Otter Mortgage Team</td><td>todd@ottermortgage.com</td><td><span class='pill pill-track'>Inbound</span></td><td class='days'>35d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Revolutionary Charleston Walking Tours</td><td>revolutionarycharleston@gmail.com</td><td><span class='pill pill-track'>Inbound</span></td><td class='days'>35d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Sensible CFO &amp; Consulting</td><td>dnetzley@sensiblecfo.net</td><td><span class='pill pill-track'>Reactivation</span></td><td class='days'>35d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Sweet Palm Coffee</td><td>sweetpalmcoffee@yahoo.com</td><td><span class='pill pill-track'>Reactivation</span></td><td class='days'>35d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>VIP Insurance &amp; Retirement Solutions</td><td>andrew@vipartnersonline.com</td><td><span class='pill pill-track'>Reactivation</span></td><td class='days'>35d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Advanced Dentistry of Mount Pleasant</td><td>hello@advanceddentistrymtp.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>34d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Benson Law Firm, LLC</td><td>nat@natbensonlaw.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>34d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Charleston Functional Medicine</td><td>amyfnp@chasfuncmed.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>34d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Christensen &amp; All, P.A.</td><td>office@scelderlaw.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>34d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Coastal Strategic Capital</td><td>allan@coastalstrategiccapital.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>34d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Convergent Financial Group</td><td>kellisor@convergentfg.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>34d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Croghan&#x27;s Jewel Box</td><td>info@croghansjewelbox.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>34d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Dacuba&#x27;s Fine Jewelry</td><td>dacubas@comcast.net</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>34d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Ella Walton Richardson Fine Art</td><td>ella@ellarichardson.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>34d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>IKON Law, LLC</td><td>info@ikonlawfirm.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>34d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Kelley &amp; Gardner Orthodontics</td><td>info@kgortho.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>34d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Lowcountry Hearing Healthcare</td><td>mdlomano@gmail.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>34d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Loy Harn Jewelers</td><td>info@loyharn.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>34d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>MUSC Health</td><td>mediarelations@musc.edu</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>34d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Margaret Donaldson Interiors</td><td>margaret@mdiluxurydesign.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>34d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Plastic Surgery of the Carolinas (Dr. Ram Kalus)</td><td>info@ramkalusmd.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>34d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Rankin Law Firm, LLC</td><td>info@rankinestatelaw.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>34d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Runey &amp; Associates Wealth Management</td><td>info@raawealth.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>34d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Sarah Smoak Travels</td><td>Sarah@sarahsmoaktravels.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>34d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Smile Design of Charleston</td><td>info@smiledesigncharleston.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>34d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Solcara Health</td><td>info@solcarahealth.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>34d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Southern Grace Aesthetics</td><td>info@southerngraceaesthetics.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>34d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>Totality Medispa</td><td>info@totalitymed.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>34d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>deGuise Interiors</td><td>gigi@deguiseinteriors.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>34d</td><td class='hook muted'>generic template</td></tr>
+<tr><td>wertimer + cline Landscape Architects</td><td>swla@wertimer.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td class='days'>34d</td><td class='hook muted'>generic template</td></tr>
+        </tbody>
+      </table>
+    </details>
+
+    <h3 style="color:var(--navy);font-size:16px;margin:24px 0 6px;">Due this week &mdash; Touch 4 / breakup (1)</h3>
+    <table class="roster-table">
+      <thead><tr><th>Business</th><th>Email</th><th>Original track</th><th>Days</th><th>Angle</th></tr></thead>
+      <tbody>
+      <tr><td>Mt. Pleasant House Call Vet</td><td>info@mtpleasanthousecallvet.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td class='days'>70d</td><td class='hook muted'>generic template</td></tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:18px"><strong>Touch 3 due:</strong> none this week. <strong>Monthly Stay Warm (long past breakup, informational only):</strong> Historic Charleston Foundation (Cold Standard origin, ~97 days since completion) &mdash; already past the breakup email; no action implied, just visible so it doesn't fall off your radar.</p>
+
+    <p><strong>Out of scope, counted not listed:</strong> 5 records at &ldquo;Re-engaging &ndash; Personal&rdquo; (your own manual relationships &mdash; Holey City Bagels, Perlee Digital, 6:33 Physical Therapy, Intercoastal Mortgage, and one more) and 4 records that reached Lost/Won/Sponsored stage since completing. Neither group needed anything this run. <strong>Desync check:</strong> no Warm-Referral-origin record anywhere in the 191-record pool, and no record's Sequence Status disagreed with its Sequences Completed field &mdash; nothing for the close-out task to have missed.</p>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">3</span> Enroll-readiness sweep</h2>
+    <p class="lede">Read-only &mdash; surfaces who's ready to route into a Kit sequence. Enrollment itself stays a separate, manually-approved step.</p>
+
+    <div class="callout ok">
+      <strong>Pipeline fully drained: zero candidates.</strong> Every Sponsors record currently at Stage Target, Maybe, or Cultivating already has a non-empty Sequence Status &mdash; meaning everything that could be routed already has been, through prior enroll-sponsors / prospector runs. The only records with a blank Sequence Status are already Sponsored, Sponsored&nbsp;&ndash;&nbsp;Gratis, Signed, or Lost, which correctly sit outside the enrollment funnel. Nothing stuck needing an observation, nothing stuck needing a verified email, because nothing is waiting at all this week.
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-tile"><span class="stat-num">0</span><span class="stat-label">Ready (observation set)</span></div>
+      <div class="stat-tile"><span class="stat-num">0</span><span class="stat-label">Ready to pick (staged)</span></div>
+      <div class="stat-tile"><span class="stat-num">0</span><span class="stat-label">Needs observation</span></div>
+      <div class="stat-tile"><span class="stat-num">0</span><span class="stat-label">Blocked (no email)</span></div>
+    </div>
+    <p>Nothing enrolled, nothing proposed for enrollment &mdash; this bucket is simply empty right now. If the prospecting skills (high-ltv-sponsor-prospector / cold-prospect-research) haven't run in a while, that's the next lever to pull to refill this funnel, not something broken in this sweep.</p>
+  </section>
+
+  <footer>
+    Built from Airtable (CHS Happenings base) and Kit (ConvertKit) via the Zapier MCP &middot; zero Airtable writes, zero Kit mutating calls this run &middot; Step 2 is a proposal, not an action.
+  </footer>
+</div>
+</body>
+</html>
