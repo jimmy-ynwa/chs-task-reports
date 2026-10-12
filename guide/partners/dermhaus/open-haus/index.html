@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Dermhaus Open Haus | CHS Happenings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
+<style>
+:root {
+  --bg: #f5f7fb;
+  --surface: #ffffff;
+  --fg: #14213d;
+  --muted: #5b6785;
+  --line: #dde2ee;
+  --navy: #183872;
+  --lime: #cced60;
+  --lime-ink: #1d2a05;
+  --soft: #eef2fb;
+  --display: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  --body: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1426; --surface: #172040; --fg: #e8ecf8; --muted: #9aa6c6; --line: #2a3560;
+    --navy: #a9c0f5; --soft: #1d2850; color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 16px; line-height: 1.6; padding-inline: 16px; padding-block: 0 64px; }
+main { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px; padding-top: 32px; }
+h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; line-height: 1.15; }
+h1 { font-size: clamp(2.1rem, 7vw, 3.4rem); font-weight: 800; color: var(--navy); letter-spacing: -0.02em; }
+h2 { font-size: 1.45rem; font-weight: 800; color: var(--navy); }
+h3 { font-size: 1rem; font-weight: 700; }
+.eyebrow { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.lede { color: var(--muted); max-width: 62ch; }
+.topbar { background: var(--navy); color: #fff; }
+.topbar div { max-width: 780px; margin: 0 auto; padding: 12px 0; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; display: flex; gap: 10px; align-items: center; }
+.topbar b { background: var(--lime); color: var(--lime-ink); padding: 2px 8px; border-radius: 4px; }
+header { display: flex; flex-direction: column; gap: 14px; }
+section { display: flex; flex-direction: column; gap: 18px; }
+.path { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.step { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.step .d { font-size: .78rem; font-weight: 700; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
+.step .n { font-weight: 700; color: var(--navy); }
+.step .t { font-size: .88rem; color: var(--muted); }
+.step.event { background: var(--lime); border-color: var(--lime); }
+.step.event .d, .step.event .n, .step.event .t { color: var(--lime-ink); }
+@media (max-width: 600px) { .path { grid-template-columns: 1fr; } }
+.facts { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.fact { display: grid; grid-template-columns: 8.5rem 1fr; gap: 16px; padding: 12px 18px; border-bottom: 1px solid var(--line); }
+.fact:last-child { border-bottom: 0; }
+.fact dt { font-weight: 600; color: var(--muted); font-size: .88rem; }
+.fact dd { min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 520px) { .fact { grid-template-columns: 1fr; gap: 2px; } }
+.option { display: flex; flex-direction: column; gap: 10px; }
+.option-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.letter { background: var(--navy); color: var(--surface); width: 1.9rem; height: 1.9rem; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: .9rem; flex: none; }
+.tag { background: var(--lime); color: var(--lime-ink); font-size: .72rem; font-weight: 700; padding: 2px 10px; border-radius: 999px; letter-spacing: .04em; }
+.why { color: var(--muted); font-size: .9rem; }
+.slot { background: var(--surface); border: 2px solid var(--navy); border-radius: 15px; padding: 20px 22px; display: flex; flex-direction: column; gap: 12px; }
+.slot .eyebrow { color: var(--navy); }
+.slot p, .slot li { max-width: 62ch; }
+.slot ul { margin: 0; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 4px; }
+.slot .title { font-weight: 800; font-size: 1.2rem; color: var(--navy); line-height: 1.25; }
+.slot .when { font-weight: 600; }
+.cta { display: inline-block; background: var(--navy); color: var(--surface); padding: 9px 18px; border-radius: 6px; font-weight: 700; font-size: .92rem; width: fit-content; }
+.note { font-size: .88rem; color: var(--muted); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 22px; }
+ol.plain, ul.plain { margin: 0; padding-left: 1.3rem; display: flex; flex-direction: column; gap: 10px; }
+.reply { background: var(--soft); border-radius: 10px; padding: 18px 22px; display: flex; flex-direction: column; gap: 8px; }
+.reply strong { color: var(--navy); }
+footer { color: var(--muted); font-size: .85rem; border-top: 1px solid var(--line); padding-top: 18px; }
+</style>
+</head>
+<body>
+<div class="topbar"><div><b>CHS</b> Happenings · Partner copy review</div></div>
+<main>
+
+<header>
+  <p class="eyebrow">Prepared for Dr. Alexandra Richmond</p>
+  <h1>Dermhaus Open Haus</h1>
+  <p class="lede">Alex, here is the copy for the first two placements in your package. They are meant to work as a pair. The Oct 15 Featured Event asks people to reserve a spot. The Oct 22 Primary reminds them two days before the Open Haus and introduces the practice to readers who haven't met you yet.</p>
+</header>
+
+<section aria-label="How the first two placements lead into the event">
+  <div class="path">
+    <div class="step"><span class="d">Thu, Oct 15</span><span class="n">Featured Event</span><span class="t">Reserve a spot on Eventbrite</span></div>
+    <div class="step"><span class="d">Thu, Oct 22</span><span class="n">Primary</span><span class="t">This Saturday, plus your medical story</span></div>
+    <div class="step event"><span class="d">Sat, Oct 24</span><span class="n">Open Haus</span><span class="t">10 AM to 1 PM, 320 Broad St.</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Please check these details</h2>
+  <p class="lede">Everything below comes from your emails and your Eventbrite page. If anything is off, tell us and we'll fix it before it runs.</p>
+  <dl class="facts">
+    <div class="fact"><dt>Event</dt><dd>Dermhaus Open Haus</dd></div>
+    <div class="fact"><dt>When</dt><dd>Saturday, Oct 24, 10 AM to 1 PM</dd></div>
+    <div class="fact"><dt>Where</dt><dd>320 Broad St., Suite 103, ground floor of The Jasper. Parking at The Jasper or on the street.</dd></div>
+    <div class="fact"><dt>Cost</dt><dd>Free, all ages. Reserving a spot on Eventbrite gets reminders.</dd></div>
+    <div class="fact"><dt>Offer</dt><dd>20% off all products and services that day</dd></div>
+    <div class="fact"><dt>Vendors</dt><dd>The Lenore Collective (clothing), Seaport Lane (coastal-inspired jewelry), The Coastal Petal Co. (custom bouquets), Coastal Chains (permanent jewelry)</dd></div>
+    <div class="fact"><dt>Also there</dt><dd>Skincare goodies, special offers and refreshments</dd></div>
+    <div class="fact"><dt>The practice</dt><dd>Open daily for medical and aesthetic dermatology. Sees kids. Takes insurance for medical dermatology. Dr. Richmond is MUSC-trained.</dd></div>
+    <div class="fact"><dt>Reserve link</dt><dd>https://www.eventbrite.com/e/dermhaus-fall-open-haus-tickets-2002660755229?aff=oddtdtcreator</dd></div>
+  </dl>
+</section>
+
+<section>
+  <h2>Thu, Oct 15: Featured Event</h2>
+  <p class="lede">One job: get people to reserve a spot, since reserved guests get reminders and are more likely to show up.</p>
+
+  <div class="option">
+    <div class="option-head"><span class="letter">A</span><h3>The deal and the lineup</h3><span class="tag">RECOMMENDED</span></div>
+    <p class="why">Leads with the invitation and the 20% off, then names all four vendors.</p>
+    <div class="slot">
+      <p class="eyebrow">Featured Event: Dermhaus</p>
+      <p class="title">Dermhaus Open Haus</p>
+      <p class="when">Sat, Oct 24 · 10 AM to 1 PM · 320 Broad St., Suite 103 (The Jasper)</p>
+      <p>Dermhaus, the new dermatology office on Broad Street, is opening its doors to the neighborhood.</p>
+      <p>Tour the space, meet Dr. Alexandra Richmond and her team, and get 20% off every product and service that day. Shop four local favorites on site: The Lenore Collective (clothing), Seaport Lane (coastal jewelry), The Coastal Petal Co. (custom bouquets) and Coastal Chains (permanent jewelry).</p>
+      <p>Skincare goodies and refreshments, too. Free, all ages, with parking at The Jasper or on the street.</p>
+      <p><span class="cta">Reserve your spot (you'll get a reminder)</span></p>
+    </div>
+  </div>
+
+  <div class="option">
+    <div class="option-head"><span class="letter">B</span><h3>The Saturday plan</h3></div>
+    <p class="why">Pitches the Open Haus as a Saturday morning out, with the vendors as the reason to stay.</p>
+    <div class="slot">
+      <p class="eyebrow">Featured Event: Dermhaus</p>
+      <p class="title">Saturday morning on Broad: 20% off and four local vendors</p>
+      <p>Here's a Saturday with a built-in excuse. Dermhaus, the new dermatology office at 320 Broad St., is hosting its Open Haus from 10 AM to 1 PM on Oct 24.</p>
+      <p>Walk through the space, meet Dr. Alexandra Richmond, and take 20% off all products and services that day. Then shop: permanent jewelry from Coastal Chains, custom bouquets from The Coastal Petal Co., clothing from The Lenore Collective and coastal jewelry from Seaport Lane.</p>
+      <p>Free. All ages. Parking at The Jasper.</p>
+      <p><span class="cta">Reserve your spot</span></p>
+    </div>
+  </div>
+
+  <div class="option">
+    <div class="option-head"><span class="letter">C</span><h3>Short and scannable</h3></div>
+    <p class="why">Four bullets and the essentials, for readers who skim.</p>
+    <div class="slot">
+      <p class="eyebrow">Featured Event: Dermhaus</p>
+      <p class="title">Dermhaus Open Haus · Sat, Oct 24 · 10 AM to 1 PM</p>
+      <ul>
+        <li>20% off all products and services that day</li>
+        <li>Tour the new office at 320 Broad St., Suite 103 and meet Dr. Richmond and the team</li>
+        <li>Shop The Lenore Collective, Seaport Lane, The Coastal Petal Co. and Coastal Chains</li>
+        <li>Skincare goodies and refreshments</li>
+      </ul>
+      <p>Free, all ages, parking at The Jasper. Reserve a spot to get a reminder.</p>
+      <p><span class="cta">Reserve your spot</span></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Thu, Oct 22: Primary</h2>
+  <p class="lede">Two days before the Open Haus. This placement reminds readers about Saturday and tells them what Dermhaus does, so it has to do both jobs.</p>
+
+  <div class="option">
+    <div class="option-head"><span class="letter">A</span><h3>Medical first, event second</h3><span class="tag">RECOMMENDED</span></div>
+    <p class="why">Opens with the medical care you want to be known for, then turns to Saturday.</p>
+    <div class="slot">
+      <p class="eyebrow">Presented by Dermhaus</p>
+      <p class="title">That spot you keep meaning to get looked at</p>
+      <p>The spot you keep meaning to get looked at. The rash your kid can't shake. Dermhaus is open daily for medical dermatology, sees children, and takes insurance for medical visits.</p>
+      <p>Dr. Alexandra Richmond is MUSC-trained and built the practice around actually knowing her patients. Aesthetic care is here too, whenever you want it.</p>
+      <p>This Saturday, Oct 24, from 10 AM to 1 PM, Dermhaus opens its doors to everyone. Tour the office, meet the team, take 20% off all products and services, and shop four local vendors. Free, with parking at The Jasper.</p>
+      <p><span class="cta">Reserve your spot</span></p>
+      <p class="note">Optional closing line, if you'd like to track results: "Tell them CHS Happenings sent you."</p>
+    </div>
+  </div>
+
+  <div class="option">
+    <div class="option-head"><span class="letter">B</span><h3>Event first, practice second</h3></div>
+    <p class="why">Leads with Saturday and the discount, then covers the practice for readers who can't come.</p>
+    <div class="slot">
+      <p class="eyebrow">Presented by Dermhaus</p>
+      <p class="title">This Saturday on Broad Street: 20% off at Dermhaus</p>
+      <p>Dermhaus is hosting its Open Haus this Saturday, Oct 24, from 10 AM to 1 PM at 320 Broad St., Suite 103. Free, all ages, parking at The Jasper.</p>
+      <p>Take 20% off all products and services that day, tour the space, meet Dr. Alexandra Richmond and her team, and shop The Lenore Collective, Seaport Lane, The Coastal Petal Co. and Coastal Chains.</p>
+      <p>Not able to make Saturday? Dermhaus is open daily for medical and aesthetic dermatology, sees kids, and takes insurance for medical visits.</p>
+      <p><span class="cta">Reserve your spot</span></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>What we need from you</h2>
+  <div class="card">
+    <ol class="plain">
+      <li><strong>Your picks.</strong> Tell us which letter you want for each placement, and any edits. Reply with something like "Oct 15: A, Oct 22: A."</li>
+      <li><strong>Social Spread Charcuterie.</strong> You mentioned them as a vendor on Oct 2, but they aren't on your Oct 5 list or on Eventbrite. Are they still coming?</li>
+      <li><strong>Anything else happening that morning.</strong> Door prizes, treatment demos or free skin checks would make strong lines. We haven't included any, because we haven't heard about them.</li>
+      <li><strong>Tracking.</strong> Is it OK to add "Tell them CHS Happenings sent you" to the Oct 22 ad? Your team already asks everyone how they heard about you. A quick tally of "CHS Happenings" answers, plus your Eventbrite reservation count after Saturday, will show what the newsletter produced. If you have a booking link for people who can't make Saturday, send that too.</li>
+      <li><strong>Photos.</strong> Every placement includes a photo. Your PR team's shots of the office would be ideal. We need the Oct 15 photo by Wednesday, Oct 14 and the Oct 22 photo by Friday, Oct 16.</li>
+    </ol>
+  </div>
+  <div class="reply">
+    <p><strong>Timing.</strong> We need your pick for Oct 15 by Wednesday, Oct 14 so it can go into that week's issue. The Oct 22 pick is due Friday, Oct 16, per your agreement.</p>
+    <p><strong>After each placement</strong> you'll get your own results page with reach, opens and clicks, and the Oct 15 results will help us sharpen the Oct 22 ad.</p>
+  </div>
+</section>
+
+<footer>Jimmy Farrell · CHS Happenings · jimmy@chshappenings.com · 202-365-4770</footer>
+</main>
+</body>
+</html>
