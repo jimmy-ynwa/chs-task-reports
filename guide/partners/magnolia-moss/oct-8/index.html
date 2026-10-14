@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
+<title>Magnolia &amp; Moss Results</title>
+<style>
+:root{--navy:#183872;--navy-deep:#112a5a;--navy-lift:#2a4f9a;--lime:#CCED60;--white:#fff;--mist:#c3d1ec;--ink:#12213d;
+--display:"Helvetica Neue","Arial Black",Arial,system-ui,sans-serif;--body:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color-scheme:dark}
+*{box-sizing:border-box}
+html{background:var(--navy)}
+body{margin:0;background:var(--navy);color:var(--white);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:980px;margin:0 auto;padding-inline:20px}
+p{margin:0 0 14px;font-size:16px}
+strong{font-weight:800}
+a{color:inherit;overflow-wrap:anywhere}
+.eyebrow{color:var(--lime);font-weight:800;font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin:26px 0 18px}
+.hero{padding-block:28px 56px;overflow:hidden}
+h1{margin:0;font-weight:400}
+.mega{display:block;font-family:var(--display);font-weight:900;font-size:clamp(84px,25vw,236px);line-height:.82;letter-spacing:-.055em;font-variant-numeric:tabular-nums}
+.mega:not(.lime){padding-bottom:.17em}
+.mega.lime{color:var(--lime);text-align:right;margin-top:34px}
+.mega-cap{display:block;font-size:clamp(16px,3.4vw,24px);font-weight:700;margin-top:12px;max-width:16em;color:var(--mist);line-height:1.25}
+.mega-cap.right{margin-left:auto;text-align:right}
+.sub{margin:34px 0 0;font-size:17px;max-width:34em;color:var(--mist)}
+.sub strong{color:var(--white)}
+h2{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--lime);margin:0 0 20px}
+.band{padding-block:48px}
+.band.deep{background:var(--navy-deep)}
+.band.white{background:var(--white);color:var(--ink)}
+.band.white h2{color:var(--navy)}
+.band.white strong{color:var(--navy)}
+.lede{font-family:var(--display);font-weight:900;font-size:clamp(26px,5.4vw,44px);line-height:1.05;letter-spacing:-.03em;margin:0 0 22px;max-width:18em;text-wrap:balance}
+.stack{display:flex;height:46px;margin:6px 0 12px}
+.stack span{display:block}
+.stack .a{background:var(--lime)}
+.stack .b{background:var(--white)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 28px;font-size:14px;color:var(--mist)}
+.legend b{color:var(--white);font-variant-numeric:tabular-nums}
+.sw{display:inline-block;width:12px;height:12px;margin-right:8px;vertical-align:-1px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:26px 20px;margin:34px 0 0}
+.fact .n{font-family:var(--display);font-weight:900;font-size:clamp(34px,6vw,52px);letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.fact .l{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);margin-top:8px}
+.gauge{position:relative;height:64px;margin:46px 0 34px}
+.gauge .track{position:absolute;left:0;right:0;top:26px;height:10px;background:var(--navy-lift)}
+.gauge .band1{position:absolute;top:20px;height:22px;background:var(--white);opacity:.9}
+.gauge .mark{position:absolute;top:8px;width:4px;height:46px;background:var(--lime);transform:translateX(-2px)}
+.gauge .mk{position:absolute;top:-22px;font-family:var(--display);font-weight:900;font-size:26px;color:var(--lime);letter-spacing:-.03em;white-space:nowrap}
+.gauge .t{position:absolute;top:58px;font-size:12px;color:var(--mist);transform:translateX(-50%);white-space:nowrap}
+.gauge .t.l{transform:none}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th{text-align:left;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);padding:0 0 10px;font-weight:800}
+th.n,td.n{text-align:right;font-variant-numeric:tabular-nums}
+th.n{padding-left:14px}
+td{padding:14px 0 12px;border-top:1px solid #d5dded;vertical-align:top}
+td.n{padding-left:12px;white-space:nowrap;font-weight:700}
+td .bar{display:block;height:6px;background:var(--navy);margin-top:9px}
+td .sub2{display:block;font-size:12px;color:#5c6b85;margin-top:2px}
+tr.tot td{border-top:3px solid var(--navy);font-weight:800;color:var(--navy);font-size:17px}
+.two{display:grid;grid-template-columns:1fr;gap:34px}
+@media(min-width:760px){.two{grid-template-columns:1fr 1fr;gap:56px}}
+.two>*{min-width:0}
+.bad{border-left:4px solid var(--lime);padding-left:16px}
+.moves{margin:0;padding:0;list-style:none;display:grid;gap:18px}
+.moves li{font-size:16px;padding-left:18px;position:relative}
+.moves li:before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;background:var(--lime)}
+.cmp{display:grid;gap:26px;margin-top:8px}
+.cmp .row .h{display:flex;justify-content:space-between;gap:12px;font-size:14px;font-weight:700;margin-bottom:8px}
+.cmp .row .h span:last-child{color:var(--mist);font-weight:600;font-variant-numeric:tabular-nums;text-align:right}
+.cmp .bars{display:grid;gap:6px}
+.cmp .bars i{display:block;height:26px;position:relative;font-style:normal;min-width:4px}
+.cmp .bars i b{position:absolute;left:10px;top:0;line-height:26px;font-size:13px;font-weight:800;white-space:nowrap}
+.cmp .bars .x{background:var(--white);color:var(--navy)}
+.cmp .bars .y{background:var(--lime);color:var(--navy)}
+.cmp .bars .lo b{left:calc(100% + 8px);color:var(--white)}
+.stand td{border-color:var(--navy-lift)}
+.stand th{color:var(--lime)}
+.thanks{background:var(--lime);color:var(--navy);padding-block:54px}
+.thanks p{font-family:var(--display);font-weight:900;font-size:clamp(22px,4.4vw,34px);line-height:1.12;letter-spacing:-.025em;max-width:22em;margin:0 0 18px;text-wrap:balance}
+.thanks .sig{font-size:18px;font-family:var(--body);font-weight:800;letter-spacing:0;margin:0}
+footer{padding-block:34px 56px;font-size:12.5px;color:var(--mist)}
+footer p{font-size:12.5px;max-width:60em}
+@media(prefers-reduced-motion:no-preference){.stack .a,.stack .b{transform-origin:left;animation:g .9s ease-out both}@keyframes g{from{transform:scaleX(0)}}}
+</style></head><body>
+<section class="hero"><div class="wrap">
+<p class="eyebrow">CHS Happenings &middot; Sponsorship Results</p>
+<h1>
+<span class="mega">8,696</span>
+<span class="mega-cap">times your name was seen</span>
+<span class="mega lime">7</span>
+<span class="mega-cap right">people clicked through to your website</span>
+</h1>
+<p class="sub"><strong>Your Primary placement in the Oct. 8 issue,</strong> top of the email with the holiday-party message, the third of four. The reach held. The clicks didn't.</p>
+</div></section><section class="band deep"><div class="wrap">
+<h2>The short version</h2>
+<p class="lede">7,938 people opened the issue with you at the top.</p>
+<div class="stack" role="img" aria-label="Impressions: 7,938 email opens and 758 web views"><span class="a" style="flex:7938"></span><span class="b" style="flex:758"></span></div>
+<div class="legend"><span><i class="sw" style="background:var(--lime)"></i><b>7,938</b> opened the email</span><span><i class="sw" style="background:var(--white)"></i><b>758</b> web views of pages carrying your card</span></div>
+<div class="facts">
+<div class="fact"><div class="n">11,055</div><div class="l">Inboxes it reached</div></div>
+<div class="fact"><div class="n">71.8%</div><div class="l">Open rate</div></div>
+<div class="fact"><div class="n">6</div><div class="l">Clicks from the email</div></div>
+<div class="fact"><div class="n">1</div><div class="l">Click from the web</div></div>
+</div>
+<p style="margin-top:30px;color:var(--mist);max-width:40em">Seen is email opens plus web views. The web side is the issue's own page (71 views) and the five stories that carried your card at the top (687 views). Clicks are unique people, not taps.</p>
+</div></section><section class="band"><div class="wrap">
+<h2>How that compares</h2>
+<p class="lede">0.76 clicks for every 1,000 people who opened.</p>
+<p style="color:var(--mist);max-width:40em">A sponsor block here usually earns 1 to 2. This one came in under that range, the first of your three to do so. Sept. 11 did 6.57 and Sept. 24 did 2.36.</p>
+<div class="gauge" role="img" aria-label="0.76 clicks per 1,000 openers against a usual range of 1 to 2">
+<div class="track"></div><div class="band1" style="left:33.33%;width:33.33%"></div><div class="mark" style="left:25.20%"></div><div class="mk" style="left:25.20%;padding-left:10px">0.76</div>
+<span class="t l" style="left:0">0</span><span class="t" style="left:50.00%">usual, 1 to 2</span><span class="t" style="left:100%;transform:translateX(-100%)">3</span>
+</div>
+</div></section><section class="band white"><div class="wrap">
+<h2>Where the clicks came from</h2>
+<table>
+<thead><tr><th>Where it ran</th><th class="n">Views</th><th class="n">Clicks</th></tr></thead>
+<tbody>
+<tr><td>The email<span class="sub2">Primary slot, right under the weather</span><span class="bar" style="width:100%"></span></td><td class="n">7,938</td><td class="n">6</td></tr>
+<tr><td>Babas on King story<span class="sub2">Card at the top of the story</span><span class="bar" style="width:16.7%"></span></td><td class="n">66</td><td class="n">1</td></tr>
+<tr><td>Lowline lead story<span class="sub2">Card at the top of the story</span></td><td class="n">422</td><td class="n">0</td></tr>
+<tr><td>The issue's own web page</td><td class="n">71</td><td class="n">0</td></tr>
+<tr><td>Three other web stories<span class="sub2">Riva Mare, the Pepsi plant flip, the port terminal</span></td><td class="n">199</td><td class="n">0</td></tr>
+<tr class="tot"><td>All of it</td><td class="n">8,696</td><td class="n">7</td></tr>
+</tbody></table>
+</div></section><section class="band"><div class="wrap">
+<h2>The honest read</h2>
+<div class="two">
+<div>
+<p class="lede" style="font-size:clamp(22px,4vw,30px)">What worked</p>
+<p><strong>You led the issue.</strong> First thing under the weather in the email, and first thing on every web story. That's 8,696 times your name was seen.</p><p>The links were tagged, so these visits show up as CHS Happenings in your own stats.</p>
+</div>
+<div class="bad">
+<p class="lede" style="font-size:clamp(22px,4vw,30px)">What didn't</p>
+<p><strong>Clicks fell again, from 19 to 6.</strong> The whole issue clicked a little less this week, and the lead story pulled almost half of everyone who clicked. But your slice of all clickers fell from 2.45% to 0.93%, so most of this is the ad, not the issue.</p><p>My read: a third run to the same readers, a December ask in early October, and a soft &ldquo;start the conversation&rdquo; button to the home page with no headline to stop the scroll.</p>
+</div>
+</div>
+<div class="cmp" style="margin-top:34px;max-width:620px">
+<div class="row"><div class="h"><span>Email clicks to you</span><span>54 &rarr; 19 &rarr; 6</span></div><div class="bars"><i class="x" style="width:100.0%"><b>Sept. 11 &middot; 54</b></i><i class="x lo" style="width:35.2%"><b>Sept. 24 &middot; 19</b></i><i class="y lo" style="width:11.1%"><b>Oct. 8 &middot; 6</b></i></div></div>
+<div class="row"><div class="h"><span>Your share of all clickers</span><span>7.2% &rarr; 2.45% &rarr; 0.93%</span></div><div class="bars"><i class="x" style="width:100.0%"><b>Sept. 11 &middot; 7.2%</b></i><i class="x lo" style="width:33.9%"><b>Sept. 24 &middot; 2.45%</b></i><i class="y lo" style="width:12.9%"><b>Oct. 8 &middot; 0.93%</b></i></div></div>
+<div class="row"><div class="h"><span>Click rate, whole issue</span><span>9.09% &rarr; 9.64% &rarr; 8.14%</span></div><div class="bars"><i class="x" style="width:94.3%"><b>Sept. 11 &middot; 9.09%</b></i><i class="x" style="width:100.0%"><b>Sept. 24 &middot; 9.64%</b></i><i class="y" style="width:84.4%"><b>Oct. 8 &middot; 8.14%</b></i></div></div>
+</div>
+</div></section><section class="band deep"><div class="wrap">
+<h2>What I'd change next time</h2>
+<ul class="moves">
+<li><strong>Show one piece and name it.</strong> Your best result led with specific pieces. One great bar or dessert display, photographed and named in a headline, beats a list of twelve categories.</li>
+<li><strong>Send the button somewhere to browse.</strong> A link to your collection lets readers shop tonight. &ldquo;Start the conversation&rdquo; asks them to commit before they've seen anything.</li>
+<li><strong>Give a nearer reason.</strong> On Oct. 29, Friendsgiving and November gatherings are weeks away, not months. That's an easier yes than December.</li>
+</ul>
+</div></section><section class="band"><div class="wrap">
+<h2>Where the campaign stands</h2>
+<table class="stand" style="color:var(--white)">
+<thead><tr><th>Placement</th><th class="n">Status</th></tr></thead>
+<tbody>
+<tr><td>Sept. 11 &middot; Primary</td><td class="n">Ran &middot; 73 clicks</td></tr>
+<tr><td>Sept. 24 &middot; Secondary</td><td class="n">Ran &middot; 23 clicks</td></tr>
+<tr><td>Oct. 8 &middot; Primary</td><td class="n">Ran &middot; 7 clicks</td></tr>
+<tr><td>Oct. 29 &middot; Secondary (bonus)</td><td class="n">Up next</td></tr>
+<tr class="tot"><td style="color:var(--lime);border-color:var(--lime)">Campaign</td><td class="n" style="color:var(--lime);border-color:var(--lime)">3 of 4</td></tr>
+</tbody></table>
+</div></section><section class="thanks"><div class="wrap">
+<p>Thanks for riding this out with me, Hannah. Three placements in, 103 people have clicked through to you, and this one didn't pull its weight. The Oct. 29 bonus is our shot to fix it.</p>
+<p>Your earlier reports: <a href="https://guide.chshappenings.com/partners/magnolia-moss/">guide.chshappenings.com/partners/magnolia-moss</a></p>
+<p class="sig">Jimmy</p>
+</div></section><footer><div class="wrap">
+<p>Numbers pulled from Beehiiv on Oct. 14, 2026, six days after the issue went out, so opens and clicks have settled. Impressions are email opens plus page views of the issue and of every story that carried your card. Clicks are unique people, not taps. All links carried tracking tags, so visits show up in your own analytics. Sept. 11 figures are settled: that placement was 69 clicks when I first reported it and settled at 73. Nothing here is modeled or estimated.</p>
+</div></footer>
+</body></html>
