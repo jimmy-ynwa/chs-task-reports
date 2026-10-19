@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sponsor Pipeline Check &mdash; October 19, 2026</title>
+<style>
+
+  :root {
+    --navy: #183872;
+    --lime: #cced60;
+    --body: #262626;
+    --muted: #444444;
+    --secondary: #6e6e6e;
+    --divider: #e6e6e6;
+    --page-bg: #f4f4f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page-bg);
+    color: var(--body);
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  h1, h2, h3, .pill, .bucket-title, .stat-num {
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px 60px; }
+  header.top {
+    background: var(--navy);
+    color: #fff;
+    padding: 36px 20px 30px;
+  }
+  header.top .wrap { padding: 0 20px; }
+  header.top .eyebrow {
+    color: var(--lime);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 12.5px;
+    margin: 0 0 10px;
+  }
+  header.top h1 {
+    margin: 0 0 8px;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.25;
+  }
+  header.top .sub {
+    color: #cfd8e8;
+    font-size: 14.5px;
+    margin: 0;
+  }
+  .action-box {
+    margin: -22px 0 28px;
+    background: #fff;
+    border: 2px solid var(--navy);
+    border-left: 8px solid var(--lime);
+    border-radius: 10px;
+    padding: 20px 24px;
+    box-shadow: 0 6px 18px rgba(24,56,114,0.10);
+  }
+  .action-box h2 {
+    margin: 0 0 10px;
+    color: var(--navy);
+    font-size: 17px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .action-box ol { margin: 0; padding-left: 20px; }
+  .action-box li { margin-bottom: 8px; }
+  .action-box .tag {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 6px;
+  }
+  .tag-approve { background: var(--lime); color: var(--navy); }
+  .tag-review { background: #fde9c8; color: #7a4b00; }
+  .tag-fyi { background: var(--divider); color: var(--muted); }
+
+  section.block {
+    background: #fff;
+    border: 1px solid var(--divider);
+    border-radius: 10px;
+    padding: 26px 28px 30px;
+    margin-bottom: 26px;
+  }
+  section.block h2 {
+    color: var(--navy);
+    font-size: 20px;
+    margin: 0 0 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  section.block h2 .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px; height: 26px;
+    background: var(--navy);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 13px;
+  }
+  section.block .lede {
+    color: var(--secondary);
+    font-size: 14.5px;
+    margin: 0 0 18px;
+  }
+  .callout {
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 14.5px;
+  }
+  .callout.stop {
+    background: #fdeceb;
+    border: 1px solid #e6a49c;
+    color: #7a2418;
+  }
+  .callout.stop strong { color: #a3271a; }
+  .callout.ok {
+    background: #eef7e2;
+    border: 1px solid #b9dd8f;
+    color: #375618;
+  }
+  .callout.note {
+    background: #f4f4f4;
+    border: 1px solid var(--divider);
+    color: var(--muted);
+  }
+
+  .stat-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 14px 0 20px;
+  }
+  .stat-tile {
+    flex: 1 1 130px;
+    background: #f9faf7;
+    border: 1px solid var(--divider);
+    border-radius: 8px;
+    padding: 12px 14px;
+    text-align: left;
+  }
+  .stat-tile .stat-num {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--navy);
+    display: block;
+  }
+  .stat-tile .stat-label {
+    font-size: 12px;
+    color: var(--secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  table.simple, table.roster-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    margin: 10px 0 4px;
+  }
+  table.simple th, table.roster-table th {
+    text-align: left;
+    background: #f4f4f4;
+    color: var(--muted);
+    font-weight: 700;
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 8px 10px;
+    border-bottom: 2px solid var(--divider);
+  }
+  table.simple td, table.roster-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--divider);
+    vertical-align: top;
+  }
+  table.roster-table td.hook { color: var(--secondary); font-size: 12.8px; }
+  table.roster-table td.days { text-align: right; white-space: nowrap; }
+
+  .pill {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 20px;
+  }
+  .pill-track { background: #e6ecf7; color: var(--navy); }
+  .pill-bot { background: #f4f4f4; color: #8c8c8c; }
+  .pill-done { background: var(--lime); color: var(--navy); }
+
+  details.bucket {
+    border: 1px solid var(--divider);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  details.bucket summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 12px 16px;
+    background: #f9faf7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  details.bucket summary::-webkit-details-marker { display: none; }
+  details.bucket summary::after {
+    content: '+';
+    font-size: 18px;
+    color: var(--secondary);
+  }
+  details.bucket[open] summary::after { content: '\2212'; }
+  .bucket-count {
+    background: var(--navy);
+    color: #fff;
+    border-radius: 20px;
+    padding: 1px 10px;
+    font-size: 12px;
+  }
+  .bucket-note {
+    color: var(--secondary);
+    font-size: 13px;
+    padding: 10px 16px 0;
+    margin: 0;
+  }
+  details.bucket .roster-table { padding: 0 16px 14px; margin-top: 8px; }
+
+  ul.plain { padding-left: 20px; margin: 8px 0; }
+  ul.plain li { margin-bottom: 4px; }
+
+  footer {
+    text-align: center;
+    color: var(--secondary);
+    font-size: 12.5px;
+    padding: 20px 0 40px;
+  }
+  a { color: var(--navy); }
+
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">CHS Happenings &middot; Sponsor Pipeline</p>
+    <h1>Weekly Sponsor Pipeline Check</h1>
+    <p class="sub">October 19, 2026 &middot; Sequence close-out reconcile, re-engagement roster, enroll-readiness sweep</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="action-box">
+    <h2>What needs you</h2>
+    <ol>
+      <li><span class="tag tag-fyi">FYI</span> <strong>7 Cold-track completions flipped clean</strong> &mdash; Doyle Charleston, Ashley Yachts, John Marmo Diamonds, Kristen Ash Designs (all Cold Standard) plus The Repaire Room, Oak Street Advisors, Charleston Plastic Surgery (Cold Professional Services). All added to Kit 2026-09-28, all hit day&nbsp;19 on 2026-10-17, all verified <code>state: active</code> in Kit (not cancelled, not bounced). Zero unsubscribes, zero deletions this run. Well under the 25-record sanity ceiling, so this went through without needing your sign-off.</li>
+      <li><span class="tag tag-review">Review</span> <strong>5 Cold-track Contact Emails return zero matches in Kit</strong> &mdash; and 3 of them are a new development, not a running mystery: <strong>Lucette Travel, Coastal Fertility Specialists, and Jeter Hrubala Wealth Strategies</strong> were confirmed present and mid-sequence in last week's (Oct 12) check, each with a live Kit <code>added_at</code> date &mdash; and are now gone entirely from both Cold sequence rosters. Worth a look at whether they unsubscribed, hard-bounced, or got manually removed on the Kit side. The other two &mdash; <strong>Angie Hranowsky Interior Design</strong> and <strong>College Planning Centers</strong> &mdash; are recent Airtable adds (Oct 12 and Oct 16) that may simply have never synced to Kit. Nothing was flipped or deleted on any of the 5; ladder math can't run without a Kit record to compute from.</li>
+      <li><span class="tag tag-fyi">FYI</span> Step 2 (personal re-engagement) is quiet this week &mdash; nothing is due. See Section&nbsp;2 for why, and for a structural gap worth flagging below.</li>
+      <li><span class="tag tag-review">Review</span> <strong>184 sponsor records are sitting in a Kit sequence called &ldquo;Re-Engagement &mdash; Researched&rdquo;</strong> with no completion ladder defined anywhere in the close-out playbook. They were swept in by a daily backlog-clearance task that ran Oct&nbsp;6&ndash;13 and then retired itself. Nobody's verified that sequence's email count or delay structure, so when the earliest of these 184 finish their nurture, there's currently no logic that will ever flip them out of &ldquo;Re-engaging &ndash; In Sequence.&rdquo; Worth 10 minutes in Kit to pull the ladder before this becomes a quiet pile-up.</li>
+      <li><span class="tag tag-fyi">FYI</span> Step 3 (enroll-readiness) is empty &mdash; same as the Oct 13 backlog-clearance finding. Nothing ready, nothing stuck, because there's currently nothing waiting.</li>
+    </ol>
+  </div>
+
+  <section class="block">
+    <h2><span class="num">1</span> Sequence close-out reconcile</h2>
+    <p class="lede">Computed from each Kit subscriber's enrollment date (<code>added_at</code>) plus the verified per-sequence delay ladder &mdash; never read off a Kit field, per standing rule.</p>
+
+    <div class="callout ok">
+      <strong>Ladder drift guard: PASS on every track that currently holds a record.</strong> Live Kit <code>email_count</code> matched the verified ladder length for Cold Standard (6 emails, 0/3/8/13/18/19&rarr;day 19), Cold Professional Services (6 emails, same ladder), and Inbound (5 emails, 0/1/3/5/7&rarr;day 7). Warm Outbound, Reactivation and Warm Referral currently hold zero Airtable records in an &ldquo;&hellip;In Sequence&rdquo; status, so there was nothing to drift-check on those tracks this run. Stay Warm was skipped entirely, by design.
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-tile"><span class="stat-num">57</span><span class="stat-label">&hellip;In Sequence before (56 Cold + 1 Inbound)</span></div>
+      <div class="stat-tile"><span class="stat-num">52</span><span class="stat-label">Matched in Kit</span></div>
+      <div class="stat-tile"><span class="stat-num">7</span><span class="stat-label">Completed &rarr; flipped</span></div>
+      <div class="stat-tile"><span class="stat-num">0</span><span class="stat-label">Unsubscribed</span></div>
+      <div class="stat-tile"><span class="stat-num">0</span><span class="stat-label">Deleted (bounced)</span></div>
+      <div class="stat-tile"><span class="stat-num">5</span><span class="stat-label">No Kit match (flagged, not touched)</span></div>
+      <div class="stat-tile"><span class="stat-num">50</span><span class="stat-label">&hellip;In Sequence after (49 Cold + 1 Inbound)</span></div>
+    </div>
+
+    <p><strong>Writes made and verified:</strong> 7 records flipped from &ldquo;Cold &ndash; In Sequence&rdquo; to &ldquo;Sequence Complete &ndash; Cooling,&rdquo; each with the matching Sequences Completed track written at the same time (4&times;Cold Standard, 3&times;Cold Professional Services). Re-pulled all 7 by record ID immediately after writing &mdash; every one landed correctly, nothing else changed on those records. Re-pulled the full &ldquo;&hellip;In Sequence&rdquo; filter afterward: count dropped from 57 to 50, exactly accounting for the 7 flips. No Hot/Won/Lost/Stay Warm record was anywhere near this candidate set (the Sequence Status filter used is structurally disjoint from those Stage values), so nothing at risk was touched.</p>
+
+    <table class="roster-table" style="margin-bottom:18px">
+      <thead><tr><th>Business</th><th>Email</th><th>Track</th><th>Kit added_at</th><th>Completed</th></tr></thead>
+      <tbody>
+      <tr><td>Doyle Charleston</td><td>Charleston@Doyle.com</td><td><span class="pill pill-track">Cold Standard</span></td><td>2026-09-28</td><td><span class="pill pill-done">2026-10-17</span></td></tr>
+      <tr><td>Ashley Yachts</td><td>info@ashleyyachts.com</td><td><span class="pill pill-track">Cold Standard</span></td><td>2026-09-28</td><td><span class="pill pill-done">2026-10-17</span></td></tr>
+      <tr><td>John Marmo Diamonds</td><td>john@johnmarmodiamonds.com</td><td><span class="pill pill-track">Cold Standard</span></td><td>2026-09-28</td><td><span class="pill pill-done">2026-10-17</span></td></tr>
+      <tr><td>Kristen Ash Designs</td><td>kristenash818@gmail.com</td><td><span class="pill pill-track">Cold Standard</span></td><td>2026-09-28</td><td><span class="pill pill-done">2026-10-17</span></td></tr>
+      <tr><td>The Repaire Room</td><td>rebecca@therepaireroom.com</td><td><span class="pill pill-track">Cold Professional Services</span></td><td>2026-09-28</td><td><span class="pill pill-done">2026-10-17</span></td></tr>
+      <tr><td>Oak Street Advisors</td><td>info@oakadvisors.com</td><td><span class="pill pill-track">Cold Professional Services</span></td><td>2026-09-28</td><td><span class="pill pill-done">2026-10-17</span></td></tr>
+      <tr><td>Charleston Plastic Surgery</td><td>CPSOffice@charlestonent.com</td><td><span class="pill pill-track">Cold Professional Services</span></td><td>2026-09-28</td><td><span class="pill pill-done">2026-10-17</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout stop">
+      <strong>5 flagged, not touched &mdash; no Kit subscriber found for any of these emails, at all.</strong> Not a pagination issue (both Cold rosters confirmed <code>has_next_page: false</code>), and not the ladder-drift guard (that only governs sequence-level email counts, not individual subscribers). A direct Kit subscriber lookup by email returned zero results for all 5.
+    </div>
+    <table class="roster-table">
+      <thead><tr><th>Business</th><th>Email</th><th>Airtable track</th><th>What's known</th></tr></thead>
+      <tbody>
+      <tr><td>Lucette Travel</td><td>jennifer@lucette.travel</td><td><span class="pill pill-track">Cold Standard</span></td><td class="hook">In Kit as of Oct 12 (added 2026-10-09, projected completion 2026-10-28) &mdash; now gone.</td></tr>
+      <tr><td>Coastal Fertility Specialists</td><td>marketing@coastalfertilityspecialists.com</td><td><span class="pill pill-track">Cold Professional Services</span></td><td class="hook">In Kit as of Oct 12 (added 2026-10-09, projected completion 2026-10-28) &mdash; now gone.</td></tr>
+      <tr><td>Jeter Hrubala Wealth Strategies</td><td>Beth.Hrubala@RaymondJames.com</td><td><span class="pill pill-track">Cold Professional Services</span></td><td class="hook">In Kit as of Oct 12 (added 2026-10-09, projected completion 2026-10-28) &mdash; now gone.</td></tr>
+      <tr><td>Angie Hranowsky Interior Design</td><td>inquires@angiehranowsky.com</td><td><span class="pill pill-track">Cold Standard</span></td><td class="hook">Airtable record created Oct 12, after last week's check &mdash; may never have synced to Kit.</td></tr>
+      <tr><td>College Planning Centers</td><td>info@collegeplanningcenters.com</td><td><span class="pill pill-track">Cold Professional Services</span></td><td class="hook">Airtable record created Oct 16, after last week's check &mdash; may never have synced to Kit.</td></tr>
+      </tbody>
+    </table>
+
+    <details class="bucket">
+      <summary><span class="bucket-title">44 still mid-drip &mdash; added date, projected completion</span><span class="bucket-count">44</span></summary>
+      <table class="roster-table">
+        <thead><tr><th>Business</th><th>Email</th><th>Track</th><th>Kit added_at</th><th>Projected completion</th></tr></thead>
+        <tbody>
+        <tr><td>Seabrook Island Club</td><td>bpclark@seabrookisland.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-09-30</td><td>2026-10-19</td></tr>
+        <tr><td>AT Curated Travel</td><td>atolbert@departurelounge.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-09-30</td><td>2026-10-19</td></tr>
+        <tr><td>Engaging Events, LLC</td><td>anna@engagingeventscharleston.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-09-30</td><td>2026-10-19</td></tr>
+        <tr><td>Edited by Elizabeth</td><td>elizabeth@editedbyelizabeth.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-09-30</td><td>2026-10-19</td></tr>
+        <tr><td>Benjamin Paul Studio</td><td>ellie@benjaminpaulstudio.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-09-30</td><td>2026-10-19</td></tr>
+        <tr><td>Taylor Agency</td><td>ltaylor@tayloragency.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td>2026-09-30</td><td>2026-10-19</td></tr>
+        <tr><td>Advantage Testing of Charleston</td><td>charleston@advantagetesting.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-04</td><td>2026-10-23</td></tr>
+        <tr><td>Amy Bennington Buist</td><td>amy@amybenningtonbuist.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-04</td><td>2026-10-23</td></tr>
+        <tr><td>Rogers Art Conservation, LLC</td><td>catherinegrogers@gmail.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-04</td><td>2026-10-23</td></tr>
+        <tr><td>Christina Baxter Weddings + Events</td><td>Inquiries@christinabaxterweddings.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-04</td><td>2026-10-23</td></tr>
+        <tr><td>Iron Clay Catering</td><td>info@ironclaycatering.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-04</td><td>2026-10-23</td></tr>
+        <tr><td>The Charleston Atelier</td><td>hello@thecharlestonatelier.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td>2026-10-04</td><td>2026-10-23</td></tr>
+        <tr><td>Style by Sonja</td><td>sonja@stylebysonja.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-05</td><td>2026-10-24</td></tr>
+        <tr><td>Mac &amp; B Events</td><td>taryn@macandbevents.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-05</td><td>2026-10-24</td></tr>
+        <tr><td>CharlestonMD (Dr. W. Melvin Brown III)</td><td>info@charleston-md.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td>2026-10-05</td><td>2026-10-24</td></tr>
+        <tr><td>Charles Ramberg Furnituremaker</td><td>charles@rambergfurniture.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-07</td><td>2026-10-26</td></tr>
+        <tr><td>Capasso Planning Partners</td><td>charlie@capassoplanningpartners.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td>2026-10-07</td><td>2026-10-26</td></tr>
+        <tr><td>Monarch Esthetics</td><td>hello@monarchcharleston.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td>2026-10-07</td><td>2026-10-26</td></tr>
+        <tr><td>Embler&#x27;s Jewelers</td><td>emblersjewelers@gmail.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-09</td><td>2026-10-28</td></tr>
+        <tr><td>Longevity Club</td><td>lc@thelongevityclub.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-09</td><td>2026-10-28</td></tr>
+        <tr><td>Portico Longevity</td><td>hello@porticolongevity.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td>2026-10-09</td><td>2026-10-28</td></tr>
+        <tr><td>Saxton Law</td><td>support@saxton-legal.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td>2026-10-09</td><td>2026-10-28</td></tr>
+        <tr><td>Harbour Wealth Management</td><td>matt@harbourwmg.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td>2026-10-09</td><td>2026-10-28</td></tr>
+        <tr><td>Carolina Hair Surgery</td><td>mvories@CarolinaHairSurgery.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td>2026-10-09</td><td>2026-10-28</td></tr>
+        <tr><td>Jenny Keenan Design</td><td>info@jennykeenandesign.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-12</td><td>2026-10-31</td></tr>
+        <tr><td>Reinert Fine Art &amp; Sculpture Garden Gallery</td><td>jason@reinertfineart.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-12</td><td>2026-10-31</td></tr>
+        <tr><td>Principle Gallery Charleston</td><td>art@principlecharleston.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-12</td><td>2026-10-31</td></tr>
+        <tr><td>Ethos Athletic Club</td><td>info@ethosathleticclub.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-12</td><td>2026-10-31</td></tr>
+        <tr><td>Meyer Vogl Gallery</td><td>katie@meyervogl.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-12</td><td>2026-10-31</td></tr>
+        <tr><td>Buist Byars &amp; Taylor LLC</td><td>ashley.blum@buistbyars.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td>2026-10-12</td><td>2026-10-31</td></tr>
+        <tr><td>Curran Financial Partners</td><td>info@curranfinancialpartners.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td>2026-10-12</td><td>2026-10-31</td></tr>
+        <tr><td>Nouveau Facial Aesthetics</td><td>lexi@nouveaufacialaesthetics.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td>2026-10-16</td><td>2026-11-04</td></tr>
+        <tr><td>Kate Miles Design</td><td>katetmiles@gmail.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-16</td><td>2026-11-04</td></tr>
+        <tr><td>Beau Clowney Architects</td><td>beau@beauclowney.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-16</td><td>2026-11-04</td></tr>
+        <tr><td>Cielo Pilates Studio</td><td>hello@cielopilatesstudio.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-16</td><td>2026-11-04</td></tr>
+        <tr><td>Rug Masters Inc.</td><td>office@rugmastersinc.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-16</td><td>2026-11-04</td></tr>
+        <tr><td>Progressive Integrations, Inc.</td><td>sales@progressiveintegrations.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-15</td><td>2026-11-03</td></tr>
+        <tr><td>Striped Lemon Design</td><td>andrea@stripedlemondesign.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-15</td><td>2026-11-03</td></tr>
+        <tr><td>Megan Molten</td><td>hello@meganmolten.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-15</td><td>2026-11-03</td></tr>
+        <tr><td>Easton Events</td><td>easton@eastonevents.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-15</td><td>2026-11-03</td></tr>
+        <tr><td>Calder Clark</td><td>hello@calderclark.com</td><td><span class='pill pill-track'>Cold Standard</span></td><td>2026-10-15</td><td>2026-11-03</td></tr>
+        <tr><td>Gordon Financial, LLC</td><td>eivy@gordonfinancialplanners.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td>2026-10-15</td><td>2026-11-03</td></tr>
+        <tr><td>Duggan Law Firm, LLC</td><td>Duggan@DugganLawFirm.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td>2026-10-15</td><td>2026-11-03</td></tr>
+        <tr><td>High Tide Orthodontics</td><td>hello@hightideorthodontics.com</td><td><span class='pill pill-track'>Cold Professional Services</span></td><td>2026-10-15</td><td>2026-11-03</td></tr>
+        <tr><td>Viking Stage Productions</td><td>tracy@vikingstageproductions.com</td><td><span class='pill pill-track'>Inbound</span></td><td>2026-10-16</td><td>2026-10-23</td></tr>
+        </tbody>
+      </table>
+    </details>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">2</span> Sponsor re-engagement recommendations</h2>
+    <p class="lede">Read-only this run, as instructed &mdash; no Airtable write, no Kit enrollment call. Proposal only; nothing goes out without your say-so.</p>
+
+    <div class="callout note">
+      <strong>Why it's quiet.</strong> This section's job is to propose personal Touch 1&ndash;4 outreach for sponsors who finish a sequence without converting. The only records that just finished (this run's 7, above) completed <em>today</em> &mdash; Touch 1 isn't due until the 30-day cooling period ends, around 2026-11-18. Checking the other side of the ledger: every pre-existing &ldquo;Sequence Complete &ndash; Cooling&rdquo; record from before today has already been resolved to a terminal Stage (ALS Association, Stillwater Ponds, Bookish, and Charter-adjacent Reactivation completions all sit at Lost &ndash; No Response; Mt. Pleasant House Call Vet and Historic Charleston Foundation sit at Lost &ndash; Not a Fit; Goldie's Shoes too). Nobody is sitting un-actioned in the cooling pool right now. Nothing is due.
+    </div>
+
+    <div class="callout stop">
+      <strong>Structural gap worth flagging: the &ldquo;Re-Engagement &ndash; Researched&rdquo; Kit sequence has no defined ladder.</strong> 184 Sponsors records currently carry Sequence Status &ldquo;Re-engaging &ndash; In Sequence&rdquo; or &ldquo;Re-engaging &ndash; Personal,&rdquo; almost all enrolled between 2026-10-06 and 2026-10-13 by a daily backlog-clearance task that finished its job and retired itself (per its own Oct 13 report: &ldquo;zero records left eligible for auto-enroll&hellip; turned the daily task off&rdquo;). That task moved these sponsors into an actual Kit nurture sequence called Re-Engagement &ndash; Researched, separate from the 7 close-out tracks in Section&nbsp;1. <strong>No completion ladder for that sequence exists anywhere in this playbook</strong> &mdash; not its email count, not its delay structure. When the earliest of these 184 finish that sequence, there is currently no logic (here or anywhere else surfaced to me) that will flip them out of &ldquo;Re-engaging &ndash; In Sequence&rdquo; the way Section&nbsp;1 does for the original 7 tracks. Given 184 is more than three times the size of the entire active Cold pipeline, this is worth ten minutes in Kit confirming that sequence's email count and delays before it quietly backs up.
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-tile"><span class="stat-num">184</span><span class="stat-label">In &ldquo;Re-Engagement &ndash; Researched&rdquo; (no ladder yet)</span></div>
+      <div class="stat-tile"><span class="stat-num">7</span><span class="stat-label">Freshly cooling (day 0, not due)</span></div>
+      <div class="stat-tile"><span class="stat-num">6</span><span class="stat-label">Pre-existing, already Lost (no action needed)</span></div>
+      <div class="stat-tile"><span class="stat-num">0</span><span class="stat-label">Touches due this week</span></div>
+      <div class="stat-tile"><span class="stat-num">0</span><span class="stat-label">Promoted to Hot</span></div>
+    </div>
+
+    <p><strong>Desync check:</strong> none found. No record's Sequence Status disagreed with its Sequences Completed field, and the close-out task in Section&nbsp;1 didn't miss anything it should have flipped.</p>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">3</span> Enroll-readiness sweep</h2>
+    <p class="lede">Read-only &mdash; surfaces who's ready to route into a Kit sequence. Enrollment itself stays a separate, manually-approved step.</p>
+
+    <div class="callout ok">
+      <strong>Pipeline empty: zero candidates, same as the Oct 13 backlog-clearance finding.</strong> Zero Sponsors records currently sit at Sequence Status &ldquo;Cold &ndash; Researched&rdquo; (the researched-but-unenrolled bucket this sweep targets). Checked the 16 records with a blank Sequence Status too, in case anything slipped through uncategorized &mdash; all 16 are already resolved to Sponsored, Sponsored &ndash; Gratis, Signed, or Lost, correctly sitting outside the enrollment funnel. One (Outdoor Spatial Design, LLC) has Draft Observations staged but its Stage is already Lost &ndash; Not a Fit, so it's not a live candidate either.
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-tile"><span class="stat-num">0</span><span class="stat-label">Ready (observation set)</span></div>
+      <div class="stat-tile"><span class="stat-num">0</span><span class="stat-label">Ready to pick (staged)</span></div>
+      <div class="stat-tile"><span class="stat-num">0</span><span class="stat-label">Needs observation</span></div>
+      <div class="stat-tile"><span class="stat-num">0</span><span class="stat-label">Blocked (no email)</span></div>
+    </div>
+    <p>Nothing enrolled, nothing proposed for enrollment &mdash; this bucket is simply empty right now, same as last week. If the prospecting skills (high-ltv-sponsor-prospector / cold-prospect-research) haven't run in a while, that's the next lever to pull to refill this funnel, not something broken in this sweep.</p>
+  </section>
+
+  <footer>
+    Built from Airtable (CHS Happenings base) and Kit (ConvertKit) via the Zapier MCP &middot; 7 Airtable writes this run (Section 1 only), zero Kit mutating calls &middot; Section 2 is a proposal, not an action.
+  </footer>
+</div>
+</body>
+</html>
