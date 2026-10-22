@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABL Notice Sweep — October 22, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #183872;
+    --lime: #cced60;
+    --ink: #1a1a1a;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --bg-quiet: #f7f8fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #ffffff;
+    color: var(--ink);
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 0 20px 60px; }
+  header {
+    background: var(--navy);
+    padding: 28px 20px;
+    margin-bottom: 24px;
+  }
+  header .inner { max-width: 900px; margin: 0 auto; }
+  header .bar { width: 48px; height: 6px; background: var(--lime); border-radius: 3px; margin-bottom: 14px; }
+  h1 {
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0 0 6px;
+  }
+  header p { color: #cdd7ea; margin: 0; font-size: 14px; }
+  .counts {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy);
+    background: var(--bg-quiet);
+    border-left: 4px solid var(--lime);
+    padding: 12px 16px;
+    margin-bottom: 28px;
+    border-radius: 4px;
+  }
+  h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 0 0 4px;
+  }
+  .section-note { color: var(--muted); font-size: 13px; margin: 0 0 12px; }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 32px; font-size: 14px; }
+  th {
+    font-family: 'Inter', sans-serif;
+    text-align: left;
+    background: var(--navy);
+    color: #fff;
+    padding: 9px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  td { padding: 9px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:nth-child(even) td { background: var(--bg-quiet); }
+  .num { font-weight: 700; color: var(--navy); width: 28px; }
+  .quiet-block { opacity: 0.85; }
+  .quiet-block th { background: #5a6b8c; }
+  .quiet-block h2 { color: #5a6b8c; }
+  .tag { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 7px; border-radius: 10px; background: #eef0f4; color: var(--muted); }
+  .caveats {
+    margin-top: 28px;
+    padding: 14px 16px;
+    background: var(--bg-quiet);
+    border-radius: 4px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .caveats p { margin: 4px 0; }
+  .dropped {
+    margin-top: 20px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .dropped summary { cursor: pointer; font-weight: 600; color: var(--navy); font-family: 'Inter', sans-serif; }
+  .dropped ul { margin: 8px 0 0; padding-left: 18px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="inner">
+    <div class="bar"></div>
+    <h1>ABL Notice Sweep</h1>
+    <p>Charleston County · liquor-licence filings, last 30 days · published October 22, 2026</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="counts">
+    58 rows returned → 29 distinct filings → 9 dropped as out-of-footprint → 7 on-premises not yet tracked → 8 already tracked → 5 off-premises retail
+  </div>
+
+  <h2>Not yet tracked — on-premises</h2>
+  <p class="section-note">Read = licence-class heuristic, not a confirmed answer — liquor-only or wine-and-liquor-only filings usually mean an existing spot adding or upgrading, not a new business.</p>
+  <table>
+    <tr><th>#</th><th>Business / applicant</th><th>Address</th><th>Licence</th><th>Read</th><th>First published</th><th>Status</th></tr>
+    <tr><td class="num">1</td><td>Charleston OpCo 1, LLC</td><td>1925 Essex Farms Drive</td><td>Beer &amp; Wine</td><td>Likely new premises</td><td>Oct 21, 2026</td><td>Not yet tracked</td></tr>
+    <tr><td class="num">2</td><td>Caviar and Bananas</td><td>1739 Maybank Hwy, Suite U, Charleston, SC 29412</td><td>Beer &amp; Wine</td><td>Likely new premises</td><td>Oct 21, 2026</td><td>Not yet tracked</td></tr>
+    <tr><td class="num">3</td><td>Legacy Cigar Lounge, LLC</td><td>1937 Clements Ferry Rd, Ste. C, Charleston, SC 29492</td><td>Liquor by the drink</td><td>Likely upgrade at an existing spot</td><td>Oct 17, 2026</td><td>Not yet tracked</td></tr>
+    <tr><td class="num">4</td><td>Owlbear, LLC</td><td>1964 Riviera Drive, Suite J, Mount Pleasant, SC 29464</td><td>Beer &amp; Wine</td><td>Likely new premises</td><td>Oct 16, 2026</td><td>Not yet tracked</td></tr>
+    <tr><td class="num">5</td><td>Reenie's Fine Foods, LLC</td><td>1262 Remount Rd, North Charleston, SC 29406</td><td>Beer, Wine &amp; Liquor</td><td>Likely new premises</td><td>Sept 30, 2026</td><td>Not yet tracked</td></tr>
+    <tr><td class="num">6</td><td>Frazier's Social Lounge</td><td>4971 County Line Rd, Ravenel, SC 29470</td><td>Beer, Wine &amp; Liquor</td><td>Likely new premises</td><td>Sept 30, 2026</td><td>Not yet tracked</td></tr>
+    <tr><td class="num">7</td><td>Aramark Sports and Entertainment Services, LLC</td><td>40 Patriots Point Road, Mount Pleasant, SC</td><td>Beer, Wine &amp; Liquor</td><td>Likely new premises</td><td>Sept 25, 2026</td><td>Not yet tracked</td></tr>
+  </table>
+
+  <div class="quiet-block">
+    <h2>Already in the tracker <span class="tag">on-premises</span></h2>
+    <p class="section-note">Still a filing worth a look — a renewal doesn't require re-advertising, so an already-tracked address filing again usually means something changed.</p>
+    <table>
+      <tr><th>#</th><th>Business / applicant</th><th>Address</th><th>Licence</th><th>First published</th><th>Matches tracker row</th></tr>
+      <tr><td class="num">8</td><td>Gold LLC</td><td>9085 Savannah Hwy, Charleston, SC 29407</td><td>Beer, Wine &amp; Liquor</td><td>Oct 15, 2026</td><td>"Gold LLC (ABL filing entity — trade name unresolved)"</td></tr>
+      <tr><td class="num">9</td><td>41 RTPH Holdings, LLC</td><td>2015 SC-41, Mt Pleasant, SC 29466</td><td>Beer, Wine &amp; Liquor</td><td>Oct 14, 2026</td><td>"41 RTPH Holdings, LLC (ABL filing entity — trade name unresolved)"</td></tr>
+      <tr><td class="num">10</td><td>Mottram Beerworks</td><td>496 Longpoint Rd, Mt Pleasant, SC 29464</td><td>Beer &amp; Wine</td><td>Oct 7, 2026</td><td>"Mottram Beerworks (ABL filing entity — trade name unresolved)"</td></tr>
+      <tr><td class="num">11</td><td>LUMA Restaurant LLC</td><td>128 Columbus Street, Suite 103, Charleston, SC 29403</td><td>Beer, Wine &amp; Liquor</td><td>Oct 7, 2026</td><td>"Luma Restaurant LLC (ABL filing entity — trade name unresolved)"</td></tr>
+      <tr><td class="num">12</td><td>Moms Restaurant Group</td><td>6c Line St, Charleston, SC 29403</td><td>Beer &amp; Wine</td><td>Oct 7, 2026</td><td>"Moms Restaurant Group (ABL filing entity — trade name unresolved)"</td></tr>
+      <tr><td class="num">13</td><td>Locals Johns Island LLC</td><td>1804 Crowne Commons Way, Ste D2/D3, Johns Island, SC</td><td>Beer, Wine &amp; Liquor</td><td>Sept 27, 2026</td><td>"Locals Sushi &amp; Sports Pub — Johns Island (unconfirmed)"</td></tr>
+      <tr><td class="num">14</td><td>Jack's Diner, LLC</td><td>41-B George St, Charleston, SC 29401</td><td>Beer &amp; Wine</td><td>Sept 27, 2026</td><td>"Jack's Diner (unconfirmed)"</td></tr>
+      <tr><td class="num">15</td><td>Davide Davino</td><td>1181 Oakland Market Road, Mount Pleasant, SC 29466</td><td>Beer, Wine &amp; Liquor</td><td>Sept 23, 2026</td><td>"Cuoco Pazzo Trattoria (unconfirmed)"</td></tr>
+    </table>
+
+    <h2>Off-premises retail</h2>
+    <p class="section-note">Package stores, bottle shops, groceries — not the newsletter's usual beat, kept here for completeness.</p>
+    <table>
+      <tr><th>#</th><th>Business / applicant</th><th>Address</th><th>Licence</th><th>First published</th></tr>
+      <tr><td class="num">16</td><td>Tele Envios Y Mas LLC</td><td>1412 Savannah Hwy, Unit B, Charleston, SC 29407</td><td>Beer &amp; Wine</td><td>Oct 14, 2026</td></tr>
+      <tr><td class="num">17</td><td>Shree Hari 2025 LLC</td><td>5060 Dorchester Rd, Ste. 220, North Charleston, SC 29418</td><td>Liquor &amp; Wine</td><td>Sept 30, 2026</td></tr>
+      <tr><td class="num">18</td><td>Tienda Mexicana Mi Bonita, LLC</td><td>4050 Ashley Phosphate Rd, North Charleston, SC 29418</td><td>Beer &amp; Wine</td><td>Sept 30, 2026</td></tr>
+      <tr><td class="num">19</td><td>Maple Leaf Advisors, LLC</td><td>5325 Park Forest Parkway, Suite E, North Charleston, SC 29418</td><td>Liquor</td><td>Sept 27, 2026</td></tr>
+      <tr><td class="num">20</td><td>Robert L. Cochran</td><td>6824 Highway 162, Ste. B, Hollywood, SC 29449</td><td>Beer, Wine &amp; Liquor</td><td>Sept 23, 2026</td></tr>
+    </table>
+  </div>
+
+  <div class="caveats">
+    <p>A filing is an intention to apply, not an opening date — and nothing here says whether it's a new application, a renewal, or a transfer.</p>
+    <p>South Carolina doesn't require re-advertising to renew a licence at the same business and address, so a filing from an already-open business signals a change (new owner, added licence class, altered premises) — not noise.</p>
+    <p>This sweep can't see any business that doesn't serve alcohol, so it's not a complete picture of what's opening in Charleston.</p>
+  </div>
+
+  <details class="dropped">
+    <summary>Dropped as out-of-footprint (9)</summary>
+    <ul>
+      <li>Publix Super Markets, Inc. #2134 — 206 Saint James Avenue, Goose Creek</li>
+      <li>Harmony 19 LLC — 1531 Hampton St, Walterboro</li>
+      <li>ADIYOGI 2026 LLC — 1006 Old Highway 52, Moncks Corner</li>
+      <li>Jamestown Diner — 7645 Hwy 41, Jamestown</li>
+      <li>Eclipse Bar and Lounge LLC — 1256 Red Bank Road, Goose Creek</li>
+      <li>Lowcountry Dining, LLC — 950 Black Oak Rd, Bonneau</li>
+      <li>The Wine Safe, LLC — 242 East Washington Street, Walterboro</li>
+      <li>Publix Super Markets, Inc. #1740 — 1612 Beech Hill Road, Summerville</li>
+      <li>H.O.F Enterprises LLC — 4650 Ladson Road, Ste. 205, Summerville</li>
+    </ul>
+  </details>
+
+</div>
+</body>
+</html>
