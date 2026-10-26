@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sponsor Pipeline Check &mdash; October 26, 2026</title>
+<style>
+
+  :root {
+    --navy: #183872;
+    --lime: #cced60;
+    --body: #262626;
+    --muted: #444444;
+    --secondary: #6e6e6e;
+    --divider: #e6e6e6;
+    --page-bg: #f4f4f4;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page-bg);
+    color: var(--body);
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  h1, h2, h3, .pill, .bucket-title, .stat-num {
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px 60px; }
+  header.top {
+    background: var(--navy);
+    color: #fff;
+    padding: 36px 20px 30px;
+  }
+  header.top .wrap { padding: 0 20px; }
+  header.top .eyebrow {
+    color: var(--lime);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 12.5px;
+    margin: 0 0 10px;
+  }
+  header.top h1 {
+    margin: 0 0 8px;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.25;
+  }
+  header.top .sub {
+    color: #cfd8e8;
+    font-size: 14.5px;
+    margin: 0;
+  }
+  .action-box {
+    margin: -22px 0 28px;
+    background: #fff;
+    border: 2px solid var(--navy);
+    border-left: 8px solid var(--lime);
+    border-radius: 10px;
+    padding: 20px 24px;
+    box-shadow: 0 6px 18px rgba(24,56,114,0.10);
+  }
+  .action-box h2 {
+    margin: 0 0 10px;
+    color: var(--navy);
+    font-size: 17px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .action-box ol { margin: 0; padding-left: 20px; }
+  .action-box li { margin-bottom: 8px; }
+  .action-box .tag {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 6px;
+  }
+  .tag-approve { background: var(--lime); color: var(--navy); }
+  .tag-review { background: #fde9c8; color: #7a4b00; }
+  .tag-fyi { background: var(--divider); color: var(--muted); }
+
+  section.block {
+    background: #fff;
+    border: 1px solid var(--divider);
+    border-radius: 10px;
+    padding: 26px 28px 30px;
+    margin-bottom: 26px;
+  }
+  section.block h2 {
+    color: var(--navy);
+    font-size: 20px;
+    margin: 0 0 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  section.block h2 .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px; height: 26px;
+    background: var(--navy);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 13px;
+  }
+  section.block .lede {
+    color: var(--secondary);
+    font-size: 14.5px;
+    margin: 0 0 18px;
+  }
+  .callout {
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 14.5px;
+  }
+  .callout.stop {
+    background: #fdeceb;
+    border: 1px solid #e6a49c;
+    color: #7a2418;
+  }
+  .callout.stop strong { color: #a3271a; }
+  .callout.ok {
+    background: #eef7e2;
+    border: 1px solid #b9dd8f;
+    color: #375618;
+  }
+  .callout.note {
+    background: #f4f4f4;
+    border: 1px solid var(--divider);
+    color: var(--muted);
+  }
+
+  .stat-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 14px 0 20px;
+  }
+  .stat-tile {
+    flex: 1 1 130px;
+    background: #f9faf7;
+    border: 1px solid var(--divider);
+    border-radius: 8px;
+    padding: 12px 14px;
+    text-align: left;
+  }
+  .stat-tile .stat-num {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--navy);
+    display: block;
+  }
+  .stat-tile .stat-label {
+    font-size: 12px;
+    color: var(--secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  table.simple, table.roster-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    margin: 10px 0 4px;
+  }
+  table.simple th, table.roster-table th {
+    text-align: left;
+    background: #f4f4f4;
+    color: var(--muted);
+    font-weight: 700;
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 8px 10px;
+    border-bottom: 2px solid var(--divider);
+  }
+  table.simple td, table.roster-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--divider);
+    vertical-align: top;
+  }
+  table.roster-table td.hook { color: var(--secondary); font-size: 12.8px; }
+  table.roster-table td.days { text-align: right; white-space: nowrap; }
+
+  .pill {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 20px;
+  }
+  .pill-track { background: #e6ecf7; color: var(--navy); }
+  .pill-bot { background: #f4f4f4; color: #8c8c8c; }
+  .pill-done { background: var(--lime); color: var(--navy); }
+  .pill-live { background: #fde9c8; color: #7a4b00; }
+
+  details.bucket {
+    border: 1px solid var(--divider);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  details.bucket summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 12px 16px;
+    background: #f9faf7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  details.bucket summary::-webkit-details-marker { display: none; }
+  details.bucket summary::after {
+    content: '+';
+    font-size: 18px;
+    color: var(--secondary);
+  }
+  details.bucket[open] summary::after { content: '\2212'; }
+  .bucket-count {
+    background: var(--navy);
+    color: #fff;
+    border-radius: 20px;
+    padding: 1px 10px;
+    font-size: 12px;
+  }
+  .bucket-note {
+    color: var(--secondary);
+    font-size: 13px;
+    padding: 10px 16px 0;
+    margin: 0;
+  }
+  details.bucket .roster-table { padding: 0 16px 14px; margin-top: 8px; }
+
+  ul.plain { padding-left: 20px; margin: 8px 0; }
+  ul.plain li { margin-bottom: 4px; }
+
+  .obs-card {
+    border: 1px solid var(--divider);
+    border-radius: 8px;
+    margin-bottom: 14px;
+    overflow: hidden;
+  }
+  .obs-card .obs-head {
+    background: #f9faf7;
+    padding: 10px 16px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .obs-card .obs-head .biz {
+    font-weight: 800;
+    color: var(--navy);
+    font-size: 14.5px;
+  }
+  .obs-card .obs-head .email {
+    color: var(--secondary);
+    font-size: 12.5px;
+  }
+  .obs-card .obs-body { padding: 4px 16px 14px; }
+  .obs-opt {
+    font-size: 13.5px;
+    padding: 10px 12px;
+    border-left: 3px solid var(--divider);
+    margin-top: 10px;
+    color: var(--body);
+  }
+  .obs-opt .opt-label {
+    font-weight: 800;
+    color: var(--navy);
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .obs-opt.rec { border-left-color: var(--lime); background: #fafdf2; }
+
+  footer {
+    text-align: center;
+    color: var(--secondary);
+    font-size: 12.5px;
+    padding: 20px 0 40px;
+  }
+  a { color: var(--navy); }
+
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">CHS Happenings &middot; Sponsor Pipeline</p>
+    <h1>Weekly Sponsor Pipeline Check</h1>
+    <p class="sub">October 26, 2026 &middot; Sequence close-out reconcile, re-engagement roster, enroll-readiness sweep</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="action-box">
+    <h2>What needs you</h2>
+    <ol>
+      <li><span class="tag tag-approve">Approve</span> <strong>27 new Cold Standard prospects are ready to pick</strong> &mdash; a fresh batch of Charleston real-estate agencies and teams (Section&nbsp;3), each with two full second-person opener options already staged. Pick a line (or edit one) for whichever you want to run and I'll copy it into Specific Observation and queue the enrollment for your go-ahead &mdash; nothing fires until you say so.</li>
+      <li><span class="tag tag-fyi">FYI</span> <strong>23 sequence completions this run, zero need action yet.</strong> 16 flipped to Cooling today, 7 carried over from last week &mdash; every one is still inside its 30-day cooling gate (earliest Touch&nbsp;1 isn't due until 2026-11-18). See Section&nbsp;2.</li>
+      <li><span class="tag tag-review">Review</span> <strong>Policy conflict, not yet resolved:</strong> the sponsor-reengage skill's current design auto-enrolls anyone past the 30-day gate into a Kit Re-Engagement sequence with no approval step. This run's instructions explicitly required Step 2 to stay read-only/proposal-only, so I followed the instructions and made zero Kit enrollment calls and zero Airtable status writes in Section&nbsp;2 &mdash; but the skill itself still says it should auto-enroll. Worth deciding which one governs going forward so this doesn't flip-flop week to week.</li>
+      <li><span class="tag tag-review">Review</span> <strong>1 click signal couldn't be fully verified &mdash; Viking Stage Productions / Tracy.</strong> She clicked the media-kit link at 1:04&nbsp;PM ET, 19 minutes outside the noon&ndash;12:45 bot window, so it isn't an automatic bot-filter fail like the other 4 clicks this run. But I couldn't run the second half of the filter (checking her mail domain's MX records against known scanning gateways) &mdash; this cloud session's network doesn't allow raw DNS or DNS-over-HTTPS lookups. I did not promote her to Hot. Worth a 30-second manual MX check, or a rerun from an environment with DNS access.</li>
+      <li><span class="tag tag-fyi">FYI</span> <strong>Last week's flagged structural gap is resolved.</strong> The two Re-Engagement Kit sequences (Researched, Warm) now have verified ladders (0/4/11/21&rarr;day 21 and 0/7&rarr;day 7). The actual exhaustion sweep across the 184-record &ldquo;Re-engaging &ndash; In Sequence&rdquo; cohort wasn't run this week &mdash; it's Step 2.5 of the skill, outside this run's literal Step 2 scope &mdash; but worth adding to next week's checklist now that the ladder exists to check against.</li>
+    </ol>
+  </div>
+
+  <section class="block">
+    <h2><span class="num">1</span> Sequence close-out reconcile</h2>
+    <p class="lede">Completed in the earlier part of this run. Computed from each Kit subscriber's enrollment date (<code>added_at</code>) plus the verified per-sequence delay ladder &mdash; never read off a Kit field, per standing rule. Logged here for the combined record.</p>
+
+    <div class="callout ok">
+      <strong>Ladder drift guard: PASS on every track touched this run.</strong> Live Kit <code>email_count</code> matched the verified ladder length for Cold Standard (6 emails, 0/3/8/13/18/19&rarr;day 19), Cold Professional Services (6 emails, same ladder), and Inbound (5 emails, 0/1/3/5/7&rarr;day 7) &mdash; pulled directly from each sequence's subscriber roster, never from the unreliable <code>subscriber_count</code> summary field. Warm Outbound, Reactivation, and Warm Referral held no &ldquo;&hellip;In Sequence&rdquo; records this run, so nothing to drift-check there. Stay Warm skipped entirely, by design.
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-tile"><span class="stat-num">249</span><span class="stat-label">&hellip;In Sequence before</span></div>
+      <div class="stat-tile"><span class="stat-num">226</span><span class="stat-label">&hellip;In Sequence after</span></div>
+      <div class="stat-tile"><span class="stat-num">16</span><span class="stat-label">Completed &rarr; Cooling</span></div>
+      <div class="stat-tile"><span class="stat-num">4</span><span class="stat-label">Unsubscribed</span></div>
+      <div class="stat-tile"><span class="stat-num">3</span><span class="stat-label">Deleted (bounced)</span></div>
+      <div class="stat-tile"><span class="stat-num">23</span><span class="stat-label">Total writes (ceiling: 25)</span></div>
+    </div>
+
+    <p><strong>Writes made and verified:</strong> 16 records flipped &ldquo;&hellip;In Sequence&rdquo; &rarr; &ldquo;Sequence Complete &ndash; Cooling,&rdquo; with the matching Sequences Completed track written at the same time (12&times;Cold Standard, 3&times;Cold Professional Services, 1&times;Inbound). 4 records flipped to &ldquo;Unsubscribed&rdquo; on a confirmed Kit <code>cancelled</code> state. 3 Sponsors records deleted on a confirmed Kit <code>bounced</code> state (Coastal Fertility Specialists, Angie Hranowsky Interior Design, College Planning Centers), with their 3 linked Interactions rows deleted first. Re-pulled the &ldquo;&hellip;In Sequence&rdquo; filter afterward: count dropped from 249 to 226, exactly accounting for the 23 records moved out. Re-confirmed the 3 deletions return zero records. No Hot/Won/Lost/Stay Warm record was anywhere near this candidate set, so nothing at risk was touched. Total of 23 Sponsors writes this run, comfortably under the 25-record sanity ceiling.</p>
+
+    <table class="roster-table">
+      <thead><tr><th>Business</th><th>Track</th><th>Disposition</th></tr></thead>
+      <tbody>
+      <tr><td>Benjamin Paul Studio</td><td><span class="pill pill-track">Cold Standard</span></td><td><span class="pill pill-done">Cooling</span></td></tr>
+      <tr><td>Advantage Testing of Charleston</td><td><span class="pill pill-track">Cold Standard</span></td><td><span class="pill pill-done">Cooling</span></td></tr>
+      <tr><td>Edited by Elizabeth</td><td><span class="pill pill-track">Cold Standard</span></td><td><span class="pill pill-done">Cooling</span></td></tr>
+      <tr><td>Taylor Agency</td><td><span class="pill pill-track">Cold Professional Services</span></td><td><span class="pill pill-done">Cooling</span></td></tr>
+      <tr><td>The Charleston Atelier</td><td><span class="pill pill-track">Cold Professional Services</span></td><td><span class="pill pill-done">Cooling</span></td></tr>
+      <tr><td>Engaging Events, LLC</td><td><span class="pill pill-track">Cold Standard</span></td><td><span class="pill pill-done">Cooling</span></td></tr>
+      <tr><td>Mac &amp; B Events</td><td><span class="pill pill-track">Cold Standard</span></td><td><span class="pill pill-done">Cooling</span></td></tr>
+      <tr><td>CharlestonMD (Dr. W. Melvin Brown III)</td><td><span class="pill pill-track">Cold Professional Services</span></td><td><span class="pill pill-done">Cooling</span></td></tr>
+      <tr><td>Christina Baxter Weddings + Events</td><td><span class="pill pill-track">Cold Standard</span></td><td><span class="pill pill-done">Cooling</span></td></tr>
+      <tr><td>Rogers Art Conservation, LLC</td><td><span class="pill pill-track">Cold Standard</span></td><td><span class="pill pill-done">Cooling</span></td></tr>
+      <tr><td>Amy Bennington Buist</td><td><span class="pill pill-track">Cold Standard</span></td><td><span class="pill pill-done">Cooling</span></td></tr>
+      <tr><td>Iron Clay Catering</td><td><span class="pill pill-track">Cold Standard</span></td><td><span class="pill pill-done">Cooling</span></td></tr>
+      <tr><td>AT Curated Travel</td><td><span class="pill pill-track">Cold Standard</span></td><td><span class="pill pill-done">Cooling</span></td></tr>
+      <tr><td>Seabrook Island Club</td><td><span class="pill pill-track">Cold Standard</span></td><td><span class="pill pill-done">Cooling</span></td></tr>
+      <tr><td>Style by Sonja</td><td><span class="pill pill-track">Cold Standard</span></td><td><span class="pill pill-done">Cooling</span></td></tr>
+      <tr><td>Viking Stage Productions</td><td><span class="pill pill-track">Inbound</span></td><td><span class="pill pill-done">Cooling</span></td></tr>
+      <tr><td colspan="3" style="border-top:2px solid var(--divider)"></td></tr>
+      <tr><td colspan="3"><em>4 unsubscribed (confirmed Kit cancelled)</em></td></tr>
+      <tr><td colspan="3"><em>3 deleted (confirmed Kit bounced): Coastal Fertility Specialists, Angie Hranowsky Interior Design, College Planning Centers</em></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">2</span> Sponsor re-engagement recommendations</h2>
+    <p class="lede">Read-only this run, as instructed &mdash; no Airtable write, no Kit enrollment call. Proposal only; nothing goes out without your say-so.</p>
+
+    <div class="callout note">
+      <strong>Why it's quiet.</strong> 23 sponsors currently sit at &ldquo;Sequence Complete &ndash; Cooling&rdquo; and are eligible for this section (6 more pre-existing cooling records are already resolved to Lost and excluded: The ALS Association, Stillwater Ponds, Bookish, Mt. Pleasant House Call Vet, Historic Charleston Foundation, Goldie's Shoes). All 23 completed within the last 9 days &mdash; none are anywhere near the 30-day cooling gate.
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-tile"><span class="stat-num">23</span><span class="stat-label">Eligible, all cooling</span></div>
+      <div class="stat-tile"><span class="stat-num">0</span><span class="stat-label">Touches due this week</span></div>
+      <div class="stat-tile"><span class="stat-num">5</span><span class="stat-label">Click signals checked</span></div>
+      <div class="stat-tile"><span class="stat-num">0</span><span class="stat-label">Confirmed human &rarr; Hot</span></div>
+    </div>
+
+    <table class="roster-table" style="margin-bottom:18px">
+      <thead><tr><th>Batch</th><th>Count</th><th>Completed (approx.)</th><th>Touch 1 due</th></tr></thead>
+      <tbody>
+      <tr><td>Today's 16 flips</td><td>16</td><td>~2026-10-26</td><td>~2026-11-25</td></tr>
+      <tr><td>Last week's 7 flips</td><td>7</td><td>~2026-10-19</td><td>~2026-11-18</td></tr>
+      </tbody>
+    </table>
+
+    <p><strong>Bot-click filter &mdash; 5 tracked clicks on these 23 sponsors, all screened before any Hot promotion:</strong></p>
+    <table class="roster-table">
+      <thead><tr><th>Business</th><th>Tag</th><th>Clicked (ET)</th><th>Time test</th><th>Verdict</th></tr></thead>
+      <tbody>
+      <tr><td>Charleston Plastic Surgery</td><td>clicked-media-kit</td><td>Oct 1, 12:23&nbsp;PM</td><td class="hook">Inside noon&ndash;12:45 send window</td><td><span class="pill pill-bot">Bot &mdash; no action</span></td></tr>
+      <tr><td>Oak Street Advisors</td><td>clicked-media-kit</td><td>Oct 1, 12:23&nbsp;PM</td><td class="hook">Inside noon&ndash;12:45 send window</td><td><span class="pill pill-bot">Bot &mdash; no action</span></td></tr>
+      <tr><td>AT Curated Travel</td><td>clicked-media-kit</td><td>Oct 3, 12:23&nbsp;PM</td><td class="hook">Inside noon&ndash;12:45 send window</td><td><span class="pill pill-bot">Bot &mdash; no action</span></td></tr>
+      <tr><td>Seabrook Island Club</td><td>clicked-media-kit</td><td>Oct 3, 12:23&nbsp;PM</td><td class="hook">Inside noon&ndash;12:45 send window</td><td><span class="pill pill-bot">Bot &mdash; no action</span></td></tr>
+      <tr><td>Viking Stage Productions</td><td>clicked-media-kit</td><td>Oct 16, 1:04&nbsp;PM</td><td class="hook">Outside window, but MX check blocked (no DNS access in this session)</td><td><span class="pill pill-live">Unconfirmed &mdash; not promoted</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout stop">
+      <strong>Policy conflict, surfaced not resolved:</strong> the sponsor-reengage skill as currently written auto-enrolls anyone past the 30-day cooling gate into the matching Kit Re-Engagement sequence with no per-prospect approval. This run's instructions explicitly called Step 2 read-only and approval-gated, so that's what I did &mdash; nobody was auto-enrolled, nothing was flipped to &ldquo;Re-engaging &ndash; In Sequence.&rdquo; Nothing was due this week either way, so the conflict stayed theoretical this time, but the next run where someone actually clears the 30-day gate will need one or the other rule to win.
+    </div>
+
+    <p><strong>Desync check:</strong> none found. No record's Sequence Status disagreed with its Sequences Completed field, and Section&nbsp;1's reconcile didn't miss anything it should have flipped.</p>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">3</span> Enroll-readiness sweep</h2>
+    <p class="lede">Read-only &mdash; surfaces who's ready to route into a Kit sequence. Enrollment itself stays a separate, manually-approved step. &ldquo;Sponsored &ndash; Gratis&rdquo; sponsors are excluded entirely (none appeared in this pool).</p>
+
+    <div class="callout ok">
+      <strong>27 new prospects, all ready to pick &mdash; a real-estate-focused batch, all routed the same way.</strong> Every one is Source&nbsp;=&nbsp;Cold, Business Type&nbsp;=&nbsp;Real Estate Agency, Stage&nbsp;=&nbsp;Target, sitting at Sequence Status &ldquo;Cold &ndash; Researched&rdquo; with two staged opener options already in second person &mdash; no third-person rewrite needed. Real Estate Agency isn't on the regulated-professional-services list, so all 27 route to <strong>Cold Standard</strong>. Checked the 16 records with a blank Sequence Status too, in case anything slipped through uncategorized: all 16 are already resolved to Sponsored, Sponsored &ndash; Gratis, Signed, or Lost, correctly sitting outside the enrollment funnel.
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-tile"><span class="stat-num">0</span><span class="stat-label">Ready (observation set)</span></div>
+      <div class="stat-tile"><span class="stat-num">27</span><span class="stat-label">Ready to pick (staged)</span></div>
+      <div class="stat-tile"><span class="stat-num">0</span><span class="stat-label">Needs observation</span></div>
+      <div class="stat-tile"><span class="stat-num">0</span><span class="stat-label">Blocked (no email)</span></div>
+    </div>
+
+    <p>Full text of both staged options for each &mdash; nothing summarized, since you're picking the exact words that would merge into a real email. Say which prospects to enroll and which option (A, B, or an edit) for each, and I'll copy the chosen line into Specific Observation and queue the Kit enrollment for your final go-ahead.</p>
+
+    <div class="obs-card">
+      <div class="obs-head"><span class="biz">Corcoran HM Properties (Charleston)</span><span class="email">leeallen@corcoranhmproperties.com</span></div>
+      <div class="obs-body">
+        <div class="obs-opt"><span class="opt-label">Option A</span>You've been building Corcoran HM's Charleston office since late 2023. Six Thursdays in front of 8,000 local readers is a fast way to make the name familiar here.</div>
+        <div class="obs-opt"><span class="opt-label">Option B</span>Corcoran is a big name nationally. CHS Happenings is how Charleston homeowners hear about the people behind it.</div>
+      </div>
+    </div>
+
+    <div class="obs-card">
+      <div class="obs-head"><span class="biz">William Means Real Estate</span><span class="email">paige@williammeans.com</span></div>
+      <div class="obs-body">
+        <div class="obs-opt"><span class="opt-label">Option A</span>William Means did $452 million last year at an average price above $1.6 million, according to the Post and Courier. Those are the homes my readers own.</div>
+        <div class="obs-opt"><span class="opt-label">Option B</span>You already publish Luxury Insider, so you know a well-made local read earns attention. CHS Happenings does that every Thursday for 11,300+ subscribers.</div>
+      </div>
+    </div>
+
+    <div class="obs-card">
+      <div class="obs-head"><span class="biz">Carriage Properties</span><span class="email">csullivan@carriageprop.com</span></div>
+      <div class="obs-body">
+        <div class="obs-opt"><span class="opt-label">Option A</span>You sold more than $128 million last year, mostly on the peninsula, according to RealTrends. My readers own a lot of the houses on those streets.</div>
+        <div class="obs-opt"><span class="opt-label">Option B</span>Carriage's market numbers show up in the Post and Courier's annual coverage. Your name could show up in Charleston's Thursday inbox, too.</div>
+      </div>
+    </div>
+
+    <div class="obs-card">
+      <div class="obs-head"><span class="biz">The Cassina Group</span><span class="email">MTTruluck@TheCassinaGroup.com</span></div>
+      <div class="obs-body">
+        <div class="obs-opt"><span class="opt-label">Option A</span>The Cassina Group closed more than $615 million last year with about 55 agents, according to RealTrends. That's a boutique working at a big firm's scale.</div>
+        <div class="obs-opt"><span class="opt-label">Option B</span>Cassina already invests in its own media with CassinaTV. CHS Happenings puts your agents in front of 8,000 Charleston readers every Thursday.</div>
+      </div>
+    </div>
+
+    <div class="obs-card">
+      <div class="obs-head"><span class="biz">Selling Kiawah (Akers Ellis)</span><span class="email">chris.dion@akersellis.com</span></div>
+      <div class="obs-body">
+        <div class="obs-opt"><span class="opt-label">Option A</span>You and Lauren sell Kiawah together at Akers Ellis. Almost one in four of my readers report household income above $250K.</div>
+        <div class="obs-opt"><span class="opt-label">Option B</span>You've already gone on a local podcast to talk Kiawah. CHS Happenings puts you in front of 8,000 Charleston readers every Thursday.</div>
+      </div>
+    </div>
+
+    <div class="obs-card">
+      <div class="obs-head"><span class="biz">Atlantic Properties of the Lowcountry</span><span class="email">meredith@atlanticprops.com</span></div>
+      <div class="obs-body">
+        <div class="obs-opt"><span class="opt-label">Option A</span>Ashley sold more than any agent in South Carolina last year, according to RealTrends. Even at the top, the next listing goes to whoever stays top of mind.</div>
+        <div class="obs-opt"><span class="opt-label">Option B</span>Atlantic already runs its own newsletter sign-up, so you know email works. Mine lands in 11,300+ Charleston inboxes every Thursday.</div>
+      </div>
+    </div>
+
+    <div class="obs-card">
+      <div class="obs-head"><span class="biz">Gentry Todd Group</span><span class="email">gentrytoddgroup@compass.com</span></div>
+      <div class="obs-body">
+        <div class="obs-opt"><span class="opt-label">Option A</span>You've built Gentry Todd Group around Charleston luxury, and that's who reads my Thursday email: almost one in four of my readers report household income above $250K.</div>
+        <div class="obs-opt"><span class="opt-label">Option B</span>Luxury sellers pick the agent they already trust. My readers already trust the newsletter that shows up in their inbox every Thursday.</div>
+      </div>
+    </div>
+
+    <div class="obs-card">
+      <div class="obs-head"><span class="biz">The Caleb Pearson Team at eXp Realty</span><span class="email">askcpteam@gmail.com</span></div>
+      <div class="obs-body">
+        <div class="obs-opt"><span class="opt-label">Option A</span>Your team closed 198 sides and $118 million last year, according to RealTrends. That's a lot of Charleston front doors, and plenty of the people behind them read my newsletter every Thursday.</div>
+        <div class="obs-opt"><span class="opt-label">Option B</span>You've built one of the busiest teams in Mount Pleasant. Mount Pleasant is where I live, and it's a big part of who opens CHS Happenings every week.</div>
+      </div>
+    </div>
+
+    <div class="obs-card">
+      <div class="obs-head"><span class="biz">Dunes Properties</span><span class="email">bmello@dunesproperties.com</span></div>
+      <div class="obs-body">
+        <div class="obs-opt"><span class="opt-label">Option A</span>Dunes already shows up in Mount Pleasant Magazine's real estate directory and on its podcast. You clearly invest in being seen by Charleston homeowners, and my Thursday email reaches 8,000 of them who opened it on purpose.</div>
+        <div class="obs-opt"><span class="opt-label">Option B</span>From Folly to the peninsula, Dunes covers the coast. My readers are the coastal homeowners your agents want to meet.</div>
+      </div>
+    </div>
+
+    <div class="obs-card">
+      <div class="obs-head"><span class="biz">Charleston House Now Team (eXp)</span><span class="email">Andrew@CharlestonHouseNow.com</span></div>
+      <div class="obs-body">
+        <div class="obs-opt"><span class="opt-label">Option A</span>Charleston House Now did $23.5 million last year, according to RealTrends.</div>
+        <div class="obs-opt"><span class="opt-label">Option B</span>Your team name says Charleston right in it. CHS Happenings is where 11,300+ Charlestonians start their Thursday.</div>
+      </div>
+    </div>
+
+    <div class="obs-card">
+      <div class="obs-head"><span class="biz">Southern Bell Living (The Boulevard Company)</span><span class="email">Erica@SouthernBellLiving.com</span></div>
+      <div class="obs-body">
+        <div class="obs-opt"><span class="opt-label">Option A</span>Southern Bell Living won Best of Mount Pleasant in 2025. My readers are the neighbors who vote in those polls.</div>
+        <div class="obs-opt"><span class="opt-label">Option B</span>You did $35 million last year, according to RealTrends, and you already invest in content with your market updates. CHS Happenings puts that voice in 11,300+ Charleston inboxes.</div>
+      </div>
+    </div>
+
+    <div class="obs-card">
+      <div class="obs-head"><span class="biz">Coastal Island Properties Team (Compass)</span><span class="email">desiree.maurer@compass.com</span></div>
+      <div class="obs-body">
+        <div class="obs-opt"><span class="opt-label">Option A</span>You focus on the islands, from Sullivan's to Kiawah. Almost one in four of my readers report household income above $250K.</div>
+        <div class="obs-opt"><span class="opt-label">Option B</span>Coastal Island Properties did $28 million last year, according to RealTrends. Six Thursdays in front of 8,000 local readers is how that becomes the name people think of first.</div>
+      </div>
+    </div>
+
+    <div class="obs-card">
+      <div class="obs-head"><span class="biz">Roni and Co. (Keller Williams)</span><span class="email">roni.haskell@kw.com</span></div>
+      <div class="obs-body">
+        <div class="obs-opt"><span class="opt-label">Option A</span>Roni and Co. did $51 million last year, according to RealTrends, and you made the Best of the Holy City nominee list.</div>
+        <div class="obs-opt"><span class="opt-label">Option B</span>You built &ldquo;That SC Real Estate Chick&rdquo; on social. CHS Happenings puts that name in 11,300+ Charleston inboxes, where no algorithm decides who sees it.</div>
+      </div>
+    </div>
+
+    <div class="obs-card">
+      <div class="obs-head"><span class="biz">Robertson Allen (The Cassina Group)</span><span class="email">rallen@thecassinagroup.com</span></div>
+      <div class="obs-body">
+        <div class="obs-opt"><span class="opt-label">Option A</span>You closed $168 million on about 34 sales last year, an average near $5 million, according to RealTrends. Almost one in four of my readers report household income above $250K.</div>
+        <div class="obs-opt"><span class="opt-label">Option B</span>At your price point, one listing pays for a year of marketing. The trial costs $1,500 and reports back after every placement.</div>
+      </div>
+    </div>
+
+    <div class="obs-card">
+      <div class="obs-head"><span class="biz">Matt O'Neill Real Estate</span><span class="email">matto@mattoneillteam.com</span></div>
+      <div class="obs-body">
+        <div class="obs-opt"><span class="opt-label">Option A</span>You've said you spend more than $1 million a year on advertising. Here's a $1,500 test that reports back after every placement.</div>
+        <div class="obs-opt"><span class="opt-label">Option B</span>You've built a real media brand with The Good Mood Show. CHS Happenings is the Thursday inbox for 11,300+ Charlestonians, and it's the next place your name belongs.</div>
+      </div>
+    </div>
+
+    <div class="obs-card">
+      <div class="obs-head"><span class="biz">The Templeton Group (Daniel Ravenel Sotheby's)</span><span class="email">amytempleton@danielravenelsir.com</span></div>
+      <div class="obs-body">
+        <div class="obs-opt"><span class="opt-label">Option A</span>In Annapolis, the local newsletter's real estate partner of two-plus years is a Sotheby's agent. I'd like Charleston's to be one too.</div>
+        <div class="obs-opt"><span class="opt-label">Option B</span>The Templeton Group did $19.5 million last year at Daniel Ravenel Sotheby's, according to RealTrends. Almost one in four of my readers report household income above $250K.</div>
+      </div>
+    </div>
+
+    <div class="obs-card">
+      <div class="obs-head"><span class="biz">Charleston Digs (Keller Williams)</span><span class="email">jon@charlestondigs.com</span></div>
+      <div class="obs-body">
+        <div class="obs-opt"><span class="opt-label">Option A</span>Charleston Digs did $22 million last year, according to RealTrends.</div>
+        <div class="obs-opt"><span class="opt-label">Option B</span>Charleston Digs is a name built to be remembered. Six Thursdays in front of 8,000 local readers is how it gets remembered by the right people.</div>
+      </div>
+    </div>
+
+    <div class="obs-card">
+      <div class="obs-head"><span class="biz">Oyster Point Group (Compass)</span><span class="email">carl@oysterpointgroup.com</span></div>
+      <div class="obs-body">
+        <div class="obs-opt"><span class="opt-label">Option A</span>Oyster Point Group moved to Compass this year. A new chapter is a good moment to put the name in front of Charleston homeowners.</div>
+        <div class="obs-opt"><span class="opt-label">Option B</span>You did $36.6 million last year, according to RealTrends, much of it in luxury. Almost one in four of my readers report household income above $250K.</div>
+      </div>
+    </div>
+
+    <div class="obs-card">
+      <div class="obs-head"><span class="biz">AgentOwned Realty</span><span class="email">Marketing@AgentOwnedRealty.com</span></div>
+      <div class="obs-body">
+        <div class="obs-opt"><span class="opt-label">Option A</span>AgentOwned already shows up in Mount Pleasant Magazine's real estate directory. I'd like to show you what a twelve-week trial does in an inbox 8,000 locals open every Thursday.</div>
+        <div class="obs-opt"><span class="opt-label">Option B</span>You're marketing a brokerage whose whole pitch is that agents own it. A Market Minute that spotlights a different AgentOwned agent each time puts that pitch in front of Charleston homeowners.</div>
+      </div>
+    </div>
+
+    <div class="obs-card">
+      <div class="obs-head"><span class="biz">Kalyn Smythe (William Means)</span><span class="email">kalynsmythe@williammeans.com</span></div>
+      <div class="obs-body">
+        <div class="obs-opt"><span class="opt-label">Option A</span>You passed $45 million in 2025, according to the Post and Courier, one of William Means' top producers.</div>
+        <div class="obs-opt"><span class="opt-label">Option B</span>Most agents get seen once. Six Thursdays over three months is how a name sticks.</div>
+      </div>
+    </div>
+
+    <div class="obs-card">
+      <div class="obs-head"><span class="biz">The Elebash Team (William Means)</span><span class="email">legrand@williammeans.com</span></div>
+      <div class="obs-body">
+        <div class="obs-opt"><span class="opt-label">Option A</span>You passed $45 million in 2025, according to the Post and Courier. That's a name Charleston homeowners should already know.</div>
+        <div class="obs-opt"><span class="opt-label">Option B</span>Most agents get seen once. Six Thursdays over three months is how a name sticks.</div>
+      </div>
+    </div>
+
+    <div class="obs-card">
+      <div class="obs-head"><span class="biz">Akers Ellis Real Estate &amp; Rentals</span><span class="email">lauren.deaton@akersellis.com</span></div>
+      <div class="obs-body">
+        <div class="obs-opt"><span class="opt-label">Option A</span>You market Kiawah and Seabrook, and almost one in four of my readers report household income above $250K.</div>
+        <div class="obs-opt"><span class="opt-label">Option B</span>Your agents already turn up on Charleston's real estate podcasts, so you value being heard locally. CHS Happenings reaches 8,000 local readers every Thursday.</div>
+      </div>
+    </div>
+
+    <div class="obs-card">
+      <div class="obs-head"><span class="biz">Lively Charleston (The Ludify Group at Real)</span><span class="email">crystal@livelycharleston.com</span></div>
+      <div class="obs-body">
+        <div class="obs-opt"><span class="opt-label">Option A</span>You already run a podcast and a Facebook group for Lively Charleston, so you know what an audience that chose you is worth. CHS Happenings is that, at 11,300+ subscribers.</div>
+        <div class="obs-opt"><span class="opt-label">Option B</span>Lively Charleston sells the Charleston lifestyle, not just houses. That's exactly what my Thursday readers open the email for.</div>
+      </div>
+    </div>
+
+    <div class="obs-card">
+      <div class="obs-head"><span class="biz">Maison Real Estate</span><span class="email">leslie@maisonchs.com</span></div>
+      <div class="obs-body">
+        <div class="obs-opt"><span class="opt-label">Option A</span>Maison is a small, founder-led firm, and founders feel every marketing dollar. This one comes with a results report after every placement.</div>
+        <div class="obs-opt"><span class="opt-label">Option B</span>You built Maison around Charleston's luxury market, and almost one in four of my readers report household income above $250K.</div>
+      </div>
+    </div>
+
+    <div class="obs-card">
+      <div class="obs-head"><span class="biz">The Boulevard Company</span><span class="email">rebecca@theblvdcompany.com</span></div>
+      <div class="obs-body">
+        <div class="obs-opt"><span class="opt-label">Option A</span>You're steering sales and marketing for 300-plus Boulevard agents. A trial that spotlights a different one of them each time is a recruiting perk as much as an ad.</div>
+        <div class="obs-opt"><span class="opt-label">Option B</span>Boulevard has been one of Charleston's biggest brokerages for years. My readers are the homeowners your agents want to meet.</div>
+      </div>
+    </div>
+
+    <div class="obs-card">
+      <div class="obs-head"><span class="biz">The Husted Team</span><span class="email">thehustedteam@gmail.com</span></div>
+      <div class="obs-body">
+        <div class="obs-opt"><span class="opt-label">Option A</span>The Husted Team closed 216 sales and $81 million last year, according to RealTrends.</div>
+        <div class="obs-opt"><span class="opt-label">Option B</span>With 30 agents, you've got a lot of names to make familiar. The Market Minute can spotlight a different one each time.</div>
+      </div>
+    </div>
+
+    <div class="obs-card">
+      <div class="obs-head"><span class="biz">Handsome Properties</span><span class="email">srosenfeld@handsomeproperties.com</span></div>
+      <div class="obs-body">
+        <div class="obs-opt"><span class="opt-label">Option A</span>Handsome Properties runs lean, so every marketing dollar has to earn its keep. This one comes with a results report after every placement.</div>
+        <div class="obs-opt"><span class="opt-label">Option B</span>A boutique brokerage wins on reputation and word of mouth. My readers are the neighbors who do the talking.</div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    Built from Airtable (CHS Happenings base) and Kit (ConvertKit) via the Zapier MCP &middot; 23 Airtable writes this run (Section 1 only, including 3 deletions) &middot; 0 Kit mutating calls &middot; Sections 2 &amp; 3 are proposals, not actions.
+  </footer>
+</div>
+</body>
+</html>
