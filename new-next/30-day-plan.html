@@ -175,16 +175,85 @@
     .cal{overflow-x:auto;}
     h1{font-size:44px !important;}
   }
+
+  /* ---------- top navigation (added v39) ---------- */
+  html{scroll-behavior:smooth;scroll-padding-top:86px;}
+  body{padding-top:76px;}
+  .nav{position:fixed;top:0;left:0;right:0;z-index:80;background:rgba(7,10,15,.86);
+       -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
+       border-bottom:1px solid var(--line-2);}
+  .nav::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;
+       background:linear-gradient(90deg,transparent,rgba(46,107,255,.55),transparent);}
+  .navw{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:10px 16px;}
+  .navbrand{font-family:'Geist Mono',monospace;font-size:10.5px;letter-spacing:.22em;
+       text-transform:uppercase;color:var(--slate-dim);white-space:nowrap;flex:none;}
+  .navbrand b{color:var(--blue-soft);font-weight:500;}
+  .navlinks{display:flex;align-items:center;gap:3px;overflow-x:auto;flex:1 1 auto;
+       scrollbar-width:none;-ms-overflow-style:none;mask-image:linear-gradient(90deg,#000 0,#000 94%,transparent 100%);}
+  .navlinks::-webkit-scrollbar{display:none;}
+  .navlinks a{font-family:'Geist Mono',monospace;font-size:10.5px;letter-spacing:.1em;
+       text-transform:uppercase;color:var(--slate-dim);text-decoration:none;white-space:nowrap;
+       padding:5px 9px;border-radius:3px;border:1px solid transparent;transition:color .15s,background .15s,border-color .15s;}
+  .navlinks a:hover{color:var(--paper);background:rgba(255,255,255,.07);}
+  .navlinks a.on{color:var(--blue-soft);background:rgba(46,107,255,.14);border-color:rgba(46,107,255,.45);}
+  .navtoday{flex:none;display:inline-flex;align-items:center;gap:7px;text-decoration:none;
+       font-family:'Geist Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+       color:#fff;background:var(--blue);border:1px solid var(--blue);padding:6px 12px;border-radius:3px;
+       box-shadow:0 0 0 0 rgba(46,107,255,.5);transition:background .15s,box-shadow .15s;}
+  .navtoday:hover{background:#1E57E6;box-shadow:0 0 18px -2px rgba(46,107,255,.6);}
+  .navtoday .dot{width:5px;height:5px;border-radius:50%;background:#fff;opacity:.9;flex:none;}
+  .navtoday.future{background:transparent;color:var(--blue-soft);}
+  .navtoday.future .dot{background:var(--spark);}
+
+  /* the card you land on */
+  .brief.is-today{border-color:rgba(46,107,255,.65)!important;
+       box-shadow:0 0 0 1px rgba(46,107,255,.35),0 0 34px -10px rgba(46,107,255,.55);}
+  .brief.is-today::after{content:"TODAY";position:absolute;top:-9px;right:14px;
+       font-family:'Geist Mono',monospace;font-size:9.5px;letter-spacing:.18em;
+       background:var(--blue);color:#fff;padding:2px 7px;border-radius:2px;}
+  .brief{position:relative;}
+
+  @media (max-width:760px){
+    .navbrand{display:none;}
+    .navw{gap:10px;padding:9px 12px;}
+  }
+  @media print{
+    .nav{display:none!important;}
+    body{padding-top:0!important;}
+    .brief.is-today::after{display:none!important;}
+  }
+
 </style>
 </head>
 <body>
+<nav class="nav" aria-label="Section navigation">
+  <div class="navw">
+    <div class="navbrand">First <b>30 Days</b></div>
+    <div class="navlinks" id="navlinks">
+      <a href="#s05b">Outlines</a>
+      <a href="#s05">Calendar</a>
+      <a href="#s06">Briefs</a>
+      <a href="#s01">Registers</a>
+      <a href="#s03">Rules</a>
+      <a href="#s09">Checklist</a>
+      <a href="#s07">Comments</a>
+      <a href="#s10">Specimen</a>
+      <a href="#s10b">Voice</a>
+      <a href="#s11">Bench</a>
+      <a href="#s12">Log</a>
+      <a href="#s15">Changelog</a>
+    </div>
+    <a class="navtoday" id="navtoday" href="#s05b"><span class="dot"></span><span id="navtodaylabel">Today</span></a>
+  </div>
+</nav>
+
   <div class="page"><div class="inner">
     <a class="backnav" href="index.html"><span class="arr">←</span> New NEXT hub</a>
 
     <div class="kick">Content Engine · Authority ÷ Insight ÷ Operate</div>
     <h1>The First<br><em>30 Days</em></h1>
     <p class="standfirst">Three posts a week, across three lanes, and every one starts from an outline. Two of the ten still to go carry video, because the format is climbing and it compounds delivery of everything else you post.</p>
-    <div class="vchip">Version 38 · October 24, 2026 · dated Sep 22 to Nov 6</div>
+    <div class="vchip">Version 39 · October 27, 2026 · dated Sep 22 to Nov 6</div>
     <div class="why"><b>Why the lanes exist:</b> van der Blom's A/B on himself ran a confession post against a citation-stacked authority post, same audience, two weeks apart. Confession pulled 24K impressions with comments where readers described their own version of the mistake. Authority pulled 11K with comments that were peer compliments. Authority builds status; insight creates recognition. Your 31 years make authority the path of least resistance, so this plan puts a floor under insight rather than trusting inclination</div>
     <div class="toprule"></div>
 
@@ -201,7 +270,7 @@
       </ul>
     </div>
 
-    <section>
+    <section id="s01">
       <div class="sh"><span class="n">01</span><h2>Three registers, one a week</h2></div>
       <div class="why" style="margin-left:40px;margin-bottom:16px;"><b>Who governs what, settled Oct 1.</b> Two sources run this plan and they no longer split evenly. <b style="color:var(--paper);">Natasha Walstra governs what gets written</b> — the register system below, the story requirement, the weekly mix, and the scoreboard in section 12. <b style="color:var(--paper);">Richard van der Blom governs mechanics and measurement</b> — hook taxonomy, ranking signals, what a link costs, the golden hour, the comment ladder, composing in-app. Algorithm facts, not content strategy. Where they disagree, she wins on what to optimize for and he wins on how the machine behaves: he describes what the algorithm rewards, she describes what is worth caring about. <b>His semi-annual algorithm report is being bought in November</b> — section 03 gets a refresh pass then</div>
       <p class="body" style="margin-bottom:12px;">Walstra's framework, from the Sep 30 webinar transcript. Her own origin for it: every other framework paralysed her, so she asked what she was really trying to do — build a network of people who know, like and trust her — and found that each of those three words has its own kind of post. <b>This is the spine of the plan. What a post is about matters less than what job it does for the reader.</b></p>
@@ -220,7 +289,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="s01b">
       <div class="sh"><span class="n">01b</span><h2>The lanes, kept as a tag</h2></div>
       <p class="body" style="margin-bottom:12px;"><b>Demoted Oct 1 from the spine to a label.</b> Van der Blom's three lanes ran this plan from v1 through v24 and still describe something real: the <i>shape</i> a post takes. They stay on every brief as a secondary tag, and the insight-to-authority floor still holds, because the A/B behind it is sound. What they stopped doing is deciding what gets written.</p>
       <div class="lanes">
@@ -231,7 +300,7 @@
       <div class="why" style="margin-left:40px;margin-top:14px;"><b>Why the demotion, in one line.</b> The lanes are assigned by weekday; the register is assigned by what you actually have to say. A scaffold that fills itself in by calendar cannot tell you that you have written nine of one thing — and for five straight posts, it didn't</div>
     </section>
 
-    <section>
+    <section id="s02">
       <div class="sh"><span class="n">02</span><h2>The three-question test</h2></div>
       <p class="body" style="margin-bottom:12px;">Run any candidate insight post through this before you write it. It's the tool that generates the lane, so you're not dependent on this document once the 30 days are up.</p>
       <div class="test">
@@ -241,7 +310,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="s03">
       <div class="sh"><span class="n">03</span><h2>The rules of the road</h2></div>
       <div class="why" style="margin-left:40px;margin-bottom:16px;"><b>This section is van der Blom's, and it is the half of him that stays load-bearing.</b> Everything here is algorithm mechanics: what the ranking signals weigh, what a link costs, the hook multipliers, the posting window. None of it tells you what to write — that is section 01 now. <b style="color:var(--paper);">Refresh due November 2026:</b> his semi-annual algorithm update report is being bought then, and every figure in this section should be re-checked against it rather than carried forward on faith. Several of these numbers are already two reports old</div>
       <div class="rules">
@@ -259,7 +328,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="s04">
       <div class="sh"><span class="n">04</span><h2>Video, one a week</h2></div>
       <div class="body">
         <p><strong>Video isn't a fourth lane. It's a format you apply to a lane you're already writing.</strong> One post a week becomes video, rotating through the three lanes, so the cadence stays at three and nothing extra gets added to the calendar.</p>
@@ -279,7 +348,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="s05">
       <div class="sh"><span class="n">05</span><h2>The month at a glance</h2></div>
       <div class="cal">
         <table>
@@ -338,7 +407,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="s05b">
       <div class="sh"><span class="n">05b</span><h2>Post outlines</h2></div>
       <div class="body">
         <p style="margin-bottom:10px;"><b>The standing rule, from Oct 15 and for good:</b> every post gets an outline before anything is dictated. It names the angle, the beats worth covering, what the hook has to do, and the question to leave the reader with. <b>It is scaffolding, not copy.</b> It contains no sentences to paste, and it adds no facts: everything in it comes from your own briefs and numbers, and anything unconfirmed carries a gate. Your first draft is still your own words, typed or spoken.</p>
@@ -360,7 +429,7 @@
 
       <div class="wkhead">Done · Announcement week</div>
       <div class="briefs">
-        <div class="brief ins out done">
+        <div id="d-2026-10-15" class="brief ins out done">
           <div class="bmeta"><span class="bday">THU · OCT 15 · POSTED</span><span class="tag t-like">Like</span><span class="tag t-ins">arc</span></div>
           <div class="btopic">Leaving real estate, all in on New NEXT</div>
           <div class="brow"><div class="bk">Logged</div><div class="bv">Post #5. The first post that says out loud where this is going, so the posts after it can show the machine instead of re-explaining the decision</div></div>
@@ -371,7 +440,7 @@
 
       <div class="wkhead">Week A · Oct 20–22 · Back on cadence</div>
       <div class="briefs">
-        <div class="brief ins out">
+        <div id="d-2026-10-20" class="brief ins out">
           <div class="bmeta"><span class="bday">TUE · OCT 20</span><span class="tag t-ins">Insight</span><span class="tag t-like">Like</span><span class="tag t-know">Story hook</span></div>
           <div class="btopic">I built a system to reach people personally. Someone wrote back to tell me it wasn't personal.</div>
           <div class="brow"><div class="bk">Angle</div><div class="bv">A system built to reach people personally got told it wasn't, and the person had a point. The subject is the system and what you did next, not her</div></div>
@@ -382,7 +451,7 @@
           <div class="brow"><div class="bk">Watch</div><div class="bv">She cannot be identifiable: no name, category, neighborhood or shop detail. Leave the physician contrast out unless you can verify it. End flat</div></div>
           <div class="brow"><div class="bk">Close</div><div class="bv">A question that gets a stranger to describe a time something they built to scale felt cold to the person on the other end</div></div>
         </div>
-        <div class="brief ins out">
+        <div id="d-2026-10-21" class="brief ins out">
           <div class="bmeta"><span class="bday">WED · OCT 21 · flagship · POSTED 11:38 AM</span><span class="tag t-ins">Insight</span><span class="tag t-like">Like</span><span class="tag t-know">Statistic hook</span></div>
           <div class="btopic">The list leak: why I paused the ads, and why they're back on</div>
           <div class="brow"><div class="bk">Angle</div><div class="bv">Changed the morning of. The attribution audit was dropped as too dry. Jimmy's dictation gave the real story: he paused the ads because he doubted why he wanted a bigger list (Kevin Kelly's 1,000 true fans, with more than 11,500 already), and the list leaked. Now they're back on with a target. A value tested in a real story, about the machine, so Like on top of Insight</div></div>
@@ -394,7 +463,7 @@
           <div class="brow"><div class="bk">Watch</div><div class="bv">Log numbers Mon Nov 2. Watch for a comment from Matt and for recognition comments about lists, churn or a confidence wobble. "I'm at 60 cents" is this year's run, not the October test</div></div>
           <div class="brow"><div class="bk">Close</div><div class="bv">As posted: "What have you stopped funding because of a confidence wobble, not the numbers?"</div></div>
         </div>
-        <div class="brief op out">
+        <div id="d-2026-10-22" class="brief op out">
           <div class="bmeta"><span class="bday">THU · OCT 22</span><span class="tag t-op">Operate</span><span class="tag t-know">Know</span><span class="tag t-know">Story hook</span></div>
           <div class="btopic">Before I build anything, it has to pass the Anywhere test</div>
           <div class="brow"><div class="bk">Angle</div><div class="bv">A week after "all in", show how you decide what to build. The Anywhere test is the through-line of this feed, and it only works as a post if you show it saying no to something</div></div>
@@ -410,7 +479,7 @@
 
       <div class="wkhead">Week B · Oct 27–29 · Show the work</div>
       <div class="briefs">
-        <div class="brief out">
+        <div id="d-2026-10-27" class="brief out">
           <div class="bmeta"><span class="bday">TUE · OCT 27</span><span class="tag t-auth">Authority</span><span class="tag t-trust">Trust</span><span class="vid">▶ video</span><span class="tag t-know">Statistic or story hook</span></div>
           <div class="btopic">What one ad actually did for a local business</div>
           <div class="brow"><div class="bk">Angle</div><div class="bv">Someone else's money and someone else's result, every number included. The unflattering number is what makes the rest believable. This is third-party proof, which is what Trust means</div></div>
@@ -422,7 +491,7 @@
           <div class="brow"><div class="bk">Watch</div><div class="bv">If the sponsor will give you one sentence in their own words, use it. Their voice is what turns this from Know into Trust</div></div>
           <div class="brow"><div class="bk">Close</div><div class="bv">A question about what number they wish their last campaign report had included</div></div>
         </div>
-        <div class="brief ins out">
+        <div id="d-2026-10-28" class="brief ins out">
           <div class="bmeta"><span class="bday">WED · OCT 28 · flagship</span><span class="tag t-ins">Insight</span><span class="tag t-know">Know</span><span class="tag t-know">Story hook</span></div>
           <div class="btopic">I rebuilt something I had already built and shipped</div>
           <div class="brow"><div class="bk">Angle</div><div class="bv">A small, recent, slightly embarrassing mistake: you rebuilt something that was already live. The cost was an hour, a duplicate account and a near miss</div></div>
@@ -434,7 +503,7 @@
           <div class="brow"><div class="bk">Watch</div><div class="bv">No lesson at the end. The recovery was in plain sight, say that and stop</div></div>
           <div class="brow"><div class="bk">Close</div><div class="bv">A question about whether the reader could find the last thing they built without searching</div></div>
         </div>
-        <div class="brief op out">
+        <div id="d-2026-10-29" class="brief op out">
           <div class="bmeta"><span class="bday">THU · OCT 29</span><span class="tag t-op">Operate</span><span class="tag t-know">Know</span><span class="vid">▶ video</span><span class="tag t-know">Statistic hook</span></div>
           <div class="btopic">I set a kill number before I launched. Here it is, and here is where it landed</div>
           <div class="brow"><div class="bk">Angle</div><div class="bv">The call is already made, so this is no longer a pending decision. It is the pre-commitment: the number you set up front so sunk cost could not argue with you later, and what that number did when you reached it. Past tense. The full experiment is the Fri Nov 6 post, so this one stays short</div></div>
@@ -450,7 +519,7 @@
 
       <div class="wkhead">Week C · Nov 3–5 · Built for others</div>
       <div class="briefs">
-        <div class="brief out">
+        <div id="d-2026-11-03" class="brief out">
           <div class="bmeta"><span class="bday">TUE · NOV 3</span><span class="tag t-auth">Authority</span><span class="tag t-trust">Trust</span><span class="tag t-know">Direct address or story hook</span></div>
           <div class="btopic">The one I built for somebody who wasn't me</div>
           <div class="brow"><div class="bk">Angle</div><div class="bv">Every system so far was for your own business. This one was for someone else's, and that is the entire done-for-others case. After "all in", it is the strongest proof in the plan</div></div>
@@ -462,7 +531,7 @@
           <div class="brow"><div class="bk">Watch</div><div class="bv">Hiding the family relationship would cost more than naming it. Name it</div></div>
           <div class="brow"><div class="bk">Close</div><div class="bv">A question about what the reader would hand to someone else to build</div></div>
         </div>
-        <div class="brief ins out">
+        <div id="d-2026-11-04" class="brief ins out">
           <div class="bmeta"><span class="bday">WED · NOV 4 · flagship</span><span class="tag t-ins">Insight</span><span class="tag t-like">Like</span><span class="tag t-know">Story hook</span><span class="vid" style="background:rgba(46,107,255,.2);color:#7BA5FF;">from the bench</span></div>
           <div class="btopic">The deal I lost by getting personal too early</div>
           <div class="brow"><div class="bk">Angle</div><div class="bv">A failure from your own deal-making that explains a rule you run now: do not pounce on a lukewarm lead. It puts the 31 years to work as a story, not a credential. It pairs with the Oct 20 post: that one was a first touch that felt cold, this one is getting warm too soon</div></div>
@@ -475,7 +544,7 @@
           <div class="brow"><div class="bk">Watch</div><div class="bv">Run the three-question test: would follow-up comments make you uncomfortable? If not, it is not this post. No lesson stapled on the end</div></div>
           <div class="brow"><div class="bk">Close</div><div class="bv">A question about a time they moved too fast with someone who was not ready</div></div>
         </div>
-        <div class="brief op out">
+        <div id="d-2026-11-05" class="brief op out">
           <div class="bmeta"><span class="bday">THU · NOV 5</span><span class="tag t-op">Operate</span><span class="tag t-know">Know</span><span class="tag t-know">Story hook</span></div>
           <div class="btopic">I turned the sponsor machine off, then back on three days a week</div>
           <div class="brow"><div class="bk">Angle</div><div class="bv">A machine built to run daily, shut off, then restarted. The interesting part is the two dials you turned coming back: how often it runs and how wide it looks</div></div>
@@ -486,7 +555,7 @@
           <div class="brow"><div class="bk">Watch</div><div class="bv">Only you know all three reasons, and I will not fill them in. Keep sponsor names out unless they say yes</div></div>
           <div class="brow"><div class="bk">Close</div><div class="bv">A question about when they last dialed something down instead of shutting it off</div></div>
         </div>
-        <div class="brief ins out">
+        <div id="d-2026-11-06" class="brief ins out">
           <div class="bmeta"><span class="bday">FRI · NOV 6 · bonus</span><span class="tag t-ins">Insight</span><span class="tag t-know">Know</span><span class="tag t-know">Statistic hook</span><span class="vid" style="background:rgba(46,107,255,.2);color:#7BA5FF;">new post</span></div>
           <div class="btopic">I tried two ways to get closer to my readers than once a week. Both missed. The answer was already in the email</div>
           <div class="brow"><div class="bk">Angle</div><div class="bv">Re-framed Oct 23. The experiment is not "paid tiers." It is one question you keep arguing with yourself about: do my readers want more of me than one email a week? You ran two tests of it at the same time, a paid tier and a free community, and both came up short. The comparison that explains them is a third thing you were already running every week: the in-email poll. The longest post of the month, built for the save and the forward</div></div>
@@ -502,7 +571,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="s06">
       <div class="sh"><span class="n">06</span><h2>The briefs</h2></div>
       <p class="posted-line"><b>Posted:</b> Sep 22 Clicks aren't clients · Sep 23 The newsletter that builds itself (129 impressions) · Sep 24 Gettin' ready to get ready (135) · Sep 29 Every number is one click away (2:52 PM) · Oct 15 The announcement: leaving real estate, all in on New NEXT</p>
       <p class="posted-line" style="color:var(--paper);"><b style="color:var(--spark);">Dates reset Oct 15.</b> The briefs below keep their original week groupings and the background that sits behind each post. The date on each card is the live one, and the outlines in section 05b are what to work from.</p>
@@ -755,7 +824,7 @@
       </details>
     </section>
 
-    <section>
+    <section id="s07">
       <div class="sh"><span class="n">07</span><h2>The comment routine</h2></div>
       <div class="why" style="margin-left:40px;margin-bottom:16px;"><b>The gap this closes:</b> everything before this section is about publishing. But you have roughly 3,950 followers, most of them legacy contacts from a former career, and no topic cluster built yet. Only 10% of a post's initial distribution goes to your own connections now. So in month one your posts have a low ceiling no matter how good they are. <b>Commenting borrows someone else's distribution instead of waiting to build your own</b> — which is why, for a small account, it is probably the bigger reach lever of the two</div>
 
@@ -790,7 +859,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="s08">
       <div class="sh"><span class="n">08</span><h2>The operating layer</h2></div>
       <p class="body" style="margin-bottom:14px;">From CE-007. The lanes say what to write and the checklist says how to build it; this is the part that decides whether any of it actually happens on a busy week. Bustamante's own working rhythm, adapted down to your cadence.</p>
       <div class="rules">
@@ -805,7 +874,7 @@
       <div class="why" style="margin-left:40px;margin-top:14px;"><b>Two guardrails.</b> Keep every DM manual — LinkedIn now treats automation as a path toward a ban, not just a restriction, so no bots, and DM only people who message you first. And skip the comment-for-the-link two-step entirely: the comment ask is the penalized pattern, and comments carrying external links are suppressed up to 80% as of the October data, so a link goes in the post body or nowhere. A resource can sit in your own comment as text or an image</div>
     </section>
 
-    <section>
+    <section id="s09">
       <div class="sh"><span class="n">09</span><h2>The six-element checklist</h2></div>
       <p class="body" style="margin-bottom:12px;">Run every post through this before it goes out. The lanes decide <i>what</i> you write; this decides the <b>order</b>, which van der Blom's August teardown argues is worth more than the topic. The two aren't competing — the six elements are the skeleton, Authority ÷ Insight is the entry point that fills slot 4.</p>
       <div class="rules">
@@ -823,7 +892,7 @@
       <div class="why" style="margin-left:40px;margin-top:14px;"><b>Hold the claim loosely.</b> His 1.8x reach and 2.5x conversion come with no n, no control, and no definition of conversion — he pattern-matched his own winners, which is survivorship. The post is also a waitlist pitch for a €149 playbook. Use the six elements as a craft checklist, not a proven multiplier</div>
     </section>
 
-    <section>
+    <section id="s10">
       <div class="sh"><span class="n">10</span><h2>The insight specimen</h2></div>
       <p class="body" style="margin-bottom:14px;"><b style="color:#F4F6FA;">Now published.</b> Insight is the hardest register to get right, and it's the one you have least practice in. This is Week 1 Wednesday, written out and labelled by element so you can see the skeleton. Note what it does <i>not</i> do: no lesson delivered from above, no tidy bow, and no last line that summarises. Strip the labels when you post — and type it into LinkedIn rather than pasting it.</p>
 
@@ -910,7 +979,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="s10b">
       <div class="sh"><span class="n">10b</span><h2>Voice, punctuation, and who drafts</h2></div>
       <p class="body" style="margin-bottom:12px;">Settled Sep 29 mid-draft on post #4, extended Oct 1. <b>The drafting rule was revised Oct 13</b> and is now a two-week trial.</p>
       <div class="callout" style="margin:0 0 16px 40px;background:var(--surface);border-left:3px solid var(--blue);padding:16px 20px;">
@@ -936,7 +1005,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="s11">
       <div class="sh"><span class="n">11</span><h2>The bench</h2></div>
       <p class="body" style="margin-bottom:10px;">Cut from the twelve, kept warm. Pull one forward if a data-gated slot isn't ready, or if a week gets away from you.</p>
       <div class="bench">
@@ -954,7 +1023,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="s12">
       <div class="sh"><span class="n">12</span><h2>The weekly log</h2></div>
       <p class="body" style="margin-bottom:12px;">The point of this is not a dashboard. It's so that in six months, when you're seasoned and deciding what to write, you can look back and see which kinds of posts actually did something — instead of guessing from memory.</p>
 
@@ -982,7 +1051,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="s13">
       <div class="sh"><span class="n">13</span><h2>The monthly read</h2></div>
       <p class="body" style="margin-bottom:12px;">Four weeks of logs is enough to see something. Run these four questions at day 30 (now Fri Nov 13, seven days after Nov 6, the last post of the re-dated plan), and again at day 60 and 90. Answer them from the log, not from how the weeks felt.</p>
       <div class="test">
@@ -993,7 +1062,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="s14">
       <div class="sh"><span class="n">14</span><h2>How to run it</h2></div>
       <div class="acts">
         <div class="act"><span class="ab">00</span><p><b>Truth-check every brief before it goes out.</b> These were written in July and the business has moved. Confirm each fact is still true today — Post #1's original "one click" hook was months stale and contradicted by your own weekly reports</p></div>
@@ -1010,9 +1079,10 @@
       </div>
     </section>
 
-    <section>
+    <section id="s15">
       <div class="sh"><span class="n">15</span><h2>Version history</h2></div>
       <div class="chg">
+        <div class="cv"><span class="cvn">v39</span><span class="cvt"><b>Oct 27, 2026. Navigation, no content change.</b> A fixed bar now sits at the top of the page: jump links to the twelve sections worth returning to, and a <b>Today's post</b> button that resolves itself. Every dated outline card in section 05b carries its own anchor, and a short script points the button at the card matching the current date, falling back to the next one ahead when today is not a posting day. Today's card is ringed and flagged so it is obvious where you landed. The bar hides when the page is printed. Nothing in the plan itself was edited.</span></div>
         <div class="cv"><span class="cvn">v38</span><span class="cvt"><b>Oct 24, 2026. Van der Blom's Oct 16 personal-vs-expert teaser folded in.</b> Personal stories out-reach expert posts (16,000 and 19,000 with a selfie, against 6,500), but expert posts turn 4.8 of every 1,000 people reached into followers against 1.1 and 1.4. The strategy does not change: it backs the 60% teardown weighting and the anchor-to-the-machine rule. <b>Section 03</b> gains three rules: format set by register (Like posts get a photo of you, several images or video; Know and Trust get one screenshot; carousels held for the November report), reach versus followers, and no co-authored posts. <b>Wed Nov 4 retagged Like</b> with a real photo of Jimmy, because Oct 27 to Nov 6 carried no Like post. His infographic's numbers do not match his own text; only the text is used here.</span></div>
         <div class="cv"><span class="cvn">v37</span><span class="cvt"><b>Oct 23, 2026. The Fri Nov 6 post was re-framed.</b> The experiment is no longer "paid tiers." It is the question Jimmy keeps arguing with himself about: do readers want more of him than one email a week? Two tests ran at once, the paid tier and the free community, and both came up short; the in-email poll is the comparison that explains them. Jimmy is keeping the free community open past Oct 31. Beehiiv was checked: the community has 448 members all time with 5.87% participation, and almost every post is Jimmy's (the post counts disagree, so the exact number is gated). All 53 one-off polls were tallied: median 93 votes, about 1% of recipients, and 8% of voters leave a written comment; the most comments came on in-person invitations. Participation has slipped since spring, recorded in the outline as a fact to handle honestly. The next test is left for Jimmy to name.</span></div>
         <div class="cv"><span class="cvn">v36</span><span class="cvt"><b>Oct 21, 2026. The Oct 21 post shipped as a different post.</b> The money-on-fire outline was too numbers-heavy to hold a reader. Six months of Beehiiv issues and daily signups were re-pulled and lined up against the Meta export (Apr 4 to Oct 20). Findings: readers grew with the list while the ads ran hard; the list loses about 130 a week regardless; signups fell from about 295 a week to about 35 with the ads off; open rate held 70% to 76%; McGarry's cost math puts this year at about 60 cents a new subscriber. <b>Retired:</b> the August "$23 per added reader" and "weekly readers up 43," and the stale "65%" and "$1.24" figures in section 09. Jimmy's dictation turned the post into why he paused the ads; it went out at 11:38 AM with list-leak.png and Matt McGarry tagged. Outline in 05b and the short brief now show what posted.</span></div>
@@ -1061,5 +1131,49 @@
     </footer>
 
   </div></div>
+
+<script>
+(function(){
+  var cards = Array.prototype.slice.call(document.querySelectorAll('[id^="d-2026-"]'));
+  var btn = document.getElementById('navtoday');
+  var lab = document.getElementById('navtodaylabel');
+  var MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+  function key(d){ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+
+  if(cards.length && btn){
+    var todayKey = key(new Date());
+    var exact=null, next=null;
+    cards.forEach(function(c){
+      var k = c.id.slice(2);
+      if(k === todayKey) exact = c;
+      if(k > todayKey && (!next || k < next.id.slice(2))) next = c;
+    });
+    var target = exact || next || cards[cards.length-1];
+    btn.setAttribute('href', '#'+target.id);
+    var parts = target.id.slice(2).split('-');
+    var pretty = MON[parseInt(parts[1],10)-1]+' '+parseInt(parts[2],10);
+    if(exact){ lab.textContent = "Today's post"; target.classList.add('is-today'); }
+    else if(next){ lab.textContent = 'Next up · '+pretty; btn.classList.add('future'); }
+    else { lab.textContent = 'Last post'; btn.classList.add('future'); }
+  }
+
+  var links = Array.prototype.slice.call(document.querySelectorAll('#navlinks a'));
+  var map = {};
+  links.forEach(function(a){ var el = document.querySelector(a.getAttribute('href')); if(el) map[a.getAttribute('href').slice(1)] = a; });
+  var watched = Object.keys(map).map(function(id){ return document.getElementById(id); }).filter(Boolean);
+  if('IntersectionObserver' in window && watched.length){
+    var vis = {};
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ vis[e.target.id] = e.isIntersecting ? e.intersectionRatio : 0; });
+      var best=null, bestR=0;
+      Object.keys(vis).forEach(function(id){ if(vis[id] > bestR){ bestR = vis[id]; best = id; } });
+      links.forEach(function(a){ a.classList.remove('on'); });
+      if(best && map[best]) map[best].classList.add('on');
+    }, {rootMargin:'-90px 0px -55% 0px', threshold:[0,.08,.25,.5,1]});
+    watched.forEach(function(el){ io.observe(el); });
+  }
+})();
+</script>
 </body>
 </html>
