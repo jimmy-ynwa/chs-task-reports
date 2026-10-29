@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABL Notice Sweep — October 29, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #183872;
+    --lime: #cced60;
+    --ink: #1b2430;
+    --muted: #5b6676;
+    --border: #e3e7ee;
+    --bg: #f6f7fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    padding: 24px 16px 60px;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; }
+  header {
+    background: var(--navy);
+    border-radius: 12px;
+    padding: 24px 28px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  header h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin: 0 0 4px;
+  }
+  header .sub {
+    font-size: 0.9rem;
+    opacity: 0.85;
+  }
+  .counts {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--lime);
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+  }
+  .counts span.num { color: var(--navy); font-weight: 800; }
+  h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--navy);
+    margin: 28px 0 10px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 0.86rem;
+  }
+  th, td {
+    padding: 9px 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th {
+    background: var(--navy);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: #fafbfd; }
+  .num-cell { color: var(--muted); font-weight: 600; width: 28px; }
+  .badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 999px;
+    background: #eef1f8;
+    color: var(--navy);
+    white-space: nowrap;
+  }
+  .badge.upgrade { background: #fff3d6; color: #8a5a00; }
+  section.demoted {
+    opacity: 0.92;
+  }
+  section.demoted table { font-size: 0.82rem; }
+  section.demoted th { background: #4a577a; }
+  .caveats {
+    margin-top: 28px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .caveats strong { color: var(--ink); }
+  @media (max-width: 600px) {
+    table, thead, tbody, th, td, tr { display: block; }
+    thead { display: none; }
+    tr { border-bottom: 2px solid var(--border); padding: 8px 0; }
+    td { border: none; padding: 3px 10px; }
+    td::before {
+      content: attr(data-label);
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>ABL Notice Sweep</h1>
+    <div class="sub">Charleston County · Exact phrase · Last 30 days · October 29, 2026</div>
+  </header>
+
+  <div class="counts">
+    55 rows returned → <span class="num">24</span> distinct filings → <span class="num">7</span> dropped out-of-footprint → <span class="num">5</span> on-premises not yet tracked → <span class="num">8</span> already tracked → <span class="num">4</span> off-premises retail
+  </div>
+
+  <h2>Not yet tracked — on-premises</h2>
+  <table>
+    <thead>
+      <tr><th>#</th><th>Business / applicant</th><th>Address</th><th>Licence</th><th>Read*</th><th>First published</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="num-cell" data-label="#">1</td>
+        <td data-label="Business / applicant">Legacy Cigar Lounge, LLC</td>
+        <td data-label="Address">1937 Clements Ferry Rd, Ste C, Charleston, SC 29492</td>
+        <td data-label="Licence">Liquor by the drink</td>
+        <td data-label="Read"><span class="badge upgrade">Likely upgrade at existing spot</span></td>
+        <td data-label="First published">10/17/2026</td>
+        <td data-label="Status">Not yet tracked</td>
+      </tr>
+      <tr>
+        <td class="num-cell" data-label="#">2</td>
+        <td data-label="Business / applicant">Owlbear, LLC</td>
+        <td data-label="Address">1964 Riviera Drive, Suite J, Mount Pleasant, SC 29464</td>
+        <td data-label="Licence">Beer and wine</td>
+        <td data-label="Read"><span class="badge">Likely new premises</span></td>
+        <td data-label="First published">10/16/2026</td>
+        <td data-label="Status">Not yet tracked</td>
+      </tr>
+      <tr>
+        <td class="num-cell" data-label="#">3</td>
+        <td data-label="Business / applicant">Charleston OpCo 1, LLC</td>
+        <td data-label="Address">1925 Essex Farms Drive, Charleston, SC</td>
+        <td data-label="Licence">Beer and wine</td>
+        <td data-label="Read"><span class="badge">Likely new premises</span></td>
+        <td data-label="First published">10/21/2026</td>
+        <td data-label="Status">Not yet tracked</td>
+      </tr>
+      <tr>
+        <td class="num-cell" data-label="#">4</td>
+        <td data-label="Business / applicant">Reenie's Fine Foods, LLC</td>
+        <td data-label="Address">1262 Remount Rd, North Charleston, SC 29406</td>
+        <td data-label="Licence">Beer, wine, and liquor</td>
+        <td data-label="Read"><span class="badge">Likely new premises</span></td>
+        <td data-label="First published">9/30/2026</td>
+        <td data-label="Status">Not yet tracked</td>
+      </tr>
+      <tr>
+        <td class="num-cell" data-label="#">5</td>
+        <td data-label="Business / applicant">Frazier's Social Lounge</td>
+        <td data-label="Address">4971 County Line Rd, Ravenel, SC 29470</td>
+        <td data-label="Licence">Beer, wine, and liquor</td>
+        <td data-label="Read"><span class="badge">Likely new premises</span></td>
+        <td data-label="First published">9/30/2026</td>
+        <td data-label="Status">Not yet tracked</td>
+      </tr>
+    </tbody>
+  </table>
+  <div style="font-size:0.74rem;color:var(--muted);margin-top:6px;">*Read is a heuristic from the licence class only — liquor-only or wine-and-liquor-only filings usually mean an existing spot upgrading; a full beer/wine/liquor or plain beer-and-wine bundle usually means a fresh premises. It is not a claim about what actually changed.</div>
+
+  <section class="demoted">
+    <h2>Already in the tracker</h2>
+    <table>
+      <thead>
+        <tr><th>#</th><th>Business / applicant</th><th>Address</th><th>Licence</th><th>First published</th><th>Matched tracker row</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="num-cell" data-label="#">6</td>
+          <td data-label="Business / applicant">Gold LLC</td>
+          <td data-label="Address">9085 Savannah Hwy, Charleston, SC 29407</td>
+          <td data-label="Licence">Beer, wine and liquor</td>
+          <td data-label="First published">10/15/2026</td>
+          <td data-label="Matched tracker row">"Gold LLC (ABL filing entity — trade name unresolved)" — Rumored</td>
+        </tr>
+        <tr>
+          <td class="num-cell" data-label="#">7</td>
+          <td data-label="Business / applicant">Locals Johns Island LLC</td>
+          <td data-label="Address">1804 Crowne Commons Way, Ste D2/D3, Johns Island, SC</td>
+          <td data-label="Licence">Beer, wine and/or liquor</td>
+          <td data-label="First published">10/04/2026</td>
+          <td data-label="Matched tracker row">"Locals Sushi &amp; Sports Pub — Johns Island (unconfirmed)" — Rumored</td>
+        </tr>
+        <tr>
+          <td class="num-cell" data-label="#">8</td>
+          <td data-label="Business / applicant">LUMA Restaurant LLC</td>
+          <td data-label="Address">128 Columbus Street, Suite 103, Charleston, SC 29403</td>
+          <td data-label="Licence">Beer, wine and liquor</td>
+          <td data-label="First published">10/07/2026</td>
+          <td data-label="Matched tracker row">"Luma Restaurant LLC (ABL filing entity — trade name unresolved)" — Rumored</td>
+        </tr>
+        <tr>
+          <td class="num-cell" data-label="#">9</td>
+          <td data-label="Business / applicant">Moms Restaurant Group</td>
+          <td data-label="Address">6c Line St, Charleston, SC 29403</td>
+          <td data-label="Licence">Beer and wine</td>
+          <td data-label="First published">10/07/2026</td>
+          <td data-label="Matched tracker row">"Moms Restaurant Group (ABL filing entity — trade name unresolved)" — Rumored</td>
+        </tr>
+        <tr>
+          <td class="num-cell" data-label="#">10</td>
+          <td data-label="Business / applicant">41 RTPH Holdings, LLC</td>
+          <td data-label="Address">2015 SC-41, Mt Pleasant, SC 29466</td>
+          <td data-label="Licence">Beer, wine, and liquor</td>
+          <td data-label="First published">10/14/2026</td>
+          <td data-label="Matched tracker row">"41 RTPH Holdings, LLC (ABL filing entity — trade name unresolved)" — Rumored</td>
+        </tr>
+        <tr>
+          <td class="num-cell" data-label="#">11</td>
+          <td data-label="Business / applicant">Caviar and Bananas</td>
+          <td data-label="Address">1739 Maybank Hwy, Suite U, Charleston, SC 29412</td>
+          <td data-label="Licence">Beer and wine</td>
+          <td data-label="First published">10/21/2026</td>
+          <td data-label="Matched tracker row">"Caviar &amp; Bananas — James Island" — Now Open</td>
+        </tr>
+        <tr>
+          <td class="num-cell" data-label="#">12</td>
+          <td data-label="Business / applicant">Mottram Beerworks</td>
+          <td data-label="Address">496 Longpoint Rd, Mt. Pleasant, SC 29464</td>
+          <td data-label="Licence">Beer and wine</td>
+          <td data-label="First published">10/07/2026</td>
+          <td data-label="Matched tracker row">"Mottram Beerworks (ABL filing entity — trade name unresolved)" — Rumored</td>
+        </tr>
+        <tr>
+          <td class="num-cell" data-label="#">13</td>
+          <td data-label="Business / applicant">Davide Davino</td>
+          <td data-label="Address">1181 Oakland Market Road, Mount Pleasant, SC 29466</td>
+          <td data-label="Licence">Beer, wine and liquor</td>
+          <td data-label="First published">9/30/2026</td>
+          <td data-label="Matched tracker row">"Cuoco Pazzo Trattoria (unconfirmed)" — Rumored</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Off-premises retail</h2>
+    <table>
+      <thead>
+        <tr><th>#</th><th>Business / applicant</th><th>Address</th><th>Licence</th><th>First published</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="num-cell" data-label="#">14</td>
+          <td data-label="Business / applicant">Dh and Dh, LLC</td>
+          <td data-label="Address">5737 Savannah Hwy, Ravenel, SC 29470</td>
+          <td data-label="Licence">Liquor</td>
+          <td data-label="First published">10/25/2026</td>
+          <td data-label="Status">Not yet tracked</td>
+        </tr>
+        <tr>
+          <td class="num-cell" data-label="#">15</td>
+          <td data-label="Business / applicant">Tele Envios Y Mas LLC</td>
+          <td data-label="Address">1412 Savannah Hwy, Unit B, Charleston, SC 29407</td>
+          <td data-label="Licence">Beer and wine</td>
+          <td data-label="First published">10/14/2026</td>
+          <td data-label="Status">Not yet tracked</td>
+        </tr>
+        <tr>
+          <td class="num-cell" data-label="#">16</td>
+          <td data-label="Business / applicant">Shree Hari 2025 LLC</td>
+          <td data-label="Address">5060 Dorchester Rd, Ste 220, North Charleston, SC 29418</td>
+          <td data-label="Licence">Liquor and wine</td>
+          <td data-label="First published">9/30/2026</td>
+          <td data-label="Status">Not yet tracked</td>
+        </tr>
+        <tr>
+          <td class="num-cell" data-label="#">17</td>
+          <td data-label="Business / applicant">Tienda Mexicana Mi Bonita, LLC</td>
+          <td data-label="Address">4050 Ashley Phosphate Rd, North Charleston, SC 29418</td>
+          <td data-label="Licence">Beer and wine</td>
+          <td data-label="First published">9/30/2026</td>
+          <td data-label="Status">Not yet tracked</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="caveats">
+    <strong>Caveats:</strong> a filing is an intention, not a date — plenty never open, and the ones that do often take months. Renewals aren't re-advertised, so a filing from an already-open business signals something changed (ownership, licence class, premises) — not a false positive. This sweep can't see any business that doesn't serve alcohol, so it's not a complete view of what's coming to Charleston.
+    <br><br>
+    Dropped as out-of-footprint (Post and Courier notices for premises outside the Charleston metro area): Harmony 19 LLC (Walterboro), ADIYOGI 2026 LLC (Moncks Corner), Publix Super Markets #2134 (Goose Creek), Eclipse Bar and Lounge LLC (Goose Creek), Jamestown Diner (Jamestown), Lowcountry Dining LLC (Bonneau), The Wine Safe LLC (Walterboro).
+  </div>
+
+</div>
+</body>
+</html>
