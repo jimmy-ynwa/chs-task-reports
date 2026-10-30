@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Goat &amp; Morning Ritual Proposal</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap">
+<style>
+/* Layout: navy poster hero with a giant count and price set on opposite edges, then alternating bands. One lime "run strip" calendar carries the dates. Single dark brand look. */
+:root{
+  --navy:#183872; --navy-deep:#112a5a; --navy-lift:#2a4f9a;
+  --lime:#CCED60; --white:#ffffff; --mist:#c3d1ec; --ink:#12213d; --rule:#d5dded; --muted:#5c6b85;
+  --display:"Archivo","Helvetica Neue","Arial Black",Arial,system-ui,sans-serif;
+  --body:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{background:var(--navy)}
+body{margin:0;background:var(--navy);color:var(--white);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1020px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+p{margin:0 0 14px;font-size:16px}
+strong{font-weight:800}
+h1,h2,h3{margin:0;font-weight:400}
+
+/* Hero */
+.hero{padding-block:30px 64px;overflow:hidden;position:relative}
+.hero::after{content:"";position:absolute;right:-12vw;top:-8vw;width:46vw;height:46vw;max-width:520px;max-height:520px;border-radius:50%;border:2px solid var(--navy-lift);pointer-events:none}
+.ribbon{display:inline-block;background:var(--lime);color:var(--navy);font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:7px 12px;margin:0}
+.eyebrow{color:var(--lime);font-weight:800;font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin:26px 0 10px}
+.mega{display:block;font-family:var(--display);font-weight:900;font-stretch:125%;font-variation-settings:"wdth" 125;font-size:clamp(120px,34vw,330px);line-height:.78;letter-spacing:-.06em;font-variant-numeric:tabular-nums}
+.mega.lime{color:var(--lime);text-align:right;font-size:clamp(76px,19vw,210px);font-stretch:100%;font-variation-settings:"wdth" 100;margin-top:30px;position:relative;z-index:1}
+.mega-row{display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap}
+.mega-cap{display:block;font-size:clamp(17px,3.2vw,25px);font-weight:700;margin-top:12px;max-width:15em;color:var(--mist);line-height:1.2;text-wrap:balance}
+.mega-row .mega-cap{margin:0 0 14px}
+.mega-cap.right{margin-left:auto;text-align:right}
+.mega-cap s{color:var(--mist);opacity:.75}
+.sub{margin:38px 0 0;font-size:17px;max-width:36em;color:var(--mist)}
+.sub strong{color:var(--white)}
+
+/* Bands */
+h2{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--lime);margin:0 0 20px}
+.band{padding-block:54px}
+.band.deep{background:var(--navy-deep)}
+.band.white{background:var(--white);color:var(--ink)}
+.band.white h2{color:var(--navy)}
+.band.white strong{color:var(--navy)}
+.lede{font-family:var(--display);font-weight:900;font-size:clamp(28px,5.6vw,48px);line-height:1.02;letter-spacing:-.03em;margin:0 0 22px;max-width:17em;text-wrap:balance}
+.band.white .lede{color:var(--navy)}
+
+/* Run strip */
+.strip-scroll{overflow-x:auto;margin:6px 0 34px;padding-bottom:4px}
+.strip{display:grid;grid-template-columns:repeat(10,minmax(56px,1fr));min-width:600px;position:relative}
+.strip::before{content:"";position:absolute;left:0;right:0;top:41px;height:3px;background:var(--navy)}
+.wk{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative}
+.wk .m{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);height:16px}
+.wk .d{font-family:var(--display);font-weight:800;font-size:15px;color:var(--navy);height:18px;font-variant-numeric:tabular-nums}
+.dot{width:22px;height:22px;border-radius:50%;background:var(--white);border:3px solid var(--rule);margin-top:0;position:relative;z-index:1}
+.wk.on .dot{background:var(--lime);border-color:var(--navy);width:30px;height:30px;margin-top:-4px}
+.wk.alt .dot{background:var(--white);border:3px dashed var(--navy)}
+.wk.skip .dot{background:var(--rule);border-color:var(--rule)}
+.wk .k{margin-top:10px;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;line-height:1.25;color:var(--navy)}
+.wk.alt .k,.wk.skip .k{color:var(--muted);font-weight:700}
+.legend{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:13px;color:var(--muted);margin:-18px 0 30px}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.legend i{display:inline-block;width:14px;height:14px;border-radius:50%}
+.legend .l1{background:var(--lime);border:2px solid var(--navy)}
+.legend .l2{background:var(--white);border:2px dashed var(--navy)}
+.legend .l3{background:var(--rule)}
+
+/* Table */
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:340px}
+th{text-align:left;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);padding:0 0 10px;font-weight:800}
+th.n,td.n{text-align:right;font-variant-numeric:tabular-nums}
+td{padding:14px 0 12px;border-top:1px solid var(--rule);vertical-align:top}
+td.n{padding-left:12px;white-space:nowrap;font-weight:700}
+td .sub2{display:block;font-size:13px;color:var(--muted);margin-top:3px}
+tr.tot td{border-top:3px solid var(--navy);font-weight:800;color:var(--navy);font-size:17px}
+tr.gap td{color:var(--muted)}
+.tag{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;margin-left:8px;vertical-align:1px}
+.tag.pri{background:var(--lime);color:var(--navy)}
+.tag.sec{background:var(--rule);color:var(--navy)}
+.tag.bk{background:transparent;color:var(--navy);border:1.5px dashed var(--navy);padding:2px 7px}
+.notes{margin-top:22px;display:grid;gap:10px;max-width:44em}
+.notes p{margin:0;color:var(--muted);font-size:14.5px}
+.notes strong{color:var(--navy)}
+
+/* Backup box */
+.backup{margin-top:38px;border:2px dashed var(--navy);padding:24px 24px 18px;display:grid;gap:18px}
+.backup h3{font-family:var(--display);font-weight:900;font-size:clamp(22px,3.6vw,30px);letter-spacing:-.02em;line-height:1.05;color:var(--navy)}
+.backup p{margin:0;font-size:15px;color:var(--ink);max-width:42em}
+.swap{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:700px){.swap{grid-template-columns:1fr 1fr}}
+.swap>div{min-width:0;display:grid;grid-template-columns:auto auto 1fr;align-items:center;gap:10px;font-size:15px}
+.swap .from{font-weight:800;color:var(--muted);text-decoration:line-through;text-decoration-thickness:2px;white-space:nowrap}
+.swap .arrow{font-weight:900;color:var(--navy)}
+.swap .to{font-weight:800;color:var(--navy)}
+.swap .to small{display:block;font-weight:500;color:var(--muted);font-size:13px}
+
+/* Why */
+.venues{display:grid;grid-template-columns:1fr;gap:0;margin:34px 0 8px;border-top:1px solid var(--navy-lift)}
+@media(min-width:760px){.venues{grid-template-columns:1.15fr .85fr}}
+.venue{padding:26px 0 22px;border-bottom:1px solid var(--navy-lift);min-width:0}
+@media(min-width:760px){.venue+.venue{padding-left:34px;border-left:1px solid var(--navy-lift)}.venue:first-child{padding-right:34px}}
+.venue .nm{font-family:var(--display);font-weight:900;font-stretch:115%;font-variation-settings:"wdth" 115;font-size:clamp(34px,6.4vw,62px);line-height:.95;letter-spacing:-.04em}
+.venue .nm.l{color:var(--lime)}
+.venue .what{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--mist);margin:10px 0 12px}
+.venue p{color:var(--mist);font-size:15.5px;margin:0;max-width:30em}
+.addr{font-size:13px;color:var(--mist);margin-top:14px;letter-spacing:.04em}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:26px 20px;margin:38px 0 0}
+.fact .n{font-family:var(--display);font-weight:900;font-size:clamp(36px,6.4vw,56px);letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.facts.hi .fact .n{color:var(--lime)}
+.fact .l{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);margin-top:8px;max-width:14em}
+.para{color:var(--mist);max-width:40em}
+
+/* Results */
+.two{display:grid;grid-template-columns:1fr;gap:30px}
+@media(min-width:760px){.two{grid-template-columns:1fr 1fr;gap:56px}}
+.two>*{min-width:0}
+.card .badge{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--lime);color:var(--navy);padding:4px 9px;margin-bottom:12px}
+.card.b .badge{background:transparent;color:var(--lime);border:1.5px solid var(--lime);padding:3px 8px}
+.card p{color:var(--mist)}
+.card p strong{color:var(--white)}
+.expect{margin-top:30px;font-size:17px;max-width:38em;color:var(--white)}
+.proof{border-top:3px solid var(--lime);padding-top:18px;margin-top:30px;max-width:44em}
+.proof p{color:var(--mist);font-size:15px}
+.proof strong{color:var(--white)}
+.quote{border-left:5px solid var(--lime);padding-left:22px;margin:38px 0 0}
+.quote p{font-size:clamp(18px,3vw,23px);line-height:1.45;font-style:italic;margin:0 0 12px;max-width:34em}
+.quote cite{font-style:normal;font-size:14px;color:var(--mist)}
+.quote cite strong{color:var(--white)}
+
+/* Smaller option */
+.alt{border:2px dashed var(--navy-lift);padding:22px 24px}
+.alt p{margin:0;color:var(--mist);font-size:15.5px;max-width:46em}
+.alt strong{color:var(--white)}
+
+/* Close */
+.thanks{background:var(--lime);color:var(--navy);padding-block:60px}
+.thanks p{font-family:var(--display);font-weight:900;font-size:clamp(24px,4.6vw,38px);line-height:1.08;letter-spacing:-.025em;max-width:20em;margin:0 0 20px;text-wrap:balance}
+.thanks .sig{font-size:17px;font-family:var(--body);font-weight:800;letter-spacing:0;margin:0}
+footer{padding-block:34px 56px;font-size:12.5px;color:var(--mist)}
+footer p{font-size:12.5px;max-width:62em}
+</style>
+</head><body>
+
+<section class="hero"><div class="wrap">
+  <p class="ribbon">Proposal for The Goat &amp; Morning Ritual &middot; Oct 30, 2026</p>
+  <p class="eyebrow">CHS Happenings &middot; Sponsorship</p>
+  <h1>
+    <span class="mega-row"><span class="mega">5</span><span class="mega-cap">Thursdays in front of Charleston, from holiday-party season to the new-year regulars</span></span>
+    <span class="mega lime">$1,300</span>
+    <span class="mega-cap right">for all five. <s>$2,000</s> at regular rates, cut 35% because it&rsquo;s opening season</span>
+  </h1>
+  <p class="sub"><strong>Three Primaries and two Secondaries, Nov 19 through Jan 21.</strong> Built to get the neighborhood through the door at 2949 Ingleside Blvd while your first residents are still moving in, then keep reminding them you&rsquo;re there.</p>
+</div></section>
+
+<section class="band white"><div class="wrap">
+  <h2>The season, issue by issue</h2>
+  <div class="strip-scroll" role="img" aria-label="Run calendar: placements on Nov 19, Dec 3, Dec 24, Jan 7 and Jan 21. Backup dates Dec 31 and Jan 14. Thanksgiving week skipped.">
+    <div class="strip">
+      <div class="wk on"><span class="m">Nov</span><span class="d">19</span><span class="dot"></span><span class="k">Sec</span></div>
+      <div class="wk skip"><span class="m">&nbsp;</span><span class="d">26</span><span class="dot"></span><span class="k">Thanks&shy;giving</span></div>
+      <div class="wk on"><span class="m">Dec</span><span class="d">3</span><span class="dot"></span><span class="k">Pri</span></div>
+      <div class="wk"><span class="m">&nbsp;</span><span class="d">10</span><span class="dot"></span><span class="k">&nbsp;</span></div>
+      <div class="wk"><span class="m">&nbsp;</span><span class="d">17</span><span class="dot"></span><span class="k">&nbsp;</span></div>
+      <div class="wk on"><span class="m">&nbsp;</span><span class="d">24</span><span class="dot"></span><span class="k">Sec</span></div>
+      <div class="wk alt"><span class="m">&nbsp;</span><span class="d">31</span><span class="dot"></span><span class="k">Backup</span></div>
+      <div class="wk on"><span class="m">Jan</span><span class="d">7</span><span class="dot"></span><span class="k">Pri</span></div>
+      <div class="wk alt"><span class="m">&nbsp;</span><span class="d">14</span><span class="dot"></span><span class="k">Backup</span></div>
+      <div class="wk on"><span class="m">&nbsp;</span><span class="d">21</span><span class="dot"></span><span class="k">Pri</span></div>
+    </div>
+  </div>
+  <div class="legend"><span><i class="l1"></i>Your run</span><span><i class="l2"></i>Backup date</span><span><i class="l3"></i>Skipped on purpose</span></div>
+
+  <div class="tbl"><table>
+    <thead><tr><th>Issue</th><th class="n">Rate</th></tr></thead>
+    <tbody>
+      <tr><td>Thu, Nov 19<span class="tag sec">Secondary</span><span class="sub2">Holiday parties and private events at The Goat, right when people book the room and line up the catering</span></td><td class="n">$250</td></tr>
+      <tr><td>Thu, Dec 3<span class="tag pri">Primary</span><span class="sub2">Top of the issue, the first Thursday of December</span></td><td class="n">$500</td></tr>
+      <tr><td>Thu, Dec 24<span class="tag sec">Secondary</span><span class="sub2">Christmas Eve morning at Morning Ritual</span></td><td class="n">$250</td></tr>
+      <tr><td>Thu, Jan 7<span class="tag pri">Primary</span><span class="sub2">New year, new routine: Morning Ritual lunch and laptop days</span></td><td class="n">$500</td></tr>
+      <tr><td>Thu, Jan 21<span class="tag pri">Primary</span><span class="sub2">The Goat as the neighborhood hangout</span></td><td class="n">$500</td></tr>
+      <tr class="gap"><td>Face value of all five</td><td class="n"><s>$2,000</s></td></tr>
+      <tr class="tot"><td>Your price: the opening-season rate, 35% off</td><td class="n">$1,300</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="notes">
+    <p><strong>Every placement comes with a photo or graphic.</strong> To earn higher visibility within the newsletter, each of the five includes one, so The Goat and Morning Ritual stand out in the read.</p>
+    <p><strong>No Thanksgiving week.</strong> I skipped Nov 26 on purpose. The runs are spaced two to three weeks apart so each one lands fresh, with a new angle every time.</p>
+    <p><strong>Payment can be split:</strong> half when Nov 19 runs, half in December.</p>
+  </div>
+
+  <div class="backup">
+    <h3>If a date gets taken</h3>
+    <p>I&rsquo;m holding all five for you through Friday, Nov 6. Two of them are in demand, so if either is gone before you say yes, your run moves here. Same five placements, same $1,300.</p>
+    <div class="swap">
+      <div><span class="from">Nov 19 Sec</span><span class="arrow" aria-hidden="true">&rarr;</span><span class="to">Thu, Jan 14 &middot; Secondary<small>Mid-January, as Charleston settles back into its routines</small></span></div>
+      <div><span class="from">Dec 3 Pri</span><span class="arrow" aria-hidden="true">&rarr;</span><span class="to">Thu, Dec 31 &middot; Primary<small>New Year&rsquo;s Eve, top of the issue</small></span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="band deep"><div class="wrap">
+  <h2>Why five, and why now</h2>
+  <p class="lede">The ground-floor spots that thrive don&rsquo;t wait for the building to fill them</p>
+  <p class="para">They get the surrounding neighborhood in the door early, then keep reminding people they&rsquo;re there. One nice write-up never did that. Steady, repeated exposure did. With your first Ingleside residents still arriving, those early regulars have to come from outside the building.</p>
+
+  <div class="venues">
+    <div class="venue">
+      <div class="nm">The Goat</div>
+      <div class="what">Restaurant &amp; bar</div>
+      <p>Two stories, floor-to-ceiling windows, a full bar and private event spaces, plus catering. Made for exactly the holiday party and the Friday-night regular.</p>
+    </div>
+    <div class="venue">
+      <div class="nm l">Morning Ritual</div>
+      <div class="what">Caf&eacute;</div>
+      <p>House-made biscuits, pastries and espresso, and the first Morning Ritual to serve lunch. The coffee run, the casual meeting, the laptop shift.</p>
+    </div>
+  </div>
+  <p class="addr">2949 Ingleside Blvd &middot; North Charleston</p>
+
+  <div class="facts hi">
+    <div class="fact"><div class="n">~8,100</div><div class="l">Charlestonians open it every Thursday</div></div>
+    <div class="fact"><div class="n">73%</div><div class="l">Open rate, October</div></div>
+    <div class="fact"><div class="n">11,366</div><div class="l">Subscribers</div></div>
+    <div class="fact"><div class="n">1 in 10</div><div class="l">Openers click into a story, nearly</div></div>
+  </div>
+  <div class="facts">
+    <div class="fact"><div class="n">86%</div><div class="l">Age 35+</div></div>
+    <div class="fact"><div class="n">48%</div><div class="l">Household income $150K+</div></div>
+    <div class="fact"><div class="n">73%</div><div class="l">Homeowners</div></div>
+    <div class="fact"><div class="n">20%</div><div class="l">Own a business (holiday parties, catering)</div></div>
+  </div>
+  <p class="para" style="margin-top:30px">Research says it takes 5 to 7 exposures before a name sticks. Five Thursdays, plus the story pages on chshappenings.com your ad rides along on all week, gets The Goat and Morning Ritual well on their way. Every ad is written in my voice, not ad copy.</p>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <h2>What you get back</h2>
+  <p class="lede">You won&rsquo;t have to ask how it went</p>
+  <p class="para" style="margin-bottom:30px">Most newsletters send an invoice and go quiet. You&rsquo;ll get numbers after every single placement.</p>
+  <div class="two">
+    <div class="card">
+      <span class="badge">The Wednesday after</span>
+      <p><strong>Your own results page after each ad runs:</strong> reach across the email and the website, opens, clicks to you, a straight read on what the creative did (including when a number moves the wrong way) and what I&rsquo;d change for the next run.</p>
+    </div>
+    <div class="card b">
+      <span class="badge">When the campaign wraps</span>
+      <p><strong>The full picture:</strong> totals across all five placements, how the audience moved while you were in it, which message and which slot pulled hardest, and what a second run should look like, based on evidence rather than optimism.</p>
+    </div>
+  </div>
+  <p class="expect">Your name reaches about 8,100 people every run. The first run usually draws the most clicks, as readers discover you; later runs settle, so each one gets a fresh angle.</p>
+  <div class="proof">
+    <p><strong>Opt Alternatives, spring 2026, five placements:</strong> 51,281 delivered &middot; 37,403 opens &middot; about 73% average open rate &middot; audience grew 17% during the run.</p>
+    <p style="margin:0">Ad three underperformed. I told her so, we rewrote the creative, and clicks doubled on the next run. That&rsquo;s the point of reporting.</p>
+  </div>
+  <div class="quote">
+    <p>&ldquo;Jimmy and CHS Happenings have been phenomenal in supporting my business growth. As a new company, I really appreciated his proactive approach and guidance to helping me put together the right marketing strategy to maximize my impact in the newsletter. He&rsquo;s incredibly responsive, supportive, and actively engaged in the community. I&rsquo;m always impressed as well when I meet Jimmy out in the wild of Charleston events &mdash; he really is involved in and cares about the Charleston community.&rdquo;</p>
+    <cite><strong>Kaitlyn Fariello</strong> &middot; Founder, Opt Alternatives &middot; full-service accounting, Charleston</cite>
+  </div>
+</div></section>
+
+<section class="band deep"><div class="wrap">
+  <div class="alt">
+    <h2 style="margin-bottom:10px">If you&rsquo;d rather start smaller</h2>
+    <p>There&rsquo;s a four-placement version: <strong>Nov 19 Secondary, Dec 3 Primary, Dec 24 Secondary, Jan 7 Primary for $975</strong> (<s>$1,500</s>, the same 35% off). Same reporting, one fewer touch. I&rsquo;d still pick the five: Jan 21 is the run that carries The Goat past the holidays, and it adds $325.</p>
+  </div>
+</div></section>
+
+<section class="thanks"><div class="wrap">
+  <p>Dan and Michael, let&rsquo;s make Ingleside&rsquo;s new regulars yours before the building even fills. Reply with a yes and I&rsquo;ll lock the dates.</p>
+  <p class="sig">Jimmy Farrell &middot; jimmy@chshappenings.com &middot; 202-365-4770</p>
+</div></section>
+
+<footer><div class="wrap">
+  <p>This offer is exclusive to The Goat and Morning Ritual. Open rate and weekly readers are averages across the four October issues (Oct 1, 8, 15 and 22, 2026); the click figure is the share of those openers who clicked into a story; subscriber count as of Oct 29, 2026. Audience profile from the July 31, 2026 analysis of active subscribers. Dates are held through Friday, Nov 6, 2026, then first come, first served.</p>
+</div></footer>
+
+</body></html>
