@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Development Docket Sweep — Nov 3, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --navy: #183872; --lime: #cced60; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Open Sans', sans-serif; background: #f4f5f1; color: #1a1a1a; padding: 0 0 48px; }
+  header { background: var(--navy); padding: 28px 24px; color: #fff; }
+  header h1 { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 22px; margin: 0 0 4px; letter-spacing: -0.01em; }
+  header .sub { font-size: 14px; opacity: 0.85; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+  .counts { background: var(--lime); color: var(--navy); font-family: 'Inter', sans-serif; font-weight: 700; font-size: 14px; padding: 14px 18px; margin: 20px 0 24px; border-radius: 6px; line-height: 1.5; }
+  .alert { background: #fff3d6; color: #8a5a00; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13px; padding: 12px 16px; margin: 0 0 16px; border-radius: 6px; border-left: 4px solid #8a5a00; }
+  h2 { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 16px; color: var(--navy); margin: 28px 0 10px; border-bottom: 2px solid var(--navy); padding-bottom: 6px; }
+  .demoted h2 { color: #555; border-bottom: 2px solid #ccc; font-size: 14px; }
+  table { width: 100%; border-collapse: collapse; background: #fff; font-size: 13px; }
+  th { background: var(--navy); color: #fff; font-family: 'Inter', sans-serif; font-weight: 600; text-align: left; padding: 8px 10px; font-size: 12px; }
+  td { padding: 8px 10px; border-bottom: 1px solid #e5e5e0; vertical-align: top; }
+  tr:nth-child(even) td { background: #fafaf7; }
+  .num { font-weight: 700; color: var(--navy); width: 24px; }
+  .sub-line { color: #666; font-size: 12px; display: block; margin-top: 2px; }
+  .demoted table th { background: #6b6b6b; }
+  .demoted table { opacity: 0.94; }
+  a { color: var(--navy); }
+  .demoted a { color: #444; }
+  .caveats { margin-top: 28px; padding: 14px 18px; background: #fff; border-left: 4px solid var(--navy); font-size: 13px; line-height: 1.5; }
+  .caveats p { margin: 4px 0; }
+  .note { margin-top: 10px; font-size: 12px; color: #666; line-height: 1.6; background: #fff; border-radius: 4px; padding: 12px 16px; border: 1px dashed #ddd; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>Development Docket Sweep</h1>
+    <div class="sub">39-board sweep — City of Charleston · Mount Pleasant · Charleston County · Summerville · Goose Creek · Hanahan · Berkeley · Dorchester · North Charleston · 4 beach towns — published Tuesday, November 3, 2026</div>
+  </div>
+</header>
+<div class="wrap">
+
+  <div class="alert">
+    Monday night's cloud run (Part 1) never landed — the handoff file 404'd. So this run covers all 30 WebFetch boards itself, live this morning, instead of picking up where Part 1 left off. Nothing was lost; it just all ran in one pass today.
+  </div>
+
+  <div class="counts">
+    34/39 boards reached &rarr; 49 agendas/items read &rarr; 4 newsletter-worthy (not yet tracked) &rarr; 1 already tracked &rarr; 8 development watch &rarr; rest routine/suppressed or carryover &rarr; 5 boards not reached or failed
+  </div>
+
+  <h2>Newsletter-worthy — not yet tracked</h2>
+  <table>
+    <tr><th>#</th><th>Project</th><th>What's being asked</th><th>Board</th><th>Meeting date</th></tr>
+    <tr>
+      <td class="num">1</td>
+      <td><a href="https://www.charleston-sc.gov/AgendaCenter/ViewFile/Agenda/_11032026-11319">Proposed coffee shop — 148½ Cannon St</a><span class="sub-line">Cannonborough-Elliottborough</span></td>
+      <td>Variance for zero off-street parking (2 spaces normally required) for a proposed coffee shop. Owners: Wanda &amp; Eric Poinsette. Applicant: John Grosso.</td>
+      <td>City BZA-Zoning</td>
+      <td>Nov 3 (tonight)</td>
+    </tr>
+    <tr>
+      <td class="num">2</td>
+      <td><a href="https://www.charleston-sc.gov/AgendaCenter/ViewFile/Agenda/_11162026-11327">500 East Bay St — new construction</a><span class="sub-line">Ports Area</span></td>
+      <td>Final Approval of a signage package for a new-construction building — signage this early usually means a tenant/opening is coming. Owner: Landmark Development. Applicant: Jake Beck.</td>
+      <td>City BAR-L</td>
+      <td>Nov 16</td>
+    </tr>
+    <tr>
+      <td class="num">3</td>
+      <td><a href="https://www.charleston-sc.gov/AgendaCenter/ViewFile/Agenda/_11032026-11319">131 Columbus St — hotel meeting-space change</a><span class="sub-line">Cannonborough-Elliottborough</span></td>
+      <td>Amend an existing Special Exception (accommodations/hotel use): reduce contiguous meeting space to 12,000 sf from the 15,504 sf previously approved. Owner: 131 Columbus NPV MCZ SPE LLC. Applicant: Samuel Morris, Nelson Mullins Riley &amp; Scarborough.</td>
+      <td>City BZA-Zoning</td>
+      <td>Nov 3 (tonight)</td>
+    </tr>
+    <tr>
+      <td class="num">4</td>
+      <td><a href="https://www.cityofhanahan.com/media/14271">1204 Jones St — rezoning to Town Center</a><span class="sub-line">Hanahan</span></td>
+      <td>PC 07-2026: zoning map amendment from Single-Family Residential, Moderate Density (RSM) to Town Center (TC) — the kind of rezoning that usually precedes a commercial or mixed-use redevelopment. Applicant/owner not listed in the agenda text; the 58 MB packet with that detail wouldn't load.</td>
+      <td>Hanahan Planning Commission</td>
+      <td>Nov 3 (tonight)</td>
+    </tr>
+  </table>
+
+  <h2>Already in the tracker</h2>
+  <table>
+    <tr><th>#</th><th>Project</th><th>What's being asked</th><th>Board</th><th>Meeting date</th><th>Matched tracker row</th></tr>
+    <tr>
+      <td class="num">5</td>
+      <td><a href="https://www.charleston-sc.gov/AgendaCenter/ViewFile/Agenda/_11162026-11327">337 King St — one more sign</a><span class="sub-line">Downtown</span></td>
+      <td>Final Approval for one additional sign. Owner: Walter Smith. Applicant: Reliable Signage and Lighting.</td>
+      <td>City BAR-L</td>
+      <td>Nov 16</td>
+      <td>"Allen Edmonds" — Now Open (337 King St, former Rusty Bull Brewing taproom). A second unconfirmed row for "Dôen" at the same address is still listed Opening Soon — this sign request could belong to either.</td>
+    </tr>
+  </table>
+
+  <div class="demoted">
+  <h2>Development watch</h2>
+  <table>
+    <tr><th>#</th><th>Project</th><th>What's being asked</th><th>Board</th><th>Meeting date</th></tr>
+    <tr><td class="num">6</td><td>3015–3041 Reva Ridge Dr <span class="sub-line">Johns Island</span></td><td>Preliminary approval, 3 new 3-story residential buildings, 89 units (Live Oak Square Phase II). Owner: Crowne at Live Oak Square Phase II LLC.</td><td>City DRB</td><td>Nov 2</td></tr>
+    <tr><td class="num">7</td><td>350 Grand Oaks Blvd <span class="sub-line">West Ashley</span></td><td>Conceptual approval, 348 apartments + 33 townhomes plus amenities. Owner: Middleburg Communities.</td><td>City DRB</td><td>Nov 2</td></tr>
+    <tr><td class="num">8</td><td>1 Country Club Dr <span class="sub-line">James Island</span></td><td>Site plan review #1: clubhouse and tennis facility improvements. Owner/Applicant: Country Club of Charleston / Thomas &amp; Hutton.</td><td>City TRC</td><td>Nov 5</td></tr>
+    <tr><td class="num">9</td><td>1109 UT Eden Valley St (Point Hope — Site 10A) <span class="sub-line">Cainhoy</span></td><td>Site plan review #3, five commercial buildings, 5.6 ac, no tenants named yet. Owner: LPA Hope Landing LLC.</td><td>City TRC</td><td>Nov 5</td></tr>
+    <tr><td class="num">10</td><td>115 Bachman Blvd (Magnolia Landing Office Bldg No. 1) <span class="sub-line">Magnolia / West Ashley</span></td><td>Site plan review #3, 7-story office building, 12.2 ac. Owner: HR Charleston VII LLC.</td><td>City TRC</td><td>Nov 5</td></tr>
+    <tr><td class="num">11</td><td>0 Main St <span class="sub-line">Maryville-Ashleyville</span></td><td>Appeal for reconsideration of a denied Special Exception/Variance for a detached single-family home on an undersized, affordable-housing lot. Owner: Charleston Affordable Development Group.</td><td>City BZA-Zoning</td><td>Nov 3</td></tr>
+    <tr><td class="num">12</td><td>4475 Betsy Kerrison Pkwy — Civic &amp; Cultural Center expansion <span class="sub-line">Kiawah Island</span></td><td>Planned Development Amendment for a Town Municipal Center expansion, folding in the Walnut Schoolhouse property. Plus a related Urban Growth Boundary resolution.</td><td>Kiawah Planning Commission</td><td>Nov 4</td></tr>
+    <tr><td class="num">13</td><td>5722 Robinson St <span class="sub-line">Hanahan</span></td><td>PC 08-2026: Major Land Development approval, 2 townhome buildings, 8 residential units, 10 lots total.</td><td>Hanahan Planning Commission</td><td>Nov 3</td></tr>
+  </table>
+  </div>
+
+  <div class="note">
+    <strong>Staff-level only, not a board vote (Charleston County HPC):</strong> three Certified Historic Area applications are decided by the Planning Director, not heard by the board — an accessory-structure expansion at 24 Captiva Row (Ashley Hall Plantation district); a demolition/partial-demolition-and-restoration at an address the portal truncated; and an addition, sign relocation and site work at a religious institution, address also truncated. Worth a second look if you want the full addresses — case links are on file.
+  </div>
+
+  <h2>Not machine-readable / could not be read</h2>
+  <table>
+    <tr><th>Board</th><th>Meeting</th><th>What happened</th><th>Link</th></tr>
+    <tr><td>Summerville Historic District / Board of Architectural Review</td><td>Nov 3, 2026</td><td>Posted Oct 28. Failed to load on four separate attempts (WebFetch twice, Chrome/pdf.js twice) — the meeting packet itself may be malformed or oversized. Items unknown.</td><td><a href="https://www.summervillesc.gov/AgendaCenter/ViewFile/Agenda/_11032026-1282">agenda link</a></td></tr>
+    <tr><td>Sullivan's Island Design Review Board</td><td>Nov 18, 2026</td><td>Agenda PDF failed to load (tried twice). Fallback: the Oct 21 "Current Applications" list showed five items, all houses/pools — none commercial. The Nov 18 list itself is unconfirmed.</td><td><a href="https://sullivansisland.sc.gov/sites/sullivansisland/files/Documents/Design%20Review%20Board/DRB%20Agenda/2026/November/DRB%20Agenda-%2011.18.2026-%20Linked.pdf">agenda link</a></td></tr>
+  </table>
+
+  <div class="note">
+    <strong>Seen before — deferred/continued (not re-listed as new):</strong> Charleston County Planning Commission's Nov 9 docket repeats the same two minor-subdivision cases flagged in both the Oct 20 and Oct 27 sweeps — 2337 River Road and 4033 River Road, both routine lot splits near the National-Register-listed River Road corridor, unchanged. Charleston County BZA's 10-case Nov 2 docket (short-term-rental special exceptions, setback variances, a 10-slip community dock, a fire-training-facility parking variance, an appeal) is the same set flagged last week; that meeting falls before this week's window and wasn't re-parsed. Mount Pleasant Design Review Board's Oct 28 agenda — 54 Smoke &amp; Vape, Ira Rd Restaurant, Prisma Urgent Care, Wando Crossing Retail Building, 1200 Two Island Ct Expansion, and a deferred Chase Bank application — already happened before today and has no successor agenda posted yet; worth checking those addresses directly if you want outcomes.
+    <br><br>
+    <strong>Boards reached with nothing new posted in the window (18):</strong> City Planning Commission, City BZA–Site Design; Mount Pleasant Planning Commission, Mount Pleasant BZA, Mount Pleasant Design Review Board (no agenda since Oct 28); Charleston County BZA, Charleston County HPC (its Nov 18 meeting shows conflicting cancelled/scheduled status on the county's own pages — flagging rather than guessing); Summerville Planning Commission, Summerville Design Review Board, Summerville BZA; Goose Creek BZA; Hanahan BZA, Hanahan Design Control Committee; Isle of Palms Planning Commission, Isle of Palms BZA; Sullivan's Island BZA (a Nov 12 meeting is listed with no agenda document posted yet); Kiawah BZA (only a 1999 setback reference table is posted, no case agenda); Kiawah Design Review Board; Dorchester County Planning Commission (Nov 12 packet not posted); Dorchester County BZA (Nov 18 agenda not posted); North Charleston Planning Commission (nothing posted past Sept 14 — the city appears to be running behind on uploads, not that nothing is happening).
+    <br><br>
+    <strong>Policy/text-amendment only, no address or project attached:</strong> Goose Creek Planning Commission (a landscaping/tree-corridor ordinance update and a 5-year Comprehensive Plan resolution); Sullivan's Island Planning Commission (a proposed ordinance change on fill for low-lying lots); Folly Beach Planning Commission (an ordinance requiring commercial parking lots to post rates, plus a Comprehensive Plan update); several Kiawah Planning Commission items (dock key-location rezonings/text amendments at 1 &amp; 2 Shell Creek Landing, a design-review-procedure text amendment, and an Urban Growth Boundary resolution).
+    <br><br>
+    <strong>Not reached:</strong> Berkeley County Planning Commission and Board of Zoning Appeals — the agenda site (agendas.berkeleycountysc.gov) sits behind a "verify you are human" check that was never attempted to bypass, as instructed, and a Gmail search for agenda emails from berkeleycountysc.gov in the last 30 days returned nothing. Jimmy signed up for Berkeley's agenda emails on Oct 30 — it's only been four days, so this isn't yet the two-week mark where that's worth flagging as broken, but worth another look next week. North Charleston Zoning Board of Appeals wasn't opened this round (per the skill notes, its folder structure hasn't been mapped yet).
+  </div>
+
+  <div class="note">
+    <strong>Tracker &amp; ABL cross-reference:</strong> checked every newsletter-worthy address above against Openings &amp; Closings — only 337 King St matched (Allen Edmonds / Dôen). The LUMA Restaurant LLC filing at 128 Columbus St (already Rumored in the tracker, from the Oct 8 ABL sweep) is a different address from this week's 131 Columbus St hotel case — close enough to be worth a glance together, but not the same building by the street-number match rule.
+  </div>
+
+  <div class="caveats">
+    <p>An agenda item is an application, not an approval or an opening date — it can be denied, withdrawn, or deferred for two years.</p>
+    <p>Deferred and continued items repeat on these dockets for months; a repeat isn't news.</p>
+    <p>This sees only projects that need board review — tenant fit-outs in existing space, which need no board sign-off, are invisible to this sweep.</p>
+  </div>
+
+</div>
+</body>
+</html>
