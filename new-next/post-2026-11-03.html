@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nov 3 · The one I built for somebody who wasn't me</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600;9..144,900&family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --base:#0D1017; --surface:#151B26; --surface-2:#1B2230; --line:rgba(255,255,255,.08); --line-2:rgba(255,255,255,.14);
+  --blue:#2E6BFF; --blue-soft:#7BA5FF; --spark:#F04E23; --green:#8FE39A;
+  --paper:#F4F6FA; --slate:#AEB7C6; --slate-dim:#8A93A4;
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{margin:0;background:var(--base);color:var(--paper);font-family:Inter,system-ui,sans-serif;font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px;}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;}
+
+/* header */
+.hero{padding:62px 0 40px;border-bottom:1px solid var(--line-2);}
+.hero .kick{color:var(--spark);margin-bottom:22px;}
+.hero h1{font-family:Fraunces,Georgia,serif;font-weight:900;font-size:clamp(40px,8.4vw,86px);line-height:.95;letter-spacing:-.025em;margin:0 0 6px;max-width:16ch;}
+.hero h1 em{font-style:italic;font-weight:300;color:var(--blue-soft);}
+.hero .sub{color:var(--slate);font-size:18px;max-width:54ch;margin:20px 0 28px;}
+.pills{display:flex;flex-wrap:wrap;gap:8px;}
+.pill{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.09em;text-transform:uppercase;padding:6px 11px;border-radius:999px;border:1px solid var(--line-2);color:var(--slate);}
+.pill.t{background:rgba(240,78,35,.14);border-color:rgba(240,78,35,.42);color:#FF8E6E;}
+.pill.b{background:rgba(46,107,255,.16);border-color:rgba(46,107,255,.44);color:var(--blue-soft);}
+.pill.g{background:rgba(143,227,154,.14);border-color:rgba(143,227,154,.4);color:var(--green);}
+
+/* sections */
+section{padding:54px 0;border-bottom:1px solid var(--line);}
+.sh{display:flex;align-items:baseline;gap:16px;margin-bottom:8px;}
+.sh .n{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--blue);letter-spacing:.1em;}
+.sh h2{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(25px,4.4vw,40px);line-height:1.1;letter-spacing:-.015em;margin:0;}
+.lede{color:var(--slate);max-width:62ch;margin:0 0 26px;font-size:16.4px;}
+
+/* asym grid */
+.asym{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;}
+@media(min-width:820px){ .asym{grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:38px;} }
+
+/* q cards */
+.q{border-left:3px solid var(--spark);background:var(--surface);padding:18px 22px;margin-bottom:14px;border-radius:0 8px 8px 0;}
+.q .qn{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--spark);letter-spacing:.11em;margin-bottom:7px;}
+.q p{margin:0;font-size:16.5px;}
+.q .why{color:var(--slate-dim);font-size:14.6px;margin-top:9px;}
+
+/* trimmed text */
+.draft{background:var(--surface);border:1px solid var(--line-2);border-radius:12px;padding:26px 26px 20px;}
+.draft p{margin:0 0 14px;font-size:17px;}
+.draft p:last-child{margin-bottom:0;}
+.draft .quo{border-left:2px solid var(--blue);padding-left:16px;color:var(--blue-soft);font-style:italic;}
+.cuts{background:var(--surface-2);border-radius:10px;padding:18px 20px;}
+.cuts h4{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--slate-dim);margin:0 0 12px;}
+.cuts li{font-size:15px;color:var(--slate);margin-bottom:10px;}
+.cuts ul{margin:0;padding-left:17px;}
+.wc{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;padding:4px 9px;border-radius:5px;background:rgba(240,78,35,.16);color:#FF8E6E;margin-left:8px;}
+.wc.ok{background:rgba(143,227,154,.14);color:var(--green);}
+
+/* hooks */
+.hook{border:1px solid var(--line-2);border-radius:12px;padding:20px 22px;margin-bottom:14px;background:var(--surface);}
+.hook.rec{border-color:rgba(46,107,255,.6);box-shadow:0 0 0 1px rgba(46,107,255,.3),0 0 40px -14px rgba(46,107,255,.6);}
+.hook .top{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-bottom:13px;}
+.hook .pos{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--slate-dim);}
+.hook .mult{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--green);}
+.hook .line{font-family:Fraunces,Georgia,serif;font-size:21px;line-height:1.3;margin:0 0 12px;}
+.hook .verd{font-size:15px;color:var(--slate);margin:0;}
+.recflag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;background:var(--blue);color:#fff;padding:4px 9px;border-radius:4px;}
+
+/* review */
+.rev{border-top:1px solid var(--line);padding:19px 0;}
+.rev:first-of-type{border-top:none;}
+.rev .rk{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:8px;}
+.rev h4{font-family:Fraunces,Georgia,serif;font-size:21px;margin:0 0 8px;font-weight:600;}
+.rev p{margin:0 0 9px;font-size:16.2px;color:var(--slate);}
+.rev p:last-child{margin-bottom:0;}
+.rev b{color:var(--paper);}
+.flag{color:#FF8E6E;}
+.pass{color:var(--green);}
+
+/* proposal */
+.prop{background:#070A0F;border:1px solid rgba(240,78,35,.4);border-radius:14px;padding:30px 26px;position:relative;}
+.prop .tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;background:var(--spark);color:#fff;padding:6px 12px;border-radius:5px;margin-bottom:22px;}
+.prop p{margin:0 0 15px;font-size:17.4px;line-height:1.56;}
+.add{background:rgba(46,107,255,.17);border-bottom:1px dotted var(--blue-soft);padding:1px 3px;border-radius:2px;}
+.slot{background:rgba(240,78,35,.2);border:1px dashed rgba(240,78,35,.6);padding:2px 7px;border-radius:4px;color:#FFAE92;font-family:'JetBrains Mono',monospace;font-size:13.5px;}
+.legend{margin-top:24px;padding-top:18px;border-top:1px solid var(--line);font-size:14.6px;color:var(--slate-dim);}
+.legend span{display:inline-block;margin-right:18px;}
+.close{padding:48px 0 70px;}
+.close p{font-family:Fraunces,Georgia,serif;font-size:clamp(20px,3.2vw,27px);line-height:1.35;color:var(--slate);max-width:36ch;margin:0;}
+
+@media(prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){
+    --base:#F4F6FA; --surface:#fff; --surface-2:#EDF0F6; --line:rgba(13,16,23,.1); --line-2:rgba(13,16,23,.18);
+    --paper:#0D1017; --slate:#49536A; --slate-dim:#6A748A; --blue-soft:#1A4FD6;
+  }
+  :root:not([data-theme="dark"]) .prop{background:#0D1017;border-color:rgba(240,78,35,.5);}
+  :root:not([data-theme="dark"]) .prop p{color:#F4F6FA;}
+  :root:not([data-theme="dark"]) .legend{color:#8A93A4;}
+  :root:not([data-theme="dark"]) .draft .quo{color:#1A4FD6;}
+  :root:not([data-theme="dark"]) .hook .mult{color:#1F7F32;}
+  :root:not([data-theme="dark"]) .pass{color:#1F7F32;}
+  :root:not([data-theme="dark"]) .flag{color:#C23A14;}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="mono kick">Tue · Nov 3, 2026 · today's slot</div>
+    <h1>The one I built for <em>somebody who wasn't me</em></h1>
+    <p class="sub">Your dictation is the draft. Below: what is still missing, your own words trimmed to length, four hooks, three closes, the review, and a proposal you will rewrite.</p>
+    <div class="pills">
+      <span class="pill t">Register · Trust</span>
+      <span class="pill b">Lane · Authority</span>
+      <span class="pill">Hook the outline wants · direct address or story</span>
+      <span class="pill g">Gate · half cleared</span>
+      <span class="pill">Length · aim 220, see section 06</span>
+    </div>
+  </div>
+
+  <!-- 1 -->
+  <section>
+    <div class="sh"><span class="n">01</span><h2>What I still need</h2></div>
+    <p class="lede">Two of the three dictation questions came back answered. These are the gaps, in order of how much they cost the post. Voice answers are fine.</p>
+
+    <div class="asym">
+      <div>
+        <div class="q">
+          <div class="qn">Question 1 · this is the gate</div>
+          <p><b>What has happened since it went live?</b> Any number at all. Signups through the form. Clients who have checked into a class in the app. New people who found her through the site. Even "three in the first week" is enough.</p>
+          <p class="why">The slot's gate asks for two things: a sentence from the owner, and one outcome. Kim gave you the sentence. Without the outcome this is a post about a build, not about what the build did. It is also the half that decides whether the post lands in the only category of eight that gained ground this year.</p>
+        </div>
+        <div class="q">
+          <div class="qn">Question 2 · the beat you skipped</div>
+          <p><b>What was actually harder because the rules weren't yours?</b> You answered that one with what stayed the same: you are a freak for clarity and it shows up in both. That is a strength, not a difference. Where did you have to give something up, wait for a decision, or build it her way instead of your way?</p>
+          <p class="why">This is the whole middle of the post. Without it the piece reads as "I built my wife a nice website," which is a favor. With it, it reads as the first real evidence you can work to someone else's brief. That is the done-for-others case.</p>
+        </div>
+        <div class="q">
+          <div class="qn">Question 3 · accuracy</div>
+          <p><b>Is the app live, or designed and not yet shipped?</b> You said you "designed" it. Kim's quote talks about it in the present tense, which suggests it is out. I am not going to assume.</p>
+          <p class="why">A post that says "built" about something still in testing is the kind of thing a reader finds out later.</p>
+        </div>
+      </div>
+      <div>
+        <div class="cuts">
+          <h4>Already answered</h4>
+          <ul>
+            <li><b>Who it was for and what they needed.</b> Kim, over ten years a trainer, women over 50, and the thing she was missing was a site that proved a person was behind the brand.</li>
+            <li><b>What you built.</b> Her branding, calls to action into her calendar software, Airtable and automations that email her on every signup, hosted free on Cloudflare. Then the app: every workout she plans, plus class check-ins.</li>
+            <li><b>Her words.</b> Two sentences, in hand, going in verbatim.</li>
+          </ul>
+          <h4 style="margin-top:20px;">One thing I fixed before you asked</h4>
+          <ul>
+            <li>Today's outline still said "no link unless the jimmyfarrell.com page is live." That was left over from a different post that used to hold this slot. It is gone. This slot carries <b>no link at all</b>, body or first comment.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section>
+    <div class="sh"><span class="n">02</span><h2>Your words, trimmed</h2></div>
+    <p class="lede">Your sentences, reordered to the outline's beats. Nothing added. This is for you to see the shape, not to post.</p>
+
+    <div class="asym">
+      <div>
+        <div class="draft">
+          <p>My wife Kim has been a personal trainer for over ten years.</p>
+          <p>She came up with an idea for a demographic that clearly needs guidance: women over 50, and all the physical and mental changes their bodies go through. A fitness and wellness plan adapted specifically to them.</p>
+          <p>What Kim was missing was a website. Not just a brand builder. One with specific calls to action, and copy in her voice, so her clients knew there was a real person behind the brand who is going through exactly what they are.</p>
+          <p>So I built it. Her branding, logo, font, colors. Calls to action linked to her calendar software. Airtable and automations wired in to email Kim whenever anybody signs up. Hosted free on Cloudflare.</p>
+          <p>Halfway through, I asked Kim if an app for her clients might be valuable. She said yes. So I went to work on the Bloom50 Collective app: every workout Kim plans, plus a way for clients to check into her classes. Which is perfect for her planning.</p>
+          <p>I'm a freak for clarity in design. I think it shows up on both.</p>
+          <p class="quo">"I feel like the app and website offer a seamless platform for online coaching and in-person classes. Both provide options for what clients are looking for."</p>
+        </div>
+        <p style="font-size:15px;color:var(--slate);margin-top:14px;">That runs <b>213 words</b> before a hook or a close is added. <span class="wc">over the 199 line</span> The cuts that get it under are in the review below.</p>
+      </div>
+      <div>
+        <div class="cuts">
+          <h4>What I cut, and why</h4>
+          <ul>
+            <li><b>"Using Claude I designed a website."</b> Held back, not dropped. It belongs in the post, but it competes with the opening for attention. Put it at the start of the build paragraph if you want it, and say so plainly.</li>
+            <li><b>"That's perfect for Kim's planning obviously."</b> Trimmed the "obviously."</li>
+            <li><b>"I believe this shows up"</b> became "I think it shows up." Same hedge, fewer syllables.</li>
+            <li><b>"ladies"</b> became "they" and "women." You said "ladies" twice. In conversation it is warm. On a professional feed, writing about women over 50, it reads older than you are. Your call, and easy to put back.</li>
+          </ul>
+          <h4 style="margin-top:20px;">What I did not touch</h4>
+          <ul>
+            <li>Kim's quote. Verbatim, both sentences, cut nowhere.</li>
+            <li>"Freak for clarity." That is you, and it is the best line in the dictation.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section>
+    <div class="sh"><span class="n">03</span><h2>Four hooks</h2></div>
+    <p class="lede">Safest to boldest, all built from what you said. <b>There is no statistic hook here.</b> The 1.83x opener needs a real number and your dictation has none yet. Answer question 1 and a fifth option opens up.</p>
+
+    <div class="hook">
+      <div class="top"><span class="pos">Safest</span><span class="pill">Direct address</span><span class="mult">1.19x</span></div>
+      <p class="line">"Every system I have shown you on here, I built for my own business. This one I built for my wife."</p>
+      <p class="verd">The outline's own framing, and the collision lands in line one. Nothing clever, nothing risky. The weakness is that it is about you for one sentence longer than it needs to be.</p>
+    </div>
+
+    <div class="hook">
+      <div class="top"><span class="pos">Middle</span><span class="pill">Product news</span><span class="mult">1.72x</span></div>
+      <p class="line">"Kim has trained clients for over ten years. Last month she got a website and an app, and I built both."</p>
+      <p class="verd">Product news is the second-strongest type there is. This is clean and concrete, and it puts the ten years up front, which is the closest thing you have to a number. Needs question 3 answered before you can say "got."</p>
+    </div>
+
+    <div class="hook">
+      <div class="top"><span class="pos">Middle</span><span class="pill">Story</span><span class="mult">1.21x</span></div>
+      <p class="line">"My wife's clients are women over 50. What she needed was a way to show them a real person was behind the brand, going through the same thing they are."</p>
+      <p class="verd">The most human of the four, and it opens on the reader's problem rather than your build. Two lines is a lot to spend before the see-more cut, though.</p>
+    </div>
+
+    <div class="hook rec">
+      <div class="top"><span class="recflag">Recommended</span><span class="pos">Boldest</span><span class="pill">Story</span><span class="mult">1.21x</span></div>
+      <p class="line">"I was halfway through building my wife's website when I asked her a question that doubled the job."</p>
+      <p class="verd"><b>This is the one.</b> It is a scene with a time and a place, it opens a gap you have to read line two to close, and the whole thing is in your transcript. It also does the thing the November data rewards: a personal story, opened on the moment rather than the build.</p>
+    </div>
+
+    <p style="font-size:16px;color:var(--slate);max-width:62ch;margin-top:22px;"><b>Second choice is the Safest one</b>, which is the outline's framing and the cleanest way to land "this one wasn't mine." On the craft: the first three seconds buy you the click, and a specific moment beats a general claim every time. "Halfway through" is specific. "I build things for people" is not.</p>
+    <p style="font-size:16px;color:var(--slate);max-width:62ch;"><b>One hook I wrote and threw away.</b> "My wife didn't need a website. She needed proof there was a person behind it." It is your material and it is strong, but it is the "not X, it's Y" symmetry that is on your never-list for this feed. Flagging it so you know I did not miss it.</p>
+  </section>
+
+  <!-- 4 -->
+  <section>
+    <div class="sh"><span class="n">04</span><h2>Three closes</h2></div>
+    <p class="lede">All self-directed. As of Sunday's data, any ask at the end of a post runs about 20% below average, and that now includes the polite closing question. These work whether or not a single person replies.</p>
+
+    <div class="hook rec">
+      <div class="top"><span class="recflag">Recommended</span></div>
+      <p class="line">"Go look at your own site. Is there a person on it, or just a brand?"</p>
+      <p class="verd">A ten-second action beats a question they owe you an answer to. It also lands the post's actual argument, which is that the missing thing was never the design.</p>
+    </div>
+    <div class="hook">
+      <p class="line">"Think about the last thing you built for somebody else. Would you still hand it over today?"</p>
+      <p class="verd">The outline's original direction, rewritten to point inward. Solid, slightly more abstract than the first.</p>
+    </div>
+    <div class="hook">
+      <p class="line">"If somebody had to explain your business from your website alone, how close would they get?"</p>
+      <p class="verd">The widest net of the three. Works for anyone with a site, which is everyone, and that is also its weakness.</p>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section>
+    <div class="sh"><span class="n">05</span><h2>The review</h2></div>
+    <p class="lede">Fixed order: hook, close, lane fit, voice, accuracy.</p>
+
+    <div class="rev">
+      <div class="rk">01 · Hook</div>
+      <h4>Story, and it earns the click</h4>
+      <p><span class="pass">Clear.</span> The recommended hook makes no claim your transcript does not carry. It names a moment, not a conclusion.</p>
+      <p><span class="flag">One flag.</span> No statistic hook exists for this post, which costs you the strongest opener in the ranking. That is entirely fixable with one number from question 1.</p>
+    </div>
+
+    <div class="rev">
+      <div class="rk">02 · Closing question</div>
+      <h4>Self-directed, no ask</h4>
+      <p><span class="pass">Clear.</span> None of the three invites a reply, none says "let me know," none hints at a follow-up. The old outline said "a question about what the reader would hand to someone else to build," which was an invitation. It has been rewritten.</p>
+    </div>
+
+    <div class="rev">
+      <div class="rk">03 · Lane fit</div>
+      <h4>This is the plan's first Trust post</h4>
+      <p><b>Register: Trust</b>, and that matters more than usual. Every post on this account so far has been Know or Like, because Trust needs somebody else's voice and you did not have one. Kim's two sentences are it. If you cut the quote, you lose the register and this becomes another Know post.</p>
+      <p><b>Topic discipline holds.</b> The post is about a build, an automation and a system, so it should travel on-topic rather than reading as a family story. The relationship is context, not the subject.</p>
+      <p><b>Format.</b> Text plus one real screenshot of the finished work. <b>No link</b>, body or first comment.</p>
+      <p><span class="flag">One tension, named once.</span> Your standing rule says no Charleston business or person should be identifiable on this feed. Kim and Bloom50 are both named here. The slot's outline overrides it on purpose, the owner handed you a quote for public use, and a done-for-others case study with the client scrubbed out proves nothing. <b>Recommendation: name both.</b> But it is your rule, so you should know it is being set aside.</p>
+    </div>
+
+    <div class="rev">
+      <div class="rk">04 · Voice and the never-list</div>
+      <h4>Clean, with two notes</h4>
+      <p><span class="pass">No em dashes anywhere.</span> No lyrical last line. No moral stapled on the end. No tourism words. No hype.</p>
+      <p><span class="flag">"Ladies."</span> You used it twice. It is warm in conversation and it reads differently on a feed, in a post about women over 50. Swapped to "women" and "they" in the trim. Put it back if you want it.</p>
+      <p><span class="flag">The symmetry hook.</span> Thrown out before it reached the options list, noted in section 03 so you can see what the rule cost you.</p>
+    </div>
+
+    <div class="rev">
+      <div class="rk">05 · Accuracy</div>
+      <h4>Three things to watch</h4>
+      <p><b>"Free on Cloudflare" needs a word of care.</b> You said the hosting was free. Written loosely, a reader hears "he builds sites for free," which is not what you said and not a thing you want to advertise. Say the hosting costs nothing, not that the work did.</p>
+      <p><b>"Designed" is not "shipped."</b> Question 3. Kim's quote implies both are live. Confirm it before you type "built."</p>
+      <p><b>No outcome anywhere.</b> Question 1. Every number in the post right now describes effort, not result: ten years, two products, one platform. There is nothing that says it worked.</p>
+      <p><b>Everything else traces.</b> Over ten years, women over 50, her branding, calendar software, Airtable, the automations, the mid-build question, the workouts, the class check-ins, the clarity line. All yours, all in the dictation.</p>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section>
+    <div class="sh"><span class="n">06</span><h2>The proposal</h2></div>
+    <p class="lede">You will rewrite this, which is the point. Every highlighted phrase is mine, not yours, and every one of them can be deleted without breaking the post. Type it into LinkedIn by hand.</p>
+
+    <div class="prop">
+      <span class="tag">Proposal · not for posting</span>
+      <p>I was halfway through building my wife's website when I asked her a question that doubled the job.</p>
+      <p>Kim has trained clients for over ten years. <span class="slot">[WHEN]</span> she came up with an idea I think is brilliant: fitness and wellness built for women over 50, and everything their bodies are actually doing at that age.</p>
+      <p>What she didn't have was a website. <span class="add">Not a brochure.</span> Something with real calls to action, written in her voice, that made it obvious there's a person behind the brand going through the exact same thing her clients are.</p>
+      <p>So I built it. Her logo, her colors, her words. The buttons go straight to her calendar. Airtable and a couple of automations email her the second somebody signs up. The hosting costs her nothing.</p>
+      <p>Halfway through, I asked whether her clients would want an app.</p>
+      <p>She said yes. <span class="add">(That's how a website became two projects.)</span></p>
+      <p>So the Bloom50 Collective app now carries every workout she plans, and lets clients check into her classes. <span class="add">Which, when you're the one scheduling the room, is the whole ballgame.</span></p>
+      <p><span class="slot">[WHAT WAS HARDER, BUILDING TO HER RULES. 2 lines]</span></p>
+      <p>I'm a freak for clarity. I think you can see it on both.</p>
+      <p><span class="add">Kim's verdict:</span> "I feel like the app and website offer a seamless platform for online coaching and in-person classes. Both provide options for what clients are looking for."</p>
+      <p><span class="slot">[THE OUTCOME SINCE IT WENT LIVE — one line, one number]</span></p>
+      <p>Go look at your own site. Is there a person on it, or just a brand?</p>
+
+      <div class="legend">
+        <span><span class="add">&nbsp;blue&nbsp;</span> my addition. A bridge, an aside or a label. Delete any of them and the post still stands.</span><br><br>
+        <span><span class="slot">[BRACKETS]</span> yours to fill. I will not invent a date, a feeling or a number.</span>
+      </div>
+    </div>
+
+    <p style="font-size:16px;color:var(--slate);max-width:62ch;margin-top:22px;">Running length without the bracketed lines: <b>242 words</b>. With your two fills it lands around <b>270</b>. <span class="wc">over the band</span></p>
+    <p style="font-size:16px;color:var(--slate);max-width:62ch;"><b>Here is the honest arithmetic, because I am not going to pretend this one fits.</b> Kim's quote is 29 words and it is the entire Trust register, so it stays whole. The outcome line and the harder-than-expected beat are another 35 or so, and both are the reasons the post exists. That is 64 words of untouchable content. Getting to 199 means the build itself gets about 90 words, and the build is the proof.</p>
+    <p style="font-size:16px;color:var(--slate);max-width:62ch;"><b>So: aim for 220, not 199, and spend the overage deliberately.</b> The measured penalty is at 300+ words, where posts run 0.88x. There is no evidence of a cliff at 200. The 100 to 199 band is where posts do best, not a line that triggers a fine. A 220-word post with a client quote and a real outcome beats a 190-word post with neither.</p>
+    <p style="font-size:16px;color:var(--slate);max-width:62ch;"><b>If you want it tighter anyway</b>, cut in this order, and all three are mine: the "whole ballgame" line, "Not a brochure," then the parenthetical about two projects. That is 25 words and the post does not notice.</p>
+  </section>
+
+  <div class="close">
+    <p>When you've posted, send it back. I'll compare the three versions, log it in Airtable, and tell you where my version missed you.</p>
+  </div>
+
+</div>
+</body>
+</html>
