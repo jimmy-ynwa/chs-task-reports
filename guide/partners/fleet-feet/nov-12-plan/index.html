@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1'><meta name='robots' content='noindex'>
+<title>Fleet Feet Nov 12 Ad Plan</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Gloock&family=Instrument+Sans:wght@400;500;600;700&display=swap'>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0}
+img{max-width:100%;display:block}
+:root{
+  --navy:#183872; --lime:#CCED60;
+  --bg:#F7F8F4; --surface:#FFFFFF; --ink:#141B2B; --muted:#5A6377; --rule:#D9DDE5;
+  --ph:#7A5A00; --phbg:#FFF1C2; --accent:#183872;
+  --display:'Gloock', Georgia, 'Times New Roman', serif;
+  --body:'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#0E1424; --surface:#151D33; --ink:#EEF1F7; --muted:#A3ACC0; --rule:#2A3552;
+  --ph:#FFE08A; --phbg:#3A3215; --accent:#A9C0F5; color-scheme:dark}}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+h1,h2,h3,h4{font-family:var(--display);font-weight:400;text-wrap:balance;line-height:1.08;margin:0}
+p{margin:0}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.ph{background:var(--phbg);color:var(--ph);padding:0 .25em;border-radius:3px;font-weight:600}
+.hero{background:#183872;color:#fff;padding-block:56px 60px}
+.hero .eyebrow{color:#CCED60}
+.hero h1{font-size:clamp(44px,8.5vw,92px);margin-top:16px;max-width:13ch}
+.hero h1 em{font-style:normal;color:#CCED60}
+.hero .lede{margin-top:24px;font-size:19px;color:#DCE3F2;max-width:58ch}
+.hero .lede b{color:#fff}
+section{padding-block:56px;border-bottom:1px solid var(--rule)}
+.sec-h{font-size:clamp(32px,5vw,46px);margin-top:10px}
+.sub{margin-top:12px;color:var(--muted);max-width:62ch}
+.past{display:grid;grid-template-columns:1fr 1fr 1.25fr;gap:18px;margin-top:32px;align-items:end}
+.ad-past{background:var(--surface);border:1px solid var(--rule);border-radius:6px;overflow:hidden}
+.ad-past img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.ad-past .meta{padding:14px 16px 16px}
+.ad-past .date{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.ad-past .what{font-size:15px;margin-top:4px}
+.ad-past .num{font-family:var(--display);font-size:52px;line-height:1;margin-top:10px;color:var(--accent)}
+.ad-past .num small{font-family:var(--body);font-size:14px;color:var(--muted);margin-left:6px}
+.ad-past.best{border:2px solid #CCED60}
+.ad-past.best .num{font-size:76px}
+.foot{font-size:13px;color:var(--muted);margin-top:12px;max-width:70ch}
+.read{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:32px}
+.read p{max-width:46ch}
+.read b{color:var(--accent)}
+.moves{display:grid;gap:36px;margin-top:36px}
+.move{display:grid;grid-template-columns:72px minmax(0,1fr);gap:20px}
+.move .n{font-family:var(--display);font-size:72px;line-height:.85;color:var(--accent)}
+.move h3{font-size:28px}
+.move .why{margin-top:10px;max-width:62ch}
+.move .why b{color:var(--accent)}
+.move .ex{margin-top:12px;padding:12px 16px;background:var(--surface);border:1px solid var(--rule);border-radius:4px;font-size:16px}
+.ad{margin-top:32px;background:var(--surface);border:1px solid var(--rule);border-top:6px solid #183872;padding:28px 28px 24px;max-width:640px}
+.ad .label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.ad .photo{margin:14px 0 16px;aspect-ratio:16/9;border:2px dashed var(--rule);border-radius:4px;display:grid;place-items:center;text-align:center;color:var(--muted);font-size:14px;padding:12px}
+.ad h4{font-size:32px;line-height:1.1;margin:0 0 14px}
+.ad p{font-size:16px;margin-bottom:12px}
+.ad ul{margin:0 0 14px;padding:0;list-style:none;display:grid;gap:10px}
+.ad li{font-size:16px;padding-left:14px;border-left:2px solid #CCED60}
+.ad .stores{font-size:13px;color:var(--muted);letter-spacing:.04em}
+.ad .cta{display:inline-block;margin-top:4px;background:#183872;color:#fff;font-weight:600;padding:10px 16px;border-radius:3px;font-size:15px}
+.pick{margin-top:36px;padding:24px 26px;background:var(--surface);border:2px solid #CCED60;border-radius:6px;max-width:640px}
+.pick h3{font-size:28px;margin-top:8px}
+.pick ol{margin:16px 0 0;padding-left:22px;display:grid;gap:12px}
+.pick ol li::marker{font-family:var(--display);color:var(--accent)}
+.pick li b{font-family:var(--display);font-weight:400;font-size:20px}
+.pick .rec{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:#CCED60;color:#0E1F45;padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:middle}
+.todo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:48px}
+.todo .deadline{margin-top:16px;font-family:var(--display);font-size:24px;color:var(--accent)}
+.todo ol{margin:0;padding-left:22px;display:grid;gap:12px}
+.todo ol li::marker{font-family:var(--display);color:var(--accent)}
+.sign{padding-block:40px 64px}
+.sign .hand{font-family:var(--display);font-size:30px;color:var(--accent)}
+.sign .note{margin-top:16px;font-size:14px;color:var(--muted);max-width:64ch}
+@media (max-width:760px){
+  .past{grid-template-columns:1fr}
+  .ad-past.best .num{font-size:60px}
+  .read,.todo{grid-template-columns:minmax(0,1fr);gap:20px}
+  .move{grid-template-columns:48px minmax(0,1fr);gap:14px}
+  .move .n{font-size:52px}
+  section{padding-block:44px}
+  .ad{padding:22px 18px 20px}
+  .pick{padding:20px 18px}
+  .wrap{padding-inline:16px}
+}
+</style>
+</head><body>
+<header class='hero'>
+  <div class='wrap'>
+    <p class='eyebrow'>For Jenn &amp; Chris · Fleet Feet · Primary, Thursday Nov 12</p>
+    <h1>The fitting is your <em>best story</em></h1>
+    <p class='lede'>Chris wants Nov 12 to be about the fit id® process. I checked it against your first three ads and against how people actually decide to buy. <b>It’s the right call.</b> I made three changes to help it sell and wrote the ad. All you need to do is <b>pick a headline</b> and send me <b>five quick things</b>.</p>
+  </div>
+</header>
+<main>
+<section><div class='wrap'>
+  <p class='eyebrow'>What your first three ads tell us</p>
+  <h2 class='sec-h'>Clicks went 4, then 9, then 29</h2>
+  <div class='past'>
+    <div class='ad-past'>
+      <img src='https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/dc0cdc59-44e3-4c78-9007-8e68de5e350c/shoe-fitting-collage-1200x630.jpg' alt='Sept. 24 Workplace Fit ad image'>
+      <div class='meta'><p class='date'>Sept. 24 · Primary</p><p class='what'>Workplace Fit, for owners and HR</p><p class='num'>4<small>web clicks*</small></p></div>
+    </div>
+    <div class='ad-past'>
+      <img src='https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/73b82b62-e02f-48f7-844b-80028cd87cc4/workplace-fit-fleet-feet-landscape.png' alt='Oct. 8 Workplace Fit ad image'>
+      <div class='meta'><p class='date'>Oct. 8 · Secondary</p><p class='what'>Workplace Fit, for owners and HR</p><p class='num'>9<small>clicks</small></p></div>
+    </div>
+    <div class='ad-past best'>
+      <img src='https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/ff53630e-f25c-44ac-8604-8d70c2687ab9/global_running_day_2026_group.jpg' alt='Oct. 22 running club ad photo of Fleet Feet runners'>
+      <div class='meta'><p class='date'>Oct. 22 · Secondary</p><p class='what'>Running club and the Halloween Run, for everyone</p><p class='num'>29<small>clicks</small></p></div>
+    </div>
+  </div>
+  <p class='foot'>*In September the button opened an email, so only web clicks could be counted. Your Nov. 5 numbers arrive Wednesday.</p>
+  <div class='read'>
+    <p><b>Workplace Fit</b> described the same fitting you want to feature now: the gait analysis, the 3D scan, the expert advice. But only an owner or an HR director could act on it, and there was no date to act by.</p>
+    <p><b>The running club</b> spoke to every reader, showed your own people and gave a date. That’s the pattern to repeat. The fit process opens Workplace Fit’s best feature to everyone. One caution: readers have already seen “gait analysis, 3D scan” twice this fall, so the scanner can’t be the opening line again.</p>
+  </div>
+</div></section>
+<section><div class='wrap'>
+  <p class='eyebrow'>Already done · Nothing for you to decide here</p>
+  <h2 class='sec-h'>Three changes I made, and why</h2>
+  <p class='sub'>These aren’t options. All three are already built into the ad below, and each one is based on how buyers actually think.</p>
+  <div class='moves'>
+    <div class='move'>
+      <div class='n'>1</div>
+      <div>
+        <h3>Open with a question about them, not the scanner</h3>
+        <p class='why'><b>How buyers think:</b> people skim past a list of features, especially one they’ve read before. A question about themselves stops them, and the answer for most people makes the case for you.</p>
+        <p class='ex'>“When did someone last measure your feet?”</p>
+      </div>
+    </div>
+    <div class='move'>
+      <div class='n'>2</div>
+      <div>
+        <h3>Lead with “you decide”</h3>
+        <p class='why'><b>How buyers think:</b> the real worry with running shoes isn’t the price. It’s paying it and still having sore feet, or getting talked into the wrong pair. Your staff already have the line that answers both, and it goes in the ad word for word.</p>
+        <p class='ex'>“We give you all the tools in the toolbox, and you decide what goes home.”</p>
+      </div>
+    </div>
+    <div class='move'>
+      <div class='n'>3</div>
+      <div>
+        <h3>A reason to come in now, and a real fitting in the photo</h3>
+        <p class='why'><b>How buyers think:</b> “someday” never comes, and a date gets people moving. Thanksgiving puts everyone on their feet, from the morning 5K to the Black Friday lines. Your running club ad also proved that your own people beat a logo. So the photo should be one real fitting, with the scanner, an Outfitter and a customer in the frame.</p>
+      </div>
+    </div>
+  </div>
+</div></section>
+<section><div class='wrap'>
+  <p class='eyebrow'>The ad</p>
+  <h2 class='sec-h'>How it reads at the top of the issue</h2>
+  <p class='sub'>The Primary runs first, with your logo and about 150 words. The yellow blanks fill in from your answers below.</p>
+  <div class='ad'>
+    <p class='label'>Presented by Fleet Feet</p>
+    <div class='photo'>Your landscape photo of a real fitting goes here</div>
+    <h4>When did someone last measure your feet?</h4>
+    <p>For a lot of us, it was a shoe store in grade school.</p>
+    <p>At Fleet Feet, the fit id® fitting is free and takes about <span class='ph'>[X] minutes</span>:</p>
+    <ul>
+      <li><b>Tell your Outfitter how you move.</b> Race training, dog walks, 12-hour shifts.</li>
+      <li><b>Get a 3D scan of both feet.</b> Twelve measurements, including length, width and arch height.</li>
+      <li><b>Try a few pairs</b> and walk around in each one.</li>
+    </ul>
+    <p>Then it’s your call. As the team puts it, “We give you all the tools in the toolbox, and you decide what goes home.”</p>
+    <p>Get fitted before Thanksgiving puts you on your feet: the morning 5K, the hosting, the Black Friday lines.</p>
+    <p class='stores'>Mount Pleasant · Summerville · Carnes Crossroads · West Ashley</p>
+    <span class='cta'>Book your free fitting →</span>
+  </div>
+  <div class='pick'>
+    <p class='eyebrow'>Your one decision</p>
+    <h3>Pick a headline</h3>
+    <ol>
+      <li><b>“When did someone last measure your feet?”</b><span class='rec'>My pick</span><br>Makes every reader stop and answer it. Most answers make the case for you.</li>
+      <li><b>“Twelve measurements. Zero pressure”</b><br>Puts the scanner’s precision next to the no-pressure promise. The most direct.</li>
+      <li><b>“You decide what goes home”</b><br>Leads with your staff’s own line. The warmest.</li>
+    </ol>
+  </div>
+</div></section>
+<section><div class='wrap todo'>
+  <div>
+    <p class='eyebrow'>What I need from you</p>
+    <h2 class='sec-h'>Five quick things</h2>
+    <p class='deadline'>By Tuesday, Nov 10, so it makes Thursday</p>
+  </div>
+  <ol>
+    <li><b>Your headline pick</b> from the three above.</li>
+    <li><b>Fitting basics:</b> about how long it takes, walk-in or appointment, and whether it’s free with no purchase needed. I’ll only say what you confirm.</li>
+    <li><b>One photo, taken in landscape</b> (hold the phone sideways), of a real fitting: the scanner, an Outfitter and a customer. The photos you sent are cropped too tall for this slot.</li>
+    <li><b>Where the button should go:</b> a booking page if there is one, or the best store page. And tell me if you want “Holiday Run Shop” named in the ad.</li>
+    <li><b>Any fit promise or exchange policy</b> for shoes that don’t work out. If there is one, it’s worth a line.</li>
+  </ol>
+</div></section>
+</main>
+<footer class='wrap sign'>
+  <p class='hand'>Jimmy</p>
+  <p class='note'>The thinking here draws on <i>Alchemy</i> by Rory Sutherland, a longtime Ogilvy advertising executive who studies how real buyers make decisions. Click counts come from your CHS Happenings results pages. I’ll send you the final copy for a thumbs-up before anything runs.</p>
+</footer>
+</body></html>
