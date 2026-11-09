@@ -52,9 +52,12 @@ section{padding-block:56px;border-bottom:1px solid var(--rule)}
 .ad ul{margin:0 0 14px;padding:0;list-style:none;display:grid;gap:10px}
 .ad li{font-size:16px;padding-left:14px;border-left:2px solid #CCED60}
 .ad .cta{display:inline-block;margin-top:4px;background:#183872;color:#fff;font-weight:600;padding:10px 16px;border-radius:3px;font-size:15px}
-.alts{margin-top:28px;display:grid;gap:10px;max-width:62ch}
-.alts p{font-size:16px}
-.alts b{font-family:var(--display);font-weight:400;font-size:20px}
+.pick{margin-top:36px;padding:24px 26px;background:var(--surface);border:2px solid #CCED60;border-radius:6px;max-width:620px}
+.pick h3{font-size:28px;margin-top:8px}
+.pick ol{margin:16px 0 0;padding-left:22px;display:grid;gap:12px}
+.pick ol li::marker{font-family:var(--display);color:var(--accent)}
+.pick li b{font-family:var(--display);font-weight:400;font-size:20px}
+.pick .rec{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:#CCED60;color:#0E1F45;padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:middle}
 .todo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:48px}
 .todo .deadline{margin-top:16px;font-family:var(--display);font-size:24px;color:var(--accent)}
 .todo ol{margin:0;padding-left:22px;display:grid;gap:12px}
@@ -68,6 +71,7 @@ section{padding-block:56px;border-bottom:1px solid var(--rule)}
   .move .n{font-size:52px}
   section{padding-block:44px}
   .ad{padding:22px 18px 20px}
+  .pick{padding:20px 18px}
   .wrap{padding-inline:16px}
 }
 </style>
@@ -76,18 +80,19 @@ section{padding-block:56px;border-bottom:1px solid var(--rule)}
   <div class="wrap">
     <p class="eyebrow">For Karen-Anne &amp; Erin · The Village Bookseller · First ad, Thursday Nov 12</p>
     <h1>Your idea is the <em>right one</em></h1>
-    <p class="lede">You suggested <b>booksellers’ books of the year</b>. I ran it against what we know about how people actually decide to buy, and it holds up. Here are three small changes that turn a nice list into a reason to come into the store, plus the ad itself.</p>
+    <p class="lede">You suggested <b>booksellers’ books of the year</b>. I ran it against what we know about how people actually decide to buy, and it holds up. I made three small changes to help it sell and wrote the ad. All you need to do is <b>pick a headline</b> and send me <b>five quick things</b>.</p>
   </div>
 </header>
 <main>
 <section><div class="wrap">
-  <p class="eyebrow">Why it works, and how to make it sell</p>
-  <h2 class="sec-h">Three moves, each based on how buyers think</h2>
+  <p class="eyebrow">Already done · Nothing for you to decide here</p>
+  <h2 class="sec-h">Three changes I made to your idea, and why</h2>
+  <p class="sub">These aren’t options. All three are already built into the ad below, and each one is based on how buyers actually think.</p>
   <div class="moves">
     <div class="move">
       <div class="n">1</div>
       <div>
-        <h3>Show the reading, don’t just say “staff picks”</h3>
+        <h3>Show the reading, not just “staff picks”</h3>
         <p class="why"><b>How buyers think:</b> people trust what took real effort and tune out what anyone could say. Every store and every list says “staff picks” this time of year. What a website can’t copy is a person who read all year and chose one book.</p>
         <p class="ex">“<span class="ph">[Name]</span> read <span class="ph">[N]</span> books this year. This is the one.”</p>
       </div>
@@ -103,8 +108,8 @@ section{padding-block:56px;border-bottom:1px solid var(--rule)}
     <div class="move">
       <div class="n">3</div>
       <div>
-        <h3>Skip the headshots. Photograph the handwriting</h3>
-        <p class="why"><b>How buyers think:</b> handwriting reads as care, because it obviously took a person’s time. Four books standing on your counter, each with a handwritten card from the bookseller who chose it, will out-sell four smiling faces. It’s also one phone photo, not a photo shoot. Keep the cards by the books afterward, so readers who come in find exactly what the ad showed them.</p>
+        <h3>A photo of handwriting instead of headshots</h3>
+        <p class="why"><b>How buyers think:</b> handwriting reads as care, because it obviously took a person’s time. Books standing on your counter, each with a handwritten card from the bookseller who chose it, will out-sell smiling faces. It’s also one phone photo, not a photo shoot. Keep the cards by the books afterward, so readers who come in find exactly what the ad showed them.</p>
         <div class="cards" aria-label="Example handwritten cards">
           <div class="card">Couldn’t put it down. Read it twice<small>– [Name]</small></div>
           <div class="card">For the dad who only reads history<small>– [Name]</small></div>
@@ -115,7 +120,7 @@ section{padding-block:56px;border-bottom:1px solid var(--rule)}
   </div>
 </div></section>
 <section><div class="wrap">
-  <p class="eyebrow">The ad · My recommendation</p>
+  <p class="eyebrow">The ad</p>
   <h2 class="sec-h">How it reads in the newsletter</h2>
   <p class="sub">The yellow blanks fill in from your answers below. I’d feature three booksellers on Nov 12 and save the fourth for Thanksgiving Day. That gives us a Part Two when everyone’s scrolling between turkey and pie.</p>
   <div class="ad">
@@ -130,10 +135,14 @@ section{padding-block:56px;border-bottom:1px solid var(--rule)}
     <p>Still stuck on someone? Come by 761 Coleman Blvd and tell them who’s on your list.</p>
     <span class="cta">Get the picks →</span>
   </div>
-  <div class="alts">
-    <p class="eyebrow">Two other headlines, same idea</p>
-    <p><b>“The book gift that’s hard to get wrong”</b> leads with the shopper’s worry about picking the wrong gift. It’s the most direct.</p>
-    <p><b>“No algorithm picked these”</b> sets real booksellers against the big online lists. It’s the most playful.</p>
+  <div class="pick">
+    <p class="eyebrow">Your one decision</p>
+    <h3>Pick a headline</h3>
+    <ol>
+      <li><b>“They read [N] books this year. These three won”</b><span class="rec">My pick</span><br>Leads with the booksellers’ reading. Strongest reason to trust a real person over a list.</li>
+      <li><b>“The book gift that’s hard to get wrong”</b><br>Leads with the shopper’s worry about picking the wrong gift. The most direct.</li>
+      <li><b>“No algorithm picked these”</b><br>Sets real booksellers against the big online lists. The most playful.</li>
+    </ol>
   </div>
 </div></section>
 <section><div class="wrap todo">
