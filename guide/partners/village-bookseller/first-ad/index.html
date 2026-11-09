@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
+<title>Village Bookseller Ad Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Instrument+Sans:wght@400;500;600;700&family=Caveat:wght@500;700&display=swap">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0}
+img{max-width:100%}
+:root{
+  --navy:#183872; --lime:#CCED60;
+  --bg:#F7F8F4; --surface:#FFFFFF; --ink:#141B2B; --muted:#5A6377; --rule:#D9DDE5;
+  --paper:#FBF6EA; --pen:#1F2A55; --ph:#7A5A00; --phbg:#FFF1C2; --accent:#183872;
+  --display:"Gloock", Georgia, "Times New Roman", serif;
+  --body:"Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --hand:"Caveat", "Bradley Hand", "Segoe Script", cursive;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#0E1424; --surface:#151D33; --ink:#EEF1F7; --muted:#A3ACC0; --rule:#2A3552;
+  --ph:#FFE08A; --phbg:#3A3215; --accent:#A9C0F5; color-scheme:dark}}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:880px;margin:0 auto;padding-inline:20px}
+h1,h2,h3,h4{font-family:var(--display);font-weight:400;text-wrap:balance;line-height:1.08;margin:0}
+p{margin:0}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.ph{background:var(--phbg);color:var(--ph);padding:0 .25em;border-radius:3px;font-weight:600}
+.hero{background:#183872;color:#fff;padding-block:56px 60px}
+.hero .eyebrow{color:#CCED60}
+.hero h1{font-size:clamp(46px,9vw,96px);margin-top:16px;max-width:12ch}
+.hero h1 em{font-style:normal;color:#CCED60}
+.hero .lede{margin-top:24px;font-size:19px;color:#DCE3F2;max-width:56ch}
+.hero .lede b{color:#fff}
+section{padding-block:56px;border-bottom:1px solid var(--rule)}
+.sec-h{font-size:clamp(32px,5vw,46px);margin-top:10px}
+.sub{margin-top:12px;color:var(--muted);max-width:60ch}
+.moves{display:grid;gap:36px;margin-top:36px}
+.move{display:grid;grid-template-columns:72px minmax(0,1fr);gap:20px}
+.move .n{font-family:var(--display);font-size:72px;line-height:.85;color:var(--accent)}
+.move h3{font-size:28px}
+.move .why{margin-top:10px;max-width:62ch}
+.move .why b{color:var(--accent)}
+.move .ex{margin-top:12px;padding:12px 16px;background:var(--surface);border:1px solid var(--rule);border-radius:4px;font-size:16px}
+.cards{display:flex;gap:16px;flex-wrap:wrap;margin-top:16px}
+.card{background:var(--paper);color:var(--pen);font-family:var(--hand);font-size:23px;line-height:1.15;padding:16px 16px 18px;width:180px;max-width:100%;box-shadow:0 1px 0 rgba(0,0,0,.06),0 8px 20px -12px rgba(0,0,0,.35);transform:rotate(-2deg)}
+.card:nth-child(2){transform:rotate(1.5deg)}
+.card:nth-child(3){transform:rotate(-.5deg)}
+.card small{display:block;font-size:28px;font-weight:700;margin-top:8px}
+.ad{margin-top:32px;background:var(--surface);border:1px solid var(--rule);border-top:6px solid #183872;padding:28px 28px 24px;max-width:620px}
+.ad .label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.ad h4{font-size:30px;line-height:1.1;margin:10px 0 14px}
+.ad p{font-size:16px;margin-bottom:12px}
+.ad ul{margin:0 0 14px;padding:0;list-style:none;display:grid;gap:10px}
+.ad li{font-size:16px;padding-left:14px;border-left:2px solid #CCED60}
+.ad .cta{display:inline-block;margin-top:4px;background:#183872;color:#fff;font-weight:600;padding:10px 16px;border-radius:3px;font-size:15px}
+.alts{margin-top:28px;display:grid;gap:10px;max-width:62ch}
+.alts p{font-size:16px}
+.alts b{font-family:var(--display);font-weight:400;font-size:20px}
+.todo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:48px}
+.todo .deadline{margin-top:16px;font-family:var(--display);font-size:24px;color:var(--accent)}
+.todo ol{margin:0;padding-left:22px;display:grid;gap:12px}
+.todo ol li::marker{font-family:var(--display);color:var(--accent)}
+.sign{padding-block:40px 64px}
+.sign .hand{font-family:var(--hand);font-size:34px;color:var(--accent)}
+.sign .note{margin-top:20px;font-size:14px;color:var(--muted);max-width:62ch}
+@media (max-width:700px){
+  .todo{grid-template-columns:minmax(0,1fr);gap:24px}
+  .move{grid-template-columns:48px minmax(0,1fr);gap:14px}
+  .move .n{font-size:52px}
+  section{padding-block:44px}
+  .ad{padding:22px 18px 20px}
+  .wrap{padding-inline:16px}
+}
+</style>
+</head><body>
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">For Karen-Anne &amp; Erin · The Village Bookseller · First ad, Thursday Nov 12</p>
+    <h1>Your idea is the <em>right one</em></h1>
+    <p class="lede">You suggested <b>booksellers’ books of the year</b>. I ran it against what we know about how people actually decide to buy, and it holds up. Here are three small changes that turn a nice list into a reason to come into the store, plus the ad itself.</p>
+  </div>
+</header>
+<main>
+<section><div class="wrap">
+  <p class="eyebrow">Why it works, and how to make it sell</p>
+  <h2 class="sec-h">Three moves, each based on how buyers think</h2>
+  <div class="moves">
+    <div class="move">
+      <div class="n">1</div>
+      <div>
+        <h3>Show the reading, don’t just say “staff picks”</h3>
+        <p class="why"><b>How buyers think:</b> people trust what took real effort and tune out what anyone could say. Every store and every list says “staff picks” this time of year. What a website can’t copy is a person who read all year and chose one book.</p>
+        <p class="ex">“<span class="ph">[Name]</span> read <span class="ph">[N]</span> books this year. This is the one.”</p>
+      </div>
+    </div>
+    <div class="move">
+      <div class="n">2</div>
+      <div>
+        <h3>Say who each book is for</h3>
+        <p class="why"><b>How buyers think:</b> in November, your readers are shopping for other people. They aren’t looking for the best book of the year. They’re looking for a gift that won’t miss. A pick that names the person it’s for takes the guesswork out.</p>
+        <p class="ex">“For the dad who only reads history.” “For the friend who swears she has no time to read.”</p>
+      </div>
+    </div>
+    <div class="move">
+      <div class="n">3</div>
+      <div>
+        <h3>Skip the headshots. Photograph the handwriting</h3>
+        <p class="why"><b>How buyers think:</b> handwriting reads as care, because it obviously took a person’s time. Four books standing on your counter, each with a handwritten card from the bookseller who chose it, will out-sell four smiling faces. It’s also one phone photo, not a photo shoot. Keep the cards by the books afterward, so readers who come in find exactly what the ad showed them.</p>
+        <div class="cards" aria-label="Example handwritten cards">
+          <div class="card">Couldn’t put it down. Read it twice<small>– [Name]</small></div>
+          <div class="card">For the dad who only reads history<small>– [Name]</small></div>
+          <div class="card">My book of the year, no contest<small>– [Name]</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></section>
+<section><div class="wrap">
+  <p class="eyebrow">The ad · My recommendation</p>
+  <h2 class="sec-h">How it reads in the newsletter</h2>
+  <p class="sub">The yellow blanks fill in from your answers below. I’d feature three booksellers on Nov 12 and save the fourth for Thanksgiving Day. That gives us a Part Two when everyone’s scrolling between turkey and pie.</p>
+  <div class="ad">
+    <p class="label">Presented by The Village Bookseller</p>
+    <h4>They read <span class="ph">[combined N]</span> books this year. These three won</h4>
+    <p>Every “best books of 2026” list is landing in your inbox right now. This one comes from three people who spend all day putting books into Charlestonians’ hands.</p>
+    <ul>
+      <li><b><span class="ph">[Name]</span>:</b> <i><span class="ph">[Title]</span></i>. “<span class="ph">[their words]</span>.” For the one who <span class="ph">[…]</span>.</li>
+      <li><b><span class="ph">[Name]</span>:</b> <i><span class="ph">[Title]</span></i>. “<span class="ph">[their words]</span>.” For the one who <span class="ph">[…]</span>.</li>
+      <li><b><span class="ph">[Name]</span>:</b> <i><span class="ph">[Title]</span></i>. “<span class="ph">[their words]</span>.” For the one who <span class="ph">[…]</span>.</li>
+    </ul>
+    <p>Still stuck on someone? Come by 761 Coleman Blvd and tell them who’s on your list.</p>
+    <span class="cta">Get the picks →</span>
+  </div>
+  <div class="alts">
+    <p class="eyebrow">Two other headlines, same idea</p>
+    <p><b>“The book gift that’s hard to get wrong”</b> leads with the shopper’s worry about picking the wrong gift. It’s the most direct.</p>
+    <p><b>“No algorithm picked these”</b> sets real booksellers against the big online lists. It’s the most playful.</p>
+  </div>
+</div></section>
+<section><div class="wrap todo">
+  <div>
+    <p class="eyebrow">What I need from you</p>
+    <h2 class="sec-h">Five quick things</h2>
+    <p class="deadline">By Tuesday, Nov 10, so it makes Thursday</p>
+  </div>
+  <ol>
+    <li><b>Three booksellers:</b> first name (and their OK to use it), title and author, and a sentence or two in their own words.</li>
+    <li><b>Who each book is for</b>, in a few words.</li>
+    <li><b>Roughly how many books</b> each one read this year. A fair guess is fine.</li>
+    <li><b>One phone photo</b> of the books standing on the counter with their handwritten cards.</li>
+    <li><b>Where the button should go</b>, and whether you offer gift receipts or exchanges. I’ll only mention what you confirm.</li>
+  </ol>
+</div></section>
+</main>
+<footer class="wrap sign">
+  <p class="hand">Jimmy</p>
+  <p class="note">The thinking here draws on <i>Alchemy</i> by Rory Sutherland, a longtime Ogilvy advertising executive who studies how real buyers make decisions. I’ll send you the final copy for a thumbs-up before anything runs.</p>
+</footer>
+</body></html>
