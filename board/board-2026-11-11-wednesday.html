@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Board · Wednesday music · Nov 11, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --navy:#183872; --lime:#CCED60; --ink:#1b2236; --muted:#5b6478; --bg:#f3f5f9; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:'Open Sans',system-ui,sans-serif; font-size:16px; line-height:1.55; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 16px 48px; }
+  .mast { background:var(--navy); color:#fff; padding:22px 16px; }
+  .mast .in { max-width:760px; margin:0 auto; }
+  .mast .kicker { color:var(--lime); font-family:Inter,sans-serif; font-weight:800; letter-spacing:.08em; text-transform:uppercase; font-size:13px; }
+  .mast h1 { font-family:Inter,sans-serif; font-size:26px; margin:6px 0 2px; }
+  .mast .date { opacity:.85; font-size:14px; }
+  .eyes { background:#fff3e0; border:2px solid #e8a33d; border-radius:10px; padding:16px 18px; margin:22px 0; font-size:14.5px; }
+  .eyes h2 { font-family:Inter,sans-serif; font-size:17px; margin:0 0 2px; color:#7a4a00; }
+  .eyes .sub { color:#7a4a00; margin:0 0 10px; font-size:13.5px; }
+  .eyes ul { margin:0; padding-left:20px; }
+  .eyes li { margin:6px 0; }
+  hr { border:0; border-top:1px solid #d5dae4; margin:26px 0; }
+  .tag { display:inline-block; background:#1f8a4c; color:#fff; font-family:Inter,sans-serif; font-weight:700; font-size:13px; padding:4px 10px; border-radius:20px; }
+  .note { color:var(--muted); font-size:14px; margin:8px 0 18px; }
+  .step { font-family:Inter,sans-serif; font-weight:700; font-size:14px; color:var(--navy); margin:18px 0 6px; text-transform:uppercase; letter-spacing:.05em; }
+  .box { background:#fff; border:1px solid #d5dae4; border-radius:10px; overflow:hidden; }
+  .bar { background:var(--navy); padding:10px 12px; display:flex; justify-content:flex-end; }
+  .bar button { background:var(--lime); color:var(--navy); border:0; border-radius:6px; font-family:Inter,sans-serif; font-weight:800; font-size:14px; padding:9px 14px; cursor:pointer; }
+  #title { padding:14px 16px; font-family:Inter,sans-serif; font-weight:800; font-size:20px; outline:none; }
+  #title:focus { background:#fbfdf0; }
+  #post { padding:18px 18px 8px; }
+  #post h3 { font-family:Inter,sans-serif; color:var(--navy); font-size:17px; margin:22px 0 6px; }
+  #post p { margin:0 0 14px; }
+  #post ul { margin:0 0 14px; padding-left:20px; }
+  #post li { margin:5px 0; }
+  #post strong { color:var(--navy); }
+  #post a { color:var(--navy); }
+  @media (max-width:720px) { .mast h1 { font-size:22px; } #post { padding:14px 14px 4px; } }
+</style>
+</head>
+<body>
+<div class="mast"><div class="in">
+  <div class="kicker">The Board · Wednesday music</div>
+  <h1>This week's live music</h1>
+  <div class="date">Wednesday, November 11, 2026</div>
+</div></div>
+
+<div class="wrap">
+
+<div class="eyes">
+  <h2>🔒 For your eyes only — don't post this part</h2>
+  <p class="sub">Notes on how this post was built. Nothing in this amber box goes into Beehiiv.</p>
+  <ul>
+    <li><b>Title options, your pick:</b> Loaded: "Travis Tritt makes up his date, plus Paula Cole and Deer Tick" (puts the news first). Alt 1: "Two nights of Big Head Todd, and Band of Horses is close" (leans on what's coming, not this weekend). Alt 2: "Spyro Gyra to Deer Tick, Thursday to Sunday" (just names the range). You can edit the title box before you copy it.</li>
+    <li><b>Freshness check:</b> Passed. The newest Last Seen date is 2026-11-11, and 609 rows were touched since Nov 4. New rows were added at 9:45 PM Tuesday, so the prefetch ran.</li>
+    <li><b>Which rows count:</b> The skill says Status = Scheduled, but only the smaller rooms (Commodore, Dinghy, Forte, Tin Roof, Washout) carry that. The big rooms (Music Hall, Pour House, Music Farm, Royal American, Windjammer, Gaillard, Henry's) all have a blank Status. I counted Scheduled + blank and left out Likely Cancelled, Confirmed Cancelled and Past. The Likely Cancelled rows I checked were older billings of shows that also have a fresh blank row (Pecos, WesGhost, The Wrecks, Kurt Vile, Austin Snell), so nothing real went missing. The skill's filter wording should be changed to match.</li>
+    <li><b>Rows pulled:</b> 99 Scheduled plus 138 blank-status for Nov 12–25, and 162 more for Nov 26–Jan 10 at the bigger rooms.</li>
+    <li><b>Duplicates collapsed:</b> Sinatra at Forte (3 rows), The Defilers / Bo Stevens (3), Paula Cole (2), Tauk/"Tuak" (2), Deer Tick (2), every Dinghy show (2 each), Drivin' N Cryin' (2), Band of Horses (2 per night), Matteo Bocelli (2), Daniel Donato (2 billings per night), Henry's "(10pm)"/"(6pm)" variants.</li>
+    <li><b>Left out:</b> CANCELLED: Jeff Garlin (comedy, and cancelled), The Bodyguard (musical), Stingrays hockey, oyster roasts, pop-up markets, putting leagues, DJ nights at Prohibition, and the unnamed "Live Music Tonight" rows at the Commodore and the Washout.</li>
+    <li><b>Check these:</b> (1) There's a "Tauk + Les Tauk" row for Saturday Nov 14 at 9 PM next to the Friday Tauk + lespecial rows. It's either a second night or a garbled duplicate. I only printed Friday. (2) The Travis Tritt row has its venue as North Charleston Coliseum, but the title says PAC. I printed "North Charleston PAC" and didn't give a time because the row has none. (3) Hudson Westbrook at Firefly has no start time either.</li>
+    <li><b>On-sale window:</b> A strict 30–60 day window (Dec 11–Jan 10) would leave out Band of Horses, Shakey Graves, Tommy Emmanuel and Lindsey Stirling, so I widened it to Nov 25 through New Year's Eve, capped at 12. Also cut: Chris Tomlin (Dec 3, Coliseum), the Spiegeltent run, the Charleston Christmas Special and The Nutcracker (theatre more than music). After Jan 10 the data thins out, which is just how far ahead the scrape reaches.</li>
+    <li><b>Bold rule:</b> Inside each day, 1–2 headliners lead in bold and the rest follow in time order. In "Next week" and "On sale", every date is bold, plus the 2–3 biggest names.</li>
+    <li><b>Genre check:</b> The Genre field is mostly blank, so I checked by eye. The mix covers jazz, jam, bluegrass, country, indie rock, punk, soul and classical. No single genre makes up half the list.</li>
+    <li><b>Geography:</b> Everything is in the Charleston metro (the Washout is on Folly). Nothing dropped.</li>
+    <li><b>Calendar link:</b> Left out (switch is off). There's a comment prompt in its place.</li>
+  </ul>
+</div>
+
+<hr>
+
+<span class="tag">✅ Paste this into Beehiiv</span>
+<p class="note">Two boxes, two fields. Copy the title into the title field, then the body into the body. The formatting comes across already styled.</p>
+
+<div class="step">Step 1 — the title</div>
+<div class="box">
+  <div id="title" contenteditable="true" spellcheck="false">Travis Tritt makes up his date, plus Paula Cole and Deer Tick</div>
+  <div class="bar"><button id="copyTitle" type="button">Copy title</button></div>
+</div>
+
+<div class="step">Step 2 — the body</div>
+<div class="box">
+<div id="post">
+<p>Travis Tritt finally makes up his North Charleston date on Saturday. Around it: Spyro Gyra and Paula Cole at the Music Hall, Tauk at the Pour House, and Deer Tick on Sunday to close it out.</p>
+
+<h3>Thursday, Nov 12</h3>
+<ul>
+<li><strong>Spyro Gyra</strong> — Charleston Music Hall, 8 PM</li>
+<li><strong>Bearly Dead</strong> — Charleston Pour House, 8:30 PM</li>
+<li>Broken Compass Bluegrass — Charleston Pour House, 6 PM</li>
+<li>Ryan Frankett — The Dinghy, 6 PM</li>
+<li>The Great American Songbook featuring Chloe Cannon — Forte Jazz Lounge, 7 PM</li>
+<li>Sunny &amp; The Hunny and Gracious Day (7 PM), Market Street Cowboy Band and Suffering Moses (10 PM) — Henry's On The Market</li>
+<li>Jazz Series — The Commodore, 7:30 PM</li>
+<li>WesGhost w/ Euro Tripp — Music Farm, 8 PM</li>
+<li>Dead Inside Presents: The Birthday Show — The Tin Roof, 8 PM</li>
+</ul>
+
+<h3>Friday, Nov 13</h3>
+<ul>
+<li><strong>Paula Cole</strong> w/ Rett Madison — Charleston Music Hall, 8 PM</li>
+<li><strong>Tauk + lespecial</strong> — Charleston Pour House, 9 PM</li>
+<li>Natalie Brooke — Charleston Pour House, 6 PM</li>
+<li>Cooper River Band — The Dinghy, 7 PM</li>
+<li>Sinatra: Nothing But the Best, with Joe Clarke &amp; the Forte Jazz Show Band — Forte Jazz Lounge, 7 PM</li>
+<li>The Defilers / Bo Stevens — The Tin Roof, 7:30 PM</li>
+<li>The Wrecks w/ Worry Club &amp; Kid Sistr — Music Farm, 8 PM</li>
+<li>Kenny George Band w/ Finnegan Bell — The Royal American, 9 PM</li>
+<li>VYNL — The Windjammer (inside stage), 9 PM</li>
+<li>Sunny &amp; The Hunny (9:30 PM), Bender Funk, Joe Fisher Trio and Market Street Cowboy Band (10 PM) — Henry's On The Market</li>
+<li>Jerry Feels Good &amp; Alvin B Saxxy — Prohibition, 10 PM</li>
+<li>Hooked The Band — Montreux Bar &amp; Grill, 10 PM</li>
+</ul>
+
+<h3>Saturday, Nov 14</h3>
+<ul>
+<li><strong>Travis Tritt</strong> (the rescheduled show) — North Charleston PAC, time not listed</li>
+<li><strong>Hudson Westbrook</strong>, The Hits Me Tour — Firefly Distillery, time not listed</li>
+<li>Dave Landeo Band — The Windjammer beach stage, 1 PM</li>
+<li>Liam Murphy at the Lowcountry boil — New Realm Brewing, 2 PM</li>
+<li>Gracious Day — The Dinghy, 3 PM</li>
+<li>The Fretliners — Charleston Pour House, 6 PM</li>
+<li>Let the Good Times Roll! The Music of Ray Charles — Forte Jazz Lounge, 7 PM</li>
+<li>HALF BAD — The Dinghy, 7 PM</li>
+<li>Pecos &amp; The Rooftops w/ Jaxon Malone Band — Music Farm, 8 PM</li>
+<li>Enlightened Iguanas / Mab S-Ban / Abrevity — The Tin Roof, 8 PM</li>
+<li>Dan's Tramp Stamp &amp; The Money Bags — The Washout, 8 PM</li>
+<li>The Head w/ Emma Grace Burton + Lilly Hartle — The Royal American, 9 PM</li>
+<li>John Morgan w/ Chris Ryan — The Windjammer (inside stage), 9 PM</li>
+<li>Sunny &amp; The Hunny (9:30 PM), Keidre, Chris Williams and Market Street Cowboy Band (10 PM) — Henry's On The Market</li>
+<li>Jamisun — Montreux Bar &amp; Grill, 10 PM</li>
+</ul>
+
+<h3>Sunday, Nov 15</h3>
+<ul>
+<li><strong>Deer Tick</strong> w/ Dug — Charleston Pour House, 8:30 PM</li>
+<li>Motown Throwdown — Charleston Pour House, 1:30 PM</li>
+<li>Evelyn Ivory — Henry's On The Market, 2 PM</li>
+<li>Brandon Lamar Simmons — The Dinghy, 3 PM</li>
+<li>Time Pirates — Montreux Bar &amp; Grill, 4 PM</li>
+<li>Dave Landeo — The Dinghy, 6:30 PM</li>
+<li>Gracious Day — Henry's On The Market, 9:30 PM</li>
+<li>High 5 — Prohibition, 10 PM</li>
+</ul>
+
+<h3>Next week</h3>
+<ul>
+<li><strong>Tue, Nov 17</strong> — East Nash Grass, Charleston Pour House</li>
+<li><strong>Wed, Nov 18</strong> — SUSTO Residency (Debut + &amp; I'm Fine Today) feat. Johnny Delaware, The Royal American</li>
+<li><strong>Thu, Nov 19 &amp; Fri, Nov 20</strong> — <strong>Big Head Todd &amp; the Monsters</strong>, two nights, Charleston Music Hall</li>
+<li><strong>Thu, Nov 19</strong> — Hunter Flynn w/ Peytan Porter, The Windjammer</li>
+<li><strong>Fri, Nov 20</strong> — Drivin' N Cryin' w/ Savannah Grace, Charleston Pour House</li>
+<li><strong>Fri, Nov 20 &amp; Sat, Nov 21</strong> — Charleston Symphony Orchestra, Concerto for Orchestra, Gaillard Center</li>
+<li><strong>Sat, Nov 21</strong> — <strong>Kurt Vile &amp; the Violators</strong> w/ Twisted Teens, Music Farm</li>
+<li><strong>Sun, Nov 22</strong> — An Evening with Renée Elise Goldsberry, Gaillard Center</li>
+</ul>
+
+<h3>On sale: late November and beyond</h3>
+<ul>
+<li><strong>Wed, Nov 25 &amp; Fri, Nov 27</strong> — <strong>An Evening With Band of Horses</strong>, Charleston Music Hall</li>
+<li><strong>Sat, Nov 28</strong> — Charlton Singleton's Holiday Spectacular feat. Quiana Parler, Charleston Music Hall</li>
+<li><strong>Sat, Nov 28</strong> — Lindsey Stirling, The Snow Waltz Tour, North Charleston Coliseum</li>
+<li><strong>Wed, Dec 2</strong> — Beartooth, The Refinery</li>
+<li><strong>Thu, Dec 3</strong> — Tommy Emmanuel, Charleston Music Hall</li>
+<li><strong>Fri, Dec 4</strong> — Winter Nights with Matteo Bocelli, Charleston Music Hall</li>
+<li><strong>Sat, Dec 5</strong> — <strong>Shakey Graves</strong>, Gaillard Center</li>
+<li><strong>Fri, Dec 11</strong> — Allman Betts Family Revival, Gaillard Center</li>
+<li><strong>Sun, Dec 13</strong> — Aoife O'Donovan and Chris Thile, Gaillard Center</li>
+<li><strong>Thu, Dec 17 – Sat, Dec 19</strong> — Daniel Donato's Cosmic Country, three nights, Charleston Pour House</li>
+<li><strong>Sun, Dec 20</strong> — <strong>Leslie Odom Jr.</strong>, The Christmas Tour, Gaillard Center</li>
+<li><strong>Thu, Dec 31</strong> — Futurebirds w/ Arts Fishing Club, Charleston Music Hall</li>
+</ul>
+
+<h3>Jimmy's pick</h3>
+<p><strong>Deer Tick at the Pour House, Sunday.</strong> Deer Tick has been making rowdy, funny, sometimes sad rock records out of Providence for about twenty years. The Pour House is a small room for a band with that much behind it, and the Sunday 8:30 start means you're home at a reasonable hour.</p>
+
+<p>Who are you seeing this weekend? Tell us in the comments.</p>
+
+<p><em>Mondays the calendar, Wednesdays the music, Fridays what's opening and closing.</em></p>
+</div>
+  <div class="bar"><button id="copyPost" type="button">Copy post</button></div>
+</div>
+
+</div>
+
+<script>
+(function(){
+  var SPACER = '<p>&nbsp;</p>';
+  function buildHTML(){
+    var post = document.getElementById('post'), out = [];
+    Array.prototype.forEach.call(post.children, function(el){
+      var tag = el.tagName;
+      if (tag === 'P') { out.push('<p>' + el.innerHTML.trim() + '</p>'); out.push(SPACER); }
+      else if (tag === 'H3') { out.push('<p><strong>' + el.textContent.trim() + '</strong></p>'); out.push(SPACER); }
+      else if (tag === 'UL' || tag === 'OL') {
+        Array.prototype.forEach.call(el.children, function(li){ out.push('<p>• ' + li.innerHTML.trim() + '</p>'); });
+        out.push(SPACER);
+      }
+    });
+    if (out.length && out[out.length-1] === SPACER) out.pop();
+    return out.join('');
+  }
+  function buildPlain(){
+    var post = document.getElementById('post'), s = '';
+    Array.prototype.forEach.call(post.children, function(el){
+      var tag = el.tagName;
+      if (tag === 'P' || tag === 'H3') { s += el.textContent.replace(/\s+/g,' ').trim() + '\n\n'; }
+      else if (tag === 'UL' || tag === 'OL') {
+        Array.prototype.forEach.call(el.children, function(li){ s += '• ' + li.textContent.replace(/\s+/g,' ').trim() + '\n'; });
+        s += '\n';
+      }
+    });
+    return s.replace(/\n{3,}/g,'\n\n').trim();
+  }
+  function getTitle(){ return document.getElementById('title').textContent.replace(/\s+/g,' ').trim(); }
+  function esc(t){ return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function fallback(text){
+    var ta = document.createElement('textarea'); ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch(e){} document.body.removeChild(ta);
+  }
+  function copy(html, plain, btn, label){
+    var done = function(){ btn.textContent = 'Copied — paste into Beehiiv'; setTimeout(function(){ btn.textContent = label; }, 2000); };
+    try {
+      if (window.ClipboardItem && navigator.clipboard && navigator.clipboard.write) {
+        navigator.clipboard.write([new ClipboardItem({
+          'text/html': new Blob([html], {type:'text/html'}),
+          'text/plain': new Blob([plain], {type:'text/plain'})
+        })]).then(done, function(){ fallback(plain); done(); });
+        return;
+      }
+    } catch(e) {}
+    fallback(plain); done();
+  }
+  window.__buildHTML = buildHTML; window.__buildPlain = buildPlain; window.__getTitle = getTitle;
+  document.getElementById('copyTitle').addEventListener('click', function(){ var t = getTitle(); copy('<p>' + esc(t) + '</p>', t, this, 'Copy title'); });
+  document.getElementById('copyPost').addEventListener('click', function(){ copy(buildHTML(), buildPlain(), this, 'Copy post'); });
+})();
+</script>
+</body>
+</html>
