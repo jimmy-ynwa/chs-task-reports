@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
+<title>Dermhaus Results, Nov. 5</title>
+<style>
+:root{--navy:#183872;--navy-deep:#112a5a;--navy-lift:#2a4f9a;--lime:#CCED60;--white:#fff;--mist:#c3d1ec;--ink:#12213d;
+--display:"Helvetica Neue","Arial Black",Arial,system-ui,sans-serif;--body:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color-scheme:dark}
+*{box-sizing:border-box}
+html{background:var(--navy)}
+body{margin:0;background:var(--navy);color:var(--white);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:980px;margin:0 auto;padding-inline:20px}
+p{margin:0 0 14px;font-size:16px}
+strong{font-weight:800}
+a{color:inherit;overflow-wrap:anywhere}
+.eyebrow{color:var(--lime);font-weight:800;font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin:26px 0 18px}
+.hero{padding-block:28px 56px;overflow:hidden}
+h1{margin:0;font-weight:400}
+.mega{display:block;font-family:var(--display);font-weight:900;font-size:clamp(84px,25vw,236px);line-height:.82;letter-spacing:-.055em;font-variant-numeric:tabular-nums}
+.mega:not(.lime){padding-bottom:.17em}
+.mega.lime{color:var(--lime);text-align:right;margin-top:34px}
+.mega-cap{display:block;font-size:clamp(16px,3.4vw,24px);font-weight:700;margin-top:12px;max-width:16em;color:var(--mist);line-height:1.25}
+.mega-cap.right{margin-left:auto;text-align:right}
+.sub{margin:34px 0 0;font-size:17px;max-width:34em;color:var(--mist)}
+.sub strong{color:var(--white)}
+h2{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--lime);margin:0 0 20px}
+.band{padding-block:48px}
+.band.deep{background:var(--navy-deep)}
+.band.white{background:var(--white);color:var(--ink)}
+.band.white h2{color:var(--navy)}
+.band.white strong{color:var(--navy)}
+.lede{font-family:var(--display);font-weight:900;font-size:clamp(26px,5.4vw,44px);line-height:1.05;letter-spacing:-.03em;margin:0 0 22px;max-width:18em;text-wrap:balance}
+.stack{display:flex;height:46px;margin:6px 0 12px}
+.stack span{display:block}
+.stack .a{background:var(--lime)}
+.stack .b{background:var(--white)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 28px;font-size:14px;color:var(--mist)}
+.legend b{color:var(--white);font-variant-numeric:tabular-nums}
+.sw{display:inline-block;width:12px;height:12px;margin-right:8px;vertical-align:-1px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:26px 20px;margin:34px 0 0}
+.fact .n{font-family:var(--display);font-weight:900;font-size:clamp(34px,6vw,52px);letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.fact .l{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);margin-top:8px}
+.gauge{position:relative;height:64px;margin:46px 0 34px}
+.gauge .track{position:absolute;left:0;right:0;top:26px;height:10px;background:var(--navy-lift)}
+.gauge .band1{position:absolute;top:20px;height:22px;background:var(--white);opacity:.9}
+.gauge .mark{position:absolute;top:8px;width:4px;height:46px;background:var(--lime);transform:translateX(-2px)}
+.gauge .mk{position:absolute;top:-22px;font-family:var(--display);font-weight:900;font-size:26px;color:var(--lime);letter-spacing:-.03em;white-space:nowrap}
+.gauge .t{position:absolute;top:58px;font-size:12px;color:var(--mist);transform:translateX(-50%);white-space:nowrap}
+.gauge .t.l{transform:none}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th{text-align:left;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);padding:0 0 10px;font-weight:800}
+th.n,td.n{text-align:right;font-variant-numeric:tabular-nums}
+th.n{padding-left:14px}
+td{padding:14px 0 12px;border-top:1px solid #d5dded;vertical-align:top}
+td.n{padding-left:12px;white-space:nowrap;font-weight:700}
+td .bar{display:block;height:6px;background:var(--navy);margin-top:9px}
+td .sub2{display:block;font-size:12px;color:#5c6b85;margin-top:2px}
+tr.tot td{border-top:3px solid var(--navy);font-weight:800;color:var(--navy);font-size:17px}
+.two{display:grid;grid-template-columns:1fr;gap:34px}
+@media(min-width:760px){.two{grid-template-columns:1fr 1fr;gap:56px}}
+.two>*{min-width:0}
+.bad{border-left:4px solid var(--lime);padding-left:16px}
+.moves{margin:0;padding:0;list-style:none;display:grid;gap:18px}
+.moves li{font-size:16px;padding-left:18px;position:relative}
+.moves li:before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;background:var(--lime)}
+.cmp{display:grid;gap:26px;margin-top:8px}
+.cmp .row .h{display:flex;justify-content:space-between;gap:12px;font-size:14px;font-weight:700;margin-bottom:8px}
+.cmp .row .h span:last-child{color:var(--mist);font-weight:600;font-variant-numeric:tabular-nums;text-align:right}
+.cmp .bars{display:grid;gap:6px}
+.cmp .bars i{display:block;height:26px;position:relative;font-style:normal;min-width:4px}
+.cmp .bars i b{position:absolute;left:10px;top:0;line-height:26px;font-size:13px;font-weight:800;white-space:nowrap}
+.cmp .bars .x{background:var(--white);color:var(--navy)}
+.cmp .bars .y{background:var(--lime);color:var(--navy)}
+.stand td{border-color:var(--navy-lift)}
+.stand th{color:var(--lime)}
+.thanks{background:var(--lime);color:var(--navy);padding-block:54px}
+.thanks p{font-family:var(--display);font-weight:900;font-size:clamp(22px,4.4vw,34px);line-height:1.12;letter-spacing:-.025em;max-width:22em;margin:0 0 18px;text-wrap:balance}
+.thanks p.link{font-size:clamp(17px,3.2vw,22px)}
+.thanks .sig{font-size:18px;font-family:var(--body);font-weight:800;letter-spacing:0;margin:0}
+footer{padding-block:34px 56px;font-size:12.5px;color:var(--mist)}
+footer p{font-size:12.5px;max-width:60em}
+@media(prefers-reduced-motion:no-preference){.stack .a,.stack .b{transform-origin:left;animation:g .9s ease-out both}@keyframes g{from{transform:scaleX(0)}}}
+</style></head><body>
+<section class="hero"><div class="wrap">
+<p class="eyebrow">CHS Happenings &middot; Sponsorship Results</p>
+<h1>
+<span class="mega">9,864</span>
+<span class="mega-cap">times your Holiday Glow Package was seen</span>
+<span class="mega lime">27</span>
+<span class="mega-cap right">people clicked through to your Holiday Glow Package page</span>
+</h1>
+<p class="sub"><strong>Your Primary placement in the Nov. 5 issue,</strong> top billing for the Holiday Glow Package. The third of five.</p>
+</div></section>
+<section class="band deep"><div class="wrap">
+<h2>The short version</h2>
+<p class="lede">8,121 people opened the issue, and your holiday package was the first thing they saw.</p>
+<div class="stack" role="img" aria-label="Impressions: 8,121 email opens and 1,743 web views"><span class="a" style="flex:8121"></span><span class="b" style="flex:1743"></span></div>
+<div class="legend"><span><i class="sw" style="background:var(--lime)"></i><b>8,121</b> opened the email</span><span><i class="sw" style="background:var(--white)"></i><b>1,743</b> web views of pages carrying your card</span></div>
+<div class="facts">
+<div class="fact"><div class="n">11,391</div><div class="l">Inboxes it reached</div></div>
+<div class="fact"><div class="n">71.3%</div><div class="l">Open rate</div></div>
+<div class="fact"><div class="n">24</div><div class="l">Clicks from the email</div></div>
+<div class="fact"><div class="n">3</div><div class="l">Clicks from the web</div></div>
+</div>
+<p style="margin-top:30px;color:var(--mist);max-width:40em">Seen is email opens plus web views. The web side is the issue's own page (160 views) and the seven stories that carried your card (1,583 views). Clicks are unique people, not taps.</p>
+</div></section>
+<section class="band"><div class="wrap">
+<h2>How that compares</h2>
+<p class="lede">2.96 clicks for every 1,000 people who opened.</p>
+<p style="color:var(--mist);max-width:40em">That's in the upper half of the usual range for CHS Happenings sponsors, a step down from the Open Haus but well above your first placement.</p>
+<div class="gauge" role="img" aria-label="2.96 clicks per 1,000 openers against the usual range of 1.1 to 3.4">
+<div class="track"></div><div class="band1" style="left:18.33%;width:38.33%"></div><div class="mark" style="left:49.26%"></div><div class="mk" style="left:49.26%;padding-left:10px">2.96</div>
+<span class="t l" style="left:0">0</span><span class="t" style="left:37.50%">usual range, 1.1 to 3.4</span><span class="t" style="left:100%;transform:translateX(-100%)">6</span>
+</div>
+</div></section>
+<section class="band white"><div class="wrap">
+<h2>Where the clicks came from</h2>
+<table>
+<thead><tr><th>Where it ran</th><th class="n">Views</th><th class="n">Clicks</th></tr></thead>
+<tbody>
+<tr><td>The email<span class="sub2">Primary slot, right after the weather</span><span class="bar" style="width:100.0%"></span></td><td class="n">8,121</td><td class="n">24</td></tr>
+<tr><td>Hanahan soft serve story<span class="sub2">Your card at the top, and the closing line</span><span class="bar" style="width:0.9%"></span></td><td class="n">71</td><td class="n">1</td></tr>
+<tr><td>West Ashley Development Watch story<span class="sub2">Your card at the top, and the closing line</span><span class="bar" style="width:2.6%"></span></td><td class="n">212</td><td class="n">1</td></tr>
+<tr><td>The issue's own web page<span class="bar" style="width:2.0%"></span></td><td class="n">160</td><td class="n">1</td></tr>
+<tr><td>Sword Gate House story<span class="sub2">The lead story</span><span class="bar" style="width:3.8%"></span></td><td class="n">308</td><td class="n">0</td></tr>
+<tr><td>Four other web stories<span class="sub2">Costco, the Morris Island Lighthouse, a brewery's new menu, Daniel Island</span><span class="bar" style="width:12.2%"></span></td><td class="n">992</td><td class="n">0</td></tr>
+<tr class="tot"><td>All of it</td><td class="n">9,864</td><td class="n">27</td></tr>
+</tbody></table>
+</div></section>
+<section class="band"><div class="wrap">
+<h2>The honest read</h2>
+<div class="two">
+<div>
+<p class="lede" style="font-size:clamp(22px,4vw,30px)">What worked</p>
+<p><strong>One clear offer.</strong> One package, a firm end date and a link straight to it. Twenty-four people clicked through from the email, for a premium gift, six weeks before Christmas.</p><p><strong>The photo did its job.</strong> You and the team in front of the Broad Street building made the practice feel familiar before anyone read a word.</p>
+</div>
+<div class="bad">
+<p class="lede" style="font-size:clamp(22px,4vw,30px)">What didn't</p>
+<p><strong>Clicks dipped from the Open Haus, 32 to 27.</strong> The ad drew a smaller share of the issue's clickers too, so this wasn't a quiet week. The Open Haus was free and two days away. A holiday package open through Dec. 31 gave readers no reason to click today. That's on me: I'd add a nearer date.</p><p>Phone bookings and the Jasper market don't show up here, so clicks undercount this one.</p>
+</div>
+</div>
+<div class="cmp" style="margin-top:40px;max-width:620px"><div class="row"><div class="h"><span>Total clicks to you</span><span>32 &rarr; 27</span></div><div class="bars"><i class="x" style="width:100.0%"><b>Oct. 22 &middot; 32</b></i><i class="y" style="width:84.4%"><b>Nov. 5 &middot; 27</b></i></div></div><div class="row"><div class="h"><span>Email clicks per 1,000 openers</span><span>3.72 &rarr; 2.96</span></div><div class="bars"><i class="x" style="width:100.0%"><b>Oct. 22 &middot; 3.72</b></i><i class="y" style="width:79.6%"><b>Nov. 5 &middot; 2.96</b></i></div></div></div>
+</div></section>
+<section class="band deep"><div class="wrap">
+<h2>What I'd change next time</h2>
+<ul class="moves">
+<li><strong>Give Nov. 19 a this-week reason.</strong> Same one-offer focus, plus a date that's close: book before Thanksgiving, or a gift ready in time for a holiday party.</li>
+<li><strong>Keep the link pointed at the thing.</strong> Straight to the exact service or package page worked. Let's do it again.</li>
+<li><strong>Tell me what the phone did.</strong> If calls or the Jasper market brought anyone in, I'll put it on your campaign page.</li>
+</ul>
+</div></section>
+<section class="band"><div class="wrap">
+<h2>Where the campaign stands</h2>
+<table class="stand" style="color:var(--white)">
+<thead><tr><th>Placement</th><th class="n">Status</th></tr></thead>
+<tbody>
+<tr><td>Oct. 15 &middot; Featured Event</td><td class="n">Ran &middot; 14 clicks</td></tr>
+<tr><td>Oct. 22 &middot; Primary</td><td class="n">Ran &middot; 32 clicks</td></tr>
+<tr><td>Nov. 5 &middot; Primary</td><td class="n">Ran &middot; 27 clicks</td></tr>
+<tr><td>Nov. 19 &middot; Primary</td><td class="n">Up next</td></tr>
+<tr><td>Dec. 10 &middot; Primary</td><td class="n">Scheduled</td></tr>
+<tr class="tot"><td style="color:var(--lime);border-color:var(--lime)">Campaign</td><td class="n" style="color:var(--lime);border-color:var(--lime)">3 of 5</td></tr>
+</tbody></table>
+</div></section>
+<section class="thanks"><div class="wrap">
+<p>Twenty-seven people went looking at a holiday package from one Thursday issue. Two to go, and I want the next one to land closer to the moment.</p>
+<p class="link">Full campaign view: <a href="https://guide.chshappenings.com/partners/dermhaus/">guide.chshappenings.com/partners/dermhaus</a></p>
+<p class="sig">Jimmy</p>
+</div></section>
+<footer><div class="wrap">
+<p>Numbers pulled from Beehiiv on Nov. 11, 2026, six days after the issue went out, so opens and clicks have settled. Impressions are email opens plus page views of the issue and of every story that carried your card. Clicks are unique people, not taps. Every link carried a CHS Happenings tracking tag, so these visits show up in your own site stats too. Nothing here is modeled or estimated.</p>
+</div></footer>
+</body></html>
