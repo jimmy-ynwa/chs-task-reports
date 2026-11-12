@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>CHS Happenings by the Numbers</title>
+<meta property="og:title" content="CHS Happenings by the Numbers">
+<meta property="og:description" content="How Charleston's weekly newsletter stacks up against the national benchmarks for newsletter engagement.">
+<meta property="og:image" content="https://guide.chshappenings.com/rainbow-row.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#183872;--ink:#0d1e3f;--lime:#CCED60;--paper:#f6f4ee;--mute:#5d6680;--line:#d9d6cc}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
+a{color:var(--navy)}
+.hero{position:relative;min-height:92vh;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:0 6vw 56px;background:var(--navy) url('../rainbow-row.jpg') center/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,30,63,.15) 0%,rgba(13,30,63,.55) 45%,rgba(13,30,63,.96) 100%)}
+.hero>*{position:relative}
+.brand{position:absolute;top:28px;left:6vw;font-weight:700;letter-spacing:.2em;text-transform:uppercase;font-size:12px}
+.brand b{color:var(--lime)}
+.hero h1{font-family:'Archivo Black',sans-serif;font-size:clamp(46px,8.4vw,124px);line-height:.9;letter-spacing:-.025em;max-width:12ch}
+.hero h1 em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:var(--lime)}
+.hero p{max-width:540px;font-size:19px;color:#e2e8f5;margin-top:22px}
+.strip{display:grid;grid-template-columns:1.25fr 1fr 1fr;background:var(--ink);color:#fff}
+.strip div{padding:44px 6vw 40px;border-right:1px solid rgba(255,255,255,.08)}
+.strip div:first-child{background:var(--lime);color:var(--ink)}
+.strip .n{font-family:'Archivo Black',sans-serif;font-size:clamp(64px,9vw,128px);line-height:.85;letter-spacing:-.03em}
+.strip .n small{font-size:.4em}
+.strip .l{font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-top:12px;font-weight:600}
+.strip .s{font-size:14px;margin-top:8px;opacity:.75;max-width:280px}
+.wrap{padding:0 6vw}
+section{padding:96px 0 0}
+.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--navy)}
+h2{font-family:'Archivo Black',sans-serif;font-size:clamp(32px,4.6vw,58px);line-height:.98;letter-spacing:-.015em;max-width:16ch;margin-top:10px}
+.lede{margin-top:16px;max-width:620px;color:var(--mute);font-size:18px}
+.ladder{margin-top:40px;border-top:3px solid var(--ink)}
+.row{display:grid;grid-template-columns:240px 1fr 100px;align-items:center;gap:22px;padding:15px 0;border-bottom:1px solid var(--line)}
+.row .who{font-size:15px;font-weight:600}
+.row .who span{display:block;font-weight:400;color:var(--mute);font-size:12px}
+.bar{height:20px;background:#e6e2d6;position:relative}
+.bar i{position:absolute;left:0;top:0;bottom:0;background:#9aa6bf}
+.row.you{padding:22px 0}
+.row.you .bar{height:34px}
+.row.you .bar i{background:var(--navy)}
+.row.you .bar i::after{content:"";position:absolute;right:0;top:0;bottom:0;width:8px;background:var(--lime)}
+.row.you .who{font-size:18px;color:var(--navy)}
+.row .v{font-family:'Archivo Black',sans-serif;font-size:22px;text-align:right}
+.row.you .v{font-size:40px;color:var(--navy)}
+.twocol{display:grid;grid-template-columns:1fr 1.1fr;gap:6vw;align-items:end}
+.photo{min-height:520px;background:url('../white-point-garden.jpg') center/cover no-repeat;position:relative}
+.photo span{position:absolute;left:0;bottom:0;background:var(--lime);color:var(--ink);font-weight:700;font-size:13px;padding:10px 16px;letter-spacing:.06em}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:34px;border-top:3px solid var(--ink)}
+.duo div{padding:26px 22px 26px 0;border-bottom:1px solid var(--line)}
+.duo div:nth-child(odd){border-right:1px solid var(--line)}
+.duo div:nth-child(even){padding-left:22px}
+.duo .n{font-family:'Archivo Black',sans-serif;font-size:52px;line-height:1;color:var(--navy)}
+.duo .n.them{color:#9aa6bf}
+.duo .l{font-size:13px;margin-top:8px;color:var(--mute)}
+.duo .l b{color:var(--ink)}
+.pull{font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(30px,4vw,52px);line-height:1.1;max-width:20ch;margin:110px 0 0 auto;border-left:8px solid var(--lime);padding-left:28px}
+.pull small{display:block;font-family:Inter,sans-serif;font-style:normal;font-size:14px;color:var(--mute);margin-top:16px}
+.proof{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:40px;border-top:3px solid var(--ink)}
+.proof div{padding:30px 28px 30px 0}
+.proof div+div{padding-left:28px;border-left:1px solid var(--line)}
+.proof h3{font-family:'Archivo Black',sans-serif;font-size:22px;line-height:1.1}
+.proof p{font-size:15px;margin-top:10px;color:#2a3654}
+.cta{margin-top:110px;background:var(--navy);color:#fff;padding:80px 6vw;display:grid;grid-template-columns:1.4fr 1fr;gap:5vw;align-items:center}
+.cta h2{color:#fff;max-width:14ch}
+.cta h2 em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:var(--lime)}
+.cta p{color:#cdd6ea;font-size:17px}
+.cta .contact{font-size:20px;font-weight:700;color:var(--lime);margin-top:14px;display:block}
+.fine{padding:48px 6vw 64px;font-size:12px;color:var(--mute);background:var(--paper)}
+.fine p{max-width:900px;margin-top:8px}
+.fine a{color:var(--mute)}
+@media(max-width:860px){.strip,.twocol,.proof,.cta{grid-template-columns:1fr}.proof div+div{padding-left:0;border-left:0;border-top:1px solid var(--line)}.row{grid-template-columns:1fr 80px}.row .bar{grid-column:1/-1;order:3}.photo{min-height:320px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="brand">CHS <b>Happenings</b></div>
+  <h1>Charleston <em>actually</em> reads this</h1>
+  <p>Most newsletters fight for attention. CHS Happenings gets opened by nearly three of every four subscribers, every week. Here's how that compares with the national numbers.</p>
+</header>
+
+<div class="strip">
+  <div><div class="n">73<small>%</small></div><div class="l">Open rate</div><div class="s">Average of the last four issues. The typical news newsletter: 47%.</div></div>
+  <div><div class="n">8,200<small>+</small></div><div class="l">Weekly readers</div><div class="s">Charlestonians who open each issue, out of 11,600+ subscribers.</div></div>
+  <div><div class="n">9.8<small>%</small></div><div class="l">Click-to-open</div><div class="s">Readers who open, then click through. The news-publisher median: 7.5%.</div></div>
+</div>
+
+<main class="wrap">
+
+<section>
+  <div class="eyebrow">Open rate · 2026 benchmarks</div>
+  <h2>Opened more than almost anything in your inbox</h2>
+  <p class="lede">Measured against the most recent industry studies, from national email platforms down to other local newsletters.</p>
+  <div class="ladder">
+    <div class="row you"><div class="who">CHS Happenings<span>Last four issues, Oct 15 – Nov 5, 2026</span></div><div class="bar"><i style="width:73.3%"></i></div><div class="v">73%</div></div>
+    <div class="row"><div class="who">Top 25% of news newsletters<span>GlueLetter, Jan–Apr 2026</span></div><div class="bar"><i style="width:58.1%"></i></div><div class="v">58%</div></div>
+    <div class="row"><div class="who">Typical news newsletter<span>GlueLetter median, Jan–Apr 2026</span></div><div class="bar"><i style="width:47.3%"></i></div><div class="v">47%</div></div>
+    <div class="row"><div class="who">6AM City local newsletters<span>Established markets</span></div><div class="bar"><i style="width:46%"></i></div><div class="v">45–48%</div></div>
+    <div class="row"><div class="who">All beehiiv newsletters<span>28 billion emails, 2025</span></div><div class="bar"><i style="width:41.24%"></i></div><div class="v">41%</div></div>
+    <div class="row"><div class="who">Consumer media newsletters<span>Omeda, first half 2026</span></div><div class="bar"><i style="width:40.2%"></i></div><div class="v">40%</div></div>
+    <div class="row"><div class="who">Publishing industry email<span>MailerLite 2026 report</span></div><div class="bar"><i style="width:34.24%"></i></div><div class="v">34%</div></div>
+  </div>
+</section>
+
+<section class="twocol">
+  <div class="photo"><span>White Point Garden · Charleston</span></div>
+  <div>
+    <div class="eyebrow">Clicks · where sponsors get paid</div>
+    <h2>Readers don't just open. They click</h2>
+    <p class="lede">Opens get your name seen. Clicks bring people through your door. CHS readers click at rates above every major benchmark.</p>
+    <div class="duo">
+      <div><div class="n">9.8%</div><div class="l"><b>CHS Happenings</b><br>Click-to-open, last four issues</div></div>
+      <div><div class="n them">7.5%</div><div class="l"><b>Typical news newsletter</b><br>GlueLetter median</div></div>
+      <div><div class="n">7.2%</div><div class="l"><b>CHS Happenings</b><br>Share of the whole list that clicks</div></div>
+      <div><div class="n them">3.2%</div><div class="l"><b>All beehiiv newsletters</b><br>Click rate, 2025</div></div>
+    </div>
+  </div>
+</section>
+
+<p class="pull">More than double the average newsletter's click rate, from an audience that lives here<small>7.2% of CHS subscribers click in a typical issue. Across beehiiv, 3.23%. Across media publishers, 1.16%.</small></p>
+
+<section>
+  <div class="eyebrow">Why the numbers hold up</div>
+  <h2>A clean, trusted list</h2>
+  <div class="proof">
+    <div><h3>99.8%+ delivered</h3><p>Every one of the last four issues reached more than 99.8% of inboxes. Your ad lands where it's supposed to.</p></div>
+    <div><h3>Zero spam complaints</h3><p>Not one spam report across the last four sends. Readers asked for this email and keep asking for it.</p></div>
+    <div><h3>Human clicks, verified</h3><p>Even counting only clicks beehiiv verifies as human, CHS averages 8.4% click-to-open, still above the national median for news newsletters.</p></div>
+  </div>
+</section>
+
+</main>
+
+<div class="cta">
+  <div>
+    <h2>Put your business in front of <em>8,200+ readers</em> every week</h2>
+  </div>
+  <div>
+    <p>Sponsorships run in the Thursday issue and on the stories that live on chshappenings.com all week. Let's find the spot that fits.</p>
+    <span class="contact">jimmy@chshappenings.com</span>
+  </div>
+</div>
+
+<footer class="fine">
+  <strong>Where these numbers come from.</strong>
+  <p>CHS Happenings figures are beehiiv's own reported averages for the four Thursday issues sent Oct 15, Oct 22, Oct 29 and Nov 5, 2026. Click-to-open is unique clicks divided by unique opens; list click rate is unique clicks divided by delivered emails. Subscriber count as of Nov 11, 2026.</p>
+  <p>Benchmarks: <a href="https://glueletter.com/?p=1061">GlueLetter open rates, 2026</a> (≈600 news newsletters) · <a href="https://www.glueletter.com/?p=929">GlueLetter click-to-open, Q2 2025</a> · <a href="https://www.beehiiv.com/blog/the-state-of-newsletters-2026">beehiiv, State of Newsletters 2026</a> · <a href="https://www.omeda.com/blog/newsletter-benchmarks-media/">Omeda, Media Newsletter Benchmarks H1 2026</a> · <a href="https://www.mailerlite.com/blog/compare-your-email-performance-metrics-industry-benchmarks">MailerLite 2026 industry benchmarks</a> · <a href="https://meetmarigold.com/resources/case-studies/6am-city-local-content-engagement">Marigold, 6AM City case study</a>.</p>
+</footer>
+</body>
+</html>
