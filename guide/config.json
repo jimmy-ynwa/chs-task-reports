@@ -6,7 +6,7 @@
     "sold_status": ["Closed"],
     "sold_window_filter": "CloseDate Ge days(-365)",
     "header_template": "Market Data · {MONTH} {YEAR} · 12-Month Solds",
-    "footer_template": "Market data prepared by Jimmy Farrell / The Farrell Group · {MONTH} {YEAR} · All data deemed reliable but not guaranteed",
+    "footer_template": "Market data prepared by Jimmy Farrell / CHS Happenings · {MONTH} {YEAR} · All data deemed reliable but not guaranteed",
     "no_active_data": "HARD RULE from Jimmy, 2026-07-28: no active-listing statistics anywhere on this page, panels or prose. Active counts, active median list, low active list, active median DOM are all banned. Every published figure must come from closed sales."
   },
 

@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>What I Built Instead of a Market Update · Jimmy Farrell</title>
+<meta property="og:title" content="What I built instead of a market update">
+<meta property="og:description" content="The tools, guides and client reports Jimmy Farrell built at his brokerage. Names and addresses removed. Everything else is real.">
+<meta property="og:image" content="img/heat-index.jpg">
+<link rel="stylesheet" href="sample.css">
+<style>
+.cover{position:relative;min-height:92vh;color:#fff;display:flex;align-items:flex-end;overflow:hidden;background:var(--ink)}
+.cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.cover:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,16,23,.15) 0%,rgba(13,16,23,.55) 45%,rgba(13,16,23,.96) 100%);z-index:1}
+.cover .in{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 24px 72px;width:100%}
+.cover .kick{color:var(--tan)}
+.cover h1{font-family:"Instrument Serif",serif;font-weight:400;font-size:clamp(60px,11.5vw,176px);line-height:.86;letter-spacing:-.03em;margin:22px 0 0;max-width:11ch}
+.cover h1 em{color:var(--blue2)}
+.cover .row{display:grid;grid-template-columns:1fr 340px;gap:40px;align-items:end;margin-top:36px}
+.cover .row p{font-size:clamp(18px,2vw,22px);color:#D3D7DE;max-width:44ch;margin:0}
+.cover .jump{font-family:"Geist Mono",monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;display:grid;gap:1px;background:#2A303C}
+.cover .jump a{background:rgba(13,16,23,.88);color:#fff;text-decoration:none;padding:14px 16px;display:flex;justify-content:space-between}
+.cover .jump a:hover{background:var(--blue)}
+.feature{display:grid;grid-template-columns:1.25fr 1fr;gap:0;border-bottom:1px solid var(--line)}
+.feature.flip{grid-template-columns:1fr 1.25fr}
+.feature.flip .shot{order:2}
+.shot{background:var(--ink);padding:56px 0 56px 56px;display:flex;align-items:center;overflow:hidden}
+.feature.flip .shot{padding:56px 56px 56px 0;justify-content:flex-end}
+.shot img{width:118%;max-width:none;box-shadow:0 30px 80px rgba(0,0,0,.45);border-radius:6px;display:block}
+.feature.flip .shot img{width:118%}
+.copy{padding:76px 56px;max-width:600px}
+.copy .num{font-family:"Instrument Serif",serif;font-size:120px;line-height:.8;color:var(--tan);letter-spacing:-.04em}
+.copy h2{margin-top:18px}
+.copy a.go{display:inline-block;margin-top:10px;font-family:"Geist Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--ink);padding:14px 18px;text-decoration:none}
+.copy a.go:hover{background:var(--blue)}
+.copy .links{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px}
+.copy .links a{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--ink);color:var(--ink);padding:9px 12px;text-decoration:none}
+.copy .links a:hover{background:var(--ink);color:#fff}
+.reports{background:var(--ink);color:#fff;padding:96px 24px}
+.reports .in{max-width:1200px;margin:0 auto}
+.reports .head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:56px}
+.reports h2{color:#fff;font-size:clamp(46px,7vw,96px);max-width:10ch;margin:0}
+.reports h2 em{color:var(--blue2)}
+.reports .head p{color:#B9BFCA;margin:0}
+.reports h3{font-family:"Geist Mono",monospace;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--tan);font-weight:500;margin:44px 0 16px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#2A303C;border:1px solid #2A303C}
+.cards.five{grid-template-columns:repeat(5,1fr)}
+.card{background:var(--ink);color:#fff;text-decoration:none;padding:28px 24px 30px;display:flex;flex-direction:column;min-height:300px;transition:background .2s}
+.card:hover{background:#18213A}
+.card .k{font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8D94A1}
+.card b{font-family:"Instrument Serif",serif;font-weight:400;font-size:62px;line-height:.9;letter-spacing:-.03em;margin:22px 0 6px;color:var(--blue2)}
+.card .t{font-family:"Instrument Serif",serif;font-size:27px;line-height:1.05;margin:auto 0 10px}
+.card p{font-size:14.5px;color:#B9BFCA;margin:0}
+.card .arrow{margin-top:18px;font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.14em;color:var(--tan)}
+.photostrip{display:grid;grid-template-columns:2fr 1fr;height:420px}
+.photostrip img{width:100%;height:100%;object-fit:cover;display:block}
+.closer{max-width:1200px;margin:0 auto;padding:110px 24px;display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:end}
+.closer h2{font-size:clamp(46px,7vw,100px);max-width:11ch;margin:0}
+.closer h2 em{color:var(--tan)}
+@media(max-width:980px){.cover .row,.feature,.feature.flip,.reports .head,.closer,.photostrip{grid-template-columns:1fr}.feature.flip .shot{order:0;padding:40px 0 40px 24px}.shot{padding:40px 0 40px 24px}.copy{padding:56px 24px}.cards,.cards.five{grid-template-columns:1fr 1fr}.photostrip{height:auto}.photostrip img{height:260px}}
+@media(max-width:560px){.cards,.cards.five{grid-template-columns:1fr}.card{min-height:0}}
+</style></head><body>
+
+<header class="cover">
+<img src="img/isle-of-palms.jpg" alt="Isle of Palms beachfront, Charleston">
+<div class="in">
+<div class="kick mono">Jimmy Farrell · 36 years in real estate</div>
+<h1>What I built instead of <em>a market update</em></h1>
+<div class="row">
+<p>Every agent in my market sent homeowners the same thing. So I built different things. Here they are, with client names and addresses removed. Everything else is real.</p>
+<nav class="jump">
+<a href="#guide">The Insider's Guide <span>01</span></a>
+<a href="#tools">Four market tools <span>02</span></a>
+<a href="#reports">Client reports <span>03</span></a>
+<a href="#results">Results reporting <span>04</span></a>
+</nav>
+</div></div>
+</header>
+
+<section class="feature" id="guide">
+<div class="shot"><img src="img/guide.jpg" alt="The Charleston Insider's Guide"></div>
+<div class="copy">
+<div class="num">01</div>
+<h2>A neighborhood guide nobody else had</h2>
+<p>The Charleston Insider's Guide covers every major part of the area: what a home costs, what it feels like, flood risk, the commute, and who it's right for. Market numbers are built from MLS data and refreshed on a schedule.</p>
+<p>It did two jobs. It answered the questions people ask before they ever call an agent, and it gave them a reason to hand over an email address.</p>
+<a class="go" href="https://guide.chshappenings.com/">Open the guide →</a>
+</div>
+</section>
+
+<section class="feature flip" id="tools">
+<div class="shot"><img src="img/heat-index.jpg" alt="The Charleston Heat Index"></div>
+<div class="copy">
+<div class="num">02</div>
+<h2>Four free tools that say Hot when it's Hot, and Cold when it's Cold</h2>
+<p>Each part of town graded against its own last two years, not one yardstick for everybody. The Heat Index scores fifteen areas on one page. The Seller's and Buyer's Windows go down to price range. Renovate or Sell runs the numbers on a project before a homeowner spends a dime.</p>
+<div class="links">
+<a href="https://marketchs.com/heat-index">Heat Index</a>
+<a href="https://marketchs.com/sellers-window">Seller's Window</a>
+<a href="https://marketchs.com/buyers-window">Buyer's Window</a>
+<a href="https://marketchs.com/renovate-or-sell">Renovate or Sell</a>
+</div>
+<p style="margin-top:22px"><a class="go" href="https://marketchs.com/">See all four →</a></p>
+</div>
+</section>
+
+<section class="reports" id="reports"><div class="in">
+<div class="head">
+<h2>The reports clients <em>actually got</em></h2>
+<p>Not a CMA printout with a logo on it. One page per question, written for the people reading it, sent the same day. Client names, street addresses and identifying details are gone. The structure, the reasoning and most of the numbers are exactly what went out.</p>
+</div>
+<h3>One seller, three reports, one number</h3>
+<div class="cards">
+<a class="card" href="seller-pricing-report/"><span class="k">Seller · Pricing report</span><b>$104,500</b><span class="t">What your home is worth this week</span><p>The price spread between two identical floor plans, on condition alone. And why one stale listing set the ceiling.</p><span class="arrow">READ IT →</span></a>
+<a class="card" href="seller-market-timeline/"><span class="k">Seller · State of the market</span><b>97.2%</b><span class="t">The real picture, before you list</span><p>52 sales in the exact size and price lane. What sellers who started too high gave up.</p><span class="arrow">READ IT →</span></a>
+<a class="card" href="seller-pricing-update/"><span class="k">Seller · Final update</span><b>$374,900</b><span class="t">Your list price, after the walk-through</span><p>Seventeen days later, five things changed. Here's the number and the reasoning.</p><span class="arrow">READ IT →</span></a>
+</div>
+<h3>Buyers, five different questions</h3>
+<div class="cards five">
+<a class="card" href="buyer-market-read/"><span class="k">Market read</span><b>8 of 9</b><span class="t">The yard you want is buyable</span><p>They asked about one community. The real problem was lot size.</p><span class="arrow">READ IT →</span></a>
+<a class="card" href="buyer-flood-guide/"><span class="k">Flood guide</span><b>40%</b><span class="t">Pick an address, not an area</span><p>The four flood checks we ran on every house.</p><span class="arrow">READ IT →</span></a>
+<a class="card" href="buyer-neighborhood-deep-dive/"><span class="k">Neighborhood</span><b>$980K</b><span class="t">A neighborhood, all the way down</span><p>Their budget was above the top of the market. We said so.</p><span class="arrow">READ IT →</span></a>
+<a class="card" href="buyer-property-record/"><span class="k">One property</span><b>0.1 ft</b><span class="t">The flood number and the ownership record</span><p>A $5 deed and four failed listings, read out loud.</p><span class="arrow">READ IT →</span></a>
+<a class="card" href="buyer-tour-book/"><span class="k">Tour book</span><b>3</b><span class="t">Three beach houses, one afternoon</span><p>Every disclosure read the night before the showing.</p><span class="arrow">READ IT →</span></a>
+</div>
+</div></section>
+
+<section class="feature" id="results">
+<div class="shot"><img src="img/sponsor-results.jpg" alt="A sponsor results report"></div>
+<div class="copy">
+<div class="num">04</div>
+<h2>Proof, sent to the people paying for it</h2>
+<p>I also run a Charleston newsletter with about 11,000 readers. Every advertiser gets a results page after each run: what was seen, what was clicked, what worked, what didn't, and what I'd change next time. Same habit as the client reports, different customer.</p>
+<div class="links">
+<a href="https://guide.chshappenings.com/partners/sample-results/">One placement</a>
+<a href="https://guide.chshappenings.com/partners/sample-campaign-wrap/">A full campaign</a>
+</div>
+</div>
+</section>
+
+<div class="photostrip"><img src="img/johns-island.jpg" alt="Johns Island, South Carolina"><img src="img/daniel-island.jpg" alt="Daniel Island, Charleston"></div>
+
+<section class="closer">
+<h2>None of this took a <em>design team</em></h2>
+<div><p>It took a laptop, the data I already had, and AI doing the heavy lifting. Every one of these is something an agent can build in their own market. That's the part I want to show people.</p>
+<p class="mono" style="color:var(--mute)">Jimmy Farrell · jimmy@jimmyfarrell.com</p></div>
+</section>
+
+<p class="fine">Client reports were sent privately in July through September 2026 and are republished here as samples with names, addresses and identifying details removed or changed. Market figures come from the local MLS as of each report's date.</p>
+</body></html>
