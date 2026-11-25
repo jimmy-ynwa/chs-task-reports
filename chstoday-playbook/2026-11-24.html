@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>CHStoday Sponsor Playbook</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* VOICE: a scouting report turned sales playbook, plain-spoken, honest about where you win
+   IDEA: the other team's stat sheet, their client roster, and your game plan, bound in one file
+   PICTURE: a navy hero with the head-to-head numbers hanging large, then numbered chapters
+   COLOUR and TYPE: CHS navy #183872 dominant, lime #CCED60 accent, white; Inter throughout
+   LAYOUT: sticky chapter bar, full-bleed bands alternating white and pale, cards in a two-up grid */
+:root{color-scheme:light dark;--navy:#183872;--lime:#CCED60;--bg:light-dark(#fff,#0b1530);--ink:light-dark(#0f1b3d,#eef2fb);--mute:light-dark(#5a6684,#9fabc8);--line:light-dark(#dfe4ef,#24335c);--card:light-dark(#f4f6fb,#122045);--paper:light-dark(#fff,#0f1c40);--nat:light-dark(#b7c0d6,#3a4a75);--warn:light-dark(#b3261e,#ff8a80)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.58 Inter,system-ui,sans-serif;overflow-x:clip}
+html{scroll-padding-top:72px}
+.band{padding:clamp(28px,4vw,64px) max(5vw,16px)}.in{max-width:1240px;margin:0 auto}
+.alt{background:var(--card)}
+h1,h2,h3{margin:0;text-wrap:balance}
+h2{font-size:clamp(26px,3.3vw,40px);line-height:1.08;font-weight:800;letter-spacing:-.02em;margin-bottom:12px}
+h3{font-size:18px;font-weight:800;margin-bottom:6px}
+p{max-width:70ch;margin:0 0 12px}
+.lede{color:var(--mute);max-width:74ch}
+a{color:inherit}
+.hero{background:var(--navy);color:#fff}
+.hero .in{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(20px,4vw,56px);align-items:end}
+.kick{color:var(--lime);font-weight:600;font-size:15px;margin-bottom:12px}
+.hero h1{font-size:clamp(32px,4.4vw,52px);line-height:1.05;font-weight:800;letter-spacing:-.025em}
+.hero p{color:#d5ddf0;margin-top:16px}
+.vs{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1fr);gap:8px 16px;align-items:baseline}
+.vs b{font-size:clamp(24px,3vw,36px);font-weight:900;letter-spacing:-.03em}
+.vs .h{color:#9fb0d8;font-size:13px;font-weight:600}.vs .me b{color:var(--lime)}.vs .row{color:#c9d3ec;font-size:15px}
+.nav{position:sticky;top:0;z-index:6;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav .in{display:flex;gap:6px;overflow-x:auto;padding:10px max(5vw,16px)}
+.nav a{flex:none;text-decoration:none;font-weight:600;font-size:14px;padding:8px 12px;border-radius:999px;border:1.5px solid var(--line);white-space:nowrap}
+.nav a:hover{border-color:var(--navy)}
+.ch{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:6px}
+:root[data-theme=dark] .ch{color:var(--lime)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:4px solid var(--ink);margin-top:10px}
+.stat{padding:20px 16px 16px 0;border-right:1px solid var(--line)}.stat:last-child{border-right:0}
+.stat b{display:block;font-size:clamp(32px,4.4vw,54px);font-weight:900;letter-spacing:-.04em;line-height:1}
+.stat span{display:block;font-size:14px;color:var(--mute);margin-top:8px}
+.split{display:flex;height:72px;border-radius:3px;overflow:hidden;margin:18px 0 10px}
+.split div{display:flex;align-items:center;padding:0 16px;font-weight:800;font-size:clamp(15px,2vw,20px);white-space:nowrap}
+.loc{background:var(--navy);color:#fff}.nat{background:var(--nat);color:#0f1b3d}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,56px)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.chips span{background:var(--bg);border:1px solid var(--line);padding:6px 10px;border-radius:999px;font-size:14px;white-space:nowrap}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{text-align:left;font-size:13px;color:var(--mute);font-weight:600;border-bottom:2px solid var(--ink);padding:8px 12px 8px 0}
+td{border-bottom:1px solid var(--line);padding:10px 12px 10px 0;vertical-align:top}
+td:first-child{font-weight:700}
+ul.list{margin:0;padding-left:20px;max-width:82ch}ul.list li{margin-bottom:8px}
+.flag{border-left:6px solid var(--navy);background:var(--bg);padding:18px 20px;border-radius:0 4px 4px 0}
+:root[data-theme=dark] .flag{border-color:var(--lime)}
+.tag{display:inline-block;font-size:12px;font-weight:700;padding:2px 7px;border-radius:3px;white-space:nowrap;vertical-align:1px}
+.t-pub{background:var(--lime);color:#0f1b3d}.t-team{background:#d7e0f4;color:#183872}.t-inf{border:1.5px dashed var(--mute);color:var(--mute)}.t-none{background:#f3d9d6;color:#7a1c14}
+.key{display:flex;flex-wrap:wrap;gap:10px 18px;font-size:14px;color:var(--mute);margin:14px 0 0}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:18px 0}
+.bar button{font:600 14px Inter,sans-serif;min-height:40px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.bar button[aria-pressed=true]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.bar input{font:16px Inter,sans-serif;min-height:40px;padding:0 12px;border-radius:8px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);flex:1 1 200px;max-width:320px;margin-left:auto}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.c{border:1px solid var(--line);border-top:5px solid var(--navy);border-radius:4px;padding:18px 20px;background:var(--bg)}
+:root[data-theme=dark] .c{border-top-color:var(--lime)}
+.c header{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-bottom:10px}
+.c h3{font-size:20px;letter-spacing:-.01em;margin:0}
+.c .n{font-size:34px;font-weight:900;letter-spacing:-.04em;line-height:1;white-space:nowrap}
+.c .n small{display:block;font-size:12px;font-weight:600;color:var(--mute);letter-spacing:0;text-align:right}
+.c dl{display:grid;grid-template-columns:6.5em minmax(0,1fr);gap:6px 12px;margin:0 0 12px;font-size:15px}
+.c dt{color:var(--mute);font-weight:600}.c dd{margin:0;overflow-wrap:anywhere}
+.c .ran{font-size:14.5px;border-top:1px solid var(--line);padding-top:10px}
+.c .ran ul{margin:6px 0 0;padding-left:18px}.c .ran li{margin-bottom:4px}
+.c .ang{font-size:14.5px;background:var(--card);padding:10px 12px;border-radius:4px;margin-top:10px}
+.c .alert{color:var(--warn);font-weight:700;font-size:14px;margin-bottom:8px}
+.copy{font:600 12px Inter,sans-serif;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:4px;padding:2px 7px;margin-left:6px;cursor:pointer;min-height:26px}
+.wrap{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:start}
+.letter{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:clamp(20px,3vw,36px)}
+.meta{font-size:14px;color:var(--mute);border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:18px}.meta b{color:var(--ink)}
+.pick{border-left:5px solid var(--lime);background:var(--card);padding:12px 14px;margin:0 0 10px;border-radius:0 4px 4px 0}
+.pick .t{font-size:12px;font-weight:800;color:var(--navy)}:root[data-theme=dark] .pick .t{color:var(--lime)}
+.pick p{margin:4px 0 0}.letter ul{margin:0 0 16px;padding-left:20px}.letter li{margin-bottom:10px}
+.merge{background:light-dark(#fff6bf,#4a4210);padding:0 3px;border-radius:2px;font-weight:600}
+.note{font-size:15px}.note .box{border-top:4px solid var(--navy);padding:12px 0 18px}
+:root[data-theme=dark] .note .box{border-top-color:var(--lime)}
+.note ul{padding-left:18px;margin:6px 0 0}
+.foot{font-size:14px;color:var(--mute);border-top:1px solid var(--line)}.foot li{margin-bottom:6px}
+@media(max-width:900px){.hero .in,.two,.grid,.wrap{grid-template-columns:minmax(0,1fr)}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.stat:nth-child(2){border-right:0}}
+@media(max-width:600px){table{font-size:13px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.stack td{display:flow-root;border:0;padding:3px 0;padding-inline-start:8em;text-align:start}.stack td::before{content:attr(data-l);float:inline-start;width:7.5em;margin-inline-start:-8em;color:var(--mute);font-weight:500}.stack td:empty{display:none}.c dl{grid-template-columns:minmax(0,1fr)}.split{height:auto;flex-direction:column}.split div{padding:12px 16px;width:100%!important}.bar input{max-width:none;margin-left:0}}
+</style>
+<script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
+</head>
+<body>
+
+<section class="band hero"><div class="in">
+ <div>
+  <div class="kick">CHStoday sponsor playbook · built Nov 24, 2026</div>
+  <h1>CHStoday is three times your size and clicks just as often. Its sponsors are still your best prospects, because each one already paid for a Charleston inbox.</h1>
+  <p>One file: CHStoday's real numbers, every sponsor from their last 30 days of issues, the 33 Charleston businesses with a contact and what they ran, the Airtable status, the pitch email, and a side-by-side of who reads each newsletter.</p>
+ </div>
+ <div class="vs">
+  <span></span><span class="h">CHStoday</span><span class="h me">CHS Happenings</span>
+  <span class="row">Subscribers</span><b>38,042</b><span class="me"><b>11,862</b></span>
+  <span class="row">Open rate</span><b>72.0%</b><span class="me"><b>70.8%</b></span>
+  <span class="row">Click rate</span><b>9.6%</b><span class="me"><b>9.0%</b></span>
+  <span class="row">Ad spots/issue</span><b>6–12</b><span class="me"><b>up to 3</b></span>
+ </div>
+</div></section>
+
+<nav class="nav" aria-label="Chapters"><div class="in">
+ <a href="#numbers">1 · Their numbers</a><a href="#sponsors">2 · Who buys their ads</a><a href="#crm">3 · Airtable</a><a href="#prospects">4 · The 33 prospects</a><a href="#pitch">5 · The pitch</a><a href="#demos">6 · Reader demographics</a><a href="#before">7 · Before you send</a>
+</div></nav>
+
+<section class="band" id="numbers"><div class="in">
+ <div class="ch">Chapter 1</div>
+ <h2>Their real daily list is 38,042, not the 62,000 they still advertise</h2>
+ <p class="lede">6AM City's own advertiser data page, dated Oct. 31, 2026, shows the Charleston numbers below. Their Charleston sales pages still pitch 61,000–62,330 subscribers and a 46% open rate.</p>
+ <div class="stats">
+  <div class="stat"><b>38,042</b><span>Daily subscribers</span></div>
+  <div class="stat"><b>72.0%</b><span>Daily open rate</span></div>
+  <div class="stat"><b>9.6%</b><span>Daily click rate (clicks ÷ delivered)</span></div>
+  <div class="stat"><b>13.3%</b><span>Clicks as a share of opens. My math, 9.6 ÷ 72. They don't publish it</span></div>
+ </div>
+ <div class="stats" style="border-top-width:1px;margin-top:6px">
+  <div class="stat"><b>34,442</b><span>Monday BizBrief subscribers · 70.8% open · 3.4% click</span></div>
+  <div class="stat"><b>206,172</b><span>Total audience they claim (email, web, social)</span></div>
+  <div class="stat"><b>110,484</b><span>Instagram followers</span></div>
+  <div class="stat"><b>23,204</b><span>Monthly website users</span></div>
+ </div>
+ <p style="margin-top:16px;color:var(--mute)">Self-serve prices they've posted: email header $500–$1,000, banner $250–$500. Your live numbers for comparison (Beehiiv, last four weeks): 11,862 subscribers, 70.75% opens, 9.01% clicks, about 8,400 opening each issue. Apple Mail inflates opens for everyone, so clicks are the fairer comparison, and on clicks the two are close.</p>
+</div></section>
+
+<section class="band alt" id="sponsors"><div class="in">
+ <div class="ch">Chapter 2</div>
+ <h2>Local businesses buy the banners and features. National affiliates fill most of the short in-text ads</h2>
+ <p class="lede">I read all 28 sends from Oct. 26 to Nov. 24: 22 daily issues, 5 Monday BizBriefs and 1 fundraiser send. In-text ads are the short paragraphs inside sections like "Health" or "Featured Deal," marked with a small asterisk. Banners are the image ads between sections. "Presented by" features are full sponsored stories.</p>
+ <div class="split"><div class="loc" style="width:45%">Local + regional · about 47</div><div class="nat" style="width:55%">National affiliates · about 57</div></div>
+ <p style="font-size:14px;color:var(--mute)">In-text ads and paid event listings over 30 days. Banners and "Presented by" features went almost entirely to local and regional advertisers. The 33 Charleston-area sponsors are in Chapter 4.</p>
+ <div class="two" style="margin-top:24px">
+  <div><h3>Out-of-market and brand sponsors</h3><p style="color:var(--mute)">Tourism boards, out-of-town venues and brands buying Charleston readers.</p>
+   <table class="stack"><thead><tr><th>Sponsor</th><th>Format</th><th>Dates</th></tr></thead><tbody id="out"></tbody></table></div>
+  <div><h3>National affiliate network (count = sends)</h3><p style="color:var(--mute)">Sold through 6AM City's network deals, not local sales.</p><div class="chips" id="natl"></div>
+   <h3 style="margin-top:22px">House ads and partners</h3><p style="color:var(--mute)">The Weather Channel "forecasts" every daily issue. House ads: their Dinner Club (7 sends), self-serve ad portal, holiday gift guide spots, a Givebutter fundraiser (Nov. 8) and a newsletter-editor job post.</p></div>
+ </div>
+</div></section>
+
+<section class="band" id="crm"><div class="in">
+ <div class="ch">Chapter 3</div>
+ <h2>Airtable: 31 new records loaded tonight, 2 existing records updated</h2>
+ <div class="flag"><ul class="list">
+  <li><b>31 new businesses added</b> to the Sponsors list: Stage = Target, Source = Cold, Sequence Status = Cold – Researched. Nobody has been put in a sequence or emailed. Search the notes for "CHSTODAY SPONSOR" to pull them up.</li>
+  <li><b>The email field only has confirmed public addresses</b> (12 of the 31), either a person's own email or a team inbox. Addresses I built from an organization's usual format are in the notes marked "verify."</li>
+  <li><b>Fine Rugs of Charleston</b> unsubscribed from your Kit emails in August. Its record now says don't put it in any sequence, personal note from you only.</li>
+  <li><b>Celadon</b> is Lost – No Response and on your Sponsor News List. This month's CHStoday spending is the news hook. Send to advertising@celadonathome.com.</li>
+  <li><b>Charleston Crab House and The Porch at Oyster House</b> have the same owners, Scott and Lauren Larymore. One pitch covers both.</li>
+  <li><b>The 19 records without an email</b> will show as stuck in Monday's check of who's ready for a sequence. The 12 with one still need an opening line before they can go in.</li>
+ </ul></div>
+</div></section>
+
+<section class="band alt" id="prospects"><div class="in">
+ <div class="ch">Chapter 4</div>
+ <h2>The 33 Charleston-area sponsors: who to pitch and what they ran</h2>
+ <p class="lede">Ranked by how many placements they bought in 30 days. Stamps show how sure I am about each email.</p>
+ <div class="key">
+  <span><span class="tag t-pub">Published</span> the person's own email appears on a public page</span>
+  <span><span class="tag t-team">Team inbox</span> a published shared address (marketing@, sales@)</span>
+  <span><span class="tag t-inf">Pattern guess</span> built from the org's confirmed email format. Verify first</span>
+  <span><span class="tag t-none">No email</span> use phone, LinkedIn or an Instagram DM</span>
+ </div>
+ <div class="bar" role="group" aria-label="Filter prospects">
+  <button type="button" data-f="all" aria-pressed="true">All 33</button>
+  <button type="button" data-f="pub" aria-pressed="false">Email confirmed</button>
+  <button type="button" data-f="team" aria-pressed="false">Team inbox</button>
+  <button type="button" data-f="inf" aria-pressed="false">Pattern guess</button>
+  <button type="button" data-f="none" aria-pressed="false">No email</button>
+  <input id="q" type="search" placeholder="Search name or business" aria-label="Search prospects">
+ </div>
+ <div class="grid" id="cards"></div>
+</div></section>
+
+<section class="band" id="pitch"><div class="in">
+ <div class="ch">Chapter 5</div>
+ <h2>The pitch: say you know they advertise elsewhere, then show three things only you do</h2>
+ <p class="lede">Never "competitor." The email treats their CHStoday spend as a smart move, then wins on how many ads share the page, who writes the ad, the Charleston-only reader data, and the results page you send after every run. It never argues reach or clicks.</p>
+ <div class="wrap" style="margin-top:20px">
+  <article class="letter">
+  <div class="meta"><b>To:</b> <span class="merge">first name</span> at <span class="merge">business</span> · <b>From:</b> Jimmy · <b>Sent as:</b> a new email, not a reply</div>
+  <div class="meta"><b>Subject, pick one:</b><br>1. You're already in Charleston inboxes. One more idea<br>2. <span class="merge">Business</span> + CHS Happenings<br>3. Saw your <span class="merge">specific ad</span>. Smart move</div>
+
+  <p>Hi <span class="merge">first name</span>,</p>
+
+  <div class="pick"><div class="t">OPENER A · Name it, give credit</div><p>I saw <span class="merge">specific ad</span> in CHStoday this month. Smart move. Charleston inboxes are where people actually make weekend plans, and you're clearly already sold on email.</p></div>
+  <div class="pick"><div class="t">OPENER B · Don't name it</div><p>I noticed <span class="merge">business</span> has been showing up in another Charleston newsletter this fall, <span class="merge">specific ad</span> included. So you already know email works for you. I'm not here to talk you out of that.</p></div>
+  <div class="pick"><div class="t">OPENER C · The second room</div><p>You're already reaching Charlestonians by email. I caught <span class="merge">specific ad</span>. I'm writing because there's a second room full of your customers you're not in yet.</p></div>
+
+  <p>I'm Jimmy Farrell. I write CHS Happenings, a Charleston newsletter that lands Monday and Thursday mornings with 11,800+ subscribers, and about 8,400 of them open every issue. Here's how it works differently:</p>
+  <ul>
+   <li><b>Your ad has the room to itself.</b> Each issue carries up to three sponsors, never a wall of ads. You're not competing with a dozen other offers for the same glance.</li>
+   <li><b>I write your ad myself.</b> Same voice as the rest of the issue, built around one offer and a real reason to act now, so it reads like part of the newsletter and not like an interruption.</li>
+   <li><b>It keeps working after the email.</b> Every story lives on its own page at chshappenings.com, and your ad rides along at the top. Those pages get read all week from Google, Nextdoor and shares.</li>
+   <li><b>You know exactly who's reading.</b> My reader numbers come from my own Charleston subscribers, with anyone who's unsubscribed taken out: 48% have household incomes over $150K, 73% own their homes, and 45% hold a graduate degree.</li>
+   <li><b>You get a receipt.</b> After every run I send a results page: clicks from the email, clicks from the web pages, and what I'd change in the next ad.</li>
+  </ul>
+  <p>Don't take my word for it. <a href="https://guide.chshappenings.com/the-numbers">Here are the numbers</a>, and <span class="merge">link to a sample results page</span> shows exactly what you'd get back after a run.</p>
+  <p><span class="merge">Why-now line</span> Worth 15 minutes this week to see if a short run fits alongside what you're already doing?</p>
+  <p>Jimmy</p>
+ </article>
+  <aside class="note">
+  <div class="box"><h3>Why it's built this way</h3>
+   <p>“Alongside what you're already doing” keeps it additive. They never have to admit CHStoday was a mistake, and you never call it a competitor.</p></div>
+  <div class="box"><h3>Claims I left out on purpose</h3>
+   <ul>
+    <li>Reach, open rate or clicks versus CHStoday. They win or tie on all three.</li>
+    <li>Anything about the quality of their other ads. On a daily network newsletter the sponsor shares the page with national affiliate offers (THC gummies, insurance quotes, adult toys ran this month). Opener B and the “room to itself” bullet imply it without saying it.</li>
+   </ul></div>
+  <div class="box"><h3>Confirm before it goes out</h3>
+   <ul>
+    <li><b>“Up to three sponsors.”</b> Primary, Secondary, and Featured Event or Short Take. Does the Noticeboard count? If it reads as more ads to a sponsor, say “three sponsor spots, plus a reader noticeboard.”</li>
+    <li><b>Sample results page.</b> You'll want one you can share. Fleet Feet or Dermhaus with their OK, or a version with the name removed.</li>
+    <li><b>No network ads.</b> Beehiiv shows $0 in ad-network earnings over the last four weeks, so “no national ad-network offers” is accurate today if you want to say it outright.</li>
+   </ul></div>
+  <div class="box"><h3>Your standing rules applied</h3>
+   <ul><li>Second person to a named contact, even at a team inbox</li><li>Signed “Jimmy,” first person, no “we”</li><li>Points to the web posts as a selling point</li><li>Closes on a run, not a one-off ad</li><li>Live numbers, floor written as 11,800+</li></ul></div>
+ </aside>
+ </div>
+ <h3 style="margin-top:34px">The fill-ins for the 12 with an email</h3>
+ <p style="color:var(--mute)">"Specific ad" comes straight from what each one ran. "Why now" is my read on their next selling window.</p>
+ <table class="stack"><thead><tr><th>Send to</th><th>Specific ad</th><th>Why now</th></tr></thead><tbody>
+  <tr><td>SEWE · Meagan Charters</td><td>your early-bird push before Nov. 1</td><td>SEWE is Feb. 12–14, and January is when people buy tickets.</td></tr>
+  <tr><td>Charleston Symphony · Katherine Sutton (marketing@)</td><td>The Witching Hour listing and the Brahms Double Concerto push</td><td>Holiday concerts are on sale right now.</td></tr>
+  <tr><td>Explore Charleston · Cat Dority</td><td>The Charleston Santa feature at the Best Friend Train Museum</td><td>Visits run through Dec. 20, and my readers are the locals hosting family for the holidays.</td></tr>
+  <tr><td>Celadon · advertising@ (Rebecca Hawkins)</td><td>the 32nd birthday bash</td><td>January is when people start rooms over.</td></tr>
+  <tr><td>Charleston County Parks · Sarah Reynolds</td><td>the Holiday Festival of Lights banners</td><td>Festival of Lights runs through New Year's.</td></tr>
+  <tr><td>RiverDogs · Lance Fletcher</td><td>your banners this fall</td><td>Segra Club holiday bookings now, then single-game tickets in spring.</td></tr>
+  <tr><td>Gaillard Center · sales@ (Stephanie Shipe)</td><td>your show banners this month</td><td>Holiday shows on the calendar now.</td></tr>
+  <tr><td>Charleston Southern · Jenna Johnson</td><td>the Homecoming and First Look listings</td><td>Spring open houses and grad programs enroll early in the year.</td></tr>
+  <tr><td>YALLFest · Jonathan Sanchez</td><td>the YALLCRAWL signing listings</td><td>Blue Bicycle Books holiday shopping now, YALLFest 2027 later.</td></tr>
+  <tr><td>Literary Festival · Amanda Bagdonas</td><td>the 10th-anniversary festival push</td><td>Plan the 2027 run now. Ask her to loop in Sarah Moriarty.</td></tr>
+  <tr><td>Taco Boy · info@ (Karalee Nielsen Fallert)</td><td>Disco's Not Dead</td><td>New Year's Eve and January specials.</td></tr>
+  <tr><td>Experience Mount Pleasant · tourism@</td><td>the new Seafood Trail feature</td><td>Mount Pleasant is my home base, and the Trail is a story my readers would chase.</td></tr>
+ </tbody></table>
+</div></section>
+
+<section class="band alt" id="demos"><div class="in">
+ <div class="ch">Chapter 6</div>
+ <h2>Reader demographics: similar crowds, but only yours is Charleston-only</h2>
+ <p class="lede">CHStoday doesn't publish a Charleston reader profile. Both of its sources describe all of 6AM City's markets. On the overlapping measures the two audiences look alike. Yours skews older and more educated, and it's the only one a Charleston sponsor can trust as Charleston.</p>
+ <table class="stack"><thead><tr><th>Measure</th><th>CHStoday (6AM City, all markets)</th><th>CHS Happenings (Charleston only)</th><th>Read</th></tr></thead><tbody>
+  <tr><td>Female</td><td>71% (2026) · 75% (older)</td><td>66%</td><td>Theirs leans more female</td></tr>
+  <tr><td>Age 35+</td><td>85%</td><td>86%</td><td>Even</td></tr>
+  <tr><td>Age 55+</td><td>41% (older)</td><td>55%</td><td>Yours skews older</td></tr>
+  <tr><td>Income</td><td>80% above their city's median household income</td><td>82% over $75K · 48% over $150K · 23% over $250K</td><td>Not directly comparable. Only you publish dollar tiers</td></tr>
+  <tr><td>Homeowners</td><td>75% (older)</td><td>73%</td><td>Even</td></tr>
+  <tr><td>College degree</td><td>74% (older)</td><td>87% · 45% graduate degree</td><td>Yours is more educated</td></tr>
+  <tr><td>Business owners / decision-makers</td><td>46% are decision-makers at work</td><td>20% own a business</td><td>Different questions, don't compare</td></tr>
+  <tr><td>Parents of school-age kids</td><td>46%</td><td>not measured</td><td>A gap in your kit</td></tr>
+  <tr><td>Data covers</td><td>All of 6AM City's markets</td><td>Your own active subscribers, unsubscribed readers removed</td><td>This is the pitch</td></tr>
+ </tbody></table>
+</div></section>
+
+<section class="band" id="before"><div class="in">
+ <div class="ch">Chapter 7</div>
+ <h2>Before the first email goes out</h2>
+ <ul class="list">
+  <li><b>Pick an opener</b> (A, B or C in Chapter 5). Then I'll write the 12 drafts into Gmail for you to review and send, each as a new email.</li>
+  <li><b>Refresh your reader demographics.</b> The live media kit's numbers were last recalculated July 31. Run it once so the 48% / 73% / 45% figures in the email are current.</li>
+  <li><b>Pick a sample results page you can share.</b> Fleet Feet or Dermhaus with their OK, or a version with the name removed. Put it on guide.chshappenings.com, not a private link.</li>
+  <li><b>Settle "up to three sponsors."</b> If the Noticeboard would read as more ads to a sponsor, say "three sponsor spots, plus a reader noticeboard."</li>
+  <li><b>Start with SEWE.</b> Their event is Feb. 12–14, so January is their selling window.</li>
+  <li><b>Fine Rugs gets a personal note only.</b> No sequence.</li>
+ </ul>
+</div></section>
+
+<section class="band foot"><div class="in">
+ <h3 style="color:var(--ink)">How I got this</h3>
+ <ul class="list">
+  <li>CHStoday numbers: 6AM City advertiser page (advertise.6amcity.com/pages/chstoday), market data "as of October 31, 2026"; self-serve article for the 62,330 figure and ad prices.</li>
+  <li>Sponsors: every send in the CHStoday newsletter archive, Oct. 26–Nov. 24, 2026, read in full. Unlabeled banners were identified from the image without clicking, so advertisers' click counts weren't touched. Local vs. national counts are approximate.</li>
+  <li>Contacts: each organization's own staff and contact pages first (Symphony, RiverDogs, SEWE, Gaillard, SC Aquarium, County Parks media room), then press coverage and directories. Pattern guesses use a format confirmed for that organization.</li>
+  <li>Airtable: all 649 Sponsors records checked before loading, including spelling variants.</li>
+  <li>Demographics: 6AM City advertiser page (2026) and their BuySellAds listing (undated, marked "older"); yours from chshappenings.com/media-kit, recalculated July 31, 2026. Your live email numbers: Beehiiv, last four weeks to Nov. 24.</li>
+  <li>Not found: a named marketing contact at Novant, Charleston Medical Spa's owner, The Blood Connection, and the Charleston Princess operator.</li>
+ </ul>
+</div></section>
+
+<script>
+{
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const out=[["Italian Trade Agency ('Extraordinary Italian Taste')","3 ads + 5 banners","Oct 26–30"],["Heart of NC Visitors Bureau / Kersey Valley","Presented-by, banner","Oct 28 · Nov 24"],["Nibbles (pet wellness card)","2 Presented-by, banner","Nov 9, 16, 23"],["The Cliffs (Lake Keowee)","Presented-by real estate feature","Nov 24"],["Golden Isles, GA","Banner","Nov 3"],["Antiques & Garden Show of Nashville","Banner","Nov 3"],["Hampton Inn & Suites Columbia","Banner","Nov 2"],["Baylor School (Chattanooga)","Boarding webinar ad","Nov 10"],["Coca-Cola 'Paint the Nation'","Arts mural ad","Nov 17"]];
+document.getElementById('out').innerHTML=out.map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td><td>${esc(r[2])}</td></tr>`).join('');
+const natl=[["Compare.com",4],["Credit card offers",4],["Rula",3],["TribeTokes",2],["LELO",2],["Trade Coffee",2],["Adamia",2],["Found (GLP-1)",2],["Insurify",2],["Coveron",2],["Groundfloor",2],["Hearing aids",2],["Magnesium supplement",2],["Vrbo",2],["THCV gummies",2],["MedVi",1],["Pendulum",1],["HeyPolo",1],["Home Depot",1],["OneSkin",1],["Rocket Lawyer",1],["Perelel",1],["Superhuman AI",1],["1440",1],["Particle",1],["Webroot",1],["Fishwife",1],["Signature Print Lab",1],["Clarity gummies",1],["Language app",1],["Laser hair cap",1],["Luggage",1],["Boots",1],["CBD brand",1],["Retirement guide",1],["Tax seminar",1],["Weight-loss / HRT telehealth",1]];
+document.getElementById('natl').innerHTML=natl.map(([n,c])=>`<span>${esc(n)} <b>${c}</b></span>`).join('');
+const D=[
+{b:"Charleston Symphony",n:10,who:"Katherine Sutton, Strategic Partnerships Manager (sells and services sponsors). Alana Morrall, Director of Marketing & Communications, owns the budget.",em:[["marketing@charlestonsymphony.org","team"],["ksutton@charlestonsymphony.org","inf"],["amorrall@charlestonsymphony.org","inf"]],ig:"@charlestonsymphonyorchestra",li:"not checked",ran:["Oct 26 · paid event listing for “The Witching Hour” (Gaillard, Oct 29) plus a banner","Nov 9 · “Presented by” feature: “Who says you have to be a music expert to enjoy the symphony?”","Nov 11, 16, 17, 19, 23 · “Try This” ads pushing the season lineup, Brahms Double Concerto (Nov 20–21) and Ranky Tanky","Nov 18, 24 · banners"],ang:"They're buying ticket sales show by show, almost every week. Pitch a Thursday Featured Event slot tied to the holiday concerts."},
+{b:"Novant Health",n:9,who:"Coastal SC Regional Marketing Manager (the posted role; name not public). Executive: Sarah Tuley, President, East Cooper Medical Center.",em:[["none published","none"]],ig:"not checked",li:"Search “Manager Regional Marketing Novant Charleston”",ran:["Oct 29 · Health ad: walk-in mammograms at Charleston Breast Center","Nov 3 · breast surgical oncologist joins East Cooper","Nov 5 · “Presented by” feature: “The bones of good orthopedic care”","Nov 17 · “Presented by” feature: meal sequencing plus its bariatric/GLP-1 clinic","Nov 19 · Clements Ferry ER now open · Nov 24 · new OB-GYN at Nexton","Oct 27, Nov 6, Nov 23 · banners (primary care, orthopedics)"],ang:"The biggest health-system buyer in the set, announcing new providers and locations weekly. Lead with your Mount Pleasant and East Cooper readership."},
+{b:"Charleston Medical Spa",n:9,who:"Owner isn't public. Providers include Melanie King, MD. Marketing runs through their agency, Barta Media Group.",em:[["none published","none"]],ig:"@charlestonmedicalspa (also TikTok)",li:"not checked",ran:["Oct 29, Nov 4, 13, 18, 24 · banner: “Charleston's trusted medical spa for 20 years”","Oct 30 · SkinPen microneedling, free consultation","Nov 3 · Clear Skin Bootcamp","Nov 10 · weight loss, hormone therapy, wellness injectables","Nov 20 · Black Friday deals Nov 23–30"],ang:"Nine placements in 30 days on James Island. Call 843-225-3223 and ask for whoever approves advertising, or reach Barta Media Group."},
+{b:"Charleston Literary Festival",n:7,who:"Sarah Moriarty, Executive Director (the festival's former marketing director). Catherine Fiederowicz, Digital Communications & Ticketing Manager.",em:[["sarah@charlestonliteraryfestival.com","inf"],["amanda@charlestonliteraryfestival.com (Operations Director)","pub"],["andrea@charlestonliteraryfestival.com (press)","pub"]],ig:"@charlestonlitfest",li:"not checked",ran:["Oct 26, Nov 4 · “Try This” ads: Pulitzer-winning authors, 10th anniversary, Nov 6–15","Oct 27 · “Presented by” feature: “Book it to the Charleston Literary Festival”","Oct 29, 30, Nov 3, 9 · banners"],ang:"The 2026 festival is over. Pitch early for 2027. They're hiring an $85K Marketing Director, a sign the budget is growing."},
+{b:"Explore Charleston",n:7,who:"Cat (Catherine) Dority, VP of Marketing. Doug Warner, VP of Media & Innovation Development.",em:[["cdority@explorecharleston.com","pub"],["dwarner@explorecharleston.com","inf"]],ig:"@explorecharleston",li:"not checked",ran:["Nov 20 · “Presented by” feature: The Charleston Santa at the Best Friend Train Museum (Toys for Tots)","Nov 12, 16, 17, 18, 19, 23 · banners"],ang:"Six banners in two weeks. Your 70%+ open rate on locals who host visiting family is the angle."},
+{b:"Celadon Home",n:7,crm:"In your CRM: Lost – No Response · on Sponsor News List",who:"Rebecca Hawkins, President & Head Buyer.",em:[["rhawkins@celadonathome.com","pub"],["advertising@celadonathome.com","team"]],ig:"not checked",li:"not checked",ran:["Nov 2, 3 · paid event listings: 32nd birthday party, Nov 7","Nov 6 · “Presented by” feature: “Your personal invitation to Celadon's birthday bash”","Oct 29 · banner 20–50% off · Nov 4 “Celebrating Celadon” · Nov 12 32% off bedroom & dining · Nov 23 Black Friday 25% off"],ang:"Send to advertising@ with this month's activity as the hook. That's the news your Sponsor News List was built for."},
+{b:"Fine Rugs of Charleston",n:6,crm:"In your CRM: Cultivating · UNSUBSCRIBED from Kit in August",alert:"Unsubscribed. Personal note only, no sequence.",who:"Rob Leahy, Owner.",em:[["info@finerugsofcharleston.com","team"]],ig:"not checked",li:"not checked",ran:["Oct 30, Nov 11 · ads for the Fine Rugs Annex, up to 60% off, Saturdays only","Nov 6, 12, 18, 20 · banners: 60% off this Saturday"],ang:"They advertise the Saturday-only Annex every week. A single personal email from you offering one Saturday test is the respectful re-entry."},
+{b:"East Bay Deli",n:6,who:"Joanna Jaicks, co-owner and Marketing Director. Sydney Krauze, Assistant Marketing Director.",em:[["none published (sponsorship form at eastbaydeli.com/donations)","none"]],ig:"@eastbaydeli",li:"not checked",ran:["Oct 27 · Eat ad: Pimento Cheese Club (through Oct 31)","Nov 9 · meatball melt and chicken parm, through February","Nov 18 · Kids' Night at Oakland Market Rd, Mount Pleasant","Nov 2, 6, 23 · banners"],ang:"A rotating limited-time menu is a perfect fit for a recurring Short Take."},
+{b:"Charleston Gaillard Center",n:5,who:"Stephanie Shipe, SVP of Marketing & Sales. Jessie Bagley, Director of Marketing & Communications.",em:[["sales@gaillardcenter.org","team"],["sshipe@gaillardcenter.org","inf"],["jbagley@gaillardcenter.org","inf"]],ig:"@gaillardcenter",li:"not checked",ran:["Nov 3, 6, 12, 13, 20 · banners"],ang:"Show-driven banners. Same play as the Symphony, which performs in their hall."},
+{b:"Charleston County Parks (CCPRC)",n:5,who:"Lisa Knisley-White, Marketing Manager (per the 2023 plan; confirm she's current). Sarah Reynolds, Public Information Coordinator.",em:[["Sarah.Reynolds@ccprc.com","pub"],["Lisa.Knisley-White@ccprc.com","inf"]],ig:"@charlestoncountyparks",li:"not checked",ran:["Oct 26 · banner: Trick, Treat & Trail at Wannamaker","Nov 4 · Stono River scenic banner","Nov 5 · Harvest Festival, Johns Island, Nov 7","Nov 10, 19 · Holiday Festival of Lights"],ang:"An event machine with a year-round calendar. They also sell sponsorships themselves (ccprc.com/1796)."},
+{b:"YALLFest",n:4,who:"Jonathan Sanchez, Executive Director and co-founder (owns Blue Bicycle Books). Frances Oliver, Producer & Development Director.",em:[["jonathan@bluebicyclebooks.com","pub"]],ig:"not checked",li:"not checked",ran:["Nov 10–13 · paid event listings for YALLCRAWL signings (Tracy Deonn, Sarah Dessen)"],ang:"Phone 843-722-2666. Festival is annual in November. Pitch Blue Bicycle Books year-round, too."},
+{b:"Charleston RiverDogs",n:4,who:"Lance Fletcher, Assistant GM (oversees marketing). Haley Diess, Senior Marketing Manager. Andy Lange, VP Corporate Sales.",em:[["lfletcher@riverdogs.com","pub"],["hdiess@riverdogs.com","pub"],["alange@riverdogs.com","pub"]],ig:"not checked",li:"not checked",ran:["Oct 28, Nov 5, 11, 19 · banners"],ang:"Buying in the offseason. Lead with Segra Club holiday events, then a trade conversation with Andy Lange."},
+{b:"Pulte Homes (Long Savanna)",n:4,who:"Eric Korsten, Division President, Coastal Carolinas division (North Charleston). Division marketing manager not public.",em:[["none published","none"]],ig:"not checked",li:"not checked",ran:["Oct 30, Nov 4, 13, 20 · banners: Long Savanna “Sneak Peek | Planned Amenities”"],ang:"Pre-launch community in West Ashley. Division office: 843-740-7270."},
+{b:"Berkeley Electric Cooperative",n:3,who:"Libby Roerig, Director of Marketing & Communications.",em:[["none published (domain is bec.coop)","none"]],ig:"@berkeleyelectriccoop",li:"company page confirmed",ran:["Oct 27 · Home ad: free ecobee thermostat for members","Nov 11, 23 · banner: “Energize Your Career” lineworker scholarships"],ang:"Recruiting and member-program ads. Moncks Corner, Summerville and Daniel Island readers are their members."},
+{b:"Charleston Southern University",n:3,who:"Jenna Johnson, Executive Director of Marketing & Communication.",em:[["jdjohnson@csuniv.edu","pub"]],ig:"not checked",li:"not checked",ran:["Oct 30 · paid event listings: Homecoming (Oct 31) and First Look open house (Nov 7)","Nov 9 · banner: PhD in Counseling Education & Supervision"],ang:"Phone 843-863-7606. Enrollment marketing runs year-round."},
+{b:"College of Charleston (MBA)",n:2,who:"Cathy Ficzner, MBA Operations Manager (handles MBA marketing). Ron Magnuson, Executive Director, Graduate & Executive Programs.",em:[["not verified","none"]],ig:"not checked",li:"not checked",ran:["Nov 11 · “Presented by” feature: “Uplevel your career in just one year”","Nov 16 · Edu ad: only SC MBA on Bloomberg's list"],ang:"Your readers skew 35+ professionals. A natural Executive MBA audience."},
+{b:"South Carolina Aquarium",n:2,who:"Amie Yam-Babinchak, Chief Marketing Officer. Courtenay Lewandowski, EVP and Chief Strategy & Revenue Officer.",em:[["contact form only","none"]],ig:"@southcarolinaaquarium",li:"company page confirmed",ran:["Nov 12 · “Presented by” feature: Aquarium Aglow","Nov 23 · “Presented by” feature: holiday lineup, Santa dives, FISHmas"],ang:"They're also hiring an Advertising & Community Engagement Manager. Watch for that name."},
+{b:"LTP Tennis / Credit One Stadium",n:2,who:"Patrick Hieber, General Manager and Director of Tennis, LTP. Owned by Beemok Sports & Entertainment.",em:[["not found","none"]],ig:"not checked",li:"not checked",ran:["Nov 4 · Sports ad: adult clinics","Nov 19 · “Presented by” feature: holiday tournament for MUSC Shawn Jenkins Children's"],ang:"Two venues (Daniel Island and Mount Pleasant) right in your readers' backyard."},
+{b:"SEWE",n:2,who:"Meagan Charters (formerly Trotta), Marketing & Sales Director. John Powell, President & CEO.",em:[["mcharters@sewe.com","pub"],["jpowell@sewe.com","pub"]],ig:"@sewe",li:"not checked",ran:["Oct 28 · Plan Ahead ad: early-bird tickets through Nov 1","Oct 30 · banner: “Last chance to save”"],ang:"SEWE runs Feb 12–14, 2027. January is their selling window. Pitch now."},
+{b:"True Homes",n:2,who:"Kate Jarrell, Operations Partner of Marketing (corporate, Monroe NC).",em:[["none published","none"]],ig:"not checked",li:"not checked",ran:["Oct 27, Nov 19 · banners: “A home that begins with U”"],ang:"Corporate marketing in North Carolina buys for the Charleston division (Summerville, Ravenel)."},
+{b:"SC Education Lottery",n:2,who:"Josh Whiteside, Director of Marketing (as of 2022; confirm). Agency: Chernoff Newman.",em:[["none published","none"]],ig:"not checked",li:"not checked",ran:["Oct 27 · Edu ad: $1.5M a day for education","Nov 18 · gift guide pick: scratch-offs"],ang:"Statewide buy through an agency. Pitch Chernoff Newman's media buyer."},
+{b:"Alston Wilkes Society",n:2,who:"S. Anne Walker, President & CEO. VP of Marketing & Development (name not public).",em:[["none published; 803-799-2490","none"]],ig:"@alstonwilkessociety",li:"company page confirmed",ran:["Oct 30 · Community ad: Oyster Roast, 10% off with code 6AM through Nov 6","Nov 18 · Try This: VIP and early-bird pricing ends Nov 23"],ang:"Has run CHStoday sponsored content every fall since 2022. Get them for the 2027 roast."},
+{b:"Capital City Financial Partners",n:1,who:"John Moreno, lead financial advisor, Charleston office (joined 2025).",em:[["none published","none"]],ig:"not checked",li:"not checked",ran:["Oct 28 · banner: “Retirement has a lot of moving pieces”","Likely theirs too (unbranded): Nov 5, 12, 17 retirement banners incl. a Nov 19 tax workshop at Trident Tech"],ang:"A repeat 6AM buyer in Greenville and Charleston. Your readers' age and income profile fits their retirement pitch."},
+{b:"Experience Mount Pleasant (Town)",n:1,who:"Town of Mount Pleasant tourism office.",em:[["tourism@tompsc.com","team"]],ig:"@experiencemp",li:"not checked",ran:["Oct 29 · “Presented by” feature: the new Mount Pleasant Seafood Trail"],ang:"Your home town. Pitch a Seafood Trail spotlight."},
+{b:"Mount Pleasant Towne Centre",n:1,who:"Kathi (Kathleen) Herrmann, Marketing Director.",em:[["none published; 843-216-9900 ext. 202","none"]],ig:"not checked",li:"linkedin.com/in/kathleen-herrmann-6bba4472",ran:["Nov 16 · banner: holiday tree lighting"],ang:"Tenant events and holiday traffic all season."},
+{b:"Point Hope (Point Hope Partners)",n:1,who:"Erin Dudley, Director of Marketing.",em:[["none published","none"]],ig:"not checked",li:"linkedin.com/in/erin-dudley-0bb998166",ran:["Nov 18 · banner: “More room to play” amenities"],ang:"Clements Ferry master plan. Your Daniel Island and Wando readers are their buyers."},
+{b:"Charleston Crab House",n:1,who:"Scott Larymore, owner and CEO (with his wife Lauren). Same owners as The Porch at Oyster House.",em:[["none published","none"]],ig:"@charlestoncrabhouse",li:"not checked",ran:["Nov 20 · banner: “It's fun to be crabby” (Charleston and Shem Creek Crab House)"],ang:"One pitch covers five restaurants and an event space."},
+{b:"The Porch at Oyster House",n:1,who:"Scott & Lauren Larymore (Charleston Crab House group).",em:[["none published","none"]],ig:"not checked",li:"not checked",ran:["Nov 10 · banner: “Shuck it! Let's party!” Private events"],ang:"Pitch with Crab House as one package."},
+{b:"The Blood Connection",n:1,who:"No named marketing contact found.",em:[["none published; 864-255-5000","none"]],ig:"not checked",li:"not checked",ran:["Nov 10 · banner"],ang:"Upstate nonprofit. Likely a cause placement, not a paying regular."},
+{b:"Taco Boy",n:1,who:"Karalee Nielsen Fallert, founder and CEO, All Good Industries. Lori Hilyer, COO.",em:[["info@tacoboy.net","team"]],ig:"@tacoboyeats",li:"company page confirmed",ran:["Oct 30 · Seasonal ad: “Disco's Not Dead” Halloween party, sponsored by Don Gato Tequila"],ang:"Also opens a second door: Don Gato Tequila paid to sponsor the event."},
+{b:"Summers Corner (Lennar)",n:1,who:"Lennar Coastal Carolinas master-planned community. Info center: 843-514-8295.",em:[["none published","none"]],ig:"not checked",li:"not checked",ran:["Nov 11 · Community ad: Harvest & Health Festival, Nov 14"],ang:"Summerville residents and buyers. Community events are monthly."},
+{b:"Charleston Princess",n:1,who:"Operator not identified.",em:[["not found","none"]],ig:"not checked",li:"not checked",ran:["Nov 24 · Event Spotlight: Santa Brunch Cruise ($28.95–$68.95)"],ang:"Holiday-only buyer. Low priority until you know who runs it."},
+{b:"To Be Ritual",n:1,who:"Julie Allen, owner, Tranquility – A Day Spa (North Charleston).",em:[["none published; 843-259-2840","none"]],ig:"not checked",li:"not checked",ran:["Nov 6 · gift guide local pick: forever journal, $79+"],ang:"A small local business that paid for a gift-guide spot. A Short Take fits her budget."}
+];
+const lab={pub:"Published",team:"Team inbox",inf:"Pattern guess",none:"No email"};
+const best=d=>d.em.some(e=>e[1]=="pub")?"pub":d.em.some(e=>e[1]=="team")?"team":d.em.some(e=>e[1]=="inf")?"inf":"none";
+const isMail=s=>/^[^\s@]+@[^\s@]+\.[a-z]+$/i.test(s.split(' ')[0]);
+const card=d=>`<article class="c" data-k="${best(d)}" data-s="${esc((d.b+' '+d.who).toLowerCase())}">
+<header><h3>${esc(d.b)}</h3><div class="n">${d.n}<small>placements</small></div></header>
+${d.alert?`<div class="alert">${esc(d.alert)}</div>`:''}
+<dl><dt>Airtable</dt><dd>${esc(d.crm||'Added Nov 24: Target, Cold – Researched')}</dd>
+<dt>Pitch</dt><dd>${esc(d.who)}</dd>
+<dt>Email</dt><dd>${d.em.map(([e,k])=>`<div><span class="tag t-${k}">${lab[k]}</span> ${esc(e)}${isMail(e)?`<button class="copy" type="button" data-e="${esc(e.split(' ')[0])}">Copy</button>`:''}</div>`).join('')}</dd>
+<dt>Instagram</dt><dd>${esc(d.ig)}</dd><dt>LinkedIn</dt><dd>${esc(d.li)}</dd></dl>
+<div class="ran"><b>What they ran in CHStoday</b><ul>${d.ran.map(r=>`<li>${esc(r)}</li>`).join('')}</ul></div>
+<div class="ang"><b>Angle:</b> ${esc(d.ang)}</div></article>`;
+const box=document.getElementById('cards');box.innerHTML=D.map(card).join('');
+let f='all';const q=document.getElementById('q');
+const apply=()=>{const t=q.value.trim().toLowerCase();box.querySelectorAll('.c').forEach(c=>{c.hidden=!((f=='all'||c.dataset.k==f)&&(!t||c.dataset.s.includes(t)))})};
+document.querySelectorAll('.bar button').forEach(b=>b.addEventListener('click',()=>{f=b.dataset.f;document.querySelectorAll('.bar button').forEach(x=>x.setAttribute('aria-pressed',x===b));apply()}));
+q.addEventListener('input',apply);
+box.addEventListener('click',e=>{const b=e.target.closest('.copy');if(!b)return;navigator.clipboard.writeText(b.dataset.e).then(()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1200)}).catch(()=>{b.textContent='Select it'})});
+}
+</script>
+</body>
+</html>
