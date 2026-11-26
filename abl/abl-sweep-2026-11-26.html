@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ABL Notice Sweep — Nov 26, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#183872;
+    --lime:#cced60;
+    --ink:#182230;
+    --sub:#5b6676;
+    --line:#e4e8ef;
+    --bg:#f5f7fb;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    font-family:'Open Sans',sans-serif;
+    color:var(--ink);
+  }
+  header{
+    background:var(--navy);
+    color:#fff;
+    padding:28px 20px 24px;
+  }
+  header .wrap{max-width:980px;margin:0 auto;}
+  .kicker{
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    font-size:12px;
+    color:var(--lime);
+    margin:0 0 6px;
+  }
+  h1{
+    font-family:'Inter',sans-serif;
+    font-weight:800;
+    font-size:clamp(24px,4vw,34px);
+    margin:0 0 10px;
+    line-height:1.1;
+  }
+  .counts{
+    font-size:14.5px;
+    color:#d7deee;
+    line-height:1.5;
+  }
+  .counts b{color:#fff;}
+  main{max-width:980px;margin:0 auto;padding:24px 20px 60px;}
+  .block-label{
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:var(--navy);
+    margin:30px 0 10px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .block-label .count-pill{
+    background:var(--lime);
+    color:var(--navy);
+    font-size:11.5px;
+    padding:2px 9px;
+    border-radius:20px;
+    font-weight:800;
+  }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:10px;
+    overflow:hidden;
+    font-size:14px;
+  }
+  caption{display:none;}
+  thead th{
+    background:#eef1f8;
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:11.5px;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    color:var(--sub);
+    text-align:left;
+    padding:10px 12px;
+    border-bottom:1px solid var(--line);
+  }
+  td{
+    padding:11px 12px;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+  }
+  tr:last-child td{border-bottom:none;}
+  .num{
+    font-family:'Inter',sans-serif;
+    font-weight:800;
+    color:var(--navy);
+    width:28px;
+  }
+  .biz{font-weight:700;color:var(--ink);}
+  .addr{color:var(--sub);font-size:13px;}
+  .tag{
+    display:inline-block;
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:11px;
+    padding:3px 8px;
+    border-radius:6px;
+    white-space:nowrap;
+  }
+  .tag-new{background:#e4edff;color:#1d4ed8;}
+  .tag-upgrade{background:#fef3e0;color:#9a5b00;}
+  .main-table tr:nth-child(odd) td{background:#fbfcfe;}
+  .demoted{opacity:.92;}
+  .demoted table{border-color:#e9ecf2;}
+  .demoted thead th{background:#f2f3f7;}
+  .match-note{color:var(--sub);font-size:12.5px;}
+  .dropped{
+    margin-top:28px;
+    font-size:13px;
+    color:var(--sub);
+    background:#fff;
+    border:1px dashed var(--line);
+    border-radius:8px;
+    padding:10px 14px;
+  }
+  .caveats{
+    margin-top:30px;
+    background:#fff;
+    border-left:4px solid var(--navy);
+    border-radius:0 8px 8px 0;
+    padding:14px 18px;
+    font-size:13.5px;
+    color:var(--sub);
+    line-height:1.6;
+  }
+  .caveats b{color:var(--ink);}
+  @media (max-width:640px){
+    table, thead, tbody, th, td, tr{display:block;}
+    thead{display:none;}
+    tr{border-bottom:1px solid var(--line);padding:10px 12px;}
+    td{border:none;padding:3px 0;}
+    .num{display:inline;margin-right:6px;}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <p class="kicker">ABL Notice Sweep · Weekly</p>
+    <h1>Liquor &amp; Alcohol Licence Filings — Tri-County</h1>
+    <p class="counts">
+      <b>53</b> rows returned → <b>26</b> distinct filings → <b>1</b> dropped (out of footprint) →
+      <b>11</b> on-premises not yet tracked → <b>8</b> already tracked → <b>6</b> off-premises retail
+    </p>
+  </div>
+</header>
+
+<main>
+
+  <div class="block-label">Not yet tracked — on-premises <span class="count-pill">11</span></div>
+  <table class="main-table">
+    <thead>
+      <tr>
+        <th>#</th><th>Business / applicant</th><th>Address</th><th>Licence</th><th>Read*</th><th>First published</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="num">1</td>
+        <td class="biz">Summerville Burger Shack</td>
+        <td class="addr">9500 Dorchester Road, Suite 188, Summerville, SC 29485</td>
+        <td>Beer &amp; Wine (ON)</td>
+        <td><span class="tag tag-new">Likely new premises</span></td>
+        <td>Nov 19, 2026</td>
+      </tr>
+      <tr>
+        <td class="num">2</td>
+        <td class="biz">Sportyard, LLC</td>
+        <td class="addr">425 Faison Road, Suite 105, Mount Pleasant, SC 29466</td>
+        <td>7-Day On-Premises Beer &amp; Wine</td>
+        <td><span class="tag tag-new">Likely new premises</span></td>
+        <td>Nov 25, 2026</td>
+      </tr>
+      <tr>
+        <td class="num">3</td>
+        <td class="biz">Galaxy Logistics, LLC</td>
+        <td class="addr">5075 Dorchester Rd., Unit 7, N. Charleston, SC 29418</td>
+        <td>Beer &amp; Wine (ON)</td>
+        <td><span class="tag tag-new">Likely new premises</span></td>
+        <td>Nov 19, 2026</td>
+      </tr>
+      <tr>
+        <td class="num">4</td>
+        <td class="biz">Sunrise Bistro Cafe</td>
+        <td class="addr">1901 Ashley River Road, Unit 9, Charleston, SC</td>
+        <td>Beer, Wine and/or Liquor (ON)</td>
+        <td><span class="tag tag-new">Likely new premises</span></td>
+        <td>Nov 11, 2026</td>
+      </tr>
+      <tr>
+        <td class="num">5</td>
+        <td class="biz">The Citadel / Top Shelf Catering Company</td>
+        <td class="addr">68 Hagood Ave, Charleston, SC 29403</td>
+        <td>Beer &amp; Wine (ON)</td>
+        <td><span class="tag tag-new">Likely new premises</span></td>
+        <td>Nov 22, 2026</td>
+      </tr>
+      <tr>
+        <td class="num">6</td>
+        <td class="biz">HCFC, LLC dba Charleston Battery</td>
+        <td class="addr">93 Patriots Point Road, Mount Pleasant, SC</td>
+        <td>Beer, Wine &amp; Liquor (PSV License)</td>
+        <td><span class="tag tag-new">Likely new premises</span></td>
+        <td>Nov 7, 2026</td>
+      </tr>
+      <tr>
+        <td class="num">7</td>
+        <td class="biz">Kendrick's Hospitality Group Inc</td>
+        <td class="addr">55 S Market St, Charleston, SC 29401</td>
+        <td>Beer, Wine &amp; Liquor (ON)</td>
+        <td><span class="tag tag-new">Likely new premises</span></td>
+        <td>Nov 5, 2026</td>
+      </tr>
+      <tr>
+        <td class="num">8</td>
+        <td class="biz">The Grove CHS LLC</td>
+        <td class="addr">1505 King Street, Charleston, SC 29405</td>
+        <td>Beer, Wine &amp; Liquor (ON)</td>
+        <td><span class="tag tag-new">Likely new premises</span></td>
+        <td>Nov 4, 2026</td>
+      </tr>
+      <tr>
+        <td class="num">9</td>
+        <td class="biz">Megan Molten, LLC</td>
+        <td class="addr">816 Johnnie Dodds Blvd, Mount Pleasant, SC 29464</td>
+        <td>Beer &amp; Wine (ON)</td>
+        <td><span class="tag tag-new">Likely new premises</span></td>
+        <td>Oct 31, 2026</td>
+      </tr>
+      <tr>
+        <td class="num">10</td>
+        <td class="biz">Legacy Cigar Lounge, LLC</td>
+        <td class="addr">1937 Clements Ferry Rd, Ste. C, Charleston, SC 29492</td>
+        <td>Liquor by the Drink (ON)</td>
+        <td><span class="tag tag-upgrade">Likely upgrade at an existing spot</span></td>
+        <td>Oct 31, 2026</td>
+      </tr>
+      <tr>
+        <td class="num">11</td>
+        <td class="biz">Owlbear, LLC</td>
+        <td class="addr">1964 Riviera Drive, Suite J, Mount Pleasant, SC 29464</td>
+        <td>Beer &amp; Wine (ON)</td>
+        <td><span class="tag tag-new">Likely new premises</span></td>
+        <td>Oct 30, 2026</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="block-label demoted" style="margin-top:34px;">Already in the tracker <span class="count-pill">8</span></div>
+  <div class="demoted">
+  <table>
+    <thead>
+      <tr>
+        <th>#</th><th>Business / applicant</th><th>Address</th><th>Licence</th><th>First published</th><th>Matched tracker row</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="num">12</td><td class="biz">Charleston OpCo 1, LLC</td><td class="addr">1925 Essex Farms Drive, Charleston, SC 29414</td><td>Beer &amp; Wine (ON)</td><td>Oct 28, 2026</td><td class="match-note">Charleston OpCo 1, LLC (ABL filing entity — unresolved)</td></tr>
+      <tr><td class="num">13</td><td class="biz">35P OpCo LLC</td><td class="addr">35 Prioleau Street, Charleston, SC 29401</td><td>Beer &amp; Wine + Liquor by Drink (ON)</td><td>Nov 6, 2026</td><td class="match-note">35P OpCo LLC (ABL filing entity — unresolved)</td></tr>
+      <tr><td class="num">14</td><td class="biz">D.A.R.T Enterprises LLC</td><td class="addr">604 Boone Hill Road, Summerville, SC</td><td>Beer, Wine &amp; Liquor (ON)</td><td>Nov 11, 2026</td><td class="match-note">D.A.R.T Enterprises LLC (ABL filing entity — unresolved)</td></tr>
+      <tr><td class="num">15</td><td class="biz">La Cantera Grill LLC</td><td class="addr">1710 Sam Rittenberg Blvd, Charleston, SC 29407</td><td>Beer, Wine &amp; Liquor (ON)</td><td>Nov 8, 2026</td><td class="match-note">La Cantera Grill, LLC (ABL filing entity — unresolved)</td></tr>
+      <tr><td class="num">16</td><td class="biz">Gold LLC</td><td class="addr">9085 Savannah Hwy, Charleston, SC 29407</td><td>Beer, Wine &amp; Liquor (ON)</td><td>Oct 29, 2026</td><td class="match-note">Gold LLC (ABL filing entity — unresolved)</td></tr>
+      <tr><td class="num">17</td><td class="biz">Mottram Beerworks</td><td class="addr">496 Longpoint Rd., Mt. Pleasant, SC 29464</td><td>Beer &amp; Wine (ON)</td><td>Oct 28, 2026</td><td class="match-note">Mottram Beerworks (ABL filing entity — unresolved)</td></tr>
+      <tr><td class="num">18</td><td class="biz">41 RTPH Holdings, LLC</td><td class="addr">2015 SC-41, Mt Pleasant, SC 29466</td><td>Beer, Wine &amp; Liquor (ON)</td><td>Oct 28, 2026</td><td class="match-note">41 RTPH Holdings, LLC (ABL filing entity — unresolved)</td></tr>
+      <tr><td class="num">19</td><td class="biz">Caviar and Bananas</td><td class="addr">1739 Maybank Hwy, Suite U, Charleston, SC 29412</td><td>Beer &amp; Wine (ON)</td><td>Oct 28, 2026</td><td class="match-note">Caviar &amp; Bananas — James Island (status: Now Open)</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="block-label demoted" style="margin-top:34px;">Off-premises retail <span class="count-pill">6</span></div>
+  <div class="demoted">
+  <table>
+    <thead>
+      <tr>
+        <th>#</th><th>Business / applicant</th><th>Address</th><th>Licence</th><th>First published</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="num">20</td><td class="biz">Cherry Hill Liquors</td><td class="addr">6824 Highway 162, Ste. B, Hollywood, SC 29449</td><td>Liquor (OFF)</td><td>Nov 12, 2026</td></tr>
+      <tr><td class="num">21</td><td class="biz">A-1 Food Store LLC</td><td class="addr">4106 Dorchester Rd., Suite B, North Charleston, SC 29405</td><td>Liquor (OFF)</td><td>Nov 20, 2026</td></tr>
+      <tr><td class="num">22</td><td class="biz">A-1 Food Store LLC</td><td class="addr">4106 Dorchester Rd., Suite A, North Charleston, SC 29405</td><td>Beer &amp; Wine (OFF)</td><td>Nov 20, 2026</td></tr>
+      <tr><td class="num">23</td><td class="biz">Dh and Dh, LLC</td><td class="addr">5737 Savannah Hwy, Ravenel, SC 29470</td><td>Liquor (OFF)</td><td>Nov 1, 2026</td></tr>
+      <tr><td class="num">24</td><td class="biz">Publix Super Markets, Inc. #2134</td><td class="addr">206 Saint James Avenue, Goose Creek, SC 29445</td><td>Beer &amp; Wine (OFF)</td><td>Oct 28, 2026</td></tr>
+      <tr><td class="num">25</td><td class="biz">Tele Envios Y Mas LLC</td><td class="addr">1412 Savannah Hwy, Unit B, Charleston, SC 29407</td><td>Beer &amp; Wine (OFF)</td><td>Oct 28, 2026</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="dropped">
+    <b>Dropped as out of footprint:</b> Harmony 19 LLC — off-premises beer &amp; wine — 1531 Hampton St, Walterboro, SC 29488 (Colleton County paper, outside the tri-county area).
+  </div>
+
+  <div class="caveats">
+    <div><b>*Read</b> is a heuristic from the licence class alone — liquor-only or wine-and-liquor-only filings are usually an existing operator upgrading; a full beer/wine/liquor bundle or plain beer-and-wine is more often a fresh premises. It is a guess, not a finding.</div>
+    <div style="margin-top:8px;">A filing is an intention to apply, not a confirmed opening date. Renewals aren't advertised in SC, so an already-open business filing again means something changed — not that it's new. This sweep can't see any business that doesn't serve alcohol.</div>
+  </div>
+
+</main>
+</body>
+</html>
